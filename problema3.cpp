@@ -284,6 +284,7 @@ while(b){
 	}
 	else b= false;
 }
+}
 int main(){
 
 
@@ -347,6 +348,6 @@ cout<<"los totales son: "<<totales;
 destruiTodo(lis);
 destruiTodo(muertas);
 */
-
+  return 0;
 }
 
