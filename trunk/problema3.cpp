@@ -209,7 +209,7 @@ void funcion( int f,  int c, tupla *config, int n, bool mostraOut ){
 
 
 
-
+/*
 void leer(ifstream &archivo){
 
 	int n;
@@ -246,7 +246,44 @@ while(b){
 
 }
 
+*/
 
+void leer(ifstream &archivo){
+
+	int n;
+	bool b=true;
+
+while(b){
+	string tam_s;
+	archivo >> n;
+	if (n != -1){
+
+		tupla *conf= new tupla[n*n];	
+		for(int f = 0; f< n;f++){
+			//getline(archivo,tam_s,'\n');
+			for(int c = 0; c< n;c++){
+				char temp = archivo.get();
+				while(temp!= '#' && temp!='_') {
+				  temp = archivo.get();
+				}
+				conf[f*n+c].apuntado = ( temp=='#');
+				conf[f*n+c].apunta_der=false;
+				conf[f*n+c].apunta_abajo=false;
+			}
+			getline(archivo,tam_s,'\n');
+		}
+
+		totales = 0;
+		mostraTab(conf,n);
+		funcion(0,0, conf,n, false);
+		//cout<<"Cantidad de formas: "<<totales<<endl;
+		
+
+
+
+	}
+	else b= false;
+}
 int main(){
 
 
@@ -265,6 +302,8 @@ int main(){
 	muertas.primero = NULL;
 	muertas.cuantos = 0;
 
+	ifstream entrada("Tp1Ej3.in");
+	leer(entrada);
 	// los 0,0 son de la posicion que empieza en casillero
 	// conf es la configuracion inicial.
 	// lis, va guardando las configuraciones correctas
@@ -272,7 +311,7 @@ int main(){
 	// el ultimo bool es para mostrar unos mensajes
 
 	//
-
+/*
 	int n = 14;
 	tupla *conf= new tupla[n*n];
 
@@ -296,7 +335,7 @@ funcion(0,0, conf,n, false);
 cout<<"los totales son: "<<totales;
 
 
-
+*/
 
 
 /*
