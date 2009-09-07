@@ -353,10 +353,6 @@ destruiTodo(muertas);
 }
 
 
-<<<<<<< .mine
-// asasdasdfasdf cambio para el svn
+
 
 //otro cambio=======
-// asasdasdfasdf cambio para el svn
-// otro cambio para probar
->>>>>>> .r9
