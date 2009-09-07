@@ -252,7 +252,8 @@ void leer(ifstream &archivo){
 
 	int n;
 	bool b=true;
-
+	ofstream salida("Tp1Ej3.out");
+	bool agregar = false;
 while(b){
 	string tam_s;
 	archivo >> n;
@@ -272,10 +273,11 @@ while(b){
 			}
 			getline(archivo,tam_s,'\n');
 		}
-
+		if(agregar) salida << endl;
+		agregar = true;
 		totales = 0;
 		funcion(0,0, conf,n, false);
-		//cout<<"Cantidad de formas: "<<totales<<endl;
+		salida <<totales;
 		
 
 
