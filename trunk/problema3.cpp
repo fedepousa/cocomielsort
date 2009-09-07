@@ -348,6 +348,8 @@ cout<<"los totales son: "<<totales;
 destruiTodo(lis);
 destruiTodo(muertas);
 */
+
+//laaaaaaaaaaaaaaaaaaalalala
   return 0;
 }
 
