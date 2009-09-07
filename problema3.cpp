@@ -266,7 +266,7 @@ while(b){
 				while(temp!= '#' && temp!='_') {
 				  temp = archivo.get();
 				}
-				conf[f*n+c].apuntado = ( temp=='#');
+				conf[f*n+c].apuntado = ( temp=='_');
 				conf[f*n+c].apunta_der=false;
 				conf[f*n+c].apunta_abajo=false;
 			}
@@ -274,7 +274,6 @@ while(b){
 		}
 
 		totales = 0;
-		mostraTab(conf,n);
 		funcion(0,0, conf,n, false);
 		//cout<<"Cantidad de formas: "<<totales<<endl;
 		
@@ -354,5 +353,10 @@ destruiTodo(muertas);
 }
 
 
+<<<<<<< .mine
+// asasdasdfasdf cambio para el svn
+
+//otro cambio=======
 // asasdasdfasdf cambio para el svn
 // otro cambio para probar
+>>>>>>> .r9
