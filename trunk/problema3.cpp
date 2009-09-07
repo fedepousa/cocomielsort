@@ -297,7 +297,7 @@ int main(){
 	lis.cuantos = 0;
 
 
-
+	int abc= 3223;
 
 	muertas.ultimo = NULL;
 	muertas.primero = NULL;
