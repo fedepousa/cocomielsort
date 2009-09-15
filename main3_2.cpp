@@ -3,20 +3,27 @@
 #include <fstream>
 #include <cmath>
 #include <stack>
+#include <functional>
 
 using namespace std;
 
+
+
 struct Casilla {
   Casilla();
+  inline bool mas_aristas_que(const Casilla &otro) const;
+  
+
   unsigned int x;
   unsigned int y;
   bool sana;
   bool apunta_abajo;
   bool apunta_derecha;
-  unsigned int aristas;
+  void * tablero_asociado;
+  inline int aristas() const;
 };
 
-Casilla::Casilla() : x(-1), y(-1), sana(true),apunta_abajo(false),apunta_derecha(false),aristas(5){}
+Casilla::Casilla() : x(-1), y(-1), sana(true),apunta_abajo(false),apunta_derecha(false),tablero_asociado(NULL){}
 
 struct Tablero {
   Tablero(int f, int c);
@@ -26,119 +33,23 @@ struct Tablero {
   
   void partir_tablero(Tablero  &t1, Tablero &t2, bool h) const;
   
+  
   Casilla **t;
   int f;
   int c;
   int cant_sanas;
+  int blancas, negras;
 };
 
-void Tablero::partir_tablero(Tablero &t1, Tablero &t2, bool horizontal) const {
-  unsigned int fila, col;
-  for(int i  = 0;i<t1.f;++i) {
-    for(int j=0;j<t1.c;++j) {
-      t1.t[i][j] = t[i][j];
-    }
-  }
-  for(int i  = 0;i<t2.f;++i) {
-    for(int j=0;j<t2.c;++j) {
-      
-      if(horizontal) {
-	fila = i;
-	col = j+t1.c;
-      }
-      else {
-	fila = i + t1.f;
-	col = j;
-      }
-      t2.t[i][j] = t[fila][col];
-    }
-  }
-}
-
-Tablero::Tablero(const Tablero &otro) : f(otro.f), c(otro.c), cant_sanas(otro.cant_sanas)  {
-  t = new Casilla* [f];
-  for(int i = 0; i<f;++i) {
-    t[i] = new Casilla [c];
-    for(int j =0 ;j<c;++j) {
-      t[i][j] = otro.t[i][j];
-    }
-  }
-}
-
-Tablero & Tablero::operator=(const Tablero &otro) {
-  for (int i = 0;i<f;++i) {
-    delete [] t[i];
-  }
-  delete [] t;
-  f = otro.f;
-  c = otro.c;
-  t = new Casilla* [f];
-  for(int i = 0; i<f;++i) {
-    t[i] = new Casilla [c];
-    for(int j =0 ;j<c;++j) {
-      t[i][j] = otro.t[i][j];
-    }
-  }
-  cant_sanas = otro.cant_sanas;
-  return *this;
-}
-Tablero::Tablero(int f, int c) : f(f), c(c), cant_sanas(f*c) {
-  t = new Casilla* [f];
-  for(int i = 0; i<f;++i) {
-    t[i] = new Casilla [c];
-  }
-}
-Tablero::~Tablero() {
-  for (int i = 0;i<f;++i) {
-    delete [] t[i];
-  }
-  delete [] t;
-}
-
-
-static unsigned int cant_dist_unidos(const Tablero &tab1,const Tablero &tab2, bool horizontal, int de = 0);
-static unsigned int cantidad_sanas(Tablero &t);
-static unsigned int cantidad_dist(const Tablero &t) ;
-static unsigned int contar_dist(const Tablero &t);
-
-
-
-static bool es_completable(const Tablero &t) {
-  bool res = t.cant_sanas%2==0;
+inline static bool se_puede_arriba(int f, int c, const Tablero & t) {
+  bool res;
+  res = f-1>=0 && t.t[f][c].sana && t.t[f-1][c].sana;
   return res;
 }
 
-static unsigned int cantidad_dist(const Tablero &t) {
-  if(!es_completable(t)) {
-    return 0;
-  }
-  unsigned int res = 0;
-  bool horizontal = t.f<t.c;
-  if(t.f>2&&t.c>2) {
-    int cant_filas1, cant_filas2, cant_col1, cant_col2;
-    if(horizontal) {
-      cant_filas1 = t.f;
-      cant_col1 = t.c/2;
-      cant_filas2 = t.f;
-      cant_col2 = t.c-(t.c/2);
-    }
-    else {
-      cant_filas1 = t.f/2;
-      cant_col1 = t.c;
-      cant_filas2 = t.f-(t.f/2);
-      cant_col2 = t.c;
-    }
-    Tablero tab1(cant_filas1,cant_col1);
-    Tablero tab2(cant_filas2,cant_col2);
-    t.partir_tablero(tab1, tab2, horizontal);
-    tab1.cant_sanas = cantidad_sanas(tab1);
-    tab2.cant_sanas = t.cant_sanas - tab1.cant_sanas;
-    res = cantidad_dist(tab1) * cantidad_dist(tab2);
-    res += cant_dist_unidos(tab1,tab2,horizontal);
-  }
-  else {
-    res = contar_dist(t);
-  }
+inline static bool se_puede_izquierda(int f, int c, const Tablero & t) {
+  bool res;
+  res = c-1>=0 && t.t[f][c].sana && t.t[f][c-1].sana;
   return res;
 }
 
@@ -157,8 +68,155 @@ inline static bool se_puede_abajo(int f, int c, const Tablero & t) {
 inline static bool se_puede_alguno(int f, int c, const Tablero & t) {
   return se_puede_derecha(f,c,t)||se_puede_abajo(f,c,t);
 }
-static unsigned int contar_dist(const Tablero &t_input) {
-  unsigned int res = 0;
+inline int Casilla::aristas() const {
+  int res = 0;
+  res += se_puede_arriba(y,x,*static_cast<Tablero*>(tablero_asociado));
+  res += se_puede_derecha(y,x,*static_cast<Tablero*>(tablero_asociado));
+  res += se_puede_abajo(y,x,*static_cast<Tablero*>(tablero_asociado));
+  res += se_puede_izquierda(y,x,*static_cast<Tablero*>(tablero_asociado));
+  
+  res *= static_cast<Tablero*>(tablero_asociado)->t[y][x].sana;
+  return res;
+}
+inline bool Casilla::mas_aristas_que(const Casilla &otro) const {
+  return this->aristas() > otro.aristas();
+}
+
+struct mas_aristas : public binary_function<Casilla*, Casilla*, bool> {
+  inline bool operator()(Casilla *x, Casilla *y) { return x->mas_aristas_que(*y); }
+};
+void Tablero::partir_tablero(Tablero &t1, Tablero &t2, bool horizontal) const {
+  unsigned int fila, col;
+  for(int i  = 0;i<t1.f;++i) {
+    for(int j=0;j<t1.c;++j) {
+      t1.t[i][j] = t[i][j];
+      t1.t[i][j].x = j;
+      t1.t[i][j].y = i;
+      t[i][j].tablero_asociado = static_cast<void*>(&t1);
+    }
+  }
+  for(int i  = 0;i<t2.f;++i) {
+    for(int j=0;j<t2.c;++j) {
+      
+      if(horizontal) {
+	fila = i;
+	col = j+t1.c;
+      }
+      else {
+	fila = i + t1.f;
+	col = j;
+      }
+      t2.t[i][j] = t[fila][col];
+      t2.t[i][j].x = j;
+      t2.t[i][j].y = i;
+      t[i][j].tablero_asociado = static_cast<void*>(&t2);
+    }
+  }
+  
+}
+
+Tablero::Tablero(const Tablero &otro) : f(otro.f), c(otro.c), cant_sanas(otro.cant_sanas), negras(otro.negras), blancas(otro.blancas)  {
+  t = new Casilla* [f];
+  for(int i = 0; i<f;++i) {
+    t[i] = new Casilla [c];
+    for(int j =0 ;j<c;++j) {
+      t[i][j] = otro.t[i][j];
+      t[i][j].tablero_asociado = static_cast<void*>(this);
+    }
+  }
+}
+
+Tablero & Tablero::operator=(const Tablero &otro) {
+  for (int i = 0;i<f;++i) {
+    delete [] t[i];
+  }
+  delete [] t;
+  f = otro.f;
+  c = otro.c;
+  t = new Casilla* [f];
+  for(int i = 0; i<f;++i) {
+    t[i] = new Casilla [c];
+    for(int j =0 ;j<c;++j) {
+      t[i][j] = otro.t[i][j];
+      t[i][j].tablero_asociado = static_cast<void*>(this);
+    }
+  }
+  cant_sanas = otro.cant_sanas;
+  negras = otro.negras;
+  blancas = otro.blancas;
+  return *this;
+}
+Tablero::Tablero(int f, int c) : f(f), c(c), cant_sanas(f*c), negras(cant_sanas/2), blancas(cant_sanas-negras) {
+  t = new Casilla* [f];
+  for(int i = 0; i<f;++i) {
+    t[i] = new Casilla [c];
+    for(int j = 0;j<c;++j){
+      t[i][j].x= j;
+      t[i][j].y= i;
+      t[i][j].tablero_asociado = static_cast<void*>(this);
+    }
+  }
+}
+Tablero::~Tablero() {
+  for (int i = 0;i<f;++i) {
+    delete [] t[i];
+  }
+  delete [] t;
+}
+
+
+static unsigned int cant_dist_unidos(const Tablero &tab1,const Tablero &tab2, bool horizontal, int de = 0);
+static unsigned int cantidad_sanas_y_color(Tablero &t);
+static unsigned long long int cantidad_dist( Tablero &t, bool first = true) ;
+static unsigned long long int contar_dist(const Tablero &t);
+static bool filtrar(Tablero &t);
+
+
+static bool es_completable(const Tablero &t) {
+  bool res = t.cant_sanas%2==0&&t.negras==t.blancas;
+  return res;
+}
+
+static unsigned long long int cantidad_dist( Tablero &t, bool first_time) {
+  if(first_time) cantidad_sanas_y_color(t);
+  if(!filtrar(t)) {
+    return 0;
+  }
+  if(t.cant_sanas == 0) {
+    return 1;
+  }
+  unsigned long long int res = 0;
+  bool horizontal = t.f<t.c;
+  if(t.f>2&&t.c>2) {
+    int cant_filas1, cant_filas2, cant_col1, cant_col2;
+    if(horizontal) {
+      cant_filas1 = t.f;
+      cant_col1 = t.c/2;
+      cant_filas2 = t.f;
+      cant_col2 = t.c-(t.c/2);
+    }
+    else {
+      cant_filas1 = t.f/2;
+      cant_col1 = t.c;
+      cant_filas2 = t.f-(t.f/2);
+      cant_col2 = t.c;
+    }
+    Tablero tab1(cant_filas1,cant_col1);
+    Tablero tab2(cant_filas2,cant_col2);
+    t.partir_tablero(tab1, tab2, horizontal);
+    res = cantidad_dist(tab1) * cantidad_dist(tab2);
+    res += cant_dist_unidos(tab1,tab2,horizontal);
+  }
+  else {
+    res = contar_dist(t);
+  }
+  return res;
+}
+
+
+
+static unsigned long long int contar_dist(const Tablero &t_input) {
+  unsigned long long int res = 0;
   stack<Tablero> tableros;
   tableros.push(t_input);
   stack<int> s_fila, s_col;
@@ -250,14 +308,21 @@ static unsigned int contar_dist(const Tablero &t_input) {
   } while(!tableros.empty());
   return res;
 }
-
-static unsigned int cantidad_sanas(Tablero &t) {
+#include <cstdlib>
+static unsigned int cantidad_sanas_y_color(Tablero &t) {
   unsigned int res = 0;
+  unsigned int negras = 0;
+  unsigned int blancas = 0;
   for(int i =0; i<t.f;++i) {
     for(int j=0;j<t.c;++j) {
+      negras += abs(i-j)%2==1&&t.t[i][j].sana;
+      blancas += abs(i-j)%2==0&&t.t[i][j].sana;
       res += t.t[i][j].sana;
     }
   }
+  t.negras = negras;
+  t.blancas = blancas;
+  t.cant_sanas = res;
   return res;
 }
 static unsigned int cant_dist_unidos(const Tablero &tab1, const Tablero &tab2, bool horizontal, int de ) {
@@ -317,7 +382,7 @@ vector<Tablero> leer(ifstream &archivo){
 	}
 	getline(archivo,tam_s,'\n');
       }
-      conf.cant_sanas = cantidad_sanas(conf);
+      cantidad_sanas_y_color(conf);
       res.push_back(conf);
       if(agregar) salida << endl;
       agregar = true;
@@ -336,8 +401,56 @@ vector<Tablero> leer(ifstream &archivo){
   }
   return res;
 }
+#include <algorithm>
+static bool filtrar(Tablero &t) {
+  bool res;
+  vector<Casilla*> sanas;
+  t.cant_sanas = 0;
+  for(int f=0;f<t.f;++f){
+    for(int c = 0;c<t.c;++c) {
+      if(t.t[f][c].sana) {
+	sanas.push_back(&t.t[f][c]);
+	++t.cant_sanas;
+      }
+    }
+  }
+  res = es_completable(t);
+  if(res) {
+    for(int i =  0;i<sanas.size();++i) {
+      make_heap(sanas.begin()+i,sanas.end(),mas_aristas());
+      Casilla &temp = *sanas[i];
+      res = !(temp.sana && temp.aristas() == 0);
+      if(temp.aristas()==1) {
+	
+	if(se_puede_arriba(temp.y,temp.x,*static_cast<Tablero*>(temp.tablero_asociado))) {
+	  static_cast<Tablero*>(temp.tablero_asociado)->t[temp.y][temp.x].sana = false;
+	  static_cast<Tablero*>(temp.tablero_asociado)->t[temp.y-1][temp.x].sana = false;
+	}
+	if(se_puede_derecha(temp.y,temp.x,*static_cast<Tablero*>(temp.tablero_asociado))) {
+	  static_cast<Tablero*>(temp.tablero_asociado)->t[temp.y][temp.x].sana = false;
+	  static_cast<Tablero*>(temp.tablero_asociado)->t[temp.y][temp.x+1].sana = false;
+	}
+	if(se_puede_abajo(temp.y,temp.x,*static_cast<Tablero*>(temp.tablero_asociado))) {
+	  static_cast<Tablero*>(temp.tablero_asociado)->t[temp.y][temp.x].sana = false;
+	  static_cast<Tablero*>(temp.tablero_asociado)->t[temp.y+1][temp.x].sana = false;
+	}
+	if(se_puede_izquierda(temp.y,temp.x,*static_cast<Tablero*>(temp.tablero_asociado))) {
+	  static_cast<Tablero*>(temp.tablero_asociado)->t[temp.y][temp.x].sana = false;
+	  static_cast<Tablero*>(temp.tablero_asociado)->t[temp.y][temp.x-1].sana = false;
+	}
+      }
+      if(temp.aristas()>1||!res) {
+	i = sanas.size();
+      }
+    }
+  }
+  return res;
+}
 
-#include <cstdlib>
+
+
+
+
 int main(int argc, char * argv[]) {
   ifstream entrada("Tp1Ej3.in");
   leer(entrada);
