@@ -139,7 +139,7 @@ void funcion( int f,  int c, tupla *config, int n, bool mostraOut ){
 		//Llegue al ultimo cuadradito
 		if (config[n*n-1].apuntado == true) {
 			totales++;
-			mostraConfig(config,n);
+			//mostraConfig(config,n);
 			delete [] config;
 		}
 		else{

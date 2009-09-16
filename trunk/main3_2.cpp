@@ -239,12 +239,33 @@ static unsigned long long int cantidad_dist( Tablero &t, bool first_time, bool b
   return res;
 }
 
-
+static unsigned long long int cantidad_dist_contadas( Tablero& t) {
+  unsigned long long int res = 0;
+  vector<Casilla*> sanas;
+  vector<Tablero*> disjuntos;
+  if(filtrar(t,sanas)) {
+    dividir_disjuntos(t, sanas,  disjuntos) ;
+    res = 1;
+    if(disjuntos.size()==0) {
+      res = contar_dist(t);
+    }
+    else {
+      for(int i = 0; i<disjuntos.size();++i) {
+        res *= contar_dist(*disjuntos[i]);
+      }
+    }
+  }
+  else {
+    res = 0;
+  }
+  return res;
+}
 
 static unsigned long long int contar_dist(const Tablero &t_input) {
   unsigned long long int res = 0;
   stack<Tablero> tableros;
   tableros.push(t_input);
+
   stack<int> s_fila, s_col;
   s_fila.push(0);
   s_col.push(0);
@@ -256,80 +277,87 @@ static unsigned long long int contar_dist(const Tablero &t_input) {
       sacar = false;
     }
     */
-    Tablero &actual = tableros.top();
-    int f, c;
-    f = s_fila.top();
-    s_fila.pop();
-    c = s_col.top();
-    s_col.pop();
-    if(actual.f==f+1&& actual.c == c+1) 
-    {
-      if(!actual.t[f][c].sana) {
-	++res;
-      }
-      //sacar =true;
-      tableros.pop();
-    }
-    else {
-      if(se_puede_alguno(f,c,actual)) {
-	bool derecha = se_puede_derecha(f,c,actual);
-	bool abajo = se_puede_abajo(f,c,actual);
-	if(derecha) {
-	  derecha = true;
-	  //Tablero nuevo_der(actual);
-	  //nuevo_der.t[f][c].sana = false;
-	  //nuevo_der.t[f][c+1].sana = false;
-	  //tableros.push(nuevo_der);
-	  actual.t[f][c].sana = false;
-	  actual.t[f][c+1].sana = false;
-	  s_fila.push(f);
-	  s_col.push(c+1);
-	}
-	if(abajo) {
-	  if(derecha) {
-	    Tablero nuevo_abajo(actual);
-	    nuevo_abajo.t[f][c+1].sana = true;
-	    nuevo_abajo.t[f][c].sana = false;
-	    nuevo_abajo.t[f+1][c].sana = false;
-	    tableros.push(nuevo_abajo);
-	    if(c+1<actual.c) {
-	      s_col.push(c+1);
-	      s_fila.push(f);
-	    }
-	    else {
-	      s_col.push(0);
-	      s_fila.push(f+1);
-	    }
-	  }
-	  else {
-	    actual.t[f][c].sana = false;
-	    actual.t[f+1][c].sana = false;
-	    if(c+1<actual.c) {
-	      s_col.push(c+1);
-	      s_fila.push(f);
-	    }
-	    else {
-	      s_col.push(0);
-	      s_fila.push(f+1);
-	    }
-	  }
-	}
+    vector<Casilla*> sanas;
+    if(filtrar(tableros.top(),sanas)) {
+      Tablero &actual = tableros.top();
+      int f, c;
+      f = s_fila.top();
+      s_fila.pop();
+      c = s_col.top();
+      s_col.pop();
+          
+      if(actual.f==f+1&& actual.c == c+1) 
+      {
+        if(!actual.t[f][c].sana) {
+          ++res;
+        }
+        //sacar =true;
+        tableros.pop();
       }
       else {
-	if(actual.t[f][c].sana) {
-	  tableros.pop();
-	}
-	else {
-	  if(c+1<actual.c) {
-	    s_col.push(c+1);
-	    s_fila.push(f);
-	  }
-	  else {
-	    s_col.push(0);
-	    s_fila.push(f+1);
-	  }
-	}
+        if(se_puede_alguno(f,c,actual)) {
+          bool derecha = se_puede_derecha(f,c,actual);
+          bool abajo = se_puede_abajo(f,c,actual);
+          if(derecha) {
+            derecha = true;
+            //Tablero nuevo_der(actual);
+            //nuevo_der.t[f][c].sana = false;
+            //nuevo_der.t[f][c+1].sana = false;
+            //tableros.push(nuevo_der);
+            actual.t[f][c].sana = false;
+            actual.t[f][c+1].sana = false;
+            s_fila.push(f);
+            s_col.push(c+1);
+          }
+          if(abajo) {
+            if(derecha) {
+              Tablero nuevo_abajo(actual);
+              nuevo_abajo.t[f][c+1].sana = true;
+              nuevo_abajo.t[f][c].sana = false;
+              nuevo_abajo.t[f+1][c].sana = false;
+              tableros.push(nuevo_abajo);
+              if(c+1<actual.c) {
+                s_col.push(c+1);
+                s_fila.push(f);
+              }
+              else {
+                s_col.push(0);
+                s_fila.push(f+1);
+              }
+            }
+            else {
+              actual.t[f][c].sana = false;
+              actual.t[f+1][c].sana = false;
+              if(c+1<actual.c) {
+                s_col.push(c+1);
+                s_fila.push(f);
+              }
+              else {
+                s_col.push(0);
+                s_fila.push(f+1);
+              }
+            }
+          }
+        }
+        else {
+          if(actual.t[f][c].sana) {
+            tableros.pop();
+          }
+          else {
+            if(c+1<actual.c) {
+              s_col.push(c+1);
+              s_fila.push(f);
+            }
+            else {
+              s_col.push(0);
+              s_fila.push(f+1);
+            }
+          }
+        }
       }
+    }
+    else {
+    tableros.pop();
     }
   } while(!tableros.empty());
   return res;
@@ -377,8 +405,8 @@ static unsigned int cant_dist_unidos(const Tablero &tab1, const Tablero &tab2, b
       copia_tab2.t[fila2][col2].sana = false;
       --copia_tab1.cant_sanas ;
       --copia_tab2.cant_sanas ;
-      res += cantidad_dist(copia_tab1) * cantidad_dist(copia_tab2);
       res += cant_dist_unidos(copia_tab1,copia_tab2,horizontal,i+1);
+      res += cantidad_dist(copia_tab1) * cantidad_dist(copia_tab2);
     }
   }
   
@@ -522,8 +550,10 @@ static void dividir_disjuntos(Tablero & t, vector<Casilla*> &sanas, vector<Table
       disj.push_back(nuevo);
     }
   }
-  
-  
+  for(int f = 0; f<t.f;++f) {
+    delete [] visitados[f];
+  }
+  delete [] visitados;
 }
 
 
