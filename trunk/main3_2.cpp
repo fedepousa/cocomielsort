@@ -4,6 +4,8 @@
 #include <cmath>
 #include <stack>
 #include <functional>
+#include <list>
+
 
 using namespace std;
 
@@ -26,7 +28,7 @@ struct Casilla {
 Casilla::Casilla() : x(-1), y(-1), sana(true),apunta_abajo(false),apunta_derecha(false),tablero_asociado(NULL){}
 
 struct Tablero {
-  Tablero(int f, int c);
+  Tablero(int f, int c,bool sanas = true);
   Tablero(const Tablero& otro);
   Tablero & operator=(const Tablero &otro);
   ~Tablero();
@@ -92,7 +94,7 @@ void Tablero::partir_tablero(Tablero &t1, Tablero &t2, bool horizontal) const {
       t1.t[i][j] = t[i][j];
       t1.t[i][j].x = j;
       t1.t[i][j].y = i;
-      t[i][j].tablero_asociado = static_cast<void*>(&t1);
+      t1.t[i][j].tablero_asociado = static_cast<void*>(&t1);
     }
   }
   for(int i  = 0;i<t2.f;++i) {
@@ -109,7 +111,7 @@ void Tablero::partir_tablero(Tablero &t1, Tablero &t2, bool horizontal) const {
       t2.t[i][j] = t[fila][col];
       t2.t[i][j].x = j;
       t2.t[i][j].y = i;
-      t[i][j].tablero_asociado = static_cast<void*>(&t2);
+      t2.t[i][j].tablero_asociado = static_cast<void*>(&t2);
     }
   }
   
@@ -146,7 +148,12 @@ Tablero & Tablero::operator=(const Tablero &otro) {
   blancas = otro.blancas;
   return *this;
 }
-Tablero::Tablero(int f, int c) : f(f), c(c), cant_sanas(f*c), negras(cant_sanas/2), blancas(cant_sanas-negras) {
+Tablero::Tablero(int f, int c,bool sanas) : f(f), c(c), cant_sanas(f*c), negras(cant_sanas/2), blancas(cant_sanas-negras) {
+  if(!sanas) {
+    cant_sanas = 0;
+    negras = 0;
+    blancas = 0;
+  }
   t = new Casilla* [f];
   for(int i = 0; i<f;++i) {
     t[i] = new Casilla [c];
@@ -154,6 +161,7 @@ Tablero::Tablero(int f, int c) : f(f), c(c), cant_sanas(f*c), negras(cant_sanas/
       t[i][j].x= j;
       t[i][j].y= i;
       t[i][j].tablero_asociado = static_cast<void*>(this);
+      t[i][j].sana = sanas;
     }
   }
 }
@@ -167,9 +175,12 @@ Tablero::~Tablero() {
 
 static unsigned int cant_dist_unidos(const Tablero &tab1,const Tablero &tab2, bool horizontal, int de = 0);
 static unsigned int cantidad_sanas_y_color(Tablero &t);
-static unsigned long long int cantidad_dist( Tablero &t, bool first = true) ;
+static unsigned long long int cantidad_dist( Tablero &t, bool first = true, bool b_filtrar =true) ;
 static unsigned long long int contar_dist(const Tablero &t);
-static bool filtrar(Tablero &t);
+static bool filtrar(Tablero &t, vector<Casilla*>&);
+static void dividir_disjuntos(Tablero & t, vector<Casilla*> &sanas, vector<Tablero*> & res);
+static void agregar_alcanzables(list<Casilla*> &alcanzables, unsigned int &alcanzados, bool **visitados, Casilla *sana,unsigned int & min_f,unsigned int &max_f,unsigned int &min_c,unsigned int &max_c);
+static void llenar_tablero(list<Casilla*> & alcanzables, Tablero &nuevo, unsigned int min_f, unsigned int min_c);
 
 
 static bool es_completable(const Tablero &t) {
@@ -177,15 +188,30 @@ static bool es_completable(const Tablero &t) {
   return res;
 }
 
-static unsigned long long int cantidad_dist( Tablero &t, bool first_time) {
-  if(first_time) cantidad_sanas_y_color(t);
-  if(!filtrar(t)) {
-    return 0;
+static unsigned long long int cantidad_dist( Tablero &t, bool first_time, bool b_filtrar) {
+  
+  unsigned long long int res = 0;
+  cantidad_sanas_y_color(t);
+  vector<Casilla*> sanas;
+  vector<Tablero*> disjuntos;
+  if(b_filtrar) {
+    if(!filtrar(t,sanas)) {
+      return 0;
+    }
+    dividir_disjuntos(t, sanas,  disjuntos);
   }
+  if(disjuntos.size()>1) {
+    res = 1;
+    for(int i = 0;i<disjuntos.size();++i){
+      res *= cantidad_dist(*disjuntos[i],false);
+      delete disjuntos[i];
+    }
+    return res;
+  }
+  
   if(t.cant_sanas == 0) {
     return 1;
   }
-  unsigned long long int res = 0;
   bool horizontal = t.f<t.c;
   if(t.f>2&&t.c>2) {
     int cant_filas1, cant_filas2, cant_col1, cant_col2;
@@ -204,8 +230,8 @@ static unsigned long long int cantidad_dist( Tablero &t, bool first_time) {
     Tablero tab1(cant_filas1,cant_col1);
     Tablero tab2(cant_filas2,cant_col2);
     t.partir_tablero(tab1, tab2, horizontal);
-    res = cantidad_dist(tab1) * cantidad_dist(tab2);
     res += cant_dist_unidos(tab1,tab2,horizontal);
+    res += cantidad_dist(tab1) * cantidad_dist(tab2);
   }
   else {
     res = contar_dist(t);
@@ -402,9 +428,9 @@ vector<Tablero> leer(ifstream &archivo){
   return res;
 }
 #include <algorithm>
-static bool filtrar(Tablero &t) {
+static bool filtrar(Tablero &t, vector<Casilla*> &sanas) {
   bool res;
-  vector<Casilla*> sanas;
+  sanas.clear();
   t.cant_sanas = 0;
   for(int f=0;f<t.f;++f){
     for(int c = 0;c<t.c;++c) {
@@ -421,7 +447,10 @@ static bool filtrar(Tablero &t) {
       Casilla &temp = *sanas[i];
       res = !(temp.sana && temp.aristas() == 0);
       if(temp.aristas()==1) {
-	
+	--t.cant_sanas;
+	--t.cant_sanas;
+	--t.negras;
+	--t.blancas;
 	if(se_puede_arriba(temp.y,temp.x,*static_cast<Tablero*>(temp.tablero_asociado))) {
 	  static_cast<Tablero*>(temp.tablero_asociado)->t[temp.y][temp.x].sana = false;
 	  static_cast<Tablero*>(temp.tablero_asociado)->t[temp.y-1][temp.x].sana = false;
@@ -447,8 +476,116 @@ static bool filtrar(Tablero &t) {
   return res;
 }
 
+void mostrar(bool ** t, int lim_f, int lim_c) {
+  for(int z=0;z<lim_f;++z){
+    for(int w =0;w<lim_c;++w) {
+      cout << t[z][w] << " ";
+    }
+    cout << endl;
+  }
+}
+
+static void dividir_disjuntos(Tablero & t, vector<Casilla*> &sanas, vector<Tablero*> & disj) {
+  disj.clear();
+  bool **visitados;
+  unsigned int alcanzados = 0;
+  visitados = new bool*[t.f];
+  for(int f = 0; f<t.f;++f) {
+    visitados[f] = new bool[t.c];
+    for(int c = 0;c<t.c;++c){
+      visitados[f][c] = false;
+    }
+  }
+  
+  int i = 0;
+  int f, c;
+  while(alcanzados < t.cant_sanas) {
+    list<Casilla*> alcanzables;
+    unsigned int min_f;
+    unsigned int max_f;
+    unsigned int min_c;
+    unsigned int max_c;
+    f = sanas[i]->y;
+    c = sanas[i]->x;
+    while((!sanas[i]->sana) || (visitados[f][c])) {
+      ++i;
+      f = sanas[i]->y;
+      c = sanas[i]->x;
+    }
+    //cout << "!sana: " << (!sanas[i]->sana) << endl;
+    //cout << "visitados: " << (visitados[sanas[i]->y][sanas[i]->y]) << endl;
+    //cout << ((!sanas[i]->sana)|| visitados[sanas[i]->y][sanas[i]->y]) << endl;
+    agregar_alcanzables(alcanzables,alcanzados, visitados, sanas[i], min_f,max_f,min_c,max_c);
+    if(disj.size()>0||alcanzados<t.cant_sanas) {
+      Tablero * nuevo = new Tablero(max_f-min_f+1,max_c-min_c+1,false);
+      llenar_tablero(alcanzables,*nuevo,min_f,min_c);
+      disj.push_back(nuevo);
+    }
+  }
+  
+  
+}
 
 
+static void llenar_tablero(list<Casilla*> & alcanzables, Tablero &nuevo, unsigned int min_f, unsigned int min_c) {
+  Casilla * temp;
+    bool es_blanca;
+    int f, c;
+    while(!alcanzables.empty()) {
+      temp =  alcanzables.back();
+      alcanzables.pop_back();
+      f = temp->y-min_f;
+      c = temp->x-min_c;
+      nuevo.t[f][c].sana = true;
+      ++nuevo.cant_sanas;
+      es_blanca = abs(f-c) %2 == 0;
+      nuevo.blancas += es_blanca;
+      nuevo.negras += !es_blanca;
+    }
+}
+
+static void agregar_alcanzables(list<Casilla*> &alcanzables, unsigned int &alcanzados, bool **visitados, Casilla *sana,unsigned int & min_f,unsigned int &max_f,unsigned int &min_c,unsigned int &max_c) {
+  min_f = sana->y;
+  max_f = sana->y;
+  min_c  = sana->x;
+  max_c = sana->x;
+  list<Casilla*> a_explorar;
+  a_explorar.push_back(sana);
+  alcanzables.push_back(sana);
+  unsigned int f, c;
+  visitados[sana->y][sana->x] = true;
+  while(!a_explorar.empty()) {
+    ++alcanzados;
+    Casilla * temp = a_explorar.back();
+    a_explorar.pop_back();
+    f = temp->y;
+    c = temp->x;
+    if(f<min_f) min_f = f;
+    if(f>max_f) max_f = f;
+    if(c<min_c) min_c = c;
+    if(c>max_c) max_c = c;
+    if(se_puede_arriba(f,c,*static_cast<Tablero*>(temp->tablero_asociado))&&!visitados[f-1][c]) {
+      a_explorar.push_back(&static_cast<Tablero*>(temp->tablero_asociado)->t[f-1][c]);
+      visitados[f-1][c] = true;
+      alcanzables.push_back(&static_cast<Tablero*>(temp->tablero_asociado)->t[f-1][c]);
+    }
+    if(se_puede_derecha(f,c,*static_cast<Tablero*>(temp->tablero_asociado))&&!visitados[f][c+1]) {
+      a_explorar.push_back(&static_cast<Tablero*>(temp->tablero_asociado)->t[f][c+1]);
+      visitados[f][c+1] = true;
+      alcanzables.push_back(&static_cast<Tablero*>(temp->tablero_asociado)->t[f][c+1]);
+    }
+    if(se_puede_abajo(f,c,*static_cast<Tablero*>(temp->tablero_asociado))&&!visitados[f+1][c]) {
+      a_explorar.push_back(&static_cast<Tablero*>(temp->tablero_asociado)->t[f+1][c]);
+      visitados[f+1][c] = true;
+      alcanzables.push_back(&static_cast<Tablero*>(temp->tablero_asociado)->t[f+1][c]);
+    }
+    if(se_puede_izquierda(f,c,*static_cast<Tablero*>(temp->tablero_asociado))&&!visitados[f][c-1]) {
+      a_explorar.push_back(&static_cast<Tablero*>(temp->tablero_asociado)->t[f][c-1]);
+      visitados[f][c-1] = true;
+      alcanzables.push_back(&static_cast<Tablero*>(temp->tablero_asociado)->t[f][c-1]);
+    }
+  }
+}
 
 
 int main(int argc, char * argv[]) {
