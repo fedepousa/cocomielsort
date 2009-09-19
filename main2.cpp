@@ -74,7 +74,7 @@ void fact_primos(vector< unsigned long long int > &primos,vector< unsigned  int 
 	exp.push_back(temp);
       }
     }
-    if(n){
+    if(n && n!=1){
 	exp.push_back(1);
 	primos.push_back(n);	
     }
