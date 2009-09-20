@@ -1,0 +1,30 @@
+contar_distribuciones(Tablero t, [implicito Casilla casilla_actual(fila =0, col= 0)] ) {
+  filtrar(t)
+  si no es trivialmente insatisfacible {
+    si casilla_actual es la ultima casilla {
+      si esta cubierta o esta rota {
+	contador <- 1;
+	devolver contador;
+      }
+    }
+    si se puede conectar casilla_actual hacia la derecha o hacia abajo {
+      si se puede conectar casilla_actual a la derecha {
+	Tablero copia <- t
+	conectar_hacia_la_derecha(copia,casilla_actual)
+	contador <- contador + contar_distribuciones(copia,aumentar(casilla_actual))
+      }
+      si se puede conectar casilla_actual hacia abajo {
+	conectar_hacia_abajo(t,casilla_actual)
+	contador <- contador + contar_distribuciones(t,aumentar(casilla_actual))
+      }
+    }
+    // si no se puede conectar porque ya esta conectada o rota 
+    // si no se pudiera conectar y estuviera sana, filtrar devolveria que el tablero
+    // es trivialmente insatisfacible.
+    si no se puede conectar casilla_actual { 
+      contador <- contador + contar_distribuciones(t,aumentar(casilla_actual))
+      devolver contador
+    }
+  }
+  si es trivialmente insatisfacible devolver 0;
+}

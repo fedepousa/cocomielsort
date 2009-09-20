@@ -1,0 +1,15 @@
+cantidad_distribuciones_sin_filtrar(tablero t) {
+  Si (cantidad de casillas sanas == 0) { // O(1), se guarda en la estructura
+    devolver 1;
+  }
+  Si la cantidad de filas o de columnas es mayor que 2 { //Caso 1)
+    partir_tablero(t1,t2);
+    res <- cantidad_distribuciones_unidos(t1,t2);
+    res <- res + cantidad_distribuciones_filtrando(t1) * cantidad_distribuciones_filtrando(t2);
+    devolver res;
+  }
+  Si la cantidad de filas y columnas es menor o igual a 2 { // Caso 2)
+    res <- contar_distribuciones(t);
+    devolver res;
+  }
+}

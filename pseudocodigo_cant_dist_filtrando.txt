@@ -1,0 +1,33 @@
+Cantidad_distribuciones_filtrando(tablero t) {
+  vector<Casilla*> casillas_sanas;
+  filtrar(t, casillas_sanas);  // Asigna a sanas las casillas sanas del tablero
+  // filtrar nos dice si el tablero es trivialmente insatisfacible
+  Si el tablero no es trivialmente insatisfacible { 
+    vector<Tablero*> disjuntos <- dividir_disjuntos(tablero,casillas_sanas);
+    Si hay varios disjuntos { // Caso f1)
+      res <- 1
+      Para i = 0 a #disjuntos {
+	res <- res * cantidad_distribuciones_sin_filtrar(*disjuntos[i]);
+      }
+      devolver res;
+    }
+    Si hay un unico disjunto { 
+      Si la cantidad de filas o de columnas es mayor que 2 { // Caso f2)
+	Tablero t1, t2
+	partir_tablero(t,t1,t2); 
+	// partir_tablero parte el tablero a la mitad asignandole la mitad
+	// izquierda/superior a t1 y la derecha/inferior a t2.
+	// Siempre se parte en la mayor dimension, es decir, si es horizontal,
+	// se parte en izquierda y derecha, si es vertical, en arriba y abajo.
+	res <- cantidad_distribuciones_unidos(t1,t2);
+	res <- res + cantidad_distribuciones_filtrando(t1) * cantidad_distribuciones_filtrando(t2);
+	devolver res;
+      }
+      si la cantidad de filas y de columnas es menor o igual a 2 { // Caso f3)
+	res <- contar_distribuciones(t)
+	devolver res;
+      }
+    }
+  }
+  Si el tablero es trivialmente insatisfacible, devolver 0;
+}
