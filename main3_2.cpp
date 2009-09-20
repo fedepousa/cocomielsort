@@ -177,7 +177,7 @@ Tablero::~Tablero() {
 }
 
 
-static unsigned int cant_dist_unidos(const Tablero &tab1,const Tablero &tab2, bool horizontal, int de = 0);
+static unsigned long long int cant_dist_unidos(const Tablero &tab1,const Tablero &tab2, bool horizontal, int de = 0);
 static unsigned int cantidad_sanas_y_color(Tablero &t);
 static unsigned long long int cantidad_dist( Tablero &t, bool first = true, bool b_filtrar =true) ;
 static unsigned long long int contar_dist(const Tablero &t);
@@ -383,8 +383,8 @@ static unsigned int cantidad_sanas_y_color(Tablero &t) {
   t.cant_sanas = res;
   return res;
 }
-static unsigned int cant_dist_unidos(const Tablero &tab1, const Tablero &tab2, bool horizontal, int de ) {
-  unsigned int res = 0;
+static unsigned long long int cant_dist_unidos(const Tablero &tab1, const Tablero &tab2, bool horizontal, int de ) {
+  unsigned long long int res = 0;
   int lim;
   if(horizontal) lim = tab1.f;
   else lim = tab1.c;
@@ -445,7 +445,7 @@ vector<Tablero> leer(ifstream &archivo){
       if(agregar) salida << endl;
       agregar = true;
       cout<<"----------------------Experimento numero: "<<conta<<"----------------------"<<endl;
-      int totales = cantidad_dist(conf);
+      unsigned long long int totales = cantidad_dist(conf);
       cout<<"----------------------Cantidad totales: "<<totales<<"----------------------"<<endl;
       cout<<endl<<endl;
       cout<<"------------------------------------------------------------------"<<endl;
@@ -459,7 +459,66 @@ vector<Tablero> leer(ifstream &archivo){
   }
   return res;
 }
-#include <algorithm>
+#include <algorithm>	
+#include <set>
+             
+             
+struct DirCambiadas {
+  DirCambiadas (): derecha(false),arriba(false),abajo(false),izquierda(false) {};
+  bool derecha;
+  bool arriba;
+  bool abajo;
+  bool izquierda;
+};
+
+
+static DirCambiadas sacar_vecinos_sanos(Casilla * vecino, set<aristas_pcasilla> &sanas) {
+  DirCambiadas res;
+  Casilla * vecino_de_vecino = NULL;
+  if(se_puede_arriba(vecino->y,vecino->x,*static_cast<Tablero*>(vecino->tablero_asociado))) {
+    res.arriba = true;
+    vecino_de_vecino = &static_cast<Tablero*>(vecino->tablero_asociado)->t[vecino->y-1][vecino->x];
+    sanas.erase(make_pair(vecino_de_vecino->aristas(),vecino_de_vecino));
+  }
+  if(se_puede_derecha(vecino->y,vecino->x,*static_cast<Tablero*>(vecino->tablero_asociado))) {
+    res.derecha = true;
+    vecino_de_vecino = &static_cast<Tablero*>(vecino->tablero_asociado)->t[vecino->y][vecino->x+1];
+    sanas.erase(make_pair(vecino_de_vecino->aristas(),vecino_de_vecino));
+  }
+  if(se_puede_abajo(vecino->y,vecino->x,*static_cast<Tablero*>(vecino->tablero_asociado))) {
+    res.abajo = true;
+    vecino_de_vecino = &static_cast<Tablero*>(vecino->tablero_asociado)->t[vecino->y+1][vecino->x];
+    sanas.erase(make_pair(vecino_de_vecino->aristas(),vecino_de_vecino));
+  }
+  if(se_puede_izquierda(vecino->y,vecino->x,*static_cast<Tablero*>(vecino->tablero_asociado))) {
+    res.izquierda = true;
+    vecino_de_vecino = &static_cast<Tablero*>(vecino->tablero_asociado)->t[vecino->y][vecino->x-1];
+    sanas.erase(make_pair(vecino_de_vecino->aristas(),vecino_de_vecino));
+  }
+  return res;
+}
+
+static void actualizar_sanas(Casilla * vecino, set<aristas_pcasilla> &sanas, const DirCambiadas &cambiada) {
+  Casilla *vecino_de_vecino = NULL;
+  if(cambiada.arriba) {
+    vecino_de_vecino = &static_cast<Tablero*>(vecino->tablero_asociado)->t[vecino->y-1][vecino->x];
+    sanas.insert(make_pair(vecino_de_vecino->aristas(),vecino_de_vecino));
+  }
+  if(cambiada.derecha) {
+    vecino_de_vecino = &static_cast<Tablero*>(vecino->tablero_asociado)->t[vecino->y][vecino->x+1];
+    sanas.insert(make_pair(vecino_de_vecino->aristas(),vecino_de_vecino));
+  }
+  if(cambiada.abajo) {
+    vecino_de_vecino = &static_cast<Tablero*>(vecino->tablero_asociado)->t[vecino->y+1][vecino->x];
+    sanas.insert(make_pair(vecino_de_vecino->aristas(),vecino_de_vecino));
+  }
+  if(cambiada.izquierda) {
+    vecino_de_vecino = &static_cast<Tablero*>(vecino->tablero_asociado)->t[vecino->y][vecino->x-1];
+    sanas.insert(make_pair(vecino_de_vecino->aristas(),vecino_de_vecino));
+  }
+}
+
+
 static bool filtrar(Tablero &t, vector<Casilla*> &sanas_out) {
   bool res;
   sanas_out.clear();
@@ -470,58 +529,73 @@ static bool filtrar(Tablero &t, vector<Casilla*> &sanas_out) {
   for(int f=0;f<t.f;++f){
     for(int c = 0;c<t.c;++c) {
       if(t.t[f][c].sana) {
-	sanas.push_back(make_pair(t.aristas(),&t.t[f][c]));
+	sanas.insert(make_pair(t.t[f][c].aristas(),&t.t[f][c]));
 	++t.cant_sanas;
-	t.negras += abs(i-j)%2==1&&t.t[i][j].sana;
-	t.blancas += abs(i-j)%2==0&&t.t[i][j].sana;
+	t.negras += abs(f-c)%2==1&&t.t[f][c].sana;
+	t.blancas += abs(f-c)%2==0&&t.t[f][c].sana;
       }
     }
   }
   res = es_completable(t);
+  DirCambiadas vecinos_cambiados;
   if(res) {
     bool go_on = true;
     Casilla * vecino;
     while(go_on&&!sanas.empty()) {
-      Casilla &temp = &(*sanas.begin());
-      sanas.erase(make_pair(temp.aristas,&temp));
+      Casilla &temp = *(*sanas.begin()).second;
       res = !(temp.sana && temp.aristas() == 0);
       if(temp.aristas()==1) {
+      	sanas.erase(make_pair(temp.aristas(),&temp));
+        
 	--t.cant_sanas;
 	--t.cant_sanas;
 	--t.negras;
 	--t.blancas;
 	if(se_puede_arriba(temp.y,temp.x,*static_cast<Tablero*>(temp.tablero_asociado))) {
 	  vecino = &static_cast<Tablero*>(temp.tablero_asociado)->t[temp.y-1][temp.x];
-	  sanas.erase(make_pair(vecino->aristas(),vecino));
-	  static_cast<Tablero*>(temp.tablero_asociado)->t[temp.y][temp.x].sana = false;
-	  static_cast<Tablero*>(temp.tablero_asociado)->t[temp.y-1][temp.x].sana = false;
-	  sanas.insert(make_pair(vecino->aristas(),vecino));
+          sanas.erase(make_pair(vecino->aristas(),vecino));
+          static_cast<Tablero*>(temp.tablero_asociado)->t[temp.y][temp.x].sana = false;
+          
+          
+          
+          vecinos_cambiados = sacar_vecinos_sanos(vecino, sanas );
+          static_cast<Tablero*>(temp.tablero_asociado)->t[temp.y-1][temp.x].sana = false;
+          actualizar_sanas(vecino,sanas,vecinos_cambiados);
 	}
 	if(se_puede_derecha(temp.y,temp.x,*static_cast<Tablero*>(temp.tablero_asociado))) {
 	  vecino = &static_cast<Tablero*>(temp.tablero_asociado)->t[temp.y][temp.x+1];
 	  sanas.erase(make_pair(vecino->aristas(),vecino));
 	  static_cast<Tablero*>(temp.tablero_asociado)->t[temp.y][temp.x].sana = false;
-	  static_cast<Tablero*>(temp.tablero_asociado)->t[temp.y][temp.x+1].sana = false;
-	  sanas.insert(make_pair(vecino->aristas(),vecino));
+          
+          
+          vecinos_cambiados = sacar_vecinos_sanos(vecino, sanas );
+          static_cast<Tablero*>(temp.tablero_asociado)->t[temp.y][temp.x+1].sana = false;
+          actualizar_sanas(vecino,sanas,vecinos_cambiados);
 	}
 	if(se_puede_abajo(temp.y,temp.x,*static_cast<Tablero*>(temp.tablero_asociado))) {
 	  vecino = &static_cast<Tablero*>(temp.tablero_asociado)->t[temp.y+1][temp.x];
 	  sanas.erase(make_pair(vecino->aristas(),vecino));
 	  static_cast<Tablero*>(temp.tablero_asociado)->t[temp.y][temp.x].sana = false;
-	  static_cast<Tablero*>(temp.tablero_asociado)->t[temp.y+1][temp.x].sana = false;
-	  sanas.insert(make_pair(vecino->aristas(),vecino));
+          
+          
+          vecinos_cambiados = sacar_vecinos_sanos(vecino, sanas );
+          static_cast<Tablero*>(temp.tablero_asociado)->t[temp.y+1][temp.x].sana = false;
+          actualizar_sanas(vecino,sanas,vecinos_cambiados);
 	}
 	if(se_puede_izquierda(temp.y,temp.x,*static_cast<Tablero*>(temp.tablero_asociado))) {
 	  vecino = &static_cast<Tablero*>(temp.tablero_asociado)->t[temp.y][temp.x-1];
 	  sanas.erase(make_pair(vecino->aristas(),vecino));
 	  static_cast<Tablero*>(temp.tablero_asociado)->t[temp.y][temp.x].sana = false;
-	  static_cast<Tablero*>(temp.tablero_asociado)->t[temp.y][temp.x-1].sana = false;
-	  sanas.insert(make_pair(vecino->aristas(),vecino));
+          
+          
+          vecinos_cambiados = sacar_vecinos_sanos(vecino, sanas );
+          static_cast<Tablero*>(temp.tablero_asociado)->t[temp.y][temp.x-1].sana = false;
+          actualizar_sanas(vecino,sanas,vecinos_cambiados);
 	}
       }
       if(temp.aristas()>1||!res) {
 	for(set<aristas_pcasilla>::iterator it = sanas.begin();it!=sanas.end();++it) {
-	  sanas.push_back(it->second);
+	  sanas_out.push_back(it->second);
 	}
 	go_on = false;
       }
@@ -529,6 +603,7 @@ static bool filtrar(Tablero &t, vector<Casilla*> &sanas_out) {
   }
   return res;
 }
+
 
 void mostrar(bool ** t, int lim_f, int lim_c) {
   for(int z=0;z<lim_f;++z){
@@ -645,6 +720,20 @@ static void agregar_alcanzables(list<Casilla*> &alcanzables, unsigned int &alcan
 
 
 int main(int argc, char * argv[]) {
+  /*
+  unsigned long long int res2 = 1;
+  res2 = 89;
+  res2 *= 89;
+  
+  res2 *= 89;
+  
+  res2 *= 89;
+  
+  res2 *= 89;
+  
+  cout << res2 << endl;
+  return 0;
+  */
   ifstream entrada("Tp1Ej3.in");
   leer(entrada);
   return 0;
@@ -659,7 +748,7 @@ int main(int argc, char * argv[]) {
   string temp2 = argv[2];
   Tablero t(atoi(temp.c_str()),atoi(temp2.c_str()));
   
-  unsigned int res = cantidad_dist(t);
+  unsigned long long int res = cantidad_dist(t);
   cout << res << endl;
   
   return 0;
