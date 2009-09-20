@@ -217,7 +217,7 @@ static unsigned long long int cantidad_dist( Tablero &t, bool first_time, bool b
     return 1;
   }
   bool horizontal = t.f<t.c;
-  if(t.f>2&&t.c>2) {
+  if(t.f>2||t.c>2) {
     int cant_filas1, cant_filas2, cant_col1, cant_col2;
     if(horizontal) {
       cant_filas1 = t.f;
