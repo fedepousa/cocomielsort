@@ -1,0 +1,62 @@
+filtrar(tablero t, vector<Casilla*> v_casillas_sanas) {
+  set< <numero_aristas, Casilla*> > sanas;
+  // El set esta implementado sobre un arbol 
+  // binario de busqueda parcialmente balanceado
+  // Asegura inserciones y borrados en O(log(n)) y 
+  // consulta del minimo en O(1)
+  Para cada casilla_sana {
+    sanas.insertar(<casilla_sana.aristas(),casilla_sana>);
+    Aumentar debidamente los contadores de casillas sanas "negras" y "blancas";
+    // El conteo de casillas negras y blancas nos 
+    // permite descartar algunos tableros 
+    // trivialmente insatisfacibles.
+    // Una casilla es negra cuando lo seria si 
+    // estuviera ubicada en un tablero de ajedrez 
+    // que contuviera al tablero que analizamos.
+  }
+  // Complejidad: El anterior ciclo tiene por cada iteracion una insercion
+  // en el set sanas. El calculo de las aristas y de los aumentos de contadores se realiza 
+  // en una cantidad constante de operaciones. La insercion tiene una complejidad de 
+  // O(log(#elementos del set)), el numero de elementos del set esta acotado por el numero 
+  // de iteracion. Por lo tanto la cantidad de operaciones en la i-esima iteracion
+  // esta acotada por O(log(i)). En total, la complejidad del ciclo, va a ser la sumatoria
+  // de i = 1 a n x m de log(i), que es O(n x m log(n x m))
+  Si el tablero t no es trivialmente insatisfacible, es decir, si el numero de casillas negras sanas es igual al de blancas sanas.
+  {
+    mientras t sea satisfacible y el numero de 
+    aristas del minimo del set sanas sea menor a 2 y
+    haya elementos en el set.
+    {
+      llamemos c a la casilla correspondiente al
+      minimo elemento del set sanas.
+      Borrar la entrada correspondiente a c.
+      Si la casilla c esta sana pero no tiene adonde conectarse, t es insatisfacible. {
+	Devolver "t es insatisfacible";
+      }
+      Si la casilla c tiene un unico vecino vecino_c {
+	conectar c, actualizando el conteo de
+	aristas de cada una de las casillas 
+	vecinas de vecino_c
+      }
+    }
+    // Complejidad: El anterior ciclo busca el minimo del set sanas, lo borra y realiza una 
+    // cantidad constante de operaciones que le permite determinar si es necesario unir
+    // casillas o no.
+    // Si fuese necesario unir casillas es necesario borrar del set sanas la entrada 
+    // correspondiente a cada casilla que se deba actualizar. La cantidad de casillas a 
+    // actualizarse esta acotada por 5, el numero maximo de casillas vecinas a la casilla
+    // que se debio conectar, mas la casilla en si.
+    // Las inserciones y borrados en el set sanas se realizan en O(log(#elementos))
+    // operaciones. La cantidad de elementos en sanas esta acotada en todo momento por n x m.
+    // Si fuese necesario recorrer todo el tablero, y puede verse que no se recorre mas de
+    // una vez cada casilla, la itera n x m veces.
+    // Por lo tanto el ciclo realizara O(n x m log (n x m)) operaciones.
+    Devolver "t es satisfacible";
+    // Si llegamos hasta aca, llenamos todas las
+    // casillas que se llenan trivialmente y 
+    // confirmamos que el tablero es satisfacible.
+  }
+  Si el tablero es trivialmente insatisfacible devolver "t es insatisfacible".
+}
+// Complejidad: Como cada ciclo realiza O(n x m log(n x m)) operaciones, se puede ver que
+// el total de operaciones correspondientes al filtrado pertenece a O(n x m log(n x m)).

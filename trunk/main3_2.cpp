@@ -407,6 +407,10 @@ static unsigned long long int cant_dist_unidos(const Tablero &tab1, const Tabler
       Tablero copia_tab2(tab2);
       copia_tab1.t[fila1][col1].sana = false;
       copia_tab2.t[fila2][col2].sana = false;
+      copia_tab1.negras -= abs(fila1-col1)%2==1;
+      copia_tab1.blancas -= abs(fila1-col1)%2!=1;
+      copia_tab2.negras -= abs(fila2-col2)%2==1;
+      copia_tab2.blancas -= abs(fila2-col2)%2!=1;
       --copia_tab1.cant_sanas ;
       --copia_tab2.cant_sanas ;
       res += cant_dist_unidos(copia_tab1,copia_tab2,horizontal,i+1);
