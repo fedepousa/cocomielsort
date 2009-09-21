@@ -17,43 +17,49 @@
 
 \bigskip
 \section*{Introduci\'on}
-
+En este ejercicio se pedia que dado un vector de numeros racionales se devuelva la cantidad minima de intervalos unitarios que contengan a todos los elementos del vector al menos una vez.
+Con este objetivo se procedio a realizar el algoritmo iterativo que, dado un vector devuelve la cantidad minima de intervalos cumpliendo con el objetivo del problema.
+El algoritmo tiene una complejidad de O(n * log n) siendo n la cantidad de elementos del vector de entrada, luego se hizo una tabla de tiempos en funcion de la entrada para comprobar la complejidad y se muestra en un gr\'afico. Se le hicieron varios casos de prueba para corroborar el corrento funcionamiento del mismo.
 \section*{Algoritmo}
-
+A continuaci\'on se muestra el pseudoc\'odigo del algoritmo propuesto como resoluci\'on del problema.
 \begin{verbatim}
+int contarIntervalos(vector v):
+heapify(v)
+sort(v) 
+mientras (contador < tama\~{n}o(v)){
+    si (v[i] < a ) hacer i++
+    sino contar uno y cambiar de intervalo
+  }
 \end{verbatim}
 
 \section*{Complejidad}
-
+En esta secci\'on se explica la complejidad del algoritmo de la secci\'on anterior.
 \subsection*{Modelo Uniforme}
-
-\subsection*{Modelo Logaritmico}
-
+Para analizar la complejidad se utiliz\'o el modelo uniforme. En este modelo el an\'alisis no esta centrado en el tama\~{n}o de los operandos, por lo que el tiempo de ejecuci\'on de cada operaci\'on se considera constante.
+Dado que se utiliz\'o de la librer\'ia standard el make heap y el heap sort se considera que la complejidad de cada uno es O(n) y O(n*log n) respectivamente.
+Luego s\'olo restar\'ia ver la complejidad del ciclo:
+El ciclo se usa para recorrer todo el vector por lo que se realiza n veces con n como la cantidad de elemntos del vector.Luego dentro del ciclo hay un if cuya guarda en una comparacion con lo cual la complejidad es contante (O(1)), si se cumple la guarda la operaci\'on que sigue es una suma cuya complejidad es O(1). Si no se cumple la guarda las operaciones que se realizan son 2 sumas y una asignaci\'on cuyas complejidades son constante por cada una por separado. Por lo que se puede concluir que la complejidad del ciclo resultante es O(n).
+Finalemente, al hacer la suma de todas las complejidades obtenemos O(n) + O(n * log n) + O(n) = O (3n * log n) \~{=} O(n * log n).
 \section*{An\'alisis de resultados}
-
+Para corroborar la complejidad se realizaron mediciones de distintos tama\~{n}os de entrada del vector y luego se midi\'o el tiempo de ejecuci\'on del algoritmo y se graficaron los resultados.
+A continuaci\'on se muestra una tabla con los valores que se midieron y su respectivo gr\'afico.
 \section*{Testing}
 Se realizaron dos tipos de pruebas: En primer lugar, se analizaron los casos borde y luego lo de stress respecto al tama\~{n}o de la entrada en tiempo de ejecuci\'on.
 Como caso borde se tomaron los casos que probablemente el algoritmo no estuviese abarcando o pudiese estar ignorando.
 En este ejercicio los casos borde estudiados fueron los siguientes:
 \begin{itemize}
-\item[Caso 1:] v1()
-\item[Caso n:] vn()
+  \item[Caso 1:] v1()
+  \item[Caso n:] vn()
  ×
 \end{itemize}
 
 Mientras que los de stress fueron:
-Caso 1:
-Caso n:
+\begin{itemize}
+  \item[Caso 1:]
+  \item[Caso n:]
+ ×
+\end{itemize}
 Los resultados obtenidos son :
-
-\begin{comment}
-\begin{center}
-
-\begin{center}
-
-\end{center}
-\end{center}
-\end{comment}
 
 \section*{Conclusiones}
 
