@@ -1,0 +1,20 @@
+Analisis de la complejidad de cantidad_distribuciones_filtrando en el peor caso.
+
+En el caso f1, la maxima cantidad de tableros disjuntos posibles es n x m. Supongamos que pudiese alcanzarse el tamaño n x m / 2. En ese caso se realizan O( T(n x m /2)) operaciones. Es decir que se reduce el tamaño del tablero.
+
+
+En el caso f2, supongamos que el tablero que se recibe como entrada sea de n x m, con m >= n. Si T( n x m ) es la cantidad de operaciones de cantidad_distribuciones_filtrando para un tablero de n x m, entonces a partir del analisis de la cantidad de operaciones en el caso f2 podemos llegar a la siguiente formula recursiva.
+T( n x m ) = O ( 2^n T( n x m / 2 ) )
+Desarrollando esta igualdad conjeturamos que T( n x m ) pertenece a O( 2^(2(n+m)))
+
+Lo probamos por induccion. 
+T(1x1) a T(2x2) se ejecutan en menos de max(T(1x1),...,T(2x2)) operaciones.
+T(n x m) = c * ( 2^n T( n x m / 2)) + c'(n x m) log(n x m) 
+= cd 2^n * 2^( m/2 ) T(n/2 x m/2) + cd'(2^n)(nxm/2) log(nxm/2) + c'(n x m) log(n x m) 
+= 
+=  (por HI)
+cdq * 2^((n+m/2) + (n + m)) + cd' (2^n)(nxm/2) log(nxm/2) + c'(n x m) log(n x m) 
+
+<= cdq * 2^(2(n+m)) + c(2^n)(nxm/2) log(nxm/2) + (n x m) log(n x m) 
+<- O ( 2^(2(n+m)))
+// Hay que ver como acotar los dos ultimos terminos, pero creo que sale.

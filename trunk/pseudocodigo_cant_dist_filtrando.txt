@@ -11,6 +11,12 @@ Cantidad_distribuciones_filtrando(tablero t) {
       }
       devolver res;
     }
+    // Complejidad: 
+    // En el peor caso no se reducira el tamaño del mayor de los tableros disjuntos.
+    // Este es el peor caso ya que la cantidad de operaciones para calcular las 
+    // distribuciones de un tablero, como veremos, crece exponencialmente con las
+    // dimensiones del tablero, mientras que el crecimiento de la cantidad de operaciones,
+    // si aumenta la cantidad de tableros a calcular pero no su tamaño, es lineal.
     Si hay un unico disjunto { 
       Si la cantidad de filas o de columnas es mayor que 2 { // Caso f2)
 	Tablero t1, t2
@@ -23,6 +29,15 @@ Cantidad_distribuciones_filtrando(tablero t) {
 	res <- res + cantidad_distribuciones_filtrando(t1) * cantidad_distribuciones_filtrando(t2);
 	devolver res;
       }
+      // Complejidad Caso f2 (peor caso):
+      // partir_tablero() realiza O(n x m) operaciones. Supongamos sin perdida de
+      // generalidad que m > n. 
+      // Luego se realizan O ( 2^(n+1) * T( n x m / 2 ) ) operaciones para calcular 
+      // la cantidad de distribuciones de los sub-tableros unidos.
+      // Donde T ( a x b) es la cantidad de operaciones que se realizan en 
+      // cantidad_distribuciones_filtrando para un tablero de a x b.
+      // Y posteriormente se realizan 2 * T( n x m / 2 ).
+      // Se puede ver que en total se realizan O ( 2^(n+1) T( n x m / 2 ) ) operaciones en // total.
       si la cantidad de filas y de columnas es menor o igual a 2 { // Caso f3)
 	res <- contar_distribuciones(t)
 	devolver res;
