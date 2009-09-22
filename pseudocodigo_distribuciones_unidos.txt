@@ -1,0 +1,22 @@
+cantidad_distribuciones_unidos(t1,t2) {
+  // En la implementacion se debe aclarar 
+  // si estan unidos vertical u horizontalmente.
+  res <- 0;
+  Para cada forma de unir los tableros {
+    Unirlos marcando como rotas las casillas que se tapan.
+    res <- res + cantidad_distribuciones_filtrando(t1) * cantidad_distribuciones_filtrando(t2);
+  }
+  // Complejidad: 
+  // Supongamos sin perdida de generalidad que m > n.
+  // El anterior ciclo se ejecuta 2^n veces. En cada iteracion del ciclo se ejecuta 2 
+  // veces cantidad_distribuciones_filtrando para instancias de tamaño n x m / 2.
+  // Por lo tanto se ejecutan O( 2^(n+1) * T( n x m / 2 ) ) operaciones.
+  // Donde T ( a x b) es la cantidad de operaciones que se realizan en 
+  // cantidad_distribuciones_filtrando para un tablero de a x b.
+  devolver res;
+}
+// Complejidad: calcular cantidad_distribuciones_unidos 
+// realiza O( 2^(n+1) * T( n x m / 2 )  ) operaciones, ya que realiza una cantidad
+// constante de operaciones fuera del ciclo.
+// Donde T ( a x b) es la cantidad de operaciones que se realizan en 
+// cantidad_distribuciones_filtrando para un tablero de a x b.
