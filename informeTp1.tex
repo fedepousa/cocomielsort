@@ -80,7 +80,7 @@ En esta secci\'on se presenta el pseudoc\'odigo del algoritmo propuesto como sol
 \end{verbatim}
 
 \section*{Complejidad}
-A continuaci'on se muestra el an\'alisis de la complejidad de la soluci\'on propuesta.
+A continuaci\'on se muestra el an\'alisis de la complejidad de la soluci\'on propuesta.
 \subsection*{Modelo Logaritmico}
 En este modelo de computo si nos concentraremos en el tama\~{n}o de la entrada y el costo de las operaciones en funci\'on de la cantidad de bits de sus operandos.
 
@@ -102,16 +102,182 @@ En este modelo de computo si nos concentraremos en el tama\~{n}o de la entrada y
 \bigskip
 \section*{Introduci\'on}
 Este ejercicio pedia que dado un tablero de nxn casillas con (casillas sanas y otras rotas) se calcule cuantas formas de cubrirlo con fichas de domino(equivalen a dos casillas contiguas del tablero) las casillas sanas del mismo.
-Con este objetivo se procedio a realizar un algoritmo que calcule dicha cantidad. Este algoritmo tiene una complejidad de O(). Nuevamente se realizo una tabla de tiempos para analizar los resultados y luego graficarlos. 
+Con este objetivo se procedio a realizar un algoritmo que calcule dicha cantidad. Este algoritmo tiene una complejidad de O($2^{2\left(n+m \right) }$). Nuevamente se realizo una tabla de tiempos para analizar los resultados y luego graficarlos. 
 \section*{Algoritmo}
-En esta secci\'on se presenta el pseudoc\'odigo del algoritmo propuesto como soluci\'on.
+En esta secci\'on se presenta el pseudoc\'odigo del algoritmo b\'asico propuesto como soluci\'on y una explicaci\'on de la motivaci\'on del mismo.
 \begin{verbatim}
+int cantidad_de_distribuciones(Tablero t) :
+Si el ancho o el alto del tablero es mayor a 2 {
+  Tablero t1, t2
+  partir_tablero(t,t1,t2)
+  res := cantidad_distribuciones_unidos(t1,t2) 
+  res := res + cantidad_de_distribuciones(t1) * 
+               cantidad_de_distribuciones(t2)
+}
+Si tanto el alto como el alto del tablero es menor o igual a 2 {
+  res := contar_distribuciones(t)
+}
+devolver res
 \end{verbatim}
 
+El algoritmo se basa en el siguiente razonamiento.
+Si dividimos el tablero dos, cualquier distribuci\'on de fichas de domin\'o que cubra la totalidad del tablero va a entrar en s\'olo una de las siguientes categor\'ias:
+\begin{itemize}
+ \item Alguna de las fichas conecta las dos mitades.
+ \item Ninguna ficha conecta las mitades y por lo tanto los subtableros se pueden considerar independientes.
+\end{itemize} 
+
+En este ultimo caso multiplicando los resultados obtenidos para cada mitad obtenemos el resultado para el tablero completo, sin contar las distribuciones de fichas que conectan las dos partes del tablero.  
+
+
+Si dichas partes fueran en primera instancia disjuntas, es decir, no se pudieran conectar por una ficha de domin\'o, entonces el resultado obtenido ser\'ia la cantidad total. 
+
+
+Esto \'ultimo nos va a permitir realizar una optimizaci\'on que mencionaremos m\'as adelante. 
+
+
+Habiendo resuelto parte del problema, todav\'ia debemos calcular la cantidad de distribuciones de fichas que conectan las mitades. \\
+El siguiente es el pseudoc\'odigo de la funci\'on que realiza dicho c\'alculo:
+
+\begin{verbatim}
+cantidad_distribuciones_unidos(t1,t2) {
+  res := 0
+  Para cada forma de unir los tableros {
+    Unirlos marcando como rotas las casillas que se tapan.
+    res := res + cantidad_distribuciones_filtrando(t1) * 
+           cantidad_distribuciones_filtrando(t2)
+  }
+  devolver res
+}
+\end{verbatim}
+Cabe destacar que en la implementaci\'on es necesario informar a la funci\'ion si los tableros se deben unir horizontal o verticalmente. 
+
+
+En este caso tambi\'en se utiliza el hecho de que a los fines de calcular las distribuciones, una casilla tapada por una ficha es equivalente a una casilla rota.
+
+
+Como vemos se utiliza el mismo razonamiento que antes, ya que para cada forma de unir los tableros se considera independientes a las mitades.
+
+
+\subsection*{Mejoras}
+Al analizar algunos de los tableros que se forman al unir las mitades notamos que muchas de las configuraciones iniciales ya eran trivialmente insatisfacibles. Es decir, sin un an\'alisis costoso se puede asegurar que no existe ninguna distribuci\'on de fichas que cubra completamente las casillas sanas del tablero. 
+
+
+Por ejemplo, si un tablero contiene una cantidad impar de casillas sanas, no existe forma de cubrirlas en su totalidad, ya que cada ficha de domin\'o va a cubrir una cantidad par de casillas y por lo tanto el total de casillas cubiertas va a ser par.
+
+
+Con un razonamiento similar se puede ver que si el tablero fuera de ajedrez y la cantidad de casillas sanas negras fuera distinta a la cantidad de casillas sanas blancas entonces tampoco ser\'ia posible cubrirlo completamente. Extendiendo la noci\'on de casilla negra y blanca se puede adaptar el an\'alisis a cualquier tablero.
+
+
+Por otro parte, profundizando el an\'alisis a\'un m\'as, podemos ver que si existe una \'unica forma de conectar una casilla, entonces cualquier distribuci\'on de fichas que cubra la totalidad de las casillas sanas deber\'a cubrir dicha casilla de una misma manera. Viendo esto, para simplificar el tablero, podemos marcar como ya cubiertas las casillas que cumplan con lo anterior.
+
+
+Obviamente, si se presentara en la configuraci\'on inicial o como resultado de la anterior simplificaci\'on una casilla sana con todas sus vecinas rotas, entonces el tablero tampoco puede cubrirse.
+
+
+Tambi\'en es posible detectar si existen partes disjuntas del tablero y en ese caso dividirlo para considerarlos independientemente. Esto puede ser muy ventajoso, ya que aunque aumente la cantidad de tableros a analizar, si disminuye el tama\~no de los tableros mejora notablemente la cantidad de operaciones necesarias para realizar los c\'alculos. 
+
+
+En algunos casos puede ocurrir que el tama\~no del mayor de los tableros disjuntos no disminuya, eventualmente degradando el rendimiento del algoritmo, pero consideramos que en la mayor\'ia de los casos realizar un chequeo que permita decidir si la divisi\'on en tableros disjuntos es beneficiosa resulta innecesario.
 \section*{Complejidad}
 A continuaci\'on se presenta el an\'alisis de la complejidad del algoritmo.
+
+
 \subsection*{Modelo Uniforme}
 Para analizar la complejidad se utiliz\'o el modelo uniforme. En este modelo el an\'alisis no esta centrado en el tama\~{n}o de los operandos, por lo que el tiempo de ejecuci\'on de cada operaci\'on se considera constante.
+
+
+Para analizar la complejidad de nuestra implementaci\'on del algoritmo vamos a presentar un pseudoc\'odigo m\'as detallado con las distintas mejoras que mencionamos.
+
+
+\begin{verbatim}
+int cantidad_distribuciones_filtrando(tablero t) {
+  vector<Casilla*> casillas_sanas
+  filtrar(t, casillas_sanas)  
+  // Asigna a sanas las casillas sanas 
+  // del tablero y nos dice si el tablero es trivialmente insatisfacible
+  Si el tablero es trivialmente insatisfacible, devolver 0
+  dividir_disjuntos(tablero,casillas_sanas)
+  Si hay varios disjuntos {
+    res := 1
+    Para i = 0 a #disjuntos {
+      res := res * cantidad_distribuciones_sin_filtrar(disjuntos[i])
+    }
+    devolver res
+  }
+}
+\end{verbatim}
+
+
+Llamaremos $T\left( n \times m\right) $ a la cantidad de operaciones que realiza nuestra funci\'on para un tablero de n filas y m columnas.
+
+
+Como vemos, si bien una gran cantidad de tableros triviales se descartan, en el caso en que no sea posible y que el m\'as grande de los tableros disjuntos sea del mismo taman\~no que el original, a la cantidad de operaciones se agregan las operaciones que se realizan para analizar el tablero.
+
+
+Podemos ver que \begin{equation} \label{eq:op_total}
+T\left( n \times m\right) = \sharp operaciones\; de\; an\acute{a}lisis + \sharp operaciones \;de\; c\acute{a}lculo\; de\; distribuciones 
+\end{equation}
+
+
+A continuaci\'on presentamos el pseudoc\'odigo correspondiente al c\'alculo de distribuciones:
+
+\begin{verbatim}
+cantidad_distribuciones_sin_filtrar(tablero t) {
+  Si (cantidad de casillas sanas == 0) { // Caso 0
+    devolver 1;
+  }
+  Si la cantidad de filas o de columnas es mayor que 2 { //Caso 1)
+    partir_tablero(t1,t2);
+    res <- cantidad_distribuciones_unidos(t1,t2);
+    res <- res + cantidad_distribuciones_filtrando(t1) * 
+           cantidad_distribuciones_filtrando(t2);
+    devolver res;
+  }
+  Si la cantidad de filas y columnas es menor o igual a 2 { // Caso 2)
+    res <- contar_distribuciones(t);
+    devolver res;
+  }
+}
+\end{verbatim}
+
+
+Se puede ver que el caso 0 toma una cantidad constante de operaciones, ya que, como esta funci\'on siempre se ejecuta luego del filtrado, es posible guardar la cantidad de casillas sanas. 
+
+Como en el caso 2 se cuentan las distribuciones para un tablero acotado tambi\'en en este caso la cantidad de operaciones est\'a acotada.
+
+Para analizar el caso 1 vamos a necesitar conocer la cantidad de operacione de cantidad\_distribuciones\_unidos$\left( \right) $.
+El pseudoc\'odigo de la misma ya fue presentado, pero lo reiteramos para facilitar la lectura:
+
+\begin{verbatim}
+cantidad_distribuciones_unidos(t1,t2) {
+  res := 0
+  Para cada forma de unir los tableros {
+    Unirlos marcando como rotas las casillas que se tapan.
+    res := res + cantidad_distribuciones_filtrando(t1) * 
+           cantidad_distribuciones_filtrando(t2)
+  }
+  devolver res
+}
+\end{verbatim}
+
+
+Si el tablero que recibimos como entrada es de n filas por m columnas, supongamos, sin p\'erdida de generalidad que $m > n$, es decir, que el tablero original se parti\'o horizontalmente. Por como partimos el tablero, la cantidad de filas se va a mantener. Por lo tanto existen menos de $2^{n}$ formas de unir los dos tableros. Una forma de razonar esto es que para cada fila podemos decidir si una ficha va a unir los tableros en esa fila o no. Siendo que cada fila es independiente de las dem\'as y que hay n filas llegamos r\'apidamente a la cota mencionada.
+
+Por lo tanto, vamos a iterar a lo sumo $2^{n}$ veces, cada vez realizando $ O\left( T\left( n \times m\right) \right) $ operaciones.
+
+Como vemos, en esta funci\'on se realizan $O\left( 2^{n} T\left( n \times m\right) \right) $ operaciones.
+
+Volviendo al an\'alisis del caso 2 de cantidad\_distribuciones\_sin\_filtrar$\left( \right) $, vemos que se realizan $2T\left( n \times m\right) + O\left( 2^{n} T\left( n \times m\right) \right)$ operaciones, o m\'as generalmente $O\left( 2^{n} T\left( n \times m\right) \right)$ operaciones.
+
+Reformulando la ecuaci\'on \ref{eq:op_total} tenemos lo siguiente:
+\begin{equation}
+ T\left( n \times m\right) = \sharp operaciones\; de\; an\acute{a}lisis + O\left( 2^{n} T\left( n \times m\right) \right) \; operaciones 
+\end{equation}
+
+Se realizan $O\left( nm \log\left(  nm \right) \right) $ operaciones de an\'alisis, con lo cual podemos probar que $T\left( n \times m\right) \in O(2^{2\left( n+m\right) })$. Para un an\'alisis m\'as detallado consultar el ap\'endice \ref{demo:comp_3}
+
+
 
 \section*{An\'alisis de resultados}
 
@@ -126,5 +292,52 @@ FiguraX
 \end{center}
 \end{comment}
 \section*{Conclusiones}
+\section*{Ap\'endices} 
+\section{Demostraci\'on de Complejidad}\label{demo:comp_3}
+
+Para acotar la cantidad de operaciones de an\'alisis es necesario explicar con mayor detalle en que consiste la funci\'on filtrar.
+A continuaci\'on presentamos su pseudoc\'odigo:
+
+\begin{verbatim}
+filtrar(tablero t, vector<Casilla*> v_casillas_sanas) {
+  set< <numero_aristas, Casilla*> > sanas;
+  Para cada casilla_sana { // Ciclo 1)
+    sanas.insertar(<casilla_sana.aristas(),casilla_sana>);
+    Aumentar debidamente los contadores de 
+    casillas sanas "negras" y "blancas";
+  }
+  Si el tablero es trivialmente insatisfacible 
+  es decir, si el numero de casillas negras sanas es 
+  igual al de blancas sanas,
+  devolver "t es insatisfacible".
+  
+  mientras (t sea satisfacible y el numero de 
+  aristas del minimo del set sanas sea menor a 2 y
+  haya elementos en el set)
+  { // Ciclo 2)
+    llamemos c a la casilla correspondiente al
+    minimo elemento del set sanas.
+    Borrar la entrada correspondiente a c del set.
+    Si la casilla c esta sana pero no tiene adonde 
+    conectarse, t es insatisfacible. {
+      Devolver "t es insatisfacible".
+    }
+    Si la casilla c tiene un unico vecino vecino_c {
+      conectar c, actualizando el conteo de
+      aristas de cada una de las casillas 
+      vecinas de vecino_c.
+    }
+  }
+  Devolver "t es satisfacible".
+  // Si llegamos hasta aca, llenamos todas las
+  // casillas que se llenan trivialmente y 
+  // confirmamos que el tablero es satisfacible.
+}
+
+\end{verbatim}
+
+
+En nuestra implementaci/'on...
+
 
 \end{document}
