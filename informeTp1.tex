@@ -101,7 +101,7 @@ En este modelo de computo si nos concentraremos en el tama\~{n}o de la entrada y
 
 \bigskip
 \section*{Introduci\'on}
-Este ejercicio pedia que dado un tablero de nxn casillas con (casillas sanas y otras rotas) se calcule cuantas formas de cubrirlo con fichas de domino(equivalen a dos casillas contiguas del tablero) las casillas sanas del mismo.
+Este ejercicio pedia que dado un tablero de nxn casillas con (casillas sanas y otras rotas) se calcule cuantas formas de cubrirlo con fichas de domino(equivalen a dos casillas contiguas del tablero) las casillas sanas de la misma.
 Con este objetivo se procedio a realizar un algoritmo que calcule dicha cantidad. Este algoritmo tiene una complejidad de O($2^{2\left(n+m \right) }$). Nuevamente se realizo una tabla de tiempos para analizar los resultados y luego graficarlos. 
 \section*{Algoritmo}
 En esta secci\'on se presenta el pseudoc\'odigo del algoritmo b\'asico propuesto como soluci\'on y una explicaci\'on de la motivaci\'on del mismo.
@@ -216,8 +216,10 @@ Como vemos, si bien una gran cantidad de tableros triviales se descartan, en el 
 
 
 Podemos ver que \begin{equation} \label{eq:op_total}
-T\left( n \times m\right) = \sharp operaciones\; de\; an\acute{a}lisis + \sharp operaciones \;de\; c\acute{a}lculo\; de\; distribuciones 
+T\left( n \times m\right) = \sharp ops.\; de\; an\acute{a}lisis + \sharp disjuntos \times \sharp ops. \;de\; c\acute{a}lculo\; de\; distribuciones 
 \end{equation}
+
+Es posible acotar la cantidad de tableros disjuntos que el algoritmo permite, de manera de garantizar la cota de complejidad que presentamos. No encontramos, sin acotar dicha cantidad, una forma de demostrar la misma cota de complejidad, ya que eventualmente podr\'ian haber $\frac{\max\left( m,n\right) }{2} - 1$ tableros disjuntos y a\'un mantenerse el tama\~no del m\'aximo. A pesar de esto optamos por no limitar la cantidad de tableros disjuntos permitidos en nuestra implementaci\'on, ya que consideramos que son unos pocos casos patol\'ogicos los que podr\'ian generar problemas.
 
 
 A continuaci\'on presentamos el pseudoc\'odigo correspondiente al c\'alculo de distribuciones:
@@ -300,15 +302,17 @@ A continuaci\'on presentamos su pseudoc\'odigo:
 
 \begin{verbatim}
 filtrar(tablero t, vector<Casilla*> v_casillas_sanas) {
-  set< <numero_aristas, Casilla*> > sanas;
-  Para cada casilla_sana { // Ciclo 1)
-    sanas.insertar(<casilla_sana.aristas(),casilla_sana>);
-    Aumentar debidamente los contadores de 
-    casillas sanas "negras" y "blancas";
+  set< <numero_aristas, Casilla*> > sanas
+  Para cada casilla { // Ciclo 1)
+    si es sana {
+      sanas.insertar(<casilla_sana.aristas(),casilla_sana>)
+      Aumentar debidamente los contadores de 
+      casillas sanas "negras" y "blancas"
+    }
   }
   Si el tablero es trivialmente insatisfacible 
   es decir, si el numero de casillas negras sanas es 
-  igual al de blancas sanas,
+  distinto al de blancas sanas,
   devolver "t es insatisfacible".
   
   mientras (t sea satisfacible y el numero de 
@@ -337,7 +341,129 @@ filtrar(tablero t, vector<Casilla*> v_casillas_sanas) {
 \end{verbatim}
 
 
-En nuestra implementaci/'on...
+Para mejorar el desempe\~no de nuestros algoritmos utilizamos una implementaci\'on de conjuntos sobre arbol binario de b\'usqueda parcialmente balanceado. Dicha implementaci\'on ofrece inserciones y borrados en $O\left( \log\left( n\right) \right) $, donde n es la cantidad de elementos que contiene el conjunto. Tambi\'en ofrece busqueda del m\'inimo en $O\left( 1\right) $, ya que se guarda un puntero al elemento ubicado m\'as a la izquiera en el \'arbol.
 
+
+El ordenamiento dentro del conjunto se va a realizar comparando en primer lugar el n\'umero de aristas, o casillas sanas vecinas.
+
+
+Para los siguientes c\'alculos y razonamientos vamos a llamar n a la cantidad de columnas y m a la cantidad de filas del tablero que recibimos.
+
+
+El Ciclo 1 se va a ejecutar $n\times m $ veces, y en algunas de esas iteraciones se va a realizar una inserci\'on en el conjunto. Como con cada inserci\'on aumenta el n\'umero de elementos del conjunto, se realizan en el ciclo $O\left( \textstyle\sum_{i=1}^{n\times m} \log\left( i\right) \right) $ operaciones. Se puede ver que en total se realizan $ O\left( n\times m \log\left( n\times m\right) \right) $ operaciones dentro del Ciclo 1.
+
+
+El Ciclo 2 se va a ejecutar una cantidad de veces acotada por el n\'umero de casillas sanas, que a su vez est\'a acotado por el total de casillas. En cada iteraci\'on se borra un elemento del conjunto en $O\left( \log\left( n\times m \right) \right) $ operaciones. Se realiza una cantidad constante de operaciones para determinar el estado de la casilla que se est\'a analizando y eventualmente se actualiza una cantidad constante de elementos del conjunto si fuera necesario conectar dos casillas, realiz\'andose todo esto tambi\'en en $O\left( \log\left( n\times m\right) \right) $ operaciones. 
+
+
+Podemos ver que el Ciclo 2 va a ejecutar $O\left( n\times m \log\left( n\times m\right) \right) $ operaciones.
+
+Vemos que la cantidad total de operaciones de la funci\'on filtrar es la suma de las operaciones realizadas en los ciclos, por lo tanto se realizan en total $O\left( n\times m \log\left( n\times m\right) \right) $ operaciones.
+
+
+A continuaci\'on vamos a analizar la funci\'on dividir\_disjuntos$\left( \right) $:
+
+\begin{verbatim}
+dividir_disjuntos(Tablero t, vector<Casilla*> casillas_sanas) {
+bool visitados[filas(t)][columnas(t)] inicializado en falso.
+Para i = 1 a #casillas_sanas { // Ciclo dividir_disjuntos()
+  Si no fue visitada casillas_sanas[i], generar tablero
+  con alcanzables(casillas_sanas[i],visitados).
+}
+}
+\end{verbatim}
+
+La cantidad de operaciones de la funci\'on es la cantidad de operaciones del ciclo m\'as una constante. 
+
+
+Dentro del ciclo la cantidad de operaciones es una constante m\'as las operaciones de alcanzables$\left( \right) $. Vamos a analizar estas \'ultimas por separado, ya que, como veremos, es una cantidad acotada independientemente del n\'umero de iteraciones del ciclo dividir\_disjuntos$\left( \right) $.
+alcanzables$\left( \right) $ se puede realizar de la siguiente manera:
+
+\begin{verbatim}
+vector<Casilla*> alcanzables(casilla c, visitados) {
+pila<Casilla*> a_procesar
+Agregar c en a_procesar
+mientras a_procesar tenga elementos {
+  actual := tope de a_procesar
+  agregar a resultado y a a_procesar los 
+  vecinos no visitados de la casilla actual
+}
+devolver resultado
+}
+\end{verbatim}
+
+Se realiza una cantidad constante de operaciones en el ciclo de alcanzables$\left( \right) $ y \'este se va a ejecutar en total $O\left( n\times m\right) $ veces en todo el tablero, sin importar cu\'antas veces se repita el ciclo dividir\_disjuntos$\left( \right) $ ya que no puede iterar sobre una casilla ya visitada.
+
+Como vemos, para un tablero, alcanzables$\left( \right) $ va a realizar $O\left( n \times m\right) $ operaciones, y el ciclo dividir\_disjutos$\left( \right) $ se repetir\'a $O\left( n\times m\right) $.veces.
+
+Por lo tanto la funci\'on dividir\_disjuntos$\left( \right) $ realizar\'a $O\left( n \times m\right) $ operaciones en total.	
+
+
+Habiendo acotado la cantidad de operaciones de an\'alisis del tablero podemos probar que $T\left( x \times m\right) \in O\left( 2^{2\left( n+m\right) }\right) $.
+
+Retomando la ecuaci\'on \ref{eq:op_total} podemos desarrollarla:
+
+\begin{equation}
+T\left( x \times m\right) = O\left( n\times m \log \left( n\times m\right) \right) + \sharp disjuntos \times O \left( T\left( n \times \frac{m}{2} \right) \right) 
+\end{equation}
+ 
+
+Como ya mencionamos anteriormente, si bien en nuestra implementaci\'on de la resoluci\'on no acotamos la cantidad de tableros disjuntos que aceptamos, esto se podr\'ia hacer para que la siguiente demostraci\'on siga siendo v\'alida.
+
+
+Si $\sharp disjuntos < k$ para alg\'un  $k \in \Re$  fijo, tenemos que:
+
+\begin{equation} \label{eq:op_total_cota_disjuntos}
+T\left( n \times m\right) = O\left( n\times m \log \left( n\times m\right) \right) + O \left( 2^{n}T\left( n \times \frac{m}{2} \right) \right) 
+\end{equation}
+
+Vamos a probar por inducci\'on que $\textstyle T\left( n \times m \right) \in O\left( 2^{2\left( n+m\right)  }\right)$
+
+
+Nuesta hip\'otesis inductiva es:
+
+Para t, u tales que $ t \times u < n \times m $, $ T(t \times u) \in O\left( 2^{2\left( n + m\right) }\right) $.
+\begin{itemize}
+ \item Caso $n > \frac{m}{2} $
+
+Volviendo a usar la ecuaci\'on \ref{eq:op_total_cota_disjuntos}, tenemos lo siguiente: 
+
+\begin{equation}
+T\left( n \times m \right) \leq c n\times m \log \left(n\times m \right) + c' 2^{n}\left( c'' n\times \frac{m}{2} \log \left( n \times \frac{m}{2} \right) + c''' 2^{\frac{m}{2}}T\left( \frac{n}{2} \times \frac{m}{2} \right) \right)
+\end{equation}
+
+
+
+Por hip\'otesis inductiva:
+
+
+\begin{equation}
+T\left( n \times m \right) \leq c n\times m \log \left(n\times m \right) + c' 2^{n}\left( c'' n\times \frac{m}{2} \log \left( n \times \frac{m}{2} \right) + c''' 2^{\frac{m}{2}} 2^{n+m} \right)
+\end{equation}
+\begin{equation}
+T\left( n \times m \right) \leq c n\times m \log \left(n\times m \right) +  c' 2^{n}c'' n\times \frac{m}{2} \log \left( n \times \frac{m}{2} \right) + c'c''' 2^{\frac{3m}{2} + 2n}  
+\end{equation}
+Como $n\times m \log \left(n\times m \right) \in O\left(2^{2\left(n+m\right)}\right)$ y $ c' 2^{n}c'' n\times \frac{m}{2} \log \left( n \times \frac{m}{2} \right) \in O\left(2^{2\left(n+m\right)}\right)$
+\begin{equation}
+T\left( n \times m \right) \leq c'''' 2^{2\left(n+m\right)}+ c'c''' 2^{\frac{3m}{2} + 2n}  
+\end{equation}
+Luego:
+$T\left( n \times m \right) \leq d 2^{2\left(n+m\right)}$ y por lo tanto $T\left( n\times m \right) \in O\left( 2^{2\left(n+m\right)}\right)$
+
+
+
+\item Caso $n \leq \frac{m}{2}$
+
+Nuevamente usando la ecuaci\'on \ref{eq:op_total_cota_disjuntos}, y aplicando la hip\'otesis inductiva tenemos lo siguiente: 
+
+\begin{equation}
+T\left( n \times m \right) \leq c n\times m \log \left(n\times m \right) + c'd' 2^{n}2^{2n+m}
+\end{equation}
+
+
+Como $ c n\times m \log \left(n\times m \right) \in O\left( 2^{2\left( n+m\right)}\right)$ y $ n < \frac{m}{2} $ obtenemos que $ T\left( n \times m \right) \leq d''2^{ 2\left( n+m \right)} + c'd' 2^{2\left(n+m \right)}$. Con lo cual $ T\left(n \times m \right) \in O\left(2^2\left( n+m\right) \right)$ 
+
+
+\end{itemize}
 
 \end{document}
