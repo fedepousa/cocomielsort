@@ -1,5 +1,5 @@
 \documentclass[a4paper, 12pt] {article}
-\usepackage{a4wide}
+%\usepackage{a4wide}
 \usepackage{graphicx}
 \usepackage{verbatim}
 
@@ -15,22 +15,38 @@
 \section*{Ejercicio 1: Intervalos}
 \end{center}
 
-\bigskip
 \section*{Introduci\'on}
 En este ejercicio se pedia que dado un vector de numeros racionales se devuelva la cantidad minima de intervalos unitarios que contengan a todos los elementos del vector al menos una vez.
 Con este objetivo se procedio a realizar el algoritmo iterativo que, dado un vector devuelve la cantidad minima de intervalos cumpliendo con el objetivo del problema.
-El algoritmo tiene una complejidad de O(n * log n) siendo n la cantidad de elementos del vector de entrada, luego se hizo una tabla de tiempos en funcion de la entrada para comprobar la complejidad y se muestra en un gr\'afico. Se le hicieron varios casos de prueba para corroborar el corrento funcionamiento del mismo.
+El algoritmo realizado tiene una complejidad temporal de O(n * log n) siendo n la cantidad de elementos del vector de entrada, dado que se basa en el ordenamiento del vector a analizar. Luego se hizo una tabla de tiempos en funcion de la entrada para comprobar la complejidad, la misma se grafic\'o para realizar un mejor analisis. Se le hicieron varios casos de prueba para corroborar el correcto funcionamiento del mismo, asi como para poder analizar el tiempo de ejecucion requerido.
 \section*{Algoritmo}
 A continuaci\'on se muestra el pseudoc\'odigo del algoritmo propuesto como resoluci\'on del problema.
 \begin{verbatim}
-int contarIntervalos(vector v):
+contarIntervalos(vector v):
 heapify(v)
 sort(v) 
-mientras (contador < tama\~{n}o(v)){
-    si (v[i] < a ) hacer i++
-    sino contar uno y cambiar de intervalo
-  }
+limite inferior = v[0]
+contador = 0
+para todo i menor a tama\~{n}o(v)
+    si (v[i] > limite inferior + 1 ) 
+        sumar uno al contador
+        actualizar limite inferior = v[i]
+  
 \end{verbatim}
+
+Este algoritmo consiste en contar los intervalos de una manera \'optima sin la necesidad de usar otras estructuras m\'as que el vector pasado como par\'ametro. La idea del mismo se basa en tratar de formar los mejores intervalos posibles, esto se realiza de la siguiente manera:
+
+\begin{enumerate}
+ \item Se \emph{heapifica} el arreglo y luego se lo ordena mediante el heap sort, mediante los algoritmos provistos por la libreria standard de templates.
+\item Una vez ordenado el vector, tomamos el comienzo del primer intervalo como el primer elemento del vector ordenado. Esto se debe a que buscamos la forma \'optima de definir los intervalos y, ya que es el primer elemento, no tiene sentido empezar el primer intervalo antes de este elemento, ya que no existe n\'umero m\'as chico que el.
+\item Luego se procede a computar todos los elementos del vector que esten dentro de este primer intervalo definido.
+\item Una vez que se encuentre un elemento que este fuera de este primer intervalo, se define un nuevo intervalo donde el limite inferior es este mismo elemento que, por razonamiento an\'alogo a la creaci\'on del primer intervalo, sera \'optimo.
+\item Finalmente, al iterar por todo el vector siguiendo esta forma de operar, se conseguio la m\'inima cantidad de intervalos. Cabe destacar, que al interesar solamente si la posicion actual entra en el intervalo actual, no es necesario guardar todos los intervalos que se armen, sino simplemente el limite inferior actual.
+\end{enumerate}
+
+\section*{Demostraci\'on}
+Se puede ver que esta idea funciona correctamente. Dado el algoritmo presentado en la secci\'on anterior, se pueden listar los n limites inferiores de los intervalos utilizados, si bien esto no se hace ya que no es necesario tener un array en memoria con los mismos. Luego, veamos que todos estos numeros pertenecen a intervalos disjuntos: Dado que el limite inferior se actualiza cuando se encuentra un numero que difiere en mas de una unidad del anterior, es trivial que dos limites inferiores consecutivos se encuentre en intervalos unitarios disjuntos ya que la diferencia es mayor a uno; luego, como el arreglo se encuentra ordenado en forma creciente, la propiedad de poseer a intervalos disjuntos se puede generalizar para todo para de numeros tomados como limites inferior dada la relacion de orden que rige el ordenamiento del vector. Entonces, como tenemos n numeros que pertenecian al vector que pertenecen a intervalos unitarios disjuntos, entonces no podria existar una cantidad menor de intervalos que los contuviese a todos, por lo que el n encontrado es \'optimo.
+
 
 \section*{Complejidad}
 En esta secci\'on se explica la complejidad del algoritmo de la secci\'on anterior.
@@ -39,27 +55,39 @@ Para analizar la complejidad se utiliz\'o el modelo uniforme. En este modelo el 
 Dado que se utiliz\'o de la librer\'ia standard el make heap y el heap sort se considera que la complejidad de cada uno es O(n) y O(n*log n) respectivamente.
 Luego s\'olo restar\'ia ver la complejidad del ciclo:
 El ciclo se usa para recorrer todo el vector por lo que se realiza n veces con n como la cantidad de elemntos del vector.Luego dentro del ciclo hay un if cuya guarda en una comparacion con lo cual la complejidad es contante (O(1)), si se cumple la guarda la operaci\'on que sigue es una suma cuya complejidad es O(1). Si no se cumple la guarda las operaciones que se realizan son 2 sumas y una asignaci\'on cuyas complejidades son constante por cada una por separado. Por lo que se puede concluir que la complejidad del ciclo resultante es O(n).
-Finalemente, al hacer la suma de todas las complejidades obtenemos O(n) + O(n * log n) + O(n) = O (3n * log n) \~{=} O(n * log n).
+Finalemente, al hacer la suma de todas las complejidades obtenemos O(n) + O(n * log n) + O(n) = O(n * log n).
+
 \section*{An\'alisis de resultados}
 Para corroborar la complejidad se realizaron mediciones de distintos tama\~{n}os de entrada del vector y luego se midi\'o el tiempo de ejecuci\'on del algoritmo y se graficaron los resultados.
-A continuaci\'on se muestra una tabla con los valores que se midieron y su respectivo gr\'afico.
-\section*{Testing}
-Se realizaron dos tipos de pruebas: En primer lugar, se analizaron los casos borde y luego lo de stress respecto al tama\~{n}o de la entrada en tiempo de ejecuci\'on.
-Como caso borde se tomaron los casos que probablemente el algoritmo no estuviese abarcando o pudiese estar ignorando.
-En este ejercicio los casos borde estudiados fueron los siguientes:
+
+Se realizaron dos tipos de pruebas: 
 \begin{itemize}
-  \item[Caso 1:] v1()
-  \item[Caso n:] vn()
- ×
+\item Casos borde para la correctitud: Son pruebas con vectores de tamano chico, donde la prueba se centr\'o en analizar la correctitud del algoritmo mediante la contrastaci'on con ciertos casos tales como vectores con varios n\'umeros repetidos, o bien vectores con n\'umeros pertenecientes a intervalos disjuntos por una muy pequena diferencia.
+\item Casos de stress: Son pruebas con vectores de tamano considerablemente extenso, esta prueba se centr\'o en ver el comportamiento temporal del algortimo frente  a estos casos, con el mayor proposito de poder contrastar los tiempos de ejecuci\'on obtenidos con la complejidad analizada anteriormente.
 \end{itemize}
 
-Mientras que los de stress fueron:
+\subsection*{Casos Borde}
+Para analizar empiricamente la correctitud del algoritmo se realizaron 7 casos.
+
 \begin{itemize}
-  \item[Caso 1:]
-  \item[Caso n:]
- ×
+\item En primer lugar se corrieron los casos de prueba entregados por la c\'atedra
+\item El sexto caso fue un vector con los numeros de 0 a 9.009 con paso de 1.001. Se busco probar que realmente este realizando intervalos unitarios al constratar con n\'umeros que difieren en tan solo 0.001 m\'as que la unidad.
 \end{itemize}
-Los resultados obtenidos son :
+
+Dado que estos casos no estan centrados en el tiempo de ejecuci\'on, no se presentan gr\'aficos de los resultados ya que su tiempo de ejecuci\'on fue de unos pocos microsegundos. 
+
+Los casos generados para probar la correctitud se encuentran en el archivo Prueba1.txt
+
+El resultado para todos estos casos de pruba fue satisfactorio, arrojando en el archivo de salida los resultados correctos (dados por la c\'atedra o calculados manualmente seg\'un el caso).
+
+
+\subsection*{Casos de stress}
+Para poder analizar estos casos, se generaron 500 vectores con tamanos a partir de 10000 y con paso de 500. Los mismos cuentan con n\'umeros pseudoaleatorios conseguidos mediante la funcion \emph{random} de la libreria standard.
+Los mismos se encuentra en el archivo Prueba2.txt
+
+Cabe destacar que en estos casos no fue relevante la cantidad de intervalos encontradas para cada caso, sino solamente el tiempo de ejecucion. En cuanto a los resultados arrojados, todos los resultados arrojados fueron de 10 intervalos ya que el programa utilizado para generar numeros aleatorios, los genera entre -5 y 5 con 3 digitos a la derecha de la coma; y al tener vectores de mas de 10000 elementos, la probabilidad de que todos los intervalos unitarios entre n\'umeros enteros contenga alg\'un numero es muy alta.
+
+A continuaci\'on se presentan graficados los tiempos de ejecuci\'on de cada caso.
 
 \section*{Conclusiones}
 
@@ -71,9 +99,10 @@ Los resultados obtenidos son :
 
 \bigskip
 \section*{Introduci\'on}
-Este ejercicio pedia que dado un n\'umero natural se encuentre uno de los amigos, se es que existen.
-Con este fin se pens\'o un algoritmo que dado un n\'umero natural encuentre si dicho n\'umero tiene o no amigos.
-El algoritmo nombrado anteriormente tiene una complejidad de O(). Para analizar los resultados se realiz\'o una tabla que luego se grafico y finalmente, se realizaron casos de prueba para comprobar el funcionamiento de dicho algoritmo. 
+Este ejercicio pedia que dado un n\'umero natural se encuentre uno de los amigos, si es que existe alguno.
+Un par de n\'umeros se definen como amigos si la suma de los divisores propios del primero da como resultado el segundo n\'umero y viceversa. Hoy en dia se conocen diez millones de pares de n\'umeros amigos.
+Para este ejercicio se utiliz\'o una propiedad para calcular la suma de los divisores propios sin hacer la suma de todos ellos, la misma se basa en combinar todas las posibles combinaciones de los factores primos del n\'umero en cuestion. Es por esto que el mayor problema se centro en la factorizaci\'on.
+Por lo dicho anteriormente el algoritmo que se utiliz\'o se basa en factorizar el n\'umero dado para luego encontrar la suma de sus divisores propios y tiene una complejidad de O(). Por \'ultimo se realizaron casos de prueba para comprobar el funcionamiento de dicho algoritmo y, para poder analizar los resultados, se realiz\'o una tabla que luego se grafic\'o. 
 \section*{Algoritmo}
 En esta secci\'on se presenta el pseudoc\'odigo del algoritmo propuesto como soluci\'on del problema.
 \begin{verbatim}
@@ -282,18 +311,32 @@ Se realizan $O\left( nm \log\left(  nm \right) \right) $ operaciones de an\'alis
 
 
 \section*{An\'alisis de resultados}
+Para poder ver el funcionamiento del algoritmo, se realizaron tres tipos de casos de prueba diferentes.
 
-\section*{Testing}
+\begin{itemize}
+ \item Casos de correctitud: Se basaron en presentar tableros donde ya se conoce el numero de combinaciones posibles para ver si el algoritmo funciona correctamente, dado que los filtros aplican de formas diferentes no son buenos casos para analizar en cuanto a su tiempo de ejecuci\'on sino que meramente se centran en probar empiricamente la correctitud del algoritmo
+\item Casos de Stress: Se basaron en presentar tableros donde la mayor cantidad de casillas posibles esten sanas de tal manera que los filtros de mejores no apliquen de ninguna manera y el algoritmo tenga que calcular todas y cada una de las posibilidades diferentes.
+\item Casos de prueba de filtros: Se basaron en presentar tableros donde la cantidad de casillas sanas sea considerablemente menor a la cantidad total de casillas para luego poder contrastar los tiempos de ejecuci\'on con los casos de stress.
+\end{itemize}
 
-\begin{comment}
-\begin{center}
-\includegraphicx[width=0.7\textwidth]{Plots/Ej1-Complejidad.png}
-\begin{center}
-FiguraX
-\end{center}
-\end{center}
-\end{comment}
+
+\subsection*{Casos de correctitud}
+knuth, fibonacci bla bla
+sin graficos
+
+\subsection*{Casos de stress}
+presentar los casos, mostrar los graficos
+
+\subsection*{Casos de prueba de filtros}
+presentar los casos, mostrar los graficos y comparar con los de stress
+
+
+
+
 \section*{Conclusiones}
+chamuyo
+
+
 \section*{Ap\'endices} 
 \section{Demostraci\'on de Complejidad}\label{demo:comp_3}
 
