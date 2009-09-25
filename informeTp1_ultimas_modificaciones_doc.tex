@@ -1,0 +1,605 @@
+\documentclass[a4paper, 12pt] {article}
+%\usepackage{a4wide}
+\usepackage{graphicx}
+\usepackage{verbatim}
+
+\begin{document}
+
+\begin{center}
+\section*{Aclaraciones generales} 
+\end{center}
+
+\newpage
+
+\begin{center}
+\section*{Ejercicio 1: Intervalos}
+\end{center}
+
+\section*{Introduci\'on}
+En este ejercicio se pedia que dado un vector de numeros racionales se devuelva la cantidad minima de intervalos unitarios que contengan a todos los elementos del vector al menos una vez.
+Con este objetivo se procedio a realizar el algoritmo iterativo que, dado un vector devuelve la cantidad minima de intervalos cumpliendo con el objetivo del problema.
+El algoritmo realizado tiene una complejidad temporal de O(n * log n) siendo n la cantidad de elementos del vector de entrada, dado que se basa en el ordenamiento del vector a analizar. Luego se hizo una tabla de tiempos en funcion de la entrada para comprobar la complejidad, la misma se grafic\'o para realizar un mejor analisis. Se le hicieron varios casos de prueba para corroborar el correcto funcionamiento del mismo, asi como para poder analizar el tiempo de ejecucion requerido.
+\section*{Algoritmo}
+A continuaci\'on se muestra el pseudoc\'odigo del algoritmo propuesto como resoluci\'on del problema.
+\begin{verbatim}
+contarIntervalos(vector v):
+heapify(v)
+sort(v) 
+limite inferior = v[0]
+contador = 0
+para todo i menor a tama\~{n}o(v)
+    si (v[i] > limite inferior + 1 ) 
+        sumar uno al contador
+        actualizar limite inferior = v[i]
+  
+\end{verbatim}
+
+Este algoritmo consiste en contar los intervalos de una manera \'optima sin la necesidad de usar otras estructuras m\'as que el vector pasado como par\'ametro. La idea del mismo se basa en tratar de formar los mejores intervalos posibles, esto se realiza de la siguiente manera:
+
+\begin{enumerate}
+ \item Se \emph{heapifica} el arreglo y luego se lo ordena mediante el heap sort, mediante los algoritmos provistos por la libreria standard de templates.
+\item Una vez ordenado el vector, tomamos el comienzo del primer intervalo como el primer elemento del vector ordenado. Esto se debe a que buscamos la forma \'optima de definir los intervalos y, ya que es el primer elemento, no tiene sentido empezar el primer intervalo antes de este elemento, ya que no existe n\'umero m\'as chico que el.
+\item Luego se procede a computar todos los elementos del vector que esten dentro de este primer intervalo definido.
+\item Una vez que se encuentre un elemento que este fuera de este primer intervalo, se define un nuevo intervalo donde el limite inferior es este mismo elemento que, por razonamiento an\'alogo a la creaci\'on del primer intervalo, sera \'optimo.
+\item Finalmente, al iterar por todo el vector siguiendo esta forma de operar, se conseguio la m\'inima cantidad de intervalos. Cabe destacar, que al interesar solamente si la posicion actual entra en el intervalo actual, no es necesario guardar todos los intervalos que se armen, sino simplemente el limite inferior actual.
+\end{enumerate}
+
+\section*{Demostraci\'on}
+Se puede ver que esta idea funciona correctamente. Dado el algoritmo presentado en la secci\'on anterior, se pueden listar los n limites inferiores de los intervalos utilizados, si bien esto no se hace ya que no es necesario tener un array en memoria con los mismos. Luego, veamos que todos estos numeros pertenecen a intervalos disjuntos: Dado que el limite inferior se actualiza cuando se encuentra un numero que difiere en mas de una unidad del anterior, es trivial que dos limites inferiores consecutivos se encuentre en intervalos unitarios disjuntos ya que la diferencia es mayor a uno; luego, como el arreglo se encuentra ordenado en forma creciente, la propiedad de poseer a intervalos disjuntos se puede generalizar para todo para de numeros tomados como limites inferior dada la relacion de orden que rige el ordenamiento del vector. Entonces, como tenemos n numeros que pertenecian al vector que pertenecen a intervalos unitarios disjuntos, entonces no podria existar una cantidad menor de intervalos que los contuviese a todos, por lo que el n encontrado es \'optimo.
+
+
+\section*{Complejidad}
+En esta secci\'on se explica la complejidad del algoritmo de la secci\'on anterior.
+\subsection*{Modelo Uniforme}
+Para analizar la complejidad se utiliz\'o el modelo uniforme. En este modelo el an\'alisis no esta centrado en el tama\~{n}o de los operandos, por lo que el tiempo de ejecuci\'on de cada operaci\'on se considera constante.
+Dado que se utiliz\'o de la librer\'ia standard el make heap y el heap sort se considera que la complejidad de cada uno es O(n) y O(n*log n) respectivamente.
+Luego s\'olo restar\'ia ver la complejidad del ciclo:
+El ciclo se usa para recorrer todo el vector por lo que se realiza n veces con n como la cantidad de elemntos del vector.Luego dentro del ciclo hay un if cuya guarda en una comparacion con lo cual la complejidad es contante (O(1)), si se cumple la guarda la operaci\'on que sigue es una suma cuya complejidad es O(1). Si no se cumple la guarda las operaciones que se realizan son 2 sumas y una asignaci\'on cuyas complejidades son constante por cada una por separado. Por lo que se puede concluir que la complejidad del ciclo resultante es O(n).
+Finalemente, al hacer la suma de todas las complejidades obtenemos O(n) + O(n * log n) + O(n) = O(n * log n).
+
+\section*{An\'alisis de resultados}
+Para corroborar la complejidad se realizaron mediciones de distintos tama\~{n}os de entrada del vector y luego se midi\'o el tiempo de ejecuci\'on del algoritmo y se graficaron los resultados.
+
+Se realizaron dos tipos de pruebas: 
+\begin{itemize}
+\item Casos borde para la correctitud: Son pruebas con vectores de tamano chico, donde la prueba se centr\'o en analizar la correctitud del algoritmo mediante la contrastaci'on con ciertos casos tales como vectores con varios n\'umeros repetidos, o bien vectores con n\'umeros pertenecientes a intervalos disjuntos por una muy pequena diferencia.
+\item Casos de stress: Son pruebas con vectores de tamano considerablemente extenso, esta prueba se centr\'o en ver el comportamiento temporal del algortimo frente  a estos casos, con el mayor proposito de poder contrastar los tiempos de ejecuci\'on obtenidos con la complejidad analizada anteriormente.
+\end{itemize}
+
+\subsection*{Casos Borde}
+Para analizar empiricamente la correctitud del algoritmo se realizaron 7 casos.
+
+\begin{itemize}
+\item En primer lugar se corrieron los casos de prueba entregados por la c\'atedra
+\item El sexto caso fue un vector con los numeros de 0 a 9.009 con paso de 1.001. Se busco probar que realmente este realizando intervalos unitarios al constratar con n\'umeros que difieren en tan solo 0.001 m\'as que la unidad.
+\end{itemize}
+
+Dado que estos casos no estan centrados en el tiempo de ejecuci\'on, no se presentan gr\'aficos de los resultados ya que su tiempo de ejecuci\'on fue de unos pocos microsegundos. 
+
+Los casos generados para probar la correctitud se encuentran en el archivo Tp1Ej1b.in
+
+El resultado para todos estos casos de pruba fue satisfactorio, arrojando en el archivo de salida los resultados correctos (dados por la c\'atedra o calculados manualmente seg\'un el caso).
+
+
+\subsection*{Casos de stress}
+Para poder analizar estos casos, se generaron 500 vectores con tamanos a partir de 10000 y con paso de 500. Los mismos cuentan con n\'umeros pseudoaleatorios conseguidos mediante la funcion \emph{random} de la libreria standard.
+Los mismos se encuentra en el archivo Tp1Ej1.in
+
+Cabe destacar que en estos casos no fue relevante la cantidad de intervalos encontradas para cada caso, sino solamente el tiempo de ejecucion. En cuanto a los resultados arrojados, todos los resultados arrojados fueron de 10 intervalos ya que el programa utilizado para generar numeros aleatorios, los genera entre -5 y 5 con 3 digitos a la derecha de la coma; y al tener vectores de mas de 10000 elementos, la probabilidad de que todos los intervalos unitarios entre n\'umeros enteros contenga alg\'un numero es muy alta.
+
+A continuaci\'on se presentan graficados los tiempos de ejecuci\'on de cada caso.
+
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{Graficos/tiempos_ajuste_lineal_y_log.png}
+\begin{center}
+FiguraX
+\end{center}
+\end{center}
+
+\section*{Conclusiones}
+
+\newpage
+
+\begin{center}
+\section*{Ejercicio 2: N\'umeros Amigos}
+\end{center}
+
+\bigskip
+\section*{Introduci\'on}
+Este ejercicio pedia que dado un n\'umero natural se encuentre uno de los amigos, si es que existe alguno.
+Un par de n\'umeros se definen como amigos si la suma de los divisores propios del primero da como resultado el segundo n\'umero y viceversa. Hoy en dia se conocen diez millones de pares de n\'umeros amigos.
+Para este ejercicio se utiliz\'o una propiedad para calcular la suma de los divisores propios sin hacer la suma de todos ellos, la misma se basa en combinar todas las posibles combinaciones de los factores primos del n\'umero en cuestion. Es por esto que el mayor problema se centro en la factorizaci\'on.
+Por lo dicho anteriormente el algoritmo que se utiliz\'o se basa en factorizar el n\'umero dado para luego encontrar la suma de sus divisores propios y tiene una complejidad de O(). Por \'ultimo se realizaron casos de prueba para comprobar el funcionamiento de dicho algoritmo y, para poder analizar los resultados, se realiz\'o una tabla que luego se grafic\'o. 
+\section*{Algoritmo}
+En esta secci\'on se presenta el pseudoc\'odigo del algoritmo propuesto como soluci\'on del problema.
+\begin{verbatim}
+amigos(int n) {
+vector<int,int> primos_exp
+primos_exp := factorizacion_en_primos(n)
+posible_amigo := suma_divisores_propios(n,primos_exp)
+primos_exp := factorizacion_en_primos(posible_amigo)
+si suma_divisores_propios(posible_amigo) = n && n!= posible_amigo {
+  devolver posible_amigo
+}
+si no devolver 0
+}
+
+vector<int,int> factorizacion_en_primos(int n) {
+vector<int,int> res
+si n%2 = 0 {
+  agregar a res <2,maximo exponente i tal que 2^exp % n>
+  n := n / 2^exp
+}
+int i = 3 
+mientras (i <= sqrt(n) + 1) {
+  si n%i = 0 {
+    agregar a res <i,maximo exponente i tal que i^exp % n>
+    n := n / 2^exp
+  }
+  i := i + 2
+}
+devolver res
+}
+
+
+int suma_divisores_propios(vector <int> primos, vector<int> exponentes, int n):
+res := 1
+para todo i de 0 al tamano menos 1
+   res := res * (primos[i]^exponentes[i])/(primos[i]-1)
+res := res - n
+
+\end{verbatim}
+
+Este algoritmo se basa, como se ve en la funcion principal, en poder encontrar la suma de los divisores propios a partir de encontrar la factorizaci\'on en primos del n\'umero pedido. La idea es, una vez obtenida la factorizaci\'on en primos, encontrar la suma de los divisores propios sin necesidad de sumarlos todos, sino combinando los factores primos del n\'umero. Esto se consigue realizando la productoria de la sumas geom\'etricas de cada primo de la factorizaci\'on, como se muestra en el pseudoc\'odigo de suma divisores propios, donde justamente se realiza la iteraci\'on anteriormente mencionada y, por \'ultimo, se resta n dado que la combinaci\'on de todos los n\'umeros primos de su factorizaci\'on da la suma de todos los divisores, incluido n.
+
+Una vez obtenida la suma de los divisores propios del n\'umero que queremos analizar, tomamos esta suma como el \'unico n\'umero candidato a ser amigo del n\'umero pasado como par\'ametro. Luego, se procede a realizar el mismo procedimiento para el candidato. Al obtener la suma de los divisores propios de este segundo n\'umero, se compara para ver si esta suma dio igual al n\'umero pasado como par\'ametro. Si la igualdad es efectiva, entonces se da la reciprocidad de la propiedad requerida y, por lo tanto, son n\'umeros amigos; si, por el contrario, no se cumple la igualdad, entonces el n\'umero en cuesti\'on no tiene un amigo, dado que el \'unico potencial amigo no cumple la propiedad necesaria.
+
+
+
+\section*{Complejidad}
+A continuaci\'on se muestra el an\'alisis de la complejidad de la soluci\'on propuesta.
+\subsection*{Modelo Logaritmico}
+En este modelo de computo si nos concentraremos en el tama\~{n}o de la entrada y el costo de las operaciones en funci\'on de la cantidad de bits de sus operandos.
+
+\section*{An\'alisis de resultados}
+Para este algoritmo se realizaron dos tipos de pruebas diferentes:
+\begin{itemize}
+\item Casos de correctitud: Se realizaron para poder probar el correcto funcionamiento del algoritmo.
+\item Casos para mediciones: Se realizaron para poder conseguir dos objetivos: por un lado se busca obtener un conteo de operaciones en modelo logar\'itmico mediante una implementaci\'on que cuenta dichas operaciones en el momento que el algoritmo se ejecuta. Por otro, se quiere tomar el tiempo de ejecuci\'on del algoritmo para poder contrastarlo con la complejidad previamente calculada.
+\end{itemize}
+
+\subsection*{Casos de correctitud}
+Para realizar este tipo de casos se conto con una base de datos de n\'umeros amigos obtenida de la bibliograf\'ia. Se gener\'o un archivo con 15 n\'umeros que es conocido que poseen un n\'umero amigo. Los mismos se pueden encontrar en el archivo casosamigos.in.
+
+De esta manera, se puede mostrar la correcitud del algoritmo para varios pares de n\'umeros. Cabe destacar que para estos casos, no se tom\'o en cuenta ni el conteo de operaciones, ni el tiempo de ejecuci\'on dado que s\'olo se quiere probar la correctitud del algoritmo en este caso. 
+
+Luego de realizar el procesamiento correspondiente, se pudo verificar satisfactoriamente que el algoritmo arroja, para estos n\'umeros amigos conocidos, la soluci\'on correcta. Los resultados se pueden observar en el archivo casosamigos.out.
+
+\subsection*{Casos para mediciones}
+Para realizar los casos inherentes al objetivo de conseguir medidas temporales y de cantidad de operaciones se crearon 2 tipos de entradas diferentes.
+
+Por un lado, se creo un archivo con mil n\'umeros creados bla bla bla
+
+Por otro lado, se creo un archivo con 18 n\'umeros primos ordenados de manera creciente. Esto se realiz\'o para tener un input donde el algoritmo trabajase el mayor tiempo posible, dado que justamente son los n\'umeros primos los que generan una ejecuci\'on m\'as larga al querer encontrar su factorizaci\'on. De esta manera se intenta ver como, al ir creciendo el tamano de los n\'umeros primos, el algoritmo va tardando m\'as tiempo en su ejecuci\'on.
+
+A continuaci\'on, se muestran los gr\'aficos para ambos inputs, tanto del conteo logar\'itmico, como del tiempo de ejecuci\'on.
+\begin{center}
+\includegraphics[width=0.7\textwidth]{Graficos/graf-log-mil.jpg}
+\begin{center}
+FiguraX
+\end{center}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{Graficos/graf-log-primos.jpg}
+\begin{center}
+FiguraX
+\end{center}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{Graficos/graf-tiempo-mil.jpg}
+\begin{center}
+FiguraX
+\end{center}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{Graficos/graf-tiempo-primos.jpg}
+\begin{center}
+FiguraX
+\end{center}
+\end{center}
+
+\section*{Conclusiones}
+\newpage
+
+\begin{center}
+ \section*{Ejercicio 3: Tableros}
+\end{center}
+
+\bigskip
+\section*{Introduci\'on}
+Este ejercicio pedia que dado un tablero de nxn casillas con (casillas sanas y otras rotas) se calcule cuantas formas de cubrirlo con fichas de domino(equivalen a dos casillas contiguas del tablero) las casillas sanas de la misma.
+Con este objetivo se procedio a realizar un algoritmo que calcule dicha cantidad. Este algoritmo tiene una complejidad de O($2^{2\left(n+m \right) }$). En primer lugar, se intento contar de alguna manera la cantidad de distribuciones posibles. Para esta aproximaci\'on se encontr\'o en la bibliograf\'ia, la cantidad de distribuciones para tableros de 2xN. Sin embargo, esta aproximaci\'on no termino influyendo en el diseno final del algoritmo.
+\section*{Algoritmo}
+En esta secci\'on se presenta el pseudoc\'odigo del algoritmo b\'asico propuesto como soluci\'on y una explicaci\'on de la motivaci\'on del mismo.
+\begin{verbatim}
+int cantidad_de_distribuciones(Tablero t) :
+Si el ancho o el alto del tablero es mayor a 2 {
+  Tablero t1, t2
+  partir_tablero(t,t1,t2)
+  res := cantidad_distribuciones_unidos(t1,t2) 
+  res := res + cantidad_de_distribuciones(t1) * 
+               cantidad_de_distribuciones(t2)
+}
+Si tanto el alto como el alto del tablero es menor o igual a 2 {
+  res := contar_distribuciones(t)
+}
+devolver res
+\end{verbatim}
+
+El algoritmo se basa en el siguiente razonamiento.
+Si dividimos el tablero dos, cualquier distribuci\'on de fichas de domin\'o que cubra la totalidad del tablero va a entrar en s\'olo una de las siguientes categor\'ias:
+\begin{itemize}
+ \item Alguna de las fichas conecta las dos mitades.
+ \item Ninguna ficha conecta las mitades y por lo tanto los subtableros se pueden considerar independientes.
+\end{itemize} 
+
+En este ultimo caso multiplicando los resultados obtenidos para cada mitad obtenemos el resultado para el tablero completo, sin contar las distribuciones de fichas que conectan las dos partes del tablero.  
+
+
+Si dichas partes fueran en primera instancia disjuntas, es decir, no se pudieran conectar por una ficha de domin\'o, entonces el resultado obtenido ser\'ia la cantidad total. 
+
+
+Esto \'ultimo nos va a permitir realizar una optimizaci\'on que mencionaremos m\'as adelante. 
+
+
+Habiendo resuelto parte del problema, todav\'ia debemos calcular la cantidad de distribuciones de fichas que conectan las mitades. \\
+El siguiente es el pseudoc\'odigo de la funci\'on que realiza dicho c\'alculo:
+
+\begin{verbatim}
+cantidad_distribuciones_unidos(t1,t2) {
+  res := 0
+  Para cada forma de unir los tableros {
+    Unirlos marcando como rotas las casillas que se tapan.
+    res := res + cantidad_distribuciones_filtrando(t1) * 
+           cantidad_distribuciones_filtrando(t2)
+  }
+  devolver res
+}
+\end{verbatim}
+Cabe destacar que en la implementaci\'on es necesario informar a la funci\'ion si los tableros se deben unir horizontal o verticalmente. 
+
+
+En este caso tambi\'en se utiliza el hecho de que a los fines de calcular las distribuciones, una casilla tapada por una ficha es equivalente a una casilla rota.
+
+
+Como vemos se utiliza el mismo razonamiento que antes, ya que para cada forma de unir los tableros se considera independientes a las mitades.
+
+
+\subsection*{Mejoras}
+Al analizar algunos de los tableros que se forman al unir las mitades notamos que muchas de las configuraciones iniciales ya eran trivialmente insatisfacibles. Es decir, sin un an\'alisis costoso se puede asegurar que no existe ninguna distribuci\'on de fichas que cubra completamente las casillas sanas del tablero. 
+
+
+Por ejemplo, si un tablero contiene una cantidad impar de casillas sanas, no existe forma de cubrirlas en su totalidad, ya que cada ficha de domin\'o va a cubrir una cantidad par de casillas y por lo tanto el total de casillas cubiertas va a ser par.
+
+
+Con un razonamiento similar se puede ver que si el tablero fuera de ajedrez y la cantidad de casillas sanas negras fuera distinta a la cantidad de casillas sanas blancas entonces tampoco ser\'ia posible cubrirlo completamente. Extendiendo la noci\'on de casilla negra y blanca se puede adaptar el an\'alisis a cualquier tablero.
+
+
+Por otro parte, profundizando el an\'alisis a\'un m\'as, podemos ver que si existe una \'unica forma de conectar una casilla, entonces cualquier distribuci\'on de fichas que cubra la totalidad de las casillas sanas deber\'a cubrir dicha casilla de una misma manera. Viendo esto, para simplificar el tablero, podemos marcar como ya cubiertas las casillas que cumplan con lo anterior.
+
+
+Obviamente, si se presentara en la configuraci\'on inicial o como resultado de la anterior simplificaci\'on una casilla sana con todas sus vecinas rotas, entonces el tablero tampoco puede cubrirse.
+
+
+Tambi\'en es posible detectar si existen partes disjuntas del tablero y en ese caso dividirlo para considerarlos independientemente. Esto puede ser muy ventajoso, ya que aunque aumente la cantidad de tableros a analizar, si disminuye el tama\~no de los tableros mejora notablemente la cantidad de operaciones necesarias para realizar los c\'alculos. 
+
+
+En algunos casos puede ocurrir que el tama\~no del mayor de los tableros disjuntos no disminuya, eventualmente degradando el rendimiento del algoritmo, pero consideramos que en la mayor\'ia de los casos realizar un chequeo que permita decidir si la divisi\'on en tableros disjuntos es beneficiosa resulta innecesario.
+\section*{Complejidad}
+A continuaci\'on se presenta el an\'alisis de la complejidad del algoritmo.
+
+
+\subsection*{Modelo Uniforme}
+Para analizar la complejidad se utiliz\'o el modelo uniforme. En este modelo el an\'alisis no esta centrado en el tama\~{n}o de los operandos, por lo que el tiempo de ejecuci\'on de cada operaci\'on se considera constante.
+
+
+Para analizar la complejidad de nuestra implementaci\'on del algoritmo vamos a presentar un pseudoc\'odigo m\'as detallado con las distintas mejoras que mencionamos.
+
+
+\begin{verbatim}
+int cantidad_distribuciones_filtrando(tablero t) {
+  vector<Casilla*> casillas_sanas
+  filtrar(t, casillas_sanas)  
+  // Asigna a sanas las casillas sanas 
+  // del tablero y nos dice si el tablero es trivialmente insatisfacible
+  Si el tablero es trivialmente insatisfacible, devolver 0
+  dividir_disjuntos(tablero,casillas_sanas)
+  Si hay varios disjuntos {
+    res := 1
+    Para i = 0 a #disjuntos {
+      res := res * cantidad_distribuciones_sin_filtrar(disjuntos[i])
+    }
+    devolver res
+  }
+}
+\end{verbatim}
+
+
+Llamaremos $T\left( n \times m\right) $ a la cantidad de operaciones que realiza nuestra funci\'on para un tablero de n filas y m columnas.
+
+
+Como vemos, si bien una gran cantidad de tableros triviales se descartan, en el caso en que no sea posible y que el m\'as grande de los tableros disjuntos sea del mismo taman\~no que el original, a la cantidad de operaciones se agregan las operaciones que se realizan para analizar el tablero.
+
+
+Podemos ver que \begin{equation} \label{eq:op_total}
+T\left( n \times m\right) = \sharp ops.\; de\; an\acute{a}lisis + \sharp disjuntos \times \sharp ops. \;de\; c\acute{a}lculo\; de\; distribuciones 
+\end{equation}
+
+Es posible acotar la cantidad de tableros disjuntos que el algoritmo permite, de manera de garantizar la cota de complejidad que presentamos. No encontramos, sin acotar dicha cantidad, una forma de demostrar la misma cota de complejidad, ya que eventualmente podr\'ian haber $\frac{\max\left( m,n\right) }{2} - 1$ tableros disjuntos y a\'un mantenerse el tama\~no del m\'aximo. A pesar de esto optamos por no limitar la cantidad de tableros disjuntos permitidos en nuestra implementaci\'on, ya que consideramos que son unos pocos casos patol\'ogicos los que podr\'ian generar problemas.
+
+
+A continuaci\'on presentamos el pseudoc\'odigo correspondiente al c\'alculo de distribuciones:
+
+\begin{verbatim}
+cantidad_distribuciones_sin_filtrar(tablero t) {
+  Si (cantidad de casillas sanas == 0) { // Caso 0
+    devolver 1;
+  }
+  Si la cantidad de filas o de columnas es mayor que 2 { //Caso 1)
+    partir_tablero(t1,t2);
+    res <- cantidad_distribuciones_unidos(t1,t2);
+    res <- res + cantidad_distribuciones_filtrando(t1) * 
+           cantidad_distribuciones_filtrando(t2);
+    devolver res;
+  }
+  Si la cantidad de filas y columnas es menor o igual a 2 { // Caso 2)
+    res <- contar_distribuciones(t);
+    devolver res;
+  }
+}
+\end{verbatim}
+
+
+Se puede ver que el caso 0 toma una cantidad constante de operaciones, ya que, como esta funci\'on siempre se ejecuta luego del filtrado, es posible guardar la cantidad de casillas sanas. 
+
+Como en el caso 2 se cuentan las distribuciones para un tablero acotado tambi\'en en este caso la cantidad de operaciones est\'a acotada.
+
+Para analizar el caso 1 vamos a necesitar conocer la cantidad de operacione de cantidad\_distribuciones\_unidos$\left( \right) $.
+El pseudoc\'odigo de la misma ya fue presentado, pero lo reiteramos para facilitar la lectura:
+
+\begin{verbatim}
+cantidad_distribuciones_unidos(t1,t2) {
+  res := 0
+  Para cada forma de unir los tableros {
+    Unirlos marcando como rotas las casillas que se tapan.
+    res := res + cantidad_distribuciones_filtrando(t1) * 
+           cantidad_distribuciones_filtrando(t2)
+  }
+  devolver res
+}
+\end{verbatim}
+
+
+Si el tablero que recibimos como entrada es de n filas por m columnas, supongamos, sin p\'erdida de generalidad que $m > n$, es decir, que el tablero original se parti\'o horizontalmente. Por como partimos el tablero, la cantidad de filas se va a mantener. Por lo tanto existen menos de $2^{n}$ formas de unir los dos tableros. Una forma de razonar esto es que para cada fila podemos decidir si una ficha va a unir los tableros en esa fila o no. Siendo que cada fila es independiente de las dem\'as y que hay n filas llegamos r\'apidamente a la cota mencionada.
+
+Por lo tanto, vamos a iterar a lo sumo $2^{n}$ veces, cada vez realizando $ O\left( T\left( n \times m\right) \right) $ operaciones.
+
+Como vemos, en esta funci\'on se realizan $O\left( 2^{n} T\left( n \times\frac{m}{2}\right) \right) $ operaciones.
+
+Volviendo al an\'alisis del caso 2 de cantidad\_distribuciones\_sin\_filtrar$\left( \right) $, vemos que se realizan $2T\left( n \times \frac{m}{2}\right) + O\left( 2^{n} T\left( n \times \frac{m}{2}\right) \right)$ operaciones, o m\'as generalmente $O\left( 2^{n} T\left( n \times \frac{m}{2}\right) \right)$ operaciones.
+
+Reformulando la ecuaci\'on \ref{eq:op_total} tenemos lo siguiente:
+\begin{equation}
+ T\left( n \times m\right) = \sharp operaciones\; de\; an\acute{a}lisis + O\left( 2^{n} T\left( n \times \frac{m}{2}\right) \right) \; operaciones 
+\end{equation}
+
+Se realizan $O\left( nm \log\left(  nm \right) \right) $ operaciones de an\'alisis, con lo cual podemos probar que $T\left( n \times m\right) \in O(2^{2\left( n+m\right) })$. Para un an\'alisis m\'as detallado consultar el ap\'endice \ref{demo:comp_3}
+
+
+
+\section*{An\'alisis de resultados}
+Para poder ver el funcionamiento del algoritmo, se realizaron tres tipos de casos de prueba diferentes.
+
+\begin{itemize}
+ \item Casos de correctitud: Se basaron en presentar tableros donde ya se conoce el numero de combinaciones posibles para ver si el algoritmo funciona correctamente, dado que los filtros aplican de formas diferentes no son buenos casos para analizar en cuanto a su tiempo de ejecuci\'on sino que meramente se centran en probar empiricamente la correctitud del algoritmo
+\item Casos de Stress: Se basaron en presentar tableros donde la mayor cantidad de casillas posibles esten sanas de tal manera que los filtros de mejores no apliquen de ninguna manera y el algoritmo tenga que calcular todas y cada una de las posibilidades diferentes.
+\item Casos de prueba de filtros: Se basaron en presentar tableros donde la cantidad de casillas sanas sea considerablemente menor a la cantidad total de casillas para luego poder contrastar los tiempos de ejecuci\'on con los casos de stress.
+\end{itemize}
+
+
+\subsection*{Casos de correctitud}
+Este tipo de casos se centro en probar la correctitud del algoritmo implementado. La idea es realizar ejecuciones con tableros a los cuales se les conosca la cantidad de distribuciones diferentes para poder constrastarlo con la salida generada por el algoritmo. Para esto se utilizo un resultado obtenido de la bibliografia: Se conoce la cantidad de distribuciones posibles para tableros de 2xn. Para este tipo de tableros la cantidad de distribuciones de fichas de domino posibles es el termino n+1 de la sucesion de Fibonacci. Dada esta propiedad de este tipo de tableros, se generaron pruebas que contengan varios tableros disjuntos de 2*n, donde entonces luego la cantidad total de distribuciones es la multiplicaci\'on de los t\'erminos de la sucesi\'on de Fibonacci correspondiente para cada subtablero.
+
+\subsection*{Casos de stress}
+presentar los casos, mostrar los graficos
+
+\subsection*{Casos de prueba de filtros}
+presentar los casos, mostrar los graficos y comparar con los de stress
+
+
+
+
+\section*{Conclusiones}
+chamuyo
+
+
+\section*{Ap\'endices} 
+\section{Demostraci\'on de Complejidad}\label{demo:comp_3}
+
+Para acotar la cantidad de operaciones de an\'alisis es necesario explicar con mayor detalle en que consiste la funci\'on filtrar.
+A continuaci\'on presentamos su pseudoc\'odigo:
+
+\begin{verbatim}
+filtrar(tablero t, vector<Casilla*> v_casillas_sanas) {
+  set< <numero_aristas, Casilla*> > sanas
+  Para cada casilla { // Ciclo 1)
+    si es sana {
+      sanas.insertar(<casilla_sana.aristas(),casilla_sana>)
+      Aumentar debidamente los contadores de 
+      casillas sanas "negras" y "blancas"
+    }
+  }
+  Si el tablero es trivialmente insatisfacible 
+  es decir, si el numero de casillas negras sanas es 
+  distinto al de blancas sanas,
+  devolver "t es insatisfacible".
+  
+  mientras (t sea satisfacible y el numero de 
+  aristas del minimo del set sanas sea menor a 2 y
+  haya elementos en el set)
+  { // Ciclo 2)
+    llamemos c a la casilla correspondiente al
+    minimo elemento del set sanas.
+    Borrar la entrada correspondiente a c del set.
+    Si la casilla c esta sana pero no tiene adonde 
+    conectarse, t es insatisfacible. {
+      Devolver "t es insatisfacible".
+    }
+    Si la casilla c tiene un unico vecino vecino_c {
+      conectar c, actualizando el conteo de
+      aristas de cada una de las casillas 
+      vecinas de vecino_c.
+    }
+  }
+  Devolver "t es satisfacible".
+  // Si llegamos hasta aca, llenamos todas las
+  // casillas que se llenan trivialmente y 
+  // confirmamos que el tablero es satisfacible.
+}
+
+\end{verbatim}
+
+
+Para mejorar el desempe\~no de nuestros algoritmos utilizamos una implementaci\'on de conjuntos sobre arbol binario de b\'usqueda parcialmente balanceado. Dicha implementaci\'on ofrece inserciones y borrados en $O\left( \log\left( n\right) \right) $, donde n es la cantidad de elementos que contiene el conjunto. Tambi\'en ofrece busqueda del m\'inimo en $O\left( 1\right) $, ya que se guarda un puntero al elemento ubicado m\'as a la izquiera en el \'arbol.
+
+
+El ordenamiento dentro del conjunto se va a realizar comparando en primer lugar el n\'umero de aristas, o casillas sanas vecinas.
+
+
+Para los siguientes c\'alculos y razonamientos vamos a llamar n a la cantidad de columnas y m a la cantidad de filas del tablero que recibimos.
+
+
+El Ciclo 1 se va a ejecutar $n\times m $ veces, y en algunas de esas iteraciones se va a realizar una inserci\'on en el conjunto. Como con cada inserci\'on aumenta el n\'umero de elementos del conjunto, se realizan en el ciclo $O\left( \textstyle\sum_{i=1}^{n\times m} \log\left( i\right) \right) $ operaciones. Se puede ver que en total se realizan $ O\left( n\times m \log\left( n\times m\right) \right) $ operaciones dentro del Ciclo 1.
+
+
+El Ciclo 2 se va a ejecutar una cantidad de veces acotada por el n\'umero de casillas sanas, que a su vez est\'a acotado por el total de casillas. En cada iteraci\'on se borra un elemento del conjunto en $O\left( \log\left( n\times m \right) \right) $ operaciones. Se realiza una cantidad constante de operaciones para determinar el estado de la casilla que se est\'a analizando y eventualmente se actualiza una cantidad constante de elementos del conjunto si fuera necesario conectar dos casillas, realiz\'andose todo esto tambi\'en en $O\left( \log\left( n\times m\right) \right) $ operaciones. 
+
+
+Podemos ver que el Ciclo 2 va a ejecutar $O\left( n\times m \log\left( n\times m\right) \right) $ operaciones.
+
+Vemos que la cantidad total de operaciones de la funci\'on filtrar es la suma de las operaciones realizadas en los ciclos, por lo tanto se realizan en total $O\left( n\times m \log\left( n\times m\right) \right) $ operaciones.
+
+
+A continuaci\'on vamos a analizar la funci\'on dividir\_disjuntos$\left( \right) $:
+
+\begin{verbatim}
+dividir_disjuntos(Tablero t, vector<Casilla*> casillas_sanas) {
+bool visitados[filas(t)][columnas(t)] inicializado en falso.
+Para i = 1 a #casillas_sanas { // Ciclo dividir_disjuntos()
+  Si no fue visitada casillas_sanas[i], generar tablero
+  con alcanzables(casillas_sanas[i],visitados).
+}
+}
+\end{verbatim}
+
+La cantidad de operaciones de la funci\'on es la cantidad de operaciones del ciclo m\'as una constante. 
+
+
+Dentro del ciclo la cantidad de operaciones es una constante m\'as las operaciones de alcanzables$\left( \right) $. Vamos a analizar estas \'ultimas por separado, ya que, como veremos, es una cantidad acotada independientemente del n\'umero de iteraciones del ciclo dividir\_disjuntos$\left( \right) $.
+alcanzables$\left( \right) $ se puede realizar de la siguiente manera:
+
+\begin{verbatim}
+vector<Casilla*> alcanzables(casilla c, visitados) {
+pila<Casilla*> a_procesar
+Agregar c en a_procesar
+mientras a_procesar tenga elementos {
+  actual := tope de a_procesar
+  agregar a resultado y a a_procesar los 
+  vecinos no visitados de la casilla actual
+}
+devolver resultado
+}
+\end{verbatim}
+
+Se realiza una cantidad constante de operaciones en el ciclo de alcanzables$\left( \right) $ y \'este se va a ejecutar en total $O\left( n\times m\right) $ veces en todo el tablero, sin importar cu\'antas veces se repita el ciclo dividir\_disjuntos$\left( \right) $ ya que no puede iterar sobre una casilla ya visitada.
+
+Como vemos, para un tablero, alcanzables$\left( \right) $ va a realizar $O\left( n \times m\right) $ operaciones, y el ciclo dividir\_disjutos$\left( \right) $ se repetir\'a $O\left( n\times m\right) $ veces.
+
+Por lo tanto la funci\'on dividir\_disjuntos$\left( \right) $ realizar\'a $O\left( n \times m\right) $ operaciones en total.	
+
+
+Habiendo acotado la cantidad de operaciones de an\'alisis del tablero podemos probar que $T\left( n \times m\right) \in O\left( 2^{2\left( n+m\right) }\right) $.
+
+Retomando la ecuaci\'on \ref{eq:op_total} podemos desarrollarla:
+
+\begin{equation}
+T\left( x \times m\right) = O\left( n\times m \log \left( n\times m\right) \right) + \sharp disjuntos \times O \left( 2^{n}T\left( n \times \frac{m}{2} \right) \right) 
+\end{equation}
+ 
+
+Como ya mencionamos anteriormente, si bien en nuestra implementaci\'on de la resoluci\'on no acotamos la cantidad de tableros disjuntos que aceptamos, esto se podr\'ia hacer para que la siguiente demostraci\'on siga siendo v\'alida.
+
+
+Si $\sharp disjuntos < k$ para alg\'un  $k \in \Re$  fijo, tenemos que:
+
+\begin{equation} \label{eq:op_total_cota_disjuntos}
+T\left( n \times m\right) = O\left( n\times m \log \left( n\times m\right) \right) + O \left( 2^{n}T\left( n \times \frac{m}{2} \right) \right) 
+\end{equation}
+
+Vamos a probar por inducci\'on que $\textstyle T\left( n \times m \right) \in O\left( 2^{2\left( n+m\right)  }\right)$
+
+
+El caso base el trivial, debido a que la cantidad de operaciones para analizar un tablero de $2\times 2$ cualquier va a estar acotada por una constante $x$, y $ x \in O\left( 2^{2\left(2+2\right)} \right) $.
+
+
+Nuesta hip\'otesis inductiva es:
+
+Para t, u tales que $ t \times u < n \times m $, $ T(t \times u) \in O\left( 2^{2\left( n + m\right) }\right) $.
+\begin{itemize}
+ \item Caso $n > \frac{m}{2} $
+
+Volviendo a usar la ecuaci\'on \ref{eq:op_total_cota_disjuntos}, tenemos lo siguiente: 
+
+\begin{equation}
+T\left( n \times m \right) \leq c n\times m \log \left(n\times m \right) + c' 2^{n}\left( c'' n\times \frac{m}{2} \log \left( n \times \frac{m}{2} \right) + c''' 2^{\frac{m}{2}}T\left( \frac{n}{2} \times \frac{m}{2} \right) \right)
+\end{equation}
+
+
+
+Por hip\'otesis inductiva:
+
+
+\begin{equation}
+T\left( n \times m \right) \leq c n\times m \log \left(n\times m \right) + c' 2^{n}\left( c'' n\times \frac{m}{2} \log \left( n \times \frac{m}{2} \right) + c''' 2^{\frac{m}{2}} 2^{n+m} \right)
+\end{equation}
+\begin{equation}
+T\left( n \times m \right) \leq c n\times m \log \left(n\times m \right) +  c' 2^{n}c'' n\times \frac{m}{2} \log \left( n \times \frac{m}{2} \right) + c'c''' 2^{\frac{3m}{2} + 2n}  
+\end{equation}
+Como $n\times m \log \left(n\times m \right) \in O\left(2^{2\left(n+m\right)}\right)$ y $ c' 2^{n}c'' n\times \frac{m}{2} \log \left( n \times \frac{m}{2} \right) \in O\left(2^{2\left(n+m\right)}\right)$
+\begin{equation}
+T\left( n \times m \right) \leq c'''' 2^{2\left(n+m\right)}+ c'c''' 2^{\frac{3m}{2} + 2n}  
+\end{equation}
+Luego:
+$T\left( n \times m \right) \leq d 2^{2\left(n+m\right)}$ y por lo tanto $T\left( n\times m \right) \in O\left( 2^{2\left(n+m\right)}\right)$
+
+
+
+\item Caso $n \leq \frac{m}{2}$
+
+Nuevamente usando la ecuaci\'on \ref{eq:op_total_cota_disjuntos}, y aplicando la hip\'otesis inductiva tenemos lo siguiente: 
+
+\begin{equation}
+T\left( n \times m \right) \leq c n\times m \log \left(n\times m \right) + c'd' 2^{n}2^{2n+m}
+\end{equation}
+
+
+Como $ c n\times m \log \left(n\times m \right) \in O\left( 2^{2\left( n+m\right)}\right)$ y $ n < \frac{m}{2} $ obtenemos que $ T\left( n \times m \right) \leq d''2^{ 2\left( n+m \right)} + c'd' 2^{2\left(n+m \right)}$. Con lo cual $ T\left(n \times m \right) \in O\left(2^2\left( n+m\right) \right)$.
+
+
+\end{itemize}
+
+\end{document}
