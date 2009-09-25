@@ -103,9 +103,6 @@ else{
 	/// obtener medicion
 	gettimeofday(&fin, NULL);
 	diferencia = (fin.tv_sec - inicio.tv_sec)*1000000 + fin.tv_usec - inicio.tv_usec ;
-	//salida_tiempo << "SU TIEMPO DE EJECUCION EN MICROSEGUNDOS FUE: " << diferencia <<endl;
-	///
-
 
 	resultados.push_back(temp);
 	if (i< (tam-1)) salida<<diferencia<<',';
@@ -187,7 +184,6 @@ void fact_primos(vector< unsigned long int > &primos,vector< unsigned  int > &ex
 								if(conta) sumaGlobal+=1;
     }
 	
-    //for(unsigned int i =3;i*i<= n ;i += 2) {
 		for(unsigned int i =3;i<= (sqrt(n)) ;i += 2) {
 
 								sumaGlobal+= log(n) * log(n);
@@ -223,9 +219,7 @@ void fact_primos(vector< unsigned long int > &primos,vector< unsigned  int > &ex
 						if(conta)sumaGlobal+= log(n+1);
 						// TODO abajo suponemso o de 1 los push
     if(n != 0 && n!=1) {
-            /////////
-           // aca le agregue n!= 1 pq sino, funciona de pedo pero hace mil cuentas mas
-            ////////
+    
          primos.push_back(n); exp.push_back(1); sumaGlobal+= 2;
          }
   }
