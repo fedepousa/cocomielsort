@@ -131,7 +131,7 @@ En este modelo de computo si nos concentraremos en el tama\~{n}o de la entrada y
 \bigskip
 \section*{Introduci\'on}
 Este ejercicio pedia que dado un tablero de nxn casillas con (casillas sanas y otras rotas) se calcule cuantas formas de cubrirlo con fichas de domino(equivalen a dos casillas contiguas del tablero) las casillas sanas de la misma.
-Con este objetivo se procedio a realizar un algoritmo que calcule dicha cantidad. Este algoritmo tiene una complejidad de O($2^{2\left(n+m \right) }$). Nuevamente se realizo una tabla de tiempos para analizar los resultados y luego graficarlos. 
+Con este objetivo se procedio a realizar un algoritmo que calcule dicha cantidad. Este algoritmo tiene una complejidad de O($2^{2\left(n+m \right) }$). En primer lugar, se intento contar de alguna manera la cantidad de distribuciones posibles. Para esta aproximaci\'on se encontr\'o en la bibliograf\'ia, la cantidad de distribuciones para tableros de 2xN. Sin embargo, esta aproximaci\'on no termino influyendo en el diseno final del algoritmo.
 \section*{Algoritmo}
 En esta secci\'on se presenta el pseudoc\'odigo del algoritmo b\'asico propuesto como soluci\'on y una explicaci\'on de la motivaci\'on del mismo.
 \begin{verbatim}
@@ -321,8 +321,7 @@ Para poder ver el funcionamiento del algoritmo, se realizaron tres tipos de caso
 
 
 \subsection*{Casos de correctitud}
-knuth, fibonacci bla bla
-sin graficos
+Este tipo de casos se centro en probar la correctitud del algoritmo implementado. La idea es realizar ejecuciones con tableros a los cuales se les conosca la cantidad de distribuciones diferentes para poder constrastarlo con la salida generada por el algoritmo. Para esto se utilizo un resultado obtenido de la bibliografia: Se conoce la cantidad de distribuciones posibles para tableros de 2xn. Para este tipo de tableros la cantidad de distribuciones de fichas de domino posibles es el termino n+1 de la sucesion de Fibonacci. Dada esta propiedad de este tipo de tableros, se generaron pruebas que contengan varios tableros disjuntos de 2*n, donde entonces luego la cantidad total de distribuciones es la multiplicaci\'on de los t\'erminos de la sucesi\'on de Fibonacci correspondiente para cada subtablero.
 
 \subsection*{Casos de stress}
 presentar los casos, mostrar los graficos
