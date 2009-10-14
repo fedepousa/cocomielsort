@@ -1,0 +1,114 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{graphicx}
+\usepackage{verbatim}
+% \usepackage{lstlisting}
+
+\begin{document}
+\begin{center}
+\section*{Aclaraciones Generales}
+\end{center}
+
+\newpage
+\begin{center}
+\section*{Ejercicio 1: Matching M\'aximo}
+\end{center}
+
+\section*{Introducci\'on}
+En este ejercicio se ped\'ia encontrar el matching m\'aximo dentro de un grafo. Se define como matching a un subconjunto de aristas que comparten v\'ertices. Si bien este ejercicio podr\'ia ser de gran complejidad, el mismo se encuentra en una presentaci\'on mas accesible dado que no hay que aplicar el algoritmo sobre cualquier tipo de grafos, sino que solamente tiene que ser aplicable a grafos de 3 o m\'as nodos que sean ciclos simples, es decir, grafos que en su isomorfismo planar sean simplemente un dibujo de un pol\'igono. 
+
+/% aca podria ir algun dibujo de como serian los grafos a ver y como seria algun grafo que no hay que analizar.
+
+\section*{Algoritmo}
+A continuaci\'on se muestra el pseudoc\'odigo del algoritmo propuesto como resoluci\'on del problema.
+
+
+% \begin{lstlisting}
+Aca va el pseudocodigo.
+% \end{lstlisting}
+
+
+Este algoritmo consiste en transformar el grafo en un vector, dado que al poder ser representado como un pol\'igono, se puede ver que, quitando una sola arista, el grafo se convierte en una sucesi\'on de aristas con peso, lo cual se puede representar con un vector de n\'umeros. La idea del algoritmo es poder encontrar el m\'aximo matching posible, una primera aproximaci\'on a la soluci\'on final, podr\'ia ser la siguiente:
+
+\begin{enumerate}
+\item Se toma una arista cualquiera para comenzar. Luego, el matching buscado tiene dos opciones: contener esa arista, o no contenerla. Entonces el resultado ser\'a el m\'aximo entre el matching m\'aximo del grafo sin esa arista(no se utiliza la primer arista tomada) y el matching m\'aximo del grafo sin esa arista, ni ninguno de sus dos aristas vecinas, m\'as el valor de la arista elegida en primer t\'ermino(si se utiliza la primer arista tomada). De esta manera, el problema sobre un grafo, se convierte en 2 problemas similares pero sobre vectores.
+\item En este momento, se necesita sacar el matching m\'aximo, pero sobre vectores, para hacer esto se piensa de manera parecida al punto anterior comenzando con el \'ultimo elemento: o bien el matching m\'aximo lo contiene, o bien no lo contiene. Luego, el matching buscado para el vector, sera el m\'aximo entre el matching m\'aximo del vector sin el \'ultimo elemento(caso en el que no se usa el \'ultimo elemento) y el matching m\'aximo del vector sin los \'ultimos dos elementos m\'as el valor del \'ultimo elemento(caso en el que si se utiliza el \'ultimo).
+
+	$matchingMaximo(v_1,v_2,..,v_n) = maximo(matchingMaximo(v_1,v_2,..,v_{n-1}), matchingMaximo(v_1,v_2,..,v_{n-2}) + v_n)$
+\item De esta manera, se puede ver que el problema se torna recursivo, siendo solucionado mediante la t\'ecnica de dividir y conquistar, teniendo como caso base los vectores de dos o un elemento resolubles trivialmente.
+\end{enumerate}
+
+Si bien el algoritmo propuesto retorna el valor esperado, la complejidad del mismo no es \'optima. Al hacer los llamados recursivos sucede que hay varios matching m\'aximos que se realizan sobre los mismos vectores, generando as\'i m\'as c\'alculos de los necesarios. Fue por esto, que el siguiente paso fue modificar el algoritmo para que no calcule las cosas de modo \emph{top down}, sino que fuese un algoritmo \emph{bottom up}, para as\'i evitar los c\'alculos repetidos, utilizando as\'i la mayor ventaja de la programaci\'on din\'amica, t\'ecnica que define al algoritmo final.
+
+De esta manera, se pens\'o como teniendo instancias m\'as peque~{n}as del problema, se puede conocer la soluci\'on de una instancia mayor. Se utiliz\'o que, dadas las soluciones \'optimas para vectores de n-2 y n-1 elementos, la soluci\'on para el vector de n elementos es el m\'aximo entre la solucion de n-1 elementos, y la soluci\'on de n-2 elementos m\'as el elemento n-\'esimo. Es as\' que el c\'alculo se torna \emph{bottom up}, calculando los m\'aximos de los subvectores, una sola vez.
+
+Aca podria ir un ejemplo hecho paso por paso o algo asi.
+
+\section*{Demostraci\'on de correctitud}
+\section*{Complejidad}
+\section*{An\'alisis de resultados}
+
+Para analizar este algoritmo, se bas\'o el enfoque en dos aspectos diferentes. Por un lado, se encuentran los an\'alisis sobre la correctitud de la soluci\'on propuesta y, por otro lado, se encuentra el an\'alisis sobre el tiempo de ejecuci\'on para diferentes archivos de entrada, para poder realizar as\'i, una correlaci\'on entre el tiempo de ejecuci\'on y la complejidad te\'orica calculada anteriormente.
+
+\subsection*{Casos de correctitud}
+Con el fin de realizar una comprobaci\'on emp\'irica de la soluci\'on propuesta se genero un archivo de entrada con diez casos de prueba.
+\begin{itemize}
+\item Los primeros nueve casos de prueba, estan conformados por los entregados por la c\'atedra, teniendo de esta manera las soluciones reales para contrastar con las arrojadas por el algoritmo.
+\item El \'ultimo caso de prueba esta conformado por un grafo de 30 aristas, con pesos de 1 a 30, ordenados consecutivamente. En este caso, se puede ver que el matching m\'aximo esta dado por tomar las aristas con valor par.
+\end{itemize}
+
+El an\'alisis en este tipo de casos se baso solamente en la correctitud de los mismos y no en el tiempo de ejecuci\'on debido a que son grafos de tama\~{n}os muy peque\~{n}os y el tiempo de ejecucion no sobrepasa los 2 microsegundos en ninguno de los casos.
+
+Cabe destacar, que para todos los casos propuestos, los resultados fueron satisfactorios al ser contrastados con la soluciones previamente obtenidas
+
+\subsection*{Casos de Stress}.
+
+\section*{Conclusiones}
+
+
+\begin{center}
+\item \section*{Ejercicio 2: Se inunda la isla}
+\end{center}
+
+\section*{Introducci\'on}
+En este ejercicio se pedia encontrar el area que no se inunde en una isla plana luego de ciertas condiciones.
+
+En primer lugar, se tiene una isla que posee la misma altura en todos sus puntos, es por esto que si la marea sube la isla se inunda por completo. La soluci\'on para que las partes importantes de la isla no se inunde cuando sube la marea, es poner una serie de vallas rectangulares que no dejen pasar el agua hasta cierta altura. La idea ser\'ia entonces, colocando adecuadamente estas vallas, encerrar partes de la isla para que el agua no pueda entrar.
+
+Aca se podria poner un dibujo de ejemplo de la isla con ciertas vallas o algo asi.
+
+El problema consiste en, dado un conjunto de vallas y el nivel de la marea. Calcular cual es el area de la isla que no va a ser inundada.
+
+\section*{Algoritmo}
+A continuaci\'on se presenta el pseudoc\'odigo de la soluci\'on propuesta.
+
+
+
+
+Aca va el pseudocodigo.
+
+
+La idea del algoritmo es la siguiente:
+
+Dado que, por restricci\'on del problema, las vallas no pueden estar en cualquier lado, sino que su coordenada (x,y) del punto inferior izquierdo esta formada por x e y enteros. Asimismo, como la longitud de una valla tambien es entera, la coordenada del v\'ertice restante tambien ser\'a entera. De esta manera, podemos ver que la isla se puede pensar como una grilla de cuadrados de 1x1. Luego, esta grilla fue pensada como un grafo, donde cada cuadrado de la grilla es un nodo y las aristas estan dadas por la relaci\'on entre un cuadrado y sus 4 posibles vecinos. Para armar esta grilla, se calcularon los m\'inimos y m\'aximos valores de las vallas en x y en y, ya que por fuera de estos los cuadrados que pertenezcan a la isla se inundar\'an de todos modos (ya que no hay vallas que los cubran).
+
+Al comenzar el algoritmo, todos los cuadrados estan relacionados con sus vecinos con aristas de peso 0. Esto quiere decir que si un cuadrado se inunda, los cuadrados que esten relacionados con ese por una arista de peso 0 tambien se va a inundar. 
+
+Luego, se recorren todas las vallas dadas por el problema y se setean las nuevas relaciones entre los cuadrados, es decir, si existe una valla de altura 4 entre el nodo $v_1$ y el nodo $v_2$, lo que se hace es ponerle un peso de 4 a la arista que los relaciona. Indicando as\'i que solamente si la marea es mayor a 4, el agua pasara de ese $v_1$ a $v_2$ directamente.
+
+Por \'ultimo, lo que se hace es realizar un BFS desde un nodo exterior a la grilla (es decir, que seguro se inunda) y contar cuantos nodos tiene la componente conexa que el BFS recorre por completo. Obviamente, este BFS toma que un nodo es vecino de otro si la arista que los une tiene peso menor a la marea, sino podremos decir que la valla es efectiva entre esos dos nodos y no hay inundaci\'on de uno hacia el otro. Una vez obtenida la cantidad total de nodos dados por el recorrido en anchura, el \'ultimo paso es realizar la sustracci\'on entre los nodos totales de la grilla, y los nodos inundados; obteniendo as\'i, la cantidad total de nodos que no fueron inundados gracias a la protecci\'on de las vallas. Por \'ultimo, como cada nodo representa un cuadrado de \'area 1, la cantidad de nodos no alcanzados por el BFS es igual al \'area no inundada.
+\section*{Complejidad}
+\section*{An\'alisis de resultados}
+\section*{Conclusiones}
+
+\begin{center}
+\item \section*{Ejercicio 3: Bernardo Armando Pandillas}
+\end{center}
+
+\section*{Introducci\'on}
+En este problema lo que se quiere es, teniendo un conjunto de personas y sabiendo si se conocen entre s\'i, armar dos grupos de tres personas cada uno, un grupo en el cual las 3 personas se conoscan mutuamente, y otro grupo en el cual ninguno este relacionado con otro.
+\section*{Algoritmo}
+\section*{Complejidad}
+\section*{An\'alisis de resultados}
+\section*{Conclusiones}
+
+\end{document}
