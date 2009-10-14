@@ -2,10 +2,14 @@ Confeccionamos la matriz de adyacencias, llamemosla A.
 
 Sea C = A^3, C tiene en la i-esima posicion de su diagonal la cantidad de caminos de longitud 3 desde el nodo i hasta el nodo i.
 
-Obtenemos C utilizando el algoritmo de Strassen para realizar el producto de matrices.
-Buscamos en C el minimo i tal que C[i][i] != 0, llamemoslo j. Si existe, entonces, el menor clique de 3 nodos contendra a j. Si no fuera asi, entonces existe k < j tal que C[k][k] != 0, lo cual es absurdo, ya que j es el minimo i tal que C[i][i] != 0. 
+Obtenemos C utilizando el algoritmo de Strassen para realizar el producto de matrices. La cantidad de operaciones que realiza este algoritmo esta en O(m ^log(7)), para una matriz de m filas y m columnas. Si el grafo tiene n nodos, es necesario generar una matriz de m x m, con m <= 2n, ya que es necesario que n sea una potencia de dos. De esta forma, la cantidad de operaciones para realizar el producto de matrices esta en O(7 * (n ^ (log 7) )) = O(n^log(7)).
 
-De todas las combinaciones posibles para los otros dos nodos, elegimos la menor tal que los tres nodos forman una clique. En nuestra implementacion optimizamos esta ultima seleccion, evitando generar combinaciones que sabemos anticipadamente que no corresponden a un clique. 
+ 
+Buscamos en C el minimo i tal que C[i][i] != 0, llamemoslo j. Si existe, entonces, el menor clique de 3 nodos contendra a j. Si no fuera asi, entonces existe k < j tal que C[k][k] != 0, lo cual es absurdo, ya que j es el minimo i tal que C[i][i] != 0. Si no existe, termina el algoritmo indicandolo de la manera correspondiente.
+Se puede encontrar j en O(n) operaciones, ya que para cada posicion de la diagonal se realiza una cantidad constante de operaciones para verificar si en dicha posicion hay un cero. Como maximo se recorre toda la diagonal, que tiene n posiciones.
+
+De todas las combinaciones posibles para los otros dos nodos, elegimos la menor tal que los tres nodos forman una clique. En nuestra implementacion optimizamos esta ultima seleccion, evitando generar combinaciones que sabemos anticipadamente que no corresponden a un clique.
+Generando todas las combinaciones de dos nodos tenemos la cantidad de operaciones para obtener la menor esta en O(n^2), ya que se requiere una cantidad constante de operaciones para generar cada combinacion.
 
 Como sabemos que cualquier combinacion va a poder expresarse como j,h,i, donde j<h<i. Entonces buscamos el menor h, tal que h > j, y el menor i, tal que i > h tales que j, h, i forman un clique. Como iteramos h e i en forma ascendente, la primer combinacion que forma un clique que encontramos es la deseada.
 
