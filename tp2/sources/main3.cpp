@@ -1,23 +1,24 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <sys/time.h>
 
 
 using namespace std;
 
 
 void strassen(int **m, int **a, int **b, int start_a_x, int start_a_y, int start_b_x, int start_b_y, int n, int start_m_x, int start_m_y);
-int** pasar_a_pot_2(int &tam, int **a,int n);
-void copiar_matriz(int **res, int **cres, int n);
 
-// res es la matriz donde quiero poner el resultado, a y b son las matrices a multiplicar, 
-// a, b y res son de n x n.
-void strassen_interfaz(int **res, int **a, int **b, int n) ;
+
 void invertir(int ** a, int n);
 void resolver(vector<int> *adyacencias,int n,  int &a, int &b, int &c, int &d, int &e, int &f);
 int main() {
   ifstream entrada("Tp2Ej3.in");
   ofstream salida("Tp2Ej3.out");
+	ofstream tiempos("Tp2Ej3Tiempos.out"); //Aca escribimos los tiempos
+	timeval inicio;
+	timeval fin;
+	double diferencia;
   int n;
   while(entrada >> n && n!=-1) {
     int temp,a,b,c,d,e,f;
@@ -30,11 +31,16 @@ int main() {
         adyacencias[i].push_back(temp-1);
       }
     }
+    
+    
+    gettimeofday(&inicio, NULL);
     resolver(adyacencias, n, a, b, c, d, e, f);
-    salida << a << " "<< b <<  " "<< c << " " << d << " "<< e << " "<<f << endl;
+    gettimeofday(&fin, NULL);
+    diferencia = (fin.tv_sec - inicio.tv_sec)*1000000 + fin.tv_usec - inicio.tv_usec;
+    tiempos << diferencia << endl;
+    salida << a << " "<< b <<  " "<< c << " " << d << " "<< e << " "<<f << '\n';
     delete [] adyacencias;
   }
-  
   
   
   return 0;  
@@ -154,37 +160,6 @@ void strassen(int **m, int **a, int **b, int start_a_x, int start_a_y, int start
   }
 }
 
-int ** pasar_a_pot_2(int &tam, int **a,int n) {
-  int **m;
-  tam = 1;
-  while(tam<n) tam = tam << 1;
-  m = new int * [tam];
-  for(int f = 0; f<n;++f) {
-    m[f] = new int[tam]; 
-    for(int c = 0; c<n;++c) {
-      m[f][c] = a[f][c];
-    }
-    for(int c = n;c<tam;++c) {
-      m[f][c] = 0;
-    }
-  }
-  for(int f=n;f<tam;++f ) {
-    m[f] = new int[tam]; 
-    for(int c = 0; c<tam;++c) {
-      m[f][c] = 0;
-    }
-  }
-  return m;
-}
-
-
-void copiar_matriz(int **res, int **cres, int n) {
-  for(int f = 0 ; f<n;++f) {
-    for(int c =0; c<n;++c) {
-      res[f][c] = cres[f][c];
-    }
-  }
-}
 
 
 void resolver(vector<int> *adyacencias,int n,  int &a, int &b, int &c, int &d, int &e, int &f) {
@@ -193,27 +168,34 @@ void resolver(vector<int> *adyacencias,int n,  int &a, int &b, int &c, int &d, i
   while(tam < n) tam = tam << 1;
   int ** ady = new int * [tam];
   int ** cam = new int * [tam];
+  // Inicializo la matriz de caminos de longitud 3 en 0s.
   for(int i = 0;i<tam ; ++i) {
     cam[i] = new int [tam];
     for(int j = 0;j<tam;++j) {
       cam[i][j] = 0;
     }
   }
+  // Inicializo la matriz de adyacencias de longitud 3 en 0s.
   for(int i = 0;i<tam ; ++i) {
     ady[i] = new int [tam];
     for(int j = 0;j<tam;++j) {
       ady[i][j] = 0;
     }
   }
+  // Lleno la matriz de adyacencias.
   for(int i = 0;i<n;++i) {
     for(int j = 0; j<adyacencias[i].size();j++) {
       ady[i][adyacencias[i][j]] = 1;
     }
   }
+  // Matriz de caminos = ady^3 = ady^2 * ady
   strassen(cam, ady, ady,0,0,0,0,tam,0,0);
   strassen(cam, cam, ady,0,0,0,0,tam,0,0);
   int en_ciclo = -1;
   int indice = 0;
+  // Busco en la diagonal el primer nodo (primero numericamente) 
+  // tal que existe un camino de longitud 3 hacia si mismo. 
+  // LLamemoslo a.
   while(indice<n) {
     if(cam[indice][indice] > 0) {
       en_ciclo = indice;
@@ -221,6 +203,11 @@ void resolver(vector<int> *adyacencias,int n,  int &a, int &b, int &c, int &d, i
     }
     ++indice;
   }
+  // Si encontre el nodo que buscaba, encuentro el primer nodo 
+  // (primero numericamente) tal que conoce a "a" y a algun 
+  // conocido de "a".
+  // Una vez encontrado, de los conocidos que comparte me quedo con 
+  // el primero (primero numericamente).
   if(en_ciclo !=-1) {
     int i = en_ciclo + 1;
     while(i < n) {
@@ -239,6 +226,7 @@ void resolver(vector<int> *adyacencias,int n,  int &a, int &b, int &c, int &d, i
     }
   }
   
+  // Invierto la matriz y hago el mismo procedimiento.
   invertir(ady,n);
   strassen(cam, ady, ady,0,0,0,0,tam,0,0);
   strassen(cam, cam, ady,0,0,0,0,tam,0,0);
@@ -284,26 +272,7 @@ void resolver(vector<int> *adyacencias,int n,  int &a, int &b, int &c, int &d, i
   
 }
 
-void strassen_interfaz(int **res, int **a, int **b, int n) {
-  int tam = 1;
-  int ** ca = a;
-  int ** cb = b;
-  int ** cres = res;
-  while(tam<n) {
-     tam = tam << 1;
-   }
-  if(tam!=n) {
-    ca = pasar_a_pot_2(tam,a,n);
-    cb = pasar_a_pot_2(tam,b,n);
-    cres= pasar_a_pot_2(tam,res,n);
-  }
-  strassen(cres,ca,cb,0,0,0,0,tam,0,0);
-  if(tam!=n) {
-    copiar_matriz(a, ca, n);
-    copiar_matriz(b, cb, n);
-    copiar_matriz(res, cres, n);
-  }
-}
+
 
 void invertir(int ** a, int n) {
   for(int f =0;f<n ; f++) {
