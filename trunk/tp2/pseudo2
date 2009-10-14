@@ -1,0 +1,32 @@
+main(){
+
+	vector vallas;
+
+	leer(vallas)
+
+	maxmin(vallas)
+
+
+	matriz nodo[alto][ancho];
+
+	seteamosMatriz(matriz)
+
+	int inundadas  <- bfsContador(matriz)
+
+
+	return (ancho*alto - inundadas)
+
+}
+
+
+leer(vallas): Carga en el vector vallas, todas las vallas del input. O(cant vallas) 
+
+maxmin(vallas): Setea ciertas variables con el tama;o maximo que tendra la isla delimitada por las vallas mas externas. O(cant vallas)
+
+seteamosMatriz(matriz): Usando las variables seteadas por maxmin crea un grafo (representado con una matriz) donde establece una relacion
+nodo a nodo si pasa agua o no. O(cant vallas)
+
+bfsContador(matriz): Recorre el grafo usando bfs, por cada nodo q visita suma uno a una variable que al final devuelve. De modo tal que 
+recorre todos los nodos que se inundan dado q son los que se relacionan. De esta manera, sabemos cuantos nodos se inundan.  O(n+m) por 
+ser bfs comun y corriente, pero como la cantidad de aristas del grafo es lineal con respecto a la cant de nodos O(n) 
+
