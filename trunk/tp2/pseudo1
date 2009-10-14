@@ -1,0 +1,54 @@
+
+Para resolver el problema de conocer el peso de un matching de peso maximo para un ciclo simple vamos a generar un matching de peso maximo.
+
+Inicialmente convertimos el problema de encontrar un matching de peso maximo en un ciclo simple a encontrar un matching de peso maximo en un camino simple. 
+Si tenemos un ciclo simple C. $C =C_1, C_2, ... , C_n $ donde C_i es una arista tal que C_i y C_{i+1} inciden sobre un v\'ertice en com\'un pero son distintas, no hay m\'as de dos aristas en C que incidan sobre un mismo v\'ertice y C_1 y C_n inciden sobre un v\'ertice en com\'un.
+
+
+Para facilitar la explicacion introducimos la siguiente notaci\'on. C_{i,j} con $i<j$ es el camino formado por las aristas C_k con $i\leq k \leq j$.
+
+Si tenemos un matching de peso maximo M para un ciclo simple C, entonces distinguimos a la arista C_n. Si $C_n \in M$ entonces $C_1 \notin M$ y $C_{n-1} \notin M$. Por lo tanto podemos considerar el matching de peso m\'aximo para el camino simple C{2,n-2}, y al peso de dicho matching, sumarle el peso de C_n.
+
+Si $C_n \notin M$, luego podemos considerar el matching de peso m\'aximo para el camino simple C{1,n-1}.
+
+Como no sabemos si C_n pertenece a nuestra soluci\'on elegimos realizamos ambos c\'alculos y elegimos el m\'aximo.
+
+Llamemos C al camino al cual queremos encontrarle un matching de peso maximo. Y llamemos max_matching(C) a una solución a nuestro problema para el camino C. $C = C_1, C_2, ... , C_n $, donde C_i, para$ i = 1, ... , n-1 $ es una arista tal que C_i y C_{i+1} inciden sobre un v\'ertice en com\'un pero son distintas, no hay m\'as de dos aristas en C que incidan sobre un mismo v\'ertice y C_1 y C_n no tienen v\'ertices en com\'un, a menos que $n =1$.
+ 
+
+
+La soluci\'on S = max_matching(C) debe cumplir que peso(S) = max (peso( {C_n} U max_matching(C_{1,n-2}) ) ,peso( max_matching(C_{1,n-1}) ) ). Ver Ap\'endice \ref{dem_matching}.
+
+Aprovechando esta caracter\'istica tenemos el siguiente algoritmo:
+\begin{verbatim}
+
+peso_maximo_hasta_i-1 := max(peso_arista[1], peso_arista[2]) 
+peso_maximo_hasta_i-2 := peso_arista[1]
+Para i = 3 hasta n {
+  temp := peso_maximo_hasta_i-1
+  peso_maximo_hasta_i-1 := 
+    max( peso_maximo_hasta_i-2 + peso_arista[i], peso_maximo_hasta_i-1 )
+  peso_maximo_hasta_i-2 := temp
+}
+devolver peso_maximo_hasta_i-1
+
+\end{verbatim}
+
+Como ejecutamos este algoritmo dos veces y el ciclo se realiza O(n) veces, efectuando en cada iteraci\'on una cantidad constante de operaciones. La complejidad del algoritmo para calcular el peso m\'aximo de un matching en un ciclo simple esta en O(n), donde n es la cantidad de aristas del ciclo simple.
+
+
+
+\label{dem_matching}
+
+Para demostrar que la soluci\'on S = max_matching(C) debe cumplir que peso(S) = max (peso( {C_n} U max_matching(C_{1,n-2}) ) ,peso( max_matching(C_{1,n-1}) ) ) supongamos que S = max_matching(C) y que $peso(S) \neq max(peso({C_n} U max_matching(C_{1,n-2})) , peso(max_matching(C_{1,n-1})))$. $peso(s)$ no puede ser menor ya que es un matching de peso m\'aximo. Luego su peso es mayor. $ C_n \in S $, ya que si no fuera asi, entonces S es un matching  de C_{1,n-1}, y por lo tanto el peso de S debe ser menor o igual al de max_matching(C_{1,n-1}), pero supusimos que peso(S) > peso(max_matching(C_{1,n-1})). 
+
+
+Como $ C_n \in S $, luego $ C_{n-1} \notin S$, luego $ S \diagdown C_n $ es un matching de C_{1,n-2}.
+
+
+Como peso({C_n} U max_matching(C_{1,n-2})) = peso(C_n) + peso(max_matching(C_{1,n-2})) y peso({C_n} U max_matching(C_{1,n-2})) < peso(S), entonces peso(max_matching(C_{1,n-2})) < peso(S \diagdown {C_n}), pero S \ {C_n} es un matching de C_{1,n-2}, por lo tanto $peso(S \diagdown  {C_n}) \leq peso(max_matching(C_{1,n-2}))$. LLegamos a un absurdo, producto de suponer que  $ peso(S) \neq max(peso({C_n} U max_matching(C_{1,n-2}), max_matching(C_{1,n-1})) $.
+
+
+
+
+
