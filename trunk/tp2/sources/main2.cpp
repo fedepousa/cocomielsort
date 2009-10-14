@@ -2,10 +2,11 @@
 #include <fstream>
 #include <vector>
 #include <queue>
+#include <sys/time.h>
 
 
 using namespace std;
-
+int resolver() ;
 
 struct valla{
 	unsigned int x;
@@ -62,8 +63,6 @@ return temp;
 int cuenta_veces = 0;
 //leer de archivo, pone las vallas en un un vector
 bool leer(ifstream &entrada){
-  ++cuenta_veces;
-  cout << cuenta_veces << endl;
   vallas.clear();
 	//declaramos variables
 	int temp_cant_vallas;
@@ -233,12 +232,31 @@ unsigned int bfs(nodo **mat){
 int main(){
 	ofstream salida("Tp2Ej2.out");
 	ifstream entrada("Tp2Ej2.in");
+	ofstream tiempos("Tp2Ej2Tiempos.out"); //Aca escribimos los tiempos
+	timeval inicio;
+	timeval fin;
+	double diferencia;
 	//leemos del archivo
 	while(leer(entrada)) {
       
-    //buscamos max y min posiciones de las vayas para poder crear la matriz
-    maxmin();
     
+	int res = 0;
+	gettimeofday(&inicio, NULL);
+	res = resolver();
+	gettimeofday(&fin, NULL);
+	diferencia = (fin.tv_sec - inicio.tv_sec)*1000000 + fin.tv_usec - inicio.tv_usec;
+		
+  tiempos << diferencia << endl;
+	salida << res << endl;
+	
+  } 
+	return 0;
+}
+
+int resolver() {
+  //buscamos max y min posiciones de las vayas para poder crear la matriz
+    maxmin();
+    int res;
     //creamos la matriz
     
     alto = ALTO;
@@ -256,15 +274,13 @@ int main(){
     unsigned int tam_va = vallas.size();
     for(unsigned int i = 0; i < tam_va ; ++i) setearMatriz(matriz, vallas[i] );
      
-     
-     salida<< alto*ancho-bfs(matriz) << endl;
+     res= alto*ancho-bfs(matriz) ;
      
      
      //Matamos la matriz
      for(unsigned int i = 0; i < ALTO ; ++i) delete [] matriz[i];
      delete [] matriz;
-   }
-	
-	
-	return 0;
-} 
+     
+     return  res;
+}
+
