@@ -28,7 +28,7 @@ int maximo(int* vector, int tamanio){
 	}
 	return resParc2;
 }
-
+int resolver(int *vect, int tamanio);
 int main(){
 	ifstream entrada("Tp2Ej1.in"); //Declaro el flujo de entrada
 	ofstream salida("Tp2Ej1.out"); //Aca escribimos los resultados
@@ -50,7 +50,24 @@ int main(){
 	
 		gettimeofday(&inicio, NULL);
 	
-		if(tamanio>3){ // Si el tamanio es 3 o menos, entra por casos triviales mas abajo
+		res = resolver(vector, tamanio);
+		
+		gettimeofday(&fin, NULL);
+		diferencia = (fin.tv_sec - inicio.tv_sec)*1000000 + fin.tv_usec - inicio.tv_usec;
+		
+		tiempos << diferencia << endl;
+		salida << res << endl;
+	
+	
+		entrada >> tamanio; //Vuelvo a levantar el tamanio para el proximo caso
+	}
+	
+	
+	return 0;
+}
+int resolver(int *vector, int tamanio) {
+  int res = 0;
+  if(tamanio>3){ // Si el tamanio es 3 o menos, entra por casos triviales mas abajo
 			int vector1[tamanio-1]; 
 			int	vector2[tamanio-3];
 			int res1=0;
@@ -78,17 +95,5 @@ int main(){
 		if(tamanio == 1){ // Caso trivial, el unico elemento que hay
 			res = vector[0];
 		}
-		
-		gettimeofday(&fin, NULL);
-		diferencia = (fin.tv_sec - inicio.tv_sec)*1000000 + fin.tv_usec - inicio.tv_usec;
-		
-		tiempos << diferencia << endl;
-		salida << res << endl;
-	
-	
-		entrada >> tamanio; //Vuelvo a levantar el tamanio para el proximo caso
-	}
-	
-	
-	return 0;
+  return res;
 }
