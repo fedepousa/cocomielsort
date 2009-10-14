@@ -1,0 +1,11 @@
+Confeccionamos la matriz de adyacencias, llamemosla A.
+
+Sea C = A^3, C tiene en la i-esima posicion de su diagonal la cantidad de caminos de longitud 3 desde el nodo i hasta el nodo i.
+
+Obtenemos C utilizando el algoritmo de Strassen para realizar el producto de matrices.
+Buscamos en C el minimo i tal que C[i][i] != 0, llamemoslo j. Si existe, entonces, el menor clique de 3 nodos contendra a j. Si no fuera asi, entonces existe k < j tal que C[k][k] != 0, lo cual es absurdo, ya que j es el minimo i tal que C[i][i] != 0. 
+
+De todas las combinaciones posibles para los otros dos nodos, elegimos la menor tal que los tres nodos forman una clique. En nuestra implementacion optimizamos esta ultima seleccion, evitando generar combinaciones que sabemos anticipadamente que no corresponden a un clique. 
+
+Como sabemos que cualquier combinacion va a poder expresarse como j,h,i, donde j<h<i. Entonces buscamos el menor h, tal que h > j, y el menor i, tal que i > h tales que j, h, i forman un clique. Como iteramos h e i en forma ascendente, la primer combinacion que forma un clique que encontramos es la deseada.
+
