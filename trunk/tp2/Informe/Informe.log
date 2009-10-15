@@ -1,11 +1,11 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.6.10)  13 OCT 2009 15:36
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.9.16)  15 OCT 2009 11:18
 entering extended mode
  %&-line parsing enabled.
 **Informe.tex
 (./Informe.tex
 LaTeX2e <2005/12/01>
 Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, loaded.
+yphenation, ukrainian, russian, bulgarian, loaded.
 (/usr/share/texmf-texlive/tex/latex/base/article.cls
 Document Class: article 2005/09/16 v1.4f Standard LaTeX document class
 (/usr/share/texmf-texlive/tex/latex/base/size12.clo
@@ -69,7 +69,19 @@ LaTeX Font Info:    ... okay on input line 6.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
 
-[1
+(/usr/share/texmf/tex/context/base/supp-pdf.tex
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count88
+\scratchdimen=\dimen105
+\scratchbox=\box26
+\nofMPsegments=\count89
+\nofMParguments=\count90
+\everyMPshowfont=\toks17
+\MPscratchCnt=\count91
+\MPscratchDim=\dimen106
+\MPnumerator=\count92
+\everyMPtoPDFconversion=\toks18
+) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -94,26 +106,29 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 55.
- [4] [5] [6]
+ [4] [5]
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¡ in font cmr12!
+ [6] [7]
 (./Informe.aux) ) 
 Here is how much of TeX's memory you used:
- 633 strings out of 95086
- 7730 string characters out of 1183255
- 55374 words of memory out of 1500000
- 3852 multiletter control sequences out of 10000+50000
- 7934 words of font info for 28 fonts, out of 1200000 for 2000
- 28 hyphenation exceptions out of 8191
- 25i,5n,19p,881b,176s stack positions out of 5000i,500n,6000p,200000b,5000s
+ 931 strings out of 94834
+ 11646 string characters out of 1179181
+ 59946 words of memory out of 1500000
+ 4157 multiletter control sequences out of 10000+50000
+ 8103 words of font info for 29 fonts, out of 1200000 for 2000
+ 212 hyphenation exceptions out of 8191
+ 25i,5n,19p,931b,176s stack positions out of 5000i,500n,6000p,200000b,5000s
 </usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmbx12.pfb></
 usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmmi12.pfb></usr/share/texmf-tex
 live/fonts/type1/bluesky/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/blu
 esky/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr8.pfb></u
 sr/share/texmf-texlive/fonts/type1/bluesky/cm/cmsy10.pfb></usr/share/texmf-texl
 ive/fonts/type1/bluesky/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/blue
-sky/cm/cmti12.pfb>
-Output written on Informe.pdf (6 pages, 48253 bytes).
+sky/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmtt12.pfb>
+Output written on Informe.pdf (7 pages, 59115 bytes).
 PDF statistics:
- 53 PDF objects out of 1000 (max. 8388607)
+ 62 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
