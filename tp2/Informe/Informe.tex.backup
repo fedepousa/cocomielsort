@@ -12,7 +12,7 @@
 \begin{center}
 \section*{Ejercicio 1: Matching M\'aximo}
 \end{center}
-
+ 
 \section*{Introducci\'on}
 En este ejercicio se ped\'ia encontrar el matching m\'aximo dentro de un grafo. Se define como matching a un subconjunto de aristas que comparten v\'ertices. Si bien este ejercicio podr\'ia ser de gran complejidad, el mismo se encuentra en una presentaci\'on mas accesible dado que no hay que aplicar el algoritmo sobre cualquier tipo de grafos, sino que solamente tiene que ser aplicable a grafos de 3 o m\'as nodos que sean ciclos simples, es decir, grafos que en su isomorfismo planar sean simplemente un dibujo de un pol\'igono. 
 
@@ -124,8 +124,11 @@ Por \'ultimo, lo que se hace es crear una circunvalaci\'on de nodos que se inund
 \section*{Complejidad}
 Para analizar la complejidad se utiliz\'o el modelo uniforme. En este modelo el an\'alisis no esta centrado en el tama\~{n}o de los operandos, por lo que el tiempo de ejecuci\'on de cada operaci\'on se considera constante.
 
-Si tomamos como tama\~no de entrada la cantidad de vallas, y como sabemos que estas no se solapan en mas de un punto, podemos acotar (por arriba) a la cantidad de vallas, por la cantidad de nodos en el grafo. Por consiguiente vamos a analizar el algoritmo usado en funcion a la cantidad de nodos. TODO JUSTIFICAR BIEN ESTO
-
+Si tomamos como tama\~no de entrada la cantidad de vallas (CV, en adelante), y como sabemos que estas no se solapan en mas de un punto, podemos acotar (por arriba) a la cantidad de vallas, por la cantidad de nodos en el grafo. Por consiguiente vamos a analizar el algoritmo usado en funcion a la cantidad de nodos. TODO JUSTIFICAR BIEN ESTO
+La funci\'on leer, leer del archivo de entrada toda una instancia del problema ciclando CV para poder relevar la informacion de las vallas, por lo cual esta operaci\'on la realizamos en O( CV ) 
+La funci\'on maxmin, busca m\'aximos y m\'inimos en un vector de vallas linealmente, por lo cual es de orden O ( CV ).
+...
+habia q seguir
 
 \section*{An\'alisis de resultados}
 \section*{Conclusiones}
@@ -135,10 +138,74 @@ Si tomamos como tama\~no de entrada la cantidad de vallas, y como sabemos que es
 \end{center}
 
 \section*{Introducci\'on}
-En este problema lo que se quiere es, teniendo un conjunto de personas y sabiendo si se conocen entre s\'i, armar dos grupos de tres personas cada uno, un grupo en el cual las 3 personas se conoscan mutuamente, y otro grupo en el cual ninguno este relacionado con otro.
+
+
+En este problema lo que se quiere es, teniendo un conjunto de personas y sabiendo si se conocen entre s\'i, armar dos grupos de tres personas cada uno, un grupo en el cual las 3 personas se conozcan mutuamente, y otro grupo en el cual ninguno est\'e relacionado con otro.
+
+
+Si se pudieran armar varios grupos que cumplan con la restricci\'on planteada, el que debemos encontrar es el menor lexicogr\'aficamente. Es decir, si representamos cada grupo con una terna ordenada ascendentemente, la terna ser\'a menor que cualquier otra terna que represente a un grupo v\'alido.
+
+Consideramos que una terna es menor que otra si la primera componente de la primera terna es menor, o si es igual y la segunda de la misma es menor, o si tanto la primera como la segunda son iguales y la tercera es menor, en cada caso con respecto a la misma componente de la otra terna.
 \section*{Algoritmo}
+
+Para resolver el problema se opta por representarlo mediante un grafo.
+
+Cada v\'ertice del grafo representa a una persona diferente y dos v\'ertices est\'an unidos si y s\'olo si las personas se conocen.
+
+
+Se puede ver que existe un clique de tres nodos si y s\'olo si las personas representadas por los nodos que est\'en en dicho clique se conocen todas entre s\'i. Ver Ap\'endice \ref{dem_clique}.
+
+
+Sabiendo que el modelo que elegimos es correcto resolvemos el problema de encontrar un clique de tres nodos en el grafo.
+
+
+Se confecciona la matriz de adyacencias, llam\'emosla A.
+
+
+El i-\'esimo nodo representa a la i-\'esima persona.
+
+
+Sea $C = A^3$, $C$ tiene en la i-\'esima posici\'on de su diagonal la cantidad de caminos de longitud 3 desde el nodo i hasta el nodo i. \footnote{Te\'orica Algoritmos III}   
+
+ 
+Buscamos en C el minimo i tal que $C_{i,i} \neq 0$, llam\'emoslo j. Si existe, entonces, el menor clique de 3 nodos contendr\'a a j. Si no fuera asi, entonces existe k < j tal que $C_{k,k} \neq 0$, lo cual es absurdo, ya que j es el minimo i tal que $C_{i,i} \neq 0$. Si no existe, termina el algoritmo indic\'andolo de la manera correspondiente.
+
+De todas las combinaciones posibles para los otros dos nodos, elegimos la menor tal que los tres nodos forman una clique. En nuestra implementaci\'on optimizamos esta ultima selecci\'on, evitando generar combinaciones que sabemos anticipadamente que no corresponden a un clique.
+
+
+
 \section*{Complejidad}
+
+
+Obtenemos $C = A^3$ utilizando el algoritmo de Strassen para realizar el producto de matrices. La cantidad de operaciones que realiza este algoritmo est\'a en $O\left(m^{log\left(7\right)}\right)$, para una matriz de m filas y m columnas. Si el grafo tiene n nodos, es necesario generar una matriz de m x m, con $m \leq 2n$, ya que es necesario que n sea una potencia de dos. De esta forma, la cantidad de operaciones para realizar el producto de matrices est\'a en $O\left(7 \times \left(n ^{log 7} \right) \right) = O\left(n^{log\left(7\right)}\right)$.
+
+
+
+Se puede encontrar en C el m\'inimo i tal que $C_{i,i} \neq 0$ en $O\left(n\right)$ operaciones, ya que para cada posici\'on de la diagonal se realiza una cantidad constante de operaciones para verificar si en dicha posici\'on hay un cero. Como m\'aximo se recorre toda la diagonal, que tiene n posiciones.
+
+
+Generando todas las combinaciones de dos nodos la cantidad de operaciones para obtener la menor est\'a en $O\left(n^2\right)$, ya que se requiere una cantidad constante de operaciones para generar cada combinaci\'on, verificar si es un clique y compararla con la menor hasta el momento.
+
+
 \section*{An\'alisis de resultados}
 \section*{Conclusiones}
+
+\section*{Ap\'endices}
+\section{Demostraci\'on de correctitud del modelo}\label{dem_clique}
+
+Para resolver el ejercicio 3 se opta por representarlo mediante un grafo.
+
+Cada v\'ertice del grafo representa a una persona diferente y dos v\'ertices est\'an unidos si y s\'olo si las personas se conocen.
+
+
+A continuaci\'on se demuestra que existe un clique de tres nodos si y s\'olo si las personas representadas por los nodos que est\'en en dicho clique se conocen todas entre s\'i. 
+
+Sea $G = \left( V, E \right)$ el grafo con el que modelamos el problema. Sea $ C = \left( \left\lbrace v_a, v_b,v_c \right\rbrace, E' \right) $ un clique de tres nodos donde C es subgrafo de G y donde $v_a$ representa a la persona $a$, $v_b$ a la persona $b$ y $v_c$ a la persona $c$. Como $\left( v_a, v_b \right) \in E $, $a$ conoce a $b$. Tambi\'en $\left(v_b,v_c\right) \in E$, por lo que $b$ conoce a $c$. Por \'ultimo como $\left(v_c,v_a\right) \in E$, $c$ conoce a $a$. Por lo tanto las personas representadas por los nodos que est\'an en un clique de tres nodos se conocen entre s\'i de a pares.
+
+
+A su vez, si tres personas, llam\'emoslas $a$, $b$ y $c$, se conocen entre s\'i de a pares, existe un clique de tres nodos que contiene a los nodos que las representan. 
+
+
+Sea $ G = \left( V, E \right) $ el grafo con el que modelamos el problema. Sean $v_a, v_b, v_c$ los nodos que las representan, como $a$ conoce a $b$, $\left( v_a,v_b \right) \in E $. Como $b$ conoce a $c$, $ \left(v_b, v_c \right) \in E$. Como tambi\'en $c$ conoce a $a$, $ \left( v_c, v_a \right) \in E$, por lo tanto $\left( \left\lbrace v_a, v_b, v_c \right\rbrace, \left\lbrace  \left(v_a,v_b\right) , \left( v_b,v_c\right), \left( v_c, v_a\right) \right\rbrace\right)$ es un clique de 3 nodos subgrafo de G.
 
 \end{document}
