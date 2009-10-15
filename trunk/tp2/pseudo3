@@ -1,6 +1,34 @@
-Confeccionamos la matriz de adyacencias, llamemosla A.
+\section*{Introducci\'on}
+En este problema lo que se quiere es, teniendo un conjunto de personas y sabiendo si se conocen entre s\'i, armar dos grupos de tres personas cada uno, un grupo en el cual las 3 personas se conozcan mutuamente, y otro grupo en el cual ninguno est\'e relacionado con otro.
 
-Sea C = A^3, C tiene en la i-esima posicion de su diagonal la cantidad de caminos de longitud 3 desde el nodo i hasta el nodo i.
+
+Si se pudieran armar varios grupos que cumplan con la restricci\'on planteada, el que debemos encontrar es el menor lexicogr\'aficamente. Es decir, si representamos cada grupo con una terna ordenada ascendentemente, la terna ser\'a menor que cualquier otra terna que represente a un grupo v\'alido.
+
+Consideramos que una terna es menor que otra si la primera componente de la primera terna es menor, o si es igual y la segunda de la misma es menor, o si tanto la primera como la segunda son iguales y la tercera es menor, en cada caso con respecto a la misma componente de la otra terna.
+\section*{Algoritmo}
+
+Para resolver el problema se opta por representarlo mediante un grafo.
+
+Cada v\'ertice del grafo representa a una persona diferente y dos v\'ertices est\'an unidos si y s\'olo si las personas se conocen.
+
+
+Se puede ver que si existe un camino de longitud tres desde un nodo hacia s\'i mismo entonces las personas representadas por los nodos que est\'en en dicho camino se conocen todas entre s\'i. 
+
+Sea $G = \left( V, E \right)$ el grafo con el que modelamos el problema. Sea $ C = \left\lbrace \left(v_a, v_b\right), \left(v_b,v_c\right),\left(v_c,v_a\right) \right\rbrace $ un camino de longitud tres desde $v_a$ hacia s\'i mismo en G, donde $v_a$ representa a la persona a, $v_b$ a la persona b y $v_c$ a la persona c. Como $\left( v_a, v_b \right) \in E $ a conoce a b.. Tambi\'en $\left(v_b,v_c\right) \in E$ por lo que b conoce a c. Por \'ultimo como $\left(v_c,v_a\right) \in E$ c conoce a a. Por lo tanto las personas representadas por los nodos que est\'an en un camino de longitud tres se conocen entre s\'i de a pares.
+
+
+A su vez, si tres personas, llam\'emoslas a, b y c, se conocen entre s\'i de a pares, existe un camino de longitud tres que contiene a los nodos que las representan. 
+
+
+Sea $ G = \left V, E\right) $ el grafo con el que modelamos el problema. Sean $v_a, v_b, v_c$ los nodos que las representan, como a conoce a b $\left( v_a,v_b \right) \in E $. Como b conoce a c $ \left(v_b, v_c \right) \in E$. Como tambi\'en c conoce a a $ \left v_c, v_a \right) \in E$, por lo tanto $\left\lbrace v_a, v_b, v_c \right\rbrace$ es un camino de longitud 3 desde a hacia s\'i mismo en G.
+
+
+Sabiendo que el modelo que elegimos es correcto resolvemos el problema de encontrar un camino de longitud tres en el grafo.
+
+
+Confeccionamos la matriz de adyacencias, llam\'emosla A.
+
+Sea $C = A^3$, $C$ tiene en la i-\'esima posici\'on de su diagonal la cantidad de caminos de longitud 3 desde el nodo i hasta el nodo i.
 
 Obtenemos C utilizando el algoritmo de Strassen para realizar el producto de matrices. La cantidad de operaciones que realiza este algoritmo esta en O(m ^log(7)), para una matriz de m filas y m columnas. Si el grafo tiene n nodos, es necesario generar una matriz de m x m, con m <= 2n, ya que es necesario que n sea una potencia de dos. De esta forma, la cantidad de operaciones para realizar el producto de matrices esta en O(7 * (n ^ (log 7) )) = O(n^log(7)).
 
