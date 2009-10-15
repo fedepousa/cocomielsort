@@ -30,3 +30,5 @@ bfsContador(matriz): Recorre el grafo usando bfs, por cada nodo q visita suma un
 recorre todos los nodos que se inundan dado q son los que se relacionan. De esta manera, sabemos cuantos nodos se inundan.  O(n+m) por 
 ser bfs comun y corriente, pero como la cantidad de aristas del grafo es lineal con respecto a la cant de nodos O(n) 
 
+
+prueba de svn integrado a nautilus
