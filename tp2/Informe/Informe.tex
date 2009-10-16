@@ -178,10 +178,10 @@ El i-\'esimo nodo representa a la i-\'esima persona.
 Sea $C = A^3$, $C$ tiene en la i-\'esima posici\'on de su diagonal la cantidad de caminos de longitud 3 desde el nodo i hasta el nodo i. \footnote{Te\'orica Algoritmos III}   
 
  
-Buscamos en $C$ el m\'inimo i tal que $C_{i,i} \neq 0$, llam\'emoslo j. Si existe, entonces, el menor clique de 3 nodos contendr\'a a j. Si no fuera as\'i, entonces existe k < j tal que $C_{k,k} \neq 0$, lo cual es absurdo, ya que j es el m\'inimo i tal que $C_{i,i} \neq 0$. Si no existe, termina el algoritmo indic\'andolo de la manera correspondiente.
+Buscamos en $C$ el m\'inimo i tal que $C_{i,i} \neq 0$, llam\'emoslo j. Si existe, entonces, el menor clique de 3 nodos contendr\'a a j. Si no fuera as\'i, entonces existe $k < j$ tal que $C_{k,k} \neq 0$, lo cual es un absurdo, ya que j es el m\'inimo i tal que $C_{i,i} \neq 0$. Si no existe, termina el algoritmo indic\'andolo de la manera correspondiente.
 
 
-De todas las combinaciones posibles para los otros dos nodos, elegimos la menor tal que los tres nodos forman una clique. En nuestra implementaci\'on optimizamos esta ultima selecci\'on, evitando generar combinaciones que sabemos anticipadamente que no corresponden a un clique. De esta manera obtuvimos el grupo de tres personas que se conocen entre s\'i.
+De todas las combinaciones posibles para los otros dos nodos, elegimos la menor tal que los tres nodos forman un clique. En nuestra implementaci\'on optimizamos esta ultima selecci\'on, evitando generar combinaciones que sabemos anticipadamente que no corresponden a un clique. De esta manera obtuvimos el grupo de tres personas que se conocen entre s\'i.
 
 
 Por \'ultimo obtenemos el grafo complemento de $G$, y realizamos las mismas operaciones para obtener el grupo de tres personas que no se conocen entre s\'i.
@@ -191,17 +191,17 @@ Por \'ultimo obtenemos el grafo complemento de $G$, y realizamos las mismas oper
 \section*{Complejidad}
 
 
-Obtenemos $C = A^3$ utilizando el algoritmo de Strassen para realizar el producto de matrices. La cantidad de operaciones que realiza este algoritmo est\'a en $O\left(m^{log_2\left(7\right)}\right)$, para una matriz de m filas y m columnas.\footnote{Ver Brassard, p\'ag. 273.} Si el grafo tiene n nodos, es necesario generar una matriz de m x m, con $m \leq 2n$, ya que es necesario que n sea una potencia de dos. De esta forma, la cantidad de operaciones para realizar el producto de matrices est\'a en $O\left(7 \times \left(n ^{log_2 \left( 7\right)} \right) \right) = O\left(n^{log_2\left(7\right)}\right)$.
+Obtenemos $C = A^3$ utilizando el algoritmo de Strassen para realizar el producto de matrices. La cantidad de operaciones que realiza este algoritmo est\'a en $O\left(m^{log_2\left(7\right)}\right)$, para una matriz de $m$ filas y $m$ columnas.\footnote{Ver Brassard, p\'ag. 273.} Si el grafo tiene $n$ nodos, es necesario generar una matriz de $m \times m$, con $m \leq 2n$, ya que es necesario que $m$ sea una potencia de dos. De esta forma, la cantidad de operaciones para realizar el producto de matrices est\'a en $O\left(7 \times \left(n ^{log_2 \left( 7\right)} \right) \right) = O\left(n^{log_2\left(7\right)}\right)$.
 
 
 
-Se puede encontrar en $C$ el m\'inimo i tal que $C_{i,i} \neq 0$ en $O\left(n\right)$ operaciones, ya que para cada posici\'on de la diagonal se realiza una cantidad constante de operaciones para verificar si en dicha posici\'on hay un cero. Como m\'aximo se recorre toda la diagonal, que tiene n posiciones.
+Se puede encontrar en $C$ el m\'inimo $i$ tal que $C_{i,i} \neq 0$ en $O\left(n\right)$ operaciones, ya que para cada posici\'on de la diagonal se realiza una cantidad constante de operaciones para verificar si en dicha posici\'on hay un cero. Como m\'aximo se recorre toda la diagonal, que tiene n posiciones.
 
 
 Generando todas las combinaciones de dos nodos la cantidad de operaciones para obtener la menor est\'a en $O\left(n^2\right)$, ya que se requiere una cantidad constante de operaciones para generar cada combinaci\'on, verificar si es un clique y compararla con la menor hasta el momento.
 
 
-Por \'ultimo se vuelve a calcular lo mismo para el grafo complemento. Para lo cual se invierte la matriz de adyacencias en $O \left( n^2 \right)$.
+Por \'ultimo se realizan las mismas operaciones sobre el grafo complemento. Para lo cual se invierte la matriz de adyacencias en $O \left( n^2 \right)$.
 
 
 Como se puede ver, la complejidad computacional del algoritmo en el modelo uniforme est\'a dada por las operaciones correspondientes a la multiplicaci\'on de matrices, en $O \left( n^{log_2\left(7\right)} \right) $, ya que el resto del algoritmo tiene un orden menor. Como $log_2\left(7\right) < 2.9 $, el algoritmo realiza una cantidad de operaciones de un orden estrictamente menor a $O\left( n^3\right) $.
@@ -234,7 +234,7 @@ Sea $ G = \left( V, E \right) $ el grafo con el que modelamos el problema. Sean 
 Resta demostrar que existe un clique de tres nodos en el complemento del grafo planteado si y s\'olo si las personas representadas por los nodos que est\'en en dicho clique no se conocen entre s\'i.
 
 
-Llamemos $G' = \left( V', E')$ al complemento de $G$.  Sea $ C = \left( \left\lbrace v_a, v_b,v_c \right\rbrace, E' \right) $ un clique de tres nodos donde C es subgrafo de G y donde $v_a$ representa a la persona $a$, $v_b$ a la persona $b$ y $v_c$ a la persona $c$. Como $\left( v_a,v_b\right) \in E'$, $a$ y $b$ no se conocen. Tambi\'en $\left( v_b,v_c\right) \in E'$, por lo que $b$ y $c$ no se conocen. Por \'ultimo $\left( v_c,v_a\right) \in E'$, y por lo tanto $c$ y $a$ no se conocen. Luego $a$, $b$, y $c$ forman un grupo de tres personas que no se conocen.
+Llamemos $G' = \left( V', E' \right)$ al complemento de $G$.  Sea $ C = \left( \left\lbrace v_a, v_b,v_c \right\rbrace, E' \right) $ un clique de tres nodos donde C es subgrafo de G y donde $v_a$ representa a la persona $a$, $v_b$ a la persona $b$ y $v_c$ a la persona $c$. Como $\left( v_a,v_b\right) \in E'$, $a$ y $b$ no se conocen. Tambi\'en $\left( v_b,v_c\right) \in E'$, por lo que $b$ y $c$ no se conocen. Por \'ultimo $\left( v_c,v_a\right) \in E'$, y por lo tanto $c$ y $a$ no se conocen. Luego $a$, $b$, y $c$ forman un grupo de tres personas que no se conocen.
 
 
 
