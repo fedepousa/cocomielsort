@@ -167,11 +167,16 @@ areaNoInundada(){
 \section*{Complejidad}
 Para analizar la complejidad se utiliz\'o el modelo uniforme. En este modelo el an\'alisis no esta centrado en el tama\~{n}o de los operandos, por lo que el tiempo de ejecuci\'on de cada operaci\'on se considera constante.
 
-Si tomamos como tama\~no de entrada la cantidad de vallas (CV, en adelante), y como sabemos que estas no se solapan en mas de un punto, podemos acotar (por arriba) a la cantidad de vallas, por la cantidad de nodos en el grafo. Por consiguiente vamos a analizar el algoritmo usado en funcion a la cantidad de nodos. TODO JUSTIFICAR BIEN ESTO
-La funci\'on leer, leer del archivo de entrada toda una instancia del problema ciclando CV para poder relevar la informacion de las vallas, por lo cual esta operaci\'on la realizamos en O( CV ) 
-La funci\'on maxmin, busca m\'aximos y m\'inimos en un vector de vallas linealmente, por lo cual es de orden O ( CV ).
-...
-habia q seguir
+Si tomamos como tama\~no de entrada la cantidad de vallas (CV en adelante), y como sabemos que estas no se solapan en m\'as de un punto, podemos acotar por arriba a la cantidad de vallas, por un m\'ultiplo de la cantidad de nodos, si bien acotar las vallas por cuatro veces la cantidad de nodos resulta una cota grosera ya que se estan contando muchas vallas varias veces, la cota resulta util para poder enfocar el an\'alisis del algoritmo simplemente a la cantidad total de nodos; es decir, a la cantidad de casillas en la cuadr\'icula.
+
+ 
+En primer lugar, la funci\'on maxmin, busca m\'aximos y m\'inimos en un vector de vallas linealmente, por lo cual es de orden O(CV) ya que se recorre todo el vector de vallas una vez.
+
+En segundo lugar, se realiza el seteo de toda la matriz mediante la informaci\'on entregada por las vallas, en esta rutina se itera sobre todas las vallas y se setean las relaciones entre los nodos a partir de las alturas de las vallas pasadas como par\'ametro. En el peor de los casos, se tienen que setear las cuatro relaciones para cada uno de los nodos de la grilla. Como acceder al nodo se realiza en tiempo constante, y luego hacer los cuatros posibles cambios tambien se realiza en tiempo constante, esta rutina posee una complejidad de O(n) siendo n la cantidad de nodos de la grilla, ya que se realiza un ciclo sobre todos ellos, mientras que en cada iteraci\'on se realizan operaciones de complejidad O(1).
+
+En \'ultimo lugar, lo que se hace es realizar un BFS para lograr identificar la cantidad de nodos de la componente conexa que se inunda. La rutina de BFS tiene una complejidad de O(n+m) siendo n la cantidad de nodos del grafo, y m la cantidad de aristas del mismo. Sin embargo, en este caso podemos acotar m por 4*n, ya que en el peor de los casos, cada nodo posee 4 vecinos. Luego, la complejidad de BFS en este caso es O(n).
+
+En resumen, se realizan tres rutinas, la primera tiene una complejidad O(CV) que ya se mencion\'o que se puede acotar por O(n); luego, se realizan otras dos rutinas que ambas tiene complejidad O(n). Entonces, la complejidad total del algoritmo, es O(n), siendo n la cantidad de nodos del grafo que representa la isla.
 
 \section*{An\'alisis de resultados}
 \section*{Conclusiones}
