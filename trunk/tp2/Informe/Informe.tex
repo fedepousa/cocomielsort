@@ -67,7 +67,7 @@ si tamanio(peso_arista) >= 3
 \end{verbatim}
 % \end{lstlisting}
 
-Aca podria ir un ejemplo hecho paso por paso o algo asi.
+Aca va el ejemplo paso por paso dibujado por Doc, hay que cortarlo bien y listo..
 
 \section*{Demostraci\'on de correctitud}
 
@@ -82,6 +82,16 @@ En primer lugar, el algoritmo dise\~{n}ado toma una arista cualquiera, lo cual s
 
 Resulta necesario ver entonces la complejidad del algoritmo de matching m\'aximo sobre vectores.
 Este algoritmo comienza realizando comparaciones del tama\~{n}o del vector para ver si el mismo se resuelve trivialmente. En todos estos casos los costos de las operaciones son constantes. Sin embargo, el peor caso, es que el vector pasado como par\'ametro contenga tres o m\'as elementos, por lo que la complejidad del algoritmo estar\'a dada por los costos de las operaciones en el caso de que el tama\~{n}o sea tres o m\'as.
+
+En este caso, lo primero que se realiza son dos asignaciones y una comparaci\'on, lo cual toma tiempo constante. Luego, se realiza un ciclo tomando valores desde tres hasta n. Una vez dentro del ciclo, se realizan varias operaciones de tiempo constante, m\'as especificamente se realizan tres asignaciones, una suma y una comparaci\'on. Luego, al tener un ciclo que se ejecuta n-2 veces y sabiendo que dentro del ciclo las operaciones toman un tiempo constante, se puede aseverar que la ejecuci\'on de este ciclo ser\'a O(n). 
+
+Por \'ultimo, dado que en este \'ultimo caso las operaciones son dos constantes y el ciclo mencionado, se puede asegurar que la complejidad total del algoritmo para encontrar el matching sobre un vector es O(n).
+
+Finalmente, al ya haber mencionado que la complejidad del algoritmo principal se reg\'ia por la complejidad de la subrutina utilizada. Se puede ver que la complejidad de todo el algoritmo ser\'a lineal, es decir O(n). Es importante notar que para encontrar un matching m\'aximo, como m\'inimo hay que observar todas las aristas, por lo que la complejidad lineal resulta ser \'optima.
+
+Tamanio de la entrada?!?!?! aca va algo de eso!?!? o ya esta bine asi??
+
+
 \section*{An\'alisis de resultados}
 
 Para analizar este algoritmo, se bas\'o el enfoque en dos aspectos diferentes. Por un lado, se encuentran los an\'alisis sobre la correctitud de la soluci\'on propuesta y, por otro lado, se encuentra el an\'alisis sobre el tiempo de ejecuci\'on para diferentes archivos de entrada, para poder realizar as\'i, una correlaci\'on entre el tiempo de ejecuci\'on y la complejidad te\'orica calculada anteriormente.
@@ -95,7 +105,10 @@ Con el fin de realizar una comprobaci\'on emp\'irica de la soluci\'on propuesta 
 
 El an\'alisis en este tipo de casos se baso solamente en la correctitud de los mismos y no en el tiempo de ejecuci\'on debido a que son grafos de tama\~{n}os muy peque\~{n}os y el tiempo de ejecucion no sobrepasa los 2 microsegundos en ninguno de los casos.
 
-Cabe destacar, que para todos los casos propuestos, los resultados fueron satisfactorios al ser contrastados con la soluciones previamente obtenidas
+\bigskip
+Aca podemos poner una tabla con los valores
+
+Como se observa en la tabla para todos los casos propuestos, los resultados fueron satisfactorios al ser contrastados con la soluciones previamente obtenidas
 
 \subsection*{Casos de Stress}.
 
