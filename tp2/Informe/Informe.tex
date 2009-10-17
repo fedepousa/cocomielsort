@@ -14,20 +14,15 @@
 \end{center}
  
 \section*{Introducci\'on}
-En este ejercicio se ped\'ia encontrar el matching m\'aximo dentro de un grafo. Se define como matching a un subconjunto de aristas que comparten v\'ertices. Si bien este ejercicio podr\'ia ser de gran complejidad, el mismo se encuentra en una presentaci\'on mas accesible dado que no hay que aplicar el algoritmo sobre cualquier tipo de grafos, sino que solamente tiene que ser aplicable a grafos de 3 o m\'as nodos que sean ciclos simples, es decir, grafos que en su isomorfismo planar sean simplemente un dibujo de un pol\'igono. 
+En este ejercicio se ped\'ia encontrar el matching m\'aximo dentro de un grafo. Se define como matching a un subconjunto de aristas que no comparten v\'ertices. Si bien este ejercicio podr\'ia ser de gran complejidad, el mismo se encuentra en una presentaci\'on mas accesible dado que no hay que aplicar el algoritmo sobre cualquier tipo de grafos, sino que solamente tiene que ser aplicable a grafos de 3 o m\'as nodos que sean ciclos simples, es decir, grafos que en su isomorfismo planar sean simplemente un dibujo de un pol\'igono.
 
 /% aca podria ir algun dibujo de como serian los grafos a ver y como seria algun grafo que no hay que analizar.
 
 \section*{Algoritmo}
-A continuaci\'on se muestra el pseudoc\'odigo del algoritmo propuesto como resoluci\'on del problema.
 
 
-% \begin{lstlisting}
-Aca va el pseudocodigo.
-% \end{lstlisting}
 
-
-Este algoritmo consiste en transformar el grafo en un vector, dado que al poder ser representado como un pol\'igono, se puede ver que, quitando una sola arista, el grafo se convierte en una sucesi\'on de aristas con peso, lo cual se puede representar con un vector de n\'umeros. La idea del algoritmo es poder encontrar el m\'aximo matching posible, una primera aproximaci\'on a la soluci\'on final, podr\'ia ser la siguiente:
+El algoritmo propuesto como resolucion del problema consiste en transformar el grafo en un vector, dado que al poder ser representado como un pol\'igono, se puede ver que, quitando una sola arista, el grafo se convierte en una sucesi\'on de aristas con peso, lo cual se puede representar con un vector de n\'umeros. La idea del algoritmo es poder encontrar el m\'aximo matching posible, una primera aproximaci\'on a la soluci\'on final, podr\'ia ser la siguiente:
 
 \begin{enumerate}
 \item Se toma una arista cualquiera para comenzar. Luego, el matching buscado tiene dos opciones: contener esa arista, o no contenerla. Entonces el resultado ser\'a el m\'aximo entre el matching m\'aximo del grafo sin esa arista(no se utiliza la primer arista tomada) y el matching m\'aximo del grafo sin esa arista, ni ninguno de sus dos aristas vecinas, m\'as el valor de la arista elegida en primer t\'ermino(si se utiliza la primer arista tomada). De esta manera, el problema sobre un grafo, se convierte en 2 problemas similares pero sobre vectores.
@@ -40,6 +35,13 @@ Este algoritmo consiste en transformar el grafo en un vector, dado que al poder 
 Si bien el algoritmo propuesto retorna el valor esperado, la complejidad del mismo no es \'optima. Al hacer los llamados recursivos sucede que hay varios matching m\'aximos que se realizan sobre los mismos vectores, generando as\'i m\'as c\'alculos de los necesarios. Fue por esto, que el siguiente paso fue modificar el algoritmo para que no calcule las cosas de modo \emph{top down}, sino que fuese un algoritmo \emph{bottom up}, para as\'i evitar los c\'alculos repetidos, utilizando as\'i la mayor ventaja de la programaci\'on din\'amica, t\'ecnica que define al algoritmo final.
 
 De esta manera, se pens\'o como teniendo instancias m\'as peque~{n}as del problema, se puede conocer la soluci\'on de una instancia mayor. Se utiliz\'o que, dadas las soluciones \'optimas para vectores de n-2 y n-1 elementos, la soluci\'on para el vector de n elementos es el m\'aximo entre la solucion de n-1 elementos, y la soluci\'on de n-2 elementos m\'as el elemento n-\'esimo. Es as\' que el c\'alculo se torna \emph{bottom up}, calculando los m\'aximos de los subvectores, una sola vez.
+
+A continuaci\'on se muestra el pseudoc\'odigo del algoritmo propuesto como resoluci\'on del problema.
+
+
+% \begin{lstlisting}
+Aca va el pseudocodigo.
+% \end{lstlisting}
 
 Aca podria ir un ejemplo hecho paso por paso o algo asi.
 
