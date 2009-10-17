@@ -16,7 +16,7 @@
 \section*{Introducci\'on}
 En este ejercicio se ped\'ia encontrar el matching m\'aximo dentro de un grafo. Se define como matching a un subconjunto de aristas que no comparten v\'ertices. Si bien este ejercicio podr\'ia ser de gran complejidad, el mismo se encuentra en una presentaci\'on mas accesible dado que no hay que aplicar el algoritmo sobre cualquier tipo de grafos, sino que solamente tiene que ser aplicable a grafos de 3 o m\'as nodos que sean ciclos simples, es decir, grafos que en su isomorfismo planar sean simplemente un dibujo de un pol\'igono.
 
-/% aca podria ir algun dibujo de como serian los grafos a ver y como seria algun grafo que no hay que analizar.
+% aca podria ir algun dibujo de como serian los grafos a ver y como seria algun grafo que no hay que analizar.
 
 \section*{Algoritmo}
 
@@ -40,13 +40,48 @@ A continuaci\'on se muestra el pseudoc\'odigo del algoritmo propuesto como resol
 
 
 % \begin{lstlisting}
-Aca va el pseudocodigo.
+\begin{verbatim}
+matchingMaximo(grafo G)
+   tomar v una arista cualquiera
+   tomar u y w vecinos de v
+   res := max(matchingSobreVector(G-u-v-w) + v, matchingSobreVector(G-v))
+
+matchingSobreVector(Vector peso_arista)
+si tamanio(peso_arista) = 0
+   devolver 0
+si tamanio(peso_arista) = 1
+   devolver peso_arista[1]
+si tamanio(peso_arista) = 2
+   devolver max(peso_arista[1], peso_arista[2])
+si tamanio(peso_arista) >= 3
+   peso_maximo_hasta_i-1 := max(peso_arista[1], peso_arista[2]) 
+   peso_maximo_hasta_i-2 := peso_arista[1]
+   Para i = 3 hasta n {
+      temp := peso_maximo_hasta_i-1
+      peso_maximo_hasta_i-1 := 
+         max( peso_maximo_hasta_i-2 + peso_arista[i], peso_maximo_hasta_i-1)
+      peso_maximo_hasta_i-2 := temp
+   }
+   devolver peso_maximo_hasta_i-1
+
+\end{verbatim}
 % \end{lstlisting}
 
 Aca podria ir un ejemplo hecho paso por paso o algo asi.
 
 \section*{Demostraci\'on de correctitud}
+
+Aca va la demostracion, Doc yo no entendi muy bien tu demo porque parece como que definis matching maximo posta de la misma manera que lo define nuestro algoritmo y nose, no digo que este mal, sino que me choca un toque, despues lo hablamos bien.
+
+
 \section*{Complejidad}
+
+Se analizar\'a la complejidad de este algoritmo en funci\'on del modelo uniforme.
+
+En primer lugar, el algoritmo dise\~{n}ado toma una arista cualquiera, lo cual se ejecuta en un tiempo constante dado que los v\'ertices se encuentran en un vector de acceso indexado. Luego, se toman los dos vecinos que, dado que el grafo es un circuito simple, tambi\'en se los puede obtener en un tiempo constante. Luego, el algoritmo realiza una llamada a otro algoritmo que resuelve el matching m\'aximo sobre vectores. Por \'ultimo, se realiza una comparaci\'on entre los dos resultados arrojados por la rutina auxiliar para poder devolver el m\'aximo, sienda esta una operaci\'on tambi\'en de costo constante. Es por esto que la complejidad de este algoritmo esta regida entonces por la complejidad de la rutina auxiliar a la que hace referencia, ya que todas las demas operaciones toman un tiempo constante de ejecuci\'on.
+
+Resulta necesario ver entonces la complejidad del algoritmo de matching m\'aximo sobre vectores.
+Este algoritmo comienza realizando comparaciones del tama\~{n}o del vector para ver si el mismo se resuelve trivialmente. En todos estos casos los costos de las operaciones son constantes. Sin embargo, el peor caso, es que el vector pasado como par\'ametro contenga tres o m\'as elementos, por lo que la complejidad del algoritmo estar\'a dada por los costos de las operaciones en el caso de que el tama\~{n}o sea tres o m\'as.
 \section*{An\'alisis de resultados}
 
 Para analizar este algoritmo, se bas\'o el enfoque en dos aspectos diferentes. Por un lado, se encuentran los an\'alisis sobre la correctitud de la soluci\'on propuesta y, por otro lado, se encuentra el an\'alisis sobre el tiempo de ejecuci\'on para diferentes archivos de entrada, para poder realizar as\'i, una correlaci\'on entre el tiempo de ejecuci\'on y la complejidad te\'orica calculada anteriormente.

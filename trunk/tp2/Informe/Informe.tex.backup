@@ -14,20 +14,15 @@
 \end{center}
  
 \section*{Introducci\'on}
-En este ejercicio se ped\'ia encontrar el matching m\'aximo dentro de un grafo. Se define como matching a un subconjunto de aristas que comparten v\'ertices. Si bien este ejercicio podr\'ia ser de gran complejidad, el mismo se encuentra en una presentaci\'on mas accesible dado que no hay que aplicar el algoritmo sobre cualquier tipo de grafos, sino que solamente tiene que ser aplicable a grafos de 3 o m\'as nodos que sean ciclos simples, es decir, grafos que en su isomorfismo planar sean simplemente un dibujo de un pol\'igono. 
+En este ejercicio se ped\'ia encontrar el matching m\'aximo dentro de un grafo. Se define como matching a un subconjunto de aristas que no comparten v\'ertices. Si bien este ejercicio podr\'ia ser de gran complejidad, el mismo se encuentra en una presentaci\'on mas accesible dado que no hay que aplicar el algoritmo sobre cualquier tipo de grafos, sino que solamente tiene que ser aplicable a grafos de 3 o m\'as nodos que sean ciclos simples, es decir, grafos que en su isomorfismo planar sean simplemente un dibujo de un pol\'igono.
 
-/% aca podria ir algun dibujo de como serian los grafos a ver y como seria algun grafo que no hay que analizar.
+% aca podria ir algun dibujo de como serian los grafos a ver y como seria algun grafo que no hay que analizar.
 
 \section*{Algoritmo}
-A continuaci\'on se muestra el pseudoc\'odigo del algoritmo propuesto como resoluci\'on del problema.
 
 
-% \begin{lstlisting}
-Aca va el pseudocodigo.
-% \end{lstlisting}
 
-
-Este algoritmo consiste en transformar el grafo en un vector, dado que al poder ser representado como un pol\'igono, se puede ver que, quitando una sola arista, el grafo se convierte en una sucesi\'on de aristas con peso, lo cual se puede representar con un vector de n\'umeros. La idea del algoritmo es poder encontrar el m\'aximo matching posible, una primera aproximaci\'on a la soluci\'on final, podr\'ia ser la siguiente:
+El algoritmo propuesto como resolucion del problema consiste en transformar el grafo en un vector, dado que al poder ser representado como un pol\'igono, se puede ver que, quitando una sola arista, el grafo se convierte en una sucesi\'on de aristas con peso, lo cual se puede representar con un vector de n\'umeros. La idea del algoritmo es poder encontrar el m\'aximo matching posible, una primera aproximaci\'on a la soluci\'on final, podr\'ia ser la siguiente:
 
 \begin{enumerate}
 \item Se toma una arista cualquiera para comenzar. Luego, el matching buscado tiene dos opciones: contener esa arista, o no contenerla. Entonces el resultado ser\'a el m\'aximo entre el matching m\'aximo del grafo sin esa arista(no se utiliza la primer arista tomada) y el matching m\'aximo del grafo sin esa arista, ni ninguno de sus dos aristas vecinas, m\'as el valor de la arista elegida en primer t\'ermino(si se utiliza la primer arista tomada). De esta manera, el problema sobre un grafo, se convierte en 2 problemas similares pero sobre vectores.
@@ -41,10 +36,52 @@ Si bien el algoritmo propuesto retorna el valor esperado, la complejidad del mis
 
 De esta manera, se pens\'o como teniendo instancias m\'as peque~{n}as del problema, se puede conocer la soluci\'on de una instancia mayor. Se utiliz\'o que, dadas las soluciones \'optimas para vectores de n-2 y n-1 elementos, la soluci\'on para el vector de n elementos es el m\'aximo entre la solucion de n-1 elementos, y la soluci\'on de n-2 elementos m\'as el elemento n-\'esimo. Es as\' que el c\'alculo se torna \emph{bottom up}, calculando los m\'aximos de los subvectores, una sola vez.
 
+A continuaci\'on se muestra el pseudoc\'odigo del algoritmo propuesto como resoluci\'on del problema.
+
+
+% \begin{lstlisting}
+\begin{verbatim}
+matchingMaximo(grafo G)
+   tomar v una arista cualquiera
+   tomar u y w vecinos de v
+   res := max(matchingSobreVector(G-u-v-w) + v, matchingSobreVector(G-v))
+
+matchingSobreVector(Vector peso_arista)
+si tamanio(peso_arista) = 0
+   devolver 0
+si tamanio(peso_arista) = 1
+   devolver peso_arista[1]
+si tamanio(peso_arista) = 2
+   devolver max(peso_arista[1], peso_arista[2])
+si tamanio(peso_arista) >= 3
+   peso_maximo_hasta_i-1 := max(peso_arista[1], peso_arista[2]) 
+   peso_maximo_hasta_i-2 := peso_arista[1]
+   Para i = 3 hasta n {
+      temp := peso_maximo_hasta_i-1
+      peso_maximo_hasta_i-1 := 
+         max( peso_maximo_hasta_i-2 + peso_arista[i], peso_maximo_hasta_i-1)
+      peso_maximo_hasta_i-2 := temp
+   }
+   devolver peso_maximo_hasta_i-1
+
+\end{verbatim}
+% \end{lstlisting}
+
 Aca podria ir un ejemplo hecho paso por paso o algo asi.
 
 \section*{Demostraci\'on de correctitud}
+
+Aca va la demostracion, Doc yo no entendi muy bien tu demo porque parece como que definis matching maximo posta de la misma manera que lo define nuestro algoritmo y nose, no digo que este mal, sino que me choca un toque, despues lo hablamos bien.
+
+
 \section*{Complejidad}
+
+Se analizar\'a la complejidad de este algoritmo en funci\'on del modelo uniforme.
+
+En primer lugar, el algoritmo dise\~{n}ado toma una arista cualquiera, lo cual se ejecuta en un tiempo constante dado que los v\'ertices se encuentran en un vector de acceso indexado. Luego, se toman los dos vecinos que, dado que el grafo es un circuito simple, tambi\'en se los puede obtener en un tiempo constante. Luego, el algoritmo realiza una llamada a otro algoritmo que resuelve el matching m\'aximo sobre vectores. Por \'ultimo, se realiza una comparaci\'on entre los dos resultados arrojados por la rutina auxiliar para poder devolver el m\'aximo, sienda esta una operaci\'on tambi\'en de costo constante. Es por esto que la complejidad de este algoritmo esta regida entonces por la complejidad de la rutina auxiliar a la que hace referencia, ya que todas las demas operaciones toman un tiempo constante de ejecuci\'on.
+
+Resulta necesario ver entonces la complejidad del algoritmo de matching m\'aximo sobre vectores.
+
 \section*{An\'alisis de resultados}
 
 Para analizar este algoritmo, se bas\'o el enfoque en dos aspectos diferentes. Por un lado, se encuentran los an\'alisis sobre la correctitud de la soluci\'on propuesta y, por otro lado, se encuentra el an\'alisis sobre el tiempo de ejecuci\'on para diferentes archivos de entrada, para poder realizar as\'i, una correlaci\'on entre el tiempo de ejecuci\'on y la complejidad te\'orica calculada anteriormente.
@@ -178,10 +215,10 @@ El i-\'esimo nodo representa a la i-\'esima persona.
 Sea $C = A^3$, $C$ tiene en la i-\'esima posici\'on de su diagonal la cantidad de caminos de longitud 3 desde el nodo i hasta el nodo i. \footnote{Te\'orica Algoritmos III}   
 
  
-Buscamos en $C$ el m\'inimo i tal que $C_{i,i} \neq 0$, llam\'emoslo j. Si existe, entonces, el menor clique de 3 nodos contendr\'a a j. Si no fuera as\'i, entonces existe k < j tal que $C_{k,k} \neq 0$, lo cual es absurdo, ya que j es el m\'inimo i tal que $C_{i,i} \neq 0$. Si no existe, termina el algoritmo indic\'andolo de la manera correspondiente.
+Buscamos en $C$ el m\'inimo i tal que $C_{i,i} \neq 0$, llam\'emoslo j. Si existe, entonces, el menor clique de 3 nodos contendr\'a a j. Si no fuera as\'i, entonces existe $k < j$ tal que $C_{k,k} \neq 0$, lo cual es un absurdo, ya que j es el m\'inimo i tal que $C_{i,i} \neq 0$. Si no existe, termina el algoritmo indic\'andolo de la manera correspondiente.
 
 
-De todas las combinaciones posibles para los otros dos nodos, elegimos la menor tal que los tres nodos forman una clique. En nuestra implementaci\'on optimizamos esta ultima selecci\'on, evitando generar combinaciones que sabemos anticipadamente que no corresponden a un clique. De esta manera obtuvimos el grupo de tres personas que se conocen entre s\'i.
+De todas las combinaciones posibles para los otros dos nodos, elegimos la menor tal que los tres nodos forman un clique. En nuestra implementaci\'on optimizamos esta ultima selecci\'on, evitando generar combinaciones que sabemos anticipadamente que no corresponden a un clique. De esta manera obtuvimos el grupo de tres personas que se conocen entre s\'i.
 
 
 Por \'ultimo obtenemos el grafo complemento de $G$, y realizamos las mismas operaciones para obtener el grupo de tres personas que no se conocen entre s\'i.
@@ -191,20 +228,20 @@ Por \'ultimo obtenemos el grafo complemento de $G$, y realizamos las mismas oper
 \section*{Complejidad}
 
 
-Obtenemos $C = A^3$ utilizando el algoritmo de Strassen para realizar el producto de matrices. La cantidad de operaciones que realiza este algoritmo est\'a en $O\left(m^{log\left(7\right)}\right)$, para una matriz de m filas y m columnas. Si el grafo tiene n nodos, es necesario generar una matriz de m x m, con $m \leq 2n$, ya que es necesario que n sea una potencia de dos. De esta forma, la cantidad de operaciones para realizar el producto de matrices est\'a en $O\left(7 \times \left(n ^{log 7} \right) \right) = O\left(n^{log\left(7\right)}\right)$.
+Obtenemos $C = A^3$ utilizando el algoritmo de Strassen para realizar el producto de matrices. La cantidad de operaciones que realiza este algoritmo est\'a en $O\left(m^{log_2\left(7\right)}\right)$, para una matriz de $m$ filas y $m$ columnas.\footnote{Ver Brassard, p\'ag. 273.} Si el grafo tiene $n$ nodos, es necesario generar una matriz de $m \times m$, con $m \leq 2n$, ya que es necesario que $m$ sea una potencia de dos. De esta forma, la cantidad de operaciones para realizar el producto de matrices est\'a en $O\left(7 \times \left(n ^{log_2 \left( 7\right)} \right) \right) = O\left(n^{log_2\left(7\right)}\right)$.
 
 
 
-Se puede encontrar en $C$ el m\'inimo i tal que $C_{i,i} \neq 0$ en $O\left(n\right)$ operaciones, ya que para cada posici\'on de la diagonal se realiza una cantidad constante de operaciones para verificar si en dicha posici\'on hay un cero. Como m\'aximo se recorre toda la diagonal, que tiene n posiciones.
+Se puede encontrar en $C$ el m\'inimo $i$ tal que $C_{i,i} \neq 0$ en $O\left(n\right)$ operaciones, ya que para cada posici\'on de la diagonal se realiza una cantidad constante de operaciones para verificar si en dicha posici\'on hay un cero. Como m\'aximo se recorre toda la diagonal, que tiene n posiciones.
 
 
 Generando todas las combinaciones de dos nodos la cantidad de operaciones para obtener la menor est\'a en $O\left(n^2\right)$, ya que se requiere una cantidad constante de operaciones para generar cada combinaci\'on, verificar si es un clique y compararla con la menor hasta el momento.
 
 
-Por \'ultimo se vuelve a calcular lo mismo para el grafo complemento. Para lo cual se invierte la matriz de adyacencias en $O \left( n^2 \right)$.
+Por \'ultimo se realizan las mismas operaciones sobre el grafo complemento. Para lo cual se invierte la matriz de adyacencias en $O \left( n^2 \right)$.
 
 
-Como se puede ver, 
+Como se puede ver, la complejidad computacional del algoritmo en el modelo uniforme est\'a dada por las operaciones correspondientes a la multiplicaci\'on de matrices, en $O \left( n^{log_2\left(7\right)} \right) $, ya que el resto del algoritmo tiene un orden menor. Como $log_2\left(7\right) < 2.9 $, el algoritmo realiza una cantidad de operaciones de un orden estrictamente menor a $O\left( n^3\right) $.
 
 
 
@@ -234,7 +271,7 @@ Sea $ G = \left( V, E \right) $ el grafo con el que modelamos el problema. Sean 
 Resta demostrar que existe un clique de tres nodos en el complemento del grafo planteado si y s\'olo si las personas representadas por los nodos que est\'en en dicho clique no se conocen entre s\'i.
 
 
-Llamemos $G' = \left( V', E')$ al complemento de $G$.  Sea $ C = \left( \left\lbrace v_a, v_b,v_c \right\rbrace, E' \right) $ un clique de tres nodos donde C es subgrafo de G y donde $v_a$ representa a la persona $a$, $v_b$ a la persona $b$ y $v_c$ a la persona $c$. Como $\left( v_a,v_b\right) \in E'$, $a$ y $b$ no se conocen. Tambi\'en $\left( v_b,v_c\right) \in E'$, por lo que $b$ y $c$ no se conocen. Por \'ultimo $\left( v_c,v_a\right) \in E'$, y por lo tanto $c$ y $a$ no se conocen. Luego $a$, $b$, y $c$ forman un grupo de tres personas que no se conocen.
+Llamemos $G' = \left( V', E' \right)$ al complemento de $G$.  Sea $ C = \left( \left\lbrace v_a, v_b,v_c \right\rbrace, E' \right) $ un clique de tres nodos donde C es subgrafo de G y donde $v_a$ representa a la persona $a$, $v_b$ a la persona $b$ y $v_c$ a la persona $c$. Como $\left( v_a,v_b\right) \in E'$, $a$ y $b$ no se conocen. Tambi\'en $\left( v_b,v_c\right) \in E'$, por lo que $b$ y $c$ no se conocen. Por \'ultimo $\left( v_c,v_a\right) \in E'$, y por lo tanto $c$ y $a$ no se conocen. Luego $a$, $b$, y $c$ forman un grupo de tres personas que no se conocen.
 
 
 
