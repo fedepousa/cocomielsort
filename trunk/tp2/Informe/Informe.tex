@@ -2,6 +2,9 @@
 \usepackage{graphicx}
 \usepackage{verbatim}
 % \usepackage{lstlisting}
+\usepackage{subfig}
+\usepackage{float}
+%\usepackage{spanish}   ver bien como es
 
 \begin{document}
 \begin{center}
@@ -68,22 +71,22 @@ si tamanio(peso_arista) >= 3
 % \end{lstlisting}
 
 Flata retocar pero en eso estamos
-\begin{figure}
-\begin{center}
-\includegraphics[width=0.7\textwidth]{imagenes/paso1y2.png}
-\begin{center}
- Figura 1
-\end{center}
-\end{center}
+%\begin{figure}[H]
+%\begin{center}
+%\includegraphics[width=0.7\textwidth]{imagenes/paso1y2.png}
+%\caption{Figura 1.1}
+%\end{center}
+%\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[Derecha 1]{\includegraphics[width=0.3\textwidth]{imagenes/paso1y2.png}}
+\qquad
+\subfloat[Izquierda 1]{\includegraphics[width=0.3\textwidth]{imagenes/pasosFinales.png}}
+\caption{Dos figuras en la misma linea}
 \end{figure}
 
-\begin{figure}[]
- ×
-\end{figure}
-
-
-
-\includegraphics[width=0.7\textwidth]{imagenes/pasosFinales.png}
+%\includegraphics[width=0.7\textwidth]{imagenes/pasosFinales.png}
 
 \section*{Demostraci\'on de correctitud}
 
