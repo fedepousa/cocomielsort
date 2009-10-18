@@ -67,7 +67,19 @@ si tamanio(peso_arista) >= 3
 \end{verbatim}
 % \end{lstlisting}
 
-Aca va el ejemplo paso por paso dibujado por Doc, hay que cortarlo bien y listo..
+Flata retocar pero en eso estamos
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.7\textwidth]{imagenes/paso1y2.png}
+\begin{center}
+ Figura 1
+\end{center}
+\end{center}
+\end{figure}
+
+
+
+\includegraphics[width=0.7\textwidth]{imagenes/pasosFinales.png}
 
 \section*{Demostraci\'on de correctitud}
 
@@ -172,6 +184,11 @@ Si tomamos como tama\~no de entrada la cantidad de vallas (CV en adelante), y co
  
 En primer lugar, la funci\'on maxmin, busca m\'aximos y m\'inimos en un vector de vallas linealmente, por lo cual es de orden O(CV) ya que se recorre todo el vector de vallas una vez.
 
+En segundo lugar, se realiza el seteo de toda la matriz mediante la informaci\'on entregada por las vallas, en esta rutina se itera sobre todas las vallas y se setean las relaciones entre los nodos a partir de las alturas de las vallas pasadas como par\'ametro. En el peor de los casos, se tienen que setear las cuatro relaciones para cada uno de los nodos de la grilla. Como acceder al nodo se realiza en tiempo constante, y luego hacer los cuatros posibles cambios tambien se realiza en tiempo constante, esta rutina posee una complejidad de O(n) siendo n la cantidad de nodos de la grilla, ya que se realiza un ciclo sobre todos ellos, mientras que en cada iteraci\'on se realizan operaciones de complejidad O(1).
+
+En \'ultimo lugar, lo que se hace es realizar un BFS para lograr identificar la cantidad de nodos de la componente conexa que se inunda. La rutina de BFS tiene una complejidad de O(n+m) siendo n la cantidad de nodos del grafo, y m la cantidad de aristas del mismo. Sin embargo, en este caso podemos acotar m por 4*n, ya que en el peor de los casos, cada nodo posee 4 vecinos. Luego, la complejidad de BFS en este caso es O(n).
+
+En resumen, se realizan tres rutinas, la primera tiene una complejidad O(CV) que ya se mencion\'o que se puede acotar por O(n); luego, se realizan otras dos rutinas que ambas tiene complejidad O(n). Entonces, la complejidad total del algoritmo, es O(n), siendo n la cantidad de nodos del grafo que representa la isla.
 
 \section*{An\'alisis de resultados}
 \section*{Conclusiones}
