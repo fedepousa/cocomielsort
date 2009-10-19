@@ -4,7 +4,7 @@
 % \usepackage{lstlisting}
 \usepackage{subfig}
 \usepackage{float}
-%\usepackage{spanish}   ver bien como es
+% \usepackage{spanish}   ver bien como es
 
 \begin{document}
 \begin{center}
@@ -70,11 +70,12 @@ si tamanio(peso_arista) >= 3
 \end{verbatim}
 % \end{lstlisting}
 
-Flata retocar pero en eso estamos
+A continuaci\'on se presenta un seguimiento del algoritmo sobre un ciclo simple de siete aristas.
+
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{imagenes/paso1y2.png}
-\caption{Figura 1.1}
+\caption{Se toma la arista inferior y se bifurca entre utilizar la misma o no}
 \end{center}
 \end{figure}
 
@@ -94,26 +95,27 @@ Flata retocar pero en eso estamos
 \caption{Dos figuras en la misma linea}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.3\textwidth]{imagenes/paso5a.png}
+\subfloat[Derecha 1]{\includegraphics[width=0.3\textwidth]{imagenes/paso4b.png}}
+\qquad
+\subfloat[Izquierda 1]{\includegraphics[width=0.3\textwidth]{imagenes/paso5a.png}}
 \caption{camino a}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.3\textwidth]{imagenes/paso6a.png}
+\subfloat[Derecha 1]{\includegraphics[width=0.3\textwidth]{imagenes/paso4b.png}}
+\qquad
+\subfloat[Izquierda 1]{\includegraphics[width=0.3\textwidth]{imagenes/paso6a.png}}
 \caption{fin de camino a}
 \end{figure}
 
-
-
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{imagenes/pasosFinales.png} 
 \caption{union de los caminos}
 \end{figure}
-
 
 \section*{Demostraci\'on de correctitud}
 
@@ -151,14 +153,33 @@ Con el fin de realizar una comprobaci\'on emp\'irica de la soluci\'on propuesta 
 
 El an\'alisis en este tipo de casos se baso solamente en la correctitud de los mismos y no en el tiempo de ejecuci\'on debido a que son grafos de tama\~{n}os muy peque\~{n}os y el tiempo de ejecucion no sobrepasa los 2 microsegundos en ninguno de los casos.
 
-\bigskip
-Aca podemos poner una tabla con los valores
+Para todos los casos propuestos los resultados fueron satisfactorios al ser contrastados con la soluciones previamente obtenidas.
 
-Como se observa en la tabla para todos los casos propuestos, los resultados fueron satisfactorios al ser contrastados con la soluciones previamente obtenidas
+\subsection*{Casos para probar el tiempo de ejecuci\'on}.
 
-\subsection*{Casos de Stress}.
+Para poder analizar como se comportaba el algoritmo en funci\'on del tama\~{n}o del grafo a procesar, se implemento un generador de ciclos simples al azar. El mismo se realiz\'o para que arrojase una salida con 500 grafos diferentes, el primero con 10000 aristas, el segundo con 10500 y asi sucesivamente. Una vez obtenidos los tiempos de ejecuci\'on de cada uno de estos casos, se procedi\'o a graficar los resultados para poder contrastar con la complejidad obtenida teoricamente.
+
+A continuaci\'on se presenta un gr\'afico donde se encuentran simultaneamente los datos obtenidos y un ajuste lineal de los mismos.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{imagenes/Resultados1.png} 
+\caption{Grafico 1}
+\end{figure}
+
+Como se puede observar en el gr\'afico, los resultados fueron satisfactorios. El ajuste lineal arroj\'o un coeficiente de correlaci\'on de aproximadamente 0.99999, mostrando emp\'iricamente que la complejidad te\'orica calculada se condice con los tiempos reales de ejecuci\'on. 
 
 \section*{Conclusiones}
+
+Luego de obtener los resultados para el presente ejercicio, se concluyen varios puntos importantes:
+
+\begin{itemize}
+\item Si bien el problema de matching es de gran complejidad algor\'itmica, es necesario explotar el hecho de que solo se debe realizar sobre ciclos simples. El hecho de haber explotado esta caracter\'istica de los grafos presentes en la entrada del algoritmo, fue de gran importancia al momento de lograr un algoritmo eficiente que solo recorriese cada aristas una \'unica vez.
+\item Resulta de gran importancia pensar diferentes variantes para el algoritmo con el fin de encontrar la versi\'on m\'as eficiente. Durante el dise\~{n}o del algoritmo se pens\'o tanto una estrategia de divide and conquer, como una estrategia de programaci\'on din\'amica. Si bien ambas resolv\'ian el problema satisfactoriamente dada que la idea era basicamente la misma solo que se invert\'ia el orden del recorrido del grafo, cabe destacar como la simple mejora de recorrer desde el primer elemento hasta el \'ultimo trajo la gran ventaja de preguntar por cada configuraci\'on de aristas una sola vez, generando as\'i un algoritmo de orden lineal, a diferencia del algoritmo exponencial obtenido por divide and conquer.
+\item 
+\end{itemize}
+
 
 
 \begin{center}
@@ -199,6 +220,45 @@ areaNoInundada(){
 	return (ancho*alto - inundadas)
 }
 \end{verbatim}
+\begin{figure}[H]
+\centering
+\subfloat[Derecha 1]{\includegraphics[width=0.3\textwidth]{imagenes/grafSinVallas.png}}
+\qquad
+\subfloat[Izquierda 1]{\includegraphics[width=0.3\textwidth]{imagenes/grafConVallas.png}}
+\caption{fin de camino a}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\subfloat[Derecha 1]{\includegraphics[width=0.2\textwidth]{imagenes/inundPaso1.png}}
+\qquad
+\subfloat[Izquierda 1]{\includegraphics[width=0.2\textwidth]{imagenes/inundPaso2.png}}
+\qquad
+\subfloat[mas izq]{\includegraphics[width=0.2\textwidth]{imagenes/inundPaso3.png}}
+\caption{fin de camino a}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\subfloat[Derecha 1]{\includegraphics[width=0.2\textwidth]{imagenes/inundPaso4.png}}
+\qquad
+\subfloat[Izquierda 1]{\includegraphics[width=0.2\textwidth]{imagenes/inundPaso5.png}}
+\qquad
+\subfloat[mas izq]{\includegraphics[width=0.2\textwidth]{imagenes/inundPaso6.png}}
+\caption{fin de camino a}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\subfloat[Derecha 1]{\includegraphics[width=0.2\textwidth]{imagenes/inundPaso7.png}}
+\qquad
+\subfloat[Izquierda 1]{\includegraphics[width=0.2\textwidth]{imagenes/inundPaso8.png}}
+\qquad
+\subfloat[mas izq]{\includegraphics[width=0.2\textwidth]{imagenes/inundPasoFinal.png}}
+\caption{fin de camino a}
+\end{figure}
+
+
 \begin{itemize}
 \item leer(vallas): Carga en el vector vallas todas las provenientes del input.
 
