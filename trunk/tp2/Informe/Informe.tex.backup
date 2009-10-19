@@ -2,6 +2,9 @@
 \usepackage{graphicx}
 \usepackage{verbatim}
 % \usepackage{lstlisting}
+\usepackage{subfig}
+\usepackage{float}
+%\usepackage{spanish}   ver bien como es
 
 \begin{document}
 \begin{center}
@@ -68,18 +71,49 @@ si tamanio(peso_arista) >= 3
 % \end{lstlisting}
 
 Flata retocar pero en eso estamos
-\begin{figure}
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{imagenes/paso1y2.png}
-\begin{center}
- Figura 1
+\caption{Figura 1.1}
 \end{center}
-\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\subfloat[Derecha 1]{\includegraphics[width=0.3\textwidth]{imagenes/paso3b.png}}
+\qquad
+\subfloat[Izquierda 1]{\includegraphics[width=0.3\textwidth]{imagenes/paso3a.png}}
+\caption{Dos figuras en la misma linea}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\subfloat[Derecha 1]{\includegraphics[width=0.3\textwidth]{imagenes/paso4b.png}}
+\qquad
+\subfloat[Izquierda 1]{\includegraphics[width=0.3\textwidth]{imagenes/paso4a.png}}
+\caption{Dos figuras en la misma linea}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.3\textwidth]{imagenes/paso5a.png}
+\caption{camino a}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.3\textwidth]{imagenes/paso6a.png}
+\caption{fin de camino a}
 \end{figure}
 
 
 
-\includegraphics[width=0.7\textwidth]{imagenes/pasosFinales.png}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth]{imagenes/pasosFinales.png} 
+\caption{union de los caminos}
+\end{figure}
+
 
 \section*{Demostraci\'on de correctitud}
 
