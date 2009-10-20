@@ -339,13 +339,10 @@ Se considera que una terna es menor que otra si la primera componente de la prim
 
 \section*{Algoritmo}
 
-
-Para resolver el problema se opta por representarlo mediante un grafo.
-
-Cada v\'ertice del grafo representa a una persona diferente y dos v\'ertices est\'an unidos si y s\'olo si las personas se conocen.
+Para lograr el objetivo deseado se opt\'o por representar el problema mediante la utilizaci\'on de un grafo en donde cada v\'ertice del mismo representase a una persona diferentes, mientras que las aristas fuesen las encargadas de representar las relaciones de conocimiento, teniendo as\'i la presencia de una arista entre dos nodos diferentes si y solo si las personas representan por dichos nodos se conocen.
 
 
-Se puede ver que existe un clique de tres nodos si y s\'olo si las personas representadas por los nodos que est\'en en dicho clique se conocen todas entre s\'i. Ver Ap\'endice \ref{dem_clique}.
+Una vez obtenido el grafo de relacion, lo que se busca es un clique de 3 nodos, ya que se puede ver que existe un clique de tres nodos si y s\'olo si las personas representadas por los nodos que est\'en en dicho clique se conocen todas entre s\'i. Ver Ap\'endice \ref{dem_clique}.
 
 
 Para encontrar el grupo de tres personas que no se conozcan entre s\'i resolvemos el mismo problema pero en el grafo complemento. Ver Ap\'endice \ref{dem_clique}.

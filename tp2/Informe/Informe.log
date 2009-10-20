@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.6.10)  20 OCT 2009 12:59
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.6.10)  20 OCT 2009 13:32
 entering extended mode
  %&-line parsing enabled.
 **Informe.tex
@@ -265,14 +265,14 @@ nundPaso5.png> <./imagenes/inundPaso6.png (PNG copy)> <./imagenes/inundPaso7.pn
 g> <./imagenes/inundPaso8.png> <./imagenes/inundPasoFinal.png>] [14] [15]
 [16]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 360.
+(Font)              <7> on input line 356.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 360.
+(Font)              <5> on input line 356.
  [17] [18] [19] (./Informe.aux) ) 
 Here is how much of TeX's memory you used:
  1439 strings out of 95086
  22532 string characters out of 1183255
- 73472 words of memory out of 1500000
+ 74472 words of memory out of 1500000
  4613 multiletter control sequences out of 10000+50000
  8103 words of font info for 29 fonts, out of 1200000 for 2000
  28 hyphenation exceptions out of 8191
@@ -288,7 +288,7 @@ m/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmsy10.pfb></usr/sh
 are/texmf-texlive/fonts/type1/bluesky/cm/cmsy8.pfb></usr/share/texmf-texlive/fo
 nts/type1/bluesky/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/c
 m/cmtt12.pfb>
-Output written on Informe.pdf (19 pages, 995923 bytes).
+Output written on Informe.pdf (19 pages, 996402 bytes).
 PDF statistics:
  150 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
