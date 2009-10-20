@@ -295,12 +295,26 @@ Para analizar la correctitud del algoritmo, se utilizaron los siguientes casos d
 \item Por otro lado, se genearon 9 islas tambi\'en con diferentes configuraciones de las vallas, de manera que los resultados de las mismas se pudiesen verificar manualmente.
 \end{itemize}
 
-Cabe destacar que todos los resultados obtenidos se constrararon satisfactoriamente con los resultados esperados, tantos los entregados por la c\'atedra, como los obtenidos manualmente.
+Cabe destacar que todos los resultados obtenidos se contrastaron satisfactoriamente con los resultados esperados, tantos los entregados por la c\'atedra, como los obtenidos manualmente.
 
-En este tipo de casos, solo se menciona como fue el comportamiento del algoritmo solamente en cuanto a la correctitud y no en cuanto al tiempo de ejecucion debido a que, en primer lugar, los tama\~{n}os de los grafos que represetan las islas son muy chicos como para obtener tiempos de ejecuci\'on representativos; y, por otro lado, las islas utilizadas poseen diferentes n\'umeros de vallas, lo que traer\'ia fluctuaciones en los tiempos de ejecuci\'on en caso de querer ser analizados.
+En este tipo de casos, solamente se menciona como fue el comportamiento del algoritmo en cuanto a la correctitud y no en cuanto al tiempo de ejecucion debido a que, en primer lugar, los tama\~{n}os de los grafos que represetan las islas son muy chicos como para obtener tiempos de ejecuci\'on representativos; y, por otro lado, las islas utilizadas poseen diferentes n\'umeros de vallas, lo que traer\'ia fluctuaciones en los tiempos de ejecuci\'on en caso de querer ser analizados.
 
 \subsection*{Casos para probar el tiempo de ejecuci\'on}
 Como se explic\'o en la secci\'on correspondiente, la complejidad de este algoritmo es lineal respecto de la cantidad de nodos del grafo que representa al rect\'angulo que inscribe a la isla. Es por esto, que para poder ver la relaci\'on entre la complejidad te\'orica y el comportamiento real del algoritmo, se crearon varias instacias de diferentes islas donde la cantidad de nodos creciera linealmente.
+
+Se crearon 500 casos de prueba donde se mantuvieron ciertas caracter\'isticas invariantes para poder crear instancias comparables, mientras que el \'unico par\'ametro que se vari\'o fue la altura total del rect\'angulo en cuesti\'on.
+Los casos de prueba se realizaron de la siguiente manera:
+\begin{itemize}
+\item Todos los casos tienen la marea de nivel 3.
+\item Todos los casos poseen 8 vallas en total, todas de altura 4. Cuatro de las vallas se encuentran dentro del rect\'angulo encerrando un area no inundable de 1*2, con el simple objetivo de poseer un area no inundable.
+\item De las otras 4 vallas, 3 son fijas, delimitando el ancho del rect\'angulo desde x igual a 1 hasta x igual a 10 y la restante delimita el borde inferior en y igual a 1.
+\item La valla restante es la que se va modificando para generar instacias cada vez m\'as grandes. Comienza en el primer caso delimitando el borde superior en y igual a 10000, y luego va subiendo este l\'imite 500 unidades por cada caso.
+\end{itemize}
+
+Por lo explicado anteriormente, se puede ver que las islas son todas muy parecidas excepto por la cantidad de nodos en total que vari\'an desde 100000, subiendo de a 5000 nodos por cada caso. La idea de realizar islas muy parecidas excepto por la cantidad de nodos, fue que el seteo de vallas y sus respectivas relaciones fueran an\'alogas para todos los casos y que no fueran factor de fluctuaciones no deseadas en los tiempos de ejecuci\'on.
+
+A continuaci\'on se presenta un gr\'afico donde se encuentran plasmados los tiempos de ejecuci\'on en cada caso, en funci\'on de la cantidad de nodos del grafo correspondiente.
+
 
 \section*{Conclusiones}
 
@@ -314,9 +328,9 @@ Como se explic\'o en la secci\'on correspondiente, la complejidad de este algori
 En este problema lo que se quiere es, teniendo un conjunto de personas y sabiendo si se conocen entre s\'i, armar dos grupos de tres personas cada uno, un grupo en el cual las 3 personas se conozcan mutuamente, y otro grupo en el cual ninguno est\'e relacionado con otro.
 
 
-Si se pudieran armar varios grupos que cumplan con la restricci\'on planteada, el que debemos encontrar es el menor lexicogr\'aficamente. Es decir, si representamos cada grupo con una terna ordenada ascendentemente, la terna ser\'a menor que cualquier otra terna que represente a un grupo v\'alido.
+En el caso que se pudieran armar varios grupos que cumplan con la restricci\'ones planteadas, los que se deben encontrar son los menores lexicogr\'aficamente, para cada uno de los dos casos. Es decir, si se representa cada grupo con una terna ordenada ascendentemente, la terna ser\'a menor que cualquier otra terna que represente a un grupo v\'alido.
 
-Consideramos que una terna es menor que otra si la primera componente de la primera terna es menor, o si es igual y la segunda de la misma es menor, o si tanto la primera como la segunda son iguales y la tercera es menor, en cada caso con respecto a la misma componente de la otra terna.
+Se considera que una terna es menor que otra si la primera componente de la primera terna es menor, o si es igual y la segunda de la misma es menor, o si tanto la primera como la segunda son iguales y la tercera es menor, en cada caso con respecto a la misma componente de la otra terna.
 \begin{displaymath}
 \left(a, b, c \right) < \left( d, e, f\right) \Leftrightarrow 
 \left( a < d \right) \vee \left( a = d \wedge b < e \right) \vee \left( a = d \wedge b = e \wedge c < f \right)
