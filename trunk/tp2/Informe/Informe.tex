@@ -328,9 +328,9 @@ A continuaci\'on se presenta un gr\'afico donde se encuentran plasmados los tiem
 En este problema lo que se quiere es, teniendo un conjunto de personas y sabiendo si se conocen entre s\'i, armar dos grupos de tres personas cada uno, un grupo en el cual las 3 personas se conozcan mutuamente, y otro grupo en el cual ninguno est\'e relacionado con otro.
 
 
-Si se pudieran armar varios grupos que cumplan con la restricci\'on planteada, el que debemos encontrar es el menor lexicogr\'aficamente. Es decir, si representamos cada grupo con una terna ordenada ascendentemente, la terna ser\'a menor que cualquier otra terna que represente a un grupo v\'alido.
+En el caso que se pudieran armar varios grupos que cumplan con la restricci\'ones planteadas, los que se deben encontrar son los menores lexicogr\'aficamente, para cada uno de los dos casos. Es decir, si se representa cada grupo con una terna ordenada ascendentemente, la terna ser\'a menor que cualquier otra terna que represente a un grupo v\'alido.
 
-Consideramos que una terna es menor que otra si la primera componente de la primera terna es menor, o si es igual y la segunda de la misma es menor, o si tanto la primera como la segunda son iguales y la tercera es menor, en cada caso con respecto a la misma componente de la otra terna.
+Se considera que una terna es menor que otra si la primera componente de la primera terna es menor, o si es igual y la segunda de la misma es menor, o si tanto la primera como la segunda son iguales y la tercera es menor, en cada caso con respecto a la misma componente de la otra terna.
 \begin{displaymath}
 \left(a, b, c \right) < \left( d, e, f\right) \Leftrightarrow 
 \left( a < d \right) \vee \left( a = d \wedge b < e \right) \vee \left( a = d \wedge b = e \wedge c < f \right)
@@ -339,10 +339,7 @@ Consideramos que una terna es menor que otra si la primera componente de la prim
 
 \section*{Algoritmo}
 
-
-Para resolver el problema se opta por representarlo mediante un grafo.
-
-Cada v\'ertice del grafo representa a una persona diferente y dos v\'ertices est\'an unidos si y s\'olo si las personas se conocen.
+Para lograr el objetivo deseado se opt\'o por representar el problema mediante la utilizaci\'on de un grafo en donde cada v\'ertice del mismo representase a una persona diferentes, mientras que las aristas fuesen las encargadas de representar las relaciones de conocimiento, teniendo as\'i la presencia de una arista entre dos nodos diferentes si y solo si las personas representan por dichos nodos se conocen.
 
 
 Se puede ver que existe un clique de tres nodos si y s\'olo si las personas representadas por los nodos que est\'en en dicho clique se conocen todas entre s\'i. Ver Ap\'endice \ref{dem_clique}.
