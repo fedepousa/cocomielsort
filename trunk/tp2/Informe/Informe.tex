@@ -315,8 +315,36 @@ Por lo explicado anteriormente, se puede ver que las islas son todas muy parecid
 
 A continuaci\'on se presenta un gr\'afico donde se encuentran plasmados los tiempos de ejecuci\'on en cada caso, en funci\'on de la cantidad de nodos del grafo correspondiente.
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{imagenes/Resultados2.png} 
+\caption{Grafico 1}
+\end{figure}
+
+
+Como se puede observar, las observaciones emp\'iricas de como funciona el algoritmo se condicen con la complejidad te\'orica
+calculada anteriormente. Si bien se denotan la presencia de algunos \emph{outliers}, tambi\'en se puede observar claramente
+como los datos estan relacionados por una funci\'on lineal tal como la complejidad te\'orica predicaba. Al realizar el ajuste lineal
+se consigui\'o un ajuste con un coeficiente de correlaci\'on de aproximadamente 0.999.
 
 \section*{Conclusiones}
+Luego de obtener los resultados pertinentes a los diferentes casos de prueba se concluye que:
+\begin{itemize}
+\item Es importante tener en cuenta varios modelos diferentes a la hora de dise\~{n}ar un algoritmo para resolver un problema
+en particular, ya que si bien la idea de una inundaci\'on de una isla puede estar bastante alejada de un problema de grafos, lograr
+esta correlaci\'on hizo que el problema se pudiese realizar con un buen orden de complejidad y minimizando bastante bien la cantidad de 
+veces que se itera sobre las diferentes partes de la isla.
+\item Resulta de gran importancia tener en cuenta algunos peque\~{n}os detalles de dise\~{n}o, ya que estos pueden ser muy
+relevantes en el resultado final. Por ejemplo, en este algoritmo fue importante el hecho de agrandar la grilla una linea en cada direccion, 
+de lo contrario la complejidad del mismo ubiese cambiado porque se tendr\'ia que haber realizado varios BFS.
+\item La complejidad te\'orica calculada se pudo contrastar emp\'iricamente con los casos de prueba utilizados. Igualmente, 
+cabe destacar que se presetaron algunos pocos outliers que se desconoce su origen, para todos los dem\'as datos, se puede ver que
+el tiempo de ejecuci\'on aumenta linealmente en funci\'on de la cantidad de nodos.
+\item Para poder analizar el tiempo de ejecuci\'on fue necesario buscar casos de prueba donde lo \'unico que variase fuera la cantidad de nodos,
+si otro par\'ametro hubiese variado (la cantidad de vallas por ejemplo, o la disposici\'on de las mismas) el tiempo de ejecuci\'on 
+podr\'ia haber fluctuado sin tener esta fluctuaci\'on una relaci\'on con la cantidad de nodos, efecto que no es deseado. 
+\end{itemize}
+
 
 \begin{center}
 \item \section*{Ejercicio 3: Bernardo Armando Pandillas}
