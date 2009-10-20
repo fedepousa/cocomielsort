@@ -352,18 +352,10 @@ Para encontrar el clique se realizan los siguiente pasos:
 
 \begin{enumerate}
 \item En primer lugar, se confecciona la matriz de adyacencias utilizando las relaciones entre las personas, en la cual el nodo i-\'esimo representa a la i-\'esima persona. A partir de aqui, se llamar\'a $A$ a esta matriz de adyacencia.
-
-Sea $C = A^3$, $C$ tiene en la i-\'esima posici\'on de su diagonal la cantidad de caminos de longitud 3 desde el nodo i hasta el nodo i. \footnote{Te\'orica Algoritmos III}   
-
- 
-Buscamos en $C$ el m\'inimo i tal que $C_{i,i} \neq 0$, llam\'emoslo j. Si existe, entonces, el menor clique de 3 nodos contendr\'a a j. Si no fuera as\'i, entonces existe $k < j$ tal que $C_{k,k} \neq 0$, lo cual es un absurdo, ya que j es el m\'inimo i tal que $C_{i,i} \neq 0$. Si no existe, termina el algoritmo indic\'andolo de la manera correspondiente.
-
-
-De todas las combinaciones posibles para los otros dos nodos, elegimos la menor tal que los tres nodos forman un clique. En nuestra implementaci\'on optimizamos esta ultima selecci\'on, evitando generar combinaciones que sabemos anticipadamente que no corresponden a un clique. De esta manera obtuvimos el grupo de tres personas que se conocen entre s\'i.
-
-
-Por \'ultimo obtenemos el grafo complemento de $G$, y realizamos las mismas operaciones para obtener el grupo de tres personas que no se conocen entre s\'i.
-
+\item Luego, sea $C = A^3$, entonces se puede ver que $C$ tiene en la i-\'esima posici\'on de su diagonal la cantidad de caminos de longitud 3 desde el nodo i hasta el nodo i. \footnote{Te\'orica Algoritmos III} Esto justamente indica la presencia de un clique de 3 nodos dado que, en el caso especial de 3 nodos, un clique o un circuito es lo mismo.
+\item Una vez que se puede conocer los nodos que estan en un circuito de 3 nodos mirando la diagonal, se busca en $C$ el m\'inimo i tal que $C_{i,i} \neq 0$, llam\'emoslo j. Si existe, entonces, el menor clique de 3 nodos contendr\'a a j. Si no fuera as\'i, entonces existe $k < j$ tal que $C_{k,k} \neq 0$, lo cual es un absurdo, ya que j es el m\'inimo i tal que $C_{i,i} \neq 0$. Si no existe, termina el algoritmo indic\'andolo de manera correspondiente que como no hay ninguna persona que este involucrada en un ciclo de 3 nodos, entonces no se puede armar el grupo Coppersmith.
+\item Una vez obtenido el menor nodo que esta presente en un clique de 3 nodos, de todas las combinaciones posibles para los otros dos nodos, se elige la menor tal que los tres nodos forman un clique. En la implementaci\'on se optimiza esta ultima selecci\'on, evitando generar combinaciones que se sepa anticipadamente que no corresponden a un clique. De esta manera se obtuvo el grupo de tres personas que se conocen entre s\'i.
+\item Por \'ultimo se obtiene el grafo complemento de $G$, y se realizan las mismas operaciones para obtener el grupo de tres personas que no se conocen entre s\'i, el grupo Winograd.
 \end{enumerate}
 
 \section*{Complejidad}
