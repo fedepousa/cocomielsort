@@ -219,6 +219,19 @@ areaNoInundada(){
 	return (ancho*alto - inundadas)
 }
 \end{verbatim}
+
+
+
+\begin{itemize}
+\item leer(vallas): Carga en el vector vallas todas las provenientes del input.
+
+\item maxmin(vallas): Setea ciertas variables con el tama\~no m\'aximo que tendrá la isla delimitada por las vallas mas externas.
+
+\item seteamosMatriz(matriz): Usando las variables seteadas por maxmin crea un grafo (representado con una matriz) donde establece 4 relaciones por nodo (con sus vecinos) donde el peso del a arista es la altura de la valla que debe atravesar.
+
+\item bfsContador(matriz): Recorre el grafo usando bfs, por cada nodo que visita suma uno a una variable que al final devuelve. Recorre todos los nodos que se inundan dado q son los que se relacionan (si la marea supera el peso de las aristas). De este modo al finalizar obtenemos cuantos nodos visitamos coincidiendo con cuantos nodos se inundan.
+\end{itemize}
+
 \begin{figure}[H]
 \centering
 \subfloat[Derecha 1]{\includegraphics[width=0.3\textwidth]{imagenes/grafSinVallas.png}}
@@ -258,17 +271,6 @@ areaNoInundada(){
 \end{figure}
 
 
-\begin{itemize}
-\item leer(vallas): Carga en el vector vallas todas las provenientes del input.
-
-\item maxmin(vallas): Setea ciertas variables con el tama\~no m\'aximo que tendrá la isla delimitada por las vallas mas externas.
-
-\item seteamosMatriz(matriz): Usando las variables seteadas por maxmin crea un grafo (representado con una matriz) donde establece 4 relaciones por nodo (con sus vecinos) donde el peso del a arista es la altura de la valla que debe atravesar.
-
-\item bfsContador(matriz): Recorre el grafo usando bfs, por cada nodo que visita suma uno a una variable que al final devuelve. Recorre todos los nodos que se inundan dado q son los que se relacionan (si la marea supera el peso de las aristas). De este modo al finalizar obtenemos cuantos nodos visitamos coincidiendo con cuantos nodos se inundan.
-\end{itemize}
-
-
 \section*{Complejidad}
 Para analizar la complejidad se utiliz\'o el modelo uniforme. En este modelo el an\'alisis no esta centrado en el tama\~{n}o de los operandos, por lo que el tiempo de ejecuci\'on de cada operaci\'on se considera constante.
 
@@ -281,9 +283,39 @@ En segundo lugar, se realiza el seteo de toda la matriz mediante la informaci\'o
 
 En \'ultimo lugar, lo que se hace es realizar un BFS para lograr identificar la cantidad de nodos de la componente conexa que se inunda. La rutina de BFS tiene una complejidad de O(n+m) siendo n la cantidad de nodos del grafo, y m la cantidad de aristas del mismo. Sin embargo, en este caso podemos acotar m por 4*n, ya que en el peor de los casos, cada nodo posee 4 vecinos. Luego, la complejidad de BFS en este caso es O(n).
 
-En resumen, se realizan tres rutinas, la primera tiene una complejidad O(CV) que ya se mencion\'o que se puede acotar por O(n); luego, se realizan otras dos rutinas que ambas tiene complejidad O(n). Entonces, la complejidad total del algoritmo, es O(n), siendo n la cantidad de nodos del grafo que representa la isla.
+En resumen, se realizan tres rutinas, la primera tiene una complejidad O(CV) que ya se mencion\'o que se puede acotar por O(n); luego, se realizan otras dos rutinas que ambas tiene complejidad O(n). Entonces, la complejidad total del algoritmo, es O(n), siendo n la cantidad de nodos del grafo que representa la isla. Cabe destacar que esta complejidad es an\'aloga a O(S), siendo S el \'area del rect\'angulo donde se puede inscribir la isla, ya que si bien el algoritmo agrega una fila y una columna O((altura+1)*(ancho+1)) = O(altura*ancho) = O(S).
 
 \section*{An\'alisis de resultados}
+Para analizar el funcionamiento del algoritmo propuesto como soluci\'on del problema, se realizaron dos tipos diferentes de casos de pruebas. Por un lado, se intento probar la correctitud del algoritmo mediante algunos casos de prueba de tama\~{n}o considerablemente peque\~{n}o, con el objetivo de poder contrastar las soluciones arrojadas por el algoritmo con las soluciones que se obtienen manualmente al poder visualizar la isla con las vallas correspondientes. Por otro lado, se intento constratar la complejidad te\'orica con el comportamiento real del algoritmo creando varias instancias de tama\~{n}os considerablemente grandes.
+
+\subsection*{Casos de Correctitud}
+Para analizar la correctitud del algoritmo, se utilizaron los siguientes casos de prueba:
+\begin{itemize}
+\item En primer lugar, se utilizaron los casos de prueba entregados por la c\'atedra. Los mismos constan de 6 islas con diferentes configuraciones de vallas.
+\item Por otro lado, se genearon 9 islas tambi\'en con diferentes configuraciones de las vallas, de manera que los resultados de las mismas se pudiesen verificar manualmente.
+\end{itemize}
+
+Cabe destacar que todos los resultados obtenidos se contrastaron satisfactoriamente con los resultados esperados, tantos los entregados por la c\'atedra, como los obtenidos manualmente.
+
+En este tipo de casos, solamente se menciona como fue el comportamiento del algoritmo en cuanto a la correctitud y no en cuanto al tiempo de ejecucion debido a que, en primer lugar, los tama\~{n}os de los grafos que represetan las islas son muy chicos como para obtener tiempos de ejecuci\'on representativos; y, por otro lado, las islas utilizadas poseen diferentes n\'umeros de vallas, lo que traer\'ia fluctuaciones en los tiempos de ejecuci\'on en caso de querer ser analizados.
+
+\subsection*{Casos para probar el tiempo de ejecuci\'on}
+Como se explic\'o en la secci\'on correspondiente, la complejidad de este algoritmo es lineal respecto de la cantidad de nodos del grafo que representa al rect\'angulo que inscribe a la isla. Es por esto, que para poder ver la relaci\'on entre la complejidad te\'orica y el comportamiento real del algoritmo, se crearon varias instacias de diferentes islas donde la cantidad de nodos creciera linealmente.
+
+Se crearon 500 casos de prueba donde se mantuvieron ciertas caracter\'isticas invariantes para poder crear instancias comparables, mientras que el \'unico par\'ametro que se vari\'o fue la altura total del rect\'angulo en cuesti\'on.
+Los casos de prueba se realizaron de la siguiente manera:
+\begin{itemize}
+\item Todos los casos tienen la marea de nivel 3.
+\item Todos los casos poseen 8 vallas en total, todas de altura 4. Cuatro de las vallas se encuentran dentro del rect\'angulo encerrando un area no inundable de 1*2, con el simple objetivo de poseer un area no inundable.
+\item De las otras 4 vallas, 3 son fijas, delimitando el ancho del rect\'angulo desde x igual a 1 hasta x igual a 10 y la restante delimita el borde inferior en y igual a 1.
+\item La valla restante es la que se va modificando para generar instacias cada vez m\'as grandes. Comienza en el primer caso delimitando el borde superior en y igual a 10000, y luego va subiendo este l\'imite 500 unidades por cada caso.
+\end{itemize}
+
+Por lo explicado anteriormente, se puede ver que las islas son todas muy parecidas excepto por la cantidad de nodos en total que vari\'an desde 100000, subiendo de a 5000 nodos por cada caso. La idea de realizar islas muy parecidas excepto por la cantidad de nodos, fue que el seteo de vallas y sus respectivas relaciones fueran an\'alogas para todos los casos y que no fueran factor de fluctuaciones no deseadas en los tiempos de ejecuci\'on.
+
+A continuaci\'on se presenta un gr\'afico donde se encuentran plasmados los tiempos de ejecuci\'on en cada caso, en funci\'on de la cantidad de nodos del grafo correspondiente.
+
+
 \section*{Conclusiones}
 
 \begin{center}
