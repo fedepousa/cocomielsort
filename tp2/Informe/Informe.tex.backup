@@ -315,8 +315,25 @@ Por lo explicado anteriormente, se puede ver que las islas son todas muy parecid
 
 A continuaci\'on se presenta un gr\'afico donde se encuentran plasmados los tiempos de ejecuci\'on en cada caso, en funci\'on de la cantidad de nodos del grafo correspondiente.
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{imagenes/Resultados2.png} 
+\caption{Grafico 1}
+\end{figure}
+
+
+Como se puede observar, las observaciones emp\'iricas de como funciona el algoritmo se condicen con la complejidad te\'orica
+calculada anteriormente. Si bien se denotan la presencia de algunos \emph{outliers}, tambi\'en se puede observar claramente
+como los datos estan relacionados por una funci\'on lineal tal como la complejidad te\'orica predicaba. Al realizar el ajuste lineal
+se consigui\'o un ajuste con un coeficiente de correlaci\'on de aproximadamente 0.999.
 
 \section*{Conclusiones}
+Luego de obtener los resultados pertinentes a los diferentes casos de prueba se concluye que:
+\begin{itemize}
+\item Es importante tener en cuenta varios modelos diferentes a la hora de dise\~{n}ar un algoritmo para resolver un problema
+en particular
+\end{itemize}
+
 
 \begin{center}
 \item \section*{Ejercicio 3: Bernardo Armando Pandillas}
@@ -345,30 +362,18 @@ Para lograr el objetivo deseado se opt\'o por representar el problema mediante l
 Una vez obtenido el grafo de relacion, lo que se busca es un clique de 3 nodos, ya que se puede ver que existe un clique de tres nodos si y s\'olo si las personas representadas por los nodos que est\'en en dicho clique se conocen todas entre s\'i. Ver Ap\'endice \ref{dem_clique}.
 
 
-Para encontrar el grupo de tres personas que no se conozcan entre s\'i resolvemos el mismo problema pero en el grafo complemento. Ver Ap\'endice \ref{dem_clique}.
+Encontrar un clique de 3 nodos, encontrar\'ia entonces las conformaciones posibles para el grupo Coppersmith. Luego, se necesita buscar como formar el grupo Winograd. Para encontrar este grupo de tres personas que no se conozcan entre s\'i, lo que se hizo fue resolver el mismo problema pero en el grafo complemento, ya que este nuevo grafo representa las no-relaciones entre las personas. Ver Ap\'endice \ref{dem_clique}.
 
+Una vez demostrado que la extrapolaci\'on del modelo elegido es correcta para poder resolver el problema pedido, se aboca el algoritmo a encontrar un clique de tres nodos en el grafo.
+Para encontrar el clique se realizan los siguiente pasos:
 
-Sabiendo que el modelo que elegimos es correcto resolvemos el problema de encontrar un clique de tres nodos en el grafo.
-
-
-Se confecciona la matriz de adyacencias, llam\'emosla $A$.
-
-
-El i-\'esimo nodo representa a la i-\'esima persona.
-
-
-Sea $C = A^3$, $C$ tiene en la i-\'esima posici\'on de su diagonal la cantidad de caminos de longitud 3 desde el nodo i hasta el nodo i. \footnote{Te\'orica Algoritmos III}   
-
- 
-Buscamos en $C$ el m\'inimo i tal que $C_{i,i} \neq 0$, llam\'emoslo j. Si existe, entonces, el menor clique de 3 nodos contendr\'a a j. Si no fuera as\'i, entonces existe $k < j$ tal que $C_{k,k} \neq 0$, lo cual es un absurdo, ya que j es el m\'inimo i tal que $C_{i,i} \neq 0$. Si no existe, termina el algoritmo indic\'andolo de la manera correspondiente.
-
-
-De todas las combinaciones posibles para los otros dos nodos, elegimos la menor tal que los tres nodos forman un clique. En nuestra implementaci\'on optimizamos esta ultima selecci\'on, evitando generar combinaciones que sabemos anticipadamente que no corresponden a un clique. De esta manera obtuvimos el grupo de tres personas que se conocen entre s\'i.
-
-
-Por \'ultimo obtenemos el grafo complemento de $G$, y realizamos las mismas operaciones para obtener el grupo de tres personas que no se conocen entre s\'i.
-
-
+\begin{enumerate}
+\item En primer lugar, se confecciona la matriz de adyacencias utilizando las relaciones entre las personas, en la cual el nodo i-\'esimo representa a la i-\'esima persona. A partir de aqui, se llamar\'a $A$ a esta matriz de adyacencia.
+\item Luego, sea $C = A^3$, entonces se puede ver que $C$ tiene en la i-\'esima posici\'on de su diagonal la cantidad de caminos de longitud 3 desde el nodo i hasta el nodo i. \footnote{Te\'orica Algoritmos III} Esto justamente indica la presencia de un clique de 3 nodos dado que, en el caso especial de 3 nodos, un clique o un circuito es lo mismo.
+\item Una vez que se puede conocer los nodos que estan en un circuito de 3 nodos mirando la diagonal, se busca en $C$ el m\'inimo i tal que $C_{i,i} \neq 0$, llam\'emoslo j. Si existe, entonces, el menor clique de 3 nodos contendr\'a a j. Si no fuera as\'i, entonces existe $k < j$ tal que $C_{k,k} \neq 0$, lo cual es un absurdo, ya que j es el m\'inimo i tal que $C_{i,i} \neq 0$. Si no existe, termina el algoritmo indic\'andolo de manera correspondiente que como no hay ninguna persona que este involucrada en un ciclo de 3 nodos, entonces no se puede armar el grupo Coppersmith.
+\item Una vez obtenido el menor nodo que esta presente en un clique de 3 nodos, de todas las combinaciones posibles para los otros dos nodos, se elige la menor tal que los tres nodos forman un clique. En la implementaci\'on se optimiza esta ultima selecci\'on, evitando generar combinaciones que se sepa anticipadamente que no corresponden a un clique. De esta manera se obtuvo el grupo de tres personas que se conocen entre s\'i.
+\item Por \'ultimo se obtiene el grafo complemento de $G$, y se realizan las mismas operaciones para obtener el grupo de tres personas que no se conocen entre s\'i, el grupo Winograd.
+\end{enumerate}
 
 \section*{Complejidad}
 
