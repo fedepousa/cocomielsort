@@ -388,21 +388,25 @@ Para encontrar el clique se realizan los siguiente pasos:
 
 \section*{Complejidad}
 
+Para analizar la complejidad del algoritmo, se va ir analizando que se hace en cada paso, calculando la complejidad del mismo.
 
-Obtenemos $C = A^3$ utilizando el algoritmo de Strassen para realizar el producto de matrices. La cantidad de operaciones que realiza este algoritmo est\'a en $O\left(m^{log_2\left(7\right)}\right)$, para una matriz de $m$ filas y $m$ columnas.\footnote{Ver Brassard, p\'ag. 273.} Si el grafo tiene $n$ nodos, es necesario generar una matriz de $m \times m$, con $m \leq 2n$, ya que es necesario que $m$ sea una potencia de dos. De esta forma, la cantidad de operaciones para realizar el producto de matrices est\'a en $O\left(7 \times \left(n ^{log_2 \left( 7\right)} \right) \right) = O\left(n^{log_2\left(7\right)}\right)$.
+En primer lugar, se setea toda la matriz de adyacencias mediante la informaci\'on obtenida del caso pertinente. Lo que se hace es ir poniendo en cada posici\'on un 0 o un 1 seg\'un corresponda, es por esto que este paso es del orden de n cuadrado, siendo n la cantidad de nodos del grafo.
+
+Luego, se obtiene $C = A^3$ utilizando el algoritmo de Strassen para realizar el producto de matrices. La cantidad de operaciones que realiza este algoritmo est\'a en $O\left(m^{log_2\left(7\right)}\right)$, para una matriz de $m$ filas y $m$ columnas.\footnote{Ver Brassard, p\'ag. 273.} En el caso de que el grafo tenga $n$ nodos, es necesario generar una matriz de $m \times m$, con $m \leq 2n$, ya que es necesario que $m$ sea una potencia de dos. De esta forma, la cantidad de operaciones para realizar el producto de matrices est\'a en $O\left(7 \times \left(n ^{log_2 \left( 7\right)} \right) \right) = O\left(n^{log_2\left(7\right)}\right)$.
 
 
 
-Se puede encontrar en $C$ el m\'inimo $i$ tal que $C_{i,i} \neq 0$ en $O\left(n\right)$ operaciones, ya que para cada posici\'on de la diagonal se realiza una cantidad constante de operaciones para verificar si en dicha posici\'on hay un cero. Como m\'aximo se recorre toda la diagonal, que tiene n posiciones.
+Una vez obtenida la matriz elevada al cubo, es momento de buscar el m\'inimo elemento de la diagonal que sea distinto de 0. Se puede encontrar en $C$ el m\'inimo $i$ tal que $C_{i,i} \neq 0$ en $O\left(n\right)$ operaciones, ya que para cada posici\'on de la diagonal se realiza una cantidad constante de operaciones para verificar si en dicha posici\'on hay un cero. Para realizar esto, se recorre toda la diagonal que posee n elementos, cumpliendo as\'i con la complejidad dicha.
 
+Luego de obtener el menor nodo que se encuentra en un clique, hay que generar todas las dem\'as combinaciones para ver cuales forman un clique. 
+Al generar todas las combinaciones de dos nodos la cantidad de operaciones para obtener la menor est\'a en $O\left(n^2\right)$, ya que se requiere una cantidad constante de operaciones para generar cada combinaci\'on, verificar si es un clique y compararla con la menor hasta el momento.
 
-Generando todas las combinaciones de dos nodos la cantidad de operaciones para obtener la menor est\'a en $O\left(n^2\right)$, ya que se requiere una cantidad constante de operaciones para generar cada combinaci\'on, verificar si es un clique y compararla con la menor hasta el momento.
-
+Luego, al tener todos los c\'alculos realizados para la busqueda del grupo Coppersmith, se puede ver por todo lo antedicho que la operaci\'on predominante esta dada por la multiplicaci\'on de las matrices que se realiza en $O\left(m^{log_2\left(7\right)}\right)$, siendo esta la complejidad del algoritmo para toda esta primer parte.
 
 Por \'ultimo se realizan las mismas operaciones sobre el grafo complemento. Para lo cual se invierte la matriz de adyacencias en $O \left( n^2 \right)$.
 
 
-Como se puede ver, la complejidad computacional del algoritmo en el modelo uniforme est\'a dada por las operaciones correspondientes a la multiplicaci\'on de matrices, en $O \left( n^{log_2\left(7\right)} \right) $, ya que el resto del algoritmo tiene un orden menor. Como $log_2\left(7\right) < 2.9 $, el algoritmo realiza una cantidad de operaciones de un orden estrictamente menor a $O\left( n^3\right) $.
+Entonces, como se puede ver, la complejidad computacional del algoritmo en el modelo uniforme est\'a dada por las operaciones correspondientes a la multiplicaci\'on de matrices, en $O \left( n^{log_2\left(7\right)} \right) $, ya que el resto del algoritmo tiene un orden menor. Como $log_2\left(7\right) < 2.9 $, el algoritmo realiza una cantidad de operaciones de un orden estrictamente menor a $O\left( n^3\right) $.
 
 
 
