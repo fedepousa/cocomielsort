@@ -139,7 +139,7 @@ void maxmin(){
 			
 			//y
 			if (min_y > vallas[i].y) min_y = vallas[i].y;
-			if (max_y < vallas[i].y) min_y = vallas[i].y;
+			if (max_y < vallas[i].y) max_y = vallas[i].y;
 			
 		}
 		
