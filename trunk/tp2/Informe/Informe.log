@@ -1,11 +1,11 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.6.10)  20 OCT 2009 15:00
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.10.17)  20 OCT 2009 15:32
 entering extended mode
  %&-line parsing enabled.
 **Informe.tex
 (./Informe.tex
 LaTeX2e <2005/12/01>
 Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, loaded.
+yphenation, ukrainian, russian, bulgarian, latin, loaded.
 (/usr/share/texmf-texlive/tex/latex/base/article.cls
 Document Class: article 2005/09/16 v1.4f Standard LaTeX document class
 (/usr/share/texmf-texlive/tex/latex/base/size12.clo
@@ -106,7 +106,19 @@ LaTeX Font Info:    ... okay on input line 9.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
 
-(/usr/share/texmf-texlive/tex/latex/ragged2e/ragged2e.sty
+(/usr/share/texmf/tex/context/base/supp-pdf.tex
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count96
+\scratchdimen=\dimen112
+\scratchbox=\box28
+\nofMPsegments=\count97
+\nofMParguments=\count98
+\everyMPshowfont=\toks19
+\MPscratchCnt=\count99
+\MPscratchDim=\dimen113
+\MPnumerator=\count100
+\everyMPtoPDFconversion=\toks20
+) (/usr/share/texmf/tex/latex/dblatex/misc/ragged2e.sty
 Package: ragged2e 2003/03/25 v2.04 ragged2e Package (MS)
 
 (/usr/share/texmf-texlive/tex/latex/everysel/everysel.sty
@@ -270,12 +282,12 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 355.
  [17] [18] [19] [20] (./Informe.aux) ) 
 Here is how much of TeX's memory you used:
- 1439 strings out of 95086
- 22532 string characters out of 1183255
- 74472 words of memory out of 1500000
- 4613 multiletter control sequences out of 10000+50000
+ 1734 strings out of 94827
+ 26406 string characters out of 1178930
+ 75017 words of memory out of 1500000
+ 4917 multiletter control sequences out of 10000+50000
  8103 words of font info for 29 fonts, out of 1200000 for 2000
- 28 hyphenation exceptions out of 8191
+ 212 hyphenation exceptions out of 8191
  43i,9n,42p,978b,300s stack positions out of 5000i,500n,6000p,200000b,5000s
 </usr/share/texmf-texlive/fonts/type1/blu
 esky/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmex10.pfb>
@@ -288,7 +300,7 @@ sky/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmsy10.pfb></u
 sr/share/texmf-texlive/fonts/type1/bluesky/cm/cmsy8.pfb></usr/share/texmf-texli
 ve/fonts/type1/bluesky/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/type1/blue
 sky/cm/cmtt12.pfb>
-Output written on Informe.pdf (20 pages, 997647 bytes).
+Output written on Informe.pdf (20 pages, 1000930 bytes).
 PDF statistics:
  153 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
