@@ -2,8 +2,9 @@
 #include <fstream>
 #include <vector>
 #include <queue>
+#ifdef TIEMPOS
 #include <sys/time.h>
-
+#endif
 
 using namespace std;
 int resolver() ;
@@ -241,12 +242,16 @@ int main(){
       
     
 	int res = 0;
+	#ifdef TIEMPOS
 	gettimeofday(&inicio, NULL);
+	#endif
 	res = resolver();
+	#ifdef TIEMPOS
 	gettimeofday(&fin, NULL);
 	diferencia = (fin.tv_sec - inicio.tv_sec)*1000000 + fin.tv_usec - inicio.tv_usec;
 		
   tiempos << diferencia << endl;
+  #endif
 	salida << res << endl;
 	
   } 

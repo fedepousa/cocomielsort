@@ -1,11 +1,15 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#ifdef TIEMPOS
 #include <sys/time.h>
-
+#endif
 
 using namespace std;
-
+// Si la matriz que recibe strassen como parametro es de n x n,
+// si n < CASO_BASE_STRASSEN entonces se multiplica con el algoritmo 
+// trivial. Default = 129
+int CASO_BASE_STRASSEN = 129;
 
 void strassen(int **m, int **a, int **b, int start_a_x, int start_a_y, int start_b_x, int start_b_y, int n, int start_m_x, int start_m_y);
 
@@ -32,12 +36,15 @@ int main() {
       }
     }
     
-    
+    #ifdef TIEMPOS
     gettimeofday(&inicio, NULL);
+    #endif
     resolver(adyacencias, n, a, b, c, d, e, f);
+    #ifdef TIEMPOS
     gettimeofday(&fin, NULL);
     diferencia = (fin.tv_sec - inicio.tv_sec)*1000000 + fin.tv_usec - inicio.tv_usec;
     tiempos << diferencia << endl;
+    #endif
     salida << a << " "<< b <<  " "<< c << " " << d << " "<< e << " "<<f << '\n';
     delete [] adyacencias;
   }
@@ -72,8 +79,15 @@ void restar(int **m, int **a, int **b, int start_a_x, int start_a_y, int start_b
 // Estoy suponiendo n potencia de 2
 // El rango obviamente [start, start+n)
 void strassen(int **m, int **a, int **b, int start_a_x, int start_a_y, int start_b_x, int start_b_y, int n, int start_m_x, int start_m_y) {
-  if(n==1) {
-    m[start_m_x][start_m_y] = a[start_a_x][start_a_y] * b[start_b_x][start_b_y]; 
+  if(n<CASO_BASE_STRASSEN) {
+    for(int i = 0; i<n;++i) {
+      for(int j = 0; j<n;++j) {
+        m[start_m_x+i][start_m_y+j] = 0; 
+        for(int k = 0; k<n; k ++) {
+          m[start_m_x+i][start_m_y+j] += a[start_a_x+i][start_a_y+k] * b[start_b_x+k][start_b_y+j]; 
+        }
+      }
+    }
   }
   else {
     int **m1 = new int * [n/2];
