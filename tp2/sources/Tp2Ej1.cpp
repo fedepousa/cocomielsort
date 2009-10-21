@@ -1,7 +1,8 @@
 #include <iostream>
 #include <fstream>
+#ifdef TIEMPOS
 #include <sys/time.h>
-
+#endif
 using namespace std;
 
 
@@ -47,15 +48,16 @@ int main(){
 		for(int i=0;i<tamanio;i++){//Levanto el arreglo
 			entrada >> vector[i];
 		}
-	
+	  #ifdef TIEMPOS
 		gettimeofday(&inicio, NULL);
-	
+	  #endif
 		res = resolver(vector, tamanio);
-		
+		#ifdef TIEMPOS
 		gettimeofday(&fin, NULL);
 		diferencia = (fin.tv_sec - inicio.tv_sec)*1000000 + fin.tv_usec - inicio.tv_usec;
 		
 		tiempos << diferencia << endl;
+		#endif
 		salida << res << endl;
 	
 	
