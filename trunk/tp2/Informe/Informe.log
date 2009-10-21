@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.9.26)  21 OCT 2009 15:06
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.9.26)  21 OCT 2009 16:20
 entering extended mode
  %&-line parsing enabled.
 **Informe.tex
@@ -503,13 +503,13 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 422.
  [19] [20] [21] [22] (./Informe.aux) ) 
 Here is how much of TeX's memory you used:
- 2176 strings out of 94101
- 30773 string characters out of 1165810
- 90883 words of memory out of 1500000
- 5426 multiletter control sequences out of 10000+50000
+ 2175 strings out of 94101
+ 30765 string characters out of 1165810
+ 89883 words of memory out of 1500000
+ 5425 multiletter control sequences out of 10000+50000
  8410 words of font info for 30 fonts, out of 1200000 for 2000
  637 hyphenation exceptions out of 8191
- 43i,9n,42p,968b,300s stack positions out of 5000i,500n,6000p,200000b,5000s
+ 43i,9n,42p,970b,300s stack positions out of 5000i,500n,6000p,200000b,5000s
 </usr/share/texmf-texlive/fonts/type1/blu
 esky/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmex10.pfb>
 </usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmmi12.pfb></usr/share/texmf-t
@@ -521,7 +521,7 @@ sky/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmsy10.pfb></u
 sr/share/texmf-texlive/fonts/type1/bluesky/cm/cmsy8.pfb></usr/share/texmf-texli
 ve/fonts/type1/bluesky/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/type1/blue
 sky/cm/cmtt12.pfb>
-Output written on Informe.pdf (22 pages, 1683412 bytes).
+Output written on Informe.pdf (22 pages, 1683356 bytes).
 PDF statistics:
  163 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
