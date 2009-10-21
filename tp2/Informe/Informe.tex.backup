@@ -27,7 +27,7 @@
  
 \subsection*{Introducción}
 \addcontentsline{toc}{subsection}{Introducción} 
-En este ejercicio se pedía encontrar el matching máximo dentro de un grafo. Se define como matching a un subconjunto de aristas que no comparten vértices. Si bien este ejercicio podría ser de gran complejidad, el mismo se encuentra en una presentación mas accesible dado que no hay que aplicar el algoritmo sobre cualquier tipo de grafos, sino que solamente tiene que ser aplicable a grafos de 3 o más nodos que sean ciclos simples, es decir, grafos que en su isomorfismo planar sean simplemente un dibujo de un polígono.
+En este ejercicio se pedía encontrar el peso de un matching de peso máximo dentro de un grafo. Se define como matching a un subconjunto de aristas que no comparten vértices. Si bien este ejercicio podría ser de gran complejidad, el mismo se encuentra en una presentación mas accesible dado que no hay que aplicar el algoritmo sobre cualquier tipo de grafos, sino que solamente tiene que ser aplicable a grafos de 3 o más nodos que sean ciclos simples, es decir, grafos que en su isomorfismo planar sean simplemente un dibujo de un polígono.
 
 % aca podria ir algun dibujo de como serian los grafos a ver y como seria algun grafo que no hay que analizar.
 
@@ -48,7 +48,7 @@ El algoritmo propuesto como resolución del problema consiste en transformar el 
 
 Si bien el algoritmo propuesto retorna el valor esperado, la complejidad del mismo no es óptima. Al hacer los llamados recursivos sucede que hay varios matching máximos que se realizan sobre los mismos vectores, generando así más cálculos de los necesarios. Fue por esto, que el siguiente paso fue modificar el algoritmo para que no calcule las cosas de modo \emph{top down}, sino que fuese un algoritmo \emph{bottom up}, para así evitar los cálculos repetidos, utilizando así la mayor ventaja de la programación dinámica, técnica que define al algoritmo final.
 
-De esta manera, se pensó como teniendo instancias más peque~{n}as del problema, se puede conocer la solución de una instancia mayor. Se utilizó que, dadas las soluciones óptimas para vectores de n-2 y n-1 elementos, la solución para el vector de n elementos es el máximo entre la solución de n-1 elementos, y la solución de n-2 elementos más el elemento n-ésimo. Es as\' que el cálculo se torna \emph{bottom up}, calculando los máximos de los subvectores, una sola vez.
+De esta manera, se pensó cómo, teniendo instancias más peque~{n}as del problema, se puede conocer la solución de una instancia mayor. Se utilizó que, dadas las soluciones óptimas para vectores de n-2 y n-1 elementos, la solución para el vector de n elementos es el máximo entre la solución de n-1 elementos, y la solución de n-2 elementos más el elemento n-ésimo. Es así que el cálculo se torna \emph{bottom up}, calculando los máximos de los subvectores, una sola vez.
 
 A continuación se muestra el pseudocódigo del algoritmo propuesto como resolución del problema.
 
@@ -137,13 +137,14 @@ A continuación se presenta un seguimiento del algoritmo sobre un ciclo simple d
 \caption{unión de los caminos}
 \end{figure}
 
-\section*{Demostración de correctitud}
+\subsection*{Demostración de correctitud}
+\addcontentsline{toc}{subsection}{Demostración de correctitud} 
 
 Aca va la demostracion, Doc yo no entendi muy bien tu demo porque parece como que definis matching maximo posta de la misma manera que lo define nuestro algoritmo y nose, no digo que este mal, sino que me choca un toque, despues lo hablamos bien.
 
 
-\section*{Complejidad}
-
+\subsection*{Complejidad}
+\addcontentsline{toc}{subsection}{Complejidad} 
 Se analizará la complejidad de este algoritmo en función del modelo uniforme.
 
 En primer lugar, el algoritmo dise\~{n}ado toma una arista cualquiera, lo cual se ejecuta en un tiempo constante dado que los vértices se encuentran en un vector de acceso indexado. Luego, se toman los dos vecinos que, dado que el grafo es un circuito simple, también se los puede obtener en un tiempo constante. Luego, el algoritmo realiza una llamada a otro algoritmo que resuelve el matching máximo sobre vectores. Por último, se realiza una comparación entre los dos resultados arrojados por la rutina auxiliar para poder devolver el máximo, siendo esta una operación también de costo constante. Es por esto que la complejidad de este algoritmo esta regida entonces por la complejidad de la rutina auxiliar a la que hace referencia, ya que todas las demás operaciones toman un tiempo constante de ejecución.
@@ -160,23 +161,26 @@ Finalmente, al ya haber mencionado que la complejidad del algoritmo principal se
 Tamanio de la entrada?!?!?! aca va algo de eso!?!? o ya esta bine asi??
 
 
-\section*{Análisis de resultados}
+\subsection*{Análisis de resultados}
+\addcontentsline{toc}{subsection}{Análisis de resultados} 
 
 Para analizar este algoritmo, se basó el enfoque en dos aspectos diferentes. Por un lado, se encuentran los análisis sobre la correctitud de la solución propuesta y, por otro lado, se encuentra el análisis sobre el tiempo de ejecución para diferentes archivos de entrada, para poder realizar así, una correlación entre el tiempo de ejecución y la complejidad teórica calculada anteriormente.
 
 \subsection*{Casos de correctitud}
-Con el fin de realizar una comprobación empírica de la solución propuesta se genero un archivo de entrada con diez casos de prueba.
+\addcontentsline{toc}{subsection}{Casos de correctitud} 
+Con el fin de realizar una comprobación empírica de la solución propuesta se generó un archivo de entrada con diez casos de prueba.
 \begin{itemize}
 \item Los primeros nueve casos de prueba, están conformados por los entregados por la cátedra, teniendo de esta manera las soluciones reales para contrastar con las arrojadas por el algoritmo.
-\item El último caso de prueba esta conformado por un grafo de 30 aristas, con pesos de 1 a 30, ordenados consecutivamente. En este caso, se puede ver que el matching máximo esta dado por tomar las aristas con valor par.
+\item El último caso de prueba esta conformado por un grafo de 30 aristas, con pesos de 1 a 30, ordenados consecutivamente. En este caso, se puede ver que el matching máximo está dado por tomar las aristas con valor par.
 \end{itemize}
 
-El análisis en este tipo de casos se baso solamente en la correctitud de los mismos y no en el tiempo de ejecución debido a que son grafos de tama\~{n}os muy peque\~{n}os y el tiempo de ejecución no sobrepasa los 2 microsegundos en ninguno de los casos.
+El análisis en este tipo de casos se basó solamente en la correctitud de los mismos y no en el tiempo de ejecución debido a que son grafos de tama\~{n}os muy peque\~{n}os y el tiempo de ejecución no sobrepasa los 2 microsegundos en ninguno de los casos.
 
 Para todos los casos propuestos los resultados fueron satisfactorios al ser contrastados con la soluciones previamente obtenidas.
 
 \subsection*{Casos para probar el tiempo de ejecución}
-Para poder analizar como se comportaba el algoritmo en función del tama\~{n}o del grafo a procesar, se implemento un generador de ciclos simples al azar. El mismo se realizó para que arrojase una salida con 500 grafos diferentes, el primero con 10000 aristas, el segundo con 10500 y así sucesivamente. Una vez obtenidos los tiempos de ejecución de cada uno de estos casos, se procedió a graficar los resultados para poder contrastar con la complejidad obtenida teóricamente.
+\addcontentsline{toc}{subsection}{Casos para probar el tiempo de ejecución} 
+Para poder analizar cómo se comportaba el algoritmo en función del tama\~{n}o del grafo a procesar, se implemento un generador de ciclos simples al azar. El mismo se realizó para que arrojase una salida con 500 grafos diferentes, el primero con 10000 aristas, el segundo con 10500 y así sucesivamente. Una vez obtenidos los tiempos de ejecución de cada uno de estos casos, se procedió a graficar los resultados para poder contrastar con la complejidad obtenida teóricamente.
 
 A continuación se presenta un gráfico donde se encuentran simultaneamente los datos obtenidos y un ajuste lineal de los mismos.
 
@@ -189,13 +193,14 @@ A continuación se presenta un gráfico donde se encuentran simultaneamente los 
 
 Como se puede observar en el gráfico, los resultados fueron satisfactorios. El ajuste lineal arrojó un coeficiente de correlación de aproximadamente 0.99999, mostrando empíricamente que la complejidad teórica calculada se condice con los tiempos reales de ejecución. 
 
-\section*{Conclusiones}
+\subsection*{Conclusiones}
+\addcontentsline{toc}{subsection}{Conclusiones} 
 
 Luego de obtener los resultados para el presente ejercicio, se concluyen varios puntos importantes:
 
 \begin{itemize}
-\item Si bien el problema de matching es de gran complejidad algorítmica, es necesario explotar el hecho de que solo se debe realizar sobre ciclos simples. El hecho de haber explotado esta característica de los grafos presentes en la entrada del algoritmo, fue de gran importancia al momento de lograr un algoritmo eficiente que solo recorriese cada aristas una única vez.
-\item Resulta de gran importancia pensar diferentes variantes para el algoritmo con el fin de encontrar la versión más eficiente. Durante el dise\~{n}o del algoritmo se pensó tanto una estrategia de divide and conquer, como una estrategia de programación dinámica. Si bien ambas resolvían el problema satisfactoriamente dada que la idea era básicamente la misma solo que se invertía el orden del recorrido del grafo, cabe destacar como la simple mejora de recorrer desde el primer elemento hasta el último trajo la gran ventaja de preguntar por cada configuración de aristas una sola vez, generando así un algoritmo de orden lineal, a diferencia del algoritmo exponencial obtenido por divide and conquer.
+\item Si bien el problema de matching es de gran complejidad algorítmica, es necesario explotar el hecho de que sólo se debe realizar sobre ciclos simples. El hecho de haber explotado esta característica de los grafos presentes en la entrada del algoritmo, fue de gran importancia al momento de lograr un algoritmo eficiente que sólo recorriese cada arista una única vez.
+\item Resulta de gran importancia pensar diferentes variantes para el algoritmo con el fin de encontrar la versión más eficiente. Durante el dise\~{n}o del algoritmo se pensó tanto una estrategia de divide and conquer, como una estrategia de programación dinámica. Si bien ambas resolvían el problema satisfactoriamente dado que la idea era básicamente la misma sólo que se invertía el orden del recorrido del grafo, cabe destacar como la simple mejora de recorrer desde el primer elemento hasta el último trajo la gran ventaja de preguntar por cada configuración de aristas una sola vez, generando así un algoritmo de orden lineal, a diferencia del algoritmo exponencial obtenido por divide and conquer.
 \item La complejidad teórica calculada se pudo ver reflejada en los casos de prueba propuestos. Se cree que la calidad del ajuste lineal que se consiguió se debió a que el algoritmo no presenta mejores o peores casos; es decir, para todo grafo posible el algoritmo debe recorrer exactamente la misma cantidad de veces cada arista. De esta manera, los casos de prueba creados aleatoriamente no pueden ser beneficiados por el azar en ningún caso, generando una casi perfecta correlación lineal en función de la cantidad de aristas.
 \end{itemize}
 
@@ -203,18 +208,23 @@ Luego de obtener los resultados para el presente ejercicio, se concluyen varios 
 
 \begin{center}
 \item \section*{Ejercicio 2: Se inunda la isla}
+\addcontentsline{toc}{section}{Ejercicio 2: Se inunda la isla} 
+
 \end{center}
 
-\section*{Introducción}
+\subsection*{Introducción}
+\addcontentsline{toc}{subsection}{Introducción}
+
 En este ejercicio se pedía encontrar el área que no se inunde en una isla plana luego de ciertas condiciones.
 
-En primer lugar, se tiene una isla que posee la misma altura en todos sus puntos, es por esto que si la marea sube la isla se inunda por completo. La solución para que las partes importantes de la isla no se inunde cuando sube la marea, es poner una serie de vallas rectangulares que no dejen pasar el agua hasta cierta altura. La idea sería entonces, colocando adecuadamente estas vallas, encerrar partes de la isla para que el agua no pueda entrar.
+En primer lugar, se tiene una isla que posee la misma altura en todos sus puntos, es por esto que si la marea sube la isla se inunda por completo. La solución para que las partes importantes de la isla no se inunden cuando sube la marea, es poner una serie de vallas rectangulares que no dejen pasar el agua hasta cierta altura. La idea sería entonces, colocando adecuadamente estas vallas, encerrar partes de la isla para que el agua no pueda entrar.
 
 Aca se podria poner un dibujo de ejemplo de la isla con ciertas vallas o algo asi.
 
 El problema consiste en, dado un conjunto de vallas y el nivel de la marea. Calcular cual es el área de la isla que no va a ser inundada.
 
-\section*{Algoritmo}
+\subsection*{Algoritmo}
+\addcontentsline{toc}{subsection}{Algoritmo}
 
 A continuación se presenta una explicación al algoritmo propuesto como solución, seguido por su respectivo pseudocódigo.
 
@@ -222,9 +232,9 @@ En primer lugar se observa que, por restricción del problema, las vallas no pue
 
 Al comenzar el algoritmo, todos los cuadrados están relacionados con sus vecinos con aristas de peso 0. Esto quiere decir que si un cuadrado se inunda, los cuadrados que estén relacionados con ese por una arista de peso 0 también se va a inundar. 
 
-Luego, se recorren todas las vallas dadas por el problema y se setean las nuevas relaciones entre los cuadrados, es decir, si existe una valla de altura 4 entre el nodo $v_1$ y el nodo $v_2$, lo que se hace es ponerle un peso de 4 a la arista que los relaciona. Indicando así que solamente si la marea es mayor a 4, el agua pasara de ese $v_1$ a $v_2$ directamente.
+Luego, se recorren todas las vallas dadas por el problema y se setean las nuevas relaciones entre los cuadrados, es decir, si existe una valla de altura 4 entre el nodo $v_1$ y el nodo $v_2$, lo que se hace es ponerle un peso de 4 a la arista que los relaciona. Indicando así que solamente si la marea es mayor a 4, el agua pasará de ese $v_1$ a $v_2$ directamente.
 
-Por último, lo que se hace es crear una circunvalación de nodos que se inundan alrededor del grafo real y realizar BFS desde uno de estos (que seguro se inunda, por estar por fuera de las vallas) y contar cuantos nodos tiene la componente conexa que el BFS recorre por completo. Cabe destacar, este BFS toma que un nodo es vecino de otro si la arista que los une tiene peso menor a la marea, sino se puede decir que la valla es efectiva entre esos dos nodos y no hay inundación de uno hacia el otro. Una vez obtenida la cantidad total de nodos dados por el recorrido en anchura, resta el último paso que es realizar la sustracción entre los nodos totales de la grilla, y los nodos inundados; obteniendo así, la cantidad total de nodos que no fueron inundados gracias a la protección de las vallas. Por último, como cada nodo representa un cuadrado de área 1, la cantidad de nodos no alcanzados por el BFS es igual al área no inundada.
+Por último, lo que se hace es crear una circunvalación de nodos que se inundan alrededor del grafo real y realizar BFS desde uno de estos (que seguro se inunda, por estar por fuera de las vallas) y contar cuantos nodos tiene la componente conexa que el BFS recorre por completo. Cabe destacar, este BFS toma que un nodo es vecino de otro si la arista que los une tiene peso menor a la marea, si no, se puede decir que la valla es efectiva entre esos dos nodos y no hay inundación de uno hacia el otro. Una vez obtenida la cantidad total de nodos dados por el recorrido en anchura, resta el último paso que es realizar la sustracción entre los nodos totales de la grilla, y los nodos inundados; obteniendo así, la cantidad total de nodos que no fueron inundados gracias a la protección de las vallas. Por último, como cada nodo representa un cuadrado de área 1, la cantidad de nodos no alcanzados por el BFS es igual al área no inundada.
 
 A continuación se presenta el pseudocódigo del algoritmo recientemente explicado.
 
@@ -245,11 +255,11 @@ areaNoInundada(){
 \begin{itemize}
 \item leer(vallas): Carga en el vector vallas todas las provenientes del input.
 
-\item maxmin(vallas): Setea ciertas variables con el tama\~no máximo que tendrá la isla delimitada por las vallas mas externas.
+\item maxmin(vallas): Setea ciertas variables con el tama\~no máximo que tendrá la isla delimitada por las vallas más externas.
 
-\item seteamosMatriz(matriz): Usando las variables seteadas por maxmin crea un grafo (representado con una matriz) donde establece 4 relaciones por nodo (con sus vecinos) donde el peso del a arista es la altura de la valla que debe atravesar.
+\item seteamosMatriz(matriz): Usando las variables seteadas por maxmin crea un grafo (representado con una matriz) donde establece 4 relaciones por nodo (con sus vecinos) donde el peso de la arista es la altura de la valla que debe atravesar.
 
-\item bfsContador(matriz): Recorre el grafo usando bfs, por cada nodo que visita suma uno a una variable que al final devuelve. Recorre todos los nodos que se inundan dado q son los que se relacionan (si la marea supera el peso de las aristas). De este modo al finalizar obtenemos cuantos nodos visitamos coincidiendo con cuantos nodos se inundan.
+\item bfsContador(matriz): Recorre el grafo usando bfs, por cada nodo que visita suma uno a una variable que al final devuelve. Recorre todos los nodos que se inundan dado que son los que se relacionan (si la marea supera el peso de las aristas). De este modo al finalizar obtenemos cuántos nodos visitamos coincidiendo con cuántos nodos se inundan.
 \end{itemize}
 
 \begin{figure}[H]
@@ -291,11 +301,12 @@ areaNoInundada(){
 \end{figure}
 
 
-\section*{Complejidad}
-Para analizar la complejidad se utilizó el modelo uniforme. En este modelo el análisis no esta centrado en el tama\~{n}o de los operandos, por lo que el tiempo de ejecución de cada operación se considera constante.
-
-Si tomamos como tama\~no de entrada la cantidad de vallas (CV en adelante), y como sabemos que estas no se solapan en más de un punto, podemos acotar por arriba a la cantidad de vallas, por un múltiplo de la cantidad de nodos, si bien acotar las vallas por cuatro veces la cantidad de nodos resulta una cota grosera ya que se están contando muchas vallas varias veces, la cota resulta útil para poder enfocar el análisis del algoritmo simplemente a la cantidad total de nodos; es decir, a la cantidad de casillas en la cuadrícula.
-
+\subsection*{Complejidad}
+\addcontentsline{toc}{subsection}{Complejidad}
+Para analizar la complejidad se utilizó el modelo uniforme. En este modelo el análisis no está centrado en el tama\~{n}o de los operandos, por lo que el tiempo de ejecución de cada operación se considera constante.
+% !!!!!!!!! No me copa lo de tamaño de entrada, propongo cambiarlo por el parrafo que pongo a continuacion.
+%Si tomamos como tama\~no de entrada la cantidad de vallas (CV en adelante), y como sabemos que estas no se solapan en más de un punto, podemos acotar por arriba a la cantidad de vallas, por un múltiplo de la cantidad de nodos, si bien acotar las vallas por cuatro veces la cantidad de nodos resulta una cota grosera ya que se están contando muchas vallas varias veces, la cota resulta útil para poder enfocar el análisis del algoritmo simplemente a la cantidad total de nodos; es decir, a la cantidad de casillas en la cuadrícula.
+LLamemos CV a la cantidad de vallas, como sabemos que estas no se solapan en más de un punto, podemos acotar CV superiormente por cuatro veces la cantidad de nodos. Si bien es una cota grosera, resulta útil para poder acotar la cantidad de operaciones del algoritmo por la cantidad nodos o, lo que es equivalente, la cantidad de casillas en la cuadrícula.
  
 En primer lugar, la función maxmin, busca máximos y mínimos en un vector de vallas linealmente, por lo cual es de orden O(CV) ya que se recorre todo el vector de vallas una vez.
 
@@ -305,10 +316,12 @@ En último lugar, lo que se hace es realizar un BFS para lograr identificar la c
 
 En resumen, se realizan tres rutinas, la primera tiene una complejidad O(CV) que ya se mencionó que se puede acotar por O(n); luego, se realizan otras dos rutinas que ambas tiene complejidad O(n). Entonces, la complejidad total del algoritmo, es O(n), siendo n la cantidad de nodos del grafo que representa la isla. Cabe destacar que esta complejidad es análoga a O(S), siendo S el área del rectángulo donde se puede inscribir la isla, ya que si bien el algoritmo agrega una fila y una columna O((altura+1)*(ancho+1)) = O(altura*ancho) = O(S).
 
-\section*{Análisis de resultados}
+\subsection*{Análisis de resultados}
+\addcontentsline{toc}{subsection}{Análisis de resultados}
 Para analizar el funcionamiento del algoritmo propuesto como solución del problema, se realizaron dos tipos diferentes de casos de pruebas. Por un lado, se intento probar la correctitud del algoritmo mediante algunos casos de prueba de tama\~{n}o considerablemente peque\~{n}o, con el objetivo de poder contrastar las soluciones arrojadas por el algoritmo con las soluciones que se obtienen manualmente al poder visualizar la isla con las vallas correspondientes. Por otro lado, se intentó contrastar la complejidad teórica con el comportamiento real del algoritmo creando varias instancias de tama\~{n}os considerablemente grandes.
 
 \subsection*{Casos de Correctitud}
+\addcontentsline{toc}{subsection}{Casos de Correctitud}
 Para analizar la correctitud del algoritmo, se utilizaron los siguientes casos de prueba:
 \begin{itemize}
 \item En primer lugar, se utilizaron los casos de prueba entregados por la cátedra. Los mismos constan de 6 islas con diferentes configuraciones de vallas.
@@ -320,6 +333,7 @@ Cabe destacar que todos los resultados obtenidos se contrastaron satisfactoriame
 En este tipo de casos, solamente se menciona como fue el comportamiento del algoritmo en cuanto a la correctitud y no en cuanto al tiempo de ejecución debido a que, en primer lugar, los tama\~{n}os de los grafos que represetan las islas son muy chicos como para obtener tiempos de ejecución representativos; y, por otro lado, las islas utilizadas poseen diferentes números de vallas, lo que traería fluctuaciones en los tiempos de ejecución en caso de querer ser analizados.
 
 \subsection*{Casos para probar el tiempo de ejecución}
+\addcontentsline{toc}{subsection}{Casos para probar el tiempo de ejecución}
 Como se explicó en la sección correspondiente, la complejidad de este algoritmo es lineal respecto de la cantidad de nodos del grafo que representa al rectángulo que inscribe a la isla. Es por esto, que para poder ver la relación entre la complejidad teórica y el comportamiento real del algoritmo, se crearon varias instancias de diferentes islas donde la cantidad de nodos creciera linealmente.
 
 Se crearon 500 casos de prueba donde se mantuvieron ciertas características invariantes para poder crear instancias comparables, mientras que el único parámetro que se varió fue la altura total del rectángulo en cuestión.
@@ -347,7 +361,8 @@ calculada anteriormente. Si bien se denotan la presencia de algunos \emph{outlie
 como los datos están relacionados por una función lineal tal como la complejidad teórica predicaba. Al realizar el ajuste lineal
 se consiguió un ajuste con un coeficiente de correlación de aproximadamente 0.999.
 
-\section*{Conclusiones}
+\subsection*{Conclusiones}
+\addcontentsline{toc}{subsection}{Conclusiones}
 Luego de obtener los resultados pertinentes a los diferentes casos de prueba se concluye que:
 \begin{itemize}
 \item Es importante tener en cuenta varios modelos diferentes a la hora de dise\~{n}ar un algoritmo para resolver un problema
@@ -368,9 +383,12 @@ podría haber fluctuado sin tener esta fluctuación una relación con la cantida
 
 \begin{center}
 \item \section*{Ejercicio 3: Bernardo Armando Pandillas}
+\addcontentsline{toc}{section}{Ejercicio 3: Bernardo Armando Pandillas}
+
 \end{center}
 
-\section*{Introducción}
+\subsection*{Introducción}
+\addcontentsline{toc}{subsection}{Introducción}
 
 
 En este problema lo que se quiere es, teniendo un conjunto de personas y sabiendo si se conocen entre sí, armar dos grupos de tres personas cada uno, un grupo en el cual las 3 personas se conozcan mutuamente, y otro grupo en el cual ninguno esté relacionado con otro.
@@ -385,7 +403,8 @@ Se considera que una terna es menor que otra si la primera componente de la prim
 \end{displaymath}
 
 
-\section*{Algoritmo}
+\subsection*{Algoritmo}
+\addcontentsline{toc}{subsection}{Algoritmo}
 
 Para lograr el objetivo deseado se optó por representar el problema mediante la utilización de un grafo en donde cada vértice del mismo representase a una persona diferentes, mientras que las aristas fuesen las encargadas de representar las relaciones de conocimiento, teniendo así la presencia de una arista entre dos nodos diferentes si y solo si las personas representan por dichos nodos se conocen.
 
@@ -406,7 +425,8 @@ Para encontrar el clique se realizan los siguiente pasos:
 \item Por último se obtiene el grafo complemento de $G$, y se realizan las mismas operaciones para obtener el grupo de tres personas que no se conocen entre sí, el grupo Winograd.
 \end{enumerate}
 
-\section*{Complejidad}
+\subsection*{Complejidad}
+\addcontentsline{toc}{subsection}{Complejidad}
 
 Para analizar la complejidad del algoritmo, se va ir analizando que se hace en cada paso, calculando la complejidad del mismo.
 
@@ -431,10 +451,13 @@ Entonces, como se puede ver, la complejidad computacional del algoritmo en el mo
 
 
 
-\section*{Análisis de resultados}
-\section*{Conclusiones}
+\subsection*{Análisis de resultados}
+\addcontentsline{toc}{subsection}{Análisis de resultados}
+\subsection*{Conclusiones}
+\addcontentsline{toc}{subsection}{Conclusiones}
 
 \section*{Apéndices}
+\addcontentsline{toc}{section}{Apéndices}
 \section{Demostración de correctitud del modelo}\label{dem_clique}
 
 Para resolver el ejercicio 3 se opta por representarlo mediante un grafo.
