@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.10.17)  20 OCT 2009 18:04
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.10.17)  21 OCT 2009 11:18
 entering extended mode
  %&-line parsing enabled.
 **Informe.tex
@@ -177,119 +177,130 @@ aximo_hasta_i-1)[]
 File: imagenes/paso1y2.png Graphic file (type png)
 
 <use imagenes/paso1y2.png>
-<imagenes/paso3b.png, id=20, 667.49374pt x 443.6575pt>
-File: imagenes/paso3b.png Graphic file (type png)
+<imagenes/paso0b.PNG, id=20, 667.49374pt x 443.6575pt>
+File: imagenes/paso0b.PNG Graphic file (type png)
 
-<use imagenes/paso3b.png> <imagenes/paso3a.png, id=21, 513.92pt x 358.33875pt>
+<use imagenes/paso0b.PNG> <imagenes/paso3a.png, id=21, 513.92pt x 358.33875pt>
 File: imagenes/paso3a.png Graphic file (type png)
 
 <use imagenes/paso3a.png>
-<imagenes/paso4b.png, id=22, 667.49374pt x 443.6575pt>
-File: imagenes/paso4b.png Graphic file (type png)
+<imagenes/paso1b.PNG, id=22, 667.49374pt x 443.6575pt>
+File: imagenes/paso1b.PNG Graphic file (type png)
 
-<use imagenes/paso4b.png>
+<use imagenes/paso1b.PNG>
 <imagenes/paso4a.png, id=23, 667.49374pt x 443.6575pt>
 File: imagenes/paso4a.png Graphic file (type png)
 
-<use imagenes/paso4a.png> [4 <./imagenes/paso1y2.png> <./imagenes/paso3b.png (P
+<use imagenes/paso4a.png> [4 <./imagenes/paso1y2.png> <./imagenes/paso0b.PNG (P
 NG copy)> <./imagenes/paso3a.png (PNG copy)>]
-File: imagenes/paso4b.png Graphic file (type png)
- <use imagenes/paso4b.png>
-<imagenes/paso5a.png, id=29, 667.49374pt x 443.6575pt>
+<imagenes/paso2b.PNG, id=29, 667.49374pt x 443.6575pt>
+File: imagenes/paso2b.PNG Graphic file (type png)
+
+<use imagenes/paso2b.PNG>
+<imagenes/paso5a.png, id=30, 667.49374pt x 443.6575pt>
 File: imagenes/paso5a.png Graphic file (type png)
 
 <use imagenes/paso5a.png>
-File: imagenes/paso4b.png Graphic file (type png)
- <use imagenes/paso4b.png>
-<imagenes/paso6a.png, id=30, 667.49374pt x 443.6575pt>
+<imagenes/paso3b.png, id=31, 667.49374pt x 443.6575pt>
+File: imagenes/paso3b.png Graphic file (type png)
+
+<use imagenes/paso3b.png>
+<imagenes/paso6a.png, id=32, 667.49374pt x 443.6575pt>
 File: imagenes/paso6a.png Graphic file (type png)
 
 <use imagenes/paso6a.png>
-<imagenes/pasosFinales.png, id=31, 1606.0pt x 1706.375pt>
+<imagenes/paso4b.png, id=33, 667.49374pt x 443.6575pt>
+File: imagenes/paso4b.png Graphic file (type png)
+
+<use imagenes/paso4b.png>
+File: imagenes/paso6a.png Graphic file (type png)
+ <use imagenes/paso6a.png>
+<imagenes/pasosFinales.png, id=34, 1606.0pt x 1706.375pt>
 File: imagenes/pasosFinales.png Graphic file (type png)
 
-<use imagenes/pasosFinales.png> [5 <./imagenes/paso4b.png (PNG copy)> <./imagen
-es/paso4a.png> <./imagenes/paso5a.png> <./imagenes/paso6a.png>] [6 <./imagenes/
-pasosFinales.png (PNG copy)>] [7]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 150.
+<use imagenes/pasosFinales.png> [5 <./imagenes/paso1b.PNG (PNG copy)> <./imagen
+es/paso4a.png> <./imagenes/paso2b.PNG (PNG copy)> <./imagenes/paso5a.png> <./im
+agenes/paso3b.png (PNG copy)> <./imagenes/paso6a.png> <./imagenes/paso4b.png (P
+NG copy)>] [6 <./imagenes/pasosFinales.png (PNG copy)>] [7]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 158.
 
 
 (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 150.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 158.
 
-<imagenes/Resultados1.png, id=45, 377.91188pt x 287.57437pt>
+<imagenes/Resultados1.png, id=48, 377.91188pt x 287.57437pt>
 File: imagenes/Resultados1.png Graphic file (type png)
 
 <use imagenes/Resultados1.png> [8] [9 <./imagenes/Resultados1.png (PNG copy)>]
 [10] [11]
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¡ in font cmr12!
- <imagenes/grafSinVallas.png, id=59, 273.02pt x 269.005pt>
+ <imagenes/grafSinVallas.png, id=62, 273.02pt x 269.005pt>
 File: imagenes/grafSinVallas.png Graphic file (type png)
 
 <use imagenes/grafSinVallas.png>
-<imagenes/grafConVallas.png, id=60, 278.03876pt x 288.07625pt>
+<imagenes/grafConVallas.png, id=63, 278.03876pt x 288.07625pt>
 File: imagenes/grafConVallas.png Graphic file (type png)
 
 <use imagenes/grafConVallas.png>
-<imagenes/inundPaso1.png, id=61, 278.03876pt x 288.07625pt>
+<imagenes/inundPaso1.png, id=64, 278.03876pt x 288.07625pt>
 File: imagenes/inundPaso1.png Graphic file (type png)
 
 <use imagenes/inundPaso1.png>
-<imagenes/inundPaso2.png, id=62, 278.03876pt x 288.07625pt>
+<imagenes/inundPaso2.png, id=65, 278.03876pt x 288.07625pt>
 File: imagenes/inundPaso2.png Graphic file (type png)
 
 <use imagenes/inundPaso2.png>
-<imagenes/inundPaso3.png, id=63, 278.03876pt x 288.07625pt>
+<imagenes/inundPaso3.png, id=66, 278.03876pt x 288.07625pt>
 File: imagenes/inundPaso3.png Graphic file (type png)
 
 <use imagenes/inundPaso3.png>
-<imagenes/inundPaso4.png, id=64, 278.03876pt x 288.07625pt>
+<imagenes/inundPaso4.png, id=67, 278.03876pt x 288.07625pt>
 File: imagenes/inundPaso4.png Graphic file (type png)
 
 <use imagenes/inundPaso4.png>
-<imagenes/inundPaso5.png, id=65, 278.03876pt x 288.07625pt>
+<imagenes/inundPaso5.png, id=68, 278.03876pt x 288.07625pt>
 File: imagenes/inundPaso5.png Graphic file (type png)
 
 <use imagenes/inundPaso5.png>
-<imagenes/inundPaso6.png, id=66, 278.03876pt x 288.07625pt>
+<imagenes/inundPaso6.png, id=69, 278.03876pt x 288.07625pt>
 File: imagenes/inundPaso6.png Graphic file (type png)
 
 <use imagenes/inundPaso6.png> [12 <./imagenes/grafSinVallas.png> <./imagenes/gr
 afConVallas.png> <./imagenes/inundPaso1.png> <./imagenes/inundPaso2.png> <./ima
 genes/inundPaso3.png>]
-<imagenes/inundPaso7.png, id=75, 278.03876pt x 288.07625pt>
+<imagenes/inundPaso7.png, id=78, 278.03876pt x 288.07625pt>
 File: imagenes/inundPaso7.png Graphic file (type png)
 
 <use imagenes/inundPaso7.png>
-<imagenes/inundPaso8.png, id=76, 278.03876pt x 288.07625pt>
+<imagenes/inundPaso8.png, id=79, 278.03876pt x 288.07625pt>
 File: imagenes/inundPaso8.png Graphic file (type png)
 
 <use imagenes/inundPaso8.png>
-<imagenes/inundPasoFinal.png, id=77, 278.03876pt x 288.07625pt>
+<imagenes/inundPasoFinal.png, id=80, 278.03876pt x 288.07625pt>
 File: imagenes/inundPasoFinal.png Graphic file (type png)
 
 <use imagenes/inundPasoFinal.png> [13 <./imagenes/inundPaso4.png> <./imagenes/i
 nundPaso5.png> <./imagenes/inundPaso6.png (PNG copy)> <./imagenes/inundPaso7.pn
 g> <./imagenes/inundPaso8.png> <./imagenes/inundPasoFinal.png>] [14] [15]
-<imagenes/Resultados2.png, id=93, 377.91188pt x 287.57437pt>
+<imagenes/Resultados2.png, id=96, 377.91188pt x 287.57437pt>
 File: imagenes/Resultados2.png Graphic file (type png)
 
 <use imagenes/Resultados2.png> [16 <./imagenes/Resultados2.png (PNG copy)>]
 [17]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 383.
+(Font)              <7> on input line 391.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 383.
+(Font)              <5> on input line 391.
  [18] [19] [20] [21] (./Informe.aux) ) 
 Here is how much of TeX's memory you used:
- 1739 strings out of 94827
- 26536 string characters out of 1178930
+ 1755 strings out of 94827
+ 26855 string characters out of 1178930
  75017 words of memory out of 1500000
- 4921 multiletter control sequences out of 10000+50000
+ 4933 multiletter control sequences out of 10000+50000
  8103 words of font info for 29 fonts, out of 1200000 for 2000
  212 hyphenation exceptions out of 8191
  43i,9n,42p,978b,300s stack positions out of 5000i,500n,6000p,200000b,5000s
@@ -304,9 +315,9 @@ sky/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmsy10.pfb></u
 sr/share/texmf-texlive/fonts/type1/bluesky/cm/cmsy8.pfb></usr/share/texmf-texli
 ve/fonts/type1/bluesky/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/type1/blue
 sky/cm/cmtt12.pfb>
-Output written on Informe.pdf (21 pages, 1580970 bytes).
+Output written on Informe.pdf (21 pages, 1677525 bytes).
 PDF statistics:
- 157 PDF objects out of 1000 (max. 8388607)
+ 160 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
- 106 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 121 words of extra memory for PDF output out of 10000 (max. 10000000)
 
