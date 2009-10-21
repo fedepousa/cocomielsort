@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.9.26)  21 OCT 2009 14:36
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.9.26)  21 OCT 2009 15:06
 entering extended mode
  %&-line parsing enabled.
 **Informe.tex
@@ -498,9 +498,9 @@ File: imagenes/Resultados2.png Graphic file (type png)
 <use imagenes/Resultados2.png> [17 <./imagenes/Resultados2.png (PNG copy)>]
 [18]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 421.
+(Font)              <7> on input line 422.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 421.
+(Font)              <5> on input line 422.
  [19] [20] [21] [22] (./Informe.aux) ) 
 Here is how much of TeX's memory you used:
  2176 strings out of 94101
