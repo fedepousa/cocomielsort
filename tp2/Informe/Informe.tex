@@ -226,17 +226,30 @@ El problema consiste en, dado un conjunto de vallas y el nivel de la marea. Calc
 \subsection*{Algoritmo}
 \addcontentsline{toc}{subsection}{Algoritmo}
 
-A continuación se presenta una explicación al algoritmo propuesto como solución, seguido por su respectivo pseudocódigo.
+A continuaci\'on se presenta una explicaci\'on al algoritmo propuesto como soluci\'on, seguido por su respectivo pseudoc\'odigo.
 
-En primer lugar se observa que, por restricción del problema, las vallas no pueden estar en cualquier lado, sino que su coordenada (x,y) del punto inferior izquierdo esta formada por x e y enteros. Asimismo, como la longitud de una valla también es entera, la coordenada del vértice restante también será entera. De esta manera, podemos ver que la isla se puede pensar como una grilla de cuadrados de 1x1. Luego, esta grilla fue pensada como un grafo, donde cada cuadrado de la grilla es un nodo y las aristas están dadas por la relación entre un cuadrado y sus 4 posibles vecinos. Para armar esta grilla, se calcularon los mínimos y máximos valores de las vallas en x y en y, ya que por fuera de estos los cuadrados que pertenezcan a la isla se inundarán de todos modos (ya que no hay vallas que los cubran).
+En primer lugar se observa que, por restricci\'on del problema, las vallas no pueden estar en cualquier lado, sino que su coordenada (x,y) del punto inferior izquierdo esta formada por x e y enteros. Asimismo, como la longitud de una valla tambien es entera, la coordenada del v\'ertice restante tambien ser\'a entera. De esta manera, podemos ver que la isla se puede pensar como una grilla de cuadrados de 1x1. Luego, esta grilla fue pensada como un grafo, donde cada cuadrado de la grilla es un nodo y las aristas estan dadas por la relaci\'on entre un cuadrado y sus 4 posibles vecinos. Para armar esta grilla, se calcularon los m\'inimos y m\'aximos valores de las vallas (como se ve en la siguiente figura) en x y en y, ya que por fuera de estos los cuadrados que pertenezcan a la isla se inundar\'an de todos modos (ya que no hay vallas que los cubran).
 
-Al comenzar el algoritmo, todos los cuadrados están relacionados con sus vecinos con aristas de peso 0. Esto quiere decir que si un cuadrado se inunda, los cuadrados que estén relacionados con ese por una arista de peso 0 también se va a inundar. 
 
-Luego, se recorren todas las vallas dadas por el problema y se setean las nuevas relaciones entre los cuadrados, es decir, si existe una valla de altura 4 entre el nodo $v_1$ y el nodo $v_2$, lo que se hace es ponerle un peso de 4 a la arista que los relaciona. Indicando así que solamente si la marea es mayor a 4, el agua pasará de ese $v_1$ a $v_2$ directamente.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{imagenes/im2_ej2.jpg} 
+\end{figure}
 
-Por último, lo que se hace es crear una circunvalación de nodos que se inundan alrededor del grafo real y realizar BFS desde uno de estos (que seguro se inunda, por estar por fuera de las vallas) y contar cuantos nodos tiene la componente conexa que el BFS recorre por completo. Cabe destacar, este BFS toma que un nodo es vecino de otro si la arista que los une tiene peso menor a la marea, si no, se puede decir que la valla es efectiva entre esos dos nodos y no hay inundación de uno hacia el otro. Una vez obtenida la cantidad total de nodos dados por el recorrido en anchura, resta el último paso que es realizar la sustracción entre los nodos totales de la grilla, y los nodos inundados; obteniendo así, la cantidad total de nodos que no fueron inundados gracias a la protección de las vallas. Por último, como cada nodo representa un cuadrado de área 1, la cantidad de nodos no alcanzados por el BFS es igual al área no inundada.
+Al comenzar el algoritmo, todos los cuadrados estan relacionados con sus vecinos con aristas de peso 0. Esto quiere decir que si un cuadrado se inunda, los cuadrados que esten relacionados con ese por una arista de peso 0 tambien se va a inundar. 
 
-A continuación se presenta el pseudocódigo del algoritmo recientemente explicado.
+Luego, se recorren todas las vallas dadas por el problema y se setean las nuevas relaciones entre los cuadrados, es decir, si existe una valla de altura 4 entre el nodo $v_1$ y el nodo $v_2$, lo que se hace es ponerle un peso de 4 a la arista que los relaciona. Indicando as\'i que solamente si la marea es mayor a 4, el agua pasara de ese $v_1$ a $v_2$ directamente.
+
+Por \'ultimo, lo que se hace es crear una circunvalaci\'on de nodos que se inundan alrededor del grafo real como lo muestra la siguiente figura.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{imagenes/im3_ej2.jpg} 
+\end{figure}
+
+Se realiza BFS desde uno de los nodos de la cirunvalaci\'on (que seguro se inunda, por estar por fuera de las vallas) y contar cuantos nodos tiene la componente conexa que el BFS recorre por completo. Cabe destacar, este BFS toma que un nodo es vecino de otro si la arista que los une tiene peso menor a la marea, sino se puede decir que la valla es efectiva entre esos dos nodos y no hay inundaci\'on de uno hacia el otro. Una vez obtenida la cantidad total de nodos dados por el recorrido en anchura, resta el \'ultimo paso que es realizar la sustracci\'on entre los nodos totales de la grilla, y los nodos inundados; obteniendo as\'i, la cantidad total de nodos que no fueron inundados gracias a la protecci\'on de las vallas. Por \'ultimo, como cada nodo representa un cuadrado de \'area 1, la cantidad de nodos no alcanzados por el BFS es igual al \'area no inundada.
+
+A continuaci\'on se presenta el pseudoc\'odigo del algoritmo recientemente explicado.
 
 \begin{verbatim}
 areaNoInundada(){
