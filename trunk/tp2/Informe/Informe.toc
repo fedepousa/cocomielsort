@@ -6,22 +6,22 @@
 \contentsline {subsection}{Demostraci\IeC {\'o}n de correctitud}{7}
 \contentsline {subsection}{Complejidad}{7}
 \contentsline {subsection}{An\IeC {\'a}lisis de resultados}{8}
-\contentsline {subsection}{Casos de correctitud}{8}
+\contentsline {subsection}{Casos de correctitud}{9}
 \contentsline {subsection}{Casos para probar el tiempo de ejecuci\IeC {\'o}n}{9}
 \contentsline {subsection}{Conclusiones}{10}
 \contentsline {section}{Ejercicio 2: Se inunda la isla}{11}
 \contentsline {subsection}{Introducci\IeC {\'o}n}{11}
 \contentsline {subsection}{Algoritmo}{11}
-\contentsline {subsection}{Complejidad}{14}
-\contentsline {subsection}{An\IeC {\'a}lisis de resultados}{15}
-\contentsline {subsection}{Casos de Correctitud}{15}
-\contentsline {subsection}{Casos para probar el tiempo de ejecuci\IeC {\'o}n}{16}
-\contentsline {subsection}{Conclusiones}{17}
-\contentsline {section}{Ejercicio 3: Bernardo Armando Pandillas}{18}
-\contentsline {subsection}{Introducci\IeC {\'o}n}{18}
-\contentsline {subsection}{Algoritmo}{19}
-\contentsline {subsection}{Complejidad}{20}
-\contentsline {subsection}{An\IeC {\'a}lisis de resultados}{21}
-\contentsline {subsection}{Conclusiones}{21}
-\contentsline {section}{Ap\IeC {\'e}ndices}{21}
-\contentsline {section}{\numberline {1}Demostraci\IeC {\'o}n de correctitud del modelo}{21}
+\contentsline {subsection}{Complejidad}{16}
+\contentsline {subsection}{An\IeC {\'a}lisis de resultados}{17}
+\contentsline {subsection}{Casos de Correctitud}{18}
+\contentsline {subsection}{Casos para probar el tiempo de ejecuci\IeC {\'o}n}{18}
+\contentsline {subsection}{Conclusiones}{20}
+\contentsline {section}{Ejercicio 3: Bernardo Armando Pandillas}{21}
+\contentsline {subsection}{Introducci\IeC {\'o}n}{21}
+\contentsline {subsection}{Algoritmo}{21}
+\contentsline {subsection}{Complejidad}{22}
+\contentsline {subsection}{An\IeC {\'a}lisis de resultados}{24}
+\contentsline {subsection}{Conclusiones}{24}
+\contentsline {section}{Ap\IeC {\'e}ndices}{24}
+\contentsline {section}{\numberline {1}Demostraci\IeC {\'o}n de correctitud del modelo}{24}
