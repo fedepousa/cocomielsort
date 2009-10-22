@@ -6,7 +6,7 @@
 \contentsline {subsection}{Demostraci\IeC {\'o}n de correctitud}{7}
 \contentsline {subsection}{Complejidad}{7}
 \contentsline {subsection}{An\IeC {\'a}lisis de resultados}{8}
-\contentsline {subsection}{Casos de correctitud}{8}
+\contentsline {subsection}{Casos de correctitud}{9}
 \contentsline {subsection}{Casos para probar el tiempo de ejecuci\IeC {\'o}n}{9}
 \contentsline {subsection}{Conclusiones}{10}
 \contentsline {section}{Ejercicio 2: Se inunda la isla}{11}

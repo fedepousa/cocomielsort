@@ -253,13 +253,14 @@ A continuación se presenta el pseudocódigo del algoritmo recientemente explica
 
 \begin{verbatim}
 areaNoInundada(){
-	vector vallas;
-	leer(vallas)
-	maxmin(vallas)
-	matriz nodo[alto][ancho];
-	seteamosMatriz(matriz)
-	int inundadas  <- bfsContador(matriz)
-	return (ancho*alto - inundadas)
+
+        vector vallas;
+        leer(vallas)
+        maxmin(vallas)
+        matriz nodo[alto][ancho];
+        seteamosMatriz(matriz)
+        int inundadas  <- bfsContador(matriz)
+        return (ancho*alto - inundadas)
 }
 \end{verbatim}
 
