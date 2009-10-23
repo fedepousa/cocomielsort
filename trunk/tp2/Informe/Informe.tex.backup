@@ -39,7 +39,12 @@ En este ejercicio se pedía encontrar el peso de un matching de peso máximo den
 El algoritmo propuesto como resolución del problema consiste en transformar el grafo en un vector, dado que al poder ser representado como un polígono, se puede ver que, quitando una sola arista, el grafo se convierte en una sucesión de aristas con peso, lo cual se puede representar con un vector de números. La idea del algoritmo es poder encontrar el máximo matching posible, una primera aproximación a la solución final, podría ser la siguiente:
 
 \begin{enumerate}
-\item Se toma una arista cualquiera para comenzar. Luego, el matching buscado tiene dos opciones: contener esa arista, o no contenerla. Entonces el resultado será el máximo entre el matching máximo del grafo sin esa arista(no se utiliza la primer arista tomada) y el matching máximo del grafo sin esa arista, ni ninguno de sus dos aristas vecinas, más el valor de la arista elegida en primer término(si se utiliza la primer arista tomada). De esta manera, el problema sobre un grafo, se convierte en 2 problemas similares pero sobre vectores.
+\item Se toma una arista cualquiera para comenzar. Luego, el matching buscado tiene dos opciones: contener esa arista, o no contenerla. Entonces el resultado será el máximo entre:
+\begin{itemize}
+ \item el matching máximo del grafo sin esa arista (no se utiliza la primer arista tomada).
+ \item el matching máximo del grafo sin esa arista, ni ninguna de sus dos aristas vecinas, más el valor de la arista elegida en primer término (si se utiliza la primer arista tomada).
+\end{itemize}
+  De esta manera, el problema sobre un grafo, se convierte en 2 problemas similares pero sobre vectores.
 \item En este momento, se necesita sacar el matching máximo, pero sobre vectores, para hacer esto se piensa de manera parecida al punto anterior comenzando con el último elemento: o bien el matching máximo lo contiene, o bien no lo contiene. Luego, el matching buscado para el vector, sera el máximo entre el matching máximo del vector sin el último elemento(caso en el que no se usa el último elemento) y el matching máximo del vector sin los últimos dos elementos más el valor del último elemento(caso en el que si se utiliza el último).
 
 	$matchingMaximo(v_1,v_2,..,v_n) = \\ maximo(matchingMaximo(v_1,v_2,..,v_{n-1}), \\ matchingMaximo(v_1,v_2,..,v_{n-2}) + v_n)$
@@ -247,19 +252,20 @@ Por último, lo que se hace es crear una circunvalación de nodos que se inundan
 \includegraphics[width=0.7\textwidth]{imagenes/im3_ej2.jpg} 
 \end{figure}
 
-Se realiza BFS desde uno de los nodos de la circunvalación (que seguro se inunda, por estar por fuera de las vallas) y contar cuantos nodos tiene la componente conexa que el BFS recorre por completo. Cabe destacar, este BFS toma que un nodo es vecino de otro si la arista que los une tiene peso menor a la marea, sino se puede decir que la valla es efectiva entre esos dos nodos y no hay inundación de uno hacia el otro. Una vez obtenida la cantidad total de nodos dados por el recorrido en anchura, resta el último paso que es realizar la sustracción entre los nodos totales de la grilla, y los nodos inundados; obteniendo así, la cantidad total de nodos que no fueron inundados gracias a la protección de las vallas. Por último, como cada nodo representa un cuadrado de área 1, la cantidad de nodos no alcanzados por el BFS es igual al área no inundada.
+Se realiza BFS desde uno de los nodos de la circunvalación (que seguro se inunda, por estar por fuera de las vallas) y contar cuántos nodos tiene la componente conexa que el BFS recorre por completo. Cabe destacar, este BFS toma que un nodo es vecino de otro si la arista que los une tiene peso menor a la marea, sino se puede decir que la valla es efectiva entre esos dos nodos y no hay inundación de uno hacia el otro. Una vez obtenida la cantidad total de nodos dados por el recorrido en anchura, resta el último paso que es realizar la sustracción entre los nodos totales de la grilla, y los nodos inundados; obteniendo así, la cantidad total de nodos que no fueron inundados gracias a la protección de las vallas. Por último, como cada nodo representa un cuadrado de área 1, la cantidad de nodos no alcanzados por el BFS es igual al área no inundada.
 
 A continuación se presenta el pseudocódigo del algoritmo recientemente explicado.
 
 \begin{verbatim}
 areaNoInundada(){
-	vector vallas;
-	leer(vallas)
-	maxmin(vallas)
-	matriz nodo[alto][ancho];
-	seteamosMatriz(matriz)
-	int inundadas  <- bfsContador(matriz)
-	return (ancho*alto - inundadas)
+
+        vector vallas;
+        leer(vallas)
+        maxmin(vallas)
+        matriz nodo[alto][ancho];
+        seteamosMatriz(matriz)
+        int inundadas  <- bfsContador(matriz)
+        return (ancho*alto - inundadas)
 }
 \end{verbatim}
 
