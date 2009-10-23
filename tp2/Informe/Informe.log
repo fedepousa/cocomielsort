@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.6.10)  23 OCT 2009 14:47
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.6.10)  23 OCT 2009 18:24
 entering extended mode
  %&-line parsing enabled.
 **Informe.tex
@@ -435,15 +435,50 @@ File: imagenes/paso6a.png Graphic file (type png)
 so3a.png (PNG copy)> <./imagenes/paso1b.PNG (PNG copy)> <./imagenes/paso4a.png>
  <./imagenes/paso2b.PNG (PNG copy)> <./imagenes/paso5a.png> <./imagenes/paso3b.
 png (PNG copy)> <./imagenes/paso6a.png>]
-<imagenes/pasosFinales.png, id=43, 1606.0pt x 1706.375pt>
+<imagenes/pasosFinales.png, id=42, 1606.0pt x 1706.375pt>
 File: imagenes/pasosFinales.png Graphic file (type png)
 
-<use imagenes/pasosFinales.png> [7 <./imagenes/paso4b.png (PNG copy)> <./imagen
-es/pasosFinales.png (PNG copy)>] [8]
-<imagenes/Resultados1.png, id=51, 377.91188pt x 287.57437pt>
+<use imagenes/pasosFinales.png>
+Overfull \hbox (2.73997pt too wide) in paragraph at lines 162--163
+\OML/cmm/m/it/12 max\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 peso\OT1/cmr/m/n/12 ([] \
+OMS/cmsy/m/n/12 [ \OML/cmm/m/it/12 maxmatching\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
+ C[]\OT1/cmr/m/n/12 ))\OML/cmm/m/it/12 ; peso\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 
+maxmatching\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 C[]\OT1/cmr/m/n/12 )))$. Pe-so(s)
+ []
+
+[7 <./imagenes/paso4b.png (PNG copy)> <./imagenes/pasosFinales.png (PNG copy)>]
+
+Overfull \hbox (44.86737pt too wide) in paragraph at lines 170--172
+[]\OT1/cmr/m/n/12 Como peso$([]\OMS/cmsy/m/n/12 [$ \OT1/cmr/m/n/12 max-match-in
+g $(\OML/cmm/m/it/12 C[]\OT1/cmr/m/n/12 )) = \OML/cmm/m/it/12 peso\OT1/cmr/m/n/
+12 (\OML/cmm/m/it/12 C[]\OT1/cmr/m/n/12 ) + \OML/cmm/m/it/12 peso\OT1/cmr/m/n/1
+2 (\OML/cmm/m/it/12 maxmatching\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 C[]\OT1/cmr/m/
+n/12 ))$
+ []
+
+
+Overfull \hbox (50.80681pt too wide) in paragraph at lines 170--172
+\OT1/cmr/m/n/12 y $\OML/cmm/m/it/12 peso\OT1/cmr/m/n/12 ([] \OMS/cmsy/m/n/12 [ 
+\OML/cmm/m/it/12 maxmatching\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 C[]\OT1/cmr/m/n/1
+2 )) \OML/cmm/m/it/12 < peso\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 S\OT1/cmr/m/n/12 
+)$, en-tonces $\OML/cmm/m/it/12 peso\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 maxmatchi
+ng\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 C[]\OT1/cmr/m/n/12 )) \OML/cmm/m/it/12 <
+ []
+
+
+Overfull \hbox (45.50061pt too wide) in paragraph at lines 170--172
+\OT1/cmr/m/n/12 supon-er que $\OML/cmm/m/it/12 peso\OT1/cmr/m/n/12 (\OML/cmm/m/
+it/12 S\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 6\OT1/cmr/m/n/12 = \OML/cmm/m/it/12 m
+ax\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 peso\OT1/cmr/m/n/12 ([] \OMS/cmsy/m/n/12 [ 
+\OML/cmm/m/it/12 maxmatching\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 C[]\OT1/cmr/m/n/1
+2 )\OML/cmm/m/it/12 ; maxmatching\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 C[]\OT1/cmr/
+m/n/12 ))$. 
+ []
+
+[8] [9] <imagenes/Resultados1.png, id=54, 377.91188pt x 287.57437pt>
 File: imagenes/Resultados1.png Graphic file (type png)
 
-<use imagenes/Resultados1.png> [9] [10 <./imagenes/Resultados1.png (PNG copy)>]
+<use imagenes/Resultados1.png> [10 <./imagenes/Resultados1.png (PNG copy)>]
 [11] <imagenes/im2_ej2.jpg, id=61, 383.031pt x 264.5082pt>
 File: imagenes/im2_ej2.jpg Graphic file (type jpg)
 
@@ -486,52 +521,78 @@ File: imagenes/inundPaso6.png Graphic file (type png)
 <use imagenes/inundPaso6.png> [14 <./imagenes/grafSinVallas.png> <./imagenes/gr
 afConVallas.png> <./imagenes/inundPaso1.png> <./imagenes/inundPaso2.png> <./ima
 genes/inundPaso3.png>]
-<imagenes/inundPaso7.png, id=86, 278.03876pt x 288.07625pt>
+<imagenes/inundPaso7.png, id=87, 278.03876pt x 288.07625pt>
 File: imagenes/inundPaso7.png Graphic file (type png)
 
 <use imagenes/inundPaso7.png>
-<imagenes/inundPaso8.png, id=87, 278.03876pt x 288.07625pt>
+<imagenes/inundPaso8.png, id=88, 278.03876pt x 288.07625pt>
 File: imagenes/inundPaso8.png Graphic file (type png)
 
 <use imagenes/inundPaso8.png>
-<imagenes/inundPasoFinal.png, id=88, 278.03876pt x 288.07625pt>
+<imagenes/inundPasoFinal.png, id=89, 278.03876pt x 288.07625pt>
 File: imagenes/inundPasoFinal.png Graphic file (type png)
 
 <use imagenes/inundPasoFinal.png> [15 <./imagenes/inundPaso4.png> <./imagenes/i
 nundPaso5.png> <./imagenes/inundPaso6.png (PNG copy)> <./imagenes/inundPaso7.pn
 g> <./imagenes/inundPaso8.png> <./imagenes/inundPasoFinal.png>] [16] [17]
-<imagenes/Resultados2.png, id=103, 377.91188pt x 287.57437pt>
+<imagenes/Resultados2.png, id=104, 377.91188pt x 287.57437pt>
 File: imagenes/Resultados2.png Graphic file (type png)
 
 <use imagenes/Resultados2.png> [18 <./imagenes/Resultados2.png (PNG copy)>]
+Overfull \hbox (15.40135pt too wide) in paragraph at lines 438--439
+[]\OT1/cmr/m/n/12 En el ca-so que se puedan ar-mar var-ios gru-pos con las re-s
+tric-ciones planteadas,
+ []
+
 [19]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 455.
+(Font)              <7> on input line 453.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 455.
- [20] [21] [22] [23] [24] [25] (./Informe.aux) ) 
+(Font)              <5> on input line 453.
+ [20] [21] [22]
+<imagenes/Resultados3.png, id=124, 377.91188pt x 287.57437pt>
+File: imagenes/Resultados3.png Graphic file (type png)
+
+<use imagenes/Resultados3.png> [23]
+<imagenes/Resultados3Potencias2.png, id=128, 377.91188pt x 287.57437pt>
+File: imagenes/Resultados3Potencias2.png Graphic file (type png)
+
+<use imagenes/Resultados3Potencias2.png> [24 <./imagenes/Resultados3.png (PNG c
+opy)> <./imagenes/Resultados3Potencias2.png (PNG copy)>] [25]
+Overfull \hbox (17.4236pt too wide) in paragraph at lines 578--579
+[]\OT1/cmr/m/n/12 Brassard G., Brat-ley P., "Fun-da-men-tal of Al-go-rith-mics"
+,Prentice Hall,1996 
+ []
+
+
+Overfull \hbox (18.718pt too wide) in paragraph at lines 579--580
+[]\OT1/cmr/m/n/12 Cormen, T.,Leiserson, C.,Rivest,R.,Stein, C.,"Introduction to
+ Al-go-rithms",
+ []
+
+[26] [27] (./Informe.aux) ) 
 Here is how much of TeX's memory you used:
- 2194 strings out of 95086
- 31059 string characters out of 1183255
+ 2211 strings out of 95086
+ 31465 string characters out of 1183255
  89518 words of memory out of 1500000
- 5335 multiletter control sequences out of 10000+50000
+ 5350 multiletter control sequences out of 10000+50000
  8410 words of font info for 30 fonts, out of 1200000 for 2000
  28 hyphenation exceptions out of 8191
- 43i,9n,42p,894b,305s stack positions out of 5000i,500n,6000p,200000b,5000s
-</usr/share/texmf-texlive/fonts
-/type1/bluesky/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/c
-mex10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmmi12.pfb></usr/sha
-re/texmf-texlive/fonts/type1/bluesky/cm/cmmi8.pfb></usr/share/texmf-texlive/fon
-ts/type1/bluesky/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/
-cmr12.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr6.pfb></usr/share
-/texmf-texlive/fonts/type1/bluesky/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/
-type1/bluesky/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmsy
-10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmsy8.pfb></usr/share/t
-exmf-texlive/fonts/type1/bluesky/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/
-type1/bluesky/cm/cmtt12.pfb>
-Output written on Informe.pdf (25 pages, 1882101 bytes).
+ 43i,9n,42p,898b,305s stack positions out of 5000i,500n,6000p,200000b,5000s
+</usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmb
+x12.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmex10.pfb></usr/share
+/texmf-texlive/fonts/type1/bluesky/cm/cmmi12.pfb></usr/share/texmf-texlive/font
+s/type1/bluesky/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/c
+mr10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr12.pfb></usr/share
+/texmf-texlive/fonts/type1/bluesky/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/
+type1/bluesky/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr8
+.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmsy10.pfb></usr/share/te
+xmf-texlive/fonts/type1/bluesky/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/ty
+pe1/bluesky/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmtt
+12.pfb>
+Output written on Informe.pdf (27 pages, 2480508 bytes).
 PDF statistics:
- 175 PDF objects out of 1000 (max. 8388607)
+ 183 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
- 131 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 141 words of extra memory for PDF output out of 10000 (max. 10000000)
 

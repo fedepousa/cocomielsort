@@ -17,6 +17,15 @@
 \begin{center}
 \section*{Aclaraciones Generales}
 \addcontentsline{toc}{section}{Aclaraciones Generales} 
+
+\begin{itemize}
+\item La implementaci\'on de todos los algoritmos se realiz\'o en lenguaje C++.
+
+\item Para calcular los tiempos de ejecuci\'on de los algoritmos se utiliz\'o la funci\'on gettimeofday(), que se encuentra en la librer\'ia $<sys/time.h>$. Dado que dicha funci\'on funciona solamente en sistemas operativos de tipo linux, se debe compilar con el flag -DTIEMPOS en este tipo de sistemas para poder hacer uso de las mismas.
+
+\item Para la realizaci\'on de los gr\'aficos se utiliz\'o Qtiplot
+\end{itemize}
+
 \end{center}
 
 \newpage
@@ -27,7 +36,7 @@
  
 \subsection*{Introducción}
 \addcontentsline{toc}{subsection}{Introducción} 
-En este ejercicio se pedía encontrar el peso de un matching de peso máximo dentro de un grafo. Se define como matching a un subconjunto de aristas que no comparten vértices. Si bien este ejercicio podría ser de gran complejidad, el mismo se encuentra en una presentación mas accesible dado que no hay que aplicar el algoritmo sobre cualquier tipo de grafos, sino que solamente tiene que ser aplicable a grafos de 3 o más nodos que sean ciclos simples, es decir, grafos que en su isomorfismo planar sean simplemente un dibujo de un polígono.
+En este ejercicio se pedía encontrar el peso de un matching de peso máximo dentro de un grafo. Se define como matching a un subconjunto de aristas que no comparten vértices. Si bien este ejercicio podría ser de gran complejidad, el mismo se encuentra en una presentación m\'as accesible dado que no hay que aplicar el algoritmo sobre cualquier tipo de grafos, sino que solamente tiene que ser aplicable a grafos de 3 o más nodos que sean ciclos simples, es decir, grafos que en su isomorfismo planar sean simplemente un dibujo de un polígono.
 
 % aca podria ir algun dibujo de como serian los grafos a ver y como seria algun grafo que no hay que analizar.
 
@@ -41,8 +50,8 @@ El algoritmo propuesto como resolución del problema consiste en transformar el 
 \begin{enumerate}
 \item Se toma una arista cualquiera para comenzar. Luego, el matching buscado tiene dos opciones: contener esa arista, o no contenerla. Entonces el resultado será el máximo entre:
 \begin{itemize}
- \item el matching máximo del grafo sin esa arista (no se utiliza la primer arista tomada).
- \item el matching máximo del grafo sin esa arista, ni ninguna de sus dos aristas vecinas, más el valor de la arista elegida en primer término (si se utiliza la primer arista tomada).
+ \item El matching máximo del grafo sin esa arista (no se utiliza la primer arista tomada).
+ \item El matching máximo del grafo sin esa arista, ni ninguna de sus dos aristas vecinas, más el valor de la arista elegida en primer término (si se utiliza la primer arista tomada).
 \end{itemize}
   De esta manera, el problema sobre un grafo, se convierte en 2 problemas similares pero sobre vectores.
 \item En este momento, se necesita sacar el matching máximo, pero sobre vectores, para hacer esto se piensa de manera parecida al punto anterior comenzando con el último elemento: o bien el matching máximo lo contiene, o bien no lo contiene. Luego, el matching buscado para el vector, sera el máximo entre el matching máximo del vector sin el último elemento (caso en el que no se usa el último elemento) y el matching máximo del vector sin los últimos dos elementos más el valor del último elemento (caso en el que sí se utiliza el último).
@@ -53,7 +62,7 @@ El algoritmo propuesto como resolución del problema consiste en transformar el 
 
 Si bien el algoritmo propuesto retorna el valor esperado, la complejidad del mismo no es óptima. Al hacer los llamados recursivos sucede que hay varios matching máximos que se realizan sobre los mismos vectores, generando así más cálculos de los necesarios. Fue por esto, que el siguiente paso fue modificar el algoritmo para que no calcule las cosas de modo \emph{top down}, sino que fuese un algoritmo \emph{bottom up}, para así evitar los cálculos repetidos, utilizando así la mayor ventaja de la programación dinámica, técnica que define al algoritmo final.
 
-De esta manera, se pensó cómo, teniendo instancias más peque~{n}as del problema, se puede conocer la solución de una instancia mayor. Se utilizó que, dadas las soluciones óptimas para vectores de n-2 y n-1 elementos, la solución para el vector de n elementos es el máximo entre la solución de n-1 elementos, y la solución de n-2 elementos más el elemento n-ésimo. Es así que el cálculo se torna \emph{bottom up}, calculando los máximos de los subvectores, una sola vez.
+De esta manera, se pensó como teniendo instancias más peque~{n}as del problema, se puede conocer la solución de una instancia mayor. Se utilizó que, dadas las soluciones óptimas para vectores de n-2 y n-1 elementos, la solución para el vector de n elementos es el máximo entre la solución de n-1 elementos, y la solución de n-2 elementos más el elemento n-ésimo. Es así que el cálculo se torna \emph{bottom up}, calculando los máximos de los subvectores, una sola vez.
 
 A continuación se muestra el pseudocódigo del algoritmo propuesto como resolución del problema.
 
@@ -98,41 +107,42 @@ A continuación se presenta un seguimiento del algoritmo sobre un ciclo simple d
 
 \begin{figure}[H]
 \centering
-\subfloat[Izquierda 1]{\includegraphics[width=0.3\textwidth]{imagenes/paso0b.PNG}}
+\subfloat{\includegraphics[width=0.3\textwidth]{imagenes/paso0b.PNG}}
 \qquad
-\subfloat[Derecha 1]{\includegraphics[width=0.3\textwidth]{imagenes/paso3a.png}}
+\subfloat{\includegraphics[width=0.3\textwidth]{imagenes/paso3a.png}}
 \caption{Se calcula el matching máximo en los vectores - Primer paso}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\subfloat[Izquierda 2]{\includegraphics[width=0.3\textwidth]{imagenes/paso1b.PNG}}
+\subfloat{\includegraphics[width=0.3\textwidth]{imagenes/paso1b.PNG}}
 \qquad
-\subfloat[Derecha 2]{\includegraphics[width=0.3\textwidth]{imagenes/paso4a.png}}
+\subfloat{\includegraphics[width=0.3\textwidth]{imagenes/paso4a.png}}
 \caption{Se calcula el matching máximo en los vectores - Segundo paso}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\subfloat[Izquierda 3]{\includegraphics[width=0.3\textwidth]{imagenes/paso2b.PNG}}
+\subfloat{\includegraphics[width=0.3\textwidth]{imagenes/paso2b.PNG}}
 \qquad
-\subfloat[Derecha 3]{\includegraphics[width=0.3\textwidth]{imagenes/paso5a.png}}
+\subfloat{\includegraphics[width=0.3\textwidth]{imagenes/paso5a.png}}
 \caption{Se calcula el matching máximo en los vectores - Tercer paso}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\subfloat[Izquierda 4]{\includegraphics[width=0.3\textwidth]{imagenes/paso3b.png}}
+\subfloat{\includegraphics[width=0.3\textwidth]{imagenes/paso3b.png}}
 \qquad
-\subfloat[Derecha 4]{\includegraphics[width=0.3\textwidth]{imagenes/paso6a.png}}
+\subfloat{\includegraphics[width=0.3\textwidth]{imagenes/paso6a.png}}
 \caption{Se finaliza un matching, se continúa el cálculo del otro}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\subfloat[Izquierda 5]{\includegraphics[width=0.3\textwidth]{imagenes/paso4b.png}}
+\subfloat{\includegraphics[width=0.3\textwidth]{imagenes/paso4b.png}}
 \qquad
-\subfloat[Derecha 5]{\includegraphics[width=0.3\textwidth]{imagenes/paso6a.png}}
+\subfloat{\includegraphics[width=0.3\textwidth]{imagenes/paso6a.png}}
+\caption{Ante\'ultimo Paso}
 
 \end{figure}
 
@@ -145,15 +155,17 @@ A continuación se presenta un seguimiento del algoritmo sobre un ciclo simple d
 \subsection*{Demostración de correctitud}
 \addcontentsline{toc}{subsection}{Demostración de correctitud} 
 
-% Sea S un matching de peso máximo para un camino $C =  C_1, C_2, ... , C_n $. 
-% % Se quiere demostrar que $peso(S) = max (peso( {C_n} \cup max_matching(C_{1,n-2}) ) ,peso( max_matching(C_{1,n-1}) ) ) $.
-% Para lo cual vamos a suponer que $S = max_matching(C)$ y que $peso(S) \neq max(peso({C_n} \cup max_matching(C_{1,n-2})) , peso(max_matching(C_{1,n-1})))$. $peso(s)$ no puede ser menor ya que es un matching de peso máximo. Luego su peso es mayor. $ C_n \in S $, ya que si no fuera asi, entonces S es un matching de $C_{1,n-1}$, y por lo tanto el peso de S debe ser menor o igual al de $max_matching(C_{1,n-1})$, pero supusimos que $peso(S) > peso(max_matching(C_{1,n-1}))$. 
+Sea S un matching de peso máximo para un camino $C =  C_1, C_2, ... , C_n $. 
+
+Se quiere demostrar que $peso(S) = max (peso( {C_n} \cup $ maxmatching$(C_{1,n-2}) )$ ,peso( maxmatching$(C_{1,n-1}) ) ) $.
+
+Para lo cual vamos a suponer que $S = maxmatching(C)$ y que $peso(S) \neq max(peso({C_n} \cup maxmatching(C_{1,n-2})) , peso(maxmatching(C_{1,n-1})))$. $peso(s)$ no puede ser menor ya que es un matching de peso máximo. Luego su peso es mayor. $ C_n \in S $, ya que si no fuera as\'i, entonces S es un matching de $C_{1,n-1}$, y por lo tanto el peso de S debe ser menor o igual al de $maxmatching(C_{1,n-1})$, pero supusimos que $peso(S) > peso(max_matching(C_{1,n-1}))$. 
 
 
-% Como $ C_n \in S $, luego $ C_{n-1} \notin S$, luego  S \diagdown $C_n $ es un matching de $C_{1,n-2}$.
+Como $ C_n \in S $, luego $ C_{n-1} \notin S$, luego  S - $C_n $ es un matching de $C_{1,n-2}$.
 
 
-% Como peso$({C_n} \cup max_matching(C_{1,n-2})) = peso(C_n) + peso(max_matching(C_{1,n-2})) y peso({C_n} \cup max_matching(C_{1,n-2})) < peso(S)$, entonces $peso(max_matching(C_{1,n-2})) < peso(S \diagdown {C_n}), pero S \ {C_n} es un matching de C_{1,n-2}, por lo tanto $peso(S \diagdown  {C_n}) \leq peso(max_matching(C_{1,n-2}))$. LLegamos a un absurdo, producto de suponer que  $ peso(S) \neq max(peso({C_n} \cup max_matching(C_{1,n-2}), max_matching(C_{1,n-1})) $.
+Como peso$({C_n} \cup$  maxmatching $(C_{1,n-2})) = peso(C_n) + peso(max_matching(C_{1,n-2})) y peso({C_n} \cup maxmatching(C_{1,n-2})) < peso(S)$, entonces $peso(maxmatching(C_{1,n-2})) < peso(S - {C_n}), pero S \ {C_n} es un matching de C_{1,n-2}, por lo tanto peso(S -  {C_n}) \leq peso(maxmatching(C_{1,n-2})). LLegamos a un absurdo, producto de suponer que   peso(S) \neq max(pe	`so({C_n} \cup maxmatching(C_{1,n-2}), maxmatching(C_{1,n-1})) $.
 
 
 \subsection*{Complejidad}
@@ -493,17 +505,17 @@ Por \'ultimo, se destaca que para estos casos no se presentan gr\'aficos ya que 
 En esta secci\'on lo que se busc\'o fue generar varios casos de prueba que lograsen mostrar cuanto tarda el algoritmo para poder constratar estos resultados con la complejidad te\'orica calculada anteriormente. Para realizar esto, se generaron varios casos de pruebas con la siguientes caracter\'isticas:
 
 \begin{itemize}
-\item Los casos analizados contienen grupos de 32 a 600 personas.
+\item Los casos analizados contienen grupos de 32 a 680 personas.
 \item Todos los casos contienen las mismas relaciones, las unicas relaciones de conocimiento que existen son entre la persona 1 y la 2, entre la persona 1 y la 3 y entre la persona 2 y la 3. De esta manera, los grupos conformados en todos los casos son los mismos.
 \item Por lo dicho anteriormente, todos los casos deber\'ian tener diferencia en el tiempo de ejecuci\'on en la multiplicaci\'on de matrices, ya que luego los grupos se encuentran rapidamente y para todos por igual.
-
+\end{itemize}
 A continuaci\'on se presenta el gr\'afico con los tiempos obtenidos en las corridas:
 
 Aca va el gr\'afico.
 
 
 Como se puede ver en el gr\'afico, los resultados arrojados se condicen con el an\'alisis te\'orico realizado anteriormente. Es notable ver que es la multiplicaci\'on de matrices la que domina el tiempo de ejecuci\'on y como el algoritmo de strassen toma por igual un grupo de 35 personas o uno de 62 personas, porque de todas maneras la matriz que procesa es de la potencia de dos que primero acota por arriba a estos n\'umeros, se puede ver como el gr\'afico presenta \emph{escalones} que van creciendo cuando se pasa a la siguiente potencia de dos.
-\end{itemize}
+
 
 \subsection*{Conclusiones}
 \addcontentsline{toc}{subsection}{Conclusiones}
@@ -512,7 +524,7 @@ Luego de realizar el an\'alisis del algoritmo propuesto, se concluye en que:
 \begin{itemize}
 \item Resulta de gran utilidad lograr modelar un problema con estructuras de datos que puedan resolver el problema de manera indirecta. Es decir, es importante poder extrapolar las relaciones entre las personas a la noci\'on de grafo, ya que resolver el problema de la clique en un grafo, result\'o ser an\'alogo al problema de conformar los grupos entre las personas.
 \item Se pudo verificar el comportamiento del algoritmo emp\'iricamente, ya que se puede denotar como, al algoritmo de strassen necesitar matrices con potencias de dos, los tiempos de corridas resultan casi iguales para todos los grupos de personas donde los tama\~{n}os de los mismos se encuentren acotados por las mismas potencias de dos.
-\item Si bien el algoritmo de strassen logra bajar la complejidad te\'orica del problema, se cree que la implementaci\'on del mismo en realidad degrada la eficiencia del algoritmo para casos de prueba donde la cantidad de personas no es considerablemente alta debido al \emph{overhead} que introducen los c\'alculos intr\'insecos de este m\'etodo.
+\item Si bien el algoritmo de strassen logra bajar la complejidad te\'orica del problema, se cree que la implementaci\'on del mismo en realidad degrada la eficiencia del algoritmo para casos de prueba donde la cantidad de personas no es considerablemente alta debido al \emph{overhead} que introducen los c\'alculos intr\'insecos de este m\'etodo. Es decir, si bien la complejidad es menor, la constante de este algoritmo resulta en peores tiempos de ejecuci\'on para casos peque\~{n}os.
 \end{itemize}
 
 
@@ -544,5 +556,7 @@ Llamemos $G' = \left( V', E' \right)$ al complemento de $G$.  Sea $ C = \left( \
 
 
 Recíprocamente, si sabemos que $a$, $b$ y $c$ forman un grupo de tres personas que no se conocen entre sí, y sean $v_a, v_b, v_c$ los nodos que las representan, entonces como $a$ y $b$ no se conocen, $\left(v_a,v_b\right) \in E'$. Tampoco $b$ y $c$ se conocen, por lo que $\left(v_b,v_c\right) \in E'$. Por último $c$ y $a$ no se conocen, por lo cual $\left(v_c,v_a\right) \in E'$. Luego $\left( \left\lbrace v_a, v_b, v_c \right\rbrace, \left\lbrace  \left(v_a,v_b\right) , \left( v_b,v_c\right), \left( v_c, v_a\right) \right\rbrace\right)$ es un clique de tres, subgrafo de $G'$.
+
+\section{Bibliograf\'ia}
 
 \end{document}
