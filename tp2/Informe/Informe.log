@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.9.26)  22 OCT 2009 01:59
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.9.26)  23 OCT 2009 01:59
 entering extended mode
  %&-line parsing enabled.
 **Informe.tex
@@ -385,13 +385,13 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
-Overfull \hbox (79.30023pt too wide) in paragraph at lines 77--77
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4]
+Overfull \hbox (79.30023pt too wide) in paragraph at lines 82--82
 []         \OT1/cmtt/m/n/12 max( peso_maximo_hasta_i-2 + peso_arista[i], peso_m
 aximo_hasta_i-1)[] 
  []
 
-[4] <imagenes/paso1y2.png, id=22, 1606.0pt x 1505.625pt>
+<imagenes/paso1y2.png, id=22, 1606.0pt x 1505.625pt>
 File: imagenes/paso1y2.png Graphic file (type png)
 
 <use imagenes/paso1y2.png>
@@ -401,45 +401,45 @@ File: imagenes/paso0b.PNG Graphic file (type png)
 <use imagenes/paso0b.PNG> <imagenes/paso3a.png, id=24, 513.92pt x 358.33875pt>
 File: imagenes/paso3a.png Graphic file (type png)
 
-<use imagenes/paso3a.png>
-<imagenes/paso1b.PNG, id=25, 667.49374pt x 443.6575pt>
+<use imagenes/paso3a.png> [5 <./imagenes/paso1y2.png>]
+<imagenes/paso1b.PNG, id=29, 667.49374pt x 443.6575pt>
 File: imagenes/paso1b.PNG Graphic file (type png)
 
 <use imagenes/paso1b.PNG>
-<imagenes/paso4a.png, id=26, 667.49374pt x 443.6575pt>
+<imagenes/paso4a.png, id=30, 667.49374pt x 443.6575pt>
 File: imagenes/paso4a.png Graphic file (type png)
 
-<use imagenes/paso4a.png> [5 <./imagenes/paso1y2.png> <./imagenes/paso0b.PNG (P
-NG copy)> <./imagenes/paso3a.png (PNG copy)>]
-<imagenes/paso2b.PNG, id=32, 667.49374pt x 443.6575pt>
+<use imagenes/paso4a.png>
+<imagenes/paso2b.PNG, id=31, 667.49374pt x 443.6575pt>
 File: imagenes/paso2b.PNG Graphic file (type png)
 
 <use imagenes/paso2b.PNG>
-<imagenes/paso5a.png, id=33, 667.49374pt x 443.6575pt>
+<imagenes/paso5a.png, id=32, 667.49374pt x 443.6575pt>
 File: imagenes/paso5a.png Graphic file (type png)
 
 <use imagenes/paso5a.png>
-<imagenes/paso3b.png, id=34, 667.49374pt x 443.6575pt>
+<imagenes/paso3b.png, id=33, 667.49374pt x 443.6575pt>
 File: imagenes/paso3b.png Graphic file (type png)
 
 <use imagenes/paso3b.png>
-<imagenes/paso6a.png, id=35, 667.49374pt x 443.6575pt>
+<imagenes/paso6a.png, id=34, 667.49374pt x 443.6575pt>
 File: imagenes/paso6a.png Graphic file (type png)
 
 <use imagenes/paso6a.png>
-<imagenes/paso4b.png, id=36, 667.49374pt x 443.6575pt>
+<imagenes/paso4b.png, id=35, 667.49374pt x 443.6575pt>
 File: imagenes/paso4b.png Graphic file (type png)
 
 <use imagenes/paso4b.png>
 File: imagenes/paso6a.png Graphic file (type png)
- <use imagenes/paso6a.png>
-<imagenes/pasosFinales.png, id=37, 1606.0pt x 1706.375pt>
+ <use imagenes/paso6a.png> [6 <./imagenes/paso0b.PNG (PNG copy)> <./imagenes/pa
+so3a.png (PNG copy)> <./imagenes/paso1b.PNG (PNG copy)> <./imagenes/paso4a.png>
+ <./imagenes/paso2b.PNG (PNG copy)> <./imagenes/paso5a.png> <./imagenes/paso3b.
+png (PNG copy)> <./imagenes/paso6a.png>]
+<imagenes/pasosFinales.png, id=43, 1606.0pt x 1706.375pt>
 File: imagenes/pasosFinales.png Graphic file (type png)
 
-<use imagenes/pasosFinales.png> [6 <./imagenes/paso1b.PNG (PNG copy)> <./imagen
-es/paso4a.png> <./imagenes/paso2b.PNG (PNG copy)> <./imagenes/paso5a.png> <./im
-agenes/paso3b.png (PNG copy)> <./imagenes/paso6a.png> <./imagenes/paso4b.png (P
-NG copy)>] [7 <./imagenes/pasosFinales.png (PNG copy)>] [8]
+<use imagenes/pasosFinales.png> [7 <./imagenes/paso4b.png (PNG copy)> <./imagen
+es/pasosFinales.png (PNG copy)>] [8]
 <imagenes/Resultados1.png, id=51, 377.91188pt x 287.57437pt>
 File: imagenes/Resultados1.png Graphic file (type png)
 
@@ -506,18 +506,18 @@ File: imagenes/Resultados2.png Graphic file (type png)
 <use imagenes/Resultados2.png> [18 <./imagenes/Resultados2.png (PNG copy)>]
 [19]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 435.
+(Font)              <7> on input line 441.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 435.
+(Font)              <5> on input line 441.
  [20] [21] [22] [23] (./Informe.aux) ) 
 Here is how much of TeX's memory you used:
  2186 strings out of 94101
  30989 string characters out of 1165810
- 89883 words of memory out of 1500000
+ 90883 words of memory out of 1500000
  5433 multiletter control sequences out of 10000+50000
  8410 words of font info for 30 fonts, out of 1200000 for 2000
  637 hyphenation exceptions out of 8191
- 43i,9n,42p,896b,300s stack positions out of 5000i,500n,6000p,200000b,5000s
+ 43i,9n,42p,894b,300s stack positions out of 5000i,500n,6000p,200000b,5000s
 </usr/share/texmf-texlive/fonts/type1/blu
 esky/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmex10.pfb>
 </usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmmi12.pfb></usr/share/texmf-t
@@ -529,7 +529,7 @@ sky/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmsy10.pfb></u
 sr/share/texmf-texlive/fonts/type1/bluesky/cm/cmsy8.pfb></usr/share/texmf-texli
 ve/fonts/type1/bluesky/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/type1/blue
 sky/cm/cmtt12.pfb>
-Output written on Informe.pdf (23 pages, 1864519 bytes).
+Output written on Informe.pdf (23 pages, 1903123 bytes).
 PDF statistics:
  168 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
