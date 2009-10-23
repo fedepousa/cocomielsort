@@ -4,8 +4,8 @@
 \contentsline {subsection}{Introducci\IeC {\'o}n}{3}
 \contentsline {subsection}{Algoritmo}{3}
 \contentsline {subsection}{Demostraci\IeC {\'o}n de correctitud}{7}
-\contentsline {subsection}{Complejidad}{8}
-\contentsline {subsection}{An\IeC {\'a}lisis de resultados}{9}
+\contentsline {subsection}{Complejidad}{7}
+\contentsline {subsection}{An\IeC {\'a}lisis de resultados}{8}
 \contentsline {subsection}{Casos de correctitud}{9}
 \contentsline {subsection}{Casos para probar el tiempo de ejecuci\IeC {\'o}n}{9}
 \contentsline {subsection}{Conclusiones}{10}
@@ -22,6 +22,8 @@
 \contentsline {subsection}{Algoritmo}{20}
 \contentsline {subsection}{Complejidad}{21}
 \contentsline {subsection}{An\IeC {\'a}lisis de resultados}{22}
-\contentsline {subsection}{Conclusiones}{22}
-\contentsline {section}{Ap\IeC {\'e}ndices}{22}
-\contentsline {section}{\numberline {1}Demostraci\IeC {\'o}n de correctitud del modelo}{22}
+\contentsline {subsection}{Casos de Correctitud}{22}
+\contentsline {subsection}{Casos para probar el tiempo de ejecuci\'on}{23}
+\contentsline {subsection}{Conclusiones}{23}
+\contentsline {section}{Ap\IeC {\'e}ndices}{24}
+\contentsline {section}{\numberline {1}Demostraci\IeC {\'o}n de correctitud del modelo}{24}
