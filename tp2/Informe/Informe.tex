@@ -62,7 +62,7 @@ El algoritmo propuesto como resolución del problema consiste en transformar el 
 
 Si bien el algoritmo propuesto retorna el valor esperado, la complejidad del mismo no es óptima. Al hacer los llamados recursivos sucede que hay varios matching máximos que se realizan sobre los mismos vectores, generando así más cálculos de los necesarios. Fue por esto, que el siguiente paso fue modificar el algoritmo para que no calcule las cosas de modo \emph{top down}, sino que fuese un algoritmo \emph{bottom up}, para así evitar los cálculos repetidos, utilizando así la mayor ventaja de la programación dinámica, técnica que define al algoritmo final.
 
-De esta manera, se pensó como teniendo instancias más peque~{n}as del problema, se puede conocer la solución de una instancia mayor. Se utilizó que, dadas las soluciones óptimas para vectores de n-2 y n-1 elementos, la solución para el vector de n elementos es el máximo entre la solución de n-1 elementos, y la solución de n-2 elementos más el elemento n-ésimo. Es así que el cálculo se torna \emph{bottom up}, calculando los máximos de los subvectores, una sola vez.
+De esta manera, se pensó cómo, teniendo instancias más peque~{n}as del problema, se puede conocer la solución de una instancia mayor. Se utilizó que, dadas las soluciones óptimas para vectores de n-2 y n-1 elementos, la solución para el vector de n elementos es el máximo entre la solución de n-1 elementos, y la solución de n-2 elementos más el elemento n-ésimo. Es así que el cálculo se torna \emph{bottom up}, calculando los máximos de los subvectores, una sola vez.
 
 A continuación se muestra el pseudocódigo del algoritmo propuesto como resolución del problema.
 
@@ -175,7 +175,7 @@ y $peso({C_n} \cup maxmatching(C_{1,n-2})) < peso(S)$, entonces $peso(maxmatchin
 \addcontentsline{toc}{subsection}{Complejidad} 
 Se analizará la complejidad de este algoritmo en función del modelo uniforme.
 
-En primer lugar, el algoritmo dise\~{n}ado toma una arista cualquiera, lo cual se ejecuta en un tiempo constante dado que los vértices se encuentran en un vector de acceso indexado. Luego, se toman los dos vecinos que, dado que el grafo es un circuito simple, también se los puede obtener en un tiempo constante. Luego, el algoritmo realiza una llamada a otro algoritmo que resuelve el matching máximo sobre vectores. Por último, se realiza una comparación entre los dos resultados arrojados por la rutina auxiliar para poder devolver el máximo, siendo esta una operación también de costo constante. Es por esto que la complejidad de este algoritmo esta regida entonces por la complejidad de la rutina auxiliar a la que hace referencia, ya que todas las demás operaciones toman un tiempo constante de ejecución.
+En primer lugar, el algoritmo dise\~{n}ado toma una arista cualquiera, lo cual se ejecuta en un tiempo constante dado que los vértices se encuentran en un vector de acceso indexado. Luego, se toman los dos vecinos que, dado que el grafo es un circuito simple, también se los puede obtener en un tiempo constante. Luego, el algoritmo realiza una llamada a otro algoritmo que resuelve el matching máximo sobre vectores. Por último, se realiza una comparación entre los dos resultados arrojados por la rutina auxiliar para poder devolver el máximo, siendo ésta una operación también de costo constante. Es por esto que la complejidad de este algoritmo está regida entonces por la complejidad de la rutina auxiliar a la que hace referencia, ya que todas las demás operaciones toman un tiempo constante de ejecución.
 
 Resulta necesario ver entonces la complejidad del algoritmo de matching máximo sobre vectores.
 Este algoritmo comienza realizando comparaciones del tama\~{n}o del vector para ver si el mismo se resuelve trivialmente. En todos estos casos los costos de las operaciones son constantes. Sin embargo, el peor caso, es que el vector pasado como parámetro contenga tres o más elementos, por lo que la complejidad del algoritmo estará dada por los costos de las operaciones en el caso de que el tama\~{n}o sea tres o más.
@@ -198,7 +198,7 @@ Para analizar este algoritmo, se basó el enfoque en dos aspectos diferentes. Po
 Con el fin de realizar una comprobación empírica de la solución propuesta se generó un archivo de entrada con diez casos de prueba.
 \begin{itemize}
 \item Los primeros nueve casos de prueba, están conformados por los entregados por la cátedra, teniendo de esta manera las soluciones reales para contrastar con las arrojadas por el algoritmo.
-\item El último caso de prueba esta conformado por un grafo de 30 aristas, con pesos de 1 a 30, ordenados consecutivamente. En este caso, se puede ver que el matching máximo está dado por tomar las aristas con valor par.
+\item El último caso de prueba está conformado por un grafo de 30 aristas, con pesos de 1 a 30, ordenados consecutivamente. En este caso, se puede ver que el matching máximo está dado por tomar las aristas con valor par.
 \end{itemize}
 
 El análisis en este tipo de casos se basó solamente en la correctitud de los mismos y no en el tiempo de ejecución debido a que son grafos de tama\~{n}os muy peque\~{n}os y el tiempo de ejecución no sobrepasa los 2 microsegundos en ninguno de los casos.
@@ -207,9 +207,9 @@ Para todos los casos propuestos los resultados fueron satisfactorios al ser cont
 
 \subsection*{Casos para probar el tiempo de ejecución}
 \addcontentsline{toc}{subsection}{Casos para probar el tiempo de ejecución} 
-Para poder analizar cómo se comporta el algoritmo en función del tama\~{n}o del grafo a procesar, se implemento un generador de ciclos simples al azar. El mismo se realizó para que arrojase una salida con 500 grafos diferentes, el primero con 10000 aristas, el segundo con 10500 y así sucesivamente. Una vez obtenidos los tiempos de ejecución de cada uno de estos casos, se procedió a graficar los resultados para poder contrastar con la complejidad obtenida teóricamente.
+Para poder analizar cómo se comporta el algoritmo en función del tama\~{n}o del grafo a procesar, se implementó un generador de ciclos simples al azar. El mismo se realizó para que arrojase una salida con 500 grafos diferentes, el primero con 10000 aristas, el segundo con 10500 y así sucesivamente. Una vez obtenidos los tiempos de ejecución de cada uno de estos casos, se procedió a graficar los resultados para poder contrastar con la complejidad obtenida teóricamente.
 
-A continuación se presenta un gráfico donde se encuentran simultaneamente los datos obtenidos y un ajuste lineal de los mismos.
+A continuación se presenta un gráfico donde se encuentran simultáneamente los datos obtenidos y un ajuste lineal de los mismos.
 
 
 \begin{figure}[H]
@@ -244,7 +244,7 @@ Luego de obtener los resultados para el presente ejercicio, se concluyen varios 
 
 En este ejercicio se pedía encontrar el área que no se inunde en una isla plana luego de ciertas condiciones.
 
-En primer lugar, se tiene una isla que posee la misma altura en todos sus puntos, es por esto que si la marea sube la isla se inunda por completo. La solución para que las partes importantes de la isla no se inunden cuando sube la marea, es poner una serie de vallas rectangulares que no dejen pasar el agua hasta cierta altura. La idea sería entonces, colocando adecuadamente estas vallas, encerrar partes de la isla para que el agua no pueda entrar.
+En primer lugar, se tiene una isla que posee la misma altura en todos sus puntos, es por ésto que si la marea sube la isla se inunda por completo. La solución para que las partes importantes de la isla no se inunden cuando sube la marea, es poner una serie de vallas rectangulares que no dejen pasar el agua hasta cierta altura. La idea sería entonces, colocando adecuadamente estas vallas, encerrar partes de la isla para que el agua no pueda entrar.
 
 El problema consiste en, dado un conjunto de vallas y el nivel de la marea, calcular cuál es el área de la isla que no va a ser inundada.
 
@@ -253,7 +253,7 @@ El problema consiste en, dado un conjunto de vallas y el nivel de la marea, calc
 
 A continuación se presenta una explicación al algoritmo propuesto como solución, seguido por su respectivo pseudocódigo.
 
-En primer lugar se observa que, por restricción del problema, las vallas no pueden estar en cualquier lado, sino que su coordenada (x,y) del punto inferior izquierdo esta formada por x e y enteros. Asimismo, como la longitud de una valla también es entera, la coordenada del vértice restante también será entera. De esta manera, podemos ver que la isla se puede pensar como una grilla de cuadrados de 1x1. Luego, esta grilla fue pensada como un grafo, donde cada cuadrado de la grilla es un nodo y las aristas están dadas por la relación entre un cuadrado y sus 4 posibles vecinos. Para armar esta grilla, se calcularon los mínimos y máximos valores de las vallas (como se ve en la siguiente figura) en x y en y, ya que por fuera de estos los cuadrados que pertenezcan a la isla se inundarán de todos modos (ya que no hay vallas que los cubran).
+En primer lugar se observa que, por restricción del problema, las vallas no pueden estar en cualquier lado, sino que su coordenada (x,y) del punto inferior izquierdo está formada por x e y enteros. Asimismo, como la longitud de una valla también es entera, la coordenada del vértice restante también será entera. De esta manera, podemos ver que la isla se puede pensar como una grilla de cuadrados de 1x1. Luego, esta grilla fue pensada como un grafo, donde cada cuadrado de la grilla es un nodo y las aristas están dadas por la relación entre un cuadrado y sus 4 posibles vecinos. Para armar esta grilla, se calcularon los mínimos y máximos valores de las vallas (como se ve en la siguiente figura) en x y en y, ya que por fuera de estos los cuadrados que pertenezcan a la isla se inundarán de todos modos (ya que no hay vallas que los cubran).
 
 
 \begin{figure}[H]
@@ -482,7 +482,7 @@ Una vez obtenida la matriz elevada al cubo, es momento de buscar el mínimo elem
 Luego de obtener el menor nodo que se encuentra en un clique, hay que generar todas las demás combinaciones para ver cuales forman un clique. 
 Al generar todas las combinaciones de dos nodos la cantidad de operaciones para obtener la menor está en $O\left(n^2\right)$, ya que se requiere una cantidad constante de operaciones para generar cada combinación, verificar si es un clique y compararla con la menor hasta el momento.
 
-Luego, al tener todos los cálculos realizados para la busqueda del grupo Coppersmith, se puede ver por todo lo antedicho que la operación predominante esta dada por la multiplicación de las matrices que se realiza en $O\left(n^{log_2\left(7\right)}\right)$, siendo esta la complejidad del algoritmo para toda esta primer parte.
+Luego, al tener todos los cálculos realizados para la busqueda del grupo Coppersmith, se puede ver por todo lo antedicho que la operación predominante está dada por la multiplicación de las matrices que se realiza en $O\left(n^{log_2\left(7\right)}\right)$, siendo ésta la complejidad del algoritmo para toda esta primer parte.
 
 Por último se realizan las mismas operaciones sobre el grafo complemento. Para lo cual se invierte la matriz de adyacencias en $O \left( n^2 \right)$.
 
@@ -507,7 +507,7 @@ Por último, se destaca que para estos casos no se presentan gráficos ya que lo
 \subsection*{Casos para probar el tiempo de ejecución}
 \addcontentsline{toc}{subsection}{Casos para probar el tiempo de ejecución}
 
-En esta sección lo que se buscó fue generar varios casos de prueba que lograsen mostrar cuanto tarda el algoritmo para poder constatar estos resultados con la complejidad teórica calculada anteriormente. Para realizar esto, se generaron varios casos de pruebas con la siguientes características:
+En esta sección lo que se buscó fue generar varios casos de prueba que lograsen mostrar cuánto tarda el algoritmo para poder contrastar estos resultados con la complejidad teórica calculada anteriormente. Para realizar esto, se generaron varios casos de pruebas con la siguientes características:
 
 \begin{itemize}
 \item Los casos analizados contienen grupos de 32 a 680 personas.
