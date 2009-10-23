@@ -19,11 +19,11 @@
 \addcontentsline{toc}{section}{Aclaraciones Generales} 
 
 \begin{itemize}
-\item La implementaci\'on de todos los algoritmos se realiz\'o en lenguaje C++.
+\item La implementación de todos los algoritmos se realizó en lenguaje C++.
 
-\item Para calcular los tiempos de ejecuci\'on de los algoritmos se utiliz\'o la funci\'on gettimeofday(), que se encuentra en la librer\'ia $<sys/time.h>$. Dado que dicha funci\'on funciona solamente en sistemas operativos de tipo linux, se debe compilar con el flag -DTIEMPOS en este tipo de sistemas para poder hacer uso de las mismas.
+\item Para calcular los tiempos de ejecución de los algoritmos se utilizó la función gettimeofday(), que se encuentra en la librería $<sys/time.h>$. Dado que dicha función funciona solamente en sistemas operativos de tipo linux, se debe compilar con el flag -DTIEMPOS en este tipo de sistemas para poder hacer uso de las mismas.
 
-\item Para la realizaci\'on de los gr\'aficos se utiliz\'o Qtiplot
+\item Para la realización de los gráficos se utilizó Qtiplot
 \end{itemize}
 
 \end{center}
@@ -36,7 +36,7 @@
  
 \subsection*{Introducción}
 \addcontentsline{toc}{subsection}{Introducción} 
-En este ejercicio se pedía encontrar el peso de un matching de peso máximo dentro de un grafo. Se define como matching a un subconjunto de aristas que no comparten vértices. Si bien este ejercicio podría ser de gran complejidad, el mismo se encuentra en una presentación m\'as accesible dado que no hay que aplicar el algoritmo sobre cualquier tipo de grafos, sino que solamente tiene que ser aplicable a grafos de 3 o más nodos que sean ciclos simples, es decir, grafos que en su isomorfismo planar sean simplemente un dibujo de un polígono.
+En este ejercicio se pedía encontrar el peso de un matching de peso máximo dentro de un grafo. Se define como matching a un subconjunto de aristas que no comparten vértices. Si bien este ejercicio podría ser de gran complejidad, el mismo se encuentra en una presentación más accesible dado que no hay que aplicar el algoritmo sobre cualquier tipo de grafos, sino que solamente tiene que ser aplicable a grafos de 3 o más nodos que sean ciclos simples, es decir, grafos que en su isomorfismo planar sean simplemente un dibujo de un polígono.
 
 % aca podria ir algun dibujo de como serian los grafos a ver y como seria algun grafo que no hay que analizar.
 
@@ -142,7 +142,7 @@ A continuación se presenta un seguimiento del algoritmo sobre un ciclo simple d
 \subfloat{\includegraphics[width=0.3\textwidth]{imagenes/paso4b.png}}
 \qquad
 \subfloat{\includegraphics[width=0.3\textwidth]{imagenes/paso6a.png}}
-\caption{Ante\'ultimo Paso}
+\caption{Anteúltimo Paso}
 
 \end{figure}
 
@@ -161,14 +161,14 @@ peso( maxmatching$(C_{1,n-1}) ) ) $.
 
 Para lo cual vamos a suponer que $S = maxmatching(C)$ y que $peso(S) \neq max(peso({C_n} \cup maxmatching(C_{1,n-2})) , peso(maxmatching(C_{1,n-1})))$. Peso(s) no puede ser menor ya que es un matching de peso máximo. Luego su peso es mayor.
 
- $ C_n \in S $, ya que si no fuera as\'i, entonces S es un matching de $C_{1,n-1}$, y por lo tanto el peso de S debe ser menor o igual al de $maxmatching(C_{1,n-1})$, pero supusimos que $peso(S) > peso(maxmatching(C_{1,n-1}))$. 
+ $ C_n \in S $, ya que si no fuera así, entonces S es un matching de $C_{1,n-1}$, y por lo tanto el peso de S debe ser menor o igual al de $maxmatching(C_{1,n-1})$, pero supusimos que $peso(S) > peso(maxmatching(C_{1,n-1}))$. 
 
 
 Como $ C_n \in S $, luego $ C_{n-1} \notin S$, luego  S - $C_n $ es un matching de $C_{1,n-2}$.
 
 
 Como peso$({C_n} \cup$  maxmatching $(C_{1,n-2})) = peso(C_n) + peso(maxmatching(C_{1,n-2}))$
-y $peso({C_n} \cup maxmatching(C_{1,n-2})) < peso(S)$, entonces $peso(maxmatching(C_{1,n-2})) < peso(S - {C_n})$, pero $S - {C_n}$ es un matching de $C_{1,n-2}$, por lo tanto $peso(S - {C_n}) \leq peso(maxmatching(C_{1,n-2}))$. LLegamos a un absurdo, producto de suponer que   $peso(S) \neq max(peso({C_n} \cup maxmatching(C_{1,n-2}), maxmatching(C_{1,n-1})) $.
+y $peso({C_n} \cup maxmatching(C_{1,n-2})) < peso(S)$, entonces $peso(maxmatching(C_{1,n-2})) < peso(S - {C_n})$, pero $S - {C_n}$ es un matching de $C_{1,n-2}$, por lo tanto $peso(S - {C_n}) \leq peso(maxmatching(C_{1,n-2}))$. Llegamos a un absurdo, producto de suponer que   $peso(S) \neq max(peso({C_n} \cup maxmatching(C_{1,n-2}), maxmatching(C_{1,n-1})) $.
 
 
 \subsection*{Complejidad}
@@ -259,7 +259,7 @@ En primer lugar se observa que, por restricción del problema, las vallas no pue
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.5\textwidth]{imagenes/im2_ej2.jpg} 
-\caption{Detecci\'on de m\'aximos y m\'inimos}
+\caption{Detección de máximos y mínimos}
 \end{figure}
 
 Al comenzar el algoritmo, todos los cuadrados están relacionados con sus vecinos con aristas de peso 0. Esto quiere decir que si un cuadrado se inunda, los cuadrados que estén relacionados con ese por una arista de peso 0 también se van a inundar. 
@@ -271,7 +271,7 @@ Por último, lo que se hace es crear una circunvalación de nodos que se inundan
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.5\textwidth]{imagenes/im3_ej2.jpg} 
-\caption{Generaci\'on del grafo}
+\caption{Generación del grafo}
 \end{figure}
 
 Se realiza BFS desde uno de los nodos de la circunvalación (que seguro se inunda, por estar por fuera de las vallas) y se cuenta cuántos nodos tiene la componente conexa que el BFS recorre por completo. Cabe destacar que dicho BFS toma que un nodo es vecino de otro si la arista que los une tiene peso menor a la marea, si no, se puede decir que la valla es efectiva entre esos dos nodos y no hay inundación de uno hacia el otro. Una vez obtenida la cantidad total de nodos dados por el recorrido en anchura, resta el último paso que es realizar la sustracción entre los nodos totales de la grilla, y los nodos inundados; obteniendo así, la cantidad total de nodos que no fueron inundados gracias a la protección de las vallas. Por último, como cada nodo representa un cuadrado de área 1, la cantidad de nodos no alcanzados por el BFS es igual al área no inundada.
@@ -303,14 +303,14 @@ areaNoInundada(){
 \item bfsContador(matriz): Recorre el grafo usando bfs, por cada nodo que visita suma uno a una variable que al final devuelve. Recorre todos los nodos que se inundan dado que son los que se relacionan (si la marea supera el peso de las aristas). De este modo al finalizar obtenemos cuántos nodos visitamos coincidiendo con cuántos nodos se inundan.
 \end{itemize}
 
-A continuaci\'on se presenta un seguimiento paso a paso del algoritmo, una vez ya conseguidos los m\'aximos y m\'inimos.
+A continuación se presenta un seguimiento paso a paso del algoritmo, una vez ya conseguidos los máximos y mínimos.
 
 \begin{figure}[H]
 \centering
-\subfloat[Grafo vacio]{\includegraphics[width=0.3\textwidth]{imagenes/grafSinVallas.png}}
+\subfloat[Grafo vacío]{\includegraphics[width=0.3\textwidth]{imagenes/grafSinVallas.png}}
 \qquad
 \subfloat[Grafo con vallas]{\includegraphics[width=0.3\textwidth]{imagenes/grafConVallas.png}}
-\caption{Isla vacia y posicionamiento de las vallas}
+\caption{Isla vacía y posicionamiento de las vallas}
 \end{figure}
 
 \begin{figure}[H]
@@ -335,7 +335,7 @@ A continuaci\'on se presenta un seguimiento paso a paso del algoritmo, una vez y
 
 \begin{figure}[H]
 \centering
-\subfloat[S\'eptimo Paso]{\includegraphics[width=0.2\textwidth]{imagenes/inundPaso7.png}}
+\subfloat[Séptimo Paso]{\includegraphics[width=0.2\textwidth]{imagenes/inundPaso7.png}}
 \qquad
 \subfloat[Octavo Paso]{\includegraphics[width=0.2\textwidth]{imagenes/inundPaso8.png}}
 \qquad
@@ -352,7 +352,7 @@ Si tomamos como tama\~no de entrada la cantidad de vallas (CV en adelante), y co
 
 En primer lugar, la función maxmin, busca máximos y mínimos linealmente en un vector de vallas, por lo cual es de orden O(CV) ya que se recorre todo el vector de vallas una vez.
 
-En segundo lugar, se realiza la asignaci\'on de toda la matriz mediante la información entregada por las vallas, en esta rutina se itera sobre todas las vallas y se asignan las relaciones entre los nodos a partir de las alturas de las vallas pasadas como parámetro. En el peor de los casos, se tienen que asignar las cuatro relaciones para cada uno de los nodos de la grilla. Como acceder al nodo se realiza en tiempo constante, y luego hacer los cuatros posibles cambios también se realiza en tiempo constante, esta rutina posee una complejidad de O(n) siendo n la cantidad de nodos de la grilla, ya que se realiza un ciclo sobre todos ellos, mientras que en cada iteración se realizan operaciones de complejidad O(1).
+En segundo lugar, se realiza la asignación de toda la matriz mediante la información entregada por las vallas, en esta rutina se itera sobre todas las vallas y se asignan las relaciones entre los nodos a partir de las alturas de las vallas pasadas como parámetro. En el peor de los casos, se tienen que asignar las cuatro relaciones para cada uno de los nodos de la grilla. Como acceder al nodo se realiza en tiempo constante, y luego hacer los cuatros posibles cambios también se realiza en tiempo constante, esta rutina posee una complejidad de O(n) siendo n la cantidad de nodos de la grilla, ya que se realiza un ciclo sobre todos ellos, mientras que en cada iteración se realizan operaciones de complejidad O(1).
 
 En último lugar, lo que se hace es realizar un BFS para lograr identificar la cantidad de nodos de la componente conexa que se inunda. La rutina de BFS tiene una complejidad de O(n+m) siendo n la cantidad de nodos del grafo, y m la cantidad de aristas del mismo. Sin embargo, en este caso podemos acotar m por 2*n, ya que en el peor de los casos, cada nodo posee 4 vecinos. Luego, la complejidad de BFS en este caso es O(n).
 
@@ -412,13 +412,13 @@ en particular, ya que si bien la idea de una inundación de una isla puede estar
 esta correlación hizo que el problema se pudiese realizar con un buen orden de complejidad y minimizando bastante bien la cantidad de 
 veces que se itera sobre las diferentes partes de la isla.
 \item Resulta de gran importancia tener en cuenta algunos peque\~{n}os detalles de dise\~{n}o, ya que estos pueden ser muy
-relevantes en el resultado final. Por ejemplo, en este algoritmo fue importante el hecho de agrandar la grilla una linea en cada dirección, si bien la complejidad del mismo no hubiese cambiado, se tendr\'ian que haber hechos varios BFS, generando un algoritmo un poco m\'as engorroso.
+relevantes en el resultado final. Por ejemplo, en este algoritmo fue importante el hecho de agrandar la grilla una linea en cada dirección, si bien la complejidad del mismo no hubiese cambiado, se tendrían que haber hechos varios BFS, generando un algoritmo un poco más engorroso.
 \item La complejidad teórica calculada se pudo contrastar empíricamente con los casos de prueba utilizados. Igualmente, 
 cabe destacar que se presentaron algunos pocos outliers que se desconoce su origen, para todos los demás datos, se puede ver que
 el tiempo de ejecución aumenta de manera lineal en función de la cantidad de nodos.
 \item Para poder analizar el tiempo de ejecución fue necesario buscar casos de prueba donde lo único que variase fuera la cantidad de nodos,
 si otro parámetro hubiese variado (la cantidad de vallas por ejemplo, o la disposición de las mismas) el tiempo de ejecución 
-podría haber fluctuado, ya que sin tener una relación con la cantidad de nodos dicha fluctuación tendr\'ia un efecto que no es deseado. 
+podría haber fluctuado, ya que sin tener una relación con la cantidad de nodos dicha fluctuación tendría un efecto que no es deseado. 
 \end{itemize}
 
 
@@ -447,7 +447,7 @@ Se considera que una terna es menor que otra si la primera componente de la prim
 \subsection*{Algoritmo}
 \addcontentsline{toc}{subsection}{Algoritmo}
 
-Para lograr el objetivo deseado se opt\'o por representar el problema utilizando un grafo en donde cada vértice del mismo representase a una persona diferente, mientras que las aristas fuesen las encargadas de representar las relaciones de conocimiento, teniendo así la presencia de una arista entre dos nodos diferentes si y solo si las personas representadas por dichos nodos se conocen.
+Para lograr el objetivo deseado se optó por representar el problema utilizando un grafo en donde cada vértice del mismo representase a una persona diferente, mientras que las aristas fuesen las encargadas de representar las relaciones de conocimiento, teniendo así la presencia de una arista entre dos nodos diferentes si y solo si las personas representadas por dichos nodos se conocen.
 
 
 Una vez obtenido el grafo de relación, lo que se busca es un clique de 3 nodos, ya que se puede ver que existe un clique de tres nodos si y sólo si las personas representadas por los nodos que estén en dicho clique se conocen todas entre sí\footnote{Ver Apéndice \ref{dem_clique}}.
@@ -473,7 +473,7 @@ Para analizar la complejidad del algoritmo, se va ir analizando qué se hace en 
 
 En primer lugar, se setea toda la matriz de adyacencias mediante la información obtenida del caso pertinente. Lo que se hace es ir poniendo en cada posición un 0 o un 1 según corresponda, es por esto que este paso es del orden de $n^2$, siendo $n$ la cantidad de nodos del grafo.
 
-Luego, se obtiene $C = A^3$ utilizando el algoritmo de Strassen para realizar el producto de matrices. La cantidad de operaciones que realiza este algoritmo está en $O\left(m^{log_2\left(7\right)}\right)$, para una matriz de $m$ filas y $m$ columnas.\footnote{Ver Referencia Bibliogr\'afica 1.} En el caso de que el grafo tenga $n$ nodos, es necesario generar una matriz de $m \times m$, con $m \leq 2n$, ya que es necesario que $m$ sea una potencia de dos. De esta forma, la cantidad de operaciones para realizar el producto de matrices está en $O\left(7 \times \left(n ^{log_2 \left( 7\right)} \right) \right) = O\left(n^{log_2\left(7\right)}\right)$.
+Luego, se obtiene $C = A^3$ utilizando el algoritmo de Strassen para realizar el producto de matrices. La cantidad de operaciones que realiza este algoritmo está en $O\left(m^{log_2\left(7\right)}\right)$, para una matriz de $m$ filas y $m$ columnas.\footnote{Ver Referencia Bibliográfica 1.} En el caso de que el grafo tenga $n$ nodos, es necesario generar una matriz de $m \times m$, con $m \leq 2n$, ya que es necesario que $m$ sea una potencia de dos. De esta forma, la cantidad de operaciones para realizar el producto de matrices está en $O\left(7 \times \left(n ^{log_2 \left( 7\right)} \right) \right) = O\left(n^{log_2\left(7\right)}\right)$.
 
 
 
@@ -494,27 +494,27 @@ Entonces, como se puede ver, la complejidad computacional del algoritmo en el mo
 
 \subsection*{Análisis de resultados}
 \addcontentsline{toc}{subsection}{Análisis de resultados}
-Para analizar el funcionamiento del algoritmo propuesto como soluci\'on del problema, se realizaron dos tipos de pruebas. Pruebas de correctitud, es decir tomar instancias chicas donde se conociese como deber\'ia ser la conformaci\'on de los dos grupos, para luego constrastarlo con los resultados del algoritmo; y, por otro lado, pruebas para poder visualizar emp\'iricamente el tiempo de ejecuci\'on del algoritmo.
+Para analizar el funcionamiento del algoritmo propuesto como solución del problema, se realizaron dos tipos de pruebas. Pruebas de correctitud, es decir tomar instancias chicas donde se conociese como debería ser la conformación de los dos grupos, para luego contrastarlo con los resultados del algoritmo; y, por otro lado, pruebas para poder visualizar empíricamente el tiempo de ejecución del algoritmo.
 
 \subsection*{Casos de Correctitud}
 \addcontentsline{toc}{subsection}{Casos de Correctitud}
-En este apartado, se centr\'o el estudio, en poder constratar con instancias conocidas el resultado del algoritmo Para esto, se realizaron los casos de prueba basados en los entregados por la c\'atedra. De esta manera, se pudo comparar los resultados que imprimio el algoritmo, con los resultados tambi\'en entregados por la c\'atedra. En todos los casos, la comparaci\'on fue satisfactoria. 
+En este apartado, se centró el estudio, en poder constatar con instancias conocidas el resultado del algoritmo Para esto, se realizaron los casos de prueba basados en los entregados por la cátedra. De esta manera, se pudo comparar los resultados que imprimió el algoritmo, con los resultados también entregados por la cátedra. En todos los casos, la comparación fue satisfactoria. 
 
-Cabe destacar que los casos utilizados para visualizar el tiempo de ejecuci\'on, explicados en la siguiente secci\'on, tambi\'en conformaron pruebas para la correctitud, ya que en los mismos las conformaciones de los dos grupos se podia ver manualmente aunque se tratasen de grupos numerosos.
+Cabe destacar que los casos utilizados para visualizar el tiempo de ejecución, explicados en la siguiente sección, también conformaron pruebas para la correctitud, ya que en los mismos las conformaciones de los dos grupos se podía ver manualmente aunque se tratasen de grupos numerosos.
 
-Por \'ultimo, se destaca que para estos casos no se presentan gr\'aficos ya que los tiempos de corrida de los mismos no result\'o relevante, sino solamente su correctitud.
+Por último, se destaca que para estos casos no se presentan gráficos ya que los tiempos de corrida de los mismos no resultó relevante, sino solamente su correctitud.
 
-\subsection*{Casos para probar el tiempo de ejecuci\'on}
-\addcontentsline{toc}{subsection}{Casos para probar el tiempo de ejecuci\'on}
+\subsection*{Casos para probar el tiempo de ejecución}
+\addcontentsline{toc}{subsection}{Casos para probar el tiempo de ejecución}
 
-En esta secci\'on lo que se busc\'o fue generar varios casos de prueba que lograsen mostrar cuanto tarda el algoritmo para poder constratar estos resultados con la complejidad te\'orica calculada anteriormente. Para realizar esto, se generaron varios casos de pruebas con la siguientes caracter\'isticas:
+En esta sección lo que se buscó fue generar varios casos de prueba que lograsen mostrar cuanto tarda el algoritmo para poder constatar estos resultados con la complejidad teórica calculada anteriormente. Para realizar esto, se generaron varios casos de pruebas con la siguientes características:
 
 \begin{itemize}
 \item Los casos analizados contienen grupos de 32 a 680 personas.
-\item Todos los casos contienen las mismas relaciones, las unicas relaciones de conocimiento que existen son entre la persona 1 y la 2, entre la persona 1 y la 3 y entre la persona 2 y la 3. De esta manera, los grupos conformados en todos los casos son los mismos.
-\item Por lo dicho anteriormente, todos los casos deber\'ian tener diferencia en el tiempo de ejecuci\'on en la multiplicaci\'on de matrices, ya que luego los grupos se encuentran rapidamente y para todos por igual.
+\item Todos los casos contienen las mismas relaciones, las únicas relaciones de conocimiento que existen son entre la persona 1 y la 2, entre la persona 1 y la 3 y entre la persona 2 y la 3. De esta manera, los grupos conformados en todos los casos son los mismos.
+\item Por lo dicho anteriormente, todos los casos deberían tener diferencia en el tiempo de ejecución en la multiplicación de matrices, ya que luego los grupos se encuentran rápidamente y para todos por igual.
 \end{itemize}
-A continuaci\'on se presentan dos gr\'aficos con los tiempos obtenidos en las corridas, en primer lugar se muestran todos los casos, y luego se muestran los que solamente involucran potencias de dos en la cantidad de personas.
+A continuación se presentan dos gráficos con los tiempos obtenidos en las corridas, en primer lugar se muestran todos los casos, y luego se muestran los que solamente involucran potencias de dos en la cantidad de personas.
 
 \begin{figure}[H]
 \centering
@@ -530,17 +530,17 @@ A continuaci\'on se presentan dos gr\'aficos con los tiempos obtenidos en las co
 
 
 
-Como se puede ver en el gr\'afico, los resultados arrojados se condicen con el an\'alisis te\'orico realizado anteriormente. Es notable ver que es la multiplicaci\'on de matrices la que domina el tiempo de ejecuci\'on y como el algoritmo de strassen toma por igual un grupo de 35 personas o uno de 62 personas, porque de todas maneras la matriz que procesa es de la potencia de dos que primero acota por arriba a estos n\'umeros, se puede ver como el gr\'afico presenta \emph{escalones} que van creciendo cuando se pasa a la siguiente potencia de dos.
+Como se puede ver en el gráfico, los resultados arrojados se condicen con el análisis teórico realizado anteriormente. Es notable ver que es la multiplicación de matrices la que domina el tiempo de ejecución y como el algoritmo de Strassen toma por igual un grupo de 35 personas o uno de 62 personas, porque de todas maneras la matriz que procesa es de la potencia de dos que primero acota por arriba a estos números, se puede ver como el gráfico presenta \emph{escalones} que van creciendo cuando se pasa a la siguiente potencia de dos.
 
 
 \subsection*{Conclusiones}
 \addcontentsline{toc}{subsection}{Conclusiones}
-Luego de realizar el an\'alisis del algoritmo propuesto, se concluye en que:
+Luego de realizar el análisis del algoritmo propuesto, se concluye en que:
 
 \begin{itemize}
-\item Resulta de gran utilidad lograr modelar un problema con estructuras de datos que puedan resolver el problema de manera indirecta. Es decir, es importante poder extrapolar las relaciones entre las personas a la noci\'on de grafo, ya que resolver el problema de la clique en un grafo, result\'o ser an\'alogo al problema de conformar los grupos entre las personas.
-\item Se pudo verificar el comportamiento del algoritmo emp\'iricamente, ya que se puede denotar como, al necesitar el algoritmo de strassen matrices con potencias de dos, los tiempos de corridas resultan casi iguales para todos los grupos de personas donde los tama\~{n}os de los mismos se encuentren acotados por las mismas potencias de dos.
-\item Si bien el algoritmo de strassen logra bajar la complejidad te\'orica del problema, se cree que la implementaci\'on del mismo en realidad degrada la eficiencia del algoritmo para casos de prueba donde la cantidad de personas no es considerablemente alta debido al \emph{overhead} que introducen los c\'alculos intr\'insecos de este m\'etodo. Es decir, si bien la complejidad es menor, la constante de este algoritmo resulta en peores tiempos de ejecuci\'on para casos peque\~{n}os.
+\item Resulta de gran utilidad lograr modelar un problema con estructuras de datos que puedan resolver el problema de manera indirecta. Es decir, es importante poder extrapolar las relaciones entre las personas a la noción de grafo, ya que resolver el problema de la clique en un grafo, resultó ser análogo al problema de conformar los grupos entre las personas.
+\item Se pudo verificar el comportamiento del algoritmo empíricamente, ya que se puede denotar como, al necesitar el algoritmo de Strassen matrices con potencias de dos, los tiempos de corridas resultan casi iguales para todos los grupos de personas donde los tama\~{n}os de los mismos se encuentren acotados por las mismas potencias de dos.
+\item Si bien el algoritmo de Strassen logra bajar la complejidad teórica del problema, se cree que la implementación del mismo en realidad degrada la eficiencia del algoritmo para casos de prueba donde la cantidad de personas no es considerablemente alta debido al \emph{overhead} que introducen los cálculos intrínsecos de este método. Es decir, si bien la complejidad es menor, la constante de este algoritmo resulta en peores tiempos de ejecución para casos peque\~{n}os.
 \end{itemize}
 
 
@@ -573,7 +573,7 @@ Llamemos $G' = \left( V', E' \right)$ al complemento de $G$.  Sea $ C = \left( \
 
 Recíprocamente, si sabemos que $a$, $b$ y $c$ forman un grupo de tres personas que no se conocen entre sí, y sean $v_a, v_b, v_c$ los nodos que las representan, entonces como $a$ y $b$ no se conocen, $\left(v_a,v_b\right) \in E'$. Tampoco $b$ y $c$ se conocen, por lo que $\left(v_b,v_c\right) \in E'$. Por último $c$ y $a$ no se conocen, por lo cual $\left(v_c,v_a\right) \in E'$. Luego $\left( \left\lbrace v_a, v_b, v_c \right\rbrace, \left\lbrace  \left(v_a,v_b\right) , \left( v_b,v_c\right), \left( v_c, v_a\right) \right\rbrace\right)$ es un clique de tres, subgrafo de $G'$.
 
-\section{Bibliograf\'ia}
+\section{Bibliografía}
 \begin{itemize}
  \item Brassard G., Bratley P., "Fundamental of Algorithmics",Prentice Hall,1996
 \item Cormen, T.,Leiserson, C.,Rivest,R.,Stein, C.,"Introduction to Algorithms", The MIT Press, McGraw-Hill,2001
