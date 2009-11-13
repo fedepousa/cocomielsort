@@ -29,15 +29,16 @@ int main(){
 	int res; //Aca voy a acumular el resultado de una asignacion
 	int max=0; //Aca se guarda el maximo total
 	int aux; //Auxiliar para ir levantando
-	
+	vector<bool> asignacion_max;
 	while(entrada >> c >> v && !(c==-1 && v==-1)){
+		max = 0;
 		for(int i=0;i<c;++i){
 			vector< int > clausula;
 			clausulas.push_back(clausula);
 			entrada >> var;
 			for(int j=0;j<var;++j){
 				entrada >> aux;
-				clausulas[0].push_back(aux);
+				clausulas[i].push_back(aux);
 			}
 		}
 		
@@ -51,17 +52,33 @@ int main(){
 			asignacion.push_back(false);
 		}// Armo la primera asignacion posible poniendo todos en false.
 		
+		asignacion_max = asignacion;
 		
 		for(int i=0;i<cant;++i){
 			res = resolver(clausulas, asignacion);
 			if(res>max){
 				max = res;
+				asignacion_max = asignacion;
 			}
 			siguiente(asignacion,i+1);
 		}
 		
 		salida << max << endl;
+		salida << "C";
+		for(int i= 0; i<c;++i) {
+		  if(haceTrue(clausulas[i],asignacion_max)) {
+		    salida << " " << i + 1;
+      }
+    }
+    salida << endl << "V";
+    for(int i = 0;i<v;++i) {
+      if(asignacion_max[i]) {
+        salida << " " << i + 1;
+      }
+    }
+    salida << endl;
 		asignacion.clear();
+		asignacion_max.clear();
 		clausulas.clear();
 	}
 	return 0;
@@ -87,7 +104,7 @@ bool haceTrue(vector<int> &clausula, vector<bool> &asignacion){
 				break;
 			}	
 		} else {
-			if(asignacion[clausula[i]-1] == false){
+			if(asignacion[abs(clausula[i])-1] == false){
 				res = true;
 				break;
 			}
