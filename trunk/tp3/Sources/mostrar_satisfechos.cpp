@@ -35,7 +35,7 @@ int main(int argc, char * argv[] )
     // of processed files.
     // Can be configured with command line 
     // argument -l "some_list_file_name"
-    string list_name = "list.out";
+    string list_name = "list.output";
     int iteracion = 0;
     DIR *dir = opendir("."); 
     ofstream list(list_name.c_str());
