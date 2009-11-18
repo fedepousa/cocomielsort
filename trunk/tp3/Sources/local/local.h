@@ -1,8 +1,14 @@
 #include <vector>
 #include <cmath>
-
-
 #include <algorithm>
+#include <iostream>
+#include <vector>
+#include <fstream>
+
+
+using namespace std;
+
+
 
 
 bool haceTrue(vector<int> &clausula, vector<bool> &asignacion){
@@ -86,7 +92,9 @@ Str_local::Str_local(int c, int v, vector<bool> *asig, vector< vector< int > > *
 	clausulas = claus;
 	cant_ok_por_clausula = new unsigned int[c];
 	variables = new vector<str_incidencia> [v];
+	for(unsigned int i = 0; i<c; ++i) cant_ok_por_clausula[i] = 0;
 	clausulas_verdaderas = resolver(*clausulas,*asignacion);
+	
 }
 
 
@@ -105,7 +113,7 @@ void Str_local::estructurar(){
 			str_incidencia *nueva = new str_incidencia();
 			
 			//seteo el str_incidencia
-			nueva->indice =  abs( variable); //TODO
+			nueva->indice =  i; //TODO  CAMBIA ESTA LINEA POR I EN VEZ DE POR VARIABLES
 			nueva->p = (variable>0); 
 			
 			//pusheo la nueva estructura
@@ -148,17 +156,25 @@ int Str_local::resolverEspecial(unsigned int i, vector <str_incidencia> &variabl
 		
 			bool estaba_en_cero = (valor_por_clausula==0);
 		
-			valor_por_clausula+= (valor==positiva);
-			valor_por_clausula-= !(valor==positiva);
+			
+			if (valor==positiva) ++valor_por_clausula;
+			else --valor_por_clausula;
 			if(estaba_en_cero && (valor_por_clausula != 0)) ++clausulas_q_cambian;
 			if(!estaba_en_cero && (valor_por_clausula==0)) --clausulas_q_cambian;
-			if (cambiar) cant_ok_por_clausula[numero_clausula] = valor_por_clausula;
+			if (cambiar){ 
+				cant_ok_por_clausula[numero_clausula] = valor_por_clausula;
+				clausulas_verdaderas +=clausulas_q_cambian;
+			}
 		 }
 		 return (clausulas_q_cambian + clausulas_verdaderas);
 }
 	  
  
 void Str_local::elegir_asig_en_N(int &res, unsigned int &max_iteracion, unsigned int & i_max) {
+
+
+	
+	
   for(unsigned int i= 0; i <var; ++i){
       //niego una
       (*asignacion)[i] = !((*asignacion)[i]);
