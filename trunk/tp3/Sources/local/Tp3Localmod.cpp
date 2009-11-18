@@ -5,15 +5,22 @@
 #include <sys/time.h>
 #endif
 
+using namespace std;
+
+#include "local.h"
 
 #include <list>
 #include <set>
 #include <algorithm>
 
-using namespace std;
+
+
+
+
 
 struct Clausula;
 typedef int Variable;
+
 struct Literal {
   Literal() {
     //clausulas = new list<int>();
@@ -100,6 +107,7 @@ struct Asignacion {
   int n;
   bool *v;
 };
+
 Asignacion::~Asignacion() {
   delete [] v;
 }
@@ -111,20 +119,8 @@ static void construir(Caso &c, Asignacion &asig, list<int> &clausulas_satisfecha
 unsigned int resolver(vector< vector<int> > &clausulas, vector<bool> &asignacion);
 bool haceTrue(vector<int> &clausula, vector<bool> &asignacion);
 void siguiente(vector<bool> &asignacion, int cant);
-inline void elegir_asig_en_N(int v, vector<bool> &asignacion, int &res, vector< vector< int > > &clausulas, unsigned int &max_iteracion, unsigned int & i_max) {
-  for(unsigned int i= 0; i <v; ++i){
-      //niego una
-      asignacion[i] = not (asignacion[i]);
-      //me fijo a ver si negandola tengo un mejor resultado
-      res = resolver(clausulas, asignacion);
-      
-      //en caso de ser mejor, actualizo el max_iteracion y me guardo el indice que cambie
-      if (res> max_iteracion) {max_iteracion = res; i_max = i;} 
-      
-      //vuelvo a la asignacion de que parti
-      asignacion[i] = not (asignacion[i]);			
-    }  
-}
+
+
 
 
 int main(){
@@ -171,29 +167,48 @@ int main(){
 		 *inicialmente arranquemos con criterio de parada (hasta que deje de mejorar)
 		*/
 		
+
+		
 		list<int> satisfechas;
 		Asignacion asig(*caso);
-    construir(*caso, asig, satisfechas);
-    asignacion.assign(asig.v,asig.v + asig.n);
+        construir(*caso, asig, satisfechas);
+		asignacion.assign(asig.v,asig.v + asig.n);
 		//aca habria que hacer que al vector asignacion, le llegue una asignacion valida, llamando a otra resolucion.	
 		
 		
 		//el valor maximo hasta entonces
-		unsigned int max_iteracion = resolver(clausulas, asignacion);
+		unsigned int max_iteracion = resolver(clausulas, asignacion); // O(c* v)
 		unsigned int i_max;
 		unsigned int max_iteracion_maxima = max_iteracion;
 		bool bandera = true;
 		v = caso->cant_variables;
 		c = caso->cant_clausulas;
+		
+		///////////
+		//variables es un array de vectores de indices, los indices representan las clausulas en la cual
+		//incide la variable
+		
+
+
+		Str_local nueva(c,v,&asignacion,&clausulas);
+		
+		nueva.estructurar();
+		
+		nueva.contarOkPorClausula();
+
+
+		
+	
 		while(bandera){			
 			//busco donde tengo el maximo, modificando de a una asignacion.
-			elegir_asig_en_N(v, asignacion, res, clausulas, max_iteracion, i_max);
-			
+			nueva.elegir_asig_en_N(res, max_iteracion, i_max);
+
 			
 			if (max_iteracion_maxima < max_iteracion){
 				//si estoy aca es pq encontre una mejor configuracion, entonces cambio asignaciones realmente
 				asignacion[i_max] = not (asignacion[i_max]);
-				max_iteracion_maxima = max_iteracion;
+				nueva.resolverEspecial(i_max, ((nueva.variables)[i_max]),((asignacion)[i_max]),true);
+				
 			} else bandera = false;
 			
 			
@@ -222,34 +237,6 @@ int main(){
 	return 0;
 }
 
-unsigned int resolver(vector< vector<int> > &clausulas, vector<bool> &asignacion){
-	unsigned int res = 0;	
-	unsigned int cant = clausulas.size();
-	for(unsigned int i=0; i<cant;++i){
-		if(haceTrue(clausulas[i], asignacion)){
-			res++;
-		}
-	}
-	return res;
-}
-
-bool haceTrue(vector<int> &clausula, vector<bool> &asignacion){
-	bool res = false;
-	for(unsigned int i=0; i<clausula.size();++i){
-		if(clausula[i]>0){
-			if(asignacion[clausula[i]-1] == true){
-				res = true;
-				break;
-			}	
-		} else {
-			if(asignacion[abs(clausula[i])-1] == false){
-				res = true;
-				break;
-			}
-		}
-	}
-	return res;
-}
 
 void siguiente(vector<bool> &asignacion, int cual){
 	int cant = asignacion.size();
@@ -260,6 +247,8 @@ void siguiente(vector<bool> &asignacion, int cual){
 		cual /= 2;
 	}
 }
+
+
 
 
 
