@@ -3,47 +3,10 @@
 #include <algorithm>
 #include <iostream>
 #include <vector>
-#include <fstream>
 
 
 using namespace std;
 
-
-
-
-bool haceTrue(vector<int> &clausula, vector<bool> &asignacion){
-	// Como clausula.size representa la cantidad de literales 
-	// y la cantidad de literales es a lo sumo dos veces la cantidad de variable por clausula
-	// esto es O(v)
-	bool res = false;
-	for(unsigned int i=0; i<clausula.size();++i){
-		if(clausula[i]>0){
-			if(asignacion[clausula[i]-1] == true){
-				res = true;
-				break;
-			}	
-		} else {
-			if(asignacion[abs(clausula[i])-1] == false){
-				res = true;
-				break;
-			}
-		}
-	}
-	return res;
-}
-
-
-unsigned int resolver(vector< vector<int> > &clausulas, vector<bool> &asignacion){
-//O(c * v )
-	unsigned int res = 0;	
-	unsigned int cant = clausulas.size();
-	for(unsigned int i=0; i<cant;++i){
-		if(haceTrue(clausulas[i], asignacion)){
-			res++;
-		}
-	}
-	return res;
-}
 
 
 class Str_local{
@@ -52,14 +15,11 @@ class Str_local{
 	
 	
 	
-	struct str_incidencia{
-			unsigned int indice;
-			bool p;
-		};
+		struct str_incidencia{ unsigned int indice; bool p;	};
 	
-		Str_local(int c, int v, vector<bool> *asig, vector< vector< int > > *claus);
+		Str_local(int c, int v, vector<bool> *asig, vector< vector< int > > *claus, unsigned int clau_verd);
 		
-		~Str_local(){};
+		~Str_local();
 		
 
 		void estructurar();
@@ -72,12 +32,10 @@ class Str_local{
 		void elegir_asig_en_N(int &res, unsigned int &max_iteracion, unsigned int & i_max);
 
 
-	
-
 		int clau;
 		int var;
 		unsigned int clausulas_verdaderas;
-		vector<str_incidencia> *variables; //array de vectors
+		vector<str_incidencia> *variables; // Array de vectors
 		unsigned int *cant_ok_por_clausula;
 		vector<bool> *asignacion;
 		vector< vector< int > > *clausulas;
@@ -85,7 +43,7 @@ class Str_local{
 
 
 
-Str_local::Str_local(int c, int v, vector<bool> *asig, vector< vector< int > > *claus){
+Str_local::Str_local(int c, int v, vector<bool> *asig, vector< vector< int > > *claus, unsigned int clau_verd){
 	clau = c;
 	var = v;
 	asignacion = asig;
@@ -93,7 +51,17 @@ Str_local::Str_local(int c, int v, vector<bool> *asig, vector< vector< int > > *
 	cant_ok_por_clausula = new unsigned int[c];
 	variables = new vector<str_incidencia> [v];
 	for(unsigned int i = 0; i<c; ++i) cant_ok_por_clausula[i] = 0;
-	clausulas_verdaderas = resolver(*clausulas,*asignacion);
+	clausulas_verdaderas = clau_verd;
+	
+}
+
+Str_local::~Str_local(){
+	
+	//borro el vector que lleva la suma de las clausulas
+	delete [] cant_ok_por_clausula;	
+	
+	//borro el array variables
+	delete [] variables;
 	
 }
 
@@ -102,7 +70,6 @@ Str_local::Str_local(int c, int v, vector<bool> *asig, vector< vector< int > > *
 void Str_local::estructurar(){
 	vector< vector<int> > *clausu = clausulas;
 	unsigned int c= clausu->size();
-		
 	for(unsigned int i = 0; i<c;++i){
 		unsigned int long_clau = ((*clausu)[i]).size();
 		for(unsigned int j = 0; j<long_clau;++j){
@@ -110,15 +77,16 @@ void Str_local::estructurar(){
 			int variable = ((*clausu)[i])[j];
 			
 			//creo una str_indicencia nuevo para meterlo en el vector
-			str_incidencia *nueva = new str_incidencia();
-			
+
+			str_incidencia *nueva = new str_incidencia;
 			//seteo el str_incidencia
-			nueva->indice =  i; //TODO  CAMBIA ESTA LINEA POR I EN VEZ DE POR VARIABLES
+			nueva->indice =  i; 
 			nueva->p = (variable>0); 
 			
 			//pusheo la nueva estructura
-			variables[ abs( variable)-1].push_back(*nueva); //TODO
-		}
+			variables[ abs( variable)-1].push_back(*nueva);
+			delete nueva;
+			}
 	}
 	
 	
@@ -169,20 +137,14 @@ int Str_local::resolverEspecial(unsigned int i, vector <str_incidencia> &variabl
 		 return (clausulas_q_cambian + clausulas_verdaderas);
 }
 	  
- 
 void Str_local::elegir_asig_en_N(int &res, unsigned int &max_iteracion, unsigned int & i_max) {
-
-
-	
-	
   for(unsigned int i= 0; i <var; ++i){
       //niego una
       (*asignacion)[i] = !((*asignacion)[i]);
 	  
       //me fijo a ver si negandola tengo un mejor resultado
       res = Str_local::resolverEspecial(i, ((variables)[i]),((*asignacion)[i]),false);
-	  
-     
+	       
       //en caso de ser mejor, actualizo el max_iteracion y me guardo el indice que cambie
       if (res> max_iteracion) {max_iteracion = res; i_max = i;} 
       
