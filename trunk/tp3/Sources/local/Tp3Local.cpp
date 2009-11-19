@@ -8,13 +8,9 @@
 using namespace std;
 
 #include "local.h"
-
 #include <list>
 #include <set>
 #include <algorithm>
-
-
-
 
 
 
@@ -113,7 +109,7 @@ Asignacion::~Asignacion() {
 }
 
 
-
+//Prototipos de las heredadas
 static bool leer(ifstream &entrada, Caso **c,vector< vector<int> > &claus);
 static void construir(Caso &c, Asignacion &asig, list<int> &clausulas_satisfechas);
 unsigned int resolver(vector< vector<int> > &clausulas, vector<bool> &asignacion);
@@ -121,6 +117,35 @@ bool haceTrue(vector<int> &clausula, vector<bool> &asignacion);
 void siguiente(vector<bool> &asignacion, int cant);
 
 
+
+//Escribe el resultado en el ofstream salida
+void escribirResultados(ofstream &salida, Str_local  &nueva, vector<bool> &asignacion,unsigned int max_iteracion_maxima,int c,int v){
+		//pongo en max el valor de la mejor iteracion que tuve
+		salida << max_iteracion_maxima << endl;
+		salida << "C";
+		for(int i= 0; i<c;++i) if(nueva.cant_ok_por_clausula[i])  salida << " " << i + 1;
+		salida << endl << "V";
+		for(int i = 0;i<v;++i) 	if(asignacion[i]) salida << " " << i+1;
+	    salida << endl;
+}
+
+//En globa la real accion de local (el ex-while bandera)
+void local(int &res, unsigned int &max_iteracion, unsigned int &max_iteracion_maxima, unsigned int &i_max, Str_local &nueva,vector<bool> &asignacion, bool &bandera){
+
+		while(bandera){			
+			//busco donde tengo el maximo, modificando de uno en uno la asignacion.
+			nueva.elegir_asig_en_N(res, max_iteracion, i_max);
+
+			if (max_iteracion_maxima < max_iteracion){
+				//Si estoy aca es pq encontre una mejor configuracion, entonces cambio asignaciones realmente
+				nueva.resolverEspecial(i_max, ((nueva.variables)[i_max]),((asignacion)[i_max]),true);
+				asignacion[i_max] = not (asignacion[i_max]);
+				max_iteracion_maxima = max_iteracion;
+				
+			} else bandera = false; // Si llegue aca es que no mejoro, osea que cai en un extremo local, por lo tanto termina.
+			
+		}
+}
 
 
 int main(){
@@ -141,31 +166,9 @@ int main(){
 	int res; //Aca voy a acumular el resultado de una asignacion
 	int max=0; //Aca se guarda el maximo total
 	int aux; //Auxiliar para ir levantando
-	
-	
-	
 	Caso *caso;
-	while(leer(entrada,&caso,clausulas)) {//entrada >> c >> v && !(c==-1 && v==-1)){
-			//para leer
-			/*
-		for(int i=0;i<c;++i){
-			vector< int > clausula;
-			clausulas.push_back(clausula);
-			entrada >> var;
-			for(int j=0;j<var;++j){
-				entrada >> aux;
-				clausulas[0].push_back(aux);
-			}
-		}
-		*/
-		/*La idea es dado una asignacion generada por otro algortimo
-		 *modificar (de a uno), para toda clausula su valor, para a ver si mejora o no la solcion.
-		 * en cuanto al criterio de parada podemos probar varios.
-		 * - hasta que deje de mejorar 
-		 * - x iteraciones
-		 * - x tiempo
-		 *inicialmente arranquemos con criterio de parada (hasta que deje de mejorar)
-		*/
+	
+	while(leer(entrada,&caso,clausulas)) {
 		
 
 		
@@ -178,57 +181,33 @@ int main(){
 		v = caso->cant_variables;
 		c = caso->cant_clausulas;
 		
-		//pongo todo en cero a ver si resuelve bien
-		for(int i = 0;i<asignacion.size();++i) asignacion[i]=false;
 		
-		//el valor maximo hasta entonces
-		unsigned int max_iteracion = resolver(clausulas, asignacion); // O(c* v)
+			
+		//El valor maximo hasta entonces
+		unsigned int max_iteracion = resolver(clausulas, asignacion); 
 		unsigned int max_iteracion_maxima = max_iteracion;
 		bool bandera = true;
 		unsigned int i_max;
 		
 
-		Str_local nueva(c,v,&asignacion,&clausulas);
+
+		Str_local nueva(c,v,&asignacion,&clausulas,max_iteracion);
 		nueva.estructurar();
 		nueva.contarOkPorClausula();
 
+		local(res,max_iteracion,max_iteracion_maxima,i_max,nueva,asignacion,bandera);
 
-
-
-		while(bandera){			
-			//busco donde tengo el maximo, modificando de a una asignacion.
-			
-			nueva.elegir_asig_en_N(res, max_iteracion, i_max);
-
-			
-			if (max_iteracion_maxima < max_iteracion){
-				//si estoy aca es pq encontre una mejor configuracion, entonces cambio asignaciones realmente
-				nueva.resolverEspecial(i_max, ((nueva.variables)[i_max]),((asignacion)[i_max]),true);
-				asignacion[i_max] = not (asignacion[i_max]);
-				max_iteracion_maxima = max_iteracion;
-				
-			} else bandera = false;
-			
-		}
+	/*		
+		//Mostra por consola la asignacion final
+		cout<<" Asignacion final: "; 
+		for(int i = 0;i<v;++i)  cout << " " << asignacion[i];
+		cout<<endl;
+	*/	
 		
-			cout<<" Asignacion final: ";
-		    for(int i = 0;i<v;++i)  cout << " " << asignacion[i];
-			cout<<endl;
+		//Volcar resultados en archivo.
+		escribirResultados(salida,nueva,asignacion,max_iteracion_maxima,c,v);
 		
-		//pongo en max el valor de la mejor iteracion que tuve
-		salida << max_iteracion_maxima << endl;
-		salida << "C";
-		for(int i= 0; i<c;++i) {
-		  if(nueva.cant_ok_por_clausula[i]) {
-		    salida << " " << i + 1;
-      }
-    }
-    salida << endl << "V";
-    for(int i = 0;i<v;++i) {
-		if(asignacion[i]) salida << " " << i+1;
 
-    }
-    salida << endl;
 		asignacion.clear();
 		clausulas.clear();
 		
@@ -237,6 +216,38 @@ int main(){
 }
 
 
+
+bool haceTrue(vector<int> &clausula, vector<bool> &asignacion){
+	// Como clausula.size representa la cantidad de literales 
+	// y la cantidad de literales es a lo sumo dos veces la cantidad de variable por clausula
+	// esto es O(v)
+	bool res = false;
+	for(unsigned int i=0; i<clausula.size();++i){
+		if(clausula[i]>0){
+			if(asignacion[clausula[i]-1] == true){
+				res = true;
+				break;
+			}	
+		} else {
+			if(asignacion[abs(clausula[i])-1] == false){
+				res = true;
+				break;
+			}
+		}
+	}
+	return res;
+}
+unsigned int resolver(vector< vector<int> > &clausulas, vector<bool> &asignacion){
+//O(c * v )
+	unsigned int res = 0;	
+	unsigned int cant = clausulas.size();
+	for(unsigned int i=0; i<cant;++i){
+		if(haceTrue(clausulas[i], asignacion)){
+			res++;
+		}
+	}
+	return res;
+}
 void siguiente(vector<bool> &asignacion, int cual){
 	int cant = asignacion.size();
 	for(int i=0;i<cant;++i){
@@ -246,11 +257,6 @@ void siguiente(vector<bool> &asignacion, int cual){
 		cual /= 2;
 	}
 }
-
-
-
-
-
 static bool leer(ifstream &entrada, Caso **d, vector< vector<int> > &claus) {
   bool success;
   claus.clear();
