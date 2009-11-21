@@ -44,14 +44,14 @@ void escribirResultados(ofstream &salida, Str_local  &nueva, vector<bool> &asign
 //En globa la real accion de local (el ex-while bandera)
 void local(int &res, unsigned int &max_iteracion, unsigned int &max_iteracion_maxima, unsigned int &i_max, Str_local &nueva,vector<bool> &asignacion, bool &bandera){
 
-		while(bandera){			
+		while(bandera){	
 			//busco donde tengo el maximo, modificando de uno en uno la asignacion.
 			nueva.elegir_asig_en_N(res, max_iteracion, i_max);
 
 			if (max_iteracion_maxima < max_iteracion){
 				//Si estoy aca es pq encontre una mejor configuracion, entonces cambio asignaciones realmente
-				nueva.resolverEspecial(i_max, ((nueva.variables)[i_max]),((asignacion)[i_max]),true);
 				asignacion[i_max] = not (asignacion[i_max]);
+				nueva.resolverEspecial(i_max, ((nueva.variables)[i_max]),((asignacion)[i_max]),true);
 				max_iteracion_maxima = max_iteracion;
 				
 			} else bandera = false; // Si llegue aca es que no mejoro, osea que cai en un extremo local, por lo tanto termina.
