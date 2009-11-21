@@ -83,7 +83,9 @@ int main(){
 	while(leer(entrada,&caso,clausulas)) {
 		
 
-		
+		#ifdef TIEMPOS
+		gettimeofday(&inicio, NULL);
+	  #endif
 		list<int> satisfechas;
 		Asignacion asig(*caso);
         construir(*caso, asig, satisfechas);
@@ -108,7 +110,12 @@ int main(){
 		nueva.contarOkPorClausula();
 
 		local(res,max_iteracion,max_iteracion_maxima,i_max,nueva,asignacion,bandera);
-
+    #ifdef TIEMPOS
+		gettimeofday(&fin, NULL);
+		diferencia = (fin.tv_sec - inicio.tv_sec)*1000000 + fin.tv_usec - inicio.tv_usec;
+		
+		tiempos << diferencia << endl;
+		#endif
 	/*		
 		//Mostra por consola la asignacion final
 		cout<<" Asignacion final: "; 

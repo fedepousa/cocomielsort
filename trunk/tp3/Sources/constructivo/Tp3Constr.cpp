@@ -101,9 +101,24 @@ static void resolver(ofstream &salida, Caso &c);
 int main() {
   ifstream entrada("Tp3.in");
   ofstream salida("Tp3Constr.out");
+  #ifdef TIEMPOS
+	ofstream tiempos("Tp3TabuTiempos.out");
+	timeval inicio;
+	timeval fin;
+	double diferencia;
+	#endif
   Caso *c;
   while(leer(entrada,&c)) {
+    #ifdef TIEMPOS
+		gettimeofday(&inicio, NULL);
+	  #endif
     resolver(salida,*c);
+    #ifdef TIEMPOS
+		gettimeofday(&fin, NULL);
+		diferencia = (fin.tv_sec - inicio.tv_sec)*1000000 + fin.tv_usec - inicio.tv_usec;
+		
+		tiempos << diferencia << endl;
+		#endif
     delete c;
   }
   return 0;
