@@ -131,9 +131,11 @@ int Str_local::resolverEspecial(unsigned int i, vector <str_incidencia> &variabl
 			if(!estaba_en_cero && (valor_por_clausula==0)) --clausulas_q_cambian;
 			if (cambiar){ 
 				cant_ok_por_clausula[numero_clausula] = valor_por_clausula;
-				clausulas_verdaderas +=clausulas_q_cambian;
 			}
 		 }
+		 if(cambiar) {
+				clausulas_verdaderas +=clausulas_q_cambian;
+     }
 		 return (clausulas_q_cambian + clausulas_verdaderas);
 }
 	  
@@ -143,7 +145,7 @@ void Str_local::elegir_asig_en_N(int &res, unsigned int &max_iteracion, unsigned
       (*asignacion)[i] = !((*asignacion)[i]);
 	  
       //me fijo a ver si negandola tengo un mejor resultado
-      res = Str_local::resolverEspecial(i, ((variables)[i]),((*asignacion)[i]),false);
+      res = resolverEspecial(i, ((variables)[i]),((*asignacion)[i]),false);
 	       
       //en caso de ser mejor, actualizo el max_iteracion y me guardo el indice que cambie
       if (res> max_iteracion) {max_iteracion = res; i_max = i;} 
