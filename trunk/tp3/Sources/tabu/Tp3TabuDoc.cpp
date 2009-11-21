@@ -143,6 +143,13 @@ inline void elegir_asig_en_N(int v, vector<bool> &asignacion, int &res, vector< 
     }  
 }
 
+void mostrar_vector(vector<bool> &a) {
+  for(vector<bool>::iterator it = a.begin(); it!=a.end();++it) {
+    cout << *it << " , " ;
+    
+  }
+  cout << endl;
+}
 
 int main(){
 	ifstream entrada("Tp3.in");
@@ -210,14 +217,14 @@ int main(){
 			//busco donde tengo el maximo, modificando de a una asignacion.
 			max_iteracion = 0;
 			elegir_asig_en_N(v, asignacion, res, clausulas, max_iteracion, i_max, max_iteracion_maxima);
+			++iteracion;
 			
-			
-			if (iteracion < cant_iteraciones && iteracion < iteracion_ultimo_maximo + 2*tabu_longitud){
+			if (iteracion < iteracion_ultimo_maximo + cant_iteraciones){
+        //cambio asignaciones realmente
+        asignacion[i_max] = not (asignacion[i_max]);
+        tabu_lit[i_max] = iteracion;
 			  if(max_iteracion > max_iteracion_maxima) {
-          //si estoy aca es pq encontre una mejor configuracion, entonces cambio asignaciones realmente
-          asignacion[i_max] = not (asignacion[i_max]);
-	  			max_iteracion_maxima = max_iteracion;
-          tabu_lit[i_max] = iteracion;
+          max_iteracion_maxima = max_iteracion;
           iteracion_ultimo_maximo = iteracion;
         }
       } else bandera = false;
