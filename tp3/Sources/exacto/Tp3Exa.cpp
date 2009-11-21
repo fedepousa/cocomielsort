@@ -42,7 +42,9 @@ int main(){
 			}
 		}
 		
-		
+		#ifdef TIEMPOS
+		gettimeofday(&inicio, NULL);
+	  #endif
 		int cant = 1;
 		for(int i=0;i<v;++i){
 			cant *= 2;
@@ -62,7 +64,12 @@ int main(){
 			}
 			siguiente(asignacion,i+1);
 		}
+		#ifdef TIEMPOS
+		gettimeofday(&fin, NULL);
+		diferencia = (fin.tv_sec - inicio.tv_sec)*1000000 + fin.tv_usec - inicio.tv_usec;
 		
+		tiempos << diferencia << endl;
+		#endif
 		salida << max << endl;
 		salida << "C";
 		for(int i= 0; i<c;++i) {
