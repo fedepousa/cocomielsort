@@ -49,14 +49,9 @@ struct Literal {
 
 struct Clausula {
   Clausula() {
-    l = new list<Literal>();
   };
-  Clausula(const Clausula & otro) : l(otro.l) {};
+  Clausula(const Clausula & otro) : numero(otro.numero) {};
   int numero;
-  list<Literal> *l;
-  bool operator< (const Clausula &c) const {
-    return numero < c.l->size();
-  }
 };
 
 
@@ -135,11 +130,9 @@ static bool leer(ifstream &entrada, Caso **d) {
         
         if(temp_literal.negacion) {
           c->literales_negados[temp_literal.v-1].clausulas.insert(i+1);
-          temp_clausula.l->push_back(c->literales_negados[temp_literal.v-1]);
         }
         else {
           c->literales[temp_literal.v-1].clausulas.insert(i+1) ;
-          temp_clausula.l->push_back(c->literales[temp_literal.v-1]);
         }
         
       }    
