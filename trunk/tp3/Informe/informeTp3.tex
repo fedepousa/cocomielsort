@@ -1,0 +1,63 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{graphicx}
+\usepackage{verbatim}
+% \usepackage{lstlisting}
+\usepackage{subfig}
+\usepackage{float}
+ \usepackage[spanish]{babel}   %ver bien como es
+\usepackage[utf8]{inputenc}
+
+
+\begin{document}
+
+\tableofcontents
+
+\newpage
+
+
+\begin{center}
+\section*{Aclaraciones Generales}
+\addcontentsline{toc}{section}{Aclaraciones Generales} 
+
+\begin{itemize}
+\item La implementación de todos los algoritmos se realizó en lenguaje C++.
+
+\item Para calcular los tiempos de ejecución de los algoritmos se utilizó la función gettimeofday(), que se encuentra en la librería $<sys/time.h>$. Dado que dicha función funciona solamente en sistemas operativos de tipo linux, se debe compilar con el flag -DTIEMPOS en este tipo de sistemas para poder hacer uso de las mismas.
+
+\item Para la realización de los gráficos se utilizó Qtiplot
+\end{itemize}
+
+\end{center}
+
+\newpage
+
+\begin{center}
+\section*{Situaciones de la vida real que se pueden modelar utilizando MAX-SAT}
+\addcontentsline{toc}{section}{Situaciones de la vida real que se pueden modelar utilizando MAX-SAT} 
+\end{center}
+
+
+\begin{center}
+\section*{Algoritmo exacto para MAX-SAT}
+\addcontentsline{toc}{section}{Algoritmo exacto para MAX-SAT} 
+\end{center}
+
+
+\begin{center}
+\section*{Heur\'istica constructiva para MAX-SAT}
+\addcontentsline{toc}{section}{Heur\'istica constructiva para MAX-SAT} 
+\end{center}
+
+
+\begin{center}
+\section*{Heur\'istica de b\'usqueda para MAX-SAT}
+\addcontentsline{toc}{section}{Heur\'istica de b\'usqueda para MAX-SAT} 
+\end{center}
+
+
+\begin{center}
+\section*{Metaheur\'istica de b\'usqueda tab\'u [1,2] para MAX-SAT}
+\addcontentsline{toc}{section}{Metaheur\'istica de b\'usqueda tab\'u [1,2] para MAX-SAT} 
+\end{center}
+
+\end{document}
