@@ -1,0 +1,3 @@
+\select@language {spanish}
+\contentsline {section}{Aclaraciones Generales}{2}
+\contentsline {section}{Comandos b\'asicos de Unix}{2}
