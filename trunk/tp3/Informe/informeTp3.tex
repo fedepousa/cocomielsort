@@ -31,33 +31,41 @@
 
 \newpage
 
-\begin{center}
+\section*{Introducci\'on}
+\addcontentsline{toc}{section}{Introducci\'on}
+
+En el presente trabajo se busc\'o realizar diferentes aproximaciones a la resoluci\'on del problema MAX-SAT. El problema MAX-SAT es un problema de optimizaci\'on proveniente del problema de decisi\'on SAT. 
+
+El problema SAT se basa es decidir si un conjunto de clausulas en forma normal conjuntiva, tiene alguna asignaci\'on de las variables que las componenen, tal que la evaluaci\'on de todas las clasulas sea verdadera con dicha asignaci\'on.
+
+El problema SAT es un problema muy importante dentro del campo de la teoria de la complejidad, esto se debe a que SAT fue el primer problema que se identific\'o como NP-Completo. El Teorema de Cook demuestra que el algoritmo SAT pertenece a esta clase de algoritmos.
+
+La importancia de este algoritmo no radica solamente en haber sido el primero en ser caracterizado como NP-Completo, se demostr\'o que el problema SAT puede ser reducido al problema 3-SAT, que es basicamente el mismo problema pero en el cual todas las clausulas tienen un m\'aximo de 3 literales. Adem\'as de probar la reducci\'on, se demostro que este problema tambi\'en pertenece a la clase NP-Completo (A diferencia del problema 2-SAT, para el cual se conoce un algoritmo polinomial para resolverlo). Esta reducci\'on del problema a 3-SAT es un resultado importante ya que luego para probar que otros problemas se encuentran tambien en esta clase se utilizaron reducciones a 3-SAT mostrando la equivalencia en cuanto a la complejidad de resoluci\'on.
+
 \section*{Situaciones de la vida real que se pueden modelar utilizando MAX-SAT}
 \addcontentsline{toc}{section}{Situaciones de la vida real que se pueden modelar utilizando MAX-SAT} 
-\end{center}
 
 
-\begin{center}
+
+
 \section*{Algoritmo exacto para MAX-SAT}
 \addcontentsline{toc}{section}{Algoritmo exacto para MAX-SAT} 
-\end{center}
 
 
-\begin{center}
+
+
 \section*{Heur\'istica constructiva para MAX-SAT}
 \addcontentsline{toc}{section}{Heur\'istica constructiva para MAX-SAT} 
-\end{center}
 
 
-\begin{center}
-\section*{Heur\'istica de b\'usqueda para MAX-SAT}
-\addcontentsline{toc}{section}{Heur\'istica de b\'usqueda para MAX-SAT} 
-\end{center}
+
+\section*{Heur\'istica de b\'usqueda local para MAX-SAT}
+\addcontentsline{toc}{section}{Heur\'istica de b\'usqueda local para MAX-SAT} 
 
 
-\begin{center}
-\section*{Metaheur\'istica de b\'usqueda tab\'u [1,2] para MAX-SAT}
-\addcontentsline{toc}{section}{Metaheur\'istica de b\'usqueda tab\'u [1,2] para MAX-SAT} 
-\end{center}
+
+\section*{Metaheur\'istica de b\'usqueda tab\'u para MAX-SAT}
+\addcontentsline{toc}{section}{Metaheur\'istica de b\'usqueda tab\'u para MAX-SAT} 
+
 
 \end{document}
