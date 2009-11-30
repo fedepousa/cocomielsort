@@ -50,7 +50,43 @@ La importancia de este algoritmo no radica solamente en haber sido el primero en
 
 \section*{Algoritmo exacto para MAX-SAT}
 \addcontentsline{toc}{section}{Algoritmo exacto para MAX-SAT} 
+Como su nombre lo indica, el algoritmo exacto para Max-Sat se encarga de resolver el problema exactamente, arrojando la asignacion que valida la mayor cantidad de clausulas posibles. Dado que no se conoce ning\'un algoritmo polinomial para resolver este problema, se implementaron 2 algoritmos de complejidad exponencial. Por un lado se implement\'o un algoritmo de fuerza bruta de simple implementaci\'on pero de muy baja eficiencia, en cuanto a tiempo de ejecuci\'on. Por otro lado se implemento un algoritmo exacto mediante backtracking para poder evitar visitar todas las asignaciones de las variables posibles.
 
+\subsection*{Algoritmo de fuerza bruta}
+\addcontentsline{toc}{section}{Algoritmo de fuerza bruta}
+En este algoritmo la idea es muy simple, se generan absolutamente todas las asignaciones posibles que existen, siendo estas $2^{v}$ donde v es la cantidad de variables. Luego, por cada una de las asignaciones se verifica cuantas clausulas valida, en el momento que una asignaci\'on supera el m\'aximo de clausulas hasta el momento, se actualiza la cantidad de clausulas validadas, as\'i como cual es la asignaci\'on que gener\'o este m\'aximo.
+
+La idea de este algoritmo es tener una resoluci\'on muy simple del problema, es claro que el tiempo de ejecuci\'on va a ser muy malo ya que se revisan todas y cada una de las asignaciones posibles, y estas crecen en orden exponencial en funci\'on de la cantidad de variables. Sin embargo, cabe destacar que el algoritmo provee una resoluci\'on exacta del problema y con baja probabilidad de errores dada la simpleza del mismo.
+
+A continuaci\'on se presenta el pseudoc\'odigo del mismo:
+
+\begin{verbatim}
+maxSatExacto(Vector clausulas, int variables)
+vector asignacion
+int max := 0
+inicializar asignacion todos en falso
+Para i = 1 hasta 2^variables
+    int sat := 0
+    Para j = 1 hasta tamanio(clausulas)
+       Si haceTrue(asignacion, clausulas[j])
+          sat:= sat + 1
+       fin si
+    fin para
+    si sat > max
+        actualizar max
+        actualizar asignacionMax
+    fin si
+    asignacion := siguiente(asignacion,i+1)
+fin para
+devolver asignacionMax, max
+\end{verbatim}
+
+Lo que muestra el pseudoc\'odigo anterior es como, por cada asignaci\'on posible, se mira cada clausula y si la funci\'on \emph{haceTrue} devuelve true, entonces se suma 1 a la cantidad de satisfechas por esa asignaci\'on. Por \'ultimo, se mira cual asignaci\'on es la que tiene m\'as clausulas satisfechas.
+
+A continuaci\'on el muestra el pseudocodi
+
+\subsection*{Algoritmo de backtracking}
+\addcontentsline{toc}{section}{Algoritmo de backtracking}
 
 
 
