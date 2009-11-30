@@ -186,11 +186,15 @@ int satisfacer(int altura, bool asignar, vector< vector < int > > &estadoActual)
 		if(asignar){
 			if(esta(altura, estadoActual[i])){
 				estadoActual.erase(estadoActual.begin()+i);	
+				i--;
+				cant--;
 			} else {
 				if(esta(-altura, estadoActual[i])) {
 					if(estadoActual[i].size() == 1){
 						res++;
 						estadoActual.erase(estadoActual.begin()+i);
+						i--;
+						cant--;
 					} else {
 						int posi = pos(-altura, estadoActual[i]);
 						estadoActual[i].erase(estadoActual[i].begin()+posi);
@@ -201,11 +205,15 @@ int satisfacer(int altura, bool asignar, vector< vector < int > > &estadoActual)
 		} else {
 			if(esta(-altura, estadoActual[i])){
 				estadoActual.erase(estadoActual.begin()+i);	
+				i--;
+				cant--;
 			} else {
 				if(esta(altura, estadoActual[i])) {
 					if(estadoActual[i].size() == 1){
 						res++;
 						estadoActual.erase(estadoActual.begin()+i);
+						i--;
+						cant--;
 					} else {
 						int posi = pos(altura, estadoActual[i]);
 						estadoActual[i].erase(estadoActual[i].begin()+posi);
