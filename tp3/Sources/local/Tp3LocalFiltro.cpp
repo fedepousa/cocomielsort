@@ -49,7 +49,7 @@ static void construir(Caso &c, Asignacion &asig, list<int> &clausulas_satisfecha
 unsigned int resolver(vector< vector<int> > &clausulas, vector<bool> &asignacion);
 bool haceTrue(vector<int> &clausula, vector<bool> &asignacion);
 void siguiente(vector<bool> &asignacion, int cant);
-void generar_renombres(vector< vector <unsigned int > >  &renombres_clausulas, vector< vector <unsigned int > >  &renombres_variables, vector< vector <int > >  cc, unsigned int comp_conexa_de_la_iesima_clausula[], unsigned int v, Str_local &nueva, vector< vector <int > >  &cc) ;
+void generar_renombres(vector< vector <unsigned int > >  &renombres_clausulas, vector< vector <unsigned int > >  &renombres_variables, vector< vector <int > >  cc, unsigned int comp_conexa_de_la_iesima_clausula[], unsigned int v, Str_local &nueva, vector< vector <int > >  &cc1) ;
 
 
 
