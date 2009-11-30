@@ -35,7 +35,7 @@ int main(){
 	vector<bool> asignacion; //Asignacion de las variables
 	int res; //Aca voy a acumular el resultado de una asignacion
 	int max=0; //Aca se guarda el maximo total
-	int inSat;
+	int inSat=1000;
 	int aux; //Auxiliar para ir levantando
 	int altura;
 	vector<bool> asignacion_max;
@@ -67,8 +67,8 @@ int main(){
 		ramaArbol.push_back(clausulas); //Estado 0, raiz del arbol
 		ramaArbol.push_back(clausulas); //Le copio los estados al primer nodo para que empiece
 		altura = 1;
-		ramaInSat.push_back(inSat);
-		ramaInSat.push_back(inSat);
+		ramaInSat.push_back(0);
+		ramaInSat.push_back(0);
 		siguientes.push_back(0);
 		siguientes.push_back(0);
 		asignacion.push_back(0);//pongo un 0 para tener bien los indices
@@ -81,7 +81,10 @@ int main(){
 				ramaInSat[altura] += satisfacer(altura, asignacion[altura], ramaArbol[altura]);
 				if(inSat > ramaInSat[altura]){
 					inSat = ramaInSat[altura];
-					asignacion_max = asignacion;
+					asignacion_max.clear();
+					for(int bla=0; bla<asignacion.size();++bla){
+					asignacion_max.push_back(asignacion[bla]);
+					}
 				}
 				altura--;
 				ramaInSat.erase(ramaInSat.end()-1);
@@ -131,7 +134,7 @@ int main(){
 		
 		
 				 
-		/*
+		
 		
 		#ifdef TIEMPOS
 		gettimeofday(&fin, NULL);
@@ -139,7 +142,8 @@ int main(){
 		
 		tiempos << diferencia << endl;
 		#endif
-		salida << max << endl;
+		salida << c-inSat << endl;
+		asignacion_max.erase(asignacion_max.begin());
 		salida << "C";
 		for(int i= 0; i<c;++i) {
 		  if(haceTrue(clausulas[i],asignacion_max)) {
@@ -154,7 +158,7 @@ int main(){
     	}
     	salida << endl;
 		
-		*/
+		
 		
 		
 		
