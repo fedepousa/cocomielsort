@@ -52,6 +52,17 @@ void  generar_asignacion(unsigned int i, vector<bool> *&asignaciones, unsigned i
 unsigned int procesar_asignaciones(TabuStruct **tabus, Str_local **nuevas, vector<bool> *&asignaciones, unsigned int cant_asignaciones);
 void borrar_todo(Str_local **nuevas, TabuStruct **tabus, vector<bool> * asig, unsigned int cant);
 
+
+void escribirResultados(ofstream &salida, TabuStruct &tabu, vector<bool> &asignacion,unsigned int max_iteracion_maxima,int c,int v){
+		//pongo en max el valor de la mejor iteracion que tuve
+		salida << tabu.maxima_cant_satisfechos << endl;
+		salida << "C";
+		for(vector<unsigned int>::iterator it = tabu.clausulas_satisfechas_en_ultimo_maximo.begin(); it!= tabu.clausulas_satisfechas_en_ultimo_maximo.end();++it) salida << " " << *it;
+		salida << endl << "V";
+		for(int i = 0;i<v;++i) 	if(tabu.mejor_asignacion[i]) salida << " " << i+1;
+	    salida << endl;
+}
+
 //Escribe el resultado en el ofstream salida
 void escribirResultados(ofstream &salida, Str_local  &nueva, vector<bool> &asignacion,unsigned int max_iteracion_maxima,int c,int v){
 		//pongo en max el valor de la mejor iteracion que tuve
@@ -93,11 +104,14 @@ unsigned int tabu(int &res, unsigned int &max_iteracion, unsigned int &max_itera
           max_iteracion_maxima = max_iteracion;
 				  tabu.maxima_cant_satisfechos = max_iteracion_maxima;
           iteracion_ultimo_maximo = iteracion;
+          tabu.mejor_asignacion = asignacion ;
+          nueva.actualizar_clausulas_satisfechas(tabu);
         }
 				
 			} else bandera = false; // Si llegue aca es que supere las cotas de iteraciones.
 			
 		}
+		asignacion = tabu.mejor_asignacion;
 		return iteracion;
 }
 
@@ -127,7 +141,12 @@ int main(){
     #ifdef TIEMPOS
 		gettimeofday(&inicio, NULL);
 	  #endif
+		#ifdef TIEMPOS
+		gettimeofday(&fin, NULL);
+		diferencia = (fin.tv_sec - inicio.tv_sec)*1000000 + fin.tv_usec - inicio.tv_usec;
 		
+		tiempos << diferencia << endl;
+		#endif
 		list<int> satisfechas;
 		Asignacion asig(*caso);
         construir(*caso, asig, satisfechas);
@@ -165,19 +184,14 @@ int main(){
       nuevas[i] = new Str_local(c,v,&asignaciones[i],&clausulas,max_iteracion);
       nuevas[i]->estructurar();
       nuevas[i]->contarOkPorClausula();
-      tabus[i] = new TabuStruct(TABU_LONGITUD, CANT_MAX_ITERACIONES, CANT_MAX_ITERACIONES_ENTRE_OPTIMOS,v);
+      tabus[i] = new TabuStruct(TABU_LONGITUD, CANT_MAX_ITERACIONES, CANT_MAX_ITERACIONES_ENTRE_OPTIMOS,v, *nuevas[i]);
       tabu(res,max_iteracion,max_iteracion_maxima,i_max,*nuevas[i],asignaciones[i],bandera,*tabus[i]);
     }
     
 		unsigned int optima = procesar_asignaciones(tabus, nuevas, asignaciones, cant_asignaciones);
-		#ifdef TIEMPOS
-		gettimeofday(&fin, NULL);
-		diferencia = (fin.tv_sec - inicio.tv_sec)*1000000 + fin.tv_usec - inicio.tv_usec;
 		
-		tiempos << diferencia << endl;
-		#endif
-    //if(resolver(clausulas,asignacion) !=  nueva.clausulas_verdaderas) {
-    //  cout << "fundio viela, la cantidad de clausulas verdaderas no coincide" << endl; }
+    if(resolver(clausulas,asignaciones[optima]) !=  tabus[optima]->maxima_cant_satisfechos) {
+      cout << "fundio viela, la cantidad de clausulas verdaderas no coincide" << endl; }
 	/*		
 		//Mostra por consola la asignacion final
 		cout<<" Asignacion final: "; 
@@ -186,7 +200,7 @@ int main(){
 	*/	
 		
 		//Volcar resultados en archivo.
-		escribirResultados(salida,*nuevas[optima],asignaciones[optima],tabus[optima]->maxima_cant_satisfechos,c,v);
+		escribirResultados(salida,*tabus[optima],asignaciones[optima],tabus[optima]->maxima_cant_satisfechos,c,v);
 		
 
 		asignacion.clear();

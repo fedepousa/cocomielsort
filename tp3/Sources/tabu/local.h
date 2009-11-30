@@ -6,18 +6,7 @@
 
 
 using namespace std;
-
-struct TabuStruct {
-  TabuStruct(int tabu_longitud, unsigned int cant_max_iteraciones, unsigned int cant_max_iteraciones_entre_optimos, unsigned int cant_variables) : tabu_lit(cant_variables,-tabu_longitud), iteracion(0), iteracion_ultimo_maximo(0), cant_max_iteraciones(cant_max_iteraciones), cant_max_iteraciones_entre_optimos(cant_max_iteraciones_entre_optimos), tabu_longitud(tabu_longitud), maxima_cant_satisfechos(0) {};
-  vector<int> tabu_lit;
-  int iteracion;
-  int iteracion_ultimo_maximo;
-  unsigned int cant_max_iteraciones;
-  unsigned int cant_max_iteraciones_entre_optimos;
-  int tabu_longitud;
-  unsigned int maxima_cant_satisfechos;
-};
-
+struct TabuStruct;
 		struct str_incidencia{ unsigned int indice; bool p;	};
 		
 class Str_local{
@@ -27,6 +16,8 @@ class Str_local{
 	
 	
 
+	
+	  
 	
 		Str_local(int c, int v, vector<bool> *asig, vector< vector< int > > *claus, unsigned int clau_verd);
 		
@@ -42,7 +33,8 @@ class Str_local{
 		 
 		void elegir_asig_en_N(int &res, unsigned int &max_iteracion, unsigned int & i_max, unsigned int &max_iteracion_maxima, TabuStruct &tabu);
 
-
+    void actualizar_clausulas_satisfechas(TabuStruct & tabu);
+    
 		int clau;
 		int var;
 		unsigned int clausulas_verdaderas;
@@ -51,6 +43,26 @@ class Str_local{
 		vector<bool> *asignacion;
 		vector< vector< int > > *clausulas;
 };
+
+
+struct TabuStruct {
+  TabuStruct(int tabu_longitud, unsigned int cant_max_iteraciones, unsigned int cant_max_iteraciones_entre_optimos, unsigned int cant_variables, Str_local &local) : tabu_longitud(tabu_longitud),tabu_lit(cant_variables,-tabu_longitud), iteracion(0), iteracion_ultimo_maximo(0), cant_max_iteraciones(cant_max_iteraciones), cant_max_iteraciones_entre_optimos(cant_max_iteraciones_entre_optimos),  maxima_cant_satisfechos(0), mejor_asignacion(*local.asignacion) {
+    local.actualizar_clausulas_satisfechas(*this);
+    };
+  
+  int tabu_longitud;
+  vector<int> tabu_lit;
+  int iteracion;
+  int iteracion_ultimo_maximo;
+  unsigned int cant_max_iteraciones;
+  unsigned int cant_max_iteraciones_entre_optimos;
+  unsigned int maxima_cant_satisfechos;
+  vector<unsigned int> clausulas_satisfechas_en_ultimo_maximo;
+  vector<bool> mejor_asignacion;
+};
+
+
+
 
 
 
@@ -148,6 +160,12 @@ int Str_local::resolverEspecial(unsigned int i, vector <str_incidencia> &variabl
 				clausulas_verdaderas +=clausulas_q_cambian;
      }
 		 return (clausulas_q_cambian + clausulas_verdaderas);
+}
+
+void Str_local::actualizar_clausulas_satisfechas(TabuStruct & tabu) {
+  tabu.clausulas_satisfechas_en_ultimo_maximo.clear();
+  for(int i= 0; i<clau;++i) if(cant_ok_por_clausula[i])  tabu.clausulas_satisfechas_en_ultimo_maximo.push_back(i + 1);
+  
 }
 	  
 void Str_local::elegir_asig_en_N(int &res, unsigned int &max_iteracion, unsigned int & i_max, unsigned int &max_iteracion_maxima, TabuStruct &tabu) {
