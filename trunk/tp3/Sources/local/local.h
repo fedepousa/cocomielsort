@@ -7,7 +7,7 @@
 
 using namespace std;
 
-
+struct str_incidencia{ unsigned int indice; bool p;	};
 
 class Str_local{
 
@@ -15,7 +15,7 @@ class Str_local{
 	
 	
 	
-		struct str_incidencia{ unsigned int indice; bool p;	};
+		
 	
 		Str_local(int c, int v, vector<bool> *asig, vector< vector< int > > *claus, unsigned int clau_verd);
 		
