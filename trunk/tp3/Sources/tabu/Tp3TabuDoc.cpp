@@ -42,6 +42,16 @@ void siguiente(vector<bool> &asignacion, int cant);
 
 
 //Escribe el resultado en el ofstream salida
+void escribirResultados(ofstream &salida, TabuStruct &tabu, vector<bool> &asignacion,unsigned int max_iteracion_maxima,int c,int v){
+		//pongo en max el valor de la mejor iteracion que tuve
+		salida << tabu.maxima_cant_satisfechos << endl;
+		salida << "C";
+		for(vector<unsigned int>::iterator it = tabu.clausulas_satisfechas_en_ultimo_maximo.begin(); it!= tabu.clausulas_satisfechas_en_ultimo_maximo.end();++it) salida << " " << *it;
+		salida << endl << "V";
+		for(int i = 0;i<v;++i) 	if(tabu.mejor_asignacion[i]) salida << " " << i+1;
+	    salida << endl;
+}
+
 void escribirResultados(ofstream &salida, Str_local  &nueva, vector<bool> &asignacion,unsigned int max_iteracion_maxima,int c,int v){
 		//pongo en max el valor de la mejor iteracion que tuve
 		salida << max_iteracion_maxima << endl;
@@ -79,11 +89,13 @@ void tabu(int &res, unsigned int &max_iteracion, unsigned int &max_iteracion_max
 				if(max_iteracion > max_iteracion_maxima) {
           max_iteracion_maxima = max_iteracion;
           iteracion_ultimo_maximo = iteracion;
+          tabu.mejor_asignacion = asignacion;
+          nueva.actualizar_clausulas_satisfechas(tabu);
         }
 				
 			} else bandera = false; // Si llegue aca es que no mejoro, osea que cai en un extremo local, por lo tanto termina.
-			
 		}
+		asignacion = tabu.mejor_asignacion;
 }
 
 
@@ -112,7 +124,12 @@ int main(){
     #ifdef TIEMPOS
 		gettimeofday(&inicio, NULL);
 	  #endif
+		#ifdef TIEMPOS
+		gettimeofday(&fin, NULL);
+		diferencia = (fin.tv_sec - inicio.tv_sec)*1000000 + fin.tv_usec - inicio.tv_usec;
 		
+		tiempos << diferencia << endl;
+		#endif
 		list<int> satisfechas;
 		Asignacion asig(*caso);
         construir(*caso, asig, satisfechas);
@@ -135,15 +152,10 @@ int main(){
 		Str_local nueva(c,v,&asignacion,&clausulas,max_iteracion);
 		nueva.estructurar();
 		nueva.contarOkPorClausula();
-    TabuStruct t(TABU_LONGITUD, CANT_MAX_ITERACIONES, CANT_MAX_ITERACIONES_ENTRE_OPTIMOS,v);
+    TabuStruct t(TABU_LONGITUD, CANT_MAX_ITERACIONES, CANT_MAX_ITERACIONES_ENTRE_OPTIMOS,v, nueva);
 		tabu(res,max_iteracion,max_iteracion_maxima,i_max,nueva,asignacion,bandera,t);
-		#ifdef TIEMPOS
-		gettimeofday(&fin, NULL);
-		diferencia = (fin.tv_sec - inicio.tv_sec)*1000000 + fin.tv_usec - inicio.tv_usec;
 		
-		tiempos << diferencia << endl;
-		#endif
-    if(resolver(clausulas,asignacion) !=  nueva.clausulas_verdaderas) {
+    if(resolver(clausulas,asignacion) !=  max_iteracion_maxima) {
       cout << "fundio viela, la cantidad de clausulas verdaderas no coincide" << endl; }
 	/*		
 		//Mostra por consola la asignacion final
@@ -153,7 +165,7 @@ int main(){
 	*/	
 		
 		//Volcar resultados en archivo.
-		escribirResultados(salida,nueva,asignacion,max_iteracion_maxima,c,v);
+		escribirResultados(salida,t,asignacion,max_iteracion_maxima,c,v);
 		
 
 		asignacion.clear();
