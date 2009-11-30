@@ -8,13 +8,14 @@
 using namespace std;
 
 struct TabuStruct {
-  TabuStruct(int tabu_longitud, unsigned int cant_max_iteraciones, unsigned int cant_max_iteraciones_entre_optimos, unsigned int cant_variables) : tabu_lit(cant_variables,-tabu_longitud), iteracion(0), iteracion_ultimo_maximo(0), cant_max_iteraciones(cant_max_iteraciones), cant_max_iteraciones_entre_optimos(cant_max_iteraciones_entre_optimos), tabu_longitud(tabu_longitud) {};
+  TabuStruct(int tabu_longitud, unsigned int cant_max_iteraciones, unsigned int cant_max_iteraciones_entre_optimos, unsigned int cant_variables) : tabu_lit(cant_variables,-tabu_longitud), iteracion(0), iteracion_ultimo_maximo(0), cant_max_iteraciones(cant_max_iteraciones), cant_max_iteraciones_entre_optimos(cant_max_iteraciones_entre_optimos), tabu_longitud(tabu_longitud), maxima_cant_satisfechos(0) {};
   vector<int> tabu_lit;
   int iteracion;
   int iteracion_ultimo_maximo;
   unsigned int cant_max_iteraciones;
   unsigned int cant_max_iteraciones_entre_optimos;
   int tabu_longitud;
+  unsigned int maxima_cant_satisfechos;
 };
 
 class Str_local{
