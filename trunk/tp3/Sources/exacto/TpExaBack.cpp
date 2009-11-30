@@ -66,8 +66,10 @@ int main(){
 	
 		ramaArbol.push_back(clausulas); //Estado 0, raiz del arbol
 		ramaArbol.push_back(clausulas); //Le copio los estados al primer nodo para que empiece
-		altura = 0;
+		altura = 1;
 		ramaInSat.push_back(inSat);
+		ramaInSat.push_back(inSat);
+		siguientes.push_back(0);
 		siguientes.push_back(0);
 		asignacion.push_back(0);//pongo un 0 para tener bien los indices
 		asignacion.push_back(0);//arranco con false a x1
@@ -75,7 +77,7 @@ int main(){
 		
 
 		while(siguientes[0]!=2){
-			if(altura=v){//si ya llegue a una hoja
+			if(altura==v){//si ya llegue a una hoja
 				ramaInSat[altura] += satisfacer(altura, asignacion[altura], ramaArbol[altura]);
 				if(inSat > ramaInSat[altura]){
 					inSat = ramaInSat[altura];
