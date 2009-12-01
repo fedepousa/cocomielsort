@@ -102,7 +102,7 @@ int main() {
   ifstream entrada("Tp3.in");
   ofstream salida("Tp3Constr.out");
   #ifdef TIEMPOS
-	ofstream tiempos("Tp3TabuTiempos.out");
+	ofstream tiempos("Tp3ConstrTiempos.out");
 	timeval inicio;
 	timeval fin;
 	double diferencia;
