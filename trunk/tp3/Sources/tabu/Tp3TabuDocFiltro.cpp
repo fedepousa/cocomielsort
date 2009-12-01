@@ -91,11 +91,14 @@ void tabu(int &res, unsigned int &max_iteracion, unsigned int &max_iteracion_max
 				if(max_iteracion > max_iteracion_maxima) {
           max_iteracion_maxima = max_iteracion;
           iteracion_ultimo_maximo = iteracion;
+          tabu.mejor_asignacion = asignacion;
+          nueva.actualizar_clausulas_satisfechas(tabu);
         }
 				
 			} else bandera = false; // Si llegue aca es que no mejoro, osea que cai en un extremo local, por lo tanto termina.
 			
 		}
+		asignacion = tabu.mejor_asignacion;
 }
 
 
@@ -235,7 +238,7 @@ int main(){
 	for(int i = 0 ; i < cc.size() ; ++i) {
 		  bandera = true;
 			  	
-		TabuStruct t(TABU_LONGITUD, CANT_MAX_ITERACIONES, CANT_MAX_ITERACIONES_ENTRE_OPTIMOS,v);
+		TabuStruct t(TABU_LONGITUD, CANT_MAX_ITERACIONES, CANT_MAX_ITERACIONES_ENTRE_OPTIMOS,v, *nuevas[i]);
 		
 		tabu(res,max_iteraciones[i],max_iteraciones_maximas[i],i_max, *(nuevas[i]) ,asignaciones[i],bandera,t);
     }
@@ -253,7 +256,7 @@ int main(){
 		#endif
 		
 		
-    if(resolver(clausulas,asignacion) !=  nueva.clausulas_verdaderas) {
+    if(resolver(clausulas,asignacion) !=  max_iteracion_maxima) {
       cout << "fundio viela, la cantidad de clausulas verdaderas no coincide" << endl; }
 
 
