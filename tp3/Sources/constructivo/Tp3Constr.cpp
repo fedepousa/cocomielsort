@@ -5,6 +5,10 @@
 #include <set>
 #include <algorithm>
 
+#ifdef TIEMPOS
+#include <sys/time.h>
+#endif
+
 using namespace std;
 
 struct Clausula;
