@@ -102,7 +102,6 @@ unsigned int tabu(int &res, unsigned int &max_iteracion, unsigned int &max_itera
         tabu_lit[i_max] = iteracion;
 				if(max_iteracion > max_iteracion_maxima) {
           max_iteracion_maxima = max_iteracion;
-				  tabu.maxima_cant_satisfechos = max_iteracion_maxima;
           iteracion_ultimo_maximo = iteracion;
           tabu.mejor_asignacion = asignacion ;
           nueva.actualizar_clausulas_satisfechas(tabu);
@@ -118,9 +117,9 @@ unsigned int tabu(int &res, unsigned int &max_iteracion, unsigned int &max_itera
 
 int main(){
 	ifstream entrada("Tp3.in");
-	ofstream salida("Tp3TabuDoc.out");
+	ofstream salida("Tp3TabuDocMod.out");
 	#ifdef TIEMPOS
-	ofstream tiempos("Tp3TabuTiempos.out");
+	ofstream tiempos("Tp3TabuDocModTiempos.out");
 	timeval inicio;
 	timeval fin;
 	double diferencia;
@@ -141,12 +140,6 @@ int main(){
     #ifdef TIEMPOS
 		gettimeofday(&inicio, NULL);
 	  #endif
-		#ifdef TIEMPOS
-		gettimeofday(&fin, NULL);
-		diferencia = (fin.tv_sec - inicio.tv_sec)*1000000 + fin.tv_usec - inicio.tv_usec;
-		
-		tiempos << diferencia << endl;
-		#endif
 		list<int> satisfechas;
 		Asignacion asig(*caso);
         construir(*caso, asig, satisfechas);
@@ -190,6 +183,12 @@ int main(){
     
 		unsigned int optima = procesar_asignaciones(tabus, nuevas, asignaciones, cant_asignaciones);
 		
+		#ifdef TIEMPOS
+		gettimeofday(&fin, NULL);
+		diferencia = (fin.tv_sec - inicio.tv_sec)*1000000 + fin.tv_usec - inicio.tv_usec;
+		
+		tiempos << diferencia << endl;
+		#endif
     if(resolver(clausulas,asignaciones[optima]) !=  tabus[optima]->maxima_cant_satisfechos) {
       cout << "fundio viela, la cantidad de clausulas verdaderas no coincide" << endl; }
 	/*		

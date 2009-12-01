@@ -165,7 +165,7 @@ int Str_local::resolverEspecial(unsigned int i, vector <str_incidencia> &variabl
 void Str_local::actualizar_clausulas_satisfechas(TabuStruct & tabu) {
   tabu.clausulas_satisfechas_en_ultimo_maximo.clear();
   for(int i= 0; i<clau;++i) if(cant_ok_por_clausula[i])  tabu.clausulas_satisfechas_en_ultimo_maximo.push_back(i + 1);
-  
+  tabu.maxima_cant_satisfechos = tabu.clausulas_satisfechas_en_ultimo_maximo.size();
 }
 	  
 void Str_local::elegir_asig_en_N(int &res, unsigned int &max_iteracion, unsigned int & i_max, unsigned int &max_iteracion_maxima, TabuStruct &tabu) {
