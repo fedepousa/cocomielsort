@@ -1,0 +1,290 @@
+
+
+|||||||||||||||||||||||||||||| 3.2|||||||||||||||||
+3.2.1
+Creo 4 archivos en la home
+	- hola.sh
+	- buendia.sh
+	- adios.sh
+	- hastalavistababy.sh
+Les doy permiso para ejecutar (chmod 777)
+Para imprimir hola agrego a /etc/profile ./home/grupo5/hola.sh
+Para imprimir Buenos Dias agrego a /etc/rc.local  ./home/grupo5/buendia.sh
+Para imprimir adios agrego a /etc/bash.bash_logout ./home/grupo5/adios.sh
+
+TODO (falta el ultimo) buscar en /etc/rc0.d  leer el readme 
+
+3.2.2 Montar floopy e iso, pude pero no se como hacer para darles permisos ok TODO
+3.2.3 TODO
+3.2.4 TODO
+
+3.2.5
+	1
+		 a)	mkdir ~/tp 
+			ls -r /etc > ~/tp/config
+		 b)     wc ~/tp/config   (respuesta: 113 113 1060) lineas/palabras/caracteres
+		 c) 	sort /etc/passwd >>config
+		 d)	wc ~/tp/config   (respuesta: 136 141 1993)
+
+	2
+		 a)	ls -al /usr/bin/a* |grep apt | wc (respuesta:  12 96 853)
+
+
+|||||||||||||||||||||||||||||| 3.3|||||||||||||||||
+3.3.1 No les toco hacerlo  TODO
+3.3.2 No les toco hacerlo  TODO
+
+|||||||||||||||||||||||||||||| 3.4|||||||||||||||||
+
+3.4.1 
+	1 ./loop
+	2 ./loop > /dev/null &  y para matarlo kill id (id nos lo dio al ponerlo a correr)
+
+|||||||||||||||||||||||||||||| 3.5|||||||||||||||||
+
+3.5.1 PIPES
+	Este es el ejemplo, podriamos guardarlo en un archivo para ejecutarlo y todo
+	     
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <sys/wait.h>
+
+	int main()
+	{
+		int pipefd[2];
+		pid_t cpid;
+		char buf = 'a';
+	
+		if(pipe(pipefd)== -1) {
+			perror("pipe");
+			exit(EXIT_FAILURE);
+		}
+
+
+		cpid = fork();
+		if (cpid == -1){
+			perror("fork");
+			exit(EXIT_FAILURE);
+		}
+
+
+		if (cpid == 0){//el hijo lee
+			close(pipefd[1]); //cierro la escritura
+			read(pipefd[0], &buf, 1);
+			printf("Hijo: me ejecuto mientras el otro no\n");
+			close(pipefd[0]);
+			exit(EXIT_SUCCESS);
+
+		}else {// el padre escribe y luego espera
+			close(pipefd[0]);
+			printf("Padre: me ejecuto solo\n");
+			write(pipefd[1], &buf, 1);
+			close(pipefd[1]);
+			wait(NULL); //espero a que cambie el estado (termine el hijo)
+			exit(EXIT_SUCCESS);
+		}
+
+	}
+
+3.5.2  THREADS
+
+Habria que ponerlo en un archivo, por ahora no compila. TODO
+
+#include <stdio.h>
+#include <pthread.h>
+#include <stdlib.h>
+#include <sys/wait.h>
+#define BSIZE 10
+
+typedef struct {
+	char	buf[BSIZE];
+	pthread_mutex_t lock;
+	pthread_cond_t less;
+	pthread_cond_t more;
+	int nextin;
+	int nextout;
+	int occupied;
+	}buffer_t;
+
+char consume(buffer_t *b){
+	printf("gf %p a",&b->more);
+	char item;
+	printf("gf %p a",&b->more);
+	pthread_mutex_lock(&b->lock);
+	printf("gf %p a",&b->more);
+	printf("Consume\na");
+	printf("gf %p a",&b->more);
+	printf("gf %p a",b);
+	printf("gf %p a\n",&b->more);
+	while(b->occupied == 0)  // TODO, ACA NO FALTARIA ALGO? ESTA ASI
+		phtread_cond_wait(&b->more,&b->lock);
+	item = b->buf[b->nextout++];
+	b->nextout %= BSIZE;
+	b->occupied--;
+	printf("termineeeeeeeeeeeeeeee %p a\n",&b->more);
+	pthread_cond_signal(&b->less);
+	pthread_mutex_unlock(&b->lock);
+	return item;
+}
+
+void produce(buffer_t *b,char item){
+	pthread_mutex_lock(&b->lock);
+	printf("Produce\n");
+	while(b->occupied == BSIZE) //TODO MISMO
+		pthread_cond_wait(&b->less,&b->lock);
+	b->buf[b->nextin++] = item;
+	b->nextin %=BSIZE;
+	b->occupied++;
+	printf("%p",&b->more);
+	pthread_cond_signal(&b->more);
+	pthread_mutex_unlock(&b->lock);
+}
+
+void consumer(buffer_t *b){
+	char item;
+	printf("Consumidor -d%\n",getpid());
+	while(1){
+		item = consume(b);
+		putchar(item);
+		
+	}
+}
+
+
+
+void producer(buffer_t *b){
+	char item;
+	printf("Productor -d%\n",getpid());
+	while(1){
+		item = getchar();
+		if(item == 'q'){
+			produce(b,'\0');
+			break;
+		} else{
+			produce(b,item);
+		}
+	}
+
+}
+
+
+
+int main(){
+	buffer_t *buffer = malloc(sizeof(buffer_t));
+
+	pthread_mutexattr_t mutex_attr;
+	pthread_condattr_t  cond_attr;
+	buffer->nextin=0;
+	buffer->nextout=0;
+	buffer->occupied =0;
+	
+	pthread_mutexattr_init(&mutex_attr);
+	pthread_mutexattr_setpshared(&mutex_attr, PTHREAD_PROCESS_SHARED);
+	pthread_mutexattr_init(&buffer->lock, &mutex_attr);
+
+	pthread_condattr_init(&cond_attr);
+	pthread_condattr_setpshared(&cond_attr, PTHREAD_PROCESS_SHARED);
+	pthread_cond_init(&buffer->less, &cond_attr);
+	pthread_cond_init(&buffer->more, &cond_attr);
+
+	pid_t cpid;
+
+	cpid = fork();
+	if( cpid == -1){
+		perror("fork");
+		exit(EXIT_FAILURE);
+
+	}	
+	if(cpid!=0){
+		printf("%p", &buffer->more);
+		consumer(buffer);
+		exit(0);
+	}else{
+		printf("%p", &buffer->more);
+		producer(buffer);
+		wait(NULL);
+		free(buffer);
+		exit(0);
+	}
+
+}
+
+|||||||||||||||||||||||||||||| 3.6|||||||||||||||||
+
+3.6.1
+1. La administracion del procesador utilizada por el kernel de linux esta basada en prioridades.
+Por cada procesador tiene 140 listas de prioridad de las cuales 100 estan reservadas para tareas de tiempo real y las otras 40 son para tareas de usuarios.
+Ademas hay una lista de expirados para los procesos que ya usaron su tiempo permitido. Al mover el proceso de la lista de acrivos a la de expirados se recalcula el tiempo.
+Si no hay tareas en la lista de activos se intercambia la lista de activos con los expirados.
+Una tarea de menor prioridad no se ejecutara si hay una de mayor prioridad lista.
+Para los procesos de tiempo real se usan 2 politicas. FIFO y round robin con un quantum de 20ms.
+Para los procesos del usuario el kernel de linux se encarga de alterar dinamicamente la prioridad del proceso para previnir inancion.
+Lo hace penalizando las tareas que son CPU-bound, y beneficiando a las I/O-bound.
+Cuan interactivo es un proceso lo calcula en base en cuanto tiempo se ejecuta el proceso y cuanto esta bloqueado. 
+
+\item 2. La administracion de memoria en Linux es paginada por demanda.
+En general usa paginas de 4mb, aunque depende de la arquitectura.
+El algoritmo para swapear es LRU, es decir, saca la pagina que hace mas tiempo no se usa.
+
+\item 3. El sistema de archivos utilizado en la distribucion es ext3. Es un sistema de archivos con registro por diario (journaling.)
+Una ventaja es el limite del tamaño, permite la locacion de archivos muy grandes.
+La otra es el journaling. Tiene tres niveles: Diario, Pedido y Reescritura.
+En el diario los metadatos y los ficheros de contenido son copiados al diario antes de ser llevados al sistema de archivos principal.
+En el pedido solo los metadatos son registrados en el diario, los contenidos no, pero est\'a asegurado que el contenido del archivo es escrito en el disco antes de que el metadato asociado se marque como transcrito en el diario.
+Por ultimo en el reescritura solo los metadatos son registrados en el diario, el contenido de los archivos no. Los contenidos pueden estar escritos antes o despues de que el diario se actualice.
+En el kernel existe una capa llamada virtual file system (VFS) se encarga de llevar registro de los file systems soportados y de aquellos que estan montados. De esta manera se pueden agregar sistemas de archivos dinamicamente.
+
+
+|||||||||||||||||||||||||||||| 3.7|||||||||||||||||
+3.7.1 
+ 	Explicamos como agregar la carpeta a directorios compartidos de vbox
+	y despues hay q ejecutar lo siguiente en el guest
+	sudo mount -t vboxsf nombreCarpetaAgregada /mnt (por montarlo en algun 		lado)
+	sudo chmod -R a=rw /mnt ?????? no me deja crear de todas maneras TODO
+
+3.7.2
+	Los hardlinks apuntan a una estructura que ocupa lugar en disco llamadas inodo. Cada inodo tiene asociados un archivo o un directorio. El inodo guarda informaci\'on tal como el tamaño del archivo en bytes, el user id, el group id, el modo del archivo (read, write, execute), tiempos de acceso, modificacion y cambio, la cantidad de hard links que apuntan al inodo y punteros a los bloques del disco que poseen la informacion del archivo. El comando 'ls -i' se puede utiliar para ver el n\'umero de inodo de un archivo y el comando 'stat' para ver parte de la informaci\'on del inodo. El sistema sabe donde se ubica en disco cada inodo a partir de su n\'umero. Es importante notar que no guardan el nombre del archivo, sino que estos se guardan en los dentries.
+Para ver la estructura de los inodos y dentries ver '/usr/include/linux/fs.h'.
+La raz\'on por la cual se pueden eliminar hardlinks sin eliminar el archivo, principalmente es que si m\'as de un hardlink en dentries apuntan a un mismo inodo, y se elimina uno de estos, el contador de hardlinks del inodo se decrementa en 1, pero el archivo y el inodo siguen existiendo as\'i pueden ser accedidos por el otro hardlink. Otra posible raz\'on es cuando se elimina un archivo que se est\'a abierto por uno o m\'as procesos, por lo cual se elimina el dentry pero el inodo sigue existiendo hasta que todos los procesos que estaban utilizando el archivo lo cierren, para que luego el sistema operativo borre el inodo. De esta manera se puede por ejemplo, actualizar el sistema sin necesidad de cerrar todos los programas.
+
+
+3.7.3
+Para ejecutar los procesos en el background ejecuto los siguientes comandos:
+
+./loop1 > /dev/null &
+./loop2 > /dev/null &
+nice -n -5 ~/tp/loop3 > /dev/null &
+
+Para ver el tiempo de cpu ejecuto 'top' y se observa que loop3 tiene un 60% de la CPU, mientras que loop1 y loop2 al rededor de un 20% cada uno. Esto se refleja en el tiempo de CPU, notandose que loop3 utiliza cada vez mas tiempo de CPU que loop2 y loop1. Los tres procesos tienen status R (running).
+Luego los termino con el comando 'kill'.
+
+
+3.7.4
+Para visualizar la cantidad de memoria utilizada y disponible puedo utilizar el commando free.
+Para cambiar la cantidad de memoria que el sistema utiliza, debo pasar un par\'ametro al kernel indicando cuanta deseo utilizar. Para esto modifico /boot/grub/menu.lst y creo una nueva entrada, copia de la entrada default, pero agrego como par\'ametro mem=256M lo cual me limita la memoria a 256M. Reinicio, entro con ESC al menu del grub, selecciono la nueva entrada, me logueo y ejecuto free, y veo como la memoria se redujo a 256Mb.
+
+
+3.7.5
+Cantidad de memoria
+cat /proc/swaps
+swapon -s
+Nuevo swap:
+
+Creo un nuevo archivo
+dd if=/dev/zero of=/mnt/miswap bs=1M count=20
+Importante: tama\~o de bloque 1MB, 20MB de tama\~no
+
+Le doy formato
+mkswap /mnt/miswap
+
+Lo agrego a la table de FS
+echo "/mnt/miswap none swap sw 0 0" >> /etc/fstab
+
+Reinicio para que se actualice el sistema
+reboot
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+MODULO DE PROMOCION, NADA
+	
+
