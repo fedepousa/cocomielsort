@@ -124,12 +124,6 @@ int main(){
     #ifdef TIEMPOS
 		gettimeofday(&inicio, NULL);
 	  #endif
-		#ifdef TIEMPOS
-		gettimeofday(&fin, NULL);
-		diferencia = (fin.tv_sec - inicio.tv_sec)*1000000 + fin.tv_usec - inicio.tv_usec;
-		
-		tiempos << diferencia << endl;
-		#endif
 		list<int> satisfechas;
 		Asignacion asig(*caso);
         construir(*caso, asig, satisfechas);
@@ -155,6 +149,12 @@ int main(){
     TabuStruct t(TABU_LONGITUD, CANT_MAX_ITERACIONES, CANT_MAX_ITERACIONES_ENTRE_OPTIMOS,v, nueva);
 		tabu(res,max_iteracion,max_iteracion_maxima,i_max,nueva,asignacion,bandera,t);
 		
+		#ifdef TIEMPOS
+		gettimeofday(&fin, NULL);
+		diferencia = (fin.tv_sec - inicio.tv_sec)*1000000 + fin.tv_usec - inicio.tv_usec;
+		
+		tiempos << diferencia << endl;
+		#endif
     if(resolver(clausulas,asignacion) !=  max_iteracion_maxima) {
       cout << "fundio viela, la cantidad de clausulas verdaderas no coincide" << endl; }
 	/*		
