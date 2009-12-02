@@ -83,10 +83,70 @@ devolver asignacionMax, max
 
 Lo que muestra el pseudoc\'odigo anterior es como, por cada asignaci\'on posible, se mira cada clausula y si la funci\'on \emph{haceTrue} devuelve true, entonces se suma 1 a la cantidad de satisfechas por esa asignaci\'on. Por \'ultimo, se mira cual asignaci\'on es la que tiene m\'as clausulas satisfechas.
 
-A continuaci\'on el muestra el pseudocodi
+La funci\'on \emph{haceTrue} lo que hace es simplemente mirar toda la clausula pasada como par\'ametro y ver si algun literal esta asignado como verdadera, cuando encuentra uno deja de buscar y devuelve True. En caso contrario, si llega hasta el final de la clausula, devuelve False. 
+
+Por otro lado, la funci\'on \emph{siguiente} se encarga de modificar para la asignaci\'on para probar con todas las posibles.
 
 \subsection*{Algoritmo de backtracking}
 \addcontentsline{toc}{section}{Algoritmo de backtracking}
+
+Luego de implementar un algoritmo exacto por fuerza bruta, se busc\'o implementar un algoritmo tambi\'en exacto pero tratando de lograr un menor tiempo de ejecuci\'on. El algoritmo implementado es un algoritmo exacto basado en la t\'ecnica de backtracking para lograr mejores resultados (en cuanto a tiempo de ejecuci\'on), si bien en la siguiente secci\'on se ver\'a que la complejidad temporal es la misma para ambos algoritmos exactos, la t\'ecnica de backtracking provee de herramientas para no tener que consultar necesariamente por cada una de las asignaciones posibles, es en estas podas que este algoritmo mejora los tiempos de ejecuci\'on del anterior.
+
+\bigskip
+
+La idea de este algoritmo es la siguiente: se genera un arbol de asignaciones, donde cada nivel del arbol i, representa todas las asignaciones posibles desde la variable 1 hasta la variable i. Este arbol, es un arbol binario dado que se arranca de la asignacion nula y de all\'i se abren dos caminos, asignarle False a la variable 1, o asignarle True. Luego, cada rama se va bifurcando sucesivamente por cada variable nueva. Como se puede ver, en el peor caso que tengamos que recorrer todo el arbol la cantidad de asignaciones nuevamente esta dada por $2^{v}$ al igual que en el algoritmo exacto.
+
+Una vez que se tiene el arbol de backtracking lo que se hace es comenzar a recorrer el arbol en alguna direcci\'on determinada. Cabe destacar que en el algoritmo implementado siempre se recorre primero la rama correspondiente a asignar falso a la variable y luego la otra.
+
+La mejora del algoritmo radica en no recorrer todas las ramas posibles, esto se realiza de la siguiente manera: Al haber recorrido la primer rama del arbol llegando hasta una hoja, ya se tiene una mejor soluci\'on posible. Luego, cuando se este explorando una rama lo que se hace es fijarse si esa rama ya posee m\'as clausulas insatisfechas que la mejor soluci\'on hasta el momento. En caso afirmativo, la rama ya no sirve ya que no se podra mejorar la soluci\'on y entonces se puede descartar todo el subarbol que pende de esa rama. Entonces se realiza el backtracking para ir por otro camino posible. 
+
+Las principales diferencias con el algoritmo de fuerza bruta son:
+\begin{itemize}
+\item La implementaci\'on es bastante m\'as complicada ya que como se realiza backtracking, se debe guardar los estados intermedios de toda la rama que se esta analizando para poder volver hacia atras y tomar un nuevo camino. En el algoritmo exacto, cada asignacion se contrasta con las clausulas originales por lo que solo se deben guardar una vez todas las clausulas.
+\item El tiempo de ejecuci\'on deberia ser en la mayor\'ia de los casos. Si bien el peor caso no cambiar\'ia es importante destacar que las podas realizadas pueden traer grandes beneficios en cuanto al tiempo de ejecuci\'on. Si, por ejemplo, ya se tuviese una soluci\'on donde n clausulas son insatisfechas y al asignar True a la variable 1, n+1 clausulas se vuelven insatisfacibles entonces se podr\'ia podar toda una mitad del arbol.
+\item El algoritmo de fuerza bruta no puede ser influenciado por alguna heur\'istica, mientras que el algoritmo con backtraking si. Lo que se quiere notar con esto, es que por m\'as que ya se tenga una solucion con n clausulas insatisfechas, el algoritmo por fuerza bruta tiene que probar todas las asignaciones posibles; mientras que el algoritmo de backtracking ya puede comenzar podando ramas que tengan m\'as de n clausulas insatisfechas.
+\end{itemize}
+
+A continuaci\'on se presenta el pseudoc\'odigo del algoritmo exacto con backtracking:
+
+\begin{verbatim}
+pseudo de backtracking
+\end{verbatim}
+
+\subsection*{Complejidad de algoritmos exactos}
+\addcontentsline{toc}{subsection}{Complejidad de algoritmos exactos}
+
+En primer lugar, se analizar\'a la complejidad del algoritmo realizado por fuerza bruta.
+
+El mismo presenta un ciclo que se realiza $2^{v}$ veces, dado que esa es la cantidad total de asignaciones diferentes, siendo v la cantidad de variables. Una vez dentro de este ciclo, encontramos otro ciclo que itera sobre la totalidad de las clausulas, haciendo que este ciclo se realice c veces. 
+
+Luego, dentro de este ciclo se llama a la funcion haceTrue. Esta funci\'on lo que hace es fijarse en todos los literales de la clausula si se encuentra asignado como verdadero. Dado que el hecho de fijarse es O(1), ya que es mirar un array, y dado que la clausula como mucho tiene 2*v literales (todas las variables negadas y sin negar), se puede ver que esta funci\'on es O(v).
+
+Por \'ultimo, las otras operaciones que se realizan dentro del ciclo principal tienen menor complejidad que lo mostrado anteriormente ya que son asignaciones que toman O(1) o es la funcion siguiente que toma O(v).
+
+Por lo mostrado anteriormente resulta que la complejidad temporal del algoritmo es O($(2^{v})$*c*v)
+Como se puede ver, lo importante m\'as alla de la complejidad exacta, es que este algoritmo es exponencial en funci\'on de la cantidad de variables. Cabe destacar que si bien se podri\'an encontrar algoritmos con mejor complejidad, esta no podr\'ia ser menor que exponencial en el caso que se quieran revisar todas las asignaciones posibles.
+
+\bigskip
+
+Complejidad del algoritmo exacto con backtracking:
+
+Para realizar el c\'alculo de complejidad de este algoritmo tomaremos el peor caso posible. El mismo consiste en que ninguna rama sea podada y por lo tanto se tengan que revisar todos los nodos posibles del arbol. En este caso el ciclo principal que itera sobre todas las asignaciones posibles ser\'ia O($2^{v}$), ya que este es el orden de la cantidad de nodos del arbol. 
+
+Luego, hay que analizar cuales son las operaciones que se realizan cada vez que el algoritmo se encuentra en un nuevo nodo. En primer lugar, se llama a la funci\'on resolver, la misma tiene un funcionamiento an\'alogo al explicado en el algoritmo por fuerza bruta; se fija en cada clausula si la misma se hizo verdadera, y cuenta las insatisfacibles, por lo que esta funcion toma O(c*v) operaciones. Luego, lo que se hace es copiar todo el estado al siguiente nodo para que se pueda procesar, al realizar esto se copian varios par\'ametros. Sin embargo, el orden temporal de esta copia esta dado por el orden que toma copiar todas las clasulas, dado que los dem\'as par\'ametros que se copian tienen menor orden espacial ya que son solamente vectores. 
+
+Se puede ver que copiar todo el estado toma O(c*v) operaciones ya que lo que se hace es copiar absolutamente todas las clausulas, donde cada una pueda tener hasta 2*v literales por lo justificado anteriormente.
+
+Por \'ultimo, resumiendo lo anteriormente explicado se puede ver que cuando se revisa un nodo se toma O(c*v) operaciones, y en el peor caso hay que revisar O($2^{v}$) nodos; por lo que la complejidad total de este algoritmo es O($(2^{v})$*c*v).
+
+Como se puede ver, la complejidad del algoritmo de backtracking no es mejor que el algoritmo exacto por fuerza bruta, sigue siendo exponencial. De hecho, se puede notar que en el peor caso posible, el algoritmo de backtracking es m\'as lento que el algoritmo por fuerza bruta dado el overhead que produce copiar todo el estado al siguiente nodo del arbol para que se pueda procesar.
+
+Sin embargo, en la mayor\'ia de los casos, el algoritmo con backtracking presenta resultados temporalmente mejores que el algoritmo de fuerza bruta ya que se podan varias ramas haciendo que no se tenga que visitar todas las asignaciones posibles.
+
+\medskip
+
+Cabe destacar que la ventaja temporal que gana el algoritmo de backtracking, genera una mayor complejidad espacial ya que en todo momento se debe tener todos los estados de los nodos de la rama que se esta visitando para poder caminar hacia atras. Luego la complejidad espacial del algoritmo de fuerza bruta es O(c*v) ya que se guardan una vez todas las clausulas, mientras que la complejidad espacial del algoritmo de backtracking es O(c*v*v) ya que se guardan todas las clausulas una vez por cada nodo de la rama que se esta analizando, que a lo sumo tiene v nodos.
+
 
 
 
