@@ -244,8 +244,13 @@ int main(){
 	generar_casos_cc(nuevas, renombres_clausulas, renombres_variables, nueva, asignaciones,  asignacion,clausulas, clausulas_cc, max_iteraciones,  max_iteraciones_maximas, casos, *caso) ;
 	
 	for(int i = 0 ; i < cc.size() ; ++i) {
+		int cant_c= clausulas_cc[i].size();
+		int cant_v= asignaciones[i].size();
+	  Asignacion asig(*casos[i]);
+	  list<int> clausulas_satisfechas;
+    construir(*casos[i], asig, clausulas_satisfechas);
 		int max=0; //Aca se guarda el maximo total
-		int inSat=1000;
+		int inSat = cant_c - clausulas_satisfechas.size();
 		int aux; //Auxiliar para ir levantando
 		int altura;
 		vector<bool> asignacion_max;
@@ -253,16 +258,15 @@ int main(){
 		vector<int> siguientes;
 		vector< vector< vector< int > > > ramaArbol; //Espacio para los estados de cada nodo de la rama
 		
-		c= clausulas_cc[i].size();
-		v= asignaciones[i].size();
 
-		resExacta(c, v, clausulas_cc[i], ramaArbol, asignaciones[i], inSat, altura, asignacion_max, ramaInSat, siguientes);
-		max_iteraciones_maximas[i] = c -  inSat;
-				 
+		resExacta(cant_c, cant_v, clausulas_cc[i], ramaArbol, asignaciones[i], inSat, altura, asignacion_max, ramaInSat, siguientes);
+		max_iteraciones_maximas[i] = cant_c -  inSat;
+    asignaciones[i].assign(asignacion_max.begin()+1,asignacion_max.end());
 	}
 		
 	unificar_cc( max_iteracion_maxima,  max_iteraciones_maximas,nueva,nuevas, renombres_variables,renombres_clausulas, asignaciones, asignacion ) ;
-	
+	nueva.asignacion = &asignacion;
+	nueva.contarOkPorClausula();
 	
 		
 		#ifdef TIEMPOS
@@ -386,6 +390,8 @@ bool haceTrue(vector<int> &clausula, vector<bool> &asignacion){
 	return res;
 }
 void resExacta(int c, int v, vector< vector< int > > &clausulas, vector< vector< vector< int > > > &ramaArbol, vector<bool> &asignacion, int &inSat, int &altura, vector<bool> &asignacion_max, vector<int> &ramaInSat, vector<int> &siguientes){
+    asignacion.clear();
+  
 		ramaArbol.push_back(clausulas); //Estado 0, raiz del arbol
 		ramaArbol.push_back(clausulas); //Le copio los estados al primer nodo para que empiece
 		altura = 1;
