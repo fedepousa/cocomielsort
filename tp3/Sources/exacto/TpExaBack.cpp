@@ -63,7 +63,7 @@ int main(){
 		 * Aca hay que inicializar inSat por ejemplo con el constructivo 
 		 * cosa de ya poder hacer buenas podas de entrada
 		 */
-	
+	  inSat = 1000;
 		ramaArbol.push_back(clausulas); //Estado 0, raiz del arbol
 		ramaArbol.push_back(clausulas); //Le copio los estados al primer nodo para que empiece
 		altura = 1;

@@ -98,6 +98,7 @@ void Str_local::contarOkPorClausula(){
 // O(c * v)
 	unsigned int c= clausulas->size();
 	for(unsigned int i = 0; i<c;++i){
+	  cant_ok_por_clausula[i] = 0;
 		unsigned int lit = (*clausulas)[i].size();
 		for(unsigned int j = 0; j<lit;++j){
 			int temp = (((*clausulas)[i])[j]);
