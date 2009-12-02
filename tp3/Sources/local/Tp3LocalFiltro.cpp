@@ -23,6 +23,10 @@ typedef int Variable;
 
 #include "local.h"
 
+vector<unsigned int> clausula_originales_a_clausulas_cc;
+vector<unsigned int> variables_originales_a_variables_cc;
+
+
 void mostrar_vector(vector<unsigned int> &v) {
   for(vector<unsigned int>::iterator it = v.begin(); it!=v.end();++it){
     cout << *it << " ";
@@ -123,6 +127,8 @@ int main(){
     
 		v = caso->cant_variables;
 		c = caso->cant_clausulas;
+	  clausula_originales_a_clausulas_cc = vector<unsigned int>(c,0);
+	  variables_originales_a_variables_cc = vector<unsigned int>(v,0);
     
     asignacion = vector<bool>( v , true);
 	    
@@ -290,11 +296,11 @@ void generar_casos_cc(Str_local *casos[], vector< vector <unsigned int> >&renomb
 		for(int var = 0 ; var < cant_v; ++var) {
 		  int var_orig = renombres_variables[i][var];
 		  for(set<int>::iterator it = caso_global.literales[var_orig].clausulas.begin();it != caso_global.literales[var_orig].clausulas.end(); ++ it)  {
-		    c[i]->literales[var].clausulas.insert(renombres_clausulas[i][(*it)-1]+1) ;
+		    c[i]->literales[var].clausulas.insert(clausula_originales_a_clausulas_cc[(*it)-1]+1) ;
       }
 		  for(set<int>::iterator it = caso_global.literales_negados[var_orig].clausulas.begin();it != caso_global.literales_negados[var_orig].clausulas.end(); ++ it)  {
 		    
-		    c[i]->literales_negados[var].clausulas.insert(renombres_clausulas[i][(*it)-1]+1) ;
+		    c[i]->literales_negados[var].clausulas.insert(clausula_originales_a_clausulas_cc[(*it)-1]+1) ;
       }
     }
     
@@ -330,10 +336,10 @@ void generar_casos_cc(Str_local *casos[], vector< vector <unsigned int> >&renomb
       clausulas_cc[i].push_back(vector<int>());
       for(vector<int>::iterator it = clausulas[renombres_clausulas[i][clau]].begin(); it !=clausulas[renombres_clausulas[i][clau]].end() ; ++it) {
         if(*it > 0) {
-          clausulas_cc[i][clau].push_back(renombres_variables[i][(*it)-1]+1);
+          clausulas_cc[i][clau].push_back(variables_originales_a_variables_cc[(*it)-1]+1);
         }
         else {
-          clausulas_cc[i][clau].push_back(-(renombres_variables[i][abs(*it)-1]+1));
+          clausulas_cc[i][clau].push_back(-(variables_originales_a_variables_cc[abs(*it)-1]+1));
         }
       }
     }
@@ -356,11 +362,13 @@ void generar_renombres(vector< vector <unsigned int > >  &renombres_clausulas, v
       for(vector<int>::iterator it =cc[i].begin(); it != cc[i].end() ; ++it){
         renombres_clausulas[i].push_back(*it);
         comp_conexa_de_la_iesima_clausula[*it] = i;
+	      clausula_originales_a_clausulas_cc[*it] = renombres_clausulas[i].size()-1;
       }
     }
     for(int i = 0; i< v; ++i) {
       if(!nueva.variables[i].empty()) {
         cc_variables[comp_conexa_de_la_iesima_clausula[nueva.variables[i][0].indice]].push_back(i);
+        variables_originales_a_variables_cc[i] = cc_variables[comp_conexa_de_la_iesima_clausula[nueva.variables[i][0].indice]].size()-1;
       }
     }
     for(int i = 0; i < cc.size();++i) {
