@@ -53,7 +53,7 @@ La importancia de este algoritmo no radica solamente en haber sido el primero en
 Como su nombre lo indica, el algoritmo exacto para Max-Sat se encarga de resolver el problema exactamente, arrojando la asignacion que valida la mayor cantidad de clausulas posibles. Dado que no se conoce ning\'un algoritmo polinomial para resolver este problema, se implementaron 2 algoritmos de complejidad exponencial. Por un lado se implement\'o un algoritmo de fuerza bruta de simple implementaci\'on pero de muy baja eficiencia, en cuanto a tiempo de ejecuci\'on. Por otro lado se implemento un algoritmo exacto mediante backtracking para poder evitar visitar todas las asignaciones de las variables posibles.
 
 \subsection*{Algoritmo de fuerza bruta}
-\addcontentsline{toc}{section}{Algoritmo de fuerza bruta}
+\addcontentsline{toc}{subsection}{Algoritmo de fuerza bruta}
 En este algoritmo la idea es muy simple, se generan absolutamente todas las asignaciones posibles que existen, siendo estas $2^{v}$ donde v es la cantidad de variables. Luego, por cada una de las asignaciones se verifica cuantas clausulas valida, en el momento que una asignaci\'on supera el m\'aximo de clausulas hasta el momento, se actualiza la cantidad de clausulas validadas, as\'i como cual es la asignaci\'on que gener\'o este m\'aximo.
 
 La idea de este algoritmo es tener una resoluci\'on muy simple del problema, es claro que el tiempo de ejecuci\'on va a ser muy malo ya que se revisan todas y cada una de las asignaciones posibles, y estas crecen en orden exponencial en funci\'on de la cantidad de variables. Sin embargo, cabe destacar que el algoritmo provee una resoluci\'on exacta del problema y con baja probabilidad de errores dada la simpleza del mismo.
@@ -88,7 +88,7 @@ La funci\'on \emph{haceTrue} lo que hace es simplemente mirar toda la clausula p
 Por otro lado, la funci\'on \emph{siguiente} se encarga de modificar para la asignaci\'on para probar con todas las posibles.
 
 \subsection*{Algoritmo de backtracking}
-\addcontentsline{toc}{section}{Algoritmo de backtracking}
+\addcontentsline{toc}{subsection}{Algoritmo de backtracking}
 
 Luego de implementar un algoritmo exacto por fuerza bruta, se busc\'o implementar un algoritmo tambi\'en exacto pero tratando de lograr un menor tiempo de ejecuci\'on. El algoritmo implementado es un algoritmo exacto basado en la t\'ecnica de backtracking para lograr mejores resultados (en cuanto a tiempo de ejecuci\'on), si bien en la siguiente secci\'on se ver\'a que la complejidad temporal es la misma para ambos algoritmos exactos, la t\'ecnica de backtracking provee de herramientas para no tener que consultar necesariamente por cada una de las asignaciones posibles, es en estas podas que este algoritmo mejora los tiempos de ejecuci\'on del anterior.
 
@@ -152,6 +152,44 @@ Cabe destacar que la ventaja temporal que gana el algoritmo de backtracking, gen
 
 \section*{Heur\'istica constructiva para MAX-SAT}
 \addcontentsline{toc}{section}{Heur\'istica constructiva para MAX-SAT} 
+En esta secci\'on se explicar\'a el uso de una heur\'istica constructiva para resolver el problema.
+
+La motivaci\'on principal de utilizar diferentes heur\'isticas para resolver el problema de Max-Sat es que, como se vio en la secci\'on anterior, los algoritmos exactos conocidos son de orden exponencial por lo que solo se pueden correr con instancias relativamente peque\~{n}as.
+
+La idea entonces es realizar un algoritmo que no sea exacto, sino que arroje una soluci\'on aproximada, pero en un tiempo polinomial para poder correr instancias m\'as grandes.
+
+En esta primer aproximaci\'on, se realiz\'o una heur\'istica constructiva, esto quiere decir que se va construyendo una soluci\'on mediante alg\'un criterio que se supone (y luego se ver\'a que se puede demostrar) que es adecuado para obtener un buen resultado.
+
+En este caso, la heur\'istica constructiva seguir\'a una estrategia golosa para ir armando la soluci\'on. Lo que hace esta heur\'istica es revisar todas las clausulas buscando cual es el literal que m\'as se repite. Una vez encontrado dicho literal lo que se hace es asignar True a este literal y actualizar las clausulas en base a esta asignaci\'on.
+
+Actualizar las clausulas consiste en dos tareas, en primer lugar se borran todas las clausulas que contenian este literal ya que ya fueron satisfechas mediante la asignaci\'on y se actualiza el contador de clausulas satisfechas. Por otro lado, en las clausulas restantes, se borra el literal negado ya que este no sirve para futuras elecciones porque al asignar True al literal elegido, el literal negado tendra necesariamente valor falso.
+
+Luego de realizar esta actualizaci\'on, se continua iterativamente con esta estrategia golosa hasta encontrar una asignaci\'on completa de las variables.
+
+A continuaci\'on se muestra el pseudoc\'odigo de la heur\'istica constructiva:
+
+\begin{verbatim}
+Constructiva(Vector clausulas, int V)
+Max := 0
+Comenzar con asignacion vacia
+mientras asignacion no este completa
+      Tomar literal l que mas se repita
+      Asignar True a l
+      Para i de 1 hasta tamanio(clausulas)
+         Si esta(l, clausula[i])
+             borrar clausula[i]
+             Max := Max + 1
+         fin si
+      fin para
+      Para i de 1 hasta tamanio(clausulas)
+         Si esta(-l, clausula[i])
+             borrar(-l, clausula[i])
+         fin si
+      fin para
+fin mientras
+devolver asignacion y Max
+\end{verbatim}
+
 
 
 
