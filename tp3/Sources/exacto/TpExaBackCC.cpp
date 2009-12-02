@@ -23,6 +23,28 @@ typedef int Variable;
 
 #include "local.h"
 
+void mostrar_vector(vector<int> &l) {
+  for(vector<int>::iterator it = l.begin();it!=l.end();++it) {
+    cout << *it << " ";
+  }
+  cout << endl;
+}
+
+void mostrar_vector(vector<unsigned int> &l) {
+  for(vector<unsigned int>::iterator it = l.begin();it!=l.end();++it) {
+    cout << *it << " ";
+  }
+  cout << endl;
+}
+
+
+void mostrar_vector(vector<bool> &l) {
+  for(vector<bool>::iterator it = l.begin();it!=l.end();++it) {
+    cout << *it << " ";
+  }
+  cout << endl;
+}
+
 
 
 //CC
@@ -30,7 +52,7 @@ void escribirResultados(ofstream &salida, Str_local  &nueva, vector<bool> &asign
 
 void unificar_cc( unsigned int &max_iteracion_maxima, unsigned int max_iteraciones_maximas[],Str_local &nueva,  Str_local *casos[], vector< vector< unsigned int> > &renombres_variables, vector< vector< unsigned int> > &renombres_clausulas, vector<bool> asignaciones[], vector<bool> &asignacion);
 
-void generar_casos_cc(Str_local *casos[], vector< vector <unsigned int> >&renombres_clausulas, vector< vector <unsigned int> >&renombres_variables, Str_local &nueva, vector<bool> asignaciones[], vector<bool> & asignacion, vector< vector< int > > &clausulas,vector< vector< int > > clausulas_cc[], unsigned int max_iteraciones[], unsigned int max_iteraciones_maximas[], Caso *c[], Caso &caso_global);
+void generar_casos_cc(Str_local *casos[], vector< vector <unsigned int> >&renombres_clausulas, vector< vector <unsigned int> >&renombres_variables, Str_local &nueva, vector<bool> asignaciones[], vector<bool> & asignacion, vector< vector< int > > &clausulas,vector< vector< int > > *clausulas_cc, unsigned int max_iteraciones[], unsigned int max_iteraciones_maximas[], Caso *c[], Caso &caso_global);
 
 void generar_renombres(vector< vector <unsigned int > >  &renombres_clausulas, vector< vector <unsigned int > >  &renombres_variables, vector< vector <int > >  cc, unsigned int comp_conexa_de_la_iesima_clausula[], unsigned int v, Str_local &nueva, vector< vector <int > >  &cc_variables);
 
@@ -41,8 +63,8 @@ static bool leer(ifstream &entrada, Caso **d, vector< vector<int> > &claus);
 //Escribe el resultado en el ofstream salida
 
 
-
-
+vector<unsigned int> clausula_originales_a_clausulas_cc;
+vector<unsigned int> variables_originales_a_variables_cc;
 //Viejas
 int satisfacer(int altura, bool asignar, vector< vector< int > > &estadoActual);
 // Hace true las clausulas que puede, las que tiene el literal negado, o bien les saca el literal o si es unitaria
@@ -98,6 +120,8 @@ int main(){
 			v = caso->cant_variables;
 		c = caso->cant_clausulas;
 
+	  clausula_originales_a_clausulas_cc = vector<unsigned int>(c,0);
+	  variables_originales_a_variables_cc = vector<unsigned int>(v,0);
     asignacion = vector<bool>( v , true);
 	    
     //  Si quiero usar la heuristica constructiva sin dividir en cc
@@ -204,7 +228,7 @@ int main(){
     generar_renombres(renombres_clausulas, renombres_variables, cc, comp_conexa_de_la_iesima_clausula,  v, nueva,cc_variables);
     
     vector<bool> asignaciones[cc.size()];
-    vector< vector< int > > clausulas_cc[cc.size()];
+    vector< vector< int > > *clausulas_cc = new vector< vector<int> >[cc.size()];
     unsigned int max_iteraciones[cc.size()];
 	unsigned int max_iteraciones_maximas[cc.size()]; 
 	
@@ -461,7 +485,7 @@ void unificar_cc( unsigned int &max_iteracion_maxima, unsigned int max_iteracion
   
 }
 
-void generar_casos_cc(Str_local *casos[], vector< vector <unsigned int> >&renombres_clausulas, vector< vector <unsigned int> >&renombres_variables, Str_local &nueva, vector<bool> asignaciones[], vector<bool> & asignacion, vector< vector< int > > &clausulas,vector< vector< int > > clausulas_cc[], unsigned int max_iteraciones[], unsigned int max_iteraciones_maximas[], Caso *c[], Caso &caso_global) {
+void generar_casos_cc(Str_local *casos[], vector< vector <unsigned int> >&renombres_clausulas, vector< vector <unsigned int> >&renombres_variables, Str_local &nueva, vector<bool> asignaciones[], vector<bool> & asignacion, vector< vector< int > > &clausulas,vector< vector< int > > *clausulas_cc, unsigned int max_iteraciones[], unsigned int max_iteraciones_maximas[], Caso *c[], Caso &caso_global) {
   for(int i = 0; i < renombres_clausulas.size();++i) {
     // El for recorre todas las cc
     
@@ -476,11 +500,11 @@ void generar_casos_cc(Str_local *casos[], vector< vector <unsigned int> >&renomb
 			int var_orig = renombres_variables[i][var];
 			
 			for(set<int>::iterator it = caso_global.literales[var_orig].clausulas.begin();it != caso_global.literales[var_orig].clausulas.end(); ++ it)  {
-		    c[i]->literales[var].clausulas.insert(renombres_clausulas[i][(*it)-1]+1) ;
+		    c[i]->literales[var].clausulas.insert(clausula_originales_a_clausulas_cc[(*it)-1]+1) ;
 			}
 			for(set<int>::iterator it = caso_global.literales_negados[var_orig].clausulas.begin();it != caso_global.literales_negados[var_orig].clausulas.end(); ++ it)  {
 		    
-		    c[i]->literales_negados[var].clausulas.insert(renombres_clausulas[i][(*it)-1]+1) ;
+		    c[i]->literales_negados[var].clausulas.insert(clausula_originales_a_clausulas_cc[(*it)-1]+1) ;
 			}
 		}
     
@@ -516,10 +540,10 @@ void generar_casos_cc(Str_local *casos[], vector< vector <unsigned int> >&renomb
       clausulas_cc[i].push_back(vector<int>());
       for(vector<int>::iterator it = clausulas[renombres_clausulas[i][clau]].begin(); it !=clausulas[renombres_clausulas[i][clau]].end() ; ++it) {
         if(*it > 0) {
-          clausulas_cc[i][clau].push_back(renombres_variables[i][(*it)-1]+1);
+          clausulas_cc[i][clau].push_back(variables_originales_a_variables_cc[(*it)-1]+1);
         }
         else {
-          clausulas_cc[i][clau].push_back(-(renombres_variables[i][abs(*it)-1]+1));
+          clausulas_cc[i][clau].push_back(-(variables_originales_a_variables_cc[abs(*it)-1]+1));
         }
       }
     }
@@ -545,6 +569,8 @@ void generar_renombres(vector< vector <unsigned int > >  &renombres_clausulas, v
       for(vector<int>::iterator it =cc[i].begin(); it != cc[i].end() ; ++it){
         renombres_clausulas[i].push_back(*it);
         comp_conexa_de_la_iesima_clausula[*it] = i;
+        
+	      clausula_originales_a_clausulas_cc[*it] = renombres_clausulas[i].size()-1;
       }
     }
     
@@ -552,6 +578,7 @@ void generar_renombres(vector< vector <unsigned int > >  &renombres_clausulas, v
     for(int i = 0; i< v; ++i) {
       if(!nueva.variables[i].empty()) {
         cc_variables[comp_conexa_de_la_iesima_clausula[nueva.variables[i][0].indice]].push_back(i);
+        variables_originales_a_variables_cc[i] = cc_variables[comp_conexa_de_la_iesima_clausula[nueva.variables[i][0].indice]].size()-1;
       }
     }
     
