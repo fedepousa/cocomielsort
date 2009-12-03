@@ -277,8 +277,19 @@ devolver asignacion y Max
 \subsection*{Complejidad de la heur\'istica de busqueda local}
 \addcontentsline{toc}{subsection}{Complejidad de la heur\'istica de busqueda local}
 
-ver un poco mas para no mentir
+El algoritmo consiste en elegir la variable que al cambiar su asignación más aumenta el número de clausulas satisfechas. En caso de no existir ninguna variable que al cambiar su asignación aumente el número de cláusulas satisfechas, se termina, si no se vuelve a iterar.
 
+Para identificar la variable a la que se le cambiará su asignación mantenemos por cada cláusula el número de literales que aparecen en la misma y que son verdaderos con la asignación actual. Llamemos $l_i$ al número de literales que aparecen en la cláusula $i$ y que son verdaderos con la asignación actual. A su vez mantenemos para cada variable, una lista de las cláusulas en las que aparece un literal que la contenga y si el literal que la contiene es una negación. 
+
+Para saber cuál sería la variación de la cantidad de cláusulas satisfechas al cambiar el valor de una varible, necesitamos saber cuántas cláusulas pasaron a ser verdaderas y cuántas ahora son falsas. Para eso, en cada cláusula en que aparece la variable restamos uno a $l_i$ si la variable satisfacía un literal de la cláusula $i$, o sumamos uno si ahora satisface un literal de la misma cláusula que era falso. Si $l_i$ es cero antes del cambio y luego es distinto de cero, entonces antes era falsa la cláusula y el cambio la hizo verdadera, por el contrario, si $l_i$ es distinto de cero antes del cambio y luego se hace cero, la cláusula $i$ dejo de ser satisfecha luego del cambio. Llevando un registro de cuántas cláusulas cambiaron de estar satisfechas a insatisfechos y viceversa. 
+
+
+Por lo tanto, para obtener la variación del número de cláusulas satisfechas al cambiar una variable se realiza una cantidad de operaciones en $O\left( c \right)$, donde $c$ es la cantidad de variables del problema. Como es necesario hacer esto para cada una de las variables, cada iteración tiene una complejidad en $O\left( v \times c  \right)$.
+
+La inicialización de la estructura se realiza en $O\left( v \times  c\right)$ ya que es necesario recorrer todas las clausulas, y en cada cláusulas la cantidad de literales está en $O\left( v\right)$. La inicialización consiste en, a medida que se recorren las cláusulas, por cada literal que aparece, agregar la cláusula que se está recorriendo a la lista de clausulas en las que la variable contenida en el literal aparece. Si el literal es satisfechos por la asignación inicial, sumar uno a $l_i$, siendo i la cláusula que se está recorriendo. 
+
+
+La cantidad de iteraciones está acotada por la cantidad de cláusulas, ya que en cada iteración aumenta el número de cláusulas satisfechas. Por lo tanto el algoritmo tiene una complejidad en $O\left( v \times c^2 \right)$.
 
 
 \section*{Metaheur\'istica de b\'usqueda tab\'u para MAX-SAT}
