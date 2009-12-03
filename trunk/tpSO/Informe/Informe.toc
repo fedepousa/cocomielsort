@@ -1,0 +1,14 @@
+\select@language {spanish}
+\contentsline {section}{Aclaraciones Generales}{2}
+\contentsline {section}{Comandos b\'asicos de Unix}{2}
+\contentsline {section}{Comandos Extendidos de Unix}{5}
+\contentsline {subsection}{Ejecuci\'on autom\'atica}{5}
+\contentsline {subsection}{Dispositivos especiales}{6}
+\contentsline {subsection}{Cambio de hora}{6}
+\contentsline {subsection}{Lapsos y tiempos}{6}
+\contentsline {subsection}{Salida est\'andar y pipes}{6}
+\contentsline {section}{Scripting}{7}
+\contentsline {section}{Ejecuci\'on de procesos en background}{7}
+\contentsline {section}{IPC y Sincronizaci\'on}{7}
+\contentsline {section}{El Kernel Linux}{7}
+\contentsline {section}{Temas del Sistema Operativo}{7}
