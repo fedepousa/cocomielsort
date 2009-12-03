@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.6.10)  3 DEC 2009 11:19
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.6.10)  3 DEC 2009 11:59
 entering extended mode
  %&-line parsing enabled.
 **informeTp3.tex
@@ -401,7 +401,7 @@ Overfull \hbox (0.22281pt too wide) in paragraph at lines 281--282
 en-do asig-na-ciones que fueron
  []
 
-[10] [11] (./informeTp3.aux) ) 
+[10] [11] [12] (./informeTp3.aux) ) 
 Here is how much of TeX's memory you used:
  2045 strings out of 95086
  27777 string characters out of 1183255
@@ -410,18 +410,18 @@ Here is how much of TeX's memory you used:
  7495 words of font info for 27 fonts, out of 1200000 for 2000
  28 hyphenation exceptions out of 8191
  43i,8n,42p,779b,243s stack positions out of 5000i,500n,6000p,200000b,5000s
-</usr/share/texmf-texlive/fonts/type1/bluesky/cm/
-cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmbx12.pfb></usr/sh
-are/texmf-texlive/fonts/type1/bluesky/cm/cmmi10.pfb></usr/share/texmf-texlive/f
-onts/type1/bluesky/cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/c
-m/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr6.pfb></usr/sha
-re/texmf-texlive/fonts/type1/bluesky/cm/cmr7.pfb></usr/share/texmf-texlive/font
-s/type1/bluesky/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cm
-sy10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmti10.pfb></usr/shar
-e/texmf-texlive/fonts/type1/bluesky/cm/cmtt10.pfb>
-Output written on informeTp3.pdf (11 pages, 97662 bytes).
+</usr/share/texmf-texlive/fonts/type1/bluesk
+y/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmbx12.pfb></u
+sr/share/texmf-texlive/fonts/type1/bluesky/cm/cmmi10.pfb></usr/share/texmf-texl
+ive/fonts/type1/bluesky/cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/blue
+sky/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr6.pfb></us
+r/share/texmf-texlive/fonts/type1/bluesky/cm/cmr7.pfb></usr/share/texmf-texlive
+/fonts/type1/bluesky/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/
+cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmti10.pfb></usr
+/share/texmf-texlive/fonts/type1/bluesky/cm/cmtt10.pfb>
+Output written on informeTp3.pdf (12 pages, 98631 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
+ 85 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
