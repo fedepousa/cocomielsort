@@ -389,13 +389,100 @@ Dada la tabla presentada anteriormente, se denotan varias observaciones:
 En el caso del algoritmo con backtracking, se puede ver que el tiempo de ejecuci\'on es considerablemente peor que el tiempo de las heur\'isticas. Sin embargo, es bastante mejor que el tiempo del algoritmo de fuerza bruta.
 
 Cabe destacar que, en estos casos, el tiempo de backtracking no es tan malo en comparaci\'on con las heur\'isticas. Se cree que esto se debe principalmente a que las 91 clausulas son satisfacibles y el algoritmo de backtracking tiene peor rendimiento cuando la mayor\'ia de las clausulas no se satisfacen, ya que se le hace m\'as complicado podar ramas.
-\item Los casos presentados muestran como el filtro de componentes conexas no presenta una mejora en los tiempos de ejecuci\'on, si no que empeoran debido al tiempo que se pierde en las rutinas pertinentes a este filtro. Es por esto que para las secciones siguientes no se segu\'iran analizando las variantes con el filtro de componentes conexas.
+\item Los casos presentados muestran como el filtro de componentes conexas no presenta una mejora en los tiempos de ejecuci\'on, si no que empeoran debido al tiempo que se pierde en las rutinas pertinentes a este filtro. Se cree que la razon para que suceda esto es que a medida que la cantidad de variables crece, cada vez es menos probable que las clausulas no se relacionen entre s\'i, formando una sola componente conexa. Es por esto que para las secciones siguientes no se segu\'iran analizando las variantes con el filtro de componentes conexas.
 \item Los casos presentandos alcanzan para ver las diferencias, de eficiencia y temporales, que hay entre los algoritmos exactos y las heur\'isticas pero no son representativos para comparar las heur\'isticas entre s\'i. Esto se har\'a en las secciones siguientes.
 \end{enumerate}
 
 
+\subsection*{An\'alisis comparativos de las heur\'isticas constructiva, de b\'usqueda local y tab\'u}
+\addcontentsline{toc}{subsection}{An\'alisis comparativos de las heur\'isticas constructiva, de b\'usqueda local y tab\'u}
+
+En esta secci\'on se realizar\'a un an\'alisis comparativo entre las diferentes he\'uristicas. Para hacer este an\'alisis se utilizaron varios paquetes de prueba:
+
+\begin{enumerate}
+\item 1000 instancias con 50 variables y 218 clausulas, todas satisfacibles.
+\item 100 instancias con 75 variables y 235 clausulas, todas satisfacibles.
+\item 1000 instancias con 100 variables y 430 clausulas, todas satisfacibles.
+\item 100 instancias con 125 variables y 538 clausulas, todas satisfacibles.
+\item 100 instancias con 150 variables y 645 clausulas, todas satisfacibles.
+\item 100 instancias con 175 variables y 753 clausulas, todas satisfacibles.
+\item 100 instancias con 200 variables y 860 clausulas, todas satisfacibles.
+\item 100 instancias con 225 variables y 960 clausulas, todas satisfacibles.
+\item 100 instancias con 250 variables y 1065 clausulas, todas satisfacibles.
+\end{enumerate}
+
+Dado que la cantidad de pruebas corridas es muy grande como para presentar los resultados individuales de cada caso, se procedio a realizar el an\'alisis de la siguiente manera: para cada una las heur\'isticas diferentes se considerar\'a un \emph{N\'umero de eficiencia}, el mismo se realiza para cada uno de los paquetes por separado y se calcula mediante la cuenta 
+
+\begin{equation}
+ Eficiencia = promedio de clausulas satisfechas/clausulas totales
+\end{equation}
+
+Es decir, se genera un n\'umero que indica porcentualmente cuantas clausulas en promedio satisfizo una heur\'istica determinada para cada paquete.
+
+En el siguiente gr\'afico se puede ver el desempe\~{n}o de las heur\'isticas. El mismo presenta el n\'umero de eficiencia de la heur\'istica en funci\'on de los paquetes de prueba.
 
 
+Aca va el grafico 1.
+
+
+Dado el gr\'afico presentado se pueden hacer varias observaciones:
+\begin{itemize}
+\item Las heur\'isticas muestran resultados esperados: En primer lugar, con la eficiencia m\'as baja se encuentra la heur\'istica constructiva (Se destaca que igualmente el comportamiento es muy bueno, superando el 97,5 porciento de clausulas satisfechas en promedio). En segundo lugar se encuentra la b\'usqueda local, lo cual es natural dado que la misma empieza desde la soluci\'on provista por la constructiva y luego la mejora. Por \'ultimo, se puede ver que la metaheur\'istica de b\'usqueda tab\'u es la m\'as eficiente de la tres, dando un salto de calidad importante llegando casi al 99,5 porciento de clausulas satisfechas en promedio en todos los paquetes.
+\item Las 3 heur\'isticas poseen un comportamiento porcentual parecido en los 9 paquetes, mostrando que la eficiencia parece depender intrinsecamente de las elecciones hechas por las rutinas, y no por otros factores como la cantidad de variables o de clausulas.
+\end{itemize}
+
+
+A continuaci\'on se muestra el an\'alisis de los tiempos de ejecuci\'on de cada una de las heur\'isticas para estos paquetes de casos de prueba.
+
+
+Aca va el gr\'afico 2.
+
+
+
+Como se puede ver en la figura 2, la heur\'istica constructiva es la que menos tiempo de ejecuci\'on toma lo cual concuerda con lo esperado ya que las otras dos heur\'isticas comienzan con la soluci\'on de la constructiva. Luego, se encuentra la heur\'istica de b\'usqueda local y por \'ultimo, con mayor tiempo de ejecuci\'on, se encuentra la b\'usqueda tab\'u.
+
+Cabe destacar que la diferencia en los tiempos de ejecucion entre la heur\'istica constructiva y la b\'usqueda local no es muy grande, mientras que la diferencia con tab\'u si es bastante mayor. Esto indicar\'ia que si bien la busqueda local mejora los resultados de la heur\'istica constructiva(como se ve en el gr\'afico 1), no toma mucho tiempo en hacerlo ya que rapidamente cae en un m\'aximo local. Por otro lado, la b\'usqueda tab\'u si toma un tiempo mayor, porque aunque caiga en m\'aximos locales, sigue buscando dada su naturaleza, es esta brecha en el tiempo de ejecuci\'on la que explica la clara diferencia en la eficiencia de tab\'u al realizar una b\'usqueda m\'as exahustiva.
+
+\bigskip
+
+La eficiencia superior que mostr\'o la b\'usqueda tab\'u, motiva la siguiente secci\'on de an\'alisis realizada para hacer m\'as hincapie en la eficiencia de esta metaheur\'istica, as\'i como la de su modificaci\'on implementada.
+
+\subsection*{An\'alisis comparativos de variaciones de par\'ametros en b\'usqueda tab\'u y tab\'u modificada}
+\addcontentsline{toc}{subsection}{An\'alisis comparativos de variaciones de par\'ametros en b\'usqueda tab\'u y tab\'u modificada}
+
+En primer lugar, se destaca que el an\'alisis de todos los casos siguientes se realiz\'o de la misma manera que en la secci\'on anterior; es decir, se utilizaron los mismos nueve paquetes de casos de prueba, y para resumir el desempe\~{n}o se utiliz\'o el mismo n\'umero de eficiencia presentado anteriormente.
+
+Una vez realizadas dichas consideraciones, se proceder\'a a realizar el an\'alisis pertinente. Dicho an\'alisis esta basado en las siguientes propiedades: 
+
+La metaheur\'istica de b\'usqueda tab\'u posee tres par\'ametros que son modificables, los mismos son: Longitud de la lista tab\'u, Cantidad m\'axima de iteraciones y Cantidad m\'axima de iteraciones entre \'optimos. Es por esto que lo se har\'a es analizar como var\'ia la eficiencia y el tiempo de ejecuci\'on de la b\'usqueda tab\'u al modificar estos par\'ametros.
+
+Por otro lado, la b\'usqueda tab\'u modificada presenta un par\'ametro m\'as que es la cantidad de asignaciones con las que se trabaja, por lo que el \'ultimo an\'alisis presentado sera pertinente a la variaci\'on de este par\'ametro.
+
+\bigskip
+
+En primer lugar, se comenzar\'a el an\'alisis fijando los par\'ametros de cantidad de iteraciones, y se modificar\'a la longitud de la lista tab\'u. La longitud de la lista tab\'u se vari\'o entre v/3 y v/9
+
+A continuaci\'on, se puede ver el gr\'afico de la eficiencia en funci\'on de cada paquete. 
+
+Aca va el grafico 3.
+
+Dado el gr\'afico de la figura 3, se puede ver como var\'ia la eficiencia de la b\'usqueda tab\'u dependiendo de la longitud de la lista. La conclusi\'on principal que se desprende de la visualizaci\'on del gr\'afico es que las franjas centrales se encuentran por encima de las franjas laterelas. Es decir, parecer\'ia ser que la metaheur\'istica funciona de mejor manera cuando la longitud de la lista se encuentra entre v/5, v/6 y v/7 y comienza a bajar su eficiencia a medida que la longitud se aleja de estos valores.
+
+En el gr\'afico se denota que en los primeros paquetes v/5 parece ser la longitud m\'as eficiente, mientras que en los \'ultimos paquetes es v/6 la que aparece por encima de las dem\'as. v/7 solo es la m\'as eficiente en el 4to paquete, pero en todos los demas se encuentra cerca del m\'aximo.
+
+Es importante destacar que si bien se encuentran fluctuaciones y tendencias, todas las longitudes propuestas se encuentran en un margen muy chico, resultando todas muy eficientes.
+
+Por \'ultimo, se destaca que las tendencias vistas sobre la mejor longitud para la lista tab\'u se condice con los resultados encontrados en la bibliograf\'ia.\footnote{Citar el paper que habla de v/6}
+
+\bigskip
+
+A continuaci\'on, se presenta el gr\'afico de los tiempos de ejecuci\'on de la metaheur\'istica al cambiar la longitud de la lista tab\'u.
+
+Aca va el grafico 4.
+
+
+
+Como se puede ver en el gr\'afico, no hay grandes fluctuaciones entre los tiempos de ejecuci\'on y se encuentra ninguna tendencia muy definida. (poner a que se debe esto, a que mirar si esta es O(1) y no miras toda la lista tonces da igual?)
 
 
 
