@@ -13,4 +13,6 @@
 \contentsline {subsection}{Detalles de implementaci\'on}{9}
 \contentsline {subsection}{Complejidad de la heur\'istica de busqueda local}{10}
 \contentsline {section}{Metaheur\'istica de b\'usqueda tab\'u para MAX-SAT}{10}
-\contentsline {section}{Bibliografia}{11}
+\contentsline {subsection}{Complejidad de la metaheur\'istica de la b\'usqueda Tab\'u}{11}
+\contentsline {subsection}{Modificaci\'on de la metaheur\'istica de la b\'usqueda Tab\'u}{12}
+\contentsline {section}{Bibliografia}{12}

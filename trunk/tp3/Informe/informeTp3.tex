@@ -288,14 +288,33 @@ En esta primera implementaci\'on presentada, ya se pueden encontrar varias sutil
 
 Si bien la primera aproximaci\'on indica que la lista Tab\'u ser\'ia una lista de asignaciones, es importante destacar que esta implementaci\'on resulta ineficiente, debido a que se debe recorrer toda la lista para saber si una asignaci\'on est\'a o no. Esto resulta ineficiente adem\'as porque la comparacion entre asignaciones es lenta, ya que es necesario compara variable por variable para ver si se realmente coinciden.
 
+Una alternativa que se encarga de resolver este \'ultimo problema consiste en representar la vecindad de una asignaci\'on en t\'ermino de movimientos que se puede realizar desde la asignaci\'on original a alguna otra de la vecindad. Si los movimientos que se consideran son reversibles, entonces se puede guardar en la lista Tab\'u los movimientos opuestos a los que se realizaron, evitando de esta manera entrar en el ciclo anteriormente mencionado. Se denominar\'a movimientos Tab\'u a aquellos que se encuentra en esta nueva lista Tab\'u.
 
-La implementación de la lista Tabú como una lista de asignaciones resulta ineficiente, debido a que se debe recorrer toda la lista para saber si una asignación está o no y porque la comparación entre asignaciones resulta lenta, ya que es necesario comparar variable por variable. 
-Una alternativa que se encarga del último problema consiste en representar el vecindario de una asignación en términos de movimientos que se pueden realizar desde la misma para llegar hasta otra asignación. Si los movimientos que consideramos son reversibles, entonces podemos guardar en la lista Tabú los movimientos opuestos a los que realizamos, evitando de esta manera entrar en un ciclo. Vamos a llamar movimientos Tabú a aquellos que se encuentran en la lista Tabú.
-Podría ocurrir que un movimiento a una asignación que todavía no visitamos sea Tabú, y ésta asignación puede incluso satisfacer más cláusulas que cualquier otra visitada con anterioridad. En casos como éste sería deseable ignorar la condición de Tabú del movimiento. De esta manera surge la función de aspiración. En este problema decidimos ignorar la condición de Tabú de un determinado movimiento aplicado a una asignación si la asignación resultante satisface más cláusulas que la mejor asignación visitada hasta el momento.
+A partir de la modificaci\'on explicada anteriormente puede surgir un inconveniente. Podr\'ia ocurrir que un movimiento a una asignaci\'on que todav\'a no se visit\'o sea Tab\'u, y esta asignaci\'on podr\'ia incluso satisfacer m\'as clausulas que cualquier otra visitada con anterioridad. En casos como \'este ser\'ia deseable ignorar la condici\'on de Tab\'u del movimiento. 
 
-Implementación:
-Habiendo definido conceptualmente los componentes de la búsqueda Tabú se pueden mencionar detalles de implementación. 
-La vecindad que definimos para cada asignación está compuesta por las asignaciones resultantes de cambiar el valor de exactamente una variable de la asignación original. Cada movimiento es el cambio de una variable, por lo tanto manteniendo un arreglo de enteros del tamaño de la cantidad de variables podemos llevar un registro de cuál fue la última iteración en la que se aplicó el movimiento i. De ésta manera podemos saber si un movimiento es Tabú con sólo ver si pasaron suficientes iteraciones desde la última iteración en la que fue usado, lo que resulta más eficiente que recorrer una lista con los movimientos. 
+Es por lo explicado anteriormente que surge la funci\'on de asipraci\'on. En este problema se decidi\'o ignorar la condici\'on de Tab\'u de un determinado movimiento aplicado a una asignaci\'on si la asignaci\'on resultante satisface m\'as clausulas que la mejor asignaci\'on visitada hasta el momento.
+
+
+Implementaci\'on:
+Habiendo definido conceptualmente los componentes de la b\'usqueda Tab\'u, se pueden mencionar algunos detalles de la implementaci\'on.
+
+En primer lugar, al igual que en la b\'usqueda local, la vecindad que se definio para cada asignaci\'on est\'a compuesta por las asignaciones resultantes de cambiar el valor de exactamente una variable de la asignaci\'on original. Cada movimiento es el cambio de una variable, por lo tanto manteniendo un vector de enteros del tama\~{n}o de la cantidad de variables, se puede llevar un registro de cu\'al fue la \'ultima iteraci\'on en la se aplic\'o el movimiento i. De esta manera, se puede saber si un movimiento es Tab\'u con s\'olo ver si pasaron suficientes iteraciones desde la \'ultima iteraci\'on en la que fue usado, lo que resulta m\'as eficiente que recorrer una lista con los movimientos.
+
+
+(aca habria que ver de decir si es algo-aproximado)
+
+\subsection*{Complejidad de la metaheur\'istica de la b\'usqueda Tab\'u}
+\addcontentsline{toc}{subsection}{Complejidad de la metaheur\'istica de la b\'usqueda Tab\'u}
+
+preguntar
+
+
+\subsection*{Modificaci\'on de la metaheur\'istica de la b\'usqueda Tab\'u}
+\addcontentsline{toc}{subsection}{Modificaci\'on de la metaheur\'istica de la b\'usqueda Tab\'u}
+
+Para finalizar con las heur\'isticas para resolver el problema de Max-Sat, se implemento una modificaci\'on a la meteheur\'istica de b\'usqueda Tab\'u.
+
+explicar como cambia con la cantidad de asignaciones.
 
 
 
