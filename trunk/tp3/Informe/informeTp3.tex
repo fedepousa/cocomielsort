@@ -209,7 +209,17 @@ En dicho caso, la heur\'istica utilizada ser\'ia un algoritmo $\frac{1}{2}$-apro
 \subsection*{Complejidad de la heur\'istica constructiva}
 \addcontentsline{toc}{subsection}{Complejidad de la heur\'istica constructiva}
 
-No quiero mentir mucho asi que pregunto y despues escribo
+La heurística elige de manera golosa el literal que más clausulas satisface y lo hace verdadero. Esto se repite hasta que la asignación de las variables esté completa.
+
+Para elegir el literal que más clausulas satisface manetenemos, por cada literal, un conjunto con las clausulas que haría verdaderas y que todavía no están satisfechas.
+
+Al realizar cada elección debemos actualizar la estructura, eliminando cada una de las cláusulas satisfechas de los conjuntos en los que aparezcan. Como tenemos un conjunto por cada literal, se van a borrar las cláusulas satisfechas de $v$ conjuntos, donde $v$ es la cantidad de variables del problema. En el algoritmo se van a satisfacer a lo sumo $c$ cláusulas. Por lo tanto a cada cláusula satisfecha vamos a borrarla de $v$ conjuntos, teniendo el borrado una complejidad en $O\left( log \left( c \right) \right)$, donde $c$ es la cantidad de cláusulas del problema. Por lo tanto, mantener la estructura va a tener una complejidad en $O\left( c \times v \ times log \left( c \right) \right)$.
+
+El conjunto utilizado para guardar las clausulas que haría verdaderas un literal está implementado en una estructura de árbol que nos garantiza inserción y borrado en $O\left( log \left( e \right) \right)$, donde $e$ es la cantidad de elementos del conjunto.
+
+Como tenemos que recorrer todas las variables en cada asignación para mantener la estructura, podemos llevar un registro de cuál es el literal que más cláusulas, entre las aún insatisfechas, haría verdaderas. 
+
+Por lo tanto la complejidad del algoritmo es $O\left( c \times v \ times log \left( c \right) \right)$.
 
 
 
