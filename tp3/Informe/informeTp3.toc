@@ -15,4 +15,5 @@
 \contentsline {section}{Metaheur\'istica de b\'usqueda tab\'u para MAX-SAT}{10}
 \contentsline {subsection}{Complejidad de la metaheur\'istica de la b\'usqueda Tab\'u}{11}
 \contentsline {subsection}{Modificaci\'on de la metaheur\'istica de la b\'usqueda Tab\'u}{12}
+\contentsline {section}{An\'alisis de resultados}{12}
 \contentsline {section}{Bibliografia}{12}
