@@ -9,11 +9,15 @@
 \contentsline {section}{Heur\'istica constructiva para MAX-SAT}{7}
 \contentsline {subsection}{Aproximaci\'on del resultado}{8}
 \contentsline {subsection}{Complejidad de la heur\'istica constructiva}{8}
-\contentsline {section}{Heur\'istica de b\'usqueda local para MAX-SAT}{8}
-\contentsline {subsection}{Detalles de implementaci\'on}{9}
+\contentsline {section}{Heur\'istica de b\'usqueda local para MAX-SAT}{9}
+\contentsline {subsection}{Detalles de implementaci\'on}{10}
 \contentsline {subsection}{Complejidad de la heur\'istica de busqueda local}{10}
-\contentsline {section}{Metaheur\'istica de b\'usqueda tab\'u para MAX-SAT}{10}
-\contentsline {subsection}{Complejidad de la metaheur\'istica de la b\'usqueda Tab\'u}{11}
-\contentsline {subsection}{Modificaci\'on de la metaheur\'istica de la b\'usqueda Tab\'u}{12}
-\contentsline {section}{An\'alisis de resultados}{12}
-\contentsline {section}{Bibliografia}{12}
+\contentsline {section}{Metaheur\'istica de b\'usqueda tab\'u para MAX-SAT}{11}
+\contentsline {subsection}{Complejidad de la metaheur\'istica de la b\'usqueda Tab\'u}{12}
+\contentsline {subsection}{Modificaci\'on de la metaheur\'istica de la b\'usqueda Tab\'u}{13}
+\contentsline {section}{Filtro de componentes conexas}{13}
+\contentsline {section}{An\'alisis de resultados}{13}
+\contentsline {subsection}{An\'alisis de todos los algoritmos exactos y heur\'isticas}{13}
+\contentsline {section}{Conclusiones}{14}
+\contentsline {section}{Ap\'endice 1: Bibliografia}{14}
+\contentsline {section}{Instrucciones para utilizar benchmarks.cpp}{14}
