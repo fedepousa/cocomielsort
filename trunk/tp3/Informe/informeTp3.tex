@@ -340,12 +340,58 @@ Para finalizar con las heur\'isticas para resolver el problema de Max-Sat, se im
 ESCRIBIR ESTO BIEN!!!!!!!!!!!!!!!!
 Se generan asignaciones iniciales al azar, con probabilidad un medio para true en cada variable. Se ejecuta tabu con cada asignacion. Se devuelve el mejor resultado.
 
+\section*{Filtro de componentes conexas}
+\addcontentsline{toc}{section}{Filtro de componentes conexas}
+
 
 \section*{An\'alisis de resultados}
 \addcontentsline{toc}{section}{An\'alisis de resultados}
 
 
-Bueno aca van todas las explicaciones de los resultados, vuelvo del instituto y sigo con esto.
+Para analizar todos los algoritmos exactos y las heur\'isticas propuestas, se realizaron varios casos de prueba. Este an\'alisis se encuentra divido en 3 partes diferentes, cada una con un objetivo diferente, las mismas son:
+
+\begin{itemize}
+\item An\'alisis de todos los algoritmos exactos y heur\'isticas.
+\item An\'alisis comparativos de las heur\'isticas constructiva, de b\'usqueda local y de b\'usqueda tab\'u.
+\item An\'alisis comparativos de variaciones de par\'ametros en tab\'u y tab\'u modificada.
+\end{itemize}
+ 
+
+En todos los casos, los an\'alisis se centraran en dos aspectos: Calidad de la soluci\'on encontrada y tiempo de ejecuci\'on requerido.
+
+Para los diferentes an\'alisis de resultados se utilizar\'on paquetes de prueba provenientes de \emph{The Satiasfibility Library}\footnote{http://people.cs.ubc.ca/~hoos/SATLIB/benchm.html}. Los mismos proveen de varios casos de prueba con diferentes n\'umeros de clausulas y variables. Cabe destacar que en todos los paquetes utilizados todas las clausulas son satisfacibles por lo que el resultado exacto de Max-Sat es exactamente el n\'umero de clausulas presentes en el paquete.
+
+Por otro lado, dado que estos paquetes presentan un formato diferente al formato requerido, se encuentra el archivo \emph{benchmarks.cpp}. El mismo realiza la conversi\'on del formato de los paquetes al formato requerido y corre todos los casos de prueba a la vez\footnote{Para instrucciones sobre como utilizar el mismo ver ap\'endice 2}
+
+\subsection*{An\'alisis de todos los algoritmos exactos y heur\'isticas}
+\addcontentsline{toc}{subsection}{An\'alisis de todos los algoritmos exactos y heur\'isticas}
+
+En esta secci\'on se presentar\'a los resultados obtenidos al correr todos los algoritmos y heur\'isticas con los mismos casos de prueba. 
+
+Esta secci\'on no presenta demasiados resultados por dos motivos:
+
+En primer lugar existe el problema de que para correr los casos de prueba con el algoritmo de fuerza bruta, se toma un tiempo considerable dado su naturaleza. Por otro lado, los casos presentados ser\'an suficientes para mostrar las tendencias de los algoritmos exactos, mientras que un an\'alisis m\'as hexaustivo de las heur\'isticas se presentar\'a en las secciones siguientes.
+
+\medskip
+
+Para esta secci\'on se utilizaron 5 casos de prueba de 20 variables y 91 clausulas, todas satisfacibles. Dado que los diferentes algoritmos son varios, los resultados se presentan a modo de tabla.
+
+
+Aca ponemos la tabla
+
+
+Dada la tabla presentada anteriormente, se denotan varias observaciones:
+
+\begin{enumerate}
+\item Los resultados muestran como los algoritmos exactos devuelven 91 en todos los casos, funcionando correctamente; Mientras que las heur\'isticas no devuelven siempre los resultados exactos, como era de esperar.
+\item Los tiempos de ejecuci\'on de los algoritmos exactos respecto de las heur\'isticas son considerablemente mayores: En el caso del algoritmo de fuerza bruta, se puede ver como el tiempo de ejecuci\'on es varios ordenes de magnitud m\'as grande que los tiempos requeridos por las heur\'isticas.
+
+En el caso del algoritmo con backtracking, se puede ver que el tiempo de ejecuci\'on es considerablemente peor que el tiempo de las heur\'isticas. Sin embargo, es bastante mejor que el tiempo del algoritmo de fuerza bruta.
+
+Cabe destacar que, en estos casos, el tiempo de backtracking no es tan malo en comparaci\'on con las heur\'isticas. Se cree que esto se debe principalmente a que las 91 clausulas son satisfacibles y el algoritmo de backtracking tiene peor rendimiento cuando la mayor\'ia de las clausulas no se satisfacen, ya que se le hace m\'as complicado podar ramas.
+\item Los casos presentados muestran como el filtro de componentes conexas no presenta una mejora en los tiempos de ejecuci\'on, si no que empeoran debido al tiempo que se pierde en las rutinas pertinentes a este filtro. Es por esto que para las secciones siguientes no se segu\'iran analizando las variantes con el filtro de componentes conexas.
+\item Los casos presentandos alcanzan para ver las diferencias, de eficiencia y temporales, que hay entre los algoritmos exactos y las heur\'isticas pero no son representativos para comparar las heur\'isticas entre s\'i. Esto se har\'a en las secciones siguientes.
+\end{enumerate}
 
 
 
@@ -353,16 +399,17 @@ Bueno aca van todas las explicaciones de los resultados, vuelvo del instituto y 
 
 
 
+\section*{Conclusiones}
+\addcontentsline{toc}{section}{Conclusiones}
 
-
-
-
-
-\section*{Bibliograf\'ia}
-\addcontentsline{toc}{section}{Bibliografia}
+\section*{Ap\'endice 1: Bibliograf\'ia}
+\addcontentsline{toc}{section}{Ap\'endice 1: Bibliografia}
 
 \begin{itemize}
 \item Algorithms for the Maximum Satiasfiability Problem 
 \end{itemize}
+
+\section*{Ap\'endice 2: Instrucciones para utilizar benchmarks.cpp}
+\addcontentsline{toc}{section}{Instrucciones para utilizar benchmarks.cpp}
 
 \end{document}
