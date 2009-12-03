@@ -237,12 +237,74 @@ c_{local} \geq c_{constr} \geq \frac{m}{m+1}*c_{max}
 Luego, dada la ecuaci\'on anterior y con una explicaci\'on an\'aloga a la propuesta en la heur\'istica constructiva, se puede ver que esta heur\'istica (inicializada de esta manera) tambi\'en se trata de un algoritmo $\frac{1}{2}$-aproximado y, de la misma manera, a medida que el m va subiendo, la cota va mejorando.
 
 
- 
+\subsection*{Detalles de implementaci\'on}
+\addcontentsline{toc}{subsection}{Detalles de implementaci\'on}
+
+En primer lugar, es importante destacar como se definio la vecindad de una asignaci\'on, para tener bien definido a donde se va a realizar la busqueda local dada una asignaci\'on. Se determin\'o que la vecindad de una asignaci\'on esta dada por todas las asignaciones que solo distan en una variable. Es decir, las asignaciones que tienen todas las variables asignadas igual excepto por una.
+
+Luego, se decidio crear una estructura que dada cada variable, se tiene listado en que clausulas aparece y si el literal que aparece es la variable o su negaci\'on. Sumado a esto, se tiene listado por cada clausula que literales tienen. Por otro lado, se tiene un vector de valores de verdad que indican los estados de las variables y un vector de enteros que indica por cada clausula cuantos literales hacen verdadera la clausula.
+
+Dada esta estructura, se procede hacer la busqueda local hasta caer en una soluci\'on inmejorable, respecto de la vecindad definida anteriormente. Es decir, se toma la asignaci\'on actual y se va modificando de a una variable y se actualizan las estructuras adecuadamente para ver si esta nueva configuraci\'on es mejor que la actual. 
+
+El pseudoc\'odigo de la heur\'istica de busqueda local es:
+
+\begin{verbatim}
+BusquedaLocal(Vector clausulas, int V)
+Max := HeuristicaConstructiva(clausulas, v)
+asignacionMax := HeuristicaConstructiva(clausulas, v)
+mientras cambie la asignacion
+      asignacionMaxTemp := asignacionMax
+      para toda asignacion_i en la vecidad de asignacionMax
+         si asignacion_i satisface mas que asignacionMax
+            asignacionMaxTemp := asignacion_i
+         fin si
+      fin para
+      asignacionMax := asignacionMaxTemp
+fin mientras
+devolver asignacion y Max
+\end{verbatim}
+
+\subsection*{Complejidad de la heur\'istica de busqueda local}
+\addcontentsline{toc}{subsection}{Complejidad de la heur\'istica de busqueda local}
+
+ver un poco mas para no mentir
 
 
 
 \section*{Metaheur\'istica de b\'usqueda tab\'u para MAX-SAT}
 \addcontentsline{toc}{section}{Metaheur\'istica de b\'usqueda tab\'u para MAX-SAT} 
+
+La meteheur\'istica de busqueda tabu surge para mejorar la heur\'istica de busqueda local, ya que esta puede caer en m\'aximos locales que esten muy lejos del m\'aximo absoluto del problema.
+
+Es por esto que la busqueda tab\'u resulta de modificar la b\'usqueda local con la motivaci\'on de poder salir de asignaciones que resultan \'optimas localmente; es decir, asignaciones que satisfacen una cantidad de clausulas mayor o igual a las que satisface cualquier otra asignaci\'on en su vecindad.
+
+La metaheur\'istica de b\'usqueda tab\'u consiste basicamente en modificar el vecindario de cada asignaci\'on. Esto se realiza excluyendo asignaciones que fueron visitadas recientemente y relajando el criterio de parada de la b\'usqueda local, permitiendo que se continue la b\'usqueda a\'un cuando la mejor asignaci\'on del vecindario no aumente la cantidad de clausulas satisfechas. 
+
+Es importante destacar que la exclusi\'on de las asignaciones visitadas m\'as recientemente no es un detalle menor. Si no se hiciese esto se entrar\'ia en un cilco entre el \'optimo local y la mejor asignaci\'on de su vecindad, sin poder alejarnos de estas asignaciones, para buscar mejores soluciones.
+
+Luego de lo explicado anteriormente, se denota que para poder separar las asignaciones visitadas recientemente se debe implementar alg\'un tipo de memoria. Una aproximaci\'on inicial ser\'ia guardar una lista de longitud acotada con las \'ultimas asignaciones visitadas y excluir dichas asignaciones del vecindario que se considere. Se denominar\'a lista Tab\'u a dicha lista.
+
+En esta primera implementaci\'on presentada, ya se pueden encontrar varias sutilezas que resultan factores importantes para el desarrollo de la metaheur\'istica. Por ejemplo, la longitud de la lista Tab\'u es acotada y la cota para la misma puede ser fija, pero tambi\'en podr\'ia estar expresada en funci\'on de alg\'un par\'ametro o incluso podr\'ia variar durante la ejecuci\'on. Algo similar ocurre con el criterio de parada; es com\'un que est\'e expresado como una combinaci\'on de restricciones en la cantidad m\'axima de iteraciones y la cantidad de iteraciones desde la \'ultima asignaci\'on que mejor\'o la cantidad conocida de clausulas satisfechas.
+
+
+La implementación de la lista Tabú como una lista de asignaciones resulta ineficiente, debido a que se debe recorrer toda la lista para saber si una asignación está o no y porque la comparación entre asignaciones resulta lenta, ya que es necesario comparar variable por variable. 
+Una alternativa que se encarga del último problema consiste en representar el vecindario de una asignación en términos de movimientos que se pueden realizar desde la misma para llegar hasta otra asignación. Si los movimientos que consideramos son reversibles, entonces podemos guardar en la lista Tabú los movimientos opuestos a los que realizamos, evitando de esta manera entrar en un ciclo. Vamos a llamar movimientos Tabú a aquellos que se encuentran en la lista Tabú.
+Podría ocurrir que un movimiento a una asignación que todavía no visitamos sea Tabú, y ésta asignación puede incluso satisfacer más cláusulas que cualquier otra visitada con anterioridad. En casos como éste sería deseable ignorar la condición de Tabú del movimiento. De esta manera surge la función de aspiración. En este problema decidimos ignorar la condición de Tabú de un determinado movimiento aplicado a una asignación si la asignación resultante satisface más cláusulas que la mejor asignación visitada hasta el momento.
+
+Implementación:
+Habiendo definido conceptualmente los componentes de la búsqueda Tabú se pueden mencionar detalles de implementación. 
+La vecindad que definimos para cada asignación está compuesta por las asignaciones resultantes de cambiar el valor de exactamente una variable de la asignación original. Cada movimiento es el cambio de una variable, por lo tanto manteniendo un arreglo de enteros del tamaño de la cantidad de variables podemos llevar un registro de cuál fue la última iteración en la que se aplicó el movimiento i. De ésta manera podemos saber si un movimiento es Tabú con sólo ver si pasaron suficientes iteraciones desde la última iteración en la que fue usado, lo que resulta más eficiente que recorrer una lista con los movimientos. 
+
+
+
+
+
+
+
+
+
+
+
 
 \section*{Bibliograf\'ia}
 \addcontentsline{toc}{section}{Bibliografia}

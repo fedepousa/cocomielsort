@@ -1,15 +1,15 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.6.10)  3 DEC 2009 11:15
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.6.10)  16 NOV 2009 00:53
 entering extended mode
  %&-line parsing enabled.
-**informeTp3.tex
-(./informeTp3.tex
+**Informe.tex
+(./Informe.tex
 LaTeX2e <2005/12/01>
 Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
 yphenation, loaded.
 (/usr/share/texmf-texlive/tex/latex/base/article.cls
 Document Class: article 2005/09/16 v1.4f Standard LaTeX document class
-(/usr/share/texmf-texlive/tex/latex/base/size10.clo
-File: size10.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
+(/usr/share/texmf-texlive/tex/latex/base/size12.clo
+File: size12.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -330,8 +330,8 @@ Now handling font encoding U ...
    defining Unicode char U+2026 (decimal 8230)
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
-)) (./informeTp3.aux)
-\openout1 = `informeTp3.aux'.
+)) (./Informe.aux)
+\openout1 = `Informe.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
@@ -371,57 +371,36 @@ LaTeX Info: Redefining \selectfont on input line 125.
 Package caption Info: float package v1.3 (or newer) detected on input line 11.
 Package caption Info: subref 1.2 or 1.3 detected on input line 11.
 LaTeX Info: Redefining \subref on input line 11.
- (./informeTp3.toc
+ (./Informe.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 6.
+(Font)              <12> on input line 5.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 6.
+(Font)              <8> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 5.
 )
 \tf@toc=\write3
-\openout3 = `informeTp3.toc'.
+\openout3 = `Informe.toc'.
 
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5] [6]
-[7]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 198.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 198.
- [8] [9]
-Overfull \hbox (1.22969pt too wide) in paragraph at lines 274--274
-[]\OT1/cmr/bx/n/14.4 Metaheur^^S^^Psti-ca de b^^Susque-da tab^^Su para MAX-SAT 
-
- []
-
-
-Overfull \hbox (0.22281pt too wide) in paragraph at lines 281--282
-\OT1/cmr/m/n/10 vecin-dario de ca-da asig-naci^^Son. Es-to se re-al-iza ex-cluy
-en-do asig-na-ciones que fueron
- []
-
-[10] [11] (./informeTp3.aux) ) 
+[7] (./Informe.aux) ) 
 Here is how much of TeX's memory you used:
- 2045 strings out of 95086
- 27777 string characters out of 1183255
- 89493 words of memory out of 1500000
- 5217 multiletter control sequences out of 10000+50000
- 7495 words of font info for 27 fonts, out of 1200000 for 2000
+ 2040 strings out of 95086
+ 27693 string characters out of 1183255
+ 88518 words of memory out of 1500000
+ 5213 multiletter control sequences out of 10000+50000
+ 7894 words of font info for 28 fonts, out of 1200000 for 2000
  28 hyphenation exceptions out of 8191
- 43i,8n,42p,779b,243s stack positions out of 5000i,500n,6000p,200000b,5000s
-</usr/share/texmf-texlive/fonts/type1/bluesky/cm/
-cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmbx12.pfb></usr/sh
-are/texmf-texlive/fonts/type1/bluesky/cm/cmmi10.pfb></usr/share/texmf-texlive/f
-onts/type1/bluesky/cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/c
-m/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr6.pfb></usr/sha
-re/texmf-texlive/fonts/type1/bluesky/cm/cmr7.pfb></usr/share/texmf-texlive/font
-s/type1/bluesky/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cm
-sy10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmti10.pfb></usr/shar
-e/texmf-texlive/fonts/type1/bluesky/cm/cmtt10.pfb>
-Output written on informeTp3.pdf (11 pages, 97398 bytes).
+ 43i,4n,42p,737b,250s stack positions out of 5000i,500n,6000p,200000b,5000s
+</usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmbx12.pf
+b></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmmi12.pfb></usr/share/texmf
+-texlive/fonts/type1/bluesky/cm/cmr12.pfb>
+Output written on Informe.pdf (7 pages, 38658 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
+ 38 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
