@@ -190,16 +190,65 @@ fin mientras
 devolver asignacion y Max
 \end{verbatim}
 
+\subsection*{Aproximaci\'on del resultado}
+\addcontentsline{toc}{subsection}{Aproximaci\'on del resultado}
+
+Es importante destacar que a priori esta heur\'istica podr\'ia arrojar resultados que no se acercasen al verdadero valor del problema. La heur\'istica parece razonable ya que siempre se elige el literal que m\'as clausulas satisface, y luego se va iterando hasta que no queden m\'as variables para asignar. Es importante destacar que si bien la heur\'istica parece razonable se puede encontrar rapidamente casos en los cuales esta aproximaci\'on golosa no nos devuelva el resultado exacto. Dada estas observaciones, se busc\'o encontrar algun tipo de cota para el resultado entregado por la heur\'istica, en funci\'on del verdadero resultado.
+
+Dada esta heur\'istica golosa, se puede ver que en realidad se trata de un algoritmo aproximado. Si se denota $c_{max}$ como la cantidad m\'axima de clausulas satisfacibles, $c_h$ al resultado entregado por la heur\'istica y m al m\'inimo n\'umero de literales contenido en cualquiera de las clausulas, se cumple que\footnote{Cita Bibliogr\'afica 1}:
+
+
+\begin{equation}
+c_h \geq \frac{m}{m+1}*c_{max}
+\end{equation}
+
+Dada la ecuaci\'on anterior, se tiene una cota para el resultado que depende del m\'inimo n\'umero de literales en cualquier clausula. Cabe destacar que en la implementaci\'on de esta heur\'istica, y en los casos de prueba utilizados, no se hace ninguna menci\'on particular a la cantidad m\'inima de literales de las clausulas. En este caso, podemos acotar por el peor caso que ser\'ia tener clausulas de un solo literal.
+
+En dicho caso, la heur\'istica utilizada ser\'ia un algoritmo $\frac{1}{2}$-aproximado, es decir que el resultado arrojado jam\'as se encontrara por debajo de la mitad del valor real del problema. En el caso del que el m\'inimo n\'umero de clausulas suba (lo que suele pasar en la pr\'actica), la cota tambi\'en se ajustar\'a dando una mejor aproximaci\'on.
+
+\subsection*{Complejidad de la heur\'istica constructiva}
+\addcontentsline{toc}{subsection}{Complejidad de la heur\'istica constructiva}
+
+No quiero mentir mucho asi que pregunto y despues escribo
 
 
 
 \section*{Heur\'istica de b\'usqueda local para MAX-SAT}
 \addcontentsline{toc}{section}{Heur\'istica de b\'usqueda local para MAX-SAT} 
 
+La segunda he\'uristica implementada fue la de busqueda local. Como su nombre lo indica, lo que hace esta heur\'istica es pararse sobre una soluci\'on y buscar localmente si se puede mover a otra soluci\'on \emph{cercana} con m\'as clausulas satisfechas. Dada la explicaci\'on anterior, se desprende que entonces se debe definir que significa que dos soluciones cercanas. Teniendo una asignaci\'on posible, se define una vecindad de asignaciones mediante alg\'un criterio que ser\'an las asignaciones \emph{cercanas} mencionadas anteriormente.
+
+La idea principal de la heur\'istica es empezar con alguna asignaci\'on posible y luego buscar en la vecindad de esta soluci\'on si existe alguna asignacion que satisfaga mayor cantidad de variables, si existe esta nueva asignaci\'on, entonces se cambia la asignaci\'on m\'axima actual por esta nueva y se vuelve a realizar una busqueda local, ahora con la vecindad de la nueva asignaci\'on.
+
+Esta heur\'istica finaliza cuando tenemos una asignaci\'on que es la mejor de todas entre ella y las asignaciones de su vecindad. Es decir, cuando se encuentra un m\'inimo local, la heur\'istica para y devuelve la mejor asignaci\'on encontrada hasta el momento.
+
+Es importante destacar que la heur\'istica de busqueda local necesita de una asignaci\'on inicial para comenzar a definir su vecindad y luego realizar la busqueda. Como una primera aproximaci\'on se podr\'ia inicializar la heur\'istica con cualquier asignaci\'on, por ejemplo todas las variables en falso, el problema es que para caso de prueba diferente el espacio de asignaciones tiene una forma diferente. Esto puede llevar a que si inicializamos en cualquier asignaci\'on, se encuentre rapidamente un m\'aximo local que poco tenga que ver con la soluci\'on real del problema. 
+
+La soluci\'on que se utiliz\'o para el problema explicado anteriormente es que la heur\'istica de busqueda local sea inicializada con el resultado proviniente de aplicar la heur\'istica constructiva.
+
+Es importante notar que la heur\'istica de busqueda local no tiene permitido moverse a una asignaci\'on que satisfaga una menor cantidad de clausulas, por lo que se puede ver que el resultado arrojado por la busqueda local es mejor o igual que el resultado de la heur\'istica constructiva en el caso de que se inicialice el procedimiento con el resultado de la heur\'istica constructiva.
+
+De esta manera, reemplazando en la ecuaci\'on (1) (denotado $c_{local}$ al resultado de la busqueda local):
+
+\begin{equation}
+c_{local} \geq c_{constr} \geq \frac{m}{m+1}*c_{max}
+\end{equation}
+
+Luego, dada la ecuaci\'on anterior y con una explicaci\'on an\'aloga a la propuesta en la heur\'istica constructiva, se puede ver que esta heur\'istica (inicializada de esta manera) tambi\'en se trata de un algoritmo $\frac{1}{2}$-aproximado y, de la misma manera, a medida que el m va subiendo, la cota va mejorando.
+
+
+ 
+
 
 
 \section*{Metaheur\'istica de b\'usqueda tab\'u para MAX-SAT}
 \addcontentsline{toc}{section}{Metaheur\'istica de b\'usqueda tab\'u para MAX-SAT} 
 
+\section*{Bibliograf\'ia}
+\addcontentsline{toc}{section}{Bibliografia}
+
+\begin{itemize}
+\item Algorithms for the Maximum Satiasfiability Problem 
+\end{itemize}
 
 \end{document}
