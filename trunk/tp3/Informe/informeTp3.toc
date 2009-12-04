@@ -11,7 +11,7 @@
 \contentsline {subsection}{Complejidad de la heur\'istica constructiva}{8}
 \contentsline {section}{Heur\'istica de b\'usqueda local para MAX-SAT}{9}
 \contentsline {subsection}{Detalles de implementaci\'on}{10}
-\contentsline {subsection}{Complejidad de la heur\'istica de busqueda local}{10}
+\contentsline {subsection}{Complejidad de la heur\'istica de b\'usqueda local}{10}
 \contentsline {section}{Metaheur\'istica de b\'usqueda tab\'u para MAX-SAT}{11}
 \contentsline {subsection}{Complejidad de la metaheur\'istica de la b\'usqueda Tab\'u}{13}
 \contentsline {subsection}{Modificaci\'on de la metaheur\'istica de la b\'usqueda Tab\'u}{13}
@@ -21,5 +21,5 @@
 \contentsline {subsection}{An\'alisis comparativos de las heur\'isticas constructiva, de b\'usqueda local y tab\'u}{16}
 \contentsline {subsection}{An\'alisis comparativos de variaciones de par\'ametros en b\'usqueda tab\'u y tab\'u modificada}{19}
 \contentsline {section}{Conclusiones}{26}
-\contentsline {section}{Ap\'endice 1: Bibliografia}{26}
-\contentsline {section}{Instrucciones para utilizar benchmarks.cpp}{26}
+\contentsline {section}{Ap\'endice 1: Bibliografia}{27}
+\contentsline {section}{Instrucciones para utilizar benchmarks.cpp}{28}
