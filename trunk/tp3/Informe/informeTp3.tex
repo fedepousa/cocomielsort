@@ -103,15 +103,10 @@ La mejora del algoritmo radica en no recorrer todas las ramas posibles, esto se 
 Las principales diferencias con el algoritmo de fuerza bruta son:
 \begin{itemize}
 \item La implementaci\'on es bastante m\'as complicada ya que como se realiza backtracking, se debe guardar los estados intermedios de toda la rama que se esta analizando para poder volver hacia atras y tomar un nuevo camino. En el algoritmo exacto, cada asignacion se contrasta con las clausulas originales por lo que solo se deben guardar una vez todas las clausulas.
-\item El tiempo de ejecuci\'on deberia ser en la mayor\'ia de los casos. Si bien el peor caso no cambiar\'ia es importante destacar que las podas realizadas pueden traer grandes beneficios en cuanto al tiempo de ejecuci\'on. Si, por ejemplo, ya se tuviese una soluci\'on donde n clausulas son insatisfechas y al asignar True a la variable 1, n+1 clausulas se vuelven insatisfacibles entonces se podr\'ia podar toda una mitad del arbol.
+\item El tiempo de ejecuci\'on deberia ser menor en la mayor\'ia de los casos. Si bien el peor caso no cambiar\'ia es importante destacar que las podas realizadas pueden traer grandes beneficios en cuanto al tiempo de ejecuci\'on. Si, por ejemplo, ya se tuviese una soluci\'on donde n clausulas son insatisfechas y al asignar True a la variable 1, n+1 clausulas se vuelven insatisfacibles entonces se podr\'ia podar toda una mitad del arbol.
 \item El algoritmo de fuerza bruta no puede ser influenciado por alguna heur\'istica, mientras que el algoritmo con backtraking si. Lo que se quiere notar con esto, es que por m\'as que ya se tenga una solucion con n clausulas insatisfechas, el algoritmo por fuerza bruta tiene que probar todas las asignaciones posibles; mientras que el algoritmo de backtracking ya puede comenzar podando ramas que tengan m\'as de n clausulas insatisfechas.
 \end{itemize}
 
-A continuaci\'on se presenta el pseudoc\'odigo del algoritmo exacto con backtracking:
-
-\begin{verbatim}
-pseudo de backtracking
-\end{verbatim}
 
 \subsection*{Complejidad de algoritmos exactos}
 \addcontentsline{toc}{subsection}{Complejidad de algoritmos exactos}
@@ -133,19 +128,19 @@ Complejidad del algoritmo exacto con backtracking:
 
 Para realizar el c\'alculo de complejidad de este algoritmo tomaremos el peor caso posible. El mismo consiste en que ninguna rama sea podada y por lo tanto se tengan que revisar todos los nodos posibles del arbol. En este caso el ciclo principal que itera sobre todas las asignaciones posibles ser\'ia O($2^{v}$), ya que este es el orden de la cantidad de nodos del arbol. 
 
-Luego, hay que analizar cuales son las operaciones que se realizan cada vez que el algoritmo se encuentra en un nuevo nodo. En primer lugar, se llama a la funci\'on resolver, la misma tiene un funcionamiento an\'alogo al explicado en el algoritmo por fuerza bruta; se fija en cada clausula si la misma se hizo verdadera, y cuenta las insatisfacibles, por lo que esta funcion toma O(c*v) operaciones. Luego, lo que se hace es copiar todo el estado al siguiente nodo para que se pueda procesar, al realizar esto se copian varios par\'ametros. Sin embargo, el orden temporal de esta copia esta dado por el orden que toma copiar todas las clasulas, dado que los dem\'as par\'ametros que se copian tienen menor orden espacial ya que son solamente vectores. 
+Luego, hay que analizar cuales son las operaciones que se realizan cada vez que el algoritmo se encuentra en un nuevo nodo. En primer lugar, se llama a la funci\'on resolver, la misma tiene un funcionamiento an\'alogo al explicado en el algoritmo por fuerza bruta; se fija en cada clausula si la misma se hizo verdadera, y cuenta las insatisfacibles, por lo que esta funcion toma O(c*v) operaciones. Luego, lo que se hace es copiar todo el estado al siguiente nodo para que se pueda procesar, al realizar esto se copian varios par\'ametros. Sin embargo, el orden temporal de esta copia esta dado por el orden que toma copiar todas las clasulas, dado que los dem\'as par\'ametros que se copian tienen menor orden espacial ya que son solamente vectores. Cabe destacar que al copiar al siguiente nodo, solo se copian las clausulas que no fueron satisfechas todavia, ya que las dem\'as ya estan fuera del an\'alisis.
 
-Se puede ver que copiar todo el estado toma O(c*v) operaciones ya que lo que se hace es copiar absolutamente todas las clausulas, donde cada una pueda tener hasta 2*v literales por lo justificado anteriormente.
+Se puede ver que copiar todo el estado toma O(c*v) operaciones ya que lo que se hace es copiar absolutamente todas las clausulas en el peor caso, donde cada una pueda tener hasta 2*v literales por lo justificado anteriormente.
 
 Por \'ultimo, resumiendo lo anteriormente explicado se puede ver que cuando se revisa un nodo se toma O(c*v) operaciones, y en el peor caso hay que revisar O($2^{v}$) nodos; por lo que la complejidad total de este algoritmo es O($(2^{v})$*c*v).
 
-Como se puede ver, la complejidad del algoritmo de backtracking no es mejor que el algoritmo exacto por fuerza bruta, sigue siendo exponencial. De hecho, se puede notar que en el peor caso posible, el algoritmo de backtracking es m\'as lento que el algoritmo por fuerza bruta dado el overhead que produce copiar todo el estado al siguiente nodo del arbol para que se pueda procesar.
+Como se puede ver, la complejidad del algoritmo de backtracking no es mejor que el algoritmo exacto por fuerza bruta, sigue siendo exponencial. De hecho, se puede notar que en el peor caso posible, el algoritmo de backtracking es m\'as lento que el algoritmo por fuerza bruta dado el overhead que produce copiar todo el estado al siguiente nodo del arbol para que se pueda seguir procesando.
 
 Sin embargo, en la mayor\'ia de los casos, el algoritmo con backtracking presenta resultados temporalmente mejores que el algoritmo de fuerza bruta ya que se podan varias ramas haciendo que no se tenga que visitar todas las asignaciones posibles.
 
 \medskip
 
-Cabe destacar que la ventaja temporal que gana el algoritmo de backtracking, genera una mayor complejidad espacial ya que en todo momento se debe tener todos los estados de los nodos de la rama que se esta visitando para poder caminar hacia atras. Luego la complejidad espacial del algoritmo de fuerza bruta es O(c*v) ya que se guardan una vez todas las clausulas, mientras que la complejidad espacial del algoritmo de backtracking es O(c*v*v) ya que se guardan todas las clausulas una vez por cada nodo de la rama que se esta analizando, que a lo sumo tiene v nodos.
+Cabe destacar que la ventaja temporal que gana el algoritmo de backtracking, genera una mayor complejidad espacial ya que en todo momento se debe tener todos los estados de los nodos de la rama que se esta visitando para poder caminar hacia atras. Luego la complejidad espacial del algoritmo de fuerza bruta es O(c*v) ya que se guardan una vez todas las clausulas, mientras que la complejidad espacial del algoritmo de backtracking es O(c*v*v) ya que, en el peor caso, se guardan todas las clausulas una vez por cada nodo de la rama que se esta analizando, que a lo sumo tiene v nodos.
 
 
 
@@ -245,6 +240,8 @@ c_{local} \geq c_{constr} \geq \frac{m}{m+1}*c_{max}
 \end{equation}
 
 Luego, dada la ecuaci\'on anterior y con una explicaci\'on an\'aloga a la propuesta en la heur\'istica constructiva, se puede ver que esta heur\'istica (inicializada de esta manera) tambi\'en se trata de un algoritmo $\frac{1}{2}$-aproximado y, de la misma manera, a medida que el m va subiendo, la cota va mejorando.
+
+Cabe destacar que esta justificaci\'on es as\'i dado el hecho que en este trabajo en particular se utiliza la heur\'istica constructiva como punto de arranque para la b\'usqueda local. Sin embargo, en la bibliograf\'ia tambi\'en se encuentra demostrado que la b\'usqueda local cumple la misma cota sin necesidad de comenzar de ninguna asignaci\'on en particular\footnote{Ver cita bibliogr\'afica 1}.
 
 
 \subsection*{Detalles de implementaci\'on}
@@ -503,23 +500,26 @@ En esta secci\'on se realizar\'a un an\'alisis comparativo entre las diferentes 
 \item 100 instancias con 250 variables y 1065 clausulas, todas satisfacibles.
 \end{enumerate}
 
-Dado que la cantidad de pruebas corridas es muy grande como para presentar los resultados individuales de cada caso, se procedio a realizar el an\'alisis de la siguiente manera: para cada una las heur\'isticas diferentes se considerar\'a un \emph{N\'umero de eficiencia}, el mismo se realiza para cada uno de los paquetes por separado y se calcula mediante la cuenta 
+Dado que la cantidad de pruebas corridas es muy grande como para presentar los resultados individuales de cada caso, se procedio a realizar el an\'alisis de la siguiente manera: para cada una las heur\'isticas diferentes se considerar\'a un \emph{N\'umero de eficacia}, el mismo se realiza para cada uno de los paquetes por separado y se calcula mediante la cuenta 
 
 \begin{equation}
- Eficiencia = promedio de clausulas satisfechas/clausulas totales
+ Eficacia = promedio\;de\;clausulas\;satisfechas/clausulas\;totales
 \end{equation}
 
 Es decir, se genera un n\'umero que indica porcentualmente cuantas clausulas en promedio satisfizo una heur\'istica determinada para cada paquete.
 
 En el siguiente gr\'afico se puede ver el desempe\~{n}o de las heur\'isticas. El mismo presenta el n\'umero de eficiencia de la heur\'istica en funci\'on de los paquetes de prueba.
 
-
-Aca va el grafico 1.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{graficos/combo1.png} 
+\caption{Gráfico 1}
+\end{figure}
 
 
 Dado el gr\'afico presentado se pueden hacer varias observaciones:
 \begin{itemize}
-\item Las heur\'isticas muestran resultados esperados: En primer lugar, con la eficiencia m\'as baja se encuentra la heur\'istica constructiva (Se destaca que igualmente el comportamiento es muy bueno, superando el 97,5 porciento de clausulas satisfechas en promedio). En segundo lugar se encuentra la b\'usqueda local, lo cual es natural dado que la misma empieza desde la soluci\'on provista por la constructiva y luego la mejora. Por \'ultimo, se puede ver que la metaheur\'istica de b\'usqueda tab\'u es la m\'as eficiente de la tres, dando un salto de calidad importante llegando casi al 99,5 porciento de clausulas satisfechas en promedio en todos los paquetes.
+\item Las heur\'isticas muestran resultados esperados: En primer lugar, con la eficacia m\'as baja se encuentra la heur\'istica constructiva (Se destaca que igualmente el comportamiento es muy bueno, superando el 97,5 porciento de clausulas satisfechas en promedio). En segundo lugar se encuentra la b\'usqueda local, lo cual es natural dado que la misma empieza desde la soluci\'on provista por la constructiva y luego la mejora. Por \'ultimo, se puede ver que la metaheur\'istica de b\'usqueda tab\'u es la m\'as eficiente de la tres, dando un salto de calidad importante llegando casi al 99,5 porciento de clausulas satisfechas en promedio en todos los paquetes.
 \item Las 3 heur\'isticas poseen un comportamiento porcentual parecido en los 9 paquetes, mostrando que la eficiencia parece depender intrinsecamente de las elecciones hechas por las rutinas, y no por otros factores como la cantidad de variables o de clausulas.
 \end{itemize}
 
@@ -527,7 +527,11 @@ Dado el gr\'afico presentado se pueden hacer varias observaciones:
 A continuaci\'on se muestra el an\'alisis de los tiempos de ejecuci\'on de cada una de las heur\'isticas para estos paquetes de casos de prueba.
 
 
-Aca va el gr\'afico 2.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{graficos/combo1Tiempos.png} 
+\caption{Gráfico 2}
+\end{figure}
 
 
 
@@ -558,7 +562,12 @@ En primer lugar, se comenzar\'a el an\'alisis fijando los par\'ametros de cantid
 
 A continuaci\'on, se puede ver el gr\'afico de la eficiencia en funci\'on de cada paquete. 
 
-Aca va el grafico 3.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{graficos/combo3.png} 
+\caption{Gráfico 3}
+\end{figure}
 
 Dado el gr\'afico de la figura 3, se puede ver como var\'ia la eficiencia de la b\'usqueda tab\'u dependiendo de la longitud de la lista. La conclusi\'on principal que se desprende de la visualizaci\'on del gr\'afico es que las franjas centrales se encuentran por encima de las franjas laterelas. Es decir, parecer\'ia ser que la metaheur\'istica funciona de mejor manera cuando la longitud de la lista se encuentra entre v/5, v/6 y v/7 y comienza a bajar su eficiencia a medida que la longitud se aleja de estos valores.
 
@@ -566,13 +575,17 @@ En el gr\'afico se denota que en los primeros paquetes v/5 parece ser la longitu
 
 Es importante destacar que si bien se encuentran fluctuaciones y tendencias, todas las longitudes propuestas se encuentran en un margen muy chico, resultando todas muy eficientes.
 
-Por \'ultimo, se destaca que las tendencias vistas sobre la mejor longitud para la lista tab\'u se condice con los resultados encontrados en la bibliograf\'ia.\footnote{Citar el paper que habla de v/6}
+Por \'ultimo, se destaca que las tendencias vistas sobre la mejor longitud para la lista tab\'u se condice con los resultados encontrados en la bibliograf\'ia.\footnote{Ver cita bibliogr\'afica 1}
 
 \bigskip
 
 A continuaci\'on, se presenta el gr\'afico de los tiempos de ejecuci\'on de la metaheur\'istica al cambiar la longitud de la lista tab\'u.
 
-Aca va el grafico 4.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{graficos/combo3Tiempos.png} 
+\caption{Gráfico 4}
+\end{figure}
 
 
 
@@ -584,7 +597,11 @@ En esta parte se analizar\'a como var\'ia la eficiencia y el tiempo de ejecuci\'
 
 A continuaci\'on, se presenta el gr\'afico de eficiencia en funci\'on de los paquetes de casos de prueba.
 
-Aca va el grafico 5.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{graficos/combo4.png} 
+\caption{Gráfico 5}
+\end{figure}
 
 
 En el gr\'afico presentado anteriormente se pueden denotar dos cosas importantes:
@@ -598,7 +615,11 @@ Luego de ver como se comporta la b\'usqueda tab\'u al cambiar el par\'ametro del
 
 A continuaci\'on se puede ver el gr\'afico de tiempo de ejecuci\'on en funci\'on de los paquetes.
 
-aca va el grafico 6.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{graficos/combo4Tiempos.png} 
+\caption{Gráfico 6}
+\end{figure}
 
 Lo que se puede ver en el gr\'afico anterior, es como los tiempos de ejecuci\'on se condice con los resultados de eficiencia obtenidos. Los valores correspondientes a 3*v, 6*v, 9*v y 12*v tardan todos el mismo tiempo, reforzando lo augurado anteriormente; es decir, que nunca se llega a esta cota si no que la cota de cantidad m\'axima de operaciones entre \'optimos corta primero. Por otro lado, los valores correspondientes a v/4 son claramente menor a los dem\'as mostrando el claro \emph{tradeoff} natural, los tiempos de ejecuci\'on son mejores, pero al costo de tener menos eficiencia.
 
@@ -609,13 +630,21 @@ En esta parte se ver\'a como var\'ia la eficiencia y los tiempos de ejecuci\'on 
 
 A continuaci\'on se presenta el gr\'afico de eficiencia en funci\'on de los paquetes de casos de prueba:
 
-aca va el grafico 7
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{graficos/combo5.png} 
+\caption{Gráfico 7}
+\end{figure}
 
 Lo que se puede denotar en el gr\'afico anterior es una conclusi\'on bastante natural. A medida que se va achicando la cota, y cada vez se permite menos iteraciones, la eficiencia va bajando ya que la rutina va teniendo menos iteraciones para encontrar los mejores valores. En el momento que la cota se sube considerablemente a 2*v, la eficiencia crece.
 
 A continuaci\'on se presenta el gr\'afico de los tiempos de ejecuci\'on para esta variaci\'on presentada.
 
-aca va el grafico 8
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{graficos/combo5Tiempos.png} 
+\caption{Gráfico 8}
+\end{figure}
 
 En este gr\'afico se puede ver como los tiempos de ejecuci\'on se condice perfectamente con los resultados obtenidos en la eficiencia. A medida que la cota baja, tambi\'en baja el tiempo de ejecuci\'on; y cuando la cota sube, el tiempo de ejecuci\'on tambi\'en lo hace. Al igual que en la secci\'on anterior, se puede como al variar este par\'ametro los tiempos de ejecuci\'on son peores si la eficiencia es mejor y viceversa.
 
@@ -641,7 +670,12 @@ Por otro lado, la cantidad de asignaciones ser\'an 1, 2, 5, 10 y 50. Es importan
 A continuaci\'on se presenta el gr\'afico de eficiencia en funci\'on de los paquetes de casos de prueba:
 
 
-Aca va el gr\'afico 9
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{graficos/combo2.png} 
+\caption{Gráfico 9}
+\end{figure}
 
 
 Luego de presentar el anterior gr\'afico se puede concluir en que:
@@ -656,7 +690,11 @@ Luego de presentar el anterior gr\'afico se puede concluir en que:
 
 A continuaci\'on se presenta el gr\'afico de tiempos de ejecuci\'on al variar la cantidad de asignaciones:
 
-Aca va el grafico 10.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{graficos/combo2Tiempos.png} 
+\caption{Gráfico 10}
+\end{figure}
 
 
 A partir del gr\'afico anterior se puede ver claramente como la conjetura realizada anteriormente parece plasmarse. Es decir, si bien subir la cantidad de asignaciones hace crecer la eficiencia de los resultados, tambi\'en crece de manera abrupta el tiempo de ejecuci\'on requerido. 
@@ -677,6 +715,7 @@ Luego de realizar los an\'alisis de resultados de todos los algoritmos y heur\'i
 \item Es importante poder generar otros tipos de filtros para todos los algoritmos y heur\'isticas propuestas. Sin embargo, en el caso del filtro de componentes conexas se pudo ver que este trabajo no fue fruct\'ifero, por lo que su implementaci\'on fue dejada en un segundo plano.
 \item Para trabajos futuros, se podria indagar m\'as no solamente en las decisiones que las heur\'isticas toman sino tambi\'en en las estructuras utilizadas para implementarlas, una mejora considerable en estas podr\'ia ser un punto importante a tener en cuenta.
 \item La meteheur\'istica de b\'usqueda tab\'u y posterior modificaci\'on presentaron resultados realmente eficientes, llegando a sobrepasar el 99,5 porciento de clausulas satisfechas en todos los casos. Es por esto que se cree que la principal conclusi\'on de este trabajo es que en trabajos futuros, con mayor tiempo de desarrollo, se deber\'ia ahondar m\'as en estas heur\'isticas, buscando nuevas modificaciones que resulten eficientes. 
+\item En \'ultimo lugar, cabe destacar que no se pudo contrastar los resultados con las complejidades temporales calculadas durante el trabajo. Esto se debi\'o a que en los casos de prueba disponibles la cantidad clausulas y variables no guardan una relaci\'on que luego se pueda constratar con la complejidad. Podr\'ia ser un buen punto para ampliaciones futuras el hecho de generar casos de prueba especialmente dedicados a verificar empiricamente si la complejidad te\'orica calculada es correcta.
 \end{itemize}
 
 
@@ -689,5 +728,19 @@ Luego de realizar los an\'alisis de resultados de todos los algoritmos y heur\'i
 
 \section*{Ap\'endice 2: Instrucciones para utilizar benchmarks.cpp}
 \addcontentsline{toc}{section}{Instrucciones para utilizar benchmarks.cpp}
+A continuaci\'on se explica como utilizar el archivo benchmarks.cpp para correr muchas pruebas en formato cnf.
+
+Cabe destacar que este archivo se encuentra pensado para funcionar en un sistema operativo tipo Linux.
+
+\begin{enumerate}
+\item Crear una carpeta nueva, el path a esa carpeta va a ser $PATH/carpeta_nueva$. Donde PATH puede ser cualquier directorio.
+\item Crear $PATH/carpeta_nueva/output$. Es Aqu\'i donde se copiar\'an los resultados finales.
+\item Mover a $PATH/carpeta_nueva$ los archivos $mostrar_satisfechos.cpp$ y dimacs2algo.cpp. Es importante realizar esto, ya que dimacs2algo.cpp es el conversor de formato cnf al formato requerido para este trabajo.
+\item Compilar el cpp del algoritmo que se quiera correr con el flag -DTIEMPOS (en el caso que se quiera obtener los tiempos de corrida) y copiar el ejecutable a $PATH/carpeta_nueva$
+\item Poner en $PATH/carpeta_nueva$ archivos de formato cnf bajados de www.satlib.com. Asegurarse de copiar estos archivos en carpetas $PATH/carpeta_nueva/pruebas_xClausulas_yVariables$ y no en cualquier otro path.
+\item Compilar benchmarks.cpp, copiar su ejecutable a $PATH/carpeta_nueva$.
+\item Correrlo ./ Ejecutablebenchmark  ejecutableaprobar nombredelarchivooutput nombredearchivodetiempos
+\end{enumerate}
+
 
 \end{document}
