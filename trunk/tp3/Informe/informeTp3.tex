@@ -379,9 +379,50 @@ En primer lugar existe el problema de que para correr los casos de prueba con el
 \medskip
 
 Para esta secci\'on se utilizaron 5 casos de prueba de 20 variables y 91 clausulas, todas satisfacibles. Dado que los diferentes algoritmos son varios, los resultados se presentan a modo de tabla.
+\medskip
+
+Paquete = P, FB = Fuerza Bruta, Back = Backtracking, Cons = Constructiva, Local = B\'usqueda Local, Tabu = B\'usqueda Tab\'u, Tab\'uM = Tab\'u Modificado. Todas las columnas que tienen F al final, representan la modificaci\'on con el filtro de componentes conexas.
+
+\medskip
 
 
-Aca ponemos la tabla
+\begin{tabular}{||l|c|c|c|c|c|c|c|c|r||}
+\hline
+\hline
+P & FB & Back & BackF & Cons & Local & LocalF & Tab\'u & Tab\'uM & Tab\'uF\\
+\hline
+1 & 91 & 91 & 91 & 90 & 91 & 91 & 91 & 91 & 91\\
+\hline
+2 & 91 & 91 & 91 & 89 & 89 & 89 & 91 & 91 & 91\\
+\hline
+3 & 91 & 91 & 91 & 89 & 89 & 89 & 89 & 91 & 89\\
+\hline
+4 & 91 & 91 & 91 & 88 & 90 & 90 & 91 & 91 & 91\\
+\hline
+5 & 91 & 91 & 91 & 89 & 90 & 90 & 91 & 91 & 91\\
+\hline
+\hline
+\end{tabular}
+
+\medskip
+\begin{tabular}{||l|c|c|c|c|c|c|c|c|r||}
+\hline
+\hline
+P & FB & Back & BackF & Cons & Local & LocalF & Tab\'u & Tab\'uM & Tab\'uF\\
+\hline
+1 & 2.2154e+07 & 31675 & 32299 & 1477 & 1426 & 2573 & 1615 & 32933 & 3764\\
+\hline
+2 & 2.3374e+07 & 212937 & 210596 & 1305 & 1387 & 2472 & 1837 & 33088 & 4076 \\
+\hline
+3 & 2.39639e+07 & 213325 & 208476 & 1262 & 1384 & 2444 & 1580 & 32745 & 3848\\ 
+\hline
+4 & 2.31604e+07 & 156247 & 176252 & 1226 & 1360 & 2409 & 1628 & 51910 & 3741\\
+\hline
+5 & 2.3878e+07 & 314723 & 323818 & 1238 & 1377  & 2414 & 2241 & 35722 & 3827\\
+\hline
+\hline
+\end{tabular}
+\medskip
 
 
 Dada la tabla presentada anteriormente, se denotan varias observaciones:
