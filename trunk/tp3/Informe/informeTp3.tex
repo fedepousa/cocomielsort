@@ -460,7 +460,9 @@ Por otro lado, la b\'usqueda tab\'u modificada presenta un par\'ametro m\'as que
 
 \bigskip
 
-En primer lugar, se comenzar\'a el an\'alisis fijando los par\'ametros de cantidad de iteraciones, y se modificar\'a la longitud de la lista tab\'u. La longitud de la lista tab\'u se vari\'o entre v/3 y v/9
+\subsubsection*{Longitud de la lista tab\'u}
+
+En primer lugar, se comenzar\'a el an\'alisis fijando los par\'ametros de cantidad de iteraciones, y se modificar\'a la longitud de la lista tab\'u. La longitud de la lista tab\'u se vari\'o entre v/3 y v/9, mientras que la cantidad m\'axima de iteraciones queda fija en 3*v y la cantidad m\'axima de iteraciones entre \'optimos queda fija en v/2
 
 A continuaci\'on, se puede ver el gr\'afico de la eficiencia en funci\'on de cada paquete. 
 
@@ -483,6 +485,93 @@ Aca va el grafico 4.
 
 
 Como se puede ver en el gr\'afico, no hay grandes fluctuaciones entre los tiempos de ejecuci\'on y se encuentra ninguna tendencia muy definida. (poner a que se debe esto, a que mirar si esta es O(1) y no miras toda la lista tonces da igual?)
+
+\subsubsection*{Cantidad m\'axima de iteraciones}
+
+En esta parte se analizar\'a como var\'ia la eficiencia y el tiempo de ejecuci\'on de la metaheur\'istica, al cambiar el valor de la cantidad m\'axima de iteraciones permitidas. Por otro lado, la longitud de la lista tab\'u queda fija en v/3, mientras que la cantidad m\'axima de iteraciones entre \'optimos queda fija en v/2.
+
+A continuaci\'on, se presenta el gr\'afico de eficiencia en funci\'on de los paquetes de casos de prueba.
+
+Aca va el grafico 5.
+
+
+En el gr\'afico presentado anteriormente se pueden denotar dos cosas importantes:
+\begin{itemize}
+\item En primer lugar se puede ver que cuando el par\'ametro toma los valores 3*v, 6*v, 9*v y 12*v todas las eficiencias dan exactamente el mismo resultado. Esto se cree que se debe a que cuando el par\'ametro toma estos valores se hace obsoleto, ya que lo que debe estar suceciendo es que la cantidad m\'axima de iteraciones entre \'optimos siempre poner una cota menor y nunca se llega a la cota que aqu\'i esta variando. 
+\item Por otro lado, se puede ver que cuando se baja mucho el par\'ametro (v/4), la meteheur\'istica se degrada considerablemente ya que se impone una cota muy baja para la cantidad total de iteraciones.
+\end{itemize}
+
+
+Luego de ver como se comporta la b\'usqueda tab\'u al cambiar el par\'ametro del m\'aximos de iteraciones, se presenta como se comporta la misma pero ahora en cuanto a tiempos de ejecuci\'on.
+
+A continuaci\'on se puede ver el gr\'afico de tiempo de ejecuci\'on en funci\'on de los paquetes.
+
+aca va el grafico 6.
+
+Lo que se puede ver en el gr\'afico anterior, es como los tiempos de ejecuci\'on se condice con los resultados de eficiencia obtenidos. Los valores correspondientes a 3*v, 6*v, 9*v y 12*v tardan todos el mismo tiempo, reforzando lo augurado anteriormente; es decir, que nunca se llega a esta cota si no que la cota de cantidad m\'axima de operaciones entre \'optimos corta primero. Por otro lado, los valores correspondientes a v/4 son claramente menor a los dem\'as mostrando el claro \emph{tradeoff} natural, los tiempos de ejecuci\'on son mejores, pero al costo de tener menos eficiencia.
+
+
+\subsubsection*{Cantidad m\'axima de iteraciones entre \'optimos}
+
+En esta parte se ver\'a como var\'ia la eficiencia y los tiempos de ejecuci\'on cuando se modifica la cantidad m\'axima de iteraciones entre \'optimos, mientras que la longitud de la lista tab\'u queda fija en v/3 y la cantidad m\'axima de iteraciones queda fija en 3*v
+
+A continuaci\'on se presenta el gr\'afico de eficiencia en funci\'on de los paquetes de casos de prueba:
+
+aca va el grafico 7
+
+Lo que se puede denotar en el gr\'afico anterior es una conclusi\'on bastante natural. A medida que se va achicando la cota, y cada vez se permite menos iteraciones, la eficiencia va bajando ya que la rutina va teniendo menos iteraciones para encontrar los mejores valores. En el momento que la cota se sube considerablemente a 2*v, la eficiencia crece.
+
+A continuaci\'on se presenta el gr\'afico de los tiempos de ejecuci\'on para esta variaci\'on presentada.
+
+aca va el grafico 8
+
+En este gr\'afico se puede ver como los tiempos de ejecuci\'on se condice perfectamente con los resultados obtenidos en la eficiencia. A medida que la cota baja, tambi\'en baja el tiempo de ejecuci\'on; y cuando la cota sube, el tiempo de ejecuci\'on tambi\'en lo hace. Al igual que en la secci\'on anterior, se puede como al variar este par\'ametro los tiempos de ejecuci\'on son peores si la eficiencia es mejor y viceversa.
+
+
+\bigskip
+
+Como conclusiones generales de la tres variaciones de par\'ametros hechas anteriormente se pueden destacar:
+
+\begin{itemize}
+\item La metaheur\'istica tiende a comportarse de manera m\'as eficiente cuando la longitud de la lista tab\'u se encuentra cerca de v/5 y v/6.
+\item En cuanto a los otros dos par\'amtros se puede ver que ambos par\'ametros terminan siendo una soluci\'on de compromiso. Es decir, si se relajan mucho y las cotas son muy altas la eficiencia aumenta pero tambi\'en aumenta el tiempo de ejecuci\'on; mientras que si las cotas son bajas el tiempo de ejecuci\'on baja al costo de tener una menor eficiencia. 
+\end{itemize}
+
+\subsubsection*{An\'alisis Tab\'u modificado}
+
+En el momento de an\'alisis del comportamiento de la metaheur\'istica de tab\'u modificada es importante notar que la misma posee 4 par\'ametros, los 3 primeros son los mismos que en tab\'u. El nuevo par\'ametro es la cantidad de asignaciones con la que se va a trabajar. Es por esto que para an\'alisar este tab\'u modificado se van a fijar los 3 par\'ametros que comparte con la b\'usqueda tab\'u original y se ir\'a variando la cantidad de asignaciones. 
+
+En este an\'alisis los par\'ametros ser\'an fijados de la sigueinte manera: La longitud de la lista tab\'u ser\'a v/5, la Cantidad m\'axima de iteraciones ser\'a v y la Cantidad m\'axima de iteraciones entre \'optimos ser\'a v/2.
+
+Por otro lado, la cantidad de asignaciones ser\'an 1, 2, 5, 10 y 50. Es importante destacar que cuando la cantidad de asignaciones es 1, esta b\'usqueda es la misma que la tab\'u original. Esta ser\'a la manera para poder comparar el comportamiento de la b\'usqueda tab\'u modificada con la b\'usqueda tab\'u original.
+
+
+A continuaci\'on se presenta el gr\'afico de eficiencia en funci\'on de los paquetes de casos de prueba:
+
+
+Aca va el gr\'afico 9
+
+
+Luego de presentar el anterior gr\'afico se puede concluir en que:
+
+\begin{itemize}
+\item La b\'usqueda tab\'u modificada presenta mejores resultados que la b\'usqueda tab\'u original.
+\item A medida que se aumentan la cantidad de asignaciones el desempe\~{n}o mejora claramente (excepto en el primer paquete), llevando la eficiencia a niveles muy altos llegando a sobrepasar el 99,9 porciento de clausulas satisfechas.
+\item Si bien cuando las asignaciones suben la eficiencia tambi\'en lo hace, se puede visualizar que a medida que las clausulas y las variables totales crecen la eficiencia tiende a decrecer. Se cree que a medida que crece la cantidad de variables, la cantidad de asignaciones va quedando chica en relaci\'on a la cantidad total de asignaciones que existe que crece exponencialmente.
+\item Si bien lo mejor parece ser seguir incrementando la cantidad de asignaciones, es l\'ogico creer que esto tendra un impacto en el tiempo de ejecuci\'on que impondra restricciones.
+\end{itemize}
+
+
+A continuaci\'on se presenta el gr\'afico de tiempos de ejecuci\'on al variar la cantidad de asignaciones:
+
+Aca va el grafico 10.
+
+
+A partir del gr\'afico anterior se puede ver claramente como la conjetura realizada anteriormente parece plasmarse. Es decir, si bien subir la cantidad de asignaciones hace crecer la eficiencia de los resultados, tambi\'en crece de manera abrupta el tiempo de ejecuci\'on requerido. 
+
+Es por esto que se puede concluir algo similar a lo concluido anteriormente con los par\'ametros de cantidad de iteraciones. Si bien variarlos puede traer mejores resultados, tambi\'en tiene fuerte impacto en el tiempo de ejecuci\'on. 
+
+Cabe destacar como conclusi\'on general de la b\'usqueda tab\'u modificada que esta gener\'a resultados muy eficientes, muy cercanos a la soluci\'on exacta en la mayor\'ia de los casos.
 
 
 

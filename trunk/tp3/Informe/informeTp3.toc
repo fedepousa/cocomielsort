@@ -20,6 +20,6 @@
 \contentsline {subsection}{An\'alisis de todos los algoritmos exactos y heur\'isticas}{13}
 \contentsline {subsection}{An\'alisis comparativos de las heur\'isticas constructiva, de b\'usqueda local y tab\'u}{14}
 \contentsline {subsection}{An\'alisis comparativos de variaciones de par\'ametros en b\'usqueda tab\'u y tab\'u modificada}{16}
-\contentsline {section}{Conclusiones}{17}
-\contentsline {section}{Ap\'endice 1: Bibliografia}{17}
-\contentsline {section}{Instrucciones para utilizar benchmarks.cpp}{17}
+\contentsline {section}{Conclusiones}{19}
+\contentsline {section}{Ap\'endice 1: Bibliografia}{19}
+\contentsline {section}{Instrucciones para utilizar benchmarks.cpp}{19}
