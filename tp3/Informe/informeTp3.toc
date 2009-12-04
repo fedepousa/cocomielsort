@@ -21,5 +21,5 @@
 \contentsline {subsection}{An\'alisis comparativos de las heur\'isticas constructiva, de b\'usqueda local y tab\'u}{14}
 \contentsline {subsection}{An\'alisis comparativos de variaciones de par\'ametros en b\'usqueda tab\'u y tab\'u modificada}{16}
 \contentsline {section}{Conclusiones}{19}
-\contentsline {section}{Ap\'endice 1: Bibliografia}{19}
-\contentsline {section}{Instrucciones para utilizar benchmarks.cpp}{19}
+\contentsline {section}{Ap\'endice 1: Bibliografia}{20}
+\contentsline {section}{Instrucciones para utilizar benchmarks.cpp}{20}
