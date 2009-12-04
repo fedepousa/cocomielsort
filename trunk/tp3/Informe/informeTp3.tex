@@ -322,7 +322,14 @@ Habiendo definido conceptualmente los componentes de la b\'usqueda Tab\'u, se pu
 En primer lugar, al igual que en la b\'usqueda local, la vecindad que se definio para cada asignaci\'on est\'a compuesta por las asignaciones resultantes de cambiar el valor de exactamente una variable de la asignaci\'on original. Cada movimiento es el cambio de una variable, por lo tanto manteniendo un vector de enteros del tama\~{n}o de la cantidad de variables, se puede llevar un registro de cu\'al fue la \'ultima iteraci\'on en la se aplic\'o el movimiento i. De esta manera, se puede saber si un movimiento es Tab\'u con s\'olo ver si pasaron suficientes iteraciones desde la \'ultima iteraci\'on en la que fue usado, lo que resulta m\'as eficiente que recorrer una lista con los movimientos.
 
 
-(aca habria que ver de decir si es algo-aproximado)
+Por \'ultimo, cabe destacar que esta metaheur\'istica tambi\'en constituye un algoritmo aproximado cuando la asignaci\'on inicial viene dada por la heur\'istica constructiva, ya que el resultado que arroja siempre es una mejora, en caso de hallar alguna, y nunca entrega un peor resultado. Luego, al igual que en la b\'usqueda local:
+
+\begin{equation}
+c_tabu \geq c_const \geq \frac{m}{m+1}*c_max
+\end{equation}
+
+Lo cual, nuevamente, en el peor de los casos esta indicando que esta metaheur\'istica es un algoritmo $\frac{1}{2}$-aproximado.
+
 
 \subsection*{Complejidad de la metaheur\'istica de la b\'usqueda Tab\'u}
 \addcontentsline{toc}{subsection}{Complejidad de la metaheur\'istica de la b\'usqueda Tab\'u}
@@ -342,6 +349,8 @@ $m$ es la cantidad de iteraciones entre mejoras. Esto ocurre porque $c$ es una
 cota para la cantidad de mejoras y la cantidad de iteraciones es igual a la
 cantidad iteraciones entre mejoras por la cantidad de mejoras.
 
+Luego, si se trabaja esta b\'usqueda con una cantidad de iteraciones m\'axima que sea alg\'un multiplo de c, podemos acotar la cantidad total de iteraciones por este valor. Por lo que la complejidad final del algoritmo ser\'ia O($c^2$*v).
+
 
 \subsection*{Modificaci\'on de la metaheur\'istica de la b\'usqueda Tab\'u}
 \addcontentsline{toc}{subsection}{Modificaci\'on de la metaheur\'istica de la b\'usqueda Tab\'u}
@@ -350,13 +359,35 @@ Para finalizar con las heur\'isticas para resolver el problema de Max-Sat, se im
 
 La b\'usqueda tab\'u funciona con una asignaci\'on inicial y, a partir de esta asignaci\'on primaria, comienza a realizar la busqueda siguiendo con las restricciones que la metaheur\'istica impone. Luego, la idea de la modificaci\'on es generar una b\'usqueda tab\'u pero en vez de trabajar con una sola asignaci\'on, trabajar con varias y ver cual de todas es mejor. Lo que se busca con esto es poder atacar el problema desde puntos muy distantes del espacio. Es decir, si se piensa en la asignaciones posibles como un espacio de v variables, la idea es poder empezar con soluciones distantes en ese espacio para encontrar m\'aximos locales diferentes que sean potencialmente m\'aximos absolutos.
 
-Para realizar esto se generan asignaciones inciales aleatorias. Dichas asignaciones se generan al azar con probabilidad un medio de obtener True para cada una de las variables. De esta manera se generan asignaciones que, a priori, no tienen porque encontrarse cerca en el espacio de asignaciones.
+Para realizar esto se generan asignaciones iniciales aleatorias. Dichas asignaciones se generan al azar con probabilidad un medio de obtener True para cada una de las variables. De esta manera se generan asignaciones que, a priori, no tienen porque encontrarse cerca en el espacio de asignaciones.
 
 Luego, en \'ultimo lugar, lo que se hace finalmente es ejecutar la b\'usqueda tab\'u con cada asignacion y devolver el mejor resultado entre todos.
+
+Cabe destacar, que siendo la cantidad de asignaciones un n\'umero fijo, la complejidad de esta modificaci\'on no var\'ia respecto de la original.
 
 
 \section*{Filtro de componentes conexas}
 \addcontentsline{toc}{section}{Filtro de componentes conexas}
+
+
+Luego de implementar todos los algoritmos y heur\'isticas anteriormente descriptas, se implemento un filtro para mejorar el tiempo de ejecuci\'on que es aplicable a todas las variantes presentadas.
+
+La idea de este filtro es poder separar la clausulas convenientemente, para que entonces el problema se convierta en varios problemas chicos, en vez de un problema de mayor complejidad.
+
+Para esto se decidio implementar lo siguiente:
+
+\begin{itemize}
+\item Se crea un grafo con el caso de prueba correspondiente, en donde los nodos son las clausulas y las aristas representa una relaci\'on entre las clausulas, donde la misma se hace presente si las clausulas comparten alguna variable. Si las clausulas no comparten ninguna variable entonces pueden perfectamente pertenecer a problemas separados, ya que una asignacion de las variables que haga True a una, no tiene porque incidir en la otra clausula. 
+\item Una vez obtenido el grafo, el paso que sigue es correr bfs desde los nodos para identificar las componentes conexas de este grafo. Luego, cada componente conexa constituira un problema por separado
+\item Luego de obtener las diferentes componentes conexas, se debe hacer un renombre de las variables y las clausulas para poder correr cada subproblema por separado.
+\item Se corren cada componente conexa como un problema por separado y se obtienen los resultados para cada uno de ellas
+\item Se vuelve a hacer un renombre para volver a las variables y a las clausulas originales, uniendo todos los resultados encontrados.
+\end{itemize}
+
+La complejidad de este filtro es inherente a la forma en la cual fue implementado y las estructuras utilizadas. Lo que se destaca es que la misma es O($c^2$*v); complejidad que proviene de llenar la matriz de adyacencia utilizada para representar el grafo, la cual tiene c filas y c columnas, ya que los nodos representados son las clausulas, y se itera sobre las variables para llenar correctamente dicha matriz. Todas las operaciones restantes del filtro, tienen una complejidad menor a la expuesta anteriormente.
+
+Es por esto que el filtro de componentes conexas se aplic\'o a todos los algoritmos y heur\'isticas, excepto por la heur\'istica constructiva, en donde aplicar el filtro implicar\'ia una desmejora de la complejidad.
+
 
 
 \section*{An\'alisis de resultados}
@@ -394,9 +425,10 @@ Para esta secci\'on se utilizaron 5 casos de prueba de 20 variables y 91 clausul
 
 Paquete = P, FB = Fuerza Bruta, Back = Backtracking, Cons = Constructiva, Local = B\'usqueda Local, Tabu = B\'usqueda Tab\'u, Tab\'uM = Tab\'u Modificado. Todas las columnas que tienen F al final, representan la modificaci\'on con el filtro de componentes conexas.
 
+A continuaci\'on se presenta la tabla con los resultados obtenidos:
 \medskip
 
-
+\begin{center}
 \begin{tabular}{||l|c|c|c|c|c|c|c|c|r||}
 \hline
 \hline
@@ -414,8 +446,11 @@ P & FB & Back & BackF & Cons & Local & LocalF & Tab\'u & Tab\'uM & Tab\'uF\\
 \hline
 \hline
 \end{tabular}
-
+\end{center}
 \medskip
+
+A continuaci\'on se presenta la tabla con los tiempos de ejecuci\'on
+\begin{center}
 \begin{tabular}{||l|c|c|c|c|c|c|c|c|r||}
 \hline
 \hline
@@ -433,6 +468,7 @@ P & FB & Back & BackF & Cons & Local & LocalF & Tab\'u & Tab\'uM & Tab\'uF\\
 \hline
 \hline
 \end{tabular}
+\end{center}
 \medskip
 
 
