@@ -327,9 +327,9 @@ En primer lugar, al igual que en la b\'usqueda local, la vecindad que se definio
 \subsection*{Complejidad de la metaheur\'istica de la b\'usqueda Tab\'u}
 \addcontentsline{toc}{subsection}{Complejidad de la metaheur\'istica de la b\'usqueda Tab\'u}
 
+La explicaci\'on de la complejidad de la metaheur\'istica de la b\'usqueda tab\'u es bastante simple. Dadas las estructuras utilizadas, y dado que buscar si una asignaci\'on esta o no en la lista tab\'u es O(1), la complejidad es la misma que en la b\'usqueda local.
 
-ESCRIBIR ESTO BIEN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-Mismo que local, excepto que la cantidad de iteraciones máxima la pone uno, si no, es la cantidad de cláusulas por la cantidad de iteraciones entre maximos por c  por v, que es la complejidad de la iteracion.
+El \'unico cambio significativo es que la cantidad de iteraciones m\'axima se pasa como par\'ametro. En el caso que esto no se hiciese, entonces la complejidad ser\'ia la cantidad de clausulas por la complejidad de una iteraci\'on que O(c*v*cantidad de iteraciones entre maximos), es decir ser\'ia O($c^2$*v*cantidad de iteraciones entre maximos).
 
 
 \subsection*{Modificaci\'on de la metaheur\'istica de la b\'usqueda Tab\'u}
@@ -337,8 +337,12 @@ Mismo que local, excepto que la cantidad de iteraciones máxima la pone uno, si 
 
 Para finalizar con las heur\'isticas para resolver el problema de Max-Sat, se implemento una modificaci\'on a la meteheur\'istica de b\'usqueda Tab\'u.
 
-ESCRIBIR ESTO BIEN!!!!!!!!!!!!!!!!
-Se generan asignaciones iniciales al azar, con probabilidad un medio para true en cada variable. Se ejecuta tabu con cada asignacion. Se devuelve el mejor resultado.
+La b\'usqueda tab\'u funciona con una asignaci\'on inicial y, a partir de esta asignaci\'on primaria, comienza a realizar la busqueda siguiendo con las restricciones que la metaheur\'istica impone. Luego, la idea de la modificaci\'on es generar una b\'usqueda tab\'u pero en vez de trabajar con una sola asignaci\'on, trabajar con varias y ver cual de todas es mejor. Lo que se busca con esto es poder atacar el problema desde puntos muy distantes del espacio. Es decir, si se piensa en la asignaciones posibles como un espacio de v variables, la idea es poder empezar con soluciones distantes en ese espacio para encontrar m\'aximos locales diferentes que sean potencialmente m\'aximos absolutos.
+
+Para realizar esto se generan asignaciones inciales aleatorias. Dichas asignaciones se generan al azar con probabilidad un medio de obtener True para cada una de las variables. De esta manera se generan asignaciones que, a priori, no tienen porque encontrarse cerca en el espacio de asignaciones.
+
+Luego, en \'ultimo lugar, lo que se hace finalmente es ejecutar la b\'usqueda tab\'u con cada asignacion y devolver el mejor resultado entre todos.
+
 
 \section*{Filtro de componentes conexas}
 \addcontentsline{toc}{section}{Filtro de componentes conexas}
