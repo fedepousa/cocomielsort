@@ -15,11 +15,11 @@
 \contentsline {section}{Metaheur\'istica de b\'usqueda tab\'u para MAX-SAT}{11}
 \contentsline {subsection}{Complejidad de la metaheur\'istica de la b\'usqueda Tab\'u}{13}
 \contentsline {subsection}{Modificaci\'on de la metaheur\'istica de la b\'usqueda Tab\'u}{13}
-\contentsline {section}{Filtro de componentes conexas}{13}
-\contentsline {section}{An\'alisis de resultados}{13}
-\contentsline {subsection}{An\'alisis de todos los algoritmos exactos y heur\'isticas}{14}
-\contentsline {subsection}{An\'alisis comparativos de las heur\'isticas constructiva, de b\'usqueda local y tab\'u}{15}
-\contentsline {subsection}{An\'alisis comparativos de variaciones de par\'ametros en b\'usqueda tab\'u y tab\'u modificada}{17}
-\contentsline {section}{Conclusiones}{20}
-\contentsline {section}{Ap\'endice 1: Bibliografia}{21}
-\contentsline {section}{Instrucciones para utilizar benchmarks.cpp}{21}
+\contentsline {section}{Filtro de componentes conexas}{14}
+\contentsline {section}{An\'alisis de resultados}{14}
+\contentsline {subsection}{An\'alisis de todos los algoritmos exactos y heur\'isticas}{15}
+\contentsline {subsection}{An\'alisis comparativos de las heur\'isticas constructiva, de b\'usqueda local y tab\'u}{16}
+\contentsline {subsection}{An\'alisis comparativos de variaciones de par\'ametros en b\'usqueda tab\'u y tab\'u modificada}{18}
+\contentsline {section}{Conclusiones}{21}
+\contentsline {section}{Ap\'endice 1: Bibliografia}{22}
+\contentsline {section}{Instrucciones para utilizar benchmarks.cpp}{22}
