@@ -211,15 +211,15 @@ En dicho caso, la heur\'istica utilizada ser\'ia un algoritmo $\frac{1}{2}$-apro
 
 La heurística elige de manera golosa el literal que más clausulas satisface y lo hace verdadero. Esto se repite hasta que la asignación de las variables esté completa.
 
-Para elegir el literal que más clausulas satisface manetenemos, por cada literal, un conjunto con las clausulas que haría verdaderas y que todavía no están satisfechas.
+Para elegir el literal que más clausulas satisface se mantiene, por cada literal, un conjunto con las clausulas que haría verdaderas y que todavía no están satisfechas.
 
-Al realizar cada elección debemos actualizar la estructura, eliminando cada una de las cláusulas satisfechas de los conjuntos en los que aparezcan. Como tenemos un conjunto por cada literal, se van a borrar las cláusulas satisfechas de $v$ conjuntos, donde $v$ es la cantidad de variables del problema. En el algoritmo se van a satisfacer a lo sumo $c$ cláusulas. Por lo tanto a cada cláusula satisfecha vamos a borrarla de $v$ conjuntos, teniendo el borrado una complejidad en $O\left( log \left( c \right) \right)$, donde $c$ es la cantidad de cláusulas del problema. Por lo tanto, mantener la estructura va a tener una complejidad en $O\left( c \times v \ times log \left( c \right) \right)$.
+Al realizar cada elección se debe actualizar la estructura, eliminando cada una de las cláusulas satisfechas de los conjuntos en los que aparezcan. Como se tiene un conjunto por cada literal, se van a borrar las cláusulas satisfechas de $v$ conjuntos, donde $v$ es la cantidad de variables del problema. En el algoritmo se van a satisfacer a lo sumo $c$ cláusulas. Por lo tanto a cada cláusula satisfecha se la va a borrar de $v$ conjuntos, teniendo el borrado una complejidad en $O\left( log \left( c \right) \right)$, donde $c$ es la cantidad de cláusulas del problema. Por lo tanto, mantener la estructura va a tener una complejidad en $O\left( c \times v \times log \left( c \right) \right)$.
 
-El conjunto utilizado para guardar las clausulas que haría verdaderas un literal está implementado en una estructura de árbol que nos garantiza inserción y borrado en $O\left( log \left( e \right) \right)$, donde $e$ es la cantidad de elementos del conjunto.
+El conjunto utilizado para guardar las clausulas que haría verdaderas un literal está implementado en una estructura de árbol que garantiza inserción y borrado en $O\left( log \left( e \right) \right)$, donde $e$ es la cantidad de elementos del conjunto.
 
-Como tenemos que recorrer todas las variables en cada asignación para mantener la estructura, podemos llevar un registro de cuál es el literal que más cláusulas, entre las aún insatisfechas, haría verdaderas. 
+Como se tiene que recorrer todas las variables en cada asignación para mantener la estructura, se puede llevar un registro de cuál es el literal que más cláusulas, entre las aún insatisfechas, haría verdaderas. 
 
-Por lo tanto la complejidad del algoritmo es $O\left( c \times v \ times log \left( c \right) \right)$.
+Luego, por todo lo explicado anteriormente, la complejidad temporal de la heur\'istica constructiva es $O\left( c \times v \ times log \left( c \right) \right)$.
 
 
 
@@ -279,9 +279,9 @@ devolver asignacion y Max
 
 El algoritmo consiste en elegir la variable que al cambiar su asignación más aumenta el número de clausulas satisfechas. En caso de no existir ninguna variable que al cambiar su asignación aumente el número de cláusulas satisfechas, se termina, si no se vuelve a iterar.
 
-Para identificar la variable a la que se le cambiará su asignación mantenemos por cada cláusula el número de literales que aparecen en la misma y que son verdaderos con la asignación actual. Llamemos $l_i$ al número de literales que aparecen en la cláusula $i$ y que son verdaderos con la asignación actual. A su vez mantenemos para cada variable, una lista de las cláusulas en las que aparece un literal que la contenga y si el literal que la contiene es una negación. 
+Para identificar la variable a la que se le cambiará su asignación se mantiene por cada cláusula el número de literales que aparecen en la misma y que son verdaderos con la asignación actual. Se denomina $l_i$ al número de literales que aparecen en la cláusula $i$ y que son verdaderos con la asignación actual. A su vez se mantiene para cada variable, una lista de las cláusulas en las que aparece un literal que la contenga y si el literal que la contiene es una negación. 
 
-Para saber cuál sería la variación de la cantidad de cláusulas satisfechas al cambiar el valor de una varible, necesitamos saber cuántas cláusulas pasaron a ser verdaderas y cuántas ahora son falsas. Para eso, en cada cláusula en que aparece la variable restamos uno a $l_i$ si la variable satisfacía un literal de la cláusula $i$, o sumamos uno si ahora satisface un literal de la misma cláusula que era falso. Si $l_i$ es cero antes del cambio y luego es distinto de cero, entonces antes era falsa la cláusula y el cambio la hizo verdadera, por el contrario, si $l_i$ es distinto de cero antes del cambio y luego se hace cero, la cláusula $i$ dejo de ser satisfecha luego del cambio. Llevando un registro de cuántas cláusulas cambiaron de estar satisfechas a insatisfechos y viceversa. 
+Para saber cuál sería la variación de la cantidad de cláusulas satisfechas al cambiar el valor de una varible, se necesita saber cuántas cláusulas pasaron a ser verdaderas y cuántas ahora son falsas. Para eso, en cada cláusula en que aparece la variable se resta uno a $l_i$ si la variable satisfacía un literal de la cláusula $i$, o se suma uno si ahora satisface un literal de la misma cláusula que era falso. Si $l_i$ es cero antes del cambio y luego es distinto de cero, entonces antes era falsa la cláusula y el cambio la hizo verdadera, por el contrario, si $l_i$ es distinto de cero antes del cambio y luego se hace cero, la cláusula $i$ dejo de ser satisfecha luego del cambio. Llevando un registro de cuántas cláusulas cambiaron de estar satisfechas a insatisfechos y viceversa. 
 
 
 Por lo tanto, para obtener la variación del número de cláusulas satisfechas al cambiar una variable se realiza una cantidad de operaciones en $O\left( c \right)$, donde $c$ es la cantidad de variables del problema. Como es necesario hacer esto para cada una de las variables, cada iteración tiene una complejidad en $O\left( v \times c  \right)$.
