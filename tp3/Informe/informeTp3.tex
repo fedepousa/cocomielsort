@@ -331,7 +331,7 @@ Lo cual, nuevamente, en el peor de los casos esta indicando que esta metaheur\'i
 
 La explicaci\'on de la complejidad de la metaheur\'istica de la b\'usqueda tab\'u es bastante simple. Dadas las estructuras utilizadas, y dado que buscar si una asignaci\'on est\'a o no en la lista tab\'u es O(1), la complejidad es la misma que en la b\'usqueda local.
 
-El \'unico cambio significativo es que la cantidad de iteraciones m\'axima y la cantidad máxima de iteraciones entre mejoras de la cantidad de cl\'ausulas satisfechas se pasa como par\'ametro. En el caso general, entonces la complejidad ser\'ia la cantidad de iteraciones por la complejidad de
+El \'unico cambio significativo es que la cantidad de iteraciones m\'axima y la cantidad máxima de iteraciones entre soluciones \'optimas se pasa como par\'ametro. En el caso general, entonces la complejidad ser\'ia la cantidad de iteraciones por la complejidad de
 una iteraci\'on que$ O\left( c \times v \times \textbf{cantidad de iteraciones}
 \right)$.
 Si la cantidad máxima de iteraciones en total fuera ilimitada, pero se limitara la cantidad de iteraciones entre cada mejora del número de cl\'ausulas satisfechas, la complejidad sería $O\left( c^2 \times v \times m \right)$, donde
