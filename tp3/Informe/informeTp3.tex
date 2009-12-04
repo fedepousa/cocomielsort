@@ -43,7 +43,27 @@ La importancia de este algoritmo no radica solamente en haber sido el primero en
 \section*{Situaciones de la vida real que se pueden modelar utilizando MAX-SAT}
 \addcontentsline{toc}{section}{Situaciones de la vida real que se pueden modelar utilizando MAX-SAT} 
 
+El problema de max-sat tiene varias aplicaciones pr\'acticas. Muchas de ellas aplicadas a la biolog\'ia y otros campos cient\'ificos. Sin embargo, el problema de max-sat puede aplicarse a situaciones cotidianas.
 
+El problema de max-sat se puede aplicar cuando tenemos alguna entidad que esta satifescha si se cumple algo que pide, o si por lo menos no se cumple una de las cosas que pide que no se cumpla.
+
+Supongamos una c\'amara de diputados donde hay varios proyectos de ley. Cada legislador tiene una opinion formada sobre los proyectos de ley, pero podr\'ia ser que sobre algunos proyectos no este ni a favor ni en contra. Adem\'as tambi\'en supongamos que es una \'epoca complicada para los partidos p\'oliticos ya que ninguno logra erigirse con firmeza. Es por esto que los legisladores son bastante permisivos y se contentan de varias maneras. Si se aprueba alg\'un proyecto de ley que ellos apoyan, estan satisfechos porque pueden volver a su partido y decir que ese proyecto de ley se aprob\'o gracias a la presi\'on que ellos se ejercieron. Por otro lado, los legisladores tambi\'en quedan satisfechas si alg\'un proyecto que no estaban a favor no se aprueba, porque de esta manera pueden decir que frenaron un proyecto de la oposici\'on gracias a la presi\'on que ellos ejercieron. De esta manera, este problema se puede modelar mediante max-sat donde cada clausula es un diputado y cada variable es un proyecto de ley diferente. De esta manera, la c\'amara de senadores puede, resolviendo max-sat, saber que leyes aprobar y cuales no para contentar a la mayor cantidad de diputados y que la situaci\'on p\'olitica del pa\'is pase a una peor situaci\'on.
+
+
+En este ejemplo se puede aplicar max-sat, pero en realidad es solo un caso particular de lo explicado al principio. Es decir, en vez de ser legisladores podr\'ian ser otras personas u otras cosas que pidan requisitos sobre otras cosas, pero lo importante es que se satisfacen si alguna cosa de la que piden se hace verdadera, o alguna cosa de la que piden como falsa se haga falsa.
+
+
+\bigskip
+
+Otras situaciones diferentes donde se puede aplicar max-sat y donde las entidades no tienen que ser tan laxos como lo eran los anteriores diputados, podr\'ia ser una situaci\'on donde las entidades pidan muchas cosas a favor y pidan una sola en contra. Por ejemplo, podr\'iamos tener una familia que se va de vacaciones, dicha familia tiene 3 hijos. 
+
+Un hijo le gustar\'ia ir a la playa o tambi\'en quedarse en su casa e ir a una colonia, pero no le gusta para nada la idea de ir a pasar sus vacaciones en la monta\~{n}a.
+
+El segundo hijo le gusta mucho hacer actividades fis\'icas por lo que esta a favor de ir a la colonia y hacer deportes, o ir a la monta\~{n}a para hacer caminatas, pero jamas ir\'ia a la playa porque piensa que es solo ir a tirarse a tomar sol. 
+
+En \'ultimo lugar, el tercer hijo piensa igual que el segundo porque este lo ha sobornado.
+
+Luego, los padres tienen que resolver este problema max-sat donde las clausulas son sus hijos y las variables son las vacaciones posibles. Cabe destacar que las vacaciones las pueden dividir por semanas y pasarlas en m\'as de un lugar. Si bien en esta familia los hijos y las diferencias son pocas, en una familia numerosa, esto podr\'ia generar una gran pelea familiar que se resolver\'ia con max-sat.
 
 
 \section*{Algoritmo exacto para MAX-SAT}
