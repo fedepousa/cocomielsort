@@ -329,7 +329,18 @@ En primer lugar, al igual que en la b\'usqueda local, la vecindad que se definio
 
 La explicaci\'on de la complejidad de la metaheur\'istica de la b\'usqueda tab\'u es bastante simple. Dadas las estructuras utilizadas, y dado que buscar si una asignaci\'on esta o no en la lista tab\'u es O(1), la complejidad es la misma que en la b\'usqueda local.
 
-El \'unico cambio significativo es que la cantidad de iteraciones m\'axima se pasa como par\'ametro. En el caso que esto no se hiciese, entonces la complejidad ser\'ia la cantidad de clausulas por la complejidad de una iteraci\'on que O(c*v*cantidad de iteraciones entre maximos), es decir ser\'ia O($c^2$*v*cantidad de iteraciones entre maximos).
+El \'unico cambio significativo es que la cantidad de iteraciones m\'axima y l
+a cantidad máxima de iteraciones entre mejoras de la cantidad de clausulas
+satisfechas se pasa como par\'ametro. En el caso general,
+entonces la complejidad ser\'ia la cantidad de iteraciones por la complejidad de
+una iteraci\'on que$ O\left( c \times v \times \textbf{cantidad de iteraciones}
+\right)$.
+Si la cantidad máxima de iteraciones en total fuera ilimitada pero se
+limitara la cantidad de iteraciones entre cada mejora del número de clausulas
+satisfechas la complejidad sería $O\left( c^2 \times v \times m \right)$, donde
+$m$ es la cantidad de iteraciones entre mejoras. Esto ocurre porque $c$ es una
+cota para la cantidad de mejoras y la cantidad de iteraciones es igual a la
+cantidad iteraciones entre mejoras por la cantidad de mejoras.
 
 
 \subsection*{Modificaci\'on de la metaheur\'istica de la b\'usqueda Tab\'u}
