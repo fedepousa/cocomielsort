@@ -107,13 +107,54 @@ Por \'ultimo lo que se realiz\'o fue hacer chmod 755 .logut, esto se hizo para q
 
 STDOUT:
 
-En primer lugar se utiliz\'o el siguiente comando para volcar la informaci\'on pedida: ls -R >> /home/grupo5/tp/config. El mismo se utiliz\'o estando en el directorio /etc, de esta manera el comando ls -R lo que hizo fue lista recusirvamente todos el contenido del directorio y su subdirectorios. Mientras que >> lo que hizo fue volcar esta informaci\'on al archivo especificado.
+En primer lugar se utiliz\'o el siguiente comando para volcar la informaci\'on pedida: ls -R $>>$ /home/grupo5/tp/config. El mismo se utiliz\'o estando en el directorio /etc, de esta manera el comando ls -R lo que hizo fue lista recusirvamente todos el contenido del directorio y su subdirectorios. Mientras que $>>$ lo que hizo fue volcar esta informaci\'on al archivo especificado.
 
 Para obtener la informaci\'on sobre la cantidad de lineas, palabras y caracteres se utiliz\'o el comando wc con las opciones necesarios en cada caso (-l, -w, -m). El resultado fue: 665 lineas, 593 palabras y 7305 caracteres.
 
+En tercer lugar, se buscar ordenar el contenido de /etc/passwd y ponerlo al final del archivo config anteriormente nombrado. Para ordenar se utiliz\'o el comando sort, mientras que para volcar en el archivo nuevamente se utilizo $>>$. De esta manera la sintaxis utilizada fue: sort /etc/passwd $>>$ /home/grupo5/tp/config
+
+Por \'ultimo se procedi\'o a contar las lineas, palabras y caracteres del archivo de la misma forma que se habia realizado anteriormete, el resultado fue: 688 lineas, 621 palabras y 8238 caracteres.
+
+
+Pipes: Para realizar lo pedido, sin utilizar archivos temporales, se ejecut\'o la siguiente linea de comando que hace lo que el ejercicio pide, en el orden requerido. La sintaxis es: ls -al /usr/bin/a* | grep apt | wc. La misma es una combinaci\'on de los comandos utilizados en puntos anteriores, para lograr todos los efectos requeridos.
 
 
 
+\section*{Scripting}
+\addcontentsline{toc}{section}{Scripting}
+
+3.3.1: En este punto se debe hacer un script que cada 5 minutos diga HOLA por pantalla. Para esto, se utilizaron dos resoluciones diferentes, una que es totalmente autom\'atica y la otra semiautom\'atica. 
+
+Por un lado, se realizo un script de shell que, una vez ejecutado, corriese un ciclo infinito; dentro de este ciclo, el script espera 300 segundos mediante el comando sleep 300 y luego hace un echo HOLA para imprimir por pantalla la palabra requerida. Esta soluci\'on requiere que el usuario ejecute el script. Dicho script se encuentra en la carpeta /home/grupo5/tp.
+
+Por otro lado, se encuentra otra soluci\'on totalmente autom\'atica, es decir que no requiere que el usuario ejecute el script. La misma consiste en agregar una entrada a la crontable que indique que se debe imprimir HOLA cada 5 minutos. Cabe destacar que la distribuci\'on de ubuntu utilizada para este trabajo, no cuenta con el cron por lo que fue necesario instalarlo. Una vez instalado, se agrega en la tabla la entrada correspondiente. Dicha entrada tiene la siguiente sintaxis: */5  * * * * root echo HOLA $>>$ /dev/console. Esta sintaxis dice que, cada 5 minutos, a cualquier hora, en cualquier dia, en cualquier mes y en cualquier dia de la semana; el usuario root corra el comando echo HOLA y lo imprima en la consola.
+
+Para hacer lo mismo pero a una hora determinada, se debe explicitar la hora requerida en la entrada de la crontable. Por ejemplo, en la imagen se encuentra la entrada 25 7 * * * root echo HOLA $>>$ /dev/console. Esta entrada tiene la misma acci\'on que la anterior, pero se ejecuta todos los d\'ias a las 7 y 25. 
+
+\bigskip
+
+
+3.3.2
+
+Hay que robarse este script!!!
+
+\section*{Ejecuci\'on de Procesos en Background}
+\addcontentsline{toc}{section}{Ejecuci\'on de procesos en background}
+
+En primer lugar, se procedi\'o a transcribir el programa loop, se guardo el mismo en el directorio /home/grupo5/tp. Una vez transcripto, se procedio a compilar el mismo utilizando el gcc. 
+
+\bigskip
+
+En primer lugar el proceso se corri\'o en foreground. Esto quiere decir que el proceso toma el control de la terminal que se esta utilizando, es decir que se corre en un primer plano. El problema con este proceso es que el mismo contiene un ciclo infinito que escribe en la pantalla. Como el proceso esta corriendo en foreground, y el ciclo es infinito, el mismo nunca devuelve el control de la terminal y sigue ensuciando la consola sin poder realizar otra acci\'on. Luego, se mat\'o el proceso mediante Ctrl+C para poder interrumpirlo y as\'i volver a tomar el control de la terminal.
+
+\section*{IPC y Sincronizaci\'on}
+\addcontentsline{toc}{section}{IPC y Sincronizaci\'on}
+
+\section*{El Kernel Linux}
+\addcontentsline{toc}{section}{El Kernel Linux}
+
+\section*{Temas del Sistema Operativo}
+\addcontentsline{toc}{section}{Temas del Sistema Operativo}
 
 
 
@@ -135,3 +176,12 @@ http://www.linuxforums.org/forum/linux-programming-scripting/12551-simple-shutdo
 http://www.debian-administration.org/article/Making_scripts_run_at_boot_time_with_Debian Script para poner Buenos Dias cuando se prende
 
 http://www.laps3.com/foro/19_guias_tutoriales/23114-manual_de_shell_linux_comandos_basicos_utilizaion_ejemplos.html Pagina que ensena a contar palabras, lineas y caracteres.
+
+http://www.unix.com/es/shell-programming-scripting/111483-script-run-every-5-minutes.html
+
+http://www.hedeshian.com/node/12 Pagina que explicar que el ubuntu jeos no viene con crontab
+
+http://www.linuxtotal.com.mx/index.php?cont=info_admon_006 manual de cron
+
+http://www.ace.ual.es/~vruiz/docencia/cursos/linux/html/node48.html pagina que explicar que significa correr en background y foreground
+

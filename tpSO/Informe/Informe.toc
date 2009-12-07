@@ -9,6 +9,6 @@
 \contentsline {subsection}{Salida est\'andar y pipes}{6}
 \contentsline {section}{Scripting}{7}
 \contentsline {section}{Ejecuci\'on de procesos en background}{7}
-\contentsline {section}{IPC y Sincronizaci\'on}{7}
-\contentsline {section}{El Kernel Linux}{7}
-\contentsline {section}{Temas del Sistema Operativo}{7}
+\contentsline {section}{IPC y Sincronizaci\'on}{8}
+\contentsline {section}{El Kernel Linux}{8}
+\contentsline {section}{Temas del Sistema Operativo}{8}
