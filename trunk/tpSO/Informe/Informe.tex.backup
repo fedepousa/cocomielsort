@@ -29,7 +29,7 @@ Si ejecuta el comando cd sin especificar directorio al cual se desea cambiar y l
 
 \item cat: El comando cat se utiliza, en este caso, para imprimir por pantalla el contenido del archivo especificado. De este manera, se puede ver el contenido del archivo .profile. Cabe destacar que el comando cat no solo se utiliza para este fin, el mismo tambi\'en tiene otros usos como concatenar archivos en un archivo nuevo. Ademas, existen varios flags para modificar el comportamiento del comando, tal como ademas de imprimir el archivo, imprimir el n\'umero de linea. En la figura 2, se puede ver como se muestra el archivo .profile al utilizar el comando cat.
 
-\item find:
+\item find: Este comando se utiliza para buscar archivos dentro de directorios. Para ejecutar lo pedido se utilizo la sintaxis: sudo find -name vmlinuz*. El mismo indica que se deben buscar los archivos que coincidan en nombre con vmlinuz y luego el asterisco indica que puede seguir de diferentes maneras. Cabe destacar que se necesita permisos de superusuario para poder explorar ciertas carpetas que tiene restricci\'o.
 
 \item mkdir: El comando mkdir es una abreviatura de Make Directory, el mismo sirve justamente para crear directorios especificando el nombre del directorio a crear. Este comando se puede utilizar para crear varios directorios a la vez, y tambi\'en se puede hacer uso de distintos flags por ejemplo para crear directorios de solo lectura. Al utilizar el comando mkdir tp estando en /home/grupo5, se crea un directorio llamado tp dentro de donde se esta posicionado. En la figura 3, se puede ver como el comando creo el directorio y luego se lo accede.
 
@@ -48,11 +48,11 @@ Cabe destacar que el comando chmod se utiliz\'o varias veces para ir cambiando d
 \item grep: El comando grep es para buscar expresiones regulares dentro de un archivo. En el caso pedido lo que se quiere es buscar la expresion localhost dentro del archivo /etc/hosts. Para esto se utiliza el comando de la siguiente manera: grep localhosts /etc/hosts. De esta manera, se visualiza(figura 6) como el comando grep imprime las lineas del archivo hosts en donde aparece la expresi\'on localhosts.
 
 Luego, se pide realizar la misma acci\'on pero sobre todos los archivos del directorio /etc.
-falta ver como evitar los binarios y los que no se tiene permiso.
+Para esto se utiliza la siguiente sintaxis: grep -r POSIX | grep -v Binary. Lo que hace este comando es primero buscar recursivamente (-r) los archivos que concuerden, luego con estos archivos encontrados se hace otra busqueda con -v que indica que hay que evitar los que coincidan con Binary.
 
 \item passwd: El comando passwd se utiliza para manejar contrase\~{n}as. El mismo posee varias flags para distintas opciones. Sin embargo, si se utiliza sin ninguna opci\'on, su funci\'on por default es cambiar el password del user. Primero pide escribir el viejo password (mesaverde) y luego pide asginar un nuevo password y confirmarlo (mesaverde2).
 
-\item rm: El comando rm provine de la palabra remove. El mismo se puede utilizar con diferentes opciones si se quieren eliminar directorios recursivamente por ejemplo. En el caso pedido, solo hay que eleminar el archivo passwd, por lo que la sintaxis es rm passwd. En la figura 8 se puede ver el cambio de password y la eliminacion del archivo conjuntamente.
+\item rm: El comando rm proviene de la palabra remove. El mismo se puede utilizar con diferentes opciones si se quieren eliminar directorios recursivamente por ejemplo. En el caso pedido, solo hay que eleminar el archivo passwd, por lo que la sintaxis es rm passwd. En la figura 8 se puede ver el cambio de password y la eliminacion del archivo conjuntamente.
 
 \item ln: El comando ln se utiliza para crear links entre archivos. Para utilizar el comando ln se debe especificar el archivo fuente y el archivo destino. Cabe destacar que el uso de este comando sin ning\'un flag creara un hard link. Para realizar lo pedido en el trabajo pr\'actico la sintaxis utilizada fue la siguiente: ln /etc/passwd /tmp/contra1 y ln /etc/passwd /tmp/contra2. En la figura 9 se puede ver como se utilizan estos dos comandos y luego, realizando ls -l, se puede ver que ahora hay 3 links al archivo /etc/passwd.
 
@@ -60,7 +60,7 @@ Para realizar un soft link o link simbolico se debe agregar la opci\'on -s al ut
 
 \item mount: Para realizar lo pedido, debemos utilizar el comando mount de la siguiente manera: mount /dev/cdrom de esta manera, estamos montando el cdrom. Luego para poder ver los filesystems que estan montados debemos ver el archivo /etc/mtab. En la figura 10, se puede ver como se monta la unidad de cd y luego haciendo cat /etc/mtab se muestran los filesystems montados.
 
-\item df y ps: Los comandos df y ps sirven para mostrar el espacio libre de los filesystems y los procesos que se tienen ejecutando. En la figura 11, se puede ver la utilizaci\'on de los mismos.
+\item df y ps: Los comandos df y ps sirven para mostrar el espacio libre de los filesystems y los procesos que se tienen ejecutando. El comando ps, se utiliza con la opcion -A para listar todos los procesos y ahi se pueden notar cuales son del sistema y cuales son de los usuarios. En la figura 11, se puede ver la utilizaci\'on de los mismos.
 
 \item umount: El comando umount sirve para desmontar el disposito de cdrom utilizando la sintaxis umount /dev/cdrom. En la figura 12 se puede ver como se utiliza este comando y como luego al utilizar el comando df, se ve como el filesystem del cd ya no se muestra.
 
@@ -80,7 +80,7 @@ Para realizar un soft link o link simbolico se debe agregar la opci\'on -s al ut
 \item Buenos Dias: explicar del script en init.d y del update-rc
 
 
-\item Para poder imprimir un Adios por pantalla cada vez que un usuario se desloguea el proceso es diferente al realizado en el primer item de este punto. La manera debe ser diferente debido a que, a diferencia del fichero profile, no hay un fichero que se corra automaticamente al hacer logout, a menos que se as\'i se lo indique. 
+\item Para poder imprimir un Adios por pantalla cada vez que un usuario se desloguea el proceso es diferente al realizado en el primer item de este punto. La manera debe ser diferente debido a que, a diferencia del fichero profile, no se encontro un fichero que se corra automaticamente al hacer logout. 
 
 Para poder indicarle al sistema que se quiere correr un archivo al hacer logout lo que se realiz\'o fue modificar nuevamente el fichero /etc/profile con la siguiente linea de comando: trap '. /etc/.logout;exit' 0. Lo que hace el comando trap es darle una directiva al sistema operativo, en este caso lo que hace es darle la directiva de que cuando se reciba una se\~{n}al de exit(logout) se corra el fichero .logout.
 
@@ -98,6 +98,10 @@ Por \'ultimo lo que se realiz\'o fue hacer chmod 755 .logut, esto se hizo para q
 
 \subsection*{Cambio de Hora}
 \addcontentsline{toc}{subsection}{Cambio de hora}
+
+Para esta secci\'on lo primero que hay que hacer es crear un alias en el fichero deseado. Para eso se debe editar este archivo y poner algun alias como puede ser alias bla = ls. Luego hay que mantenerle el timestamp original, para esto es necesaria haberse guardado el timestamp antes de modificar el archivo, para conseguir el timestamp se utiliza el comando stat. Luego de modificarlo, se utiliza el comando touch para modificar el timestamp y poner el original, el mismo se usa con el flag -m que justamente indica que vamos a tocar el timestamp de modified. 
+
+Luego, para cambiar el horario del sistema linux se utiliza 
 
 \subsection*{Lapsos y Tiempos}
 \addcontentsline{toc}{subsection}{Lapsos y tiempos}
@@ -147,8 +151,15 @@ En primer lugar, se procedi\'o a transcribir el programa loop, se guardo el mism
 
 En primer lugar el proceso se corri\'o en foreground. Esto quiere decir que el proceso toma el control de la terminal que se esta utilizando, es decir que se corre en un primer plano. El problema con este proceso es que el mismo contiene un ciclo infinito que escribe en la pantalla. Como el proceso esta corriendo en foreground, y el ciclo es infinito, el mismo nunca devuelve el control de la terminal y sigue ensuciando la consola sin poder realizar otra acci\'on. Luego, se mat\'o el proceso mediante Ctrl+C para poder interrumpirlo y as\'i volver a tomar el control de la terminal.
 
+En segundo lugar, el proceso se corri\'o en background. Esto quier decir que el proceso queda corriendo en un segundo plano, mientras que el usuario sigue teniendo control de la terminal. Para solucionar el hecho de que el proceso ensucia la terminal, el mismo se corri\'o mandando su salida a /dev/null. Al realizar esta acci\'on, el proceso queda corriendo, pero se puede seguir haciendo uso de la terminal. 
+
+Como este proceso no esta corriendo en foreground, Ctrl+C para matarlo no servir\'a. Es por esto que se debe matar el proceso mediante el comando kill, el mismo necesita del ID del proceso que se quiere matar. Este ID se obtiene al correr el programa, ya que al correr un proceso en background, por consola se devuelve el n\'umero de proceso asignado para, por ejemplo, saber que n\'umero tiene al querer matarlo.
+
 \section*{IPC y Sincronizaci\'on}
 \addcontentsline{toc}{section}{IPC y Sincronizaci\'on}
+
+
+Facu aca me tenes que decir que hay que poner y si el codigo esta o que carajo...
 
 \section*{El Kernel Linux}
 \addcontentsline{toc}{section}{El Kernel Linux}
@@ -185,3 +196,5 @@ http://www.linuxtotal.com.mx/index.php?cont=info_admon_006 manual de cron
 
 http://www.ace.ual.es/~vruiz/docencia/cursos/linux/html/node48.html pagina que explicar que significa correr en background y foreground
 
+Pagina para hacer modulos de leds
+http://tldp.org/LDP/lkmpg/2.6/html/x1194.html

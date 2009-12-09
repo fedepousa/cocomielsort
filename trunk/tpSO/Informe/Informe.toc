@@ -5,10 +5,10 @@
 \contentsline {subsection}{Ejecuci\'on autom\'atica}{5}
 \contentsline {subsection}{Dispositivos especiales}{6}
 \contentsline {subsection}{Cambio de hora}{6}
-\contentsline {subsection}{Lapsos y tiempos}{6}
-\contentsline {subsection}{Salida est\'andar y pipes}{6}
-\contentsline {section}{Scripting}{7}
+\contentsline {subsection}{Lapsos y tiempos}{7}
+\contentsline {subsection}{Salida est\'andar y pipes}{7}
+\contentsline {section}{Scripting}{8}
 \contentsline {section}{Ejecuci\'on de procesos en background}{8}
-\contentsline {section}{IPC y Sincronizaci\'on}{8}
-\contentsline {section}{El Kernel Linux}{8}
-\contentsline {section}{Temas del Sistema Operativo}{8}
+\contentsline {section}{IPC y Sincronizaci\'on}{9}
+\contentsline {section}{El Kernel Linux}{9}
+\contentsline {section}{Temas del Sistema Operativo}{9}
