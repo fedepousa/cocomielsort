@@ -218,7 +218,24 @@ En el caso que un proceso ya se encuentre en ejecuci\'on, se puede cambiar la pr
 \subsection*{Administraci\'on de la memoria}
 \addcontentsline{toc}{subsection}{Administraci\'on de la memoria}
 
-La administraci\'on de la memoria en linux, al igual que en la mayor\'ia de los sistemas operativos modernos, es pagina por demanda debido a que resulta efectivo poder simular mayor cantidad de memoria ram utilizando otro dispositivo como el disco duro. Linux posee paginas de 4kb o 4mb dependiendo la arquitectura del procesador y contiene un espacio especial de memoria en el disco denominado memoria swap donde justamente hace el intercambio entre las paginas que se encuentran en memoria principal y las que se encuentran en memoria secundaria seg\'un las necesidades requeridas.
+La administraci\'on de la memoria en linux, al igual que en la mayor\'ia de los sistemas operativos modernos, es pagina por demanda debido a que resulta efectivo poder simular mayor cantidad de memoria ram utilizando otro dispositivo como el disco duro. Linux posee paginas de 4kb o 4mb dependiendo la arquitectura del procesador y contiene un espacio especial de memoria en el disco denominado memoria swap donde justamente hace el intercambio entre las paginas que se encuentran en memoria principal y las que se encuentran en memoria secundaria seg\'un las necesidades requeridas. Esta memoria swap se puede asignar manualmente al instalar el sistema operativo y tiene como consecuencia una mejor o peor eficiencia del manejo de la memoria virtual. 
+
+Cabe destacar, que al momento de realizar los intercambios, el sistema operativo linux toma una pol\'itica LRU, last recently used, es decir que la pagina elegida para ser removida de memoria principal es la que m\'as tiempo lleva sin ser referenciada.
+
+\subsection*{Sistema de archivos}
+\addcontentsline{toc}{subsection}{Sistema de archivos}
+
+El sistema de archivos de linux es, basicamente, el heredado del sistema UNIX. El mismo es un sistema de archivo jerarquico, donde todo se toma o como un directorio o como un archivo. Este sistema de archivo es jerarquicos, ya que los directorios con sus subdirectorios correspondientes tiene una topolog\'ia de arbol donde se encuentra el directorio root y luego todos los dem\'as, colgando de este primero. 
+
+Es importante destacar que para el filesystem de linux, todo es un archivo o un directorio, es por esto que se puede acceder por ejemplo a los dispositivos de la misma manera que a cualquier otro directorio. Por ejemplo, si se escribe informaci\'on en el directorio /dev/dsp, se podra escuchar esta informaci\'on por los parlantes dado que este directorio corresponde al dispositivo de sonido.
+
+Al heredar este filesystem de UNIX, el mismo posee las mismas propiedas a bajo nivel, es decir que los medios de representaci\'on son los i-nodos. Adem\'as, el sistema posee un Virtual file system que se encarga de ver los filesystem que se pueden ir montando sobre el original. 
+
+
+\subsection*{M\'odulos del sistema operativo}
+\addcontentsline{toc}{subsection}{M\'odulos del sistema operativo}
+
+En primer lugar se encuentra el m\'odulo de hello.c otorgado por la c\'atera, este m\'odulo
 
 
 \section*{Temas del Sistema Operativo}

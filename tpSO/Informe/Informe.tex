@@ -232,6 +232,23 @@ Es importante destacar que para el filesystem de linux, todo es un archivo o un 
 Al heredar este filesystem de UNIX, el mismo posee las mismas propiedas a bajo nivel, es decir que los medios de representaci\'on son los i-nodos. Adem\'as, el sistema posee un Virtual file system que se encarga de ver los filesystem que se pueden ir montando sobre el original. 
 
 
+\subsection*{M\'odulos del sistema operativo}
+\addcontentsline{toc}{subsection}{M\'odulos del sistema operativo}
+
+En primer lugar se encuentra el m\'odulo de hello.c otorgado por la c\'atera, este m\'odulo se encuentra en la imagen del sistema operativo y fue probado con exito sin ninguna otra observaci\'on particular.
+
+\bigskip
+
+Por otro lado, se encuentra el m\'odulo para manejar las luces del teclado:
+\begin{itemize}
+\item En primer lugar se compilo el programa entregado por la c\'atedra para poder ver el estado de las luces.
+\item Se procedio a realizar el m\'odulo correspondiente, el mismo se encarga de crear un archivo en el directorio /proc que sirve para manejar los leds. Cuando se escribe en el mismo, cambia el estado de los leds, seg\'un lo que se haya escrito en el archivo creado. Una vez instalado el modulo, se puede ver como haciendo echo Q >> /proc/archivo, se prende la luz correspondiente, y dicha acci\'on se puede monitorear con el programa anteriormente mencionado. 
+
+Cabe destacar que este m\'odulo se inserto con \'exito en el sistema operativo de la maquina host, donde si se poseen leds; y se pudo ver como escribiendo en el archivo correspondiente se pueden controlar los leds sin necesidad de presionar el boton correspondiente.
+\end{itemize}
+
+
+
 \section*{Temas del Sistema Operativo}
 \addcontentsline{toc}{section}{Temas del Sistema Operativo}
 
