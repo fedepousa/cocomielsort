@@ -8,15 +8,25 @@ Creo 4 archivos en la home
 	- adios.sh
 	- hastalavistababy.sh
 Les doy permiso para ejecutar (chmod 777)
-Para imprimir hola agrego a /etc/profile ./home/grupo5/hola.sh
-Para imprimir Buenos Dias agrego a /etc/rc.local  ./home/grupo5/buendia.sh
-Para imprimir adios agrego a /etc/bash.bash_logout ./home/grupo5/adios.sh
+Para imprimir hola agrego a /etc/profile ./home/grupo5/script/hola.sh
+Para imprimir Buenos Dias agrego a /etc/rc.local  ./home/grupo5/script/buendia.sh
+Para imprimir adios agrego a /etc/bash.bash_logout ./home/grupo5/script/adios.sh
+Para imprimir hasta la vista babye el archivo  /home/grupo5/script/hastalavistababy.sh 
+ln -s /home/grupo5/script/hastalavistababy.sh  /etc/rc0.d/K01bye (para cuando se reinicia)
+ln -s /home/grupo5/script/hastalavistababy.sh  /etc/rc6.d/K01bye (para cuando se apaga la m ́quina)
+                                                                   a
+
 
 TODO (falta el ultimo) buscar en /etc/rc0.d  leer el readme 
 
 3.2.2 Montar floopy e iso, pude pero no se como hacer para darles permisos ok TODO
-3.2.3 TODO
-3.2.4 TODO
+	sudo mount /dev/fd0 carpeta_donde_quiero_montar
+	sudo mount -o loop <archivo_iso> <donde lo quiero montar>
+
+3.2.3 para saber cual era le timestamp anterior hacemos date, usamos touch para modificarlo con stat vemos la modifiaciones. Para agregar un alias en .bashrc
+agregamos (ejemplo) alias limpiar='clear' y para updatear el bash hacemos source .bashrc
+
+3.2.4 TODO con last vemos los logueos
 
 3.2.5
 	1
@@ -31,7 +41,7 @@ TODO (falta el ultimo) buscar en /etc/rc0.d  leer el readme
 
 
 |||||||||||||||||||||||||||||| 3.3|||||||||||||||||
-3.3.1 No les toco hacerlo  TODO
+3.3.1  Scripto que hay q decir hola cada 5 minutos, lo tiene hecho fede
 3.3.2 No les toco hacerlo  TODO
 
 |||||||||||||||||||||||||||||| 3.4|||||||||||||||||
@@ -88,7 +98,7 @@ TODO (falta el ultimo) buscar en /etc/rc0.d  leer el readme
 
 3.5.2  THREADS
 
-Habria que ponerlo en un archivo, por ahora no compila. TODO
+Habria que ponerlo en un archivo, por ahora no compila. TODO compilar gcc -pthread
 
 #include <stdio.h>
 #include <pthread.h>
@@ -145,6 +155,7 @@ void consumer(buffer_t *b){
 	printf("Consumidor -d%\n",getpid());
 	while(1){
 		item = consume(b);
+		//ACA HAY OTRA LINEA MAS
 		putchar(item);
 		
 	}
@@ -157,7 +168,7 @@ void producer(buffer_t *b){
 	printf("Productor -d%\n",getpid());
 	while(1){
 		item = getchar();
-		if(item == 'q'){
+		if(item == 'q'){ //ACA HAY OTRA DIFERENCIA
 			produce(b,'\0');
 			break;
 		} else{
@@ -234,7 +245,7 @@ En el pedido solo los metadatos son registrados en el diario, los contenidos no,
 Por ultimo en el reescritura solo los metadatos son registrados en el diario, el contenido de los archivos no. Los contenidos pueden estar escritos antes o despues de que el diario se actualice.
 En el kernel existe una capa llamada virtual file system (VFS) se encarga de llevar registro de los file systems soportados y de aquellos que estan montados. De esta manera se pueden agregar sistemas de archivos dinamicamente.
 
-
+3.6.6
 |||||||||||||||||||||||||||||| 3.7|||||||||||||||||
 3.7.1 
  	Explicamos como agregar la carpeta a directorios compartidos de vbox
