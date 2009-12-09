@@ -170,6 +170,68 @@ Facu aca me tenes que decir que hay que poner y si el codigo esta o que carajo..
 \section*{El Kernel Linux}
 \addcontentsline{toc}{section}{El Kernel Linux}
 
+\subsection*{Adminsitraci\'on del procesador}
+\addcontentsline{toc}{subsection}{Administraci\'on del procesador}
+
+En cuanto a la administraci\'on del procesador de linux refiere, el sistema operativo maneja los procesos o tareas. Los procesos o tareas, son partes de un programa, o un programa entero, que cumplen alguna funci\'on espec\'ifica mediante el manipulamiento de ciertas variables y funciones. 
+
+La administraci\'on del procesador justamente se basa en ver como manejar estos procesos para lograr que todos funcionen correctamente en tiempo y forma. 
+
+Los procesos en un sistema operativo de tipo linux tienen varios estados:
+
+\begin{itemize}
+\item Running: Es cuando el proceso se encuentra ejecutando, tiene todos los recursos que necesita para poder funcionar correctamente.
+\item Sleeping: Estos procesos se encuentran dormidos, puede ser porque son procesos interactivos que no se utilizan hace cierta cantidad de tiempo por ejemplo; o bien porque es un proceso que esta esperando alg\'un suceso para continuar.
+\item Zombie: Un proceso zombie es aquel que ya no esta en funcionamiento pero que tiene una entrada en la tabla de procesos. Esto puede suceder cuando un proceso hijo termina, pero el padre todavia es capaz de ver su estado de salida por alg\'un motivo en particular. 
+\item Stopped: Son procesos detenidos totalmente, pero que pueden ser reiniciados para continuar con su ejecuci\'on. 
+\item Uninterruptible sleep: Son procesos que se encuentran durmiendo pero que no pueden ser interrumpidos, generalemten tienen que ver con entrada/salida del sistema operativo mismo.
+\item Dead: proceso terminado que puede seguir apareciendo en el listado de procesos.
+\end{itemize}
+
+
+Si se esta trabajando en un sistema operativo con interfaz gr\'afica como ubuntu, se puede utilizar alguna herramiento como el gnome-system-monitor para ver todos estos procesos. A su vez, a un costado del mismo, aparecer\'a el estado del proceso, que ser\'a alguno de los anteriormente explicados.
+
+Por otro lado, en un sistema sin interfaz gr\'afica como el utilizado para este trabajo pr\'actico se puede utilizar el comando ps con alg\'un flag que nos de toda la informaci\'on posible. Usualmente en estos casos aparece una letra que indica el estado del proceso: R de running, S de sleeping, Z de zombie, T de sTopped, U de Uninterruptible, X de dead.
+
+\bigskip
+
+Una vez explicados como son los procesos en linux, es importante ver como se organizan estos para su ejecuci\'on. Linux se basa en lista de prioridades para poder manejar sus procesos. Para esto, linux divide sus tareas en dos grupos:
+
+\begin{itemize}
+\item Procesos del sistema
+\item Procesos de usuarios
+\end{itemize}
+
+Procesos del sistema: Para los procesos del sistema linux posee 100 listas de prioridad, donde a menor n\'umero, mayor prioridad tiene el proceso. Para este tipo de procesos linux posee dos p\'olticias diferentes para manejarlos: 
+\begin{itemize}
+\item FIFO: First in, First out. Es simplemente una cola, donde el primer proceso que entra, es el primer proceso que sale de la cola de prioridad. 
+\item Round Robin: Es un sistema que se basa en darle un tiempo de ejecuci\'on a cada uno de los procesos. Es decir, se entrega un quantum a cada proceso, si el proceso finaliza o el quantum se agota, el proceso es desalojado.
+\end{itemize}
+
+Procesos de usuarios:
+Para estos procesos linux posee 40 listas de prioridad, numeradas desde -20 hasta 19. Para estos procesos el sistema operativo se encarga de alternarlos de manera que no haya ninguno que se encuentre mucho tiempo inactivo. Para esto el sistema se encarga de penalizar los procesos que tienen mucho tiempo de cpu, y trata de darle m\'as prioridad a los procesos que tienen m\'as entrada/salida, que se supone que estuvieron bloqueados una mayor cantidad de tiempo.
+
+Por defecto, el proceso cuando se ejecuta tiene nivel de prioridad cero. Si se quiere que un proceso tenga una prioridad diferente, se puede utilizar el comando nice para realizar un cambio de prioridad. Si la prioridad a asignar es positiva, es decir una prioridad menor, se puede hacer directamente. Si, por el contrario, se quiere asignar una prioridad mayor, es decir negativa, se necesitan permisos de superusuario.
+
+En el caso que un proceso ya se encuentre en ejecuci\'on, se puede cambiar la prioridad del mismo sin necesidad de matarlo. Esto se puede hacer con el comando renice, que reasigna prioridad en tiempo de ejecuci\'on.
+
+\subsection*{Administraci\'on de la memoria}
+\addcontentsline{toc}{subsection}{Administraci\'on de la memoria}
+
+La administraci\'on de la memoria en linux, al igual que en la mayor\'ia de los sistemas operativos modernos, es pagina por demanda debido a que resulta efectivo poder simular mayor cantidad de memoria ram utilizando otro dispositivo como el disco duro. Linux posee paginas de 4kb o 4mb dependiendo la arquitectura del procesador y contiene un espacio especial de memoria en el disco denominado memoria swap donde justamente hace el intercambio entre las paginas que se encuentran en memoria principal y las que se encuentran en memoria secundaria seg\'un las necesidades requeridas. Esta memoria swap se puede asignar manualmente al instalar el sistema operativo y tiene como consecuencia una mejor o peor eficiencia del manejo de la memoria virtual. 
+
+Cabe destacar, que al momento de realizar los intercambios, el sistema operativo linux toma una pol\'itica LRU, last recently used, es decir que la pagina elegida para ser removida de memoria principal es la que m\'as tiempo lleva sin ser referenciada.
+
+\subsection*{Sistema de archivos}
+\addcontentsline{toc}{subsection}{Sistema de archivos}
+
+El sistema de archivos de linux es, basicamente, el heredado del sistema UNIX. El mismo es un sistema de archivo jerarquico, donde todo se toma o como un directorio o como un archivo. Este sistema de archivo es jerarquicos, ya que los directorios con sus subdirectorios correspondientes tiene una topolog\'ia de arbol donde se encuentra el directorio root y luego todos los dem\'as, colgando de este primero. 
+
+Es importante destacar que para el filesystem de linux, todo es un archivo o un directorio, es por esto que se puede acceder por ejemplo a los dispositivos de la misma manera que a cualquier otro directorio. Por ejemplo, si se escribe informaci\'on en el directorio /dev/dsp, se podra escuchar esta informaci\'on por los parlantes dado que este directorio corresponde al dispositivo de sonido.
+
+Al heredar este filesystem de UNIX, el mismo posee las mismas propiedas a bajo nivel, es decir que los medios de representaci\'on son los i-nodos. Adem\'as, el sistema posee un Virtual file system que se encarga de ver los filesystem que se pueden ir montando sobre el original. 
+
+
 \section*{Temas del Sistema Operativo}
 \addcontentsline{toc}{section}{Temas del Sistema Operativo}
 

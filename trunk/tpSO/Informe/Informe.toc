@@ -11,4 +11,7 @@
 \contentsline {section}{Ejecuci\'on de procesos en background}{8}
 \contentsline {section}{IPC y Sincronizaci\'on}{9}
 \contentsline {section}{El Kernel Linux}{9}
-\contentsline {section}{Temas del Sistema Operativo}{9}
+\contentsline {subsection}{Administraci\'on del procesador}{9}
+\contentsline {subsection}{Administraci\'on de la memoria}{11}
+\contentsline {subsection}{Sistema de archivos}{11}
+\contentsline {section}{Temas del Sistema Operativo}{12}
