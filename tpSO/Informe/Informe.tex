@@ -60,7 +60,7 @@ Para realizar un soft link o link simbolico se debe agregar la opci\'on -s al ut
 
 \item mount: Para realizar lo pedido, debemos utilizar el comando mount de la siguiente manera: mount /dev/cdrom de esta manera, estamos montando el cdrom. Luego para poder ver los filesystems que estan montados debemos ver el archivo /etc/mtab. En la figura 10, se puede ver como se monta la unidad de cd y luego haciendo cat /etc/mtab se muestran los filesystems montados.
 
-\item df y ps: Los comandos df y ps sirven para mostrar el espacio libre de los filesystems y los procesos que se tienen ejecutando. En la figura 11, se puede ver la utilizaci\'on de los mismos.
+\item df y ps: Los comandos df y ps sirven para mostrar el espacio libre de los filesystems y los procesos que se tienen ejecutando. El comando ps, se utiliza con la opcion -A para listar todos los procesos y ahi se pueden notar cuales son del sistema y cuales son de los usuarios. En la figura 11, se puede ver la utilizaci\'on de los mismos.
 
 \item umount: El comando umount sirve para desmontar el disposito de cdrom utilizando la sintaxis umount /dev/cdrom. En la figura 12 se puede ver como se utiliza este comando y como luego al utilizar el comando df, se ve como el filesystem del cd ya no se muestra.
 
@@ -80,7 +80,7 @@ Para realizar un soft link o link simbolico se debe agregar la opci\'on -s al ut
 \item Buenos Dias: explicar del script en init.d y del update-rc
 
 
-\item Para poder imprimir un Adios por pantalla cada vez que un usuario se desloguea el proceso es diferente al realizado en el primer item de este punto. La manera debe ser diferente debido a que, a diferencia del fichero profile, no hay un fichero que se corra automaticamente al hacer logout, a menos que se as\'i se lo indique. 
+\item Para poder imprimir un Adios por pantalla cada vez que un usuario se desloguea el proceso es diferente al realizado en el primer item de este punto. La manera debe ser diferente debido a que, a diferencia del fichero profile, no se encontro un fichero que se corra automaticamente al hacer logout. 
 
 Para poder indicarle al sistema que se quiere correr un archivo al hacer logout lo que se realiz\'o fue modificar nuevamente el fichero /etc/profile con la siguiente linea de comando: trap '. /etc/.logout;exit' 0. Lo que hace el comando trap es darle una directiva al sistema operativo, en este caso lo que hace es darle la directiva de que cuando se reciba una se\~{n}al de exit(logout) se corra el fichero .logout.
 
@@ -99,8 +99,16 @@ Por \'ultimo lo que se realiz\'o fue hacer chmod 755 .logut, esto se hizo para q
 \subsection*{Cambio de Hora}
 \addcontentsline{toc}{subsection}{Cambio de hora}
 
+Para esta secci\'on lo primero que hay que hacer es crear un alias en el fichero deseado. Para eso se debe editar este archivo y poner algun alias como puede ser alias bla = ls. Luego hay que mantenerle el timestamp original, para esto es necesaria haberse guardado el timestamp antes de modificar el archivo, para conseguir el timestamp se utiliza el comando stat. Luego de modificarlo, se utiliza el comando touch para modificar el timestamp y poner el original, el mismo se usa con el flag -m que justamente indica que vamos a tocar el timestamp de modified. 
+
+Luego, para cambiar el horario del sistema linux se utiliza el comando date --set= y la fecha que se quiere poner, si el cambio es hacia atras no se nota ning\'un problema porque el sistema operativo reacomoda su hora con la hora del hardware cada cierto intervalo de tiempo. Si se hace un date rapidamente despues del cambio, se vera la fecha que fue modificada, pero si se deja un lapso de tiempo, el sistema se actualiza automaticamente. Lo que se podr\'ia hacer es utilizar el comando hwclock para setear el horario del hardware.
+
 \subsection*{Lapsos y Tiempos}
 \addcontentsline{toc}{subsection}{Lapsos y tiempos}
+
+Para conocer toda la informaci\'on que se pide en esta secci\'on hay varios comandos. En primer lugar se puede utilizar el comando uptime de la misma manera que se utiliz\'o en la primer secci\'on de este trabajo, para tener informaci\'on de cuando se prendi\'o la maquina y cuantos usuarios hay logueados. 
+
+Sin embargo, el comando que m\'as informaci\'on pertinente nos da, es el comando last. El mismo lista todas los \'ultimos movimiento del sistema, mostrando quien se logueo, en que terminal y a que hora. As\'i como otros datos pertinentes.
 
 \subsection*{Salida Est\'andar y Pipes}
 \addcontentsline{toc}{subsection}{Salida est\'andar y pipes}
@@ -114,6 +122,8 @@ Para obtener la informaci\'on sobre la cantidad de lineas, palabras y caracteres
 En tercer lugar, se buscar ordenar el contenido de /etc/passwd y ponerlo al final del archivo config anteriormente nombrado. Para ordenar se utiliz\'o el comando sort, mientras que para volcar en el archivo nuevamente se utilizo $>>$. De esta manera la sintaxis utilizada fue: sort /etc/passwd $>>$ /home/grupo5/tp/config
 
 Por \'ultimo se procedi\'o a contar las lineas, palabras y caracteres del archivo de la misma forma que se habia realizado anteriormete, el resultado fue: 688 lineas, 621 palabras y 8238 caracteres.
+
+\medskip
 
 
 Pipes: Para realizar lo pedido, sin utilizar archivos temporales, se ejecut\'o la siguiente linea de comando que hace lo que el ejercicio pide, en el orden requerido. La sintaxis es: ls -al /usr/bin/a* | grep apt | wc. La misma es una combinaci\'on de los comandos utilizados en puntos anteriores, para lograr todos los efectos requeridos.
