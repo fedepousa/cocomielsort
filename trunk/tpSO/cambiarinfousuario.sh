@@ -125,7 +125,7 @@ while read line ; do
           mv $path_viejo /home/$nombre
           usermod -d /home/$nombre  $nombre
           else 
-          echo "Error: no se puede cambiar el nombre de usuario porque ya existe otro usuario con ese nombre"
+          echo Error: no se puede cambiar el nombre de usuario de $usuario_viejo a $nombre porque ya existe otro usuario con ese nombre.
         fi
       fi
       linea_grupo="`grep $grupo_input:x /etc/group`"
