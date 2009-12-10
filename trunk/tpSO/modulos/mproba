@@ -1,0 +1,5 @@
+#!/bin/bash
+echo Cargando modulo de probabilidad
+mknod /dev/probabilidad c 253 0
+insmod /home/grupo5/modulos/probabilidad.ko
+echo Modulo Cargado
