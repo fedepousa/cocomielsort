@@ -315,6 +315,30 @@ Una vez iniciada la maquina en esta nueva modalidad, se puede volver a utilizar 
 \subsection*{Administraci\'on de la Memoria}
 \addcontentsline{toc}{subsection}{Administraci\'on de la Memoria}
 
+En primer lugar, debemos determinar la memoria swap que se esta utilizando. Para esto volvemos a utilizar comando free, aunque hay varios comandos informativos que indican lo requerido. El comando free, nos indica cuanta swap se posee, y cuanta se esta utilizando en el momento.
+
+Luego, debemos crear un nuevo archivo que lo vamos utilizar como swap, para esto utilizamos el comando dd. La sintaxis es la siguiente: dd if=/dev/zero of=/mnt/swapgrupo5 bs=4M count=10
+
+Con esto lo que hacemos es crear un archivo que tiene 10 bloques de 4 megas. 
+
+Luego, tenemos que darle formato de memoria swap, para esto se utiliza el comando mkswap. Haciendo mkswap /mnt/swapgrupo5
+
+
+Por \'ultimo hay que agregarlo a la fstab para que el sistema lo reconosca como memoria swap que puede utilizar. Aqui se edita, mediante nano o por consola, el archivo fstab y se agrega la linea /mnt/swapgrupo5 none swap sw 0 0 al archivo /etc/fstab.
+
+
+Luego, al reiniciar el sistema y utilizar el comando free, se puede ver que ahora se posee m\'as memoria swap que lo que se pose\'ia anteriormente. 
+
+
+
+\section*{Promoci\'on}
+\addcontentsline{toc}{section}{Promoci\'on}
+
+\subsection*{M\'odulo Mkdir}
+\addcontentsline{toc}{subsection}{M\'odulo Mkdir}
+
+Para hacer este m\'odulo 
+
 
 
 
