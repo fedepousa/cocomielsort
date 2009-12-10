@@ -3,25 +3,25 @@
 \contentsline {section}{Comandos Extendidos de Unix}{5}
 \contentsline {subsection}{Ejecuci\'on autom\'atica}{5}
 \contentsline {subsection}{Dispositivos especiales}{6}
-\contentsline {subsection}{Cambio de hora}{7}
+\contentsline {subsection}{Cambio de hora}{6}
 \contentsline {subsection}{Lapsos y tiempos}{7}
 \contentsline {subsection}{Salida est\'andar y pipes}{7}
 \contentsline {section}{Scripting}{8}
-\contentsline {section}{Ejecuci\'on de procesos en background}{9}
+\contentsline {section}{Ejecuci\'on de procesos en background}{8}
 \contentsline {section}{IPC y Sincronizaci\'on}{9}
 \contentsline {section}{El Kernel Linux}{10}
 \contentsline {subsection}{Administraci\'on del procesador}{10}
 \contentsline {subsection}{Administraci\'on de la memoria}{12}
 \contentsline {subsection}{Sistema de archivos}{12}
-\contentsline {subsection}{M\'odulos del sistema operativo}{13}
+\contentsline {subsection}{M\'odulos del sistema operativo}{12}
 \contentsline {section}{Temas del Sistema Operativo}{13}
 \contentsline {subsection}{Comunicaci\'on}{13}
 \contentsline {subsection}{File System}{14}
-\contentsline {subsection}{Prioridades}{15}
+\contentsline {subsection}{Prioridades}{14}
 \contentsline {subsection}{Par\'ametros del Kernel}{15}
-\contentsline {subsection}{Administraci\'on de la Memoria}{16}
+\contentsline {subsection}{Administraci\'on de la Memoria}{15}
 \contentsline {section}{Promoci\'on}{16}
 \contentsline {subsection}{M\'odulo Mkdir}{16}
 \contentsline {subsection}{M\'odulo de probabilidad}{17}
-\contentsline {subsection}{Sistema operativo Windows}{18}
-\contentsline {section}{Bibliograf\'ia}{20}
+\contentsline {subsection}{Sistema operativo Windows}{17}
+\contentsline {section}{Bibliograf\'ia}{19}
