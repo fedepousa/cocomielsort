@@ -288,11 +288,11 @@ La idea de que un i-nodo tenga contandores de hardlinks es para saber cuantas fa
 Para ejecutar los procesos en background se hace lo mismo que se explico en secciones anteriores. Es decir, se utiliza el ampersand para que se ejecute en un segundo plano y se manda el flujo de salida a /dev/null para que no se ensucie la consola. Luego, lo importante del ejercicio es ver como el loop3 se corre con mayor prioridad, para esto se utiliza lo explicado en administraci\'on del procesador, utilizar el comando nice para cambiarle la prioridad y poder as\'i ver como toma m\'as porcentaje del cpu.
 
 La sintaxis utilizada entonces es:
-$loop1 >> /dev/null$ \&
+$./loop1 >> /dev/null$ \&
 
 $./loop2 >> /dev/null$ \&
 
-nice -n -18 $./loop3 >> /dev/null$ \&
+nice -n -18 $/home/grupo5/tp/loop3 >> /dev/null$ \&
 
 
 Luego, utilizando el comando top se puede ver cual es el tiempo de cpu que requiere cada proceso. Cabe destacar que al utilizar el comando top solo se observa el id del proceso, los ids de dichos procesos se obtienen al ejecutarlos en background. Luego de ejecutarlos en background, se imprime por consola el id del mismo.
@@ -337,9 +337,19 @@ Luego, al reiniciar el sistema y utilizar el comando free, se puede ver que ahor
 \subsection*{M\'odulo Mkdir}
 \addcontentsline{toc}{subsection}{M\'odulo Mkdir}
 
-Para hacer este m\'odulo 
+Para hacer este m\'odulo el truco estaba en interceptar un systemcall, de esta manera se puede interceptar el mkdir para que no se pueda crear un directorio si el m\'odulo esta cargado. La idea del m\'odulo ser\'ia entonces crear las dos funciones m\'as importantes, init y exit, para que ambas tengan el comportamiento deseado.
+
+El problema para crear este modulo es que para poder interceptar una system call se debe tener un puntero a la tabla de system calls y esto no se puede hacer para versiones del kernel a partir de la 2.6 y justamente en este trabajo se esta utilizando una de estas versiones. El problema es que por cuestiones de seguridades, seg\'un lo que se encontro en la bibliograf\'ia, la tabla de la systema calls ya no se exporta, por lo que no se puede utilizar el puntero requerido y, por lo tanto, no se puede interceptar una system call de esta manera. 
+
+Se pueden encontrar varias soluciones a este modulo, pero todas explican que tiene que ser una versi\'on menor a la 2.6 para poder realizarse, ya que todas las soluciones encontradas utilizan el puntero a la tabla de las system calls. En la cita bibliogr\'afica n\'umero 1, se puede ver un ejemplo de soluci\'on, donde el autor explica que no se puede utilizar con estas nuevas versiones del kernel.
 
 
+\subsection*{M\'odulo de probabilidad}
+\addcontentsline{toc}{subsection}{M\'odulo de probabilidad}
+
+
+\subsection*{Sistema operativo Windows}
+\addcontentsline{toc}{subsection}{Sistema operativo Windows}
 
 
 
@@ -347,7 +357,7 @@ Para hacer este m\'odulo
 
 
 bibliografia:
-
+http://tldp.org/LDP/lkmpg/2.6/html/x978.html cita 1!!
 http://www.linux-es.org/node/127 pagina para explicacion de chgrp, chown y chmod
 http://www.oreillynet.com/linux/cmd pagina de comandos de linux
 http://www.computerhope.com/unix pagina de comandos de linux
