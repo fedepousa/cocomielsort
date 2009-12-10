@@ -21,3 +21,6 @@
 \contentsline {subsection}{Prioridades}{14}
 \contentsline {subsection}{Par\'ametros del Kernel}{14}
 \contentsline {subsection}{Administraci\'on de la Memoria}{15}
+\contentsline {section}{Promoci\'on}{15}
+\contentsline {subsection}{M\'odulo Mkdir}{15}
+\contentsline {subsection}{M\'odulo de probabilidad}{16}
