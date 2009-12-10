@@ -348,8 +348,91 @@ Se pueden encontrar varias soluciones a este modulo, pero todas explican que tie
 \addcontentsline{toc}{subsection}{M\'odulo de probabilidad}
 
 
+Para realizar este m\'odulo se hizo de manera an\'aloga a los anteriores, el mismo se puede encontrar en la imagen en la carpeta de modulos. 
+
+A continuaci\'on explicamos las funciones b\'asicas:
+
+\begin{itemize}
+\item En primer lugar se encuentra la funci\'on de inicializaci\'on del mod\'ulo. Esta funci\'on abre un archivo en /proc y mapea el dispositivo /dev/probabilidad que fue creado anteriormente con el comando mknod.
+\item La funci\'on de exit del m\'odulo borra el archivo.
+\item La funci\'on device read lee el archivo pertinente y devuelve el caracter aleatorio. Lo que se puede ver haciendo cat /dev/probabilidad.
+\item La funci\'on device write no tiene utilidad ya que solamente se lee el caracter del dispositivo.
+\item Luego se encuentran las funciones device open y device realease que abren y liberan el dispositivo respectivamente.
+\item La funci\'on procfile write no la usamos para grabar en el archivo ya que no usamos ninguna semilla. Si se quisiese ir cambiando la semilla para la funci\'on aleatoria, se deber\'ia utilizar esta funci\'on para escribir el archivo.
+\item Por \'ultimo, la funci\'on procfile read se llama cuando leemos del archivo en proc. 
+\end{itemize}
+
+Cabe destacar que el m\'odulo fue insertado exitosamente, pudiendose constatar como se leen los caract\'eres aleatorios por el dispositivo creado.
+
+
 \subsection*{Sistema operativo Windows}
 \addcontentsline{toc}{subsection}{Sistema operativo Windows}
+
+Administraci\'on de la memoria:
+
+Los sistemas operativos windows usan una administraci\'on de la memoria paginada por demanda. Esto quiere decir que adem\'as de poseer la memoria paginada, posee la utilidad de tener memoria virtual para poder utilizar m\'as memoria ram que la que realmente el procesador posee(Cabe destacar que esta utilidad comenzo a partir de Windows 3.0). Para realizar esto, el sistema operativo posee una memoria swap que la utiliza para hacer los intercambios entre las paginas presentes en la memoria principal y las memorias presentes en memoria secundaria. Cuando se esta ejecutando un proceso que hace una referencia a una pagina que no esta en memoria principal, el memory manager se encarga de traer esta pagina de memoria secundaria y swapearla con alguna de la memoria principal. Puede suceder en estos casos que el memory manager no encuentre la pagina ausente que se esta queriendo traer a memoria principal, produciendo una de las conocidas pantallas azules de windows. 
+
+El memory manager tambi\'en es el encargado de mapear la memoria virtual a la f\'isica, para este prop\'osito Windows utiliza un sistema de paginaci\'on de varios niveles. En primer lugar existen directorios de tablas de paginas, los cuales poseen varias entradas, en una entrada de directorio de tabla de pagina podemos encontrar un puntero que nos lleva a la base una tabla de paginas. Luego, esta tabla de paginas posee varias entradas, cada entrada de la tabla de paginas posee un puntero hacia la p\'agina f\'isica propiamente dicha. 
+
+
+Por ejemplo, es un procesador intel de 32 bits el proceso es el siguiente:
+
+\begin{itemize}
+\item Se tiene una direcci\'on de 32 bits, la cual se descompone en los 10 bits m\'as significativos. Los 10 bits siguientes, y los \'ultimos 12 bits.
+\item Con el registro del procesador CR3, se identifica la base del directorio de tabla de paginas y se utilizan los 10 primeros bits de la direcci\'on original como indice dentro de este directorio.
+\item Una vez que estamos en la entrada correspondiente, podemos obtener la base de la tabla de paginas a la que hay que moverse. A esta base se le suma el \'indice que son los segundos 10 bits de la direcci\'on original.
+\item En esta entrada de la tabla de p\'aginas obtenemos la base de la p\'agina a la que se quiere referenciar. 
+\item Luego de obtener la base de la p\'agina, nos deplazamos dentro de la p\'agina tanto como los 12 bits menos significativos de la direcci\'on original lo indiquen.
+\item Luego de estos pasos, nos encontraremos en la direcci\'on f\'isica correspondiente a la direcci\'on virtual original.
+\end{itemize}
+
+
+Hay otras dos funciones importantes del memory manager de Windows. En primer lugar, tiene la funci\'on de proteger el espacio de direcciones de todos los procesos a partir de la validaci\'on de permisos para acceder a cierta parte de la memoria.
+
+Por otro lado, a partir de Windows Vista en adelante, el memory manager esta encargado de ubicar din\'amicamente la memoria correspondiente al kernel. En estas \'ultimas versiones en el kernel es ubicado din\'amicamente para satisfacer mejor las necesidades del sistema, ya que una ubicaci\'on din\'amica le provee una mayor flexibilidad a la hora de asignar las cantidades de memoria para cada uno de los procesos del sistema.
+
+
+
+\bigskip
+
+
+Scheduler de Windows: Al igual que en paginaci\'on, lo que explicaremos aqu\'i es a partir de windows 3.0 ya que es necesario que un sistema sea multitasking para que tenga sentido hablar de un scheduler.
+
+Los sistemas Windows actuales tambi\'en est\'an basados en prioridades como explicamos anteriormente para linux. Windows posee 32 niveles diferentes de prioridad, numerados del 0 al 31.
+
+Las prioridades del 0 al 15 son las utilizadas para los procesos normales de los usuarios y del sistema. Mientras que las prioridades del 16 al 31 son para los procesos de tiempo real. En ambos niveles de prioridades, el n\'umero m\'as bajo es el m\'as prioritario, siendo el nivel 0 el nivel para los procesos del sistema.
+
+Por un lado, para los procesos de tiempo real, el scheduler de Windows utiliza, al igual que el de linux, la t\'ecnica de Round-Robin. Esto quiere decir que les asigna un quatum a cada proceso y luego un proceso es desalojado si se le acaba su quatum en ejecuci\'on. Vemos que esta t\'ecnica es la mayormente utilizida por los sistemas operativos en la actualidad, ya que aseguran que todos los procesos de tiempo real puedan ir ejecutandose paralelamente. 
+
+Por otro lado, se encuentran los procesos que no son de tiempo real. En Windows, existen 16 niveles de prioridad diferentes, y cada nivel de prioridad se implementa mediante una cola de prioridad que va ordenando la ejecuci\'on de los procesos. Cabe destacar que, al igual que en linux como explicamos anteriormente, el scheduler de Windows penaliza a los procesos que son CPU-bound y beneficia a los procesos que son I/O-bound ya que se supone que al estar bloqueados por entrada/salidad, pierden mucho tiempo en esto y se les da mayor prioridad para que vuelvan a ejecutar pronto.
+
+
+
+
+
+
+
+\section*{Bibliograf\'ia}
+\addcontentsline{toc}{section}{Bibliograf\'ia}
+
+\begin{enumerate}
+\item http://tldp.org/LDP/lkmpg/2.6/html/x978.html
+\item Understanding the Linux Kernel, Editorial O'reilly.
+\item http://www.wikipedia.org
+\item http://www.linux-es.org/node/127 
+\item http://www.oreillynet.com/linux/cmd 
+\item http://www.computerhope.com/unix 
+\item http://linuxcommand.gds.tuwien.ac.at 
+\item http://www.bulma.net/body.phtml?nIdNoticia=50 
+\item http://bloggerdigest.blogspot.com/2006/10/enable-linux-login-logout-scripts.html 
+\item http://www.linuxforums.org/forum/linux-programming-scripting/12551-simple-shutdown-script.html 
+\item $http://www.laps3.com/foro/19_guias_tutoriales/23114-manual_de_shell_linux_comandos_basicos_utilizaion_ejemplos.html $
+\item http://www.unix.com/es/shell-programming-scripting/111483-script-run-every-5-minutes.html
+\item http://www.hedeshian.com/node/12 
+\item $http://www.linuxtotal.com.mx/index.php?cont=info_admon_006$
+\item http://www.ace.ual.es/~vruiz/docencia/cursos/linux/html/node48.html 
+\item http://tldp.org/LDP/lkmpg/2.6/html/x1194.html
+\end{enumerate}
 
 
 
