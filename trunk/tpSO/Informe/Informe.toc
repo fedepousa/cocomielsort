@@ -16,3 +16,7 @@
 \contentsline {subsection}{Sistema de archivos}{11}
 \contentsline {subsection}{M\'odulos del sistema operativo}{12}
 \contentsline {section}{Temas del Sistema Operativo}{12}
+\contentsline {subsection}{Comunicaci\'on}{12}
+\contentsline {subsection}{File System}{13}
+\contentsline {subsection}{Prioridades}{14}
+\contentsline {subsection}{Par\'ametros del Kernel}{14}
