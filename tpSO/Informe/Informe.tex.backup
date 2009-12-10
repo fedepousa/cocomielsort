@@ -235,11 +235,78 @@ Al heredar este filesystem de UNIX, el mismo posee las mismas propiedas a bajo n
 \subsection*{M\'odulos del sistema operativo}
 \addcontentsline{toc}{subsection}{M\'odulos del sistema operativo}
 
-En primer lugar se encuentra el m\'odulo de hello.c otorgado por la c\'atera, este m\'odulo
+En primer lugar se encuentra el m\'odulo de hello.c otorgado por la c\'atera, este m\'odulo se encuentra en la imagen del sistema operativo y fue probado con exito sin ninguna otra observaci\'on particular.
+
+\bigskip
+
+Por otro lado, se encuentra el m\'odulo para manejar las luces del teclado:
+\begin{itemize}
+\item En primer lugar se compilo el programa entregado por la c\'atedra para poder ver el estado de las luces.
+\item Se procedio a realizar el m\'odulo correspondiente, el mismo se encarga de crear un archivo en el directorio /proc que sirve para manejar los leds. Cuando se escribe en el mismo, cambia el estado de los leds, seg\'un lo que se haya escrito en el archivo creado. Una vez instalado el modulo, se puede ver como haciendo echo Q $>>$ /proc/archivo, se prende la luz correspondiente, y dicha acci\'on se puede monitorear con el programa anteriormente mencionado. 
+
+Cabe destacar que este m\'odulo se inserto con \'exito en el sistema operativo de la maquina host, donde si se poseen leds; y se pudo ver como escribiendo en el archivo correspondiente se pueden controlar los leds sin necesidad de presionar el boton correspondiente.
+\end{itemize}
+
 
 
 \section*{Temas del Sistema Operativo}
 \addcontentsline{toc}{section}{Temas del Sistema Operativo}
+
+\subsection*{Comunicaci\'on}
+\addcontentsline{toc}{subsection}{Comunicaci\'on}
+
+Para poder compartir una carpeta entre el host y el guest se deben seguir los siguientes pasos:
+
+\begin{itemize}
+\item En primer lugar hay que dirigirse dentro de la maquina virtual a Devices y luego hacer click en la opci\'on Guest Additions. Montando en el cd esta opci\'on.
+\item Luego se ejecuta el archivo de instalaci\'on dependiendo de la versi\'on utilizada. En nuestro caso corresponde a linux86
+\item Luego tenemos que agregar la carpeta del host que queremos compartir. Esta carpeta fue previamente creada en el host y luego se debe agregar la carpeta yendo a devices y ahi dentro a la opci\'on shared folders. 
+\item Luego debemos crear la carpete dentro del sistema operativo en la maquina virtual.
+\item Por \'ultimo hay que sincronizar estas dos carpetas. Esto se hace mediante el comando sudo mount -t vboxsf nombreCarpetaHost nombreCarpetaGuest
+\item Ya se pueden compartir archivos poniendolos directamente en dicha carpeta, tanto de host a guest como al reves. 
+\end{itemize}
+
+
+\subsection*{File System}
+\addcontentsline{toc}{subsection}{File System}
+
+Como se explico en puntos anteriores, linux hereda el file system de UNIX. Es por esto que un hardlink apunta a la misma estructura que se encontraba presente en el file system de UNIX, es decir a los i-nodos. El i-nodo es un bloque que guarda informaci\'on sobre el archivo o directorio al cual hace referencia; guarda toda la informaci\'on necesaria no solo para poder referenciar el espacio f\'isico del mismo, sino para tener la informaci\'on pertinente. 
+
+El i-nodo guarda mucha informaci\'on como el id del usuario owner, el id del grupo, que tan grande es el archivo y los punteros a los bloques f\'isicos donde se encuentra el archivo. Pero, adem\'as, posee un campo importante que es el contador de hardlinks, esto indica cuantos hardlinks estan haciendo referencia a este mismo i-nodo. 
+
+
+Un hardlink es una referencia directa al i-nodo y al archivo o directorio en cuestion. Si se tienen dos hardlinks al mismo archivo en diferentes directorios, es como tener dos copias del mismo archivo, pero que en realidad hacen referencia a una sola y por lo tanto no hay desperdicio de bytes. Cabe destacar que si una copia es alterada, entonces todas las copias apuntadas por otros hardlinks son alteradas, ya que el archivo en cuesti\'on es solamente uno. 
+
+A diferencia de estos, los softlinks nada mas son un acceso directo al archivo, si el archivo original se borra el softlinks queda huerfano.
+
+La idea de que un i-nodo tenga contandores de hardlinks es para saber cuantas falsas copias del archivo hay dando vueltas. Entonces, se puede borrar un hardlink sin que el archivo sufra ning\'un tipo de cambio, ya que lo \'unico que sucede es que el contador de hardlinks baja en uno, y los dem\'as siguen apuntando al archivo como lo hac\'ian antes. En el caso de que se borren todos los hardlinks, ya no quedan referencias al archivo, por lo que se puede borrar el mismo. 
+
+
+\subsection*{Prioridades}
+\addcontentsline{toc}{subsection}{Prioridades}
+
+Para ejecutar los procesos en background se hace lo mismo que se explico en secciones anteriores. Es decir, se utiliza el ampersand para que se ejecute en un segundo plano y se manda el flujo de salida a /dev/null para que no se ensucie la consola. Luego, lo importante del ejercicio es ver como el loop3 se corre con mayor prioridad, para esto se utiliza lo explicado en administraci\'on del procesador, utilizar el comando nice para cambiarle la prioridad y poder as\'i ver como toma m\'as porcentaje del cpu.
+
+La sintaxis utilizada entonces es:
+$loop1 >> /dev/null$ \&
+
+$./loop2 >> /dev/null$ \&
+
+nice -n -18 $./loop3 >> /dev/null$ \&
+
+
+Luego, utilizando el comando top se puede ver cual es el tiempo de cpu que requiere cada proceso. Cabe destacar que al utilizar el comando top solo se observa el id del proceso, los ids de dichos procesos se obtienen al ejecutarlos en background. Luego de ejecutarlos en background, se imprime por consola el id del mismo.
+
+\subsection*{Par\'ametros del Kernel}
+\addcontentsline{toc}{subsection}{Par\'ametros del Kernel}
+
+En primer lugar, vamos a utilizar un comando que ya se utiliz\'o anteriormente en este trabajo. Dicho comando es el free, el mismo nos indica cuanta memoria se posee y cuanta se esta utilizando.
+
+Luego, tenemos que lograr que el sistema use menos memoria, si bien se podr\'ia limitar que procesos se utilizan, la idea final de este punto es poder imponer una restricci\'on mayor a una solucion ad hoc que ser\'ia ir deshaciendo de procesos a medida que la memoria ram sube. La idea entonces es restringir de entrada al sistema para que no puede usar m\'as memoria ram que una cierta cantidad predispuesta.
+
+Para esto, lo que se hizo, fue agregar una entrada a la lista del grub, para poder bootear la maquina en un modo donde la memoria ram se encuentre limitada por un par\'ametro puesto por el grupo.
+
+
 
 
 
