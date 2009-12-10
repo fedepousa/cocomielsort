@@ -306,7 +306,14 @@ Luego, tenemos que lograr que el sistema use menos memoria, si bien se podr\'ia 
 
 Para esto, lo que se hizo, fue agregar una entrada a la lista del grub, para poder bootear la maquina en un modo donde la memoria ram se encuentre limitada por un par\'ametro puesto por el grupo.
 
+Como crear una entrada al grub puede ser complicado debido a que desconocemos los par\'ametros que se utilizan, lo que se hizo fue copiar la entrada default, es decir, la entrada que se estuvo ejecutando todas las veces que iniciamos la maquina. 
 
+Luego, lo que se le hizo a esta entrada fue agregarle el par\'ametro mem=200M. De esta manera, la entrada, y por ende todos los atributos del sistema, son iguales a lo que teniamos anteriormente, pero con la diferencia de que tiene la memoria ram restringida. De esta manera, al reiniciar el sistema, se puede ver como el grub ahora nos da la opci\'on que teniamos anteriormente, y una segunda opci\'on que es el mismo sistema pero con la memoria ram restringida. 
+
+Una vez iniciada la maquina en esta nueva modalidad, se puede volver a utilizar el comando free para ver como cambio el uso de memoria ram.
+
+\subsection*{Administraci\'on de la Memoria}
+\addcontentsline{toc}{subsection}{Administraci\'on de la Memoria}
 
 
 
