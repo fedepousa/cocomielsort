@@ -10,19 +10,19 @@
 \contentsline {section}{Scripting}{8}
 \contentsline {section}{Ejecuci\'on de procesos en background}{8}
 \contentsline {section}{IPC y Sincronizaci\'on}{9}
-\contentsline {section}{El Kernel Linux}{9}
-\contentsline {subsection}{Administraci\'on del procesador}{9}
-\contentsline {subsection}{Administraci\'on de la memoria}{11}
-\contentsline {subsection}{Sistema de archivos}{11}
+\contentsline {section}{El Kernel Linux}{10}
+\contentsline {subsection}{Administraci\'on del procesador}{10}
+\contentsline {subsection}{Administraci\'on de la memoria}{12}
+\contentsline {subsection}{Sistema de archivos}{12}
 \contentsline {subsection}{M\'odulos del sistema operativo}{12}
-\contentsline {section}{Temas del Sistema Operativo}{12}
-\contentsline {subsection}{Comunicaci\'on}{12}
-\contentsline {subsection}{File System}{13}
+\contentsline {section}{Temas del Sistema Operativo}{13}
+\contentsline {subsection}{Comunicaci\'on}{13}
+\contentsline {subsection}{File System}{14}
 \contentsline {subsection}{Prioridades}{14}
-\contentsline {subsection}{Par\'ametros del Kernel}{14}
+\contentsline {subsection}{Par\'ametros del Kernel}{15}
 \contentsline {subsection}{Administraci\'on de la Memoria}{15}
-\contentsline {section}{Promoci\'on}{15}
-\contentsline {subsection}{M\'odulo Mkdir}{15}
-\contentsline {subsection}{M\'odulo de probabilidad}{16}
+\contentsline {section}{Promoci\'on}{16}
+\contentsline {subsection}{M\'odulo Mkdir}{16}
+\contentsline {subsection}{M\'odulo de probabilidad}{17}
 \contentsline {subsection}{Sistema operativo Windows}{17}
 \contentsline {section}{Bibliograf\'ia}{19}

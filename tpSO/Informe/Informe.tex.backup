@@ -29,7 +29,7 @@ Si ejecuta el comando cd sin especificar directorio al cual se desea cambiar y l
 
 \item cat: El comando cat se utiliza, en este caso, para imprimir por pantalla el contenido del archivo especificado. De este manera, se puede ver el contenido del archivo .profile. Cabe destacar que el comando cat no solo se utiliza para este fin, el mismo tambi\'en tiene otros usos como concatenar archivos en un archivo nuevo. Ademas, existen varios flags para modificar el comportamiento del comando, tal como ademas de imprimir el archivo, imprimir el n\'umero de linea. En la figura 2, se puede ver como se muestra el archivo .profile al utilizar el comando cat.
 
-\item find: Este comando se utiliza para buscar archivos dentro de directorios. Para ejecutar lo pedido se utilizo la sintaxis: sudo find -name vmlinuz*. El mismo indica que se deben buscar los archivos que coincidan en nombre con vmlinuz y luego el asterisco indica que puede seguir de diferentes maneras. Cabe destacar que se necesita permisos de superusuario para poder explorar ciertas carpetas que tiene restricci\'o.
+\item find: Este comando se utiliza para buscar archivos dentro de directorios. Para ejecutar lo pedido se utilizo la sintaxis: sudo find -name vmlinuz*. El mismo indica que se deben buscar los archivos que coincidan en nombre con vmlinuz y luego el asterisco indica que puede seguir de diferentes maneras. Cabe destacar que se necesita permisos de superusuario para poder explorar ciertas carpetas que tiene restricci\'on.
 
 \item mkdir: El comando mkdir es una abreviatura de Make Directory, el mismo sirve justamente para crear directorios especificando el nombre del directorio a crear. Este comando se puede utilizar para crear varios directorios a la vez, y tambi\'en se puede hacer uso de distintos flags por ejemplo para crear directorios de solo lectura. Al utilizar el comando mkdir tp estando en /home/grupo5, se crea un directorio llamado tp dentro de donde se esta posicionado. En la figura 3, se puede ver como el comando creo el directorio y luego se lo accede.
 
@@ -39,13 +39,13 @@ Si ejecuta el comando cd sin especificar directorio al cual se desea cambiar y l
 
 Para utilizar los dos primeros comandos se debe especificar el nombre del grupo u owner nuevo y el archivo que se quiere modificar. En los casos pedidos la sintaxis ser\'ia, chgrp grupo5 /home/grupo5/tp/passwd y chown grupo5 /home/grupo5/tp/passwd. Luego de ejecutar estos dos comandos, el grupo y el owner de passwd pasan a ser grupo5. Esto se puede ver utilizando el comando ls -l.
 
-Luego, para utilizar el comando chmod, se debe especificar cuales son los permisos a cambiar y a quien se quiere asignar o desasignar estos permisos. Para lograr lo pedido en este trabajo pr\'actico las sentencias a utilizar ser\'ian: chmod u+rwx passwd, chmod g+rx passwd, chmod o+x passwd. El primer comando es para cambiar el user, y le asigna(+) Read, Write y eXecute. El segundo comando le asigna Read y eXecute al Grupo. Por \'ultimo, el tercer comando asigna eXecute a los demas (Others). Cabe destacar que como el archivo ya traia permisos de Read para los Others, se quitaron los mismos utilizando chmod o-r passwd.
+Luego, para utilizar el comando chmod, se debe especificar cuales son los permisos a cambiar y a quien se quiere asignar o desasignar estos permisos. Para lograr lo pedido en este trabajo pr\'actico las sentencias a utilizar ser\'ian: chmod u+rwx passwd, chmod g+rx passwd, chmod o+x passwd. El primer comando es para cambiar el user, y le asigna(+) Read, Write y eXecute. El segundo comando le asigna Read y eXecute al Grupo. Por \'ultimo, el tercer comando asigna eXecute a los dem\'as (Others). Cabe destacar que como el archivo ya traia permisos de Read para los Others, se quitaron los mismos utilizando chmod o-r passwd.
 
 En la figura 5 se puede ver la utilizaci\'on de todos estos comandos y se miran los atributos del archivo mediante el comando ls -l, para ver como van cambiando el grupo, el owner y los permisos a medida que se van utilizando los comandos explicados.
 
 Cabe destacar que el comando chmod se utiliz\'o varias veces para ir cambiando de a poco los permisos seg\'un sean para el usuario, para el grupo o para los otros. Sin embargo, esto se puede realizar utilizando una sola vez el comando chmod. La sintaxis para el mismo ser\'ia chmod 751 passwd. El numero 751 esta es una manera de codificar los permisos, el 7(111) corresponde al user y esta poniendo en 1 los 3 permisos; el 5(101) es para el grupo, dado un orden predispuesto, lo que hace esto es setear en 1 los permisos de Read y eXecute, que son el primero y el tercero respectivamente, y setea en 0 el segundo permiso(Write). Por \'ultimo, el 1(001) corresponde a setear el permiso de eXecute para los Others.
 
-\item grep: El comando grep es para buscar expresiones regulares dentro de un archivo. En el caso pedido lo que se quiere es buscar la expresion localhost dentro del archivo /etc/hosts. Para esto se utiliza el comando de la siguiente manera: grep localhosts /etc/hosts. De esta manera, se visualiza(figura 6) como el comando grep imprime las lineas del archivo hosts en donde aparece la expresi\'on localhosts.
+\item grep: El comando grep es para buscar expresiones regulares dentro de un archivo. En el caso pedido lo que se quiere es buscar la expresi\'on localhost dentro del archivo /etc/hosts. Para esto se utiliza el comando de la siguiente manera: grep localhosts /etc/hosts. De esta manera, se visualiza(figura 6) como el comando grep imprime las lineas del archivo hosts en donde aparece la expresi\'on localhosts.
 
 Luego, se pide realizar la misma acci\'on pero sobre todos los archivos del directorio /etc.
 Para esto se utiliza la siguiente sintaxis: grep -r POSIX | grep -v Binary. Lo que hace este comando es primero buscar recursivamente (-r) los archivos que concuerden, luego con estos archivos encontrados se hace otra busqueda con -v que indica que hay que evitar los que coincidan con Binary.
@@ -60,7 +60,7 @@ Para realizar un soft link o link simbolico se debe agregar la opci\'on -s al ut
 
 \item mount: Para realizar lo pedido, debemos utilizar el comando mount de la siguiente manera: mount /dev/cdrom de esta manera, estamos montando el cdrom. Luego para poder ver los filesystems que estan montados debemos ver el archivo /etc/mtab. En la figura 10, se puede ver como se monta la unidad de cd y luego haciendo cat /etc/mtab se muestran los filesystems montados.
 
-\item df y ps: Los comandos df y ps sirven para mostrar el espacio libre de los filesystems y los procesos que se tienen ejecutando. El comando ps, se utiliza con la opcion -A para listar todos los procesos y ahi se pueden notar cuales son del sistema y cuales son de los usuarios. En la figura 11, se puede ver la utilizaci\'on de los mismos.
+\item df y ps: Los comandos df y ps sirven para mostrar el espacio libre de los filesystems y los procesos que se tienen ejecutando. El comando ps, se utiliza con la opci\'on -A para listar todos los procesos y ahi se pueden notar cuales son del sistema y cuales son de los usuarios. En la figura 11, se puede ver la utilizaci\'on de los mismos.
 
 \item umount: El comando umount sirve para desmontar el disposito de cdrom utilizando la sintaxis umount /dev/cdrom. En la figura 12 se puede ver como se utiliza este comando y como luego al utilizar el comando df, se ve como el filesystem del cd ya no se muestra.
 
@@ -88,7 +88,7 @@ Luego, se creo un archivo .logout con los scripts que se quisiesen correr a la h
 
 Por \'ultimo lo que se realiz\'o fue hacer chmod 755 .logut, esto se hizo para que el archivo tuviese permisos de ejecuci\'on.
 
-\item Hasta la vista baby ver bien como hacerlo
+\item Para escribir Hasta la vista baby cada vez que se apaga la maquina lo que se hizo en primer lugar fue crear un script 
 
 
 \end{itemize}
@@ -133,9 +133,9 @@ Pipes: Para realizar lo pedido, sin utilizar archivos temporales, se ejecut\'o l
 \section*{Scripting}
 \addcontentsline{toc}{section}{Scripting}
 
-3.3.1: En este punto se debe hacer un script que cada 5 minutos diga HOLA por pantalla. Para esto, se utilizaron dos resoluciones diferentes, una que es totalmente autom\'atica y la otra semiautom\'atica. 
+En este punto se debe hacer un script que cada 5 minutos diga HOLA por pantalla. Para esto, se utilizaron dos resoluciones diferentes, una que es totalmente autom\'atica y la otra semiautom\'atica. 
 
-Por un lado, se realizo un script de shell que, una vez ejecutado, corriese un ciclo infinito; dentro de este ciclo, el script espera 300 segundos mediante el comando sleep 300 y luego hace un echo HOLA para imprimir por pantalla la palabra requerida. Esta soluci\'on requiere que el usuario ejecute el script. Dicho script se encuentra en la carpeta /home/grupo5/tp.
+Por un lado, se realiz\'o un script de shell que, una vez ejecutado, corriese un ciclo infinito; dentro de este ciclo, el script espera 300 segundos mediante el comando sleep 300 y luego hace un echo HOLA para imprimir por pantalla la palabra requerida. Esta soluci\'on requiere que el usuario ejecute el script. Dicho script se encuentra en la carpeta /home/grupo5/tp.
 
 Por otro lado, se encuentra otra soluci\'on totalmente autom\'atica, es decir que no requiere que el usuario ejecute el script. La misma consiste en agregar una entrada a la crontable que indique que se debe imprimir HOLA cada 5 minutos. Cabe destacar que la distribuci\'on de ubuntu utilizada para este trabajo, no cuenta con el cron por lo que fue necesario instalarlo. Una vez instalado, se agrega en la tabla la entrada correspondiente. Dicha entrada tiene la siguiente sintaxis: */5  * * * * root echo HOLA $>>$ /dev/console. Esta sintaxis dice que, cada 5 minutos, a cualquier hora, en cualquier dia, en cualquier mes y en cualquier dia de la semana; el usuario root corra el comando echo HOLA y lo imprima en la consola.
 
@@ -144,9 +144,8 @@ Para hacer lo mismo pero a una hora determinada, se debe explicitar la hora requ
 \bigskip
 
 
-3.3.2
 
-Hay que robarse este script!!!
+Por otro lado, se debe implementar un script para actualizar contrase\~{n}as. Este script se encuentra en la imagen del disco, en la carpeta /home/grupo5/tp/scripts. En el mismo, se puede detallar como se va realizando lo pedido por el enunciado mediante la modificaci\'on de los archivos pertinentes a partir de saber si se esta modificando un usuario o un grupo.
 
 \section*{Ejecuci\'on de Procesos en Background}
 \addcontentsline{toc}{section}{Ejecuci\'on de procesos en background}
@@ -164,8 +163,21 @@ Como este proceso no esta corriendo en foreground, Ctrl+C para matarlo no servir
 \section*{IPC y Sincronizaci\'on}
 \addcontentsline{toc}{section}{IPC y Sincronizaci\'on}
 
+Pipes: El problema de pipes se encuentra en la imagen del disco en la carpeta /home/grupo5/tp/pipes.
 
-Facu aca me tenes que decir que hay que poner y si el codigo esta o que carajo...
+Dicho ejercicio implementa exclusi\'on mutua entre dos procesos mediante un pipe de manera an\'aloga a lo explicado en clase.
+\begin{itemize}
+\item Se crea un proceso y se abre un pipe.
+\item Con fork() se crea un proceso hijo que hereda los descriptores del pipe del padre.
+\item Por \'ultimo, se crea la exclusi\'on mutua haciendo que el hijo solo pueda leer del pipe y el padre solo pueda escribir en el pipe.
+\end{itemize}
+
+\bigskip
+
+Threads: Para este problema, el c\'odigo se encuentra en la imagen en la carpeta /home/grupo5/tp/threads. 
+
+Cabe destacar que el cod\'igo implementado se hizo utilizando las explicaciones de las clases pr\'acticas y utilizando referencia bibliogr\'afica. En particular se utiliz\'o la guia de programaci\'on multithread de Sun Microsystems que se puede obtener de $http://www.cs.bu.edu/fac/richwest/cs552_fall_2009/notes/threads_sun.pdf$. A partir de la p\'agina 103, se encuentra la informaci\'on pertinente para este enunciado.
+
 
 \section*{El Kernel Linux}
 \addcontentsline{toc}{section}{El Kernel Linux}
@@ -398,7 +410,41 @@ Por otro lado, a partir de Windows Vista en adelante, el memory manager esta enc
 
 Scheduler de Windows: Al igual que en paginaci\'on, lo que explicaremos aqu\'i es a partir de windows 3.0 ya que es necesario que un sistema sea multitasking para que tenga sentido hablar de un scheduler.
 
+Los sistemas Windows actuales tambi\'en est\'an basados en prioridades como explicamos anteriormente para linux. Windows posee 32 niveles diferentes de prioridad, numerados del 0 al 31.
 
+Las prioridades del 0 al 15 son las utilizadas para los procesos normales de los usuarios y del sistema. Mientras que las prioridades del 16 al 31 son para los procesos de tiempo real. En ambos niveles de prioridades, el n\'umero m\'as bajo es el m\'as prioritario, siendo el nivel 0 el nivel para los procesos del sistema.
+
+Por un lado, para los procesos de tiempo real, el scheduler de Windows utiliza, al igual que el de linux, la t\'ecnica de Round-Robin. Esto quiere decir que les asigna un quatum a cada proceso y luego un proceso es desalojado si se le acaba su quatum en ejecuci\'on. Vemos que esta t\'ecnica es la mayormente utilizida por los sistemas operativos en la actualidad, ya que aseguran que todos los procesos de tiempo real puedan ir ejecutandose paralelamente. 
+
+Por otro lado, se encuentran los procesos que no son de tiempo real. En Windows, existen 16 niveles de prioridad diferentes, y cada nivel de prioridad se implementa mediante una cola de prioridad que va ordenando la ejecuci\'on de los procesos. Cabe destacar que, al igual que en linux como explicamos anteriormente, el scheduler de Windows penaliza a los procesos que son CPU-bound y beneficia a los procesos que son I/O-bound ya que se supone que al estar bloqueados por entrada/salidad, pierden mucho tiempo en esto y se les da mayor prioridad para que vuelvan a ejecutar pronto.
+
+
+
+
+
+
+
+\section*{Bibliograf\'ia}
+\addcontentsline{toc}{section}{Bibliograf\'ia}
+
+\begin{enumerate}
+\item http://tldp.org/LDP/lkmpg/2.6/html/x978.html
+\item Understanding the Linux Kernel, Editorial O'reilly.
+\item http://www.wikipedia.org
+\item http://www.linux-es.org/node/127 
+\item http://www.oreillynet.com/linux/cmd 
+\item http://www.computerhope.com/unix 
+\item http://linuxcommand.gds.tuwien.ac.at 
+\item http://www.bulma.net/body.phtml?nIdNoticia=50 
+\item http://bloggerdigest.blogspot.com/2006/10/enable-linux-login-logout-scripts.html 
+\item http://www.linuxforums.org/forum/linux-programming-scripting/12551-simple-shutdown-script.html 
+\item $http://www.laps3.com/foro/19_guias_tutoriales/23114-manual_de_shell_linux_comandos_basicos_utilizaion_ejemplos.html $
+\item http://www.unix.com/es/shell-programming-scripting/111483-script-run-every-5-minutes.html
+\item http://www.hedeshian.com/node/12 
+\item $http://www.linuxtotal.com.mx/index.php?cont=info_admon_006$
+\item http://www.ace.ual.es/~vruiz/docencia/cursos/linux/html/node48.html 
+\item http://tldp.org/LDP/lkmpg/2.6/html/x1194.html
+\end{enumerate}
 
 
 
