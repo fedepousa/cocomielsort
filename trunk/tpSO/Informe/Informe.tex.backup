@@ -20,6 +20,8 @@
 \addcontentsline{toc}{section}{Comandos b\'asicos de Unix}
 
 A continuaci\'on se presentan los comandos b\'asicos utilizados y las explicaciones correspondientes:
+
+(Todas las im\'agenes a las que se hacen referencia se encuentran en el cd entregado y no en el informe por cuestiones de impresi\'on)
 \begin{itemize}
 \item pwd: El comando pwd es una abreviatura de Print Working Directory. Como su nombre lo indica, su funci\'on es imprimir por pantalla el directorio actual.
 
@@ -88,13 +90,24 @@ Luego, se creo un archivo .logout con los scripts que se quisiesen correr a la h
 
 Por \'ultimo lo que se realiz\'o fue hacer chmod 755 .logut, esto se hizo para que el archivo tuviese permisos de ejecuci\'on.
 
-\item Para escribir Hasta la vista baby cada vez que se apaga la maquina lo que se hizo en primer lugar fue crear un script 
+
+Cabe destacar que luego de realizar esto, se encontr\'o el archivo que se corre al hacer logout y directamente se escribo echo Adios en este archivo al igual que se hizo con el Hola.
+
+\item Para escribir Hasta la vista baby cada vez que se apaga la maquina lo que se hizo en primer lugar fue crear un script que nada m\'as tuviese un echo Hasta la vista baby. Luego, tuvimos que buscar como hacer que se ejecutase al apagarse la maquina y se encontr\'o que al reiniciarse se corre el rc0 y cuando se apaga totalmente se corre el rc6, por lo que se procedio a hacer un link entre el script hecho y los rc0 y rc6.
 
 
 \end{itemize}
 
 \subsection*{Dispositivos Especiales}
 \addcontentsline{toc}{subsection}{Dispositivos especiales}
+
+Para montar estos dos dispositivos se util\'o la siguiente sintaxis:
+
+sudo mount /dev/fd0 directorioElegida
+
+sudo mount -o loop imagenIso directorioElegido
+
+
 
 \subsection*{Cambio de Hora}
 \addcontentsline{toc}{subsection}{Cambio de hora}
@@ -176,7 +189,7 @@ Dicho ejercicio implementa exclusi\'on mutua entre dos procesos mediante un pipe
 
 Threads: Para este problema, el c\'odigo se encuentra en la imagen en la carpeta /home/grupo5/tp/threads. 
 
-Cabe destacar que el cod\'igo implementado se hizo utilizando las explicaciones de las clases pr\'acticas y utilizando referencia bibliogr\'afica. En particular se utiliz\'o la guia de programaci\'on multithread de Sun Microsystems que se puede obtener de $http://www.cs.bu.edu/fac/richwest/cs552_fall_2009/notes/threads_sun.pdf$. A partir de la p\'agina 103, se encuentra la informaci\'on pertinente para este enunciado.
+Cabe destacar que el cod\'igo implementado se hizo utilizando las explicaciones de las clases pr\'acticas y utilizando referencia bibliogr\'afica. En particular se utiliz\'o la guia de programaci\'on multithread de Sun Microsystems que se puede obtener de http://www.cs.bu.edu/fac/richwest/cs552\_fall\_2009/notes/threads\_sun.pdf. A partir de la p\'agina 103, se encuentra la informaci\'on pertinente para este enunciado.
 
 
 \section*{El Kernel Linux}
@@ -196,7 +209,7 @@ Los procesos en un sistema operativo de tipo linux tienen varios estados:
 \item Sleeping: Estos procesos se encuentran dormidos, puede ser porque son procesos interactivos que no se utilizan hace cierta cantidad de tiempo por ejemplo; o bien porque es un proceso que esta esperando alg\'un suceso para continuar.
 \item Zombie: Un proceso zombie es aquel que ya no esta en funcionamiento pero que tiene una entrada en la tabla de procesos. Esto puede suceder cuando un proceso hijo termina, pero el padre todavia es capaz de ver su estado de salida por alg\'un motivo en particular. 
 \item Stopped: Son procesos detenidos totalmente, pero que pueden ser reiniciados para continuar con su ejecuci\'on. 
-\item Uninterruptible sleep: Son procesos que se encuentran durmiendo pero que no pueden ser interrumpidos, generalemten tienen que ver con entrada/salida del sistema operativo mismo.
+\item Uninterruptible sleep: Son procesos que se encuentran durmiendo pero que no pueden ser interrumpidos, generalmente tienen que ver con entrada/salida del sistema operativo mismo.
 \item Dead: proceso terminado que puede seguir apareciendo en el listado de procesos.
 \end{itemize}
 
@@ -230,14 +243,14 @@ En el caso que un proceso ya se encuentre en ejecuci\'on, se puede cambiar la pr
 \subsection*{Administraci\'on de la memoria}
 \addcontentsline{toc}{subsection}{Administraci\'on de la memoria}
 
-La administraci\'on de la memoria en linux, al igual que en la mayor\'ia de los sistemas operativos modernos, es pagina por demanda debido a que resulta efectivo poder simular mayor cantidad de memoria ram utilizando otro dispositivo como el disco duro. Linux posee paginas de 4kb o 4mb dependiendo la arquitectura del procesador y contiene un espacio especial de memoria en el disco denominado memoria swap donde justamente hace el intercambio entre las paginas que se encuentran en memoria principal y las que se encuentran en memoria secundaria seg\'un las necesidades requeridas. Esta memoria swap se puede asignar manualmente al instalar el sistema operativo y tiene como consecuencia una mejor o peor eficiencia del manejo de la memoria virtual. 
+La administraci\'on de la memoria en linux, al igual que en la mayor\'ia de los sistemas operativos modernos, es p\'agina por demanda debido a que resulta efectivo poder simular mayor cantidad de memoria ram utilizando otro dispositivo como el disco duro. Linux posee p\'aginas de 4kb o 4mb dependiendo la arquitectura del procesador y contiene un espacio especial de memoria en el disco denominado memoria swap donde justamente hace el intercambio entre las paginas que se encuentran en memoria principal y las que se encuentran en memoria secundaria seg\'un las necesidades requeridas. Esta memoria se puede asignar manualmente al instalar el sistema operativo y tiene como consecuencia una mejor o peor eficiencia del manejo de la memoria virtual. 
 
-Cabe destacar, que al momento de realizar los intercambios, el sistema operativo linux toma una pol\'itica LRU, last recently used, es decir que la pagina elegida para ser removida de memoria principal es la que m\'as tiempo lleva sin ser referenciada.
+Cabe destacar, que al momento de realizar los intercambios, el sistema operativo linux toma una pol\'itica LRU, last recently used, es decir que la p\'agina elegida para ser removida de memoria principal es la que m\'as tiempo lleva sin ser referenciada.
 
 \subsection*{Sistema de archivos}
 \addcontentsline{toc}{subsection}{Sistema de archivos}
 
-El sistema de archivos de linux es, basicamente, el heredado del sistema UNIX. El mismo es un sistema de archivo jerarquico, donde todo se toma o como un directorio o como un archivo. Este sistema de archivo es jerarquicos, ya que los directorios con sus subdirectorios correspondientes tiene una topolog\'ia de arbol donde se encuentra el directorio root y luego todos los dem\'as, colgando de este primero. 
+El sistema de archivos de linux es, basicamente, el heredado del sistema UNIX. El mismo es un sistema de archivo jer\'arquico, donde todo se toma o como un directorio o como un archivo. Este sistema de archivo es jer\'arquicos, ya que los directorios con sus subdirectorios correspondientes tiene una topolog\'ia de \'arbol donde se encuentra el directorio root y luego todos los dem\'as, colgando de este primero. 
 
 Es importante destacar que para el filesystem de linux, todo es un archivo o un directorio, es por esto que se puede acceder por ejemplo a los dispositivos de la misma manera que a cualquier otro directorio. Por ejemplo, si se escribe informaci\'on en el directorio /dev/dsp, se podra escuchar esta informaci\'on por los parlantes dado que este directorio corresponde al dispositivo de sonido.
 
@@ -256,7 +269,7 @@ Por otro lado, se encuentra el m\'odulo para manejar las luces del teclado:
 \item En primer lugar se compilo el programa entregado por la c\'atedra para poder ver el estado de las luces.
 \item Se procedio a realizar el m\'odulo correspondiente, el mismo se encarga de crear un archivo en el directorio /proc que sirve para manejar los leds. Cuando se escribe en el mismo, cambia el estado de los leds, seg\'un lo que se haya escrito en el archivo creado. Una vez instalado el modulo, se puede ver como haciendo echo Q $>>$ /proc/archivo, se prende la luz correspondiente, y dicha acci\'on se puede monitorear con el programa anteriormente mencionado. 
 
-Cabe destacar que este m\'odulo se inserto con \'exito en el sistema operativo de la maquina host, donde si se poseen leds; y se pudo ver como escribiendo en el archivo correspondiente se pueden controlar los leds sin necesidad de presionar el boton correspondiente.
+Cabe destacar que dicho m\'odulo se inserto con \'exito en el sistema operativo de la maquina host, donde si se poseen leds; y se pudo ver como escribiendo en el archivo correspondiente se pueden controlar los leds sin necesidad de presionar el bot\'on correspondiente.
 \end{itemize}
 
 
@@ -273,7 +286,7 @@ Para poder compartir una carpeta entre el host y el guest se deben seguir los si
 \item En primer lugar hay que dirigirse dentro de la maquina virtual a Devices y luego hacer click en la opci\'on Guest Additions. Montando en el cd esta opci\'on.
 \item Luego se ejecuta el archivo de instalaci\'on dependiendo de la versi\'on utilizada. En nuestro caso corresponde a linux86
 \item Luego tenemos que agregar la carpeta del host que queremos compartir. Esta carpeta fue previamente creada en el host y luego se debe agregar la carpeta yendo a devices y ahi dentro a la opci\'on shared folders. 
-\item Luego debemos crear la carpete dentro del sistema operativo en la maquina virtual.
+\item Luego debemos crear la carpeta dentro del sistema operativo en la maquina virtual.
 \item Por \'ultimo hay que sincronizar estas dos carpetas. Esto se hace mediante el comando sudo mount -t vboxsf nombreCarpetaHost nombreCarpetaGuest
 \item Ya se pueden compartir archivos poniendolos directamente en dicha carpeta, tanto de host a guest como al reves. 
 \end{itemize}
@@ -289,7 +302,7 @@ El i-nodo guarda mucha informaci\'on como el id del usuario owner, el id del gru
 
 Un hardlink es una referencia directa al i-nodo y al archivo o directorio en cuestion. Si se tienen dos hardlinks al mismo archivo en diferentes directorios, es como tener dos copias del mismo archivo, pero que en realidad hacen referencia a una sola y por lo tanto no hay desperdicio de bytes. Cabe destacar que si una copia es alterada, entonces todas las copias apuntadas por otros hardlinks son alteradas, ya que el archivo en cuesti\'on es solamente uno. 
 
-A diferencia de estos, los softlinks nada mas son un acceso directo al archivo, si el archivo original se borra el softlinks queda huerfano.
+A diferencia de estos, los softlinks nada mas son un acceso directo al archivo, si el archivo original se borra el softlinks queda hu\'erfano.
 
 La idea de que un i-nodo tenga contandores de hardlinks es para saber cuantas falsas copias del archivo hay dando vueltas. Entonces, se puede borrar un hardlink sin que el archivo sufra ning\'un tipo de cambio, ya que lo \'unico que sucede es que el contador de hardlinks baja en uno, y los dem\'as siguen apuntando al archivo como lo hac\'ian antes. En el caso de que se borren todos los hardlinks, ya no quedan referencias al archivo, por lo que se puede borrar el mismo. 
 
@@ -318,11 +331,11 @@ Luego, tenemos que lograr que el sistema use menos memoria, si bien se podr\'ia 
 
 Para esto, lo que se hizo, fue agregar una entrada a la lista del grub, para poder bootear la maquina en un modo donde la memoria ram se encuentre limitada por un par\'ametro puesto por el grupo.
 
-Como crear una entrada al grub puede ser complicado debido a que desconocemos los par\'ametros que se utilizan, lo que se hizo fue copiar la entrada default, es decir, la entrada que se estuvo ejecutando todas las veces que iniciamos la maquina. 
+Como crear una entrada al grub puede ser complicado debido a que desconocemos los par\'ametros que se utilizan, lo que se hizo fue copiar la entrada default, es decir, la entrada que se estuvo ejecutando todas las veces que iniciamos la m\'aquina. 
 
-Luego, lo que se le hizo a esta entrada fue agregarle el par\'ametro mem=200M. La lista que se debe modificar se encuentra en  De esta manera, la entrada, y por ende todos los atributos del sistema, son iguales a lo que teniamos anteriormente, pero con la diferencia de que tiene la memoria ram restringida. De esta manera, al reiniciar el sistema, se puede ver como el grub ahora nos da la opci\'on que teniamos anteriormente, y una segunda opci\'on que es el mismo sistema pero con la memoria ram restringida. 
+Luego, lo que se le hizo a esta entrada fue agregarle el par\'ametro mem=200M. La lista que se debe modificar se encuentra en  De esta manera, la entrada, y por ende todos los atributos del sistema, son iguales a lo que ten\'iamos anteriormente, pero con la diferencia de que tiene la memoria ram restringida. De esta manera, al reiniciar el sistema, se puede ver como el grub ahora nos da la opci\'on que teniamos anteriormente, y una segunda opci\'on que es el mismo sistema pero con la memoria ram restringida. 
 
-Una vez iniciada la maquina en esta nueva modalidad, se puede volver a utilizar el comando free para ver como cambio el uso de memoria ram.
+Una vez iniciada la m\'aquina en esta nueva modalidad, se puede volver a utilizar el comando free para ver c\'omo cambi\'o el uso de memoria ram.
 
 \subsection*{Administraci\'on de la Memoria}
 \addcontentsline{toc}{subsection}{Administraci\'on de la Memoria}
@@ -336,7 +349,7 @@ Con esto lo que hacemos es crear un archivo que tiene 10 bloques de 4 megas.
 Luego, tenemos que darle formato de memoria swap, para esto se utiliza el comando mkswap. Haciendo mkswap /mnt/swapgrupo5
 
 
-Por \'ultimo hay que agregarlo a la fstab para que el sistema lo reconosca como memoria swap que puede utilizar. Aqui se edita, mediante nano o por consola, el archivo fstab y se agrega la linea /mnt/swapgrupo5 none swap sw 0 0 al archivo /etc/fstab.
+Por \'ultimo hay que agregarlo a la fstab para que el sistema lo reconosca como memoria swap que puede utilizar. Aqu\'i se edita, mediante nano o por consola, el archivo fstab y se agrega la linea /mnt/swapgrupo5 none swap sw 0 0 al archivo /etc/fstab.
 
 
 Luego, al reiniciar el sistema y utilizar el comando free, se puede ver que ahora se posee m\'as memoria swap que lo que se pose\'ia anteriormente. 
@@ -438,10 +451,10 @@ Por otro lado, se encuentran los procesos que no son de tiempo real. En Windows,
 \item http://www.bulma.net/body.phtml?nIdNoticia=50 
 \item http://bloggerdigest.blogspot.com/2006/10/enable-linux-login-logout-scripts.html 
 \item http://www.linuxforums.org/forum/linux-programming-scripting/12551-simple-shutdown-script.html 
-\item $http://www.laps3.com/foro/19_guias_tutoriales/23114-manual_de_shell_linux_comandos_basicos_utilizaion_ejemplos.html $
+\item http://www.laps3.com/foro/19\_guias\_tutoriales/23114-manual\_de\_shell\_linux\_comandos\_basicos\_utilizaion\_ejemplos.html
 \item http://www.unix.com/es/shell-programming-scripting/111483-script-run-every-5-minutes.html
 \item http://www.hedeshian.com/node/12 
-\item $http://www.linuxtotal.com.mx/index.php?cont=info_admon_006$
+\item http://www.linuxtotal.com.mx/index.php?cont=info\_admon\_006
 \item http://www.ace.ual.es/~vruiz/docencia/cursos/linux/html/node48.html 
 \item http://tldp.org/LDP/lkmpg/2.6/html/x1194.html
 \end{enumerate}
@@ -450,28 +463,3 @@ Por otro lado, se encuentran los procesos que no son de tiempo real. En Windows,
 
 \end{document}
 
-
-bibliografia:
-http://tldp.org/LDP/lkmpg/2.6/html/x978.html cita 1!!
-http://www.linux-es.org/node/127 pagina para explicacion de chgrp, chown y chmod
-http://www.oreillynet.com/linux/cmd pagina de comandos de linux
-http://www.computerhope.com/unix pagina de comandos de linux
-http://linuxcommand.gds.tuwien.ac.at paginas para hacer scripts
-http://www.bulma.net/body.phtml?nIdNoticia=50 Habla sobre .profile y .bashrc
-http://bloggerdigest.blogspot.com/2006/10/enable-linux-login-logout-scripts.html explicar como hacer el script para el logout.
-http://www.linuxforums.org/forum/linux-programming-scripting/12551-simple-shutdown-script.html Script para apagar automaticamente
-
-http://www.debian-administration.org/article/Making_scripts_run_at_boot_time_with_Debian Script para poner Buenos Dias cuando se prende
-
-http://www.laps3.com/foro/19_guias_tutoriales/23114-manual_de_shell_linux_comandos_basicos_utilizaion_ejemplos.html Pagina que ensena a contar palabras, lineas y caracteres.
-
-http://www.unix.com/es/shell-programming-scripting/111483-script-run-every-5-minutes.html
-
-http://www.hedeshian.com/node/12 Pagina que explicar que el ubuntu jeos no viene con crontab
-
-http://www.linuxtotal.com.mx/index.php?cont=info_admon_006 manual de cron
-
-http://www.ace.ual.es/~vruiz/docencia/cursos/linux/html/node48.html pagina que explicar que significa correr en background y foreground
-
-Pagina para hacer modulos de leds
-http://tldp.org/LDP/lkmpg/2.6/html/x1194.html
