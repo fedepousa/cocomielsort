@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.6.10)  10 DEC 2009 17:26
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.6.10)  10 DEC 2009 17:35
 entering extended mode
  %&-line parsing enabled.
 **Informe.tex
@@ -458,7 +458,7 @@ Here is how much of TeX's memory you used:
 </usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmbx12.p
 fb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmmi12.pfb></usr/share/texm
 f-texlive/fonts/type1/bluesky/cm/cmr12.pfb>
-Output written on Informe.pdf (20 pages, 79561 bytes).
+Output written on Informe.pdf (20 pages, 79553 bytes).
 PDF statistics:
  79 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
