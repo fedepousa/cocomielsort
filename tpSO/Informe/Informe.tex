@@ -288,11 +288,11 @@ La idea de que un i-nodo tenga contandores de hardlinks es para saber cuantas fa
 Para ejecutar los procesos en background se hace lo mismo que se explico en secciones anteriores. Es decir, se utiliza el ampersand para que se ejecute en un segundo plano y se manda el flujo de salida a /dev/null para que no se ensucie la consola. Luego, lo importante del ejercicio es ver como el loop3 se corre con mayor prioridad, para esto se utiliza lo explicado en administraci\'on del procesador, utilizar el comando nice para cambiarle la prioridad y poder as\'i ver como toma m\'as porcentaje del cpu.
 
 La sintaxis utilizada entonces es:
-$loop1 >> /dev/null$ \&
+$./loop1 >> /dev/null$ \&
 
 $./loop2 >> /dev/null$ \&
 
-nice -n -18 $./loop3 >> /dev/null$ \&
+nice -n -18 $/home/grupo5/tp/loop3 >> /dev/null$ \&
 
 
 Luego, utilizando el comando top se puede ver cual es el tiempo de cpu que requiere cada proceso. Cabe destacar que al utilizar el comando top solo se observa el id del proceso, los ids de dichos procesos se obtienen al ejecutarlos en background. Luego de ejecutarlos en background, se imprime por consola el id del mismo.
@@ -308,7 +308,7 @@ Para esto, lo que se hizo, fue agregar una entrada a la lista del grub, para pod
 
 Como crear una entrada al grub puede ser complicado debido a que desconocemos los par\'ametros que se utilizan, lo que se hizo fue copiar la entrada default, es decir, la entrada que se estuvo ejecutando todas las veces que iniciamos la maquina. 
 
-Luego, lo que se le hizo a esta entrada fue agregarle el par\'ametro mem=200M. De esta manera, la entrada, y por ende todos los atributos del sistema, son iguales a lo que teniamos anteriormente, pero con la diferencia de que tiene la memoria ram restringida. De esta manera, al reiniciar el sistema, se puede ver como el grub ahora nos da la opci\'on que teniamos anteriormente, y una segunda opci\'on que es el mismo sistema pero con la memoria ram restringida. 
+Luego, lo que se le hizo a esta entrada fue agregarle el par\'ametro mem=200M. La lista que se debe modificar se encuentra en  De esta manera, la entrada, y por ende todos los atributos del sistema, son iguales a lo que teniamos anteriormente, pero con la diferencia de que tiene la memoria ram restringida. De esta manera, al reiniciar el sistema, se puede ver como el grub ahora nos da la opci\'on que teniamos anteriormente, y una segunda opci\'on que es el mismo sistema pero con la memoria ram restringida. 
 
 Una vez iniciada la maquina en esta nueva modalidad, se puede volver a utilizar el comando free para ver como cambio el uso de memoria ram.
 
@@ -348,6 +348,8 @@ Se pueden encontrar varias soluciones a este modulo, pero todas explican que tie
 \addcontentsline{toc}{subsection}{M\'odulo de probabilidad}
 
 
+\subsection*{Sistema operativo Windows}
+\addcontentsline{toc}{subsection}{Sistema operativo Windows}
 
 
 
