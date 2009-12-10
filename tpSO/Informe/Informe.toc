@@ -20,3 +20,4 @@
 \contentsline {subsection}{File System}{13}
 \contentsline {subsection}{Prioridades}{14}
 \contentsline {subsection}{Par\'ametros del Kernel}{14}
+\contentsline {subsection}{Administraci\'on de la Memoria}{15}
