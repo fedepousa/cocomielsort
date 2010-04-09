@@ -12,11 +12,11 @@
     <node id="n0">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="127.0" x="647.0" y="-48.60000000000002"/>
+          <y:Geometry height="40.182027649769566" width="169.97552447552448" x="546.9714452214453" y="-66.60000000000002"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="125.86328125" x="0.568359375" y="-0.962890625">Menú estandarizado 
-y actualizable</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="171.26171875" x="-0.6430971372377599" y="4.128123199884783">Lograr [Menú estandarizado 
+y actualizable]</y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
@@ -24,10 +24,11 @@ y actualizable</y:NodeLabel>
     <node id="n1">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="113.0" x="557.0" y="11.399999999999977"/>
+          <y:Geometry height="30.0" width="113.0" x="478.4592074592075" y="3.582027649769543"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.12646484375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="93.01953125" x="9.990234375" y="5.436767578125">Estandarizado</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="34.2529296875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="110.208984375" x="1.3955078125" y="-2.12646484375">Mantener [Menú 
+Estandarizado]</y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
@@ -35,10 +36,11 @@ y actualizable</y:NodeLabel>
     <node id="n2">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="118.0" x="761.0" y="11.399999999999977"/>
+          <y:Geometry height="30.0" width="118.0" x="682.4592074592075" y="3.582027649769543"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.12646484375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="81.06689453125" x="18.466552734375" y="5.436767578125">Actualizable</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="34.2529296875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="100.052734375" x="8.9736328125" y="-2.12646484375">Lograr [Menpu 
+Actualizable]</y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
@@ -46,18 +48,7 @@ y actualizable</y:NodeLabel>
     <node id="n3">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="113.0" x="476.0" y="88.39999999999998"/>
-          <y:Fill color="#FFCC00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="4.0" x="54.5" y="13.0"/>
-          <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n4">
-      <data key="d3">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="118.0" x="832.0" y="88.39999999999998"/>
+          <y:Geometry height="30.0" width="118.0" x="753.4592074592075" y="89.58202764976951"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="34.2529296875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="86.56396484375" x="15.718017578125" y="-2.12646484375">Se permite la
@@ -66,22 +57,23 @@ actualizacion</y:NodeLabel>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n5">
+    <node id="n4">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="118.0" x="832.0" y="158.39999999999998"/>
+          <y:Geometry height="47.99999999999997" width="118.0" x="753.4592074592075" y="159.58202764976954"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="93.015625" x="12.4921875" y="-0.962890625">Controlador de
-actualizaciones</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="45.888671875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="93.015625" x="12.4921875" y="1.0556640625">Controlador de
+actualizaciones
+(local)</y:NodeLabel>
           <y:Shape type="hexagon"/>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n6">
+    <node id="n5">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="106.0" x="657.5" y="88.39999999999998"/>
+          <y:Geometry height="30.0" width="106.0" x="578.9592074592075" y="150.58202764976954"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="84.291015625" x="10.8544921875" y="-0.962890625">Sistema de 
@@ -90,39 +82,52 @@ comunicación</y:NodeLabel>
         </y:ShapeNode>
       </data>
     </node>
+    <node id="n6">
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="30.0" width="135.89044289044284" x="846.3135198135197" y="-61.50898617511524"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="34.2529296875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.92333984375" x="-0.016448476653636135" y="-2.12646484375">Mantener [Monitoreo
+de stock global]</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
     <node id="n7">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="92.0" x="994.0" y="-48.60000000000002"/>
+          <y:Geometry height="30.0" width="118.0" x="901.4592074592075" y="20.399999999999977"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="34.2529296875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="92.0546875" x="-0.02734375" y="-2.12646484375">Monitoreo de 
-stock</y:NodeLabel>
-          <y:Shape type="rectangle"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="91.85546875" x="13.072265625" y="-0.962890625">Controlador de
+stock (local)</y:NodeLabel>
+          <y:Shape type="hexagon"/>
         </y:ShapeNode>
       </data>
     </node>
     <node id="n8">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="118.0" x="980.0" y="23.399999999999977"/>
+          <y:Geometry height="48.0" width="169.97552447552448" x="219.36016402951878" y="-66.60000000000002"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="91.85546875" x="13.072265625" y="-0.962890625">Controlador de
-stock</y:NodeLabel>
-          <y:Shape type="hexagon"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="45.888671875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="164.7578125" x="2.60885598776224" y="1.0556640625">Lograr [Los clientes pueden
+pedir sii hay stock
+y está en el menú]</y:NodeLabel>
+          <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
     </node>
     <node id="n9">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="48.0" width="118.0" x="289.5" y="-66.60000000000002"/>
+          <y:Geometry height="48.0" width="169.97552447552448" x="219.36016402951878" y="11.399999999999977"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="45.888671875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="119.359375" x="-0.6796875" y="1.0556640625">Los clientes pueden
-pedir sii hay stock
-y está en el menú</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="45.888671875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="147.2265625" x="11.37448098776224" y="1.0556640625">Lograr [El menú muestra
+únicamente lo que
+se puede pedir]</y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
@@ -130,71 +135,56 @@ y está en el menú</y:NodeLabel>
     <node id="n10">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="48.0" width="118.0" x="289.5" y="11.399999999999977"/>
+          <y:Geometry height="40.182027649769566" width="196.82601985827802" x="97.70262712198186" y="256.0538594470044"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="45.888671875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="111.765625" x="3.1171875" y="1.0556640625">El menú muestra
-únicamente lo que
-se puede pedir</y:NodeLabel>
-          <y:Shape type="rectangle"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="169.26953125" x="13.778244304139008" y="4.128123199884783">Controlador de stock (local),
+Sistema de comunicación</y:NodeLabel>
+          <y:Shape type="hexagon"/>
         </y:ShapeNode>
       </data>
     </node>
     <node id="n11">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="40.182027649769566" width="177.9608294930876" x="127.34792626728103" y="256.0538594470044"/>
+          <y:Geometry height="48.0" width="169.97552447552448" x="219.36016402951878" y="89.39999999999998"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="161.46484375" x="8.2479928715438" y="4.128123199884783">Controlador de stock local,
-Sistema de comunicación</y:NodeLabel>
-          <y:Shape type="hexagon"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="151.814453125" x="9.08053567526224" y="8.037109375">Lograr [Menú actualizado
+en tiempo real]</y:NodeLabel>
+          <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
     </node>
     <node id="n12">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="48.0" width="118.0" x="187.30875576036863" y="89.39999999999998"/>
+          <y:Geometry height="48.0" width="158.040404040404" x="117.28793697342077" y="167.39999999999998"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="106.416015625" x="5.7919921875" y="8.037109375">Menú actualizado
-en tiempo real</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="45.888671875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="151.814453125" x="3.1129754577020066" y="1.0556640625">Lograr [Menú actualizado
+en disponibilidad
+(local y global)]</y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
     </node>
     <node id="n13">
-      <data key="d2"/>
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="48.0" width="117.99999999999997" x="127.34792626728104" y="167.39999999999998"/>
+          <y:Geometry height="48.0" width="152.41025641025632" x="319.66347630863754" y="167.39999999999998"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="45.888671875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="106.416015625" x="5.791992187499972" y="1.0556640625">Menú actualizado
-en disponibilidad
-(local y global)</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="151.814453125" x="0.297901642628176" y="8.037109375">Lograr [Menú actualizado
+en variedades]</y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
     </node>
     <node id="n14">
-      <data key="d2"/>
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="117.99999999999997" x="354.0737327188939" y="167.39999999999998"/>
-          <y:Fill color="#FFCC00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="106.416015625" x="5.7919921875" y="-0.962890625">Menú actualizado
-en variedades</y:NodeLabel>
-          <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n15">
-      <data key="d3">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="118.0" x="354.07373271889384" y="256.0538594470044"/>
+          <y:Geometry height="30.0" width="118.0" x="336.8686045137657" y="256.0538594470044"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.12646484375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="81.06689453125" x="18.466552734375" y="5.436767578125">Actualizable</y:NodeLabel>
@@ -202,20 +192,45 @@ en variedades</y:NodeLabel>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n16">
-      <data key="d2"/>
+    <node id="n15">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="40.182027649769566" width="238.16589861751152" x="210.79032258064512" y="343.2877864925543"/>
+          <y:Geometry height="48.0" width="264.8684917233304" x="190.00011279043537" y="343.2877864925543"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="240.373046875" x="-1.103574128744242" y="4.128123199884783">La idea es que el menú muestre también
-la disponibilidad en otro locales</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="45.888671875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="259.591796875" x="2.638347424165204" y="1.0556640625">La idea es que el menú muestre también
+la disponibilidad en otro locales accediendo
+a sus controladores de stock particulares</y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
     </node>
-    <edge id="e0" source="n5" target="n4">
+    <node id="n16">
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="47.99999999999997" width="106.00000000000011" x="578.9592074592074" y="71.58202764976954"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="49.37939453125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="97.54541015625" x="4.227294921875" y="-0.689697265625">Mantener 
+[Comunicación
+entre locales]</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n17">
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="40.182027649769566" width="152.41025641025635" x="538.4289044289045" y="232.9536263467713"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="34.2529296875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="151.3291015625" x="0.540577423878176" y="2.964548981134783">Hasta ahora sistema de
+comunicación es esto</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <edge id="e0" source="n4" target="n3">
       <data key="d6">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -225,7 +240,7 @@ la disponibilidad en otro locales</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e1" source="n4" target="n2">
+    <edge id="e1" source="n3" target="n2">
       <data key="d6">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="-41.700000000000045" ty="3.3999999999999773"/>
@@ -238,7 +253,7 @@ la disponibilidad en otro locales</y:NodeLabel>
     <edge id="e2" source="n2" target="n0">
       <data key="d6">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="-45.98387096774195" ty="2.1380184331797523"/>
+          <y:Path sx="0.0" sy="0.0" tx="-61.54435106422664" ty="2.8636638599248605"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
           <y:BendStyle smoothed="false"/>
@@ -248,54 +263,24 @@ la disponibilidad en otro locales</y:NodeLabel>
     <edge id="e3" source="n1" target="n0">
       <data key="d6">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="50.179723502304114" ty="3.2693548387096882"/>
+          <y:Path sx="0.0" sy="0.0" tx="67.1600379554405" ty="4.37897688419802"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e4" source="n6" target="n2">
+    <edge id="e4" source="n7" target="n6">
       <data key="d6">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="43.299999999999955" ty="6.399999999999977"/>
+          <y:Path sx="0.0" sy="0.0" tx="-45.923659673659586" ty="6.6357344268635075"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e5" source="n8" target="n7">
-      <data key="d6">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e6" source="n6" target="n1">
-      <data key="d6">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="-41.700000000000045" ty="3.3999999999999773"/>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e7" source="n3" target="n1">
-      <data key="d6">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="39.299999999999955" ty="4.399999999999977"/>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e8" source="n10" target="n9">
+    <edge id="e5" source="n9" target="n8">
       <data key="d6">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -305,7 +290,7 @@ la disponibilidad en otro locales</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e9" source="n12" target="n10">
+    <edge id="e6" source="n11" target="n9">
       <data key="d6">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -315,7 +300,7 @@ la disponibilidad en otro locales</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e10" source="n11" target="n13">
+    <edge id="e7" source="n10" target="n12">
       <data key="d6">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -325,27 +310,17 @@ la disponibilidad en otro locales</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e11" source="n13" target="n12">
+    <edge id="e8" source="n12" target="n11">
       <data key="d6">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="44.11213517665135" ty="2.2117511520737594"/>
+          <y:Path sx="0.0" sy="0.0" tx="63.54223146090296" ty="2.2117511520737594"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e12" source="n15" target="n14">
-      <data key="d6">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e13" source="n14" target="n12">
+    <edge id="e9" source="n14" target="n13">
       <data key="d6">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -355,11 +330,71 @@ la disponibilidad en otro locales</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e14" source="n16" target="n11">
+    <edge id="e10" source="n13" target="n11">
+      <data key="d6">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="-84.98776223776224" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e11" source="n15" target="n10">
       <data key="d6">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="dashed" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e12" source="n16" target="n2">
+      <data key="d6">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="42.56002331002321" ty="2.7603383175964495"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e13" source="n16" target="n1">
+      <data key="d6">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e14" source="n5" target="n16">
+      <data key="d6">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e15" source="n17" target="n5">
+      <data key="d6">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="dashed" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e16" source="n5" target="n6">
+      <data key="d6">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="45.3222610722612" ty="0.8606761518052224"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
