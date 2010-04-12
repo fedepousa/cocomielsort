@@ -15,7 +15,7 @@
           <y:Geometry height="40.182027649769566" width="181.96993006993" x="715.877153338345" y="85.27898678940718"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="171.26171875" x="5.354105659964944" y="4.128123199884783">Lograr [Menú estandarizado 
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="171.26171875" x="5.354105659965057" y="4.128123199884783">Lograr [Menú estandarizado 
 y actualizable]</y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
@@ -24,7 +24,7 @@ y actualizable]</y:NodeLabel>
     <node id="n1">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="109.49999999999989" x="647.2106032217948" y="156.3661075181407"/>
+          <y:Geometry height="30.0" width="109.49999999999989" x="647.2106032217948" y="154.89495694072437"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="102.0390625" x="3.73046875" y="-0.962890625">Mantener [Menú 
@@ -36,7 +36,7 @@ Estandarizado]</y:NodeLabel>
     <node id="n2">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="118.0" x="857.0136335248252" y="156.3661075181407"/>
+          <y:Geometry height="30.0" width="118.0" x="857.0136335248252" y="154.89495694072437"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="81.314453125" x="18.3427734375" y="-0.962890625">Lograr [Menú
@@ -48,7 +48,7 @@ Actualizable]</y:NodeLabel>
     <node id="n3">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="47.99999999999997" width="118.0" x="1094.5182632069036" y="370.4610144391768"/>
+          <y:Geometry height="47.99999999999997" width="118.0" x="1096.1191768040926" y="370.4610144391768"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="45.888671875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="85.826171875" x="16.0869140625" y="1.0556640625">Sistema
@@ -155,7 +155,7 @@ y actualizable</y:NodeLabel>
           <y:Geometry height="47.99999999999997" width="106.00000000000011" x="648.9606032217947" y="292.4610144391768"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="45.888671875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="90.349609375" x="7.8251953125" y="1.0556640625">Mantener 
+          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="45.888671875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="90.349609375" x="7.825195312500114" y="1.0556640625">Mantener 
 [Comunicación
 entre locales]</y:NodeLabel>
           <y:Shape type="rectangle"/>
@@ -168,7 +168,7 @@ entre locales]</y:NodeLabel>
           <y:Geometry height="30.0" width="106.00000000000011" x="648.9606032217948" y="370.4610144391768"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="111.37890625" x="-2.6894531249998863" y="-0.962890625">Mantener[Sistema 
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="111.37890625" x="-2.689453125" y="-0.962890625">Mantener[Sistema 
 de comunicación]</y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
@@ -201,7 +201,7 @@ pedidos]</y:NodeLabel>
     <node id="n15">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="48.0" width="181.96993006993" x="1062.533298171939" y="292.4610144391768"/>
+          <y:Geometry height="48.0" width="181.96993006993" x="1064.134211769128" y="292.4610144391768"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="45.888671875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="163.544921875" x="9.212504097464944" y="1.0556640625">Lograr [Autorizar el 
@@ -214,7 +214,7 @@ desde una sucursal]</y:NodeLabel>
     <node id="n16">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="47.99999999999997" width="113.0" x="892.420673151865" y="292.46101443917684"/>
+          <y:Geometry height="47.99999999999997" width="113.0" x="894.021586749054" y="292.46101443917684"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="45.888671875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="104.2890625" x="4.35546875" y="1.0556640625">Lograr [Ingresar 
@@ -253,7 +253,7 @@ locales]</y:NodeLabel>
     <node id="n19">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="113.0" x="892.420673151865" y="370.4610144391768"/>
+          <y:Geometry height="30.0" width="113.0" x="894.021586749054" y="370.4610144391768"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="52.626953125" x="30.1865234375" y="6.0185546875">Sucursal</y:NodeLabel>
@@ -279,7 +279,7 @@ de stock local]</y:NodeLabel>
           <y:Geometry height="53.358261604696665" width="152.41025641025632" x="-348.880109982281" y="201.124230220498"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="38.9072265625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="106.236328125" x="23.086964142628176" y="7.225517521098311">El cliente pierde
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="38.9072265625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="106.236328125" x="23.086964142628176" y="7.22551752109834">El cliente pierde
 el interés depués
 del tiempo de espera</y:NodeLabel>
           <y:Shape type="trapezoid"/>
@@ -416,7 +416,7 @@ electrónico</y:NodeLabel>
           <y:Geometry height="30.0" width="118.0" x="220.00572170408304" y="227.19201506609426"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="53.259765625" x="32.3701171875" y="6.018554687500028">Personal</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="53.259765625" x="32.3701171875" y="6.0185546875">Personal</y:NodeLabel>
           <y:Shape type="hexagon"/>
         </y:ShapeNode>
       </data>
@@ -472,22 +472,9 @@ tiempo de espera]</y:NodeLabel>
       </data>
     </node>
     <node id="n37">
-      <data key="d2"/>
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="10.379300699300643" width="9.153006993007011" x="1029.4004821653984" y="311.27136408952646"/>
-          <y:Fill hasColor="false" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="4.0" x="2.5765034965035056" y="3.1896503496503215"/>
-          <y:Shape type="ellipse"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n38">
-      <data key="d2"/>
-      <data key="d3">
-        <y:ShapeNode>
-          <y:Geometry height="10.379300699300643" width="9.153006993007011" x="911.4371300283217" y="233.27136408952637"/>
+          <y:Geometry height="10.379300699300643" width="9.153006993007011" x="1031.0013957625874" y="311.27136408952646"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="4.0" x="2.576503496503392" y="3.1896503496503215"/>
@@ -495,11 +482,21 @@ tiempo de espera]</y:NodeLabel>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n39">
-      <data key="d2"/>
+    <node id="n38">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="10.379300699300643" width="9.153006993007011" x="802.2856148768064" y="165.27136408952643"/>
+          <y:Geometry height="10.379300699300643" width="9.153006993007011" x="911.4371300283217" y="233.27136408952637"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="4.0" x="2.5765034965035056" y="3.1896503496503215"/>
+          <y:Shape type="ellipse"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n39">
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="10.379300699300643" width="9.153006993007011" x="802.2856148768064" y="163.8002135121101"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="4.0" x="2.5765034965035056" y="3.1896503496503215"/>
@@ -508,7 +505,6 @@ tiempo de espera]</y:NodeLabel>
       </data>
     </node>
     <node id="n40">
-      <data key="d2"/>
       <data key="d3">
         <y:ShapeNode>
           <y:Geometry height="10.379300699300643" width="9.153006993007011" x="428.3252707885725" y="-49.81083825451361"/>
@@ -520,7 +516,6 @@ tiempo de espera]</y:NodeLabel>
       </data>
     </node>
     <node id="n41">
-      <data key="d2"/>
       <data key="d3">
         <y:ShapeNode>
           <y:Geometry height="10.379300699300643" width="9.153006993007011" x="62.14024941856228" y="30.868292547834727"/>
@@ -532,7 +527,6 @@ tiempo de espera]</y:NodeLabel>
       </data>
     </node>
     <node id="n42">
-      <data key="d2"/>
       <data key="d3">
         <y:ShapeNode>
           <y:Geometry height="10.379300699300643" width="9.153006993007011" x="195.4292182075795" y="148.40907776991259"/>
@@ -558,7 +552,6 @@ misma fracción de segundo
       </data>
     </node>
     <node id="n44">
-      <data key="d2"/>
       <data key="d3">
         <y:ShapeNode>
           <y:Geometry height="10.379300699300643" width="9.153006993007011" x="-166.46985357202468" y="222.613710673196"/>
@@ -589,6 +582,31 @@ de stock (local)</y:NodeLabel>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="55.029296875" x="31.4853515625" y="6.0185546875">Teléfono</y:NodeLabel>
           <y:Shape type="hexagon"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n47">
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="53.35826160469668" width="114.4490996477495" x="223.55662205633354" y="473.29936615431075"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="45.888671875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="113.212890625" x="0.618104511374753" y="3.7347948648483396">Lograr [Recargar
+stock al detectarse
+stock bajo]</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n48">
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="41.022409853411915" width="114.4490996477495" x="353.0661251962708" y="473.29936615431075"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="98.41796875" x="8.015565448874753" y="4.548314301705943">Lograr [Detectar
+stock bajo]</y:NodeLabel>
+          <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
     </node>
