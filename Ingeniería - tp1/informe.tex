@@ -49,6 +49,14 @@ más pertinente. Esta sección NO DEBE SER una simple seguidilla de
 figuras sueltas. Debe estar acompañada de tantas explicaciones como
 sean necesarias para que se aprecie un hilo conductor.
 
+\subsection*{Objetivos}
+\addcontentsline{toc}{subsection}{Obejtivos}
+\noindent
+\textbf{Mantener[Menú estandarizado]:} para mantener un menú estandarizado simplemente tenemos que aseguranos que sea el mismo en todos los locales, sean cual sean las actualizaciones que se han realizado (de variedades, precios, etc). Para ello únicamente tenemos que asegurar que se mantenga la comunicación entre los locales. \\
+\textbf{Lograr[Menú actualizable]:} para lograr un menú actualizable tenemos que asegurarnos de que se puedan realizar las actualizaciones pertinentes de éste. Para ello es necesario que haya un sistema de control de actualizaciones que resuelva el problema de ingresar dos actualizaciones en simultáneo, y por otro lado, se necesita que las actualizaciones pueda llegar a todos los locales (no es lo mismo que Mantener[Menú estandarizado]?).
+\textbf{Lograr [Autorizar el ingreso de un menú nuevo desde una sucursal]:} la autorización que pensamos implica que los locales pueden realizar actualizaciones en un momento determinado del día, bien puede ser esto a una hora prefijada de antemano o bien puede ser cuando cierra el local a la noche. Si el local no respeta estos horarios no le es permitido ingresar la actualización. Otro caso a considerar es cuando se cae la conexión del sistema, en cuyo caso tampoco se permiten las actualizaciones, dado que sería una actualización local y el menú debe ser el mismo en TODOS los lugares.
+\textbf{Lograr [Recargar stock al detectarse el nivel de stock]:} para esto planteamos dos alternativas. La primera es recargar el stock cuando se agote completamente, que es más eficiente en el manejo de stock porque involucra que se carga sólo las veces necesarias y cada carga tene su costo (por ejemplo el pago de transporte al proveedor). La segunda es recargar el stock cuando se detecte bajo stock, esto no es eficiente en términos de manejo de stock, pero ayudaría enormemente a mantener un menú rico en disponibilidad de productos, lo cual conllevaría a perder menos clientes debido a que sus pedidos no pudieron ser satisfechos.
+
 
 \section*{Discusi\'on}
 \addcontentsline{toc}{section}{Discusi\'on}
