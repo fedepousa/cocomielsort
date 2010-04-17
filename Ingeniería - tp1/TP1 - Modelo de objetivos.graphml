@@ -1642,6 +1642,19 @@ comunicación por una falla
         </y:PolyLineEdge>
       </data>
     </edge>
+    <edge id="e79" source="n33" target="n24">
+      <data key="d6">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="-1.6410031465627526" ty="-33.015711567901064">
+            <y:Point x="182.820068359375" y="-159.66494750976562"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="dashed" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="28.0" modelName="six_pos" modelPosition="thead" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="24.0" x="585.7497753112189" y="-418.35294710891867">++</y:EdgeLabel>
+          <y:Arc height="205.67906188964844" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
   </graph>
   <data key="d0">
     <y:Resources/>
