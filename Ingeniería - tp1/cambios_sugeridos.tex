@@ -1,0 +1,97 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage[spanish]{babel}   %ver bien como es
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+
+\tableofcontents
+
+\newpage
+
+
+\section*{Introducci\'on}
+\addcontentsline{toc}{section}{Introducci\'on}
+
+Cosas que dijo la catedra:
+
+acá debería figurar todo lo necesario como para que un
+lector no iniciado en el tema entienda el propósito general del
+sistema que van a describir. Puede citar algunos fragmentos del
+enunciado si lo consideran necesario, pero NO DEBE SER una copia del
+enunciado.
+
+\section*{Presunciones}
+\addcontentsline{toc}{section}{Presunciones}
+
+Cosas que dijo la catedra:
+
+acá deberían listar aquellas cuestiones que asumieron
+por encima del enunciado. Estas cuestiones pueden provenir de alguna
+consulta con docentes. También pueden provenir de alguna especulación
+o interpretación que el grupo hizo.
+\noindent
+\textbf{Tiempo de pedido:} asumimos que dos clientes no puede hacer un pedido de forma simultánea. Esta presunción permite simplificar el cumplimiento del objetivo relacionado a no dejar que se pueda cancelar un pedido a un cliente luego de que fue hecho, dado que establece un claro orden entre ellos. \\
+\textbf{Tiempo de pedido a distancia:} asumimos que, ante un pedido a `distancia' (es decir, de un local a otro), un cliente pierde el interés en buscar dicho pedido luego de un \textit{time out} pautado de antemano. Esta presunción nos ayuda a poder cumplir, por un lado, el objetivo relacionado a permitir dicha compra `a distancia' y, por otro, a poder mejorar el manejo de stock al cancelar el pedido luego de pasado el \textit{time out}, y de esta forma recuperar el stock reservado para éste. Esto se logra sin violar los objetivos relacionados al funcionamiento de las ventas (no cancelar pedidos hechos), dado que se interpreta como que el cliente es el que cancela el pedido al no presentarse y no el local.
+\textbf{No hay actualizaciones simultáneas:} Hablar sobre esto.
+
+\section*{Vistas}
+\addcontentsline{toc}{section}{Vistas}
+
+Cosas que dijo la catedra:
+
+está sería la parte principal del TP. Acá irían los
+diagramas y los escenarios representativos de uso. No necesariamente
+tiene que ser una gran sección, sino que pueden partirla por
+funcionalidades y a su vez por tipo de vista o de la forma que crean
+más pertinente. Esta sección NO DEBE SER una simple seguidilla de
+figuras sueltas. Debe estar acompañada de tantas explicaciones como
+sean necesarias para que se aprecie un hilo conductor.
+
+\section*{Modelo de objetivos}
+\addcontentsline{toc}{subsection}{Modelo de obejtivos}
+\subsection*{Objetivos}
+\addcontentsline{toc}{subsubsection}{Obejtivos}
+\noindent
+
+Mantener TRAZABILIDAD! O sea, ponerle numeritos a las cosas.
+Podriamos usar subsections en lugar de textbf, no?
+\textbf{Mantener[Menú estandarizado]:} para mantener un menú estandarizado simplemente tenemos que aseguranos que sea el mismo en todos los locales, sean cual sean las actualizaciones que se han realizado (de variedades, precios, etc). Para ello únicamente tenemos que asegurar que se mantenga la comunicación entre los locales. \\
+\textbf{Lograr[Se puede ingresar un menú desde una sucursal]:} para lograr un menú actualizable tenemos que asegurarnos de que se puedan realizar las actualizaciones pertinentes de éste. \\
+\textbf{Lograr [Autorizar el ingreso de un menú nuevo desde una sucursal]:} pensamos varias formas de manejar esto: una de ellas consiste en que los locales pueden realizar actualizaciones en un momento determinado del día, bien puede ser esto a una hora prefijada de antemano o bien puede ser cuando cierra el local a la noche. Si el local no respeta estos horarios no le es permitido ingresar la actualización. Otro caso a considerar es cuando se cae la conexión del sistema, en caso de usar comunicación automatizada, en cuyo caso tampoco se permiten las actualizaciones, dado que sería una actualización local y el menú debe ser el mismo en todos los lugares. Por otra parte se debe verificar de alguna manera que quien intenta ingresar un nuevo menú esté autorizado. Puede utilizarse una contraseña o crear cuentas para los distintos usuarios del sistema. \\
+\textbf{Lograr [Recargar stock al detectarse el nivel de stock]:} para esto planteamos dos alternativas. La primera es recargar el stock cuando se agote completamente, que es más eficiente en el manejo de stock porque involucra que se carga sólo las veces necesarias (recordar que cada carga tene su costo, por ejemplo el pago de transporte al proveedor). La segunda es recargar el stock cuando se detecte bajo stock, esto no es eficiente en términos de manejo de stock, pero ayudaría enormemente a mantener un menú rico en disponibilidad de productos, lo cual conllevaría a perder menos clientes debido a que sus pedidos no pudieron ser satisfechos. \\
+\textbf{Lograr [Cancelar pedido a distancia]:} para cumplir este objetivo planteamos dos alternativas: por un lado el local es el que cancela el pedido al excederse un cierto \textit{time out}, mientras que por el otro el local llama periódicamente al cliente para confirmar que éste mantiene su interés. La primera se apoya en una presunción del dominio que indica que un cliente pierde el interés en realizar la compra luego de pasado cierto tiempo, en cuyo caso se cancela el pedido de forma automática. El segundo caso, en cambio, ofrece una mayor flexibilidad al cliente, que puede demorar más tiempo en llegar a la sucursal correspondiente. Pensamos que esta última opción de alguna forma mejora la satisfacción del cliente al permitirle mayor flexibilidad en el manejo de su tiempo.
+
+
+\section*{Discusi\'on}
+\addcontentsline{toc}{section}{Discusi\'on}
+
+Cosas que dijo la catedra:
+
+debe contener un análisis general de las distintas
+alternativas y su impacto en los objetivos blandos. NO DEBE SER una
+lista de lo que ya se puede desprender del diagrama. Debe ser un
+análisis más cualitativo y "a vuelo de pájaro" que permita entender
+este asunto en pocas palabras. Esta sección también es ideal para que
+vuelquen las cosas que puedan haberles quedado "flojas" o no cerradas
+del todo: por ejemplo los potenciales conflictos entre objetivos, los
+aspectos que podrían hacer que todo el sistema no funcione como
+desean, etc.
+
+
+\section*{Conclusiones}
+\addcontentsline{toc}{section}{Conclusiones}
+
+Cosas que dijo la catedra:
+
+mencionar brevemente de qué formas les resultó más
+sencillo encarar el TP. Por ejemplo en qué orden realizaron los
+diagramas, qué aspectos presentaron las mayores dificultades, etc.
+
+
+
+
+\end{document}
