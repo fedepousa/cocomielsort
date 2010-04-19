@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:y="http://www.yworks.com/xml/graphml" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml/1.0/ygraphml.xsd">
+  <!--Created by yFiles for Java 2.7-->
+  <key for="graphml" id="d0" yfiles.type="resources"/>
+  <key attr.name="url" attr.type="string" for="node" id="d1"/>
+  <key attr.name="description" attr.type="string" for="node" id="d2"/>
+  <key for="node" id="d3" yfiles.type="nodegraphics"/>
+  <key attr.name="url" attr.type="string" for="edge" id="d4"/>
+  <key attr.name="description" attr.type="string" for="edge" id="d5"/>
+  <key for="edge" id="d6" yfiles.type="edgegraphics"/>
+  <graph edgedefault="directed" id="G">
+    <node id="n0">
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="116.21299999999997" width="233.98671875000002" x="1040.3125255431655" y="613.812781477118"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="79.76171875" x="77.11249999999995" y="49.12212499999998">MAQUINA !!!</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n1">
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="112.79583333333335" width="117.517578125" x="1585.6663743686718" y="596.973031477118"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="89.517578125" x="14.0" y="47.413541666666674">Menu Impreso</y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n2">
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="116.21299999999997" width="175.4057669680252" x="1220.3731155900869" y="927.8842812353093"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="55.439453125" x="59.983156921512546" y="49.12212499999998">Personal</y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n3">
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="71.39791666666667" width="295.83815104166666" x="573.7949741686513" y="358.02363674996826"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="64.64453125" x="115.5968098958333" y="26.714583333333337">Motopizza</y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n4">
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="63.385416666666515" width="259.6440104166667" x="573.7949741686513" y="983.3904676936427"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="208.24609375" x="25.69895833333328" y="22.708333333333258">Sistema de modificación de menu</y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n5">
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="83.82488333333322" width="104.7833333333333" x="1735.1206191603383" y="814.3725255939667"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="46.123046875" x="29.33014322916665" y="32.92806666666661">Cliente</y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <edge id="e0" source="n0" target="n2">
+      <data key="d4"/>
+      <data key="d5"><![CDATA[UMLinherits]]></data>
+      <data key="d6">
+        <y:PolyLineEdge>
+          <y:Path sx="-19.975551541148434" sy="29.28852317099033" tx="-30.289865740766345" ty="-14.005447901976368">
+            <y:Point x="1137.330333377017" y="834.591239689547"/>
+            <y:Point x="1277.786133333333" y="834.591239689547"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="white_delta"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="side_slider" preferredPlacement="anywhere" ratio="0.14124861204748454" textColor="#000000" visible="true" width="4.0" x="2.000011111392041" y="52.49009263489688"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="68.22791108955016" y="106.56401800985952"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="68.22791108955016" y="106.56401800985952"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="head" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="126.9296875" x="6.763067339550162" y="84.59526800985952">Despacho de pedido</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e1" source="n2" target="n0">
+      <data key="d4"/>
+      <data key="d5"><![CDATA[UMLinherits]]></data>
+      <data key="d6">
+        <y:PolyLineEdge>
+          <y:Path sx="-61.65453704080505" sy="0.0" tx="-111.78641825149884" ty="15.167677373749262">
+            <y:Point x="1246.4214620332943" y="907.8842812353093"/>
+            <y:Point x="1045.5194666666666" y="907.8842812353093"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="white_delta"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="side_slider" preferredPlacement="anywhere" ratio="0.028580026410132704" textColor="#000000" visible="true" width="4.0" x="-6.000046755768153" y="-16.456606537100242"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="184.1875" x="-192.54479443908212" y="-18.022396010784405">Registra el pago de un cliente</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e2" source="n3" target="n0">
+      <data key="d4"/>
+      <data key="d5"><![CDATA[UMLinherits]]></data>
+      <data key="d6">
+        <y:PolyLineEdge>
+          <y:Path sx="-104.45019888988088" sy="35.68952991669835" tx="-76.60117380705447" ty="-2.287181477117997">
+            <y:Point x="617.2638507996037" y="669.6321"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="white_delta"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="side_slider" preferredPlacement="anywhere" ratio="0.16970544153182296" textColor="#000000" visible="true" width="4.0" x="1.9999958191349378" y="116.72458608328236"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="213.75390625" x="100.08488006591585" y="242.1906632324219">Actualización datos fuente externa</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e3" source="n0" target="n3">
+      <data key="d4"/>
+      <data key="d5"><![CDATA[UMLinherits]]></data>
+      <data key="d6">
+        <y:PolyLineEdge>
+          <y:Path sx="-96.51894047372082" sy="-42.985184003466856" tx="-53.30342666765898" ty="35.675013250031725">
+            <y:Point x="668.4106230218256" y="628.9340974736511"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="white_delta"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="side_slider" preferredPlacement="anywhere" ratio="0.3106520885985062" textColor="#000000" visible="true" width="4.0" x="-183.1467766585547" y="-5.99998455759885"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="181.966796875" x="-281.51904095187945" y="2.00001544240115">Propagación de menu interno</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e4" source="n2" target="n4">
+      <data key="d4"/>
+      <data key="d5"><![CDATA[UMLinherits]]></data>
+      <data key="d6">
+        <y:PolyLineEdge>
+          <y:Path sx="-65.41466574076617" sy="50.664521623071096" tx="89.06590475595226" ty="21.57212683140449"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="white_delta"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="-195.4815231544851" y="2.0000294208803098"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="135.947265625" x="-261.4551559669851" y="2.0000294208803098">Modificación de menu</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e5" source="n4" target="n0">
+      <data key="d4"/>
+      <data key="d5"><![CDATA[UMLinherits]]></data>
+      <data key="d6">
+        <y:PolyLineEdge>
+          <y:Path sx="12.29172999290796" sy="15.963376831404616" tx="-116.97272465340848" ty="49.53246520477591">
+            <y:Point x="715.9087093698924" y="721.451746681894"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="white_delta"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="155.63942605027898" y="-259.9386952126373"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="140.58203125" x="87.34841042527898" y="-259.9386952126373">Actualización de menu</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e6" source="n0" target="n1">
+      <data key="d4"/>
+      <data key="d5"><![CDATA[UMLinherits]]></data>
+      <data key="d6">
+        <y:PolyLineEdge>
+          <y:Path sx="-7.111084918165716" sy="-29.29228147711831" tx="39.98296990216113" ty="-10.743948143784905"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="white_delta"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="153.6577360887311" y="1.9999858398434753"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="153.6577360887311" y="1.9999858398434753"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="shead" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="232.94921875" x="10.09917105097793" y="-19.968764160156525">Actualización de menu (reeimpresión)</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e7" source="n2" target="n5">
+      <data key="d4"/>
+      <data key="d5"><![CDATA[UMLinherits]]></data>
+      <data key="d6">
+        <y:PolyLineEdge>
+          <y:Path sx="14.07209119566116" sy="41.89687428721186" tx="-23.212491013005774" ty="38.24265711981596">
+            <y:Point x="1452.6906505431657" y="1027.887655522521"/>
+            <y:Point x="1452.6906505431657" y="894.5276243804492"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="white_delta"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="191.54174325018948" y="-131.3600709320508"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="ttail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="110.142578125" x="219.05164943377576" y="-131.3600709320508">Le sirve el pedido</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e8" source="n5" target="n2">
+      <data key="d4"/>
+      <data key="d5"><![CDATA[UMLinherits]]></data>
+      <data key="d6">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="26.449264749383758" tx="-7.828399019324164" ty="28.976582791364535">
+            <y:Point x="1787.512285827005" y="1138.9109585604515"/>
+            <y:Point x="1300.2476000547751" y="1138.9109585604515"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="white_delta"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="-245.63238616067247" y="242.69727447842024"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="59.154296875" x="-273.20953459817247" y="242.69727447842024">Le abona</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e9" source="n5" target="n2">
+      <data key="d4"/>
+      <data key="d5"><![CDATA[UMLinherits]]></data>
+      <data key="d6">
+        <y:PolyLineEdge>
+          <y:Path sx="-19.212491013005774" sy="35.59773064487758" tx="44.80398651322908" ty="58.16224517439574">
+            <y:Point x="1768.2997948139991" y="1090.4005585604516"/>
+            <y:Point x="1352.8799855873285" y="1090.4005585604516"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="white_delta"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="-209.70991448683617" y="194.16880807217035"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="114.572265625" x="-264.99604729933617" y="194.16880807217035">Le hace un pedido</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e10" source="n2" target="n5">
+      <data key="d4"/>
+      <data key="d5"><![CDATA[UMLinherits]]></data>
+      <data key="d6">
+        <y:PolyLineEdge>
+          <y:Path sx="78.73253425923394" sy="10.714654956404502" tx="-14.403752493671846" ty="-13.091223143784873">
+            <y:Point x="1432.508783876499" y="996.7054361917138"/>
+            <y:Point x="1432.508783876499" y="843.1937441168484"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="white_delta"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="ttail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="241.275390625" x="87.94117580096326" y="-151.5117002190891">Le confirma un pedido (local o externo)</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e11" source="n1" target="n5">
+      <data key="d4"/>
+      <data key="d5"><![CDATA[UMLinherits]]></data>
+      <data key="d6">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="-32.237596798004525">
+            <y:Point x="1787.512285827005" y="653.3709481437846"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="white_delta"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="88.78515625" x="86.29426824887992" y="66.95389018918809">Informa menu</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e12" source="n2" target="n0">
+      <data key="d4"/>
+      <data key="d5"><![CDATA[UMLinherits]]></data>
+      <data key="d6">
+        <y:PolyLineEdge>
+          <y:Path sx="-53.516532407432805" sy="4.575885431357165" tx="-86.70161825149876" ty="38.88136609187062">
+            <y:Point x="1254.5594666666666" y="887.8842812353093"/>
+            <y:Point x="1070.6042666666665" y="887.8842812353093"/>
+            <y:Point x="1070.6042666666665" y="794.722182094232"/>
+            <y:Point x="1070.6042666666667" y="794.722182094232"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="white_delta"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="145.837890625" x="-164.89652688802107" y="-37.984981460003155">Actualiza nivel de stock</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e13" source="n2" target="n0">
+      <data key="d4"/>
+      <data key="d5"><![CDATA[UMLinherits]]></data>
+      <data key="d6">
+        <y:PolyLineEdge>
+          <y:Path sx="-40.50959907409947" sy="-5.6438479019760734" tx="-56.04241825149893" ty="13.473842465312071">
+            <y:Point x="1267.5664" y="867.9298666666665"/>
+            <y:Point x="1101.2634666666665" y="867.9298666666665"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="white_delta"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="head" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="141.203125" x="-153.75303541666676" y="-79.9373208333335">Modifica nivel de stock</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e14" source="n0" target="n3">
+      <data key="d4"/>
+      <data key="d5"><![CDATA[UMLinherits]]></data>
+      <data key="d6">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="1157.3058849181655" y="393.7225950833016"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="white_delta"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="284.529296875" x="-281.53855157638327" y="-218.09021009247965">Comunica pedidos internos a fuentes externas</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e15" source="n0" target="n3">
+      <data key="d4"/>
+      <data key="d5"><![CDATA[UMLinherits]]></data>
+      <data key="d6">
+        <y:PolyLineEdge>
+          <y:Path sx="-85.89184047372123" sy="-35.176022880593464" tx="85.0" ty="31.55953825003172">
+            <y:Point x="1071.4140444444442" y="425.2821333333333"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="white_delta"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="190.4453125" x="-191.55063392261889" y="-186.51327682291668">Comunica datos fuente interna</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e16" source="n2" target="n0">
+      <data key="d4"/>
+      <data key="d5"><![CDATA[UMLinherits]]></data>
+      <data key="d6">
+        <y:PolyLineEdge>
+          <y:Path sx="-20.50959907409947" sy="-31.657714568642973" tx="-0.29841825149901524" ty="36.340613729214624">
+            <y:Point x="1287.5664" y="874.5276243804492"/>
+            <y:Point x="1337.7359999999999" y="874.5276243804492"/>
+            <y:Point x="1337.7359999999999" y="794.722182094232"/>
+            <y:Point x="1157.0074666666665" y="794.722182094232"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="white_delta"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="-42.19467291666683" y="-131.15196341358046"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="head" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="177.71875" x="-129.05404791666683" y="-153.12071341358046">Ingresa un pedido al sistema</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e17" source="n0" target="n2">
+      <data key="d4"/>
+      <data key="d5"><![CDATA[UMLinherits]]></data>
+      <data key="d6">
+        <y:PolyLineEdge>
+          <y:Path sx="28.774115081834452" sy="4.6228518562144245" tx="-2.146399074099463" ty="-35.373981235310225">
+            <y:Point x="1186.08" y="754.6643126666659"/>
+            <y:Point x="1398.863218251499" y="754.6643126666659"/>
+            <y:Point x="1398.863218251499" y="894.5276243804492"/>
+            <y:Point x="1305.9296" y="894.5276243804492"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="white_delta"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="104.39165307106191" y="26.603887861978365"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="head" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="188.974609375" x="11.90434838356191" y="4.6351378619783645">Informa si se puede satisfacer </y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+  </graph>
+  <data key="d0">
+    <y:Resources/>
+  </data>
+</graphml>
