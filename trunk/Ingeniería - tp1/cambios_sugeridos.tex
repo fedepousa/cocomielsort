@@ -16,7 +16,7 @@
 \section*{Introducci\'on}
 \addcontentsline{toc}{section}{Introducci\'on}
 
-El objetivo de este trabajo es brindar posibles soluciones para el desarrollo de un software a utilizarse en una cadena de pizzer\'ias llamada "Pizza Hack". El sistema pedido debe ser un sistema distribuido, es decir, debe operar en cada local por separado. Para realizar este an\'alisis para el posterior desarrollo del sofware se debio pensar en que dicha cadena pretende ofrecer a sus clientes un men\'u en comun en todos los locales, es decir, mismo plato y mismo precio. Dicho men\'u debe poder ser actualizado. Por otro lado, el sistema a desarrollar debe poder tener un manejo del nivel de stock para que se pueda saber cuando se tiene que reponer. Adem\'as conocer el nivel de stock permite saber si un pedido va a poder ser realizado o no, de esta forma se garantiza que no se cancelen pedidos por falta de stock. En el caso de que el cliente quiera pedir una variedad de pizza que no se pueda realizar en el local donde la est\'a pidiendo se tiene que poder saber si en alg\'un otro local de la cadena hay stock como para realizar dicho pedido y contar con la posibilidad de reservar dicho stock, al menos hasta que el cliente la retire en el otro local en cuestion. Finalmente, este informe brinda el an\'alisis de dicho software y requerimientos del hardware para dicho sistema.
+El objetivo de este trabajo es brindar posibles soluciones para el desarrollo de un software, el mismo ser\'a utilizado en una cadena de pizzer\'ias llamada "Pizza Hack". El sistema pedido debe ser un sistema distribuido, es decir, debe operar en cada local por separado. Para realizar este an\'alisis para el posterior desarrollo del sofware se debi\'o pensar en que dicha cadena pretende ofrecer a sus clientes un men\'u en com\'un en todos los locales, es decir, mismo plato y mismo precio. Dicho men\'u debe poder ser modificado, por ejemplo si se desea cambiar alg\'un precio y agregar o quitar alguna variedad de pizza. Por otro lado, el sistema a desarrollar debe poder tener un manejo del nivel de stock, para que se pueda saber cuando se tienen que reponer los ingredientes. Adem\'as, conocer la cantidad de los elementos necesarios para realizar cada variedad que hay al momento, permite saber si un pedido va a poder ser realizado o no, de esta forma se garantiza que no se cancelen pedidos por falta de ingredientes. En el caso de que el cliente quiera pedir una variedad de pizza que no se pueda realizar en el local donde la est\'a pidiendo, se tiene que poder saber si en alg\'un otro local de la cadena hay stock como para realizar dicho pedido y contar con la posibilidad de reservar los ingredientes, al menos hasta que el cliente la retire en el otro local en cuestion.En el caso de que el cliente no pase a retirar el pedido se tiene que poder recuperar los ingredientes reservados. Finalmente, este informe brinda el an\'alisis de dicho software y requerimientos del hardware para el sistema.
 
 Cosas que dijo la catedra:
 
@@ -26,6 +26,7 @@ sistema que van a describir. Puede citar algunos fragmentos del
 enunciado si lo consideran necesario, pero NO DEBE SER una copia del
 enunciado.
 
+\newpage
 \section*{Presunciones}
 \addcontentsline{toc}{section}{Presunciones}
 
@@ -40,6 +41,7 @@ o interpretación que el grupo hizo.
 \textbf{Tiempo de pedido a distancia:} asumimos que, ante un pedido a `distancia' (es decir, de un local a otro), un cliente pierde el interés en buscar dicho pedido luego de un \textit{time out} pautado de antemano. Esta presunción nos ayuda a poder cumplir, por un lado, el objetivo relacionado a permitir dicha compra `a distancia' y, por otro, a poder mejorar el manejo de stock al cancelar el pedido luego de pasado el \textit{time out}, y de esta forma recuperar el stock reservado para éste. Esto se logra sin violar los objetivos relacionados al funcionamiento de las ventas (no cancelar pedidos hechos), dado que se interpreta como que el cliente es el que cancela el pedido al no presentarse y no el local.
 \textbf{No hay actualizaciones simultáneas:} Hablar sobre esto.
 
+\newpage
 \section*{Vistas}
 \addcontentsline{toc}{section}{Vistas}
 
@@ -82,7 +84,7 @@ Podriamos usar subsections en lugar de textbf, no?
 
 %Se debera permitir aceptar pedidos de una sucursal remota y a la vez poder realizar los pedidos que no sean satisfechos pro el local en cuestion a otra sucursal de la cadena que si disponga del stock necesario para cubrir el pedido del cliente.
 
-
+\newpage
 \section*{Escenarios}
 
 El dia 29/02/2004 a las 12:47:59 entran simultaneamente al local de pizza Hack (sucursal barrio mitre) Alan Faina, Sergio Mazza, Tomas Anchorena y 4taPersona en busqueda de una buena sapi. Alan se sienta en la mesa nro 1, tomas en la mesa nro 2, sergio mazza en la 3 y la 4ta en la mesa 4. 
@@ -94,7 +96,7 @@ El dia 29/02/2004 a las 12:47:59 entran simultaneamente al local de pizza Hack (
 \item que se quede sin stock y pedir stock.
 \end{itemize}
 
-\
+\newpage
 \section*{Discusi\'on}
 \addcontentsline{toc}{section}{Discusi\'on}
 
@@ -110,7 +112,7 @@ del todo: por ejemplo los potenciales conflictos entre objetivos, los
 aspectos que podrían hacer que todo el sistema no funcione como
 desean, etc.
 
-
+\newpage
 \section*{Conclusiones}
 \addcontentsline{toc}{section}{Conclusiones}
 
