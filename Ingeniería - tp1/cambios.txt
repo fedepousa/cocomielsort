@@ -1,1 +1,5 @@
-1 Mantener [El menú muestra únicamente variedades con stock (en el local o en otra sucursal)]: este objetivo retrata la idea de que para que no se puedan cancelar pedidos, debemos asegurar que el cliente pueda pedir sólo lo que aparece como disponible y el menú debe mostrar esto.
+\textbf{Lograr [No cancelar pedidos]:} para cumplir con este objetivo nos apoyamos fuertemente en el funcionamiento de los pedidos del local. Los pedidos se hacen únicamente cuando pueden hacerse según la disponibilidad en ese momento. Para ello los clientes deben conocer esta información en todo momento y esto lo hacen a través del menú. Por lo tanto es el menú el que debe mostrar esta restricción.
+
+\textbf{1 Mantener [El menú muestra únicamente variedades con stock (en el local o en otra sucursal)]:} debemos asegurar que el cliente pueda pedir sólo lo que aparece como disponible y el menú debe mostrar esto.
+
+
