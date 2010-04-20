@@ -5,3 +5,30 @@
 1.1.2.1.2 Lograr[Cancelar el pedido luego de un tiempo de espera]: el software será el encargado de dar un aviso al controlador de stock cuando pase el \textit{time out}. El controlador actualizará la cantidad de stock que había sido reservada para el pedido.
 
 \1.1.2.1 Mantener[Lista de teléfonos de clientes con pedidos a distancia]: el sistema será el encargado de mantener una lista actualizada con los teléfonos de los clientes que tengan un pedido a distancia. Cuando uno de éstos pedidos sea entergado o cancelado la lista se actualizará de forma automática.
+
+-----------------
+... cuando se explica el modelo de agentes
+
+
+\subsection*{Agentes}
+\addcontentsline{toc}{subsubsection}{Agentes}
+
+Controlador de Stock Local
+El controlador de stock es la entidad física en donde se guarda el stock y en el cual se monitorea su nivel a través de sensores.
+
+Proveedor
+El proveedor es el encargado de reponer el stock a pedido de nuestro local. Incluye todo el sistema de compra y transporte de productos hasta el local.
+
+Menú Electrónico
+El menú electrónico consiste en un menú interactivo ofrecido a los usuarios a través de iPADs, los cuales son asignados de a uno por mesa. En éste pueden distinguirse las distintas variedades de productos (no únicamente pizzas, sino también bebidas y postres) y sus correspondientes precios. A su vez, en distintos colores se puede distinguir si el producto está o no disponible (es decir, si hay stock de ingredientes para preparalo) y si, en caso de que no haya, puede o no ser pedido en otro local en que sí haya stock, ofreciéndo al cliente la opción de elegir en qué local puede hacer el pedido.
+
+Cliente
+El cliente que entra al local. Se refiere tanto a individuos como a grupos.
+
+Personal
+Se refiere al conjunto de personas que trabajan en el local, éstos son: los mozos y el cajero.
+
+Sistema de sincronizacion de datos
+Es el sistema que permite la comunicación entre locales. A través de el el sistema del local puede interactuar con los sistemas de otros locales, posibilitanto pedidos a distancia y actualizaciones de menú.
+
+Sistema de modificación de menu
