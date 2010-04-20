@@ -1,0 +1,1 @@
+1 Mantener [El menú muestra únicamente variedades con stock (en el local o en otra sucursal)]: este objetivo retrata la idea de que para que no se puedan cancelar pedidos, debemos asegurar que el cliente pueda pedir sólo lo que aparece como disponible y el menú debe mostrar esto.
