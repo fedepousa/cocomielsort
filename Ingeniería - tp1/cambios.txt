@@ -1,5 +1,7 @@
-\textbf{Lograr [No cancelar pedidos]:} para cumplir con este objetivo nos apoyamos fuertemente en el funcionamiento de los pedidos del local. Los pedidos se hacen únicamente cuando pueden hacerse según la disponibilidad en ese momento. Para ello los clientes deben conocer esta información en todo momento y esto lo hacen a través del menú. Por lo tanto es el menú el que debe mostrar esta restricción.
+0 Lograr [No cancelar pedidos]: para cumplir con este objetivo nos apoyamos fuertemente en el funcionamiento de los pedidos del local. Los pedidos se hacen únicamente cuando pueden hacerse según la disponibilidad en ese momento. Para ello los clientes deben conocer esta información en todo momento y esto lo hacen a través del menú. Por lo tanto es el menú el que debe mostrar esta restricción.
 
-\textbf{1 Mantener [El menú muestra únicamente variedades con stock (en el local o en otra sucursal)]:} debemos asegurar que el cliente pueda pedir sólo lo que aparece como disponible y el menú debe mostrar esto.
+1 Mantener [El menú muestra únicamente variedades con stock (en el local o en otra sucursal)]: debemos asegurar que el cliente pueda pedir sólo lo que aparece como disponible y el menú debe mostrar esto.
 
+1.1.2.1.2 Lograr[Cancelar el pedido luego de un tiempo de espera]: el software será el encargado de dar un aviso al controlador de stock cuando pase el \textit{time out}. El controlador actualizará la cantidad de stock que había sido reservada para el pedido.
 
+\1.1.2.1 Mantener[Lista de teléfonos de clientes con pedidos a distancia]: el sistema será el encargado de mantener una lista actualizada con los teléfonos de los clientes que tengan un pedido a distancia. Cuando uno de éstos pedidos sea entergado o cancelado la lista se actualizará de forma automática.
