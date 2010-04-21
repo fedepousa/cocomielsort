@@ -28,7 +28,7 @@ En los diagramas de contexto se podrán explorar con más detalle las interaccio
 De acuerdo a los objetivos priorizados por la cadena, el sistema debe tener las siguientes características:
 
 
-El sistema pedido debe ser un sistema distribuido, es decir, debe operar en cada local por separado. Para realizar este an\'alisis para el posterior desarrollo del sofware se debi\'o pensar en que dicha cadena pretende ofrecer a sus clientes un men\'u en com\'un en todos los locales, es decir, mismo plato y mismo precio. Dicho men\'u debe poder ser modificado, por ejemplo si se desea cambiar alg\'un precio y agregar o quitar alguna variedad de pizza.
+El sistema pedido debe ser un sistema distribu\'ido, es decir, debe operar en cada local por separado. Para realizar este an\'alisis para el posterior desarrollo del sofware se debi\'o pensar en que dicha cadena pretende ofrecer a sus clientes un men\'u en com\'un en todos los locales, es decir, mismo plato y mismo precio. Dicho men\'u debe poder ser modificado, por ejemplo si se desea cambiar alg\'un precio y agregar o quitar alguna variedad de pizza.
 
 Por otro lado, el sistema a desarrollar debe poder tener un manejo del nivel de stock, para que se pueda saber cuando se tienen que reponer los ingredientes. Adem\'as, conocer la cantidad de los elementos necesarios para realizar cada variedad que hay al momento, permite saber si un pedido va a poder ser realizado o no, de esta forma se garantiza que no se cancelen pedidos por falta de ingredientes. En el caso de que el cliente quiera pedir una variedad de pizza que no se pueda realizar en el local donde la est\'a pidiendo, se tiene que poder saber si en alg\'un otro local de la cadena hay stock como para realizar dicho pedido y contar con la posibilidad de reservar los ingredientes, al menos hasta que el cliente la retire en el otro local en cuestion. En el caso de que el cliente no pase a retirar el pedido se tiene que poder recuperar los ingredientes reservados. Finalmente, este informe brinda el an\'alisis de dicho software y requerimientos del hardware para el sistema.
 
@@ -67,7 +67,7 @@ El siguiente diagrama expresa algunos de los objetivos requeridos por la cadena 
 \begin{figure}[H]
 \centering
 \subfloat{\includegraphics[width=1.0\textwidth]{imagenes/objetivos_principales.png}}
-\caption{Objetivos principales}
+\caption{}
 \end{figure}
 
 Los objetivos planteados garantizan que un pedido no será cancelado una vez confirmado. Es decir, un pedido no será cancelado por falta de ingredientes para prepararlo. 
@@ -79,7 +79,7 @@ El objetivo de mantener el menú actualizado en cuanto a disponibilidad plantea 
 \begin{figure}[H]
 \centering
 \subfloat{\includegraphics[width=1.0\textwidth]{imagenes/objetivos_menu.png}}
-\caption{Objetivos principales}
+\caption{}
 \end{figure}
 
 Como se puede apreciar, surge una gran cantidad de objetivos en algún sentido más simples, algunos de los cuáles consideramos que pueden ser concretados por un agente en particular. En estas asignaciones de objetivos van a surgir las diferentes variantes de la solución propuesta. 
@@ -119,7 +119,7 @@ El resto de los objetivos tienen nombres lo suficientemente explicativos, por lo
 \begin{figure}[H]
 \centering
 \subfloat{\includegraphics[width=1.0\textwidth]{imagenes/objetivos_menu_estandarizado.png}}
-\caption{Objetivos principales}
+\caption{}
 \end{figure}
 
 Entre las pautas se menciona la necesidad de poder actualizar el menú y la restricción de que el menú sea el mismo para todas las sucursales. A continuación nos enfocamos en el objetivos 1.3.1:
@@ -130,7 +130,7 @@ para mantener un menú estandarizado simplemente tenemos que aseguranos que sea 
 \begin{figure}[H]
 \centering
 \subfloat{\includegraphics[width=1.0\textwidth]{imagenes/objetivos_menu_estandarizado2.png}}
-\caption{Objetivos principales}
+\caption{}
 \end{figure}
 
 La presunción 1.3.1.2 es explicada en mayor detalle en la sección de presunciones.
@@ -155,7 +155,7 @@ El ingreso de un nuevo menú plantea un requerimiento con respecto a la funciona
 \begin{figure}[H]
 \centering
 \subfloat{\includegraphics[width=1.0\textwidth]{imagenes/objetivos_menu_ingreso.png}}
-\caption{Objetivos principales}
+\caption{}
 \end{figure}
 
 Restaría, para completar el diagrama de objetivos en su totalidad explorar el refinamiento del objetivo 1.2:
@@ -165,7 +165,7 @@ Para poder adaptarse la información relativa a la disponibilidad, como ser las 
 \begin{figure}[H]
 \centering
 \subfloat{\includegraphics[width=1.0\textwidth]{imagenes/objetivos_menu_mostrar.png}}
-\caption{Objetivos principales}
+\caption{}
 \end{figure}
 
 La opción del menú electrónico consiste en un dispositivo similar a una pantalla táctil que permita explorar las variedades, indicando la existencia de disponibilidad o si esto no ocurriese las sucursales que sí pudieran satisfacer el pedido. Esta forma de presentar el menú se integra y complementa con el software. El hecho de que sea una forma tan sofisticada de resolver el asunto tiene aspectos positivos y negativos. Una de las cosas que destacamos es el atractivo que puede generar en la audiencia joven y la mayor satisfacción del cliente a raíz de la disminución de los tiempos de espera. 
@@ -403,7 +403,7 @@ Otro aspecto que tiene que ver con la falta de un experto de dominio, es algo qu
 Al ir refinando sobre los objetivos a realizar, vimos que muchas veces se generaba la duda de si era la maquina la que debia hacerse cargo de
 alg\'un problema en particular, o si se deb\'ia asignar a un agente externo. Muchas veces, estos agentes eran humanos, por lo que esos aspectos
 quedar\'ian por fuera de una soluci\'on informatizada, teniendo esto sus pros y sus contras. Ser\'ia bueno, poder saber que espera un experto de 
-dominio del sistema a desarrollar, si un dominio total del sistema sobre el control de la pizzer\'ia, o bien una herrramienta solamente abocada a algunos
+dominio del sistema a desarrollar, si un dominio total del sistema sobre el control de la pizzer\'ia, o bien una herramienta solamente abocada a algunos
 aspectos.
 
 \medskip
