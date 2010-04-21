@@ -47,10 +47,28 @@ de pensar las posibles soluciones y no tener la necesidad de analizar las infini
 \section*{Vistas}
 \addcontentsline{toc}{section}{Vistas}
 
+En esta secci\'on se propondran las soluciones discutidas por el grupo, mediante los diferentes modelos vistos en la materia. Se comenzar\'a con
+el modelo de agentes y sus respectivos diagramas de contexto, y luego se mostrar\'an los diagramas de objetivos.
 
-\section*{Diagrama de contexto}
-\section*{1}
-El siguiente diagrama de contexto muestra los agentes involucrados en interacciones con una solución que se orienta a la automatización. 
+
+\subsection*{Modelo de Agentes}
+\addcontentsline{toc}{subsection}{Modelo de Agentes}
+
+El modelo de agentes se caracteriza por sus diagramas de contexto, en los cuales se muestran los diferentes agentes que actuan en la solucionar y,
+a la vez, se muestra la interacci\'on que existe entre estos agentes mediante los fen\'omenos que los relacionan. Dicho esto, se desprende que un
+diagrama de contexto solo muestra una posible soluci\'on ya que se trata de una visi\'on global del sistema. Es por esto que se presentan diferentes
+diagramas de contexto seg\'un la soluci\'on discutida.
+
+\subsubsection*{Primer Diagrama de Contexto}
+\addcontentsline{toc}{subsubsection}{Primer Diagrama de Contexto}
+El siguiente diagrama de contexto muestra los agentes involucrados en interacciones con una solución que se orienta a la automatización de la 
+mayor\'ia de los problemas a resolver.
+
+\begin{figure}[H]
+\centering
+\subfloat{\includegraphics[width=1.2\textwidth]{imagenes/agentes_automatico.png}}
+\caption{Diagrama de contexto orientación automatización.}
+\end{figure}
 
 \paragraph{Proveedor:}
 El proveedor es el encargado de reponer el stock a pedido de nuestro local. Incluye todo el sistema de compra y transporte de productos hasta el local.
@@ -70,15 +88,19 @@ La solución presentada en general prioriza la satisfacción del cliente, ya que
 Por otra parte, aún cuando el personal no hubiera registrado la escacez de un ingrediente, el sistema lo informaría logrando la reposición del mismo. Debido a posibles imprecisiones en las cantidades de ingredientes registradas para cada receta es necesario que el personal periódicamente haga un inventario completo de las existencias y actualice las cantidades disponibles mediante una interfaz gráfica que será provista por el software.
 
 Es importante destacar que en este caso estamos considerando la comunicación entre sucursales parte del sistema a desarrollarse. En este sentido este sistema no es completamente tolerante a fallas, ya que en el caso de falla por parte del proveedor de servicio de Internet, el sistema se vería inhabilitado para realizar operaciones entre sucursales. Se podría agregar un modo de funcionamiento manual, pero no garantizaría los beneficios del sistema automatizado y además agregaría costo en concepto de funcionalidades que sólo se utilizarían en caso de falla total del servicio de Internet. 
+
+
+
+\subsubsection*{Segundo Diagrama de Contexto}
+\addcontentsline{toc}{subsubsection}{Segundo Diagrama de Contexto}
+
+En este caso, el siguiete diagrama de contexto muestra los agentes involucrados en la interaccion con una solucion orientada a mecanismos manuales.
+
 \begin{figure}[H]
 \centering
-\subfloat{\includegraphics[width=1.2\textwidth]{imagenes/agentes_automatico.png}}
-\caption{Diagrama de contexto orientación automatización.}
+\subfloat{\includegraphics[width=1.2\textwidth]{imagenes/agentes_manual.png}}
+\caption{Diagrama de contexto orientación manual.}
 \end{figure}
-
-\section*{2}
-El siguiete diagrama de contexto muestra los agentes involucrados en la interaccion con una solucion orientada a mecanismos manuales
-
 
 \paragraph{Proveedor:}
 El proveedor es el encargado de reponer el stock a pedido de nuestro local. Incluye todo el sistema de compra y transporte de productos hasta el local.
@@ -87,21 +109,29 @@ El proveedor es el encargado de reponer el stock a pedido de nuestro local. Incl
 Se refiere a todo el conjunto de personas empleadas en el local. El conjunto tiene una gran interacción con la maquina y con el cliente dado que debe cumplir varias funciones. Actualizar nivel de stock, cuando se hace una nueva compra debe registrarse el cambio. Debe ingresar un pedido al sistema (proveniente de un cliente) para que este evalue si puede o no satisfacerlo. Debe registrar el pago de un cliente. Recibe la confirmación de satisfacción por parte del software, que le indica que puede confirmarle el pedido a un cliente. Tiene también la tarea de pedir al proveedor lo que haga falta corroborando el estado del stock. Debe llevar/recibir/confirmar/servir un pedido.Tiene el deber de actualizar el menu cuando lo crea pertinente.
 \\
 \paragraph{Cliente:}
-Se refiere al conjunto de personas que trabajan en el local, éstos son: los mozos, el cajero y los cocineros.
+Se refiere al cliente que entra al local, tanto a individuos como a grupos.
 \\
 \paragraph{Menu impreso:}
 En esta familia de soluciones, contamos con un menu impreso que debe ser actualizado en todo momento para seguir siendo consistente con la realidad. Cada vez que se quiere actualizar debe ser reeimpreso.
 \\
 \paragraph{Motopizza:}
-Sistema de humanos de altacomplejidad encargado de realizar diversas tareas. Debe encargarse de actualizar los datos que vienen de afuera, para esto recorre todas las demas sucursales (lo que puede actualizar con, cambios de menu y peticiones de pedidos) Ademas debe recorrer pizzerias para informar que va un cliente si es posible y propagar el menu local. Ese sistema es sumamente ineficiente.
+Sistema de humanos de alta complejidad encargado de realizar diversas tareas. Debe encargarse de actualizar los datos que vienen de afuera, para esto recorre todas las demas sucursales (lo que puede actualizar son los cambios de menu y peticiones de pedidos) Ademas debe recorrer pizzerias para informar que va un cliente si es posible y propagar el menu local. Ese sistema es sumamente ineficiente.
+El mismo nace como una opci\'on tolerante a fallas de la soluci\'on informatizada de este grupo de objetivos.
 
-\begin{figure}[H]
-\centering
-\subfloat{\includegraphics[width=1.2\textwidth]{imagenes/agentes_manual.png}}
-\caption{Diagrama de contexto orientación manual.}
-\end{figure}
 
-\section*{3} Podemos armar distintos tipos de diagramas de contexto apartir de estos dos, dado que presentan opciones para cosas distintas tambien. Ej, se podria poner un menu electronico y trabajar con el Motopizza. O también usar sistema de comunicaciones sofisticado con un menu impreso. Se pueden ir armando distintas combinaciones.
+
+\subsubsection*{Otras alternativas} 
+\addcontentsline{toc}{subsubsection}{Otras alternativas}
+
+En los dos diagramas de contexto anteriores se plasmaron combinaciones espec\'ificas de las soluciones pensadas para los diferentes grupos de
+objetivos. Si bien fueron presentados solo dos diagramas de contexto, se podr\'ian realizar muchisimos m\'as mediante la combinaci\'on de las 
+soluciones propuestas. Por ejemplo, se podr\'ia idear otro diagrama de contexto, en donde se tenga un sistema de comunicaciones sofisticado resolviendo
+todos los problemas de comunicaci\'on, en combinaci\'on con un menu impreso para cada mesa, soluci\'on tan valida como las anteriores.
+
+Por una cuestion de espacio, no se presentan todas las combinaciones posibles, ya que adem\'as no parece aportar nada m\'as a la descripci\'on
+de la soluci\'on, dado que los agentes ser\'ian los mismos, pero combinados de otra manera.
+
+
 
 
 \section*{Modelo de objetivos}
