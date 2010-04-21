@@ -28,26 +28,25 @@ En los diagramas de contexto se podrán explorar con más detalle las interaccio
 De acuerdo a los objetivos priorizados por la cadena, el sistema debe tener las siguientes características:
 
 
-El sistema pedido debe ser un sistema distribuido, es decir, debe operar en cada local por separado. Para realizar este an\'alisis para el posterior desarrollo del sofware se debi\'o pensar en que dicha cadena pretende ofrecer a sus clientes un men\'u en com\'un en todos los locales, es decir, mismo plato y mismo precio. Dicho men\'u debe poder ser modificado, por ejemplo si se desea cambiar alg\'un precio y agregar o quitar alguna variedad de pizza. Por otro lado, el sistema a desarrollar debe poder tener un manejo del nivel de stock, para que se pueda saber cuando se tienen que reponer los ingredientes. Adem\'as, conocer la cantidad de los elementos necesarios para realizar cada variedad que hay al momento, permite saber si un pedido va a poder ser realizado o no, de esta forma se garantiza que no se cancelen pedidos por falta de ingredientes. En el caso de que el cliente quiera pedir una variedad de pizza que no se pueda realizar en el local donde la est\'a pidiendo, se tiene que poder saber si en alg\'un otro local de la cadena hay stock como para realizar dicho pedido y contar con la posibilidad de reservar los ingredientes, al menos hasta que el cliente la retire en el otro local en cuestion. En el caso de que el cliente no pase a retirar el pedido se tiene que poder recuperar los ingredientes reservados. Finalmente, este informe brinda el an\'alisis de dicho software y requerimientos del hardware para el sistema.
-\\
-\textbf{Cosas que dijo la catedra: acá debería figurar todo lo necesario como para que un lector no iniciado en el tema entienda el propósito general del sistema que van a describir. Puede citar algunos fragmentos del enunciado si lo consideran necesario, pero NO DEBE SER una copia del enunciado.}
+El sistema pedido debe ser un sistema distribuido, es decir, debe operar en cada local por separado. Para realizar este an\'alisis para el posterior desarrollo del sofware se debi\'o pensar en que dicha cadena pretende ofrecer a sus clientes un men\'u en com\'un en todos los locales, es decir, mismo plato y mismo precio. Dicho men\'u debe poder ser modificado, por ejemplo si se desea cambiar alg\'un precio y agregar o quitar alguna variedad de pizza.
+
+Por otro lado, el sistema a desarrollar debe poder tener un manejo del nivel de stock, para que se pueda saber cuando se tienen que reponer los ingredientes. Adem\'as, conocer la cantidad de los elementos necesarios para realizar cada variedad que hay al momento, permite saber si un pedido va a poder ser realizado o no, de esta forma se garantiza que no se cancelen pedidos por falta de ingredientes. En el caso de que el cliente quiera pedir una variedad de pizza que no se pueda realizar en el local donde la est\'a pidiendo, se tiene que poder saber si en alg\'un otro local de la cadena hay stock como para realizar dicho pedido y contar con la posibilidad de reservar los ingredientes, al menos hasta que el cliente la retire en el otro local en cuestion. En el caso de que el cliente no pase a retirar el pedido se tiene que poder recuperar los ingredientes reservados. Finalmente, este informe brinda el an\'alisis de dicho software y requerimientos del hardware para el sistema.
+
 
 \newpage
 \section*{Presunciones}
 \addcontentsline{toc}{section}{Presunciones}
-En esta secci\'on se describen las cosas que se asumen que no pueden pasar o que pasan.\\
-\textbf{Cosas que dijo la catedra: acá deberían listar aquellas cuestiones que asumieron por encima del enunciado. Estas cuestiones pueden provenir de alguna consulta con docentes. También pueden provenir de alguna especulación o interpretación que el grupo hizo.}
-\\
+En esta secci\'on se describen los fen\'omenos del mundo real que se deben asumir para poder tener un punto de arranque al momento
+de pensar las posibles soluciones y no tener la necesidad de analizar las infinitas posibilidades del mundo.
 
 \noindent
-\textbf{Tiempo de pedido:} asumimos que dos clientes no puede hacer un pedido de forma simultánea. Esta presunción permite simplificar el cumplimiento del objetivo relacionado a no dejar que se pueda cancelar un pedido a un cliente luego de que fue hecho, dado que establece un claro orden entre ellos. \\
-\textbf{Tiempo de pedido a distancia:} asumimos que, ante un pedido a `distancia' (es decir, de un local a otro), un cliente pierde el interés en buscar dicho pedido luego de un \textit{time out} pautado de antemano. Esta presunción nos ayuda a poder cumplir, por un lado, el objetivo relacionado a permitir dicha compra `a distancia' y, por otro, a poder mejorar el manejo de stock al cancelar el pedido luego de pasado el \textit{time out}, y de esta forma recuperar el stock reservado para éste. Esto se logra sin violar los objetivos relacionados al funcionamiento de las ventas (no cancelar pedidos hechos), dado que se interpreta como que el cliente es el que cancela el pedido al no presentarse y no el local.\\
+\textbf{Tiempo de pedido:} Se asume que dos clientes no pueden hacer un pedido de forma simultánea. Esta presunción permite simplificar el cumplimiento del objetivo relacionado a no dejar que se pueda cancelar un pedido a un cliente luego de que fue hecho, dado que establece un claro orden entre ellos. \\
+\textbf{Tiempo de pedido a distancia:} Se asume que, ante un pedido a `distancia' (es decir, de un local a otro), un cliente pierde el interés en buscar dicho pedido luego de un \textit{time out} pautado de antemano. Esta presunción nos ayuda a poder cumplir, por un lado, el objetivo relacionado a permitir dicha compra `a distancia' y, por otro, a poder mejorar el manejo de stock al cancelar el pedido luego de pasado el \textit{time out}, y de esta forma recuperar el stock reservado para éste. Esto se logra sin violar los objetivos relacionados al funcionamiento de las ventas (no cancelar pedidos hechos), dado que se interpreta como que el cliente es el que cancela el pedido al no presentarse y no el local.\\
 \textbf{No hay actualizaciones simultáneas:} Habiéndose hecho especial énfasis en que la solución informática no debe ser centralizada, en caso de haber actualizaciones simultáneas se debería arbitrar, de manera distribuída, cuál de las actualizaciones es la que corresponde propagar a la totalidad de las sucursales. Siendo ésta una situación que no consideramos muy común, parece razonable suponer que no hay actualizaciones simultáneas de las variedades del menú. De ésta manera dicho arbitraje no es necesario. \\ 
 \newpage
 \section*{Vistas}
 \addcontentsline{toc}{section}{Vistas}
 
-\textbf{Cosas que dijo la catedra: está sería la parte principal del TP. Acá irían los diagramas y los escenarios representativos de uso. No necesariamente tiene que ser una gran sección, sino que pueden partirla por funcionalidades y a su vez por tipo de vista o de la forma que crean más pertinente. Esta sección NO DEBE SER una simple seguidilla de figuras sueltas. Debe estar acompañada de tantas explicaciones como sean necesarias para que se aprecie un hilo conductor.}
 
 \section*{Diagrama de contexto}
 \section*{1}
@@ -268,23 +267,10 @@ tiempo el m\'aximo estipulado para un reserva, el sistema borra la reserva de la
 al stock del local, una pizza menos vendida pero por lo menos no se perdieron los ingredientes.
 
 
- 
-\begin{itemize}
-\item pedir en otra sucursal e ir
-\item pedir en otra y no ir
-\item faltaria pedir stock
-\end{itemize}
-
-%El dia 29/02/2004 a las 12:47:59 entran simultaneamente al local de pizza Hack (sucursal barrio mitre) Alan Faina, Sergio Mazza, Tomas Anchorena y 4taPersona en busqueda de una buena sapi. Alan se sienta en la mesa nro 1, tomas en la mesa nro 2, sergio mazza en la 3 y la 4ta en la mesa 4. 
-%\begin{itemize}\item
-%\item pedir en otra sucursal e ir
-%\item peidr en otra y no ir
-%\item pedir y que no haya
-%\item pedir y que haya y que el siguiente no tenga
-%\item que se quede sin stock y pedir stock.
-%\end{itemize}
 
 \newpage
+
+
 \section*{Discusi\'on}
 \addcontentsline{toc}{section}{Discusi\'on}
 
@@ -293,7 +279,7 @@ Para la resoluci\'on de este sistema se presentaron distintas alternativas conte
 \begin{itemize}
 \item Local manual: se basa en que haya mozos que presenten el men\'u de forma oral.
 \item Local automatizado: se basa en brindar en cada mesa un men\'u electronico.
-\item Local mixto: se basa en una mezcla entre el manual y el automatizado, es decir, que en la caja haya un men\'u electronico que los clientes lo reciben a travez de un mozo quien lo presenta en cada mesa.
+\item Local mixto: se basa en una mezcla entre el manual y el automatizado, es decir, que en la caja haya un men\'u electronico que es presentado por mozos en cada mesa.
 \end{itemize}
 
 
