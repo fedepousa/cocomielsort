@@ -29,27 +29,16 @@ De acuerdo a los objetivos priorizados por la cadena, el sistema debe tener las 
 
 
 El sistema pedido debe ser un sistema distribuido, es decir, debe operar en cada local por separado. Para realizar este an\'alisis para el posterior desarrollo del sofware se debi\'o pensar en que dicha cadena pretende ofrecer a sus clientes un men\'u en com\'un en todos los locales, es decir, mismo plato y mismo precio. Dicho men\'u debe poder ser modificado, por ejemplo si se desea cambiar alg\'un precio y agregar o quitar alguna variedad de pizza. Por otro lado, el sistema a desarrollar debe poder tener un manejo del nivel de stock, para que se pueda saber cuando se tienen que reponer los ingredientes. Adem\'as, conocer la cantidad de los elementos necesarios para realizar cada variedad que hay al momento, permite saber si un pedido va a poder ser realizado o no, de esta forma se garantiza que no se cancelen pedidos por falta de ingredientes. En el caso de que el cliente quiera pedir una variedad de pizza que no se pueda realizar en el local donde la est\'a pidiendo, se tiene que poder saber si en alg\'un otro local de la cadena hay stock como para realizar dicho pedido y contar con la posibilidad de reservar los ingredientes, al menos hasta que el cliente la retire en el otro local en cuestion. En el caso de que el cliente no pase a retirar el pedido se tiene que poder recuperar los ingredientes reservados. Finalmente, este informe brinda el an\'alisis de dicho software y requerimientos del hardware para el sistema.
-
-
-
-Cosas que dijo la catedra:
-
-acá debería figurar todo lo necesario como para que un
-lector no iniciado en el tema entienda el propósito general del
-sistema que van a describir. Puede citar algunos fragmentos del
-enunciado si lo consideran necesario, pero NO DEBE SER una copia del
-enunciado.
+\\
+\textbf{Cosas que dijo la catedra: acá debería figurar todo lo necesario como para que un lector no iniciado en el tema entienda el propósito general del sistema que van a describir. Puede citar algunos fragmentos del enunciado si lo consideran necesario, pero NO DEBE SER una copia del enunciado.}
 
 \newpage
 \section*{Presunciones}
 \addcontentsline{toc}{section}{Presunciones}
 
-Cosas que dijo la catedra:
+\textbf{Cosas que dijo la catedra: acá deberían listar aquellas cuestiones que asumieron por encima del enunciado. Estas cuestiones pueden provenir de alguna consulta con docentes. También pueden provenir de alguna especulación o interpretación que el grupo hizo.}
+\\
 
-acá deberían listar aquellas cuestiones que asumieron
-por encima del enunciado. Estas cuestiones pueden provenir de alguna
-consulta con docentes. También pueden provenir de alguna especulación
-o interpretación que el grupo hizo.
 \noindent
 \textbf{Tiempo de pedido:} asumimos que dos clientes no puede hacer un pedido de forma simultánea. Esta presunción permite simplificar el cumplimiento del objetivo relacionado a no dejar que se pueda cancelar un pedido a un cliente luego de que fue hecho, dado que establece un claro orden entre ellos. \\
 \textbf{Tiempo de pedido a distancia:} asumimos que, ante un pedido a `distancia' (es decir, de un local a otro), un cliente pierde el interés en buscar dicho pedido luego de un \textit{time out} pautado de antemano. Esta presunción nos ayuda a poder cumplir, por un lado, el objetivo relacionado a permitir dicha compra `a distancia' y, por otro, a poder mejorar el manejo de stock al cancelar el pedido luego de pasado el \textit{time out}, y de esta forma recuperar el stock reservado para éste. Esto se logra sin violar los objetivos relacionados al funcionamiento de las ventas (no cancelar pedidos hechos), dado que se interpreta como que el cliente es el que cancela el pedido al no presentarse y no el local.\\
@@ -58,15 +47,7 @@ o interpretación que el grupo hizo.
 \section*{Vistas}
 \addcontentsline{toc}{section}{Vistas}
 
-Cosas que dijo la catedra:
-
-está sería la parte principal del TP. Acá irían los
-diagramas y los escenarios representativos de uso. No necesariamente
-tiene que ser una gran sección, sino que pueden partirla por
-funcionalidades y a su vez por tipo de vista o de la forma que crean
-más pertinente. Esta sección NO DEBE SER una simple seguidilla de
-figuras sueltas. Debe estar acompañada de tantas explicaciones como
-sean necesarias para que se aprecie un hilo conductor.
+\textbf{Cosas que dijo la catedra: está sería la parte principal del TP. Acá irían los diagramas y los escenarios representativos de uso. No necesariamente tiene que ser una gran sección, sino que pueden partirla por funcionalidades y a su vez por tipo de vista o de la forma que crean más pertinente. Esta sección NO DEBE SER una simple seguidilla de figuras sueltas. Debe estar acompañada de tantas explicaciones como sean necesarias para que se aprecie un hilo conductor.}
 
 \section*{Diagrama de contexto}
 El siguiente diagrama de contexto muestra los agentes involucrados en interacciones con una solución que se orienta a la automatización. 
@@ -96,12 +77,15 @@ Es importante destacar que en este caso estamos considerando la comunicación en
 
 \section*{Modelo de objetivos}
 \addcontentsline{toc}{subsection}{Modelo de objetivos}
+
+%\centering
+%\includegraphics[scale=0.5]{TP1 - Modelo de objetivos - Parte I.png}
+
 \subsection*{Objetivos}
 \addcontentsline{toc}{subsubsection}{Objetivos}
 \noindent
 
 El siguiente diagrama expresa algunos de los objetivos requeridos por la cadena y que consideramos troncales.
-
 
 \includegraphics[width=400pt]{imagenes/objetivos_principales.png}
 
@@ -178,41 +162,52 @@ Entre las pautas se menciona la necesidad de poder actualizar el menú y la rest
 
 \newpage
 \section*{Escenarios}
+El dia 29/02/2004 a las 12:47:59 entran simultaneamente al local de pizza Hack (sucursal barrio mitre) Alan Faina, 
+Sergio Mazza, Tom\'as Anchorena y Laura Oliva en busqueda de una buena sapi. 
+Alan se sienta en la mesa nro 1, Tomas en la mesa nro 2, Sergio Mazza en la 3 y Laura Oliva en la mesa 4. 
 
-El dia 29/02/2004 a las 12:47:59 entran simultaneamente al local de pizza Hack (sucursal barrio mitre) Alan Faina, Sergio Mazza, Tomas Anchorena y 4taPersona en busqueda de una buena sapi. Alan se sienta en la mesa nro 1, tomas en la mesa nro 2, sergio mazza en la 3 y la 4ta en la mesa 4. 
-\begin{itemize}\item
+Alan se dispone a pedir su pizza preferida, la de anchoas, toma entonces el men\'u electr\'onico que se encuentra sobre su mesa y
+mediante la secuencia de botones Comidas $\rightarrow$ Pizzas $\rightarrow$ Anchoas efectiviza su pedido y queda a la espera del mismo. El pedido se pudo 
+realizar porque el monitereo de stock indicaba que la cantidad de anchoas era suficiente para realizar la pizza y, por lo tanto, en el men\'u
+esta opci\'on le aparec\'ia a Alan como elegible. Sin embargo, el stock presente solo alcanzaba para una pizza de anchoas, por lo que (el agente
+que moniterea el stock) le avisa al personal de la pizzeria que es hora de comprar m\'as anchoas.
+
+Mientras tanto, en la mesa 2, Tomas Anchorena tambi\'en se dispone a pedir su pizza favorita que, al igual que Alan, se trata de la pizza de 
+anchoas. Sin embargo, siendo Tomas tan pulcro, no postergo el lavado de sus manos por lo que cuando volvio a su mesa, Alan ya habia realizado
+su pedido. Cuando entonces Tomas se dispone a pedir su ansiada pizza de anchoas, comienza a tocar la misma secuencia de botones que Alan. Sin embargo
+cuando entra al men\'u de pizzas, se encuentra que el bot\'on correspondiente a la pizza de anchoas esta en gris (es decir, que no es seleccionable).
+Tomas, desesperado por su pizza y conociendo el men\'u electr\'onico de la afamada pizzer\'ia, se fija si su pizza se encuentra disponible en otro
+local. Pero, al igual que el bot\'on anterior, el bot\'on que indica la opci\'on para pedir pizza en otra sucursal, tampoco se encuentra disponible.
+
+Tom\'as se retir\'a del local, triste por su pizza de anchoas, pero ya haciendosele agua la boca por la fugazzeta rellena de Banchero, su proxim\'o destino.
+
+ 
+\begin{itemize}
 \item pedir en otra sucursal e ir
-\item peidr en otra y no ir
-\item pedir y que no haya
-\item pedir y que haya y que el siguiente no tenga
-\item que se quede sin stock y pedir stock.
+\item pedir en otra y no ir
+\item faltaria pedir stock
 \end{itemize}
+
+%El dia 29/02/2004 a las 12:47:59 entran simultaneamente al local de pizza Hack (sucursal barrio mitre) Alan Faina, Sergio Mazza, Tomas Anchorena y 4taPersona en busqueda de una buena sapi. Alan se sienta en la mesa nro 1, tomas en la mesa nro 2, sergio mazza en la 3 y la 4ta en la mesa 4. 
+%\begin{itemize}\item
+%\item pedir en otra sucursal e ir
+%\item peidr en otra y no ir
+%\item pedir y que no haya
+%\item pedir y que haya y que el siguiente no tenga
+%\item que se quede sin stock y pedir stock.
+%\end{itemize}
 
 \newpage
 \section*{Discusi\'on}
 \addcontentsline{toc}{section}{Discusi\'on}
 
-Cosas que dijo la catedra:
-
-debe contener un análisis general de las distintas
-alternativas y su impacto en los objetivos blandos. NO DEBE SER una
-lista de lo que ya se puede desprender del diagrama. Debe ser un
-análisis más cualitativo y "a vuelo de pájaro" que permita entender
-este asunto en pocas palabras. Esta sección también es ideal para que
-vuelquen las cosas que puedan haberles quedado "flojas" o no cerradas
-del todo: por ejemplo los potenciales conflictos entre objetivos, los
-aspectos que podrían hacer que todo el sistema no funcione como
-desean, etc.
+\textbf{Cosas que dijo la catedra: debe contener un análisis general de las distintas alternativas y su impacto en los objetivos blandos. NO DEBE SER una lista de lo que ya se puede desprender del diagrama. Debe ser un análisis más cualitativo y "a vuelo de pájaro" que permita entender este asunto en pocas palabras. Esta sección también es ideal para quevuelquen las cosas que puedan haberles quedado "flojas" o no cerradasdel todo: por ejemplo los potencia les conflictos entre objetivos, los aspectos que podrían hacer que todo el sistema no funcione como desean, etc.}
 
 \newpage
 \section*{Conclusiones}
 \addcontentsline{toc}{section}{Conclusiones}
 
-Cosas que dijo la catedra:
-
-mencionar brevemente de qué formas les resultó más
-sencillo encarar el TP. Por ejemplo en qué orden realizaron los
-diagramas, qué aspectos presentaron las mayores dificultades, etc.
+\textbf{Cosas que dijo la catedra: mencionar brevemente de qué formas les resultó más sencillo encarar el TP. Por ejemplo en qué orden realizaron los diagramas, qué aspectos presentaron las mayores dificultades, etc.}
 
 
 
