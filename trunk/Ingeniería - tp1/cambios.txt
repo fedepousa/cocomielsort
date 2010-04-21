@@ -1,3 +1,4 @@
+---------------------------------------
 algunos Objetivos de comportamiento...
 
 0 Lograr [No cancelar pedidos]: para cumplir con este objetivo nos apoyamos fuertemente en el funcionamiento de los pedidos del local. Los pedidos se hacen únicamente cuando pueden hacerse según la disponibilidad en ese momento. Para ello los clientes deben conocer esta información en todo momento y esto lo hacen a través del menú. Por lo tanto es el menú el que debe mostrar esta restricción.
@@ -8,6 +9,10 @@ algunos Objetivos de comportamiento...
 
 1.1.2.1 Mantener[Lista de teléfonos de clientes con pedidos a distancia]: el sistema será el encargado de mantener una lista actualizada con los teléfonos de los clientes que tengan un pedido a distancia. Cuando uno de éstos pedidos sea entergado o cancelado la lista se actualizará de forma automática.
 
+Planteamos dos alternativas con respecto a esto, ambas se diferenciane en la extensión del terreno abarcado por nuestro sistema. Por un lado tenemos un Sistema de Modificación de Menú que funciona de forma independiente al software que estamos diseñanado y es el encargado de controlar el ingreso autorizado de un menú nuevo en una sucursal. Por otro lado directamente incluimos esta funcionalidad a nuestro software, lo cual nos parece más propicio.
+
+---------------------------------------
+---------------------------------------
 algunos Objetivos blandos...
 
 Lograr[Minimizar los tiempos de espera de los clientes]: para cumplir este objetivo planteamos 2 tiempos de espera en la atención del cliente. Por un lado tenemos el tiempo que pasa desde que un cliente entra al local hasta que el pedido que hace es ingresado al sistema (hacer la cola (ESTO LO PUSE POR CLARIDAD, PERO NO PODEMOS DISTINGUIR ESTO EN NUESTRO DIAGRAMA) , hacerle el pedido al mozo, quien es el encargado de ingresarlo al sistema). Por otro lado tenemos el tiempo en que tarda en entregarse el producto final.
@@ -15,29 +20,4 @@ Lograr[Minimizar los tiempos de espera de los clientes]: para cumplir este objet
 Lograr[Minimizar los tiempos de pedido]: este objetvio se refiere al tiempo concreto en que se hace un pedido, desde que se le informa al mozo o se selecciona una opción en el menú electrónico hasta que se ingresan esos datos al sistema.
 
 Lograr[Minimizar los tiempos de espera luego del pedido]: no podemos cumplir este objetivo dado que no tenemos ningún parámetro acerca del transcurso del tiempo en este desarrollo. Una opción interesante que consideramos es incluir a la cocina como un agente más y poder expresar el tiempo en función de distintas alternativas acerca de su funcionamiento.
-
------------------
-... cuando se explica el modelo de agentes modelo de agentes automático...
-
-\paragraph{Controlador de Stock Local:}
-El controlador de stock es la entidad física en donde se guarda el stock y en el cual se monitorea su nivel a través de sensores.
-\\
-\paragraph{Proveedor:}
-El proveedor es el encargado de reponer el stock a pedido de nuestro local. Incluye todo el sistema de compra y transporte de productos hasta el local.
-\\
-\paragraph{Menú Electrónico:}
-El menú electrónico consiste en un menú interactivo ofrecido a los usuarios a través de iPADs, los cuales son asignados de a uno por mesa. En éste pueden distinguirse las distintas variedades de productos (no únicamente pizzas, sino también bebidas y postres) y sus correspondientes precios. A su vez, en distintos colores se puede distinguir si el producto está o no disponible (es decir, si hay stock de ingredientes para preparalo) y si, en caso de que no haya, puede o no ser pedido en otro local en que sí haya stock, ofreciéndo al cliente la opción de elegir en qué local puede hacer el pedido.
-\\
-\paragraph{Cliente:}
-El cliente que entra al local. Se refiere tanto a individuos como a grupos.
-\\
-\paragraph{Personal:}
-Se refiere al conjunto de personas que trabajan en el local, éstos son: los mozos y el cajero.
-\\
-\paragraph{Sistema de sincronizacion de datos:}
-Es el sistema que permite la comunicación entre locales. A través de el el sistema del local puede interactuar con los sistemas de otros locales, posibilitanto pedidos a distancia y actualizaciones de menú.
-\\
-\paragraph{Sistema de modificación de menu:}
-
------------------
-... cuando se explica el modelo de agentes modelo de agentes manual...
+---------------------------------------
