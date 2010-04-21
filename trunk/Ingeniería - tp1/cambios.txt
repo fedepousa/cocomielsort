@@ -11,7 +11,7 @@ Objetivos de comportamiento
 
 Para poner por ahí antes de hablar del monitoreo de stock...:
 
-Nos vamos a preocupar precisamente de que el stock se encuentre actualizado en disponiblidad. Para ello, además de lograr mantener un monitoreo adecuado, debemos tener en cuenta los distintos eventos relativos al manejo de stock que puede acontecer  y plantear como cada uno de ellos afecta a la disponibilidad mencionada. Ellos se corresponden, por un lado, a reservar un stock dado para un pedido local o a distancia, por otro, a reponer el stock cuando éste se esté agotando y, por último, a lograr cancelar un pedido a distancia(y por lo tanto a la recuperación eventual de su stock asociado). El primero de ellos se reconoce en el diagrama en el objetivo Lograr[Reserva de stock inmediata] y  cumple fundamentalmente el rol de que el stock se encuentre actualizado ante un pedido. Este objetivo permite dirimir la cuestión acerca de si dos clientes hacen un pedido y había stock para uno solo, asunto que terminaba en que un pedido sea cancelado. \\
+Nos vamos a preocupar precisamente de que el stock se encuentre actualizado en disponiblidad. Para ello, además de lograr mantener un monitoreo adecuado, debemos tener en cuenta los distintos eventos relativos al manejo de stock que puede acontecer  y plantear como cada uno de ellos afecta a la disponibilidad mencionada. Ellos se corresponden, por un lado, a reservar un stock dado para un pedido local o a distancia, por otro, a reponer el stock cuando éste se esté agotando y, por último, a lograr cancelar un pedido a distancia(y por lo tanto a la recuperación eventual de su stock asociado). El primero de ellos se reconoce en el diagrama en el objetivo Lograr[Reserva de stock inmediata] y  cumple fundamentalmente el rol de que el stock se encuentre actualizado ante un pedido. Este objetivo permite dirimir la cuestión acerca de si dos clientes hacían un pedido y había stock para uno solo, asunto que terminaba en que un pedido sea cancelado. \\
 El segundo caso, será estudiado cuando nos refiramos al cumplimiento del objetivo 1.1.2, mientras que lo que ataña a la reposición de stock, será explicado a continuación, en donde nos enfocaremos en el objetivo 1.1.4.1.1.
 
 ---------------------------------------
@@ -23,6 +23,15 @@ Lograr[Minimizar los tiempos de espera de los clientes]: para cumplir este objet
 Lograr[Minimizar los tiempos de pedido]: este objetvio se refiere al tiempo concreto en que se hace un pedido, desde que se le informa al mozo o se selecciona una opción en el menú electrónico hasta que se ingresan esos datos al sistema.
 
 Lograr[Minimizar los tiempos de espera luego del pedido]: no podemos cumplir este objetivo dado que no tenemos ningún parámetro acerca del transcurso del tiempo en este desarrollo. Una opción interesante que consideramos es incluir a la cocina como un agente más y poder expresar el tiempo en función de distintas alternativas acerca de su funcionamiento.
+
+---------------------------------------
+Discusión
+---------------------------------------
+
+Solución mixta:
+Finalmente planteamos una nueva solución que abarcara los beneficios de las anteriores. Consiste en tener un menú electrónico y mozos que traigan los pedidos hechos a través de dicho menú. A esto sumamos un sistema de comunicación automatizado entre locales y un sistema de manejo de stock basado en la acción conjunta de personal y de software cuyo funcionamiento se encuentra detallado en la explicación del objetivo correspondiente. Este modelo permite cumplir de forma menos compleja los objetivos de comportamiento que los modelos anteriores por separado y permite satisfacer mayor cantidad de objetivos blandos.
+
+Puede que sea necesario porque lo dijo Guido, pero estamos siendo completamente redundantes en este punto, todo esto es perfectamete visible en los diagramas....
 
 ---------------------------------------
 Conclusión
