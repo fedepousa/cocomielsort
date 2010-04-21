@@ -35,7 +35,7 @@ El sistema pedido debe ser un sistema distribuido, es decir, debe operar en cada
 \newpage
 \section*{Presunciones}
 \addcontentsline{toc}{section}{Presunciones}
-
+En esta secci\'on se describen las cosas que se asumen que no pueden pasar o que pasan.\\
 \textbf{Cosas que dijo la catedra: acá deberían listar aquellas cuestiones que asumieron por encima del enunciado. Estas cuestiones pueden provenir de alguna consulta con docentes. También pueden provenir de alguna especulación o interpretación que el grupo hizo.}
 \\
 
@@ -71,9 +71,12 @@ Por otra parte, aún cuando el personal no hubiera registrado la escacez de un i
 
 Es importante destacar que en este caso estamos considerando la comunicación entre sucursales parte del sistema a desarrollarse. En este sentido este sistema no es completamente tolerante a fallas, ya que en el caso de falla por parte del proveedor de servicio de Internet, el sistema se vería inhabilitado para realizar operaciones entre sucursales. Se podría agregar un modo de funcionamiento manual, pero no garantizaría los beneficios del sistema automatizado y además agregaría costo en concepto de funcionalidades que sólo se utilizarían en caso de falla total del servicio de Internet. 
 
-\includegraphics[width=400pt]{imagenes/agentes_automatico.png}
 
-
+\begin{figure}[H]
+\centering
+\subfloat{\includegraphics[width=1.2\textwidth]{imagenes/agentes_automatico.png}}
+\caption{Objetivos principales}
+\end{figure}
 
 \section*{Modelo de objetivos}
 \addcontentsline{toc}{subsection}{Modelo de objetivos}
@@ -87,7 +90,11 @@ Es importante destacar que en este caso estamos considerando la comunicación en
 
 El siguiente diagrama expresa algunos de los objetivos requeridos por la cadena y que consideramos troncales.
 
-\includegraphics[width=400pt]{imagenes/objetivos_principales.png}
+\begin{figure}[H]
+\centering
+\subfloat{\includegraphics[width=1.3\textwidth]{imagenes/objetivos_principales.png}}
+\caption{Objetivos principales}
+\end{figure}
 
 Los objetivos planteados garantizan que un pedido no será cancelado una vez confirmado. Es decir, un pedido no será cancelado por falta de ingredientes para prepararlo. 
 
@@ -95,7 +102,11 @@ Para lograr esto proponemos que el menú sólo muestre variedades de pizza dispo
 
 El objetivo de mantener el menú actualizado en cuanto a disponibilidad plantea a su vez varios objetivos relacionados, por lo que a continuación nos extendemos en su descripción.
 
-\includegraphics[width=400pt]{imagenes/objetivos_menu.png}
+\begin{figure}[H]
+\centering
+\subfloat{\includegraphics[width=1.3\textwidth]{imagenes/objetivos_menu.png}}
+\caption{Objetivos principales}
+\end{figure}
 
 Como se puede apreciar, surge una gran cantidad de objetivos en algún sentido más simples, algunos de los cuáles consideramos que pueden ser concretados por un agente en particular. En estas asignaciones de objetivos van a surgir las diferentes variantes de la solución propuesta. 
 
@@ -131,9 +142,11 @@ Por último, si los clientes pagaran su pedido en la sucursal en la que se encue
 Más adelante retomaremos el objetivo 1.3.1.1, referido a la comunicación entre locales.
 El resto de los objetivos tienen nombres lo suficientemente explicativos, por lo que vamos a retomar los objetivos planteados por la cadena.
 
-
-
-\includegraphics[width=400pt]{imagenes/objetivos_menu_estandarizado.png}
+\begin{figure}[H]
+\centering
+\subfloat{\includegraphics[width=1.3\textwidth]{imagenes/objetivos_menu_estandarizado.png}}
+\caption{Objetivos principales}
+\end{figure}
 
 Entre las pautas se menciona la necesidad de poder actualizar el menú y la restricción de que el menú sea el mismo para todas las sucursales. A continuación nos enfocamos en cómo mantener un menú estandarizado.
 
