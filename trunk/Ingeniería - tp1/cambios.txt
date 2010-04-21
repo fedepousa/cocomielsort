@@ -1,5 +1,6 @@
 ---------------------------------------
-algunos Objetivos de comportamiento...
+Objetivos de comportamiento
+---------------------------------------
 
 0 Lograr [No cancelar pedidos]: para cumplir con este objetivo nos apoyamos fuertemente en el funcionamiento de los pedidos del local. Los pedidos se hacen únicamente cuando pueden hacerse según la disponibilidad en ese momento. Para ello los clientes deben conocer esta información en todo momento y esto lo hacen a través del menú. Por lo tanto es el menú el que debe mostrar esta restricción.
 
@@ -12,12 +13,23 @@ algunos Objetivos de comportamiento...
 Planteamos dos alternativas con respecto a esto, ambas se diferenciane en la extensión del terreno abarcado por nuestro sistema. Por un lado tenemos un Sistema de Modificación de Menú que funciona de forma independiente al software que estamos diseñanado y es el encargado de controlar el ingreso autorizado de un menú nuevo en una sucursal. Por otro lado directamente incluimos esta funcionalidad a nuestro software, lo cual nos parece más propicio.
 
 ---------------------------------------
+Objetivos blandos
 ---------------------------------------
-algunos Objetivos blandos...
 
 Lograr[Minimizar los tiempos de espera de los clientes]: para cumplir este objetivo planteamos 2 tiempos de espera en la atención del cliente. Por un lado tenemos el tiempo que pasa desde que un cliente entra al local hasta que el pedido que hace es ingresado al sistema (hacer la cola (ESTO LO PUSE POR CLARIDAD, PERO NO PODEMOS DISTINGUIR ESTO EN NUESTRO DIAGRAMA) , hacerle el pedido al mozo, quien es el encargado de ingresarlo al sistema). Por otro lado tenemos el tiempo en que tarda en entregarse el producto final.
 
 Lograr[Minimizar los tiempos de pedido]: este objetvio se refiere al tiempo concreto en que se hace un pedido, desde que se le informa al mozo o se selecciona una opción en el menú electrónico hasta que se ingresan esos datos al sistema.
 
 Lograr[Minimizar los tiempos de espera luego del pedido]: no podemos cumplir este objetivo dado que no tenemos ningún parámetro acerca del transcurso del tiempo en este desarrollo. Una opción interesante que consideramos es incluir a la cocina como un agente más y poder expresar el tiempo en función de distintas alternativas acerca de su funcionamiento.
+
 ---------------------------------------
+Discusión
+---------------------------------------
+
+Originalmente planteamos la idea de que hubiese mozos que atendieran a los clientes al ofrecerles un menú cantado. Básicamente la idea consistía en que los mozos conocían el menú del día y ofrecían a los clientes las opciones a elegir. De esto surgieron varios problemas a considerar, siendo el más grave de ellos el hecho de que, dado que los mozos no tienen datos actualizados del stock y a dado que cada mozo hace su pedido a la cocina de forma independiente, se pudiesen hacer dos o más pedidos de forma simultánea cuando hubiera stock para sólo uno de ellos, de forma tal que se estaría violando el objetivo referente a no poder cancelar pedidos. Planteamos, a su vez, alternativas para solucionar este inconviente, como establecer un cierto protocolo para los pedidos que consistiera en que un cliente pediría un plato al mozo, este verificaría que hubiese stock y, en caso de haberlo, ordenaría efectivamente el pedido, y, en caso contrario, notificaría al cliente de la situación. Otra alternativa consistía en establecer un orden para los pedidos, de forma tal que quien entró primero al local tiene prioridad sobre los que entraron luego que él. De esta forma tampoco permitiríamos que los pedidos puedan ser cancelados, porque el stock del momento únicamente puede ser modificado por el pedido de un cliente particular. De esta índole surgieron varias opciones (tener un stock asociado a los pedidos que se le hiciesen a cada mozo) sobre las que no exploramos mucho más.
+
+---------------------------------------
+Conclusión
+---------------------------------------
+
+Originalmente comenzamos planteando alternadamente los fenómenos y el modelo de objetivos. El modelo de agentes quedó relegado a ser terminado hacia el final del desarrollo. El modelo de objetivos nos pareció la mejor manera de plantear el problema, dado que nos guiamos fuertemente de las aserciones dadas por el enunciado.
