@@ -42,7 +42,7 @@ en disponibilidad  (local y global)]</y:NodeLabel>
           <y:Geometry height="55.888671875" width="139.2265625" x="337.9330736674842" y="93.97435023675501"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="45.888671875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="99.2265625" x="20.0" y="5.0">Mantener [No se
+          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="45.888671875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="114.34375" x="12.44140625" y="5.0">0: Mantener [No se
 pueden cancelar
 pedidos]</y:NodeLabel>
           <y:Shape type="parallelogram"/>
