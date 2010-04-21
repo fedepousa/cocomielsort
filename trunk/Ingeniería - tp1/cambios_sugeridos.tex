@@ -50,6 +50,7 @@ En esta secci\'on se describen las cosas que se asumen que no pueden pasar o que
 \textbf{Cosas que dijo la catedra: está sería la parte principal del TP. Acá irían los diagramas y los escenarios representativos de uso. No necesariamente tiene que ser una gran sección, sino que pueden partirla por funcionalidades y a su vez por tipo de vista o de la forma que crean más pertinente. Esta sección NO DEBE SER una simple seguidilla de figuras sueltas. Debe estar acompañada de tantas explicaciones como sean necesarias para que se aprecie un hilo conductor.}
 
 \section*{Diagrama de contexto}
+\section*{1}
 El siguiente diagrama de contexto muestra los agentes involucrados en interacciones con una solución que se orienta a la automatización. 
 
 \paragraph{Proveedor:}
@@ -70,12 +71,38 @@ La solución presentada en general prioriza la satisfacción del cliente, ya que
 Por otra parte, aún cuando el personal no hubiera registrado la escacez de un ingrediente, el sistema lo informaría logrando la reposición del mismo. Debido a posibles imprecisiones en las cantidades de ingredientes registradas para cada receta es necesario que el personal periódicamente haga un inventario completo de las existencias y actualice las cantidades disponibles mediante una interfaz gráfica que será provista por el software.
 
 Es importante destacar que en este caso estamos considerando la comunicación entre sucursales parte del sistema a desarrollarse. En este sentido este sistema no es completamente tolerante a fallas, ya que en el caso de falla por parte del proveedor de servicio de Internet, el sistema se vería inhabilitado para realizar operaciones entre sucursales. Se podría agregar un modo de funcionamiento manual, pero no garantizaría los beneficios del sistema automatizado y además agregaría costo en concepto de funcionalidades que sólo se utilizarían en caso de falla total del servicio de Internet. 
+\begin{figure}[H]
+\centering
+\subfloat{\includegraphics[width=1.2\textwidth]{imagenes/agentes_automatico.png}}
+\caption{Diagrama de contexto orientación automatización.}
+\end{figure}
+
+\section*{2}
+El siguiente diagrama de contexto muestra los agentes involucrados en interacciones con una solución que se orienta a la automatización. 
+El siguiete diagrama de contexto muestra los agentes involucrados en la interaccion con una solucion orientada a mecanismos manuales
+
+
+\paragraph{Proveedor:}
+El proveedor es el encargado de reponer el stock a pedido de nuestro local. Incluye todo el sistema de compra y transporte de productos hasta el local.
+\\
+\paragraph{Personal:}
+Se refiere a todo el conjunto de personas empleadas en el local. El conjunto tiene una gran interacción con la maquina y con el cliente dado que debe cumplir varias funciones. Actualizar nivel de stock, cuando se hace una nueva compra debe registrarse el cambio. Debe ingresar un pedido al sistema (proveniente de un cliente) para que este evalue si puede o no satisfacerlo. Debe registrar el pago de un cliente. Recibe la confirmación de satisfacción por parte del software, que le indica que puede confirmarle el pedido a un cliente. Tiene también la tarea de pedir al proveedor lo que haga falta corroborando el estado del stock. Debe llevar/recibir/confirmar/servir un pedido.Tiene el deber de actualizar el menu cuando lo crea pertinente.
+\\
+\paragraph{Cliente:}
+Se refiere al conjunto de personas que trabajan en el local, éstos son: los mozos, el cajero y los cocineros.
+\\
+\paragraph{Menu impreso:}
+En esta familia de soluciones, contamos con un menu impreso que debe ser actualizado en todo momento para seguir siendo consistente con la realidad. Cada vez que se quiere actualizar debe ser reeimpreso.
+\\
+\paragraph{Motopizza:}
+Sistema de humanos de altacomplejidad encargado de realizar diversas tareas. Debe encargarse de actualizar los datos que vienen de afuera, para esto recorre todas las demas sucursales (lo que puede actualizar con, cambios de menu y peticiones de pedidos) Ademas debe recorrer pizzerias para informar que va un cliente si es posible y propagar el menu local. Ese sistema es sumamente ineficiente.
+
 
 
 \begin{figure}[H]
 \centering
-\subfloat{\includegraphics[width=1.2\textwidth]{imagenes/agentes_automatico.png}}
-\caption{Objetivos principales}
+\subfloat{\includegraphics[width=1.2\textwidth]{imagenes/agentes_manual.png}}
+\caption{Diagrama de contexto orientación automatización.}
 \end{figure}
 
 \section*{Modelo de objetivos}
