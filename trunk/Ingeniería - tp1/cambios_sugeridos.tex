@@ -48,91 +48,9 @@ de pensar las posibles soluciones y no tener la necesidad de analizar las infini
 \addcontentsline{toc}{section}{Vistas}
 
 En esta secci\'on se propondran las soluciones discutidas por el grupo, mediante los diferentes modelos vistos en la materia. Se comenzar\'a con
-el modelo de agentes y sus respectivos diagramas de contexto, y luego se mostrar\'an los diagramas de objetivos.
-
-
-\subsection*{Modelo de Agentes}
-\addcontentsline{toc}{subsection}{Modelo de Agentes}
-
-El modelo de agentes se caracteriza por sus diagramas de contexto, en los cuales se muestran los diferentes agentes que actuan en la solucionar y,
-a la vez, se muestra la interacci\'on que existe entre estos agentes mediante los fen\'omenos que los relacionan. Dicho esto, se desprende que un
-diagrama de contexto solo muestra una posible soluci\'on ya que se trata de una visi\'on global del sistema. Es por esto que se presentan diferentes
-diagramas de contexto seg\'un la soluci\'on discutida.
-
-\subsubsection*{Primer Diagrama de Contexto}
-\addcontentsline{toc}{subsubsection}{Primer Diagrama de Contexto}
-El siguiente diagrama de contexto muestra los agentes involucrados en interacciones con una solución que se orienta a la automatización de la 
-mayor\'ia de los problemas a resolver.
-
-\begin{figure}[H]
-\centering
-\subfloat{\includegraphics[width=1.2\textwidth]{imagenes/agentes_automatico.png}}
-\caption{Diagrama de contexto orientación automatización.}
-\end{figure}
-
-\paragraph{Proveedor:}
-El proveedor es el encargado de reponer el stock a pedido de nuestro local. Incluye todo el sistema de compra y transporte de productos hasta el local.
-\\
-\paragraph{Menú Electrónico:}
-El menú electrónico consiste en un menú interactivo ofrecido a los usuarios a través de iPADs, los cuales son asignados de a uno por mesa. En éste pueden distinguirse las distintas variedades de productos (no únicamente pizzas, sino también bebidas y postres) y sus correspondientes precios. A su vez, en distintos colores se puede distinguir si el producto está o no disponible (es decir, si hay stock de ingredientes para preparalo) y si, en caso de que no haya, puede o no ser pedido en otro local en que sí haya stock, ofreciéndo al cliente la opción de elegir en qué local puede hacer el pedido.
-\\
-\paragraph{Cliente:}
-El cliente que entra al local. Se refiere tanto a individuos como a grupos.
-\\
-\paragraph{Personal:}
-Se refiere al conjunto de personas que trabajan en el local, éstos son: los mozos, el cajero y los cocineros.
-\\
-
-La solución presentada en general prioriza la satisfacción del cliente, ya que al ocuparse el software de manera casi íntegra del manejo de stock, resulta posible descontar inmediatamente la disponibilidad de un determinado ingrediente al registrarse un pedido, incluso antes de iniciarse su preparación. Esto evita que al ocurrir varios pedidos concurrentes se acepten pedidos para los cuáles no se dispone de stock suficiente.
-
-Por otra parte, aún cuando el personal no hubiera registrado la escacez de un ingrediente, el sistema lo informaría logrando la reposición del mismo. Debido a posibles imprecisiones en las cantidades de ingredientes registradas para cada receta es necesario que el personal periódicamente haga un inventario completo de las existencias y actualice las cantidades disponibles mediante una interfaz gráfica que será provista por el software.
-
-Es importante destacar que en este caso estamos considerando la comunicación entre sucursales parte del sistema a desarrollarse. En este sentido este sistema no es completamente tolerante a fallas, ya que en el caso de falla por parte del proveedor de servicio de Internet, el sistema se vería inhabilitado para realizar operaciones entre sucursales. Se podría agregar un modo de funcionamiento manual, pero no garantizaría los beneficios del sistema automatizado y además agregaría costo en concepto de funcionalidades que sólo se utilizarían en caso de falla total del servicio de Internet. 
-
-
-
-\subsubsection*{Segundo Diagrama de Contexto}
-\addcontentsline{toc}{subsubsection}{Segundo Diagrama de Contexto}
-
-En este caso, el siguiete diagrama de contexto muestra los agentes involucrados en la interaccion con una solucion orientada a mecanismos manuales.
-
-\begin{figure}[H]
-\centering
-\subfloat{\includegraphics[width=1.2\textwidth]{imagenes/agentes_manual.png}}
-\caption{Diagrama de contexto orientación manual.}
-\end{figure}
-
-\paragraph{Proveedor:}
-El proveedor es el encargado de reponer el stock a pedido de nuestro local. Incluye todo el sistema de compra y transporte de productos hasta el local.
-\\
-\paragraph{Personal:}
-Se refiere a todo el conjunto de personas empleadas en el local. El conjunto tiene una gran interacción con la maquina y con el cliente dado que debe cumplir varias funciones. Actualizar nivel de stock, cuando se hace una nueva compra debe registrarse el cambio. Debe ingresar un pedido al sistema (proveniente de un cliente) para que este evalue si puede o no satisfacerlo. Debe registrar el pago de un cliente. Recibe la confirmación de satisfacción por parte del software, que le indica que puede confirmarle el pedido a un cliente. Tiene también la tarea de pedir al proveedor lo que haga falta corroborando el estado del stock. Debe llevar/recibir/confirmar/servir un pedido.Tiene el deber de actualizar el menu cuando lo crea pertinente.
-\\
-\paragraph{Cliente:}
-Se refiere al cliente que entra al local, tanto a individuos como a grupos.
-\\
-\paragraph{Menu impreso:}
-En esta familia de soluciones, contamos con un menu impreso que debe ser actualizado en todo momento para seguir siendo consistente con la realidad. Cada vez que se quiere actualizar debe ser reeimpreso.
-\\
-\paragraph{Motopizza:}
-Sistema de humanos de alta complejidad encargado de realizar diversas tareas. Debe encargarse de actualizar los datos que vienen de afuera, para esto recorre todas las demas sucursales (lo que puede actualizar son los cambios de menu y peticiones de pedidos) Ademas debe recorrer pizzerias para informar que va un cliente si es posible y propagar el menu local. Ese sistema es sumamente ineficiente.
-El mismo nace como una opci\'on tolerante a fallas de la soluci\'on informatizada de este grupo de objetivos.
-
-
-
-\subsubsection*{Otras alternativas} 
-\addcontentsline{toc}{subsubsection}{Otras alternativas}
-
-En los dos diagramas de contexto anteriores se plasmaron combinaciones espec\'ificas de las soluciones pensadas para los diferentes grupos de
-objetivos. Si bien fueron presentados solo dos diagramas de contexto, se podr\'ian realizar muchisimos m\'as mediante la combinaci\'on de las 
-soluciones propuestas. Por ejemplo, se podr\'ia idear otro diagrama de contexto, en donde se tenga un sistema de comunicaciones sofisticado resolviendo
-todos los problemas de comunicaci\'on, en combinaci\'on con un menu impreso para cada mesa, soluci\'on tan valida como las anteriores.
-
-Por una cuestion de espacio, no se presentan todas las combinaciones posibles, ya que adem\'as no parece aportar nada m\'as a la descripci\'on
-de la soluci\'on, dado que los agentes ser\'ian los mismos, pero combinados de otra manera.
-
-
-
+el diagrama de objetivo dado que en un mismo diagrama se presentan las diferentes opciones para solucionar un problema mediante un
+O-refinamiento y tambi\'en se presentan como estas soluciones m\'as chicas interact\'uan para generar una soluci\'on m\'as grande mediante los 
+Y-refinamientos. Luego se mostrar\'an los diagramas de contextos con la interacci\'on de los agentes en algunas combinaciones de soluciones.
 
 \section*{Modelo de objetivos}
 \addcontentsline{toc}{subsection}{Modelo de objetivos}
@@ -247,11 +165,98 @@ Son una solución que aprovecha la tradicional atención personalizada que, aunq
 
 Por último un menú impreso que fuera reemplazado con cada cambio de disponibilidad o de variedades es otra opción. Dependiendo de la frecuencia de la ocurrencia de estos eventos podría ser una solución muy conveniente. 
 
+\bigskip
+
+\subsection*{Modelo de Agentes}
+\addcontentsline{toc}{subsection}{Modelo de Agentes}
+
+El modelo de agentes se caracteriza por sus diagramas de contexto, en los cuales se muestran los diferentes agentes que actuan en la solucionar y,
+a la vez, se muestra la interacci\'on que existe entre estos agentes mediante los fen\'omenos que los relacionan. Dicho esto, se desprende que un
+diagrama de contexto solo muestra una posible soluci\'on ya que se trata de una visi\'on global del sistema. Es por esto que se presentan diferentes
+diagramas de contexto seg\'un la soluci\'on discutida.
+
+\subsubsection*{Primer Diagrama de Contexto}
+\addcontentsline{toc}{subsubsection}{Primer Diagrama de Contexto}
+El siguiente diagrama de contexto muestra los agentes involucrados en interacciones con una solución que se orienta a la automatización de la 
+mayor\'ia de los problemas a resolver.
+
+\begin{figure}[H]
+\centering
+\subfloat{\includegraphics[width=1.2\textwidth]{imagenes/agentes_automatico.png}}
+\caption{Diagrama de contexto orientación automatización.}
+\end{figure}
+
+\paragraph{Proveedor:}
+El proveedor es el encargado de reponer el stock a pedido de nuestro local. Incluye todo el sistema de compra y transporte de productos hasta el local.
+\\
+\paragraph{Menú Electrónico:}
+El menú electrónico consiste en un menú interactivo ofrecido a los usuarios a través de iPADs, los cuales son asignados de a uno por mesa. En éste pueden distinguirse las distintas variedades de productos (no únicamente pizzas, sino también bebidas y postres) y sus correspondientes precios. A su vez, en distintos colores se puede distinguir si el producto está o no disponible (es decir, si hay stock de ingredientes para preparalo) y si, en caso de que no haya, puede o no ser pedido en otro local en que sí haya stock, ofreciéndo al cliente la opción de elegir en qué local puede hacer el pedido.
+\\
+\paragraph{Cliente:}
+El cliente que entra al local. Se refiere tanto a individuos como a grupos.
+\\
+\paragraph{Personal:}
+Se refiere al conjunto de personas que trabajan en el local, éstos son: los mozos, el cajero y los cocineros.
+\\
+
+La solución presentada en general prioriza la satisfacción del cliente, ya que al ocuparse el software de manera casi íntegra del manejo de stock, resulta posible descontar inmediatamente la disponibilidad de un determinado ingrediente al registrarse un pedido, incluso antes de iniciarse su preparación. Esto evita que al ocurrir varios pedidos concurrentes se acepten pedidos para los cuáles no se dispone de stock suficiente.
+
+Por otra parte, aún cuando el personal no hubiera registrado la escacez de un ingrediente, el sistema lo informaría logrando la reposición del mismo. Debido a posibles imprecisiones en las cantidades de ingredientes registradas para cada receta es necesario que el personal periódicamente haga un inventario completo de las existencias y actualice las cantidades disponibles mediante una interfaz gráfica que será provista por el software.
+
+Es importante destacar que en este caso estamos considerando la comunicación entre sucursales parte del sistema a desarrollarse. En este sentido este sistema no es completamente tolerante a fallas, ya que en el caso de falla por parte del proveedor de servicio de Internet, el sistema se vería inhabilitado para realizar operaciones entre sucursales. Se podría agregar un modo de funcionamiento manual, pero no garantizaría los beneficios del sistema automatizado y además agregaría costo en concepto de funcionalidades que sólo se utilizarían en caso de falla total del servicio de Internet. 
+
+
+
+\subsubsection*{Segundo Diagrama de Contexto}
+\addcontentsline{toc}{subsubsection}{Segundo Diagrama de Contexto}
+
+En este caso, el siguiete diagrama de contexto muestra los agentes involucrados en la interaccion con una solucion orientada a mecanismos manuales.
+
+\begin{figure}[H]
+\centering
+\subfloat{\includegraphics[width=1.2\textwidth]{imagenes/agentes_manual.png}}
+\caption{Diagrama de contexto orientación manual.}
+\end{figure}
+
+\paragraph{Proveedor:}
+El proveedor es el encargado de reponer el stock a pedido de nuestro local. Incluye todo el sistema de compra y transporte de productos hasta el local.
+\\
+\paragraph{Personal:}
+Se refiere a todo el conjunto de personas empleadas en el local. El conjunto tiene una gran interacción con la maquina y con el cliente dado que debe cumplir varias funciones. Actualizar nivel de stock, cuando se hace una nueva compra debe registrarse el cambio. Debe ingresar un pedido al sistema (proveniente de un cliente) para que este evalue si puede o no satisfacerlo. Debe registrar el pago de un cliente. Recibe la confirmación de satisfacción por parte del software, que le indica que puede confirmarle el pedido a un cliente. Tiene también la tarea de pedir al proveedor lo que haga falta corroborando el estado del stock. Debe llevar/recibir/confirmar/servir un pedido.Tiene el deber de actualizar el menu cuando lo crea pertinente.
+\\
+\paragraph{Cliente:}
+Se refiere al cliente que entra al local, tanto a individuos como a grupos.
+\\
+\paragraph{Menu impreso:}
+En esta familia de soluciones, contamos con un menu impreso que debe ser actualizado en todo momento para seguir siendo consistente con la realidad. Cada vez que se quiere actualizar debe ser reeimpreso.
+\\
+\paragraph{Motopizza:}
+Sistema de humanos de alta complejidad encargado de realizar diversas tareas. Debe encargarse de actualizar los datos que vienen de afuera, para esto recorre todas las demas sucursales (lo que puede actualizar son los cambios de menu y peticiones de pedidos) Ademas debe recorrer pizzerias para informar que va un cliente si es posible y propagar el menu local. Ese sistema es sumamente ineficiente.
+El mismo nace como una opci\'on tolerante a fallas de la soluci\'on informatizada de este grupo de objetivos.
+
+
+
+\subsubsection*{Otras alternativas} 
+\addcontentsline{toc}{subsubsection}{Otras alternativas}
+
+En los dos diagramas de contexto anteriores se plasmaron combinaciones espec\'ificas de las soluciones pensadas para los diferentes grupos de
+objetivos. Si bien fueron presentados solo dos diagramas de contexto, se podr\'ian realizar muchisimos m\'as mediante la combinaci\'on de las 
+soluciones propuestas. Por ejemplo, se podr\'ia idear otro diagrama de contexto, en donde se tenga un sistema de comunicaciones sofisticado resolviendo
+todos los problemas de comunicaci\'on, en combinaci\'on con un menu impreso para cada mesa, soluci\'on tan valida como las anteriores.
+
+Por una cuestion de espacio, no se presentan todas las combinaciones posibles, ya que adem\'as no parece aportar nada m\'as a la descripci\'on
+de la soluci\'on, dado que los agentes ser\'ian los mismos, pero combinados de otra manera.
+
+
+
+
+
+
 \newpage
 \section*{Escenarios}
 
 Este es un posible escenario de uso, si bien en todo el tp la idea es mostrar variantes para las soluciones, las cuales ser\'ian presentadas 
-ante el cliente en cuesti\'on, en este escenario se opt\'o por una soluci\'on en particular para representar como ser\'ia un caso particular.
+ante el cliente en cuesti\'on, en este escenario se opt\'o por una soluci\'on para representar como ser\'ia un caso particular.
 
 
 
@@ -275,10 +280,10 @@ local. Pero, al igual que el bot\'on anterior, el bot\'on que indica la opci\'on
 Tom\'as se retir\'a del local, triste por su pizza de anchoas, pero ya haciendosele agua la boca por la fugazzeta rellena de Banchero, su proxim\'o destino.
 
 Por otro lado, Sergio Masa ya se prepara para realizar su pedido en la mesa n\'umero 3. Aunque le cuesta decidirse entre la pizza de morrones
-y la de champignones, decide ir con la segunda. Cuando Sergio toma su men\'u electr\'onico para pedir la pizza, se da cuenta que el bot\'on 
+y la de champignones, decide ir con la primera. Cuando Sergio toma su men\'u electr\'onico para pedir la pizza, se da cuenta que el bot\'on 
 correspondiente a su elecci\'on no se encuentra en estado seleccionable pero le llama la atenci\'on el bot\'on que se encuentra a un costado. Este
-bot\'on predica \"Ver disponibilidad en otro local\". Sergio toca este bot\'on y en la pantalla aparece un cartel que dice: \"Su variedad se encuentra
-disponible en el local Belgrano, desea Ordenar?\". Sergio muy contento por tener una opci\'on a la falta de morrones en el local, ordena remotamente su pizza
+bot\'on predica (Ver disponibilidad en otro local). Sergio toca este bot\'on y en la pantalla aparece un cartel que dice: (Su variedad se encuentra
+disponible en el local Belgrano, desea Ordenar?). Sergio muy contento por tener una opci\'on a la falta de morrones en el local, ordena remotamente su pizza
 en el local de Belgrano y se dispone a ir a buscarla. 
 
 En ese momento, el pedido de la pizza de morrones llega al local de belgrano y se reserva el pedido, actualizando el stock de la manera adecuada.
@@ -304,19 +309,45 @@ al stock del local, una pizza menos vendida pero por lo menos no se perdieron lo
 \section*{Discusi\'on}
 \addcontentsline{toc}{section}{Discusi\'on}
 
-\textbf{Cosas que dijo la catedra: debe contener un análisis general de las distintas alternativas y su impacto en los objetivos blandos. NO DEBE SER una lista de lo que ya se puede desprender del diagrama. Debe ser un análisis más cualitativo y "a vuelo de pájaro" que permita entender este asunto en pocas palabras. Esta sección también es ideal para quevuelquen las cosas que puedan haberles quedado "flojas" o no cerradasdel todo: por ejemplo los potencia les conflictos entre objetivos, los aspectos que podrían hacer que todo el sistema no funcione como desean, etc.}
 Para la resoluci\'on de este sistema se presentaron distintas alternativas contemplando diversos presupuestos. Las soluciones propuestas son las siguientes:
 \begin{itemize}
-\item Local manual: se basa en que haya mozos que presenten el men\'u de forma oral.
-\item Local automatizado: se basa en brindar en cada mesa un men\'u electronico.
-\item Local mixto: se basa en una mezcla entre el manual y el automatizado, es decir, que en la caja haya un men\'u electronico que es presentado por mozos en cada mesa.
+\item Local manual: Se basa en que la mayor\'ia de la soluciones sean intervenidas por personal y que la interacci\'on con la m\'aquina del mismo sea fuerte.
+Siendo los principales objetivos de la maquina, mantener la comunicaci\'on y proveer herramientas para la organizaci\'on del stock por ejemplo.
+\item Local automatizado: Se basa en que las soluciones sean mayormente autom\'aticas tanto en el men\'u electr\'onico, como la comunicaci\'on entre locales, como el manejo del stock.
+\item Local mixto: Se basa en una mezcla entre el manual y el automatizado. Un caso para esto, ser\'ia por ejemplo tener un men\'u electr\'onico pero que todo lo referente al manejo del stock fuese realizado por personal.
 \end{itemize}
 
 
-Con el men\'u electronico la idea es que a nivel presupuesto sea un gasto grande una vez y despues un minimo costo de mantenimiento. Por otro lado, con este tipo de men\'u la idea es que se pueda lograr minimizar los tiempos de pedido(objetivo blando), permitiendo eficientemente que cada cliente pueda ver y elegir lo que va a pedir a penas se sientan a la mesa y no tener que esperar a que un mozo los pueda atender. De esta forma se puede lograr satisfacci\'on de los clientes por la velocidad (objetivo blando). 
+Con el men\'u electronico la idea es que a nivel presupuesto sea un gasto grande una vez y despues un minimo costo de mantenimiento. 
+Por otro lado, con este tipo de men\'u la idea es que se pueda lograr minimizar los tiempos de pedido(objetivo blando), 
+permitiendo eficientemente que cada cliente pueda ver y elegir lo que va a pedir a penas se sientan a la mesa y no tener que esperar a 
+que un mozo los pueda atender. De esta forma se puede lograr satisfacci\'on de los clientes por la velocidad (objetivo blando). 
 
 
-Originalmente se planteo la idea de que hubiese mozos que atendieran a los clientes al ofrecerles un menú cantado. Básicamente la idea consistía en que los mozos conocían el menú del día y ofrecían a los clientes las opciones a elegir. De esto surgieron varios problemas a considerar, siendo el más grave de ellos el hecho de que, dado que los mozos no tienen datos actualizados del stock y a dado que cada mozo hace su pedido a la cocina de forma independiente, se pudiesen hacer dos o más pedidos de forma simultánea cuando hubiera stock para sólo uno de ellos, de forma tal que se estaría violando el objetivo referente a no poder cancelar pedidos. Se plantearon, a su vez, alternativas para solucionar este inconviente, como establecer un cierto protocolo para los pedidos que consistiera en que un cliente pediría un plato al mozo, este verificaría que hubiese stock y, en caso de haberlo, ordenaría efectivamente el pedido, y, en caso contrario, notificaría al cliente de la situación. Otra alternativa consistía en establecer un orden para los pedidos, de forma tal que quien entró primero al local tiene prioridad sobre los que entraron luego que él. De esta forma tampoco se permitiría que los pedidos puedan ser cancelados, porque el stock del momento únicamente puede ser modificado por el pedido de un cliente particular. De esta índole surgieron varias opciones (tener un stock asociado a los pedidos que se le hiciesen a cada mozo) sobre las que no exploramos mucho más.
+Originalmente se planteo la idea de que hubiese mozos que atendieran a los clientes al ofrecerles un menú cantado.
+ Básicamente la idea consistía en que los mozos conocían el menú del día y ofrecían a los clientes las opciones a elegir.
+ De esto surgieron varios problemas a considerar, siendo el más grave de ellos el hecho de que, dado que los mozos no tienen datos
+ actualizados del stock y a dado que cada mozo hace su pedido a la cocina de forma independiente, se pudiesen hacer dos o más pedidos de
+ forma simultánea cuando hubiera stock para sólo uno de ellos, de forma tal que se estaría violando el objetivo referente a no poder 
+cancelar pedidos. Sin embargo esto no resulta un problema al fin y al cabo, ya que se puede asumir que un pedido se toma como tal, una vez
+que el mozo le confirma al cliente que esa pizza esta disponible. Si bien finalmente tener mozos no genera ning\'un problema contra los objetivos
+principales, si tienen mucho impacto en los objetivos blandos. El hecho de tener un mozo difiere fuertemente en presentar un men\'u electr\'onico.
+El objetivo blando respecto de la satisfacci\'on del cliente podr\'ia verse ayudado o perjudicado por la presencia de un mozo dependiendo el
+tipo de cliente. No todas las personas aceptan con naturalidad un dispositivo electr\'onico que resulte de intermediario, prefiriendo un persona. Pero
+tambi\'en muchas personas si podr\'ia preferir que no haya mozo, dado que, si se usa correctamente, este dispositivo presentar\'ia una mayor velocidad
+a la hora de realizar un pedido.
+
+El punto anteriormente mencionado resulta de gran complejidad de an\'alisis en el mundo real y deber\'ia estar asociado a una consulta con el
+experto de dominio para saber que tipo de p\'ublico concurrir\'a a la pizzeria, para de esta manera poder optar por la mejor soluci\'on.
+
+Por otro lado, esta elecci\'on tambi\'en tiene impacto sobre otro objetivo blando que, si bien no aparece en el enunciado, podr\'ia ser perfectamente valido.
+El mismo se refiere al costo de mantenimiento. Si bien los dispositivos electr\'onicos podr\'ian resultar en una gran inversi\'on en un primer momento,
+abaratar\'ian los costos de funcionamiento luego. En este punto, cabe destacar que esta soluci\'on pertenece al mundo real, en el cual tambi\'en
+habr\'ia que analizar si los dispositivos electr\'onicos, una vez funcionando, conservan su integridad conforme pasa el tiempo o no (hurtos, accidentes, da\~{n}o malintencionado).
+En el caso de que no conserven su integridad, entonces el costo de mantenimiento seguramente ser\'ia mayor para los dispositivos que para un personal fijo.
+
+
+ 
 
 \newpage
 \section*{Conclusiones}
