@@ -1,0 +1,10 @@
+-Modelo Conceptual: 1 de toda la pizzeria
+-Diagramas de caso de uso: 1 diagrama con todas las interacciones mundo-maquina
+-Diagramas de actividad:
+	- "Ciclo de vida" de una orden
+	- Actualizacion menu
+	- Manejo de stock
+	- ?
+-FSMs 
+	- Objetivo Mantener[Nivel Adecuado de Stock en cada local]
+	- Menu estandarizado
