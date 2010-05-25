@@ -1,10 +1,28 @@
--Modelo Conceptual: 1 de toda la pizzeria
--Diagramas de caso de uso: 1 diagrama con todas las interacciones mundo-maquina
--Diagramas de actividad:
-	- "Ciclo de vida" de una orden
-	- Actualizacion menu
-	- Manejo de stock
-	- ?
--FSMs 
-	- Objetivo Mantener[Nivel Adecuado de Stock en cada local]
-	- Menu estandarizado
+Bueno, despues de juntarnos hoy, asi es como quedo diagramada la cosa (ademas de mandarlo por aca, voy a poner un txt en el svn para que no se pierda)
+
+Modelo Conceptual:
+Es uno solo para toda la pizzeria, hoy empezamos a definir cuales serian las clases y cuales serian las interacciones entre ellas. Osea, esta bastante en panales pero ya hay un boceto para que el siga con eso.
+
+Diagrama de casos de uso:
+Es un diagrama con todos los casos de uso que vamos a hacer, el diagrama es el que hizo martin y despues aca les hicimos algunas modificaciones. Si no hay mas cambios, lo que quedaria es ir haciendo las descripciones de los casos.
+
+Diagrama de actividades:
+Son mas bien transversales, tratando de agrupar varios casos de uso y varias cosas que pasan en un solo diagrama. Los que yo tenia pensados serian:
+  -ciclo de vida de una orden: seria una agrupacion de todos los casos de uso que pueden suceder cuando alguien quiere pedir algo y se cocina y se lo dan etc..
+  - Actualizacion del menu: incluiria todas las flechitas del diagrama de contexto que tienen que ver con esto
+  - Manejo de stock: idem anterior
+
+  -Todos los que les parezcan que sirven
+
+FSMs:
+  Tenemos que describir bien las cosas que pasan dentro de la maquina, las que a mi se me ocurrieron son:
+  - una fsm abarcativa que abarque todo loq ue tiene que ver con el objetivo Mantener[Nivel Adecuado de Stock en cada local]
+  - una fsm que haga lo mismo con el objetivo del menu estandarizado
+
+Yo croe que haciendo esas cosas estarian los 4 diagramas de objetivos y el diagrama de contexto explicados.
+
+Bueno, habria que ir haciendo todas estas cosas, no se quieren dividir algo o por ahi es preferible hacer estrategia golosa, hacer todo lo que se pueda, avisando que estamos haciendo asi no nos pisamos.
+
+Bueno y aparte faltaria el informe completo explicando porque fuimos diviendo asi, voy a intentar escribir un poco de eso lo antes posible asi no queda todo el informe para el final.
+
+Fede.
