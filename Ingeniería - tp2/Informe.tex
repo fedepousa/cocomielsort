@@ -5,7 +5,9 @@
 \usepackage{float}
 \usepackage[spanish]{babel}   %ver bien como es
 \usepackage[utf8]{inputenc}
+\usepackage{tabularx}
 \hyphenation{des-com-po-ner-los va-rie-dad in-gre-dien-tes ac-tua-li-za-cio-nes me-dian-te con-si-de-ra-cio-nes nues-tro au-to-ma-ti-za-do pro-pues-tos con-tras-ta-das ra-zo-na-ble}
+
 \begin{document}
 
 \tableofcontents
@@ -25,8 +27,81 @@
 \newpage
 
 
-\section*{Modelos}
-\addcontentsline{toc}{section}{Modelos}
+\section*{Vistas}
+\addcontentsline{toc}{section}{Vistas}
+En esta secci\'on presentaremos las diferentes especificaciones realizadas durante el presenta trabajo pr\'actico.
+Se explicar\'a como se abord\'o cada parte del trabajo, explicando para que momentos fue utilizada cada t\'ecnica de especificaci\'on, y el porque
+de esta desici\'on.
+
+En un aspecto general, se divieron las t\'ecnicas de especificaci\'on seg\'un los siguientes crit\'erios:
+
+\begin{itemize}
+\item Modelo Conceptual: Se utilizar\'a para un entendimiento global del funcionamiento del sofware, entiendendo las entidas que interactuan dentro y con el mismo.
+\item Diagrama de Casos de Uso: Se utilizar\'a para mostrar todas las interacciones que la m\'aquina tiene con los diversos actores.
+\item Diagramas de Actividad: Se utilizar\'an para mostrar secuencias de acciones, usualmente agruparan diversos casos de uso que posean un hilo conductor.
+\item Maquinas de Estado Finitas: Se utilizar\'an para mostrar las acciones que ocurren principalmente dentro de la m\'aquina para de esta manera, junto a los dem\'as esqumas
+, poder dar un panorama completo del comportamiento del software.
+\end{itemize}
+
+
+\bigskip
+
+\subsection*{Modelo Conceptual}
+\addcontentsline{toc}{subsection}{Modelo Conceptual}
+
+\subsection*{Diagrama de Casos de Uso}
+\addcontentsline{toc}{subsection}{Diagrama de Casos de Uso}
+
+\subsubsection*{Diagrama}
+\addcontentsline{toc}{subsubsection}{Diagrama}
+
+\subsubsection*{Detalles Casos de Uso}
+\addcontentsline{toc}{subsubsection}{Detalles de Casos de Uso}
+
+
+Ejemplo de detalle de caso de uso
+\begin{center}
+\begin{tabularx}{14cm}{|X|X|}
+\hline
+\multicolumn{2}{|l|}{Nombre Casos de uso: Consultando archivos de ediciones pasadas}\\
+\hline
+\multicolumn{2}{|l|}{Actores: Periodista}\\
+\hline
+\multicolumn{2}{|l|}{Precondici\'on: True}\\
+\hline
+\multicolumn{2}{|l|}{PostCondici\'on: Se Muestra el archivo solicitado}\\
+\hline
+Curso Normal & Curso Alternativo\\
+\hline
+1.1 El periodista consulta un archivo
+
+de edicion mediante mediante fecha
+
+de edicion y pagina de la edicion  & 
+
+\\
+\hline
+1.1.1.1 El sistema encuentra
+
+y devuelve el articulo 
+
+referenciado &
+
+1.1.2.1 El sistama no encuentra 
+
+Dicho articulo\\
+\hline
+1.2 Fin del CU & \\
+\hline
+\end{tabularx}
+
+\end{center}
+
+\subsection*{Diagramas de Actividad}
+\addcontentsline{toc}{subsection}{Diagrmas de Actividad}
+
+\subsection*{M\'aquinas de Estado Finita}
+\addcontentsline{toc}{subsection}{M\'aquinas de Estado Finita}
 
 
 \newpage
@@ -34,6 +109,8 @@
 
 \section*{Discusi\'on}
 \addcontentsline{toc}{section}{Discusi\'on}
+
+
 
 
 \newpage
