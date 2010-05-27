@@ -54,7 +54,7 @@
           <y:Geometry height="49.0" width="145.5" x="357.0" y="127.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.634078979492188" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="116.048828125" x="14.7255859375" y="14.182960510253906">Realizando Orden</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.634078979492188" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="128.38232421875" x="8.558837890625" y="14.182960510253906">1.Realizando Orden</y:NodeLabel>
           <y:Shape type="ellipse"/>
         </y:ShapeNode>
       </data>
@@ -65,8 +65,7 @@
           <y:Geometry height="61.0" width="179.0" x="340.25" y="231.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.634078979492188" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="95.35546875" x="41.822265625" y="20.182960510253906">Eligiendo local
-</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.634078979492188" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="107.68896484375" x="35.655517578125" y="20.182960510253906">2.Eligiendo local</y:NodeLabel>
           <y:Shape type="ellipse"/>
         </y:ShapeNode>
       </data>
@@ -90,7 +89,7 @@
           <y:Geometry height="39.0" width="114.0" x="340.25" y="404.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="37.268157958984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="79.283203125" x="17.3583984375" y="0.8659210205078125">Instaurando
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="37.268157958984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="91.61669921875" x="11.191650390625" y="0.8659210205078125">7.Instaurando
 menú vacío</y:NodeLabel>
           <y:Shape type="ellipse"/>
         </y:ShapeNode>
@@ -102,7 +101,7 @@ menú vacío</y:NodeLabel>
           <y:Geometry height="39.0" width="114.0" x="340.25" y="465.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="37.268157958984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="75.6650390625" x="19.16748046875" y="0.8659210205078125">Cambiando
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="37.268157958984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="87.99853515625" x="13.000732421875" y="0.8659210205078125">8.Cambiando
 menú</y:NodeLabel>
           <y:Shape type="ellipse"/>
         </y:ShapeNode>
@@ -127,7 +126,7 @@ menú</y:NodeLabel>
           <y:Geometry height="50.0" width="110.0" x="552.0" y="539.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="37.268157958984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="82.19677734375" x="13.901611328125" y="6.3659210205078125">Informando
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="37.268157958984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="89.7822265625" x="10.10888671875" y="6.3659210205078125">4.Informando
 nueva orden</y:NodeLabel>
           <y:Shape type="ellipse"/>
         </y:ShapeNode>
@@ -152,7 +151,7 @@ nueva orden</y:NodeLabel>
           <y:Geometry height="50.0" width="110.0" x="547.0" y="392.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="53.90223693847656" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="77.44873046875" x="16.275634765625" y="-1.9511184692382812">Informando
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="53.90223693847656" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="89.7822265625" x="10.10888671875" y="-1.9511184692382812">3.Informando
 orden
 terminado</y:NodeLabel>
           <y:Shape type="ellipse"/>
@@ -165,7 +164,7 @@ terminado</y:NodeLabel>
           <y:Geometry height="39.0" width="90.0" x="572.0" y="145.5"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="37.268157958984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="65.013671875" x="12.4931640625" y="0.8659210205078125">Cargando
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="37.268157958984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="77.34716796875" x="6.326416015625" y="0.8659210205078125">5.Cargando
 stock</y:NodeLabel>
           <y:Shape type="ellipse"/>
         </y:ShapeNode>
@@ -177,7 +176,7 @@ stock</y:NodeLabel>
           <y:Geometry height="53.125" width="114.0" x="317.5" y="652.875"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="53.90223693847656" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="73.29736328125" x="20.351318359375" y="-0.38861846923828125">Recibiendo
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="53.90223693847656" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="93.85107421875" x="10.074462890625" y="-0.38861846923828125">10.Recibiendo
 pedido de
 compra</y:NodeLabel>
           <y:Shape type="ellipse"/>
@@ -190,7 +189,7 @@ compra</y:NodeLabel>
           <y:Geometry height="49.0" width="110.0" x="567.0" y="203.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="37.268157958984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="99.15771484375" x="5.421142578125" y="5.8659210205078125">Actualizando
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="37.268157958984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="99.15771484375" x="5.421142578125" y="5.8659210205078125">6.Actualizando
 límite tolerable</y:NodeLabel>
           <y:Shape type="ellipse"/>
         </y:ShapeNode>
@@ -216,7 +215,7 @@ hora de internet</y:NodeLabel>
           <y:Geometry height="40.875" width="110.0" x="552.0" y="716.5625"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="37.268157958984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="83.77734375" x="13.111328125" y="1.8034210205078125">Consultando
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="37.268157958984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="104.3310546875" x="2.83447265625" y="1.8034210205078125">11.Consultando
 hora</y:NodeLabel>
           <y:Shape type="ellipse"/>
         </y:ShapeNode>
@@ -228,7 +227,7 @@ hora</y:NodeLabel>
           <y:Geometry height="63.0" width="114.0" x="340.25" y="526.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="53.90223693847656" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="74.5224609375" x="19.73876953125" y="4.548881530761719">Ingresando
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="53.90223693847656" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="86.85595703125" x="13.572021484375" y="4.548881530761719">9.Ingresando
 número de
 locales</y:NodeLabel>
           <y:Shape type="ellipse"/>
