@@ -200,23 +200,60 @@ Curso Normal & Curso Alternativo\\
 \begin{center}
 \begin{tabularx}{14cm}{|X|X|}
 \hline
-\multicolumn{2}{|l|}{Nombre Casos de uso: Eligiendo Local}\\
+\multicolumn{2}{|l|}{Nombre Casos de uso: Informando nueva orden}\\
 \hline
-\multicolumn{2}{|l|}{Actores: Cliente}\\
+\multicolumn{2}{|l|}{Actores: Cocinero}\\
 \hline
-\multicolumn{2}{|l|}{Precondici\'on: El cliente realiz\'o un pedido que no se puede efectuar en el propio local}\\
+\multicolumn{2}{|l|}{Precondici\'on: Un cliente realizo un pedido}\\
 \hline
-\multicolumn{2}{|l|}{PostCondici\'on: El cliente elige un nuevo local}\\
+\multicolumn{2}{|l|}{PostCondici\'on: El cocinero es informado de la nueva orden a realizar}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
-1.1 El cliente recibe una lista de locales donde se puede satisfacer su pedido & 
+1.1 El software, luego de procesar el pedido del cliente, informa al cocinero sobre la nueva orden & 
 \\
 \hline
-2.1 El cliente elige un local de la lista recibida & 2.2 El cliente no eligen ning\'ung local. Ir a 4.1.
+2.1 El cocinero es notificado de la nueva orden y se dispone a su realizaci\'on & 
 \\
 \hline
-3.1 El software debe informar la nueva orden en el local elegido. Se incluye Caso de Uso Informando Nueva Orden &
+\end{tabularx}
+\end{center}
+
+
+\medskip
+
+Se puede notar que los casos de uso descriptos hasta el momento se encuentran bastante relacionados, dado que todos juntos conforman una secuencia
+com\'un de una cena completa de un cliente en un determinado local. Si bien esta relaci\'on es evidente, en el diagrama de casos de uso no se encuentran
+en un hilo secuencial dado que esto no es correcto. Desde un punto de vista de casos de usos at\'omicos no ser\'ia correcto relacionar todos los casos de uso
+anteriormente descriptos ya que por ejemplo, entre la realizaci\'on de una nueva orden y la informaci\'on de una orden finalizada pueden pasar horas
+en el medio y muchos otros sucesos, por lo que no ser\'ia correcto unirlos en el diagrama.
+
+
+Sin embargo, como la relaci\'on secuencial es notor\'ia, estos casos de uso ser\'an posteriormente agrupados en un diagrama de actividad que muestre
+un hilo de ejecuci\'on completo.
+
+\bigskip
+
+\begin{center}
+\begin{tabularx}{14cm}{|X|X|}
+\hline
+\multicolumn{2}{|l|}{Nombre Casos de uso: Cargando Stock}\\
+\hline
+\multicolumn{2}{|l|}{Actores: Repositor}\\
+\hline
+\multicolumn{2}{|l|}{Precondici\'on: True}\\
+\hline
+\multicolumn{2}{|l|}{PostCondici\'on: Se carga el stock en el sistema}\\
+\hline
+Curso Normal & Curso Alternativo\\
+\hline
+1.1 El repositor recibe nuevo stock de alg\'un proveedor & 
+\\
+\hline
+2.1 El repositor ingresa al sistema el stock a actualizar & 
+\\
+\hline
+3.1 El software actualiza el stock de los productos que fueron sumados al deposito de ingredientes &
 \\
 \hline
 4.1 Fin Caso de Uso &
@@ -224,7 +261,6 @@ Curso Normal & Curso Alternativo\\
 \hline
 \end{tabularx}
 \end{center}
-
 
 
 
