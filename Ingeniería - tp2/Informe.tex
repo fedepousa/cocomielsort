@@ -78,43 +78,157 @@ Para seguir un hilo conductor, los casos de uso se encuentran numerados en forma
 
 Se seguir\'a este mismo secuenciamiento para realizar la descripci\'on.
 
-Ejemplo de detalle de caso de uso
+\bigskip
+
+
+En primer lugar se encuentra unos de los casos de uso m\'as importante en todo el funcionamiento de la pizzer\'ia. La realizaci\'on de un nuevo
+pedido por parte del cliente.
+
+
 \begin{center}
 \begin{tabularx}{14cm}{|X|X|}
 \hline
-\multicolumn{2}{|l|}{Nombre Casos de uso: Consultando archivos de ediciones pasadas}\\
+\multicolumn{2}{|l|}{Nombre Casos de uso: Realizando orden}\\
 \hline
-\multicolumn{2}{|l|}{Actores: Periodista}\\
+\multicolumn{2}{|l|}{Actores: Cliente}\\
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: True}\\
 \hline
-\multicolumn{2}{|l|}{PostCondici\'on: Se Muestra el archivo solicitado}\\
+\multicolumn{2}{|l|}{PostCondici\'on: Se logra hacer el pedido}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
-1.1 El periodista consulta un archivo
-
-de edicion mediante mediante fecha
-
-de edicion y pagina de la edicion  & 
-
+1.1 El cliente realiza una orden. & 1.2 La orden no es válida. Fin de C.U.
 \\
 \hline
-1.1.1.1 El sistema encuentra
-
-y devuelve el articulo 
-
-referenciado &
-
-1.1.2.1 El sistama no encuentra 
-
-Dicho articulo\\
+2.1 El sistema verifica que se puede realizar la orden (si hay stock). &
+\\
 \hline
-1.2 Fin del CU & \\
+3.1 En caso de que haya stock, el sistema toma el pedido. &
+\\
+\hline
+3.1.1 Se incluye el caso de uso ``Informando nueva orden''. &
+\\
+\hline
+4.1 En caso de que no haya stock, el sistema notifica que no se puede realizar el pedido. &
+\\
+\hline
+4.1.1 Se extiende al caso de uso ``Eligiendo local''. &
+\\
+\hline
+5.1 Fin del C.U. & \\
 \hline
 \end{tabularx}
-
 \end{center}
+
+
+\bigskip
+
+\begin{center}
+\begin{tabularx}{14cm}{|X|X|}
+\hline
+\multicolumn{2}{|l|}{Nombre Casos de uso: Eligiendo Local}\\
+\hline
+\multicolumn{2}{|l|}{Actores: Cliente}\\
+\hline
+\multicolumn{2}{|l|}{Precondici\'on: El cliente realiz\'o un pedido que no se puede efectuar en el propio local}\\
+\hline
+\multicolumn{2}{|l|}{PostCondici\'on: El cliente elige un nuevo local}\\
+\hline
+Curso Normal & Curso Alternativo\\
+\hline
+1.1 El cliente recibe una lista de locales donde se puede satisfacer su pedido & 
+\\
+\hline
+2.1 El cliente elige un local de la lista recibida & 2.2 El cliente no eligen ning\'ung local. Ir a 4.1.
+\\
+\hline
+3.1 El software debe informar la nueva orden en el local elegido. Se incluye Caso de Uso Informando Nueva Orden &
+\\
+\hline
+4.1 Fin Caso de Uso &
+\\
+\hline
+\end{tabularx}
+\end{center}
+
+Este caso de uso, en contraste a la mayor\'ia de los dem\'as, contiene una precondici\'on. Este se incluye para imponer una restricci\'on que no
+se puede imponer desde el diagrama mismo dado a que no existe expresividad para esto. 
+
+La precondici\'on del caso de uso dice El cliente realiz\'o un pedido que no se puede efectuar en el propio local.
+Esta precondici\'on se incluye para mostrar que este caso de uso no tiene sentido por si solo sin una precedencia directa del caso de uso
+Realizando Nueva Orden. Esto no se puede expresar en el diagrama mismo dado que la etiqueta presente en la relaci\'on entre los dos casos de uso 
+aparece la etiqueta extiende. Esto es as\'i dado que no siempre que se realiza una nueva orden se elige otro local, por lo que no ser\'ia correcta
+la inclusi\'on de una etiqueta incluye. Luego, se usa esta precondici\'on para indicar esta restricci\'on y para poder la descripci\'on del caso de uso
+ya asumiendo que el cliente realiz\'o una orden que no pudo ser satisfecha en el propio local.
+
+\bigskip
+
+\begin{center}
+\begin{tabularx}{14cm}{|X|X|}
+\hline
+\multicolumn{2}{|l|}{Nombre Casos de uso: Informando Orden Terminada}\\
+\hline
+\multicolumn{2}{|l|}{Actores: Mozo, Cocinero}\\
+\hline
+\multicolumn{2}{|l|}{Precondici\'on: Existe una orden en proceso}\\
+\hline
+\multicolumn{2}{|l|}{PostCondici\'on: Se informa que hay se finaliz\'o una orden}\\
+\hline
+Curso Normal & Curso Alternativo\\
+\hline
+1.1 El cocinero cocina una pizza que se encontraba en una orden en proceso & 
+\\
+\hline
+2.1 El cocinero ingresa en el sistema la finalizaci\'on de la orden pertinente & 
+\\
+\hline
+3.1 El software actualiza el sistema de ordenes, tildando como realizada la orden que el cocinero notific\'o &
+\\
+\hline
+4.1 El software avisa al mozo correspondiente que la orden se encuentra finalizada para retirar &
+\\
+\hline
+5.1 El mozo se entera que se termin\'o una orden y queda dispuesto a ir a buscar la orden para su entrega &
+\\
+\hline
+\end{tabularx}
+\end{center}
+
+\bigskip
+
+\begin{center}
+\begin{tabularx}{14cm}{|X|X|}
+\hline
+\multicolumn{2}{|l|}{Nombre Casos de uso: Eligiendo Local}\\
+\hline
+\multicolumn{2}{|l|}{Actores: Cliente}\\
+\hline
+\multicolumn{2}{|l|}{Precondici\'on: El cliente realiz\'o un pedido que no se puede efectuar en el propio local}\\
+\hline
+\multicolumn{2}{|l|}{PostCondici\'on: El cliente elige un nuevo local}\\
+\hline
+Curso Normal & Curso Alternativo\\
+\hline
+1.1 El cliente recibe una lista de locales donde se puede satisfacer su pedido & 
+\\
+\hline
+2.1 El cliente elige un local de la lista recibida & 2.2 El cliente no eligen ning\'ung local. Ir a 4.1.
+\\
+\hline
+3.1 El software debe informar la nueva orden en el local elegido. Se incluye Caso de Uso Informando Nueva Orden &
+\\
+\hline
+4.1 Fin Caso de Uso &
+\\
+\hline
+\end{tabularx}
+\end{center}
+
+
+
+
+
 
 \subsection*{Diagramas de Actividad}
 \addcontentsline{toc}{subsection}{Diagrmas de Actividad}
