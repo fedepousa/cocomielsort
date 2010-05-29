@@ -185,7 +185,7 @@ de compra</y:NodeLabel>
     <node id="n2">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="17.0" width="17.0" x="24.0" y="-12.037109375"/>
+          <y:Geometry height="17.0" width="17.0" x="24.0" y="-10.846923828125"/>
           <y:Fill color="#000000" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="4.0" x="6.5" y="6.5"/>
@@ -196,7 +196,7 @@ de compra</y:NodeLabel>
     <node id="n3">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="576.5" y="-18.537109375"/>
+          <y:Geometry height="30.0" width="30.0" x="638.0" y="-23.846923828125"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="4.0" x="13.0" y="13.0"/>
@@ -207,7 +207,7 @@ de compra</y:NodeLabel>
     <node id="n4">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="17.0" width="17.0" x="583.0" y="-12.037109375"/>
+          <y:Geometry height="17.0" width="17.0" x="644.5" y="-17.346923828125"/>
           <y:Fill color="#000000" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="4.0" x="6.5" y="6.5"/>
@@ -247,7 +247,7 @@ del límite</y:EdgeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e3" source="n0::n2" target="n4">
+    <edge id="e3" source="n0::n2" target="n3">
       <data key="d6">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
