@@ -263,11 +263,252 @@ Curso Normal & Curso Alternativo\\
 \end{center}
 
 
+\bigskip
+
+\begin{center}
+\begin{tabularx}{14cm}{|X|X|}
+\hline
+\multicolumn{2}{|l|}{Nombre Casos de uso: Actualizando l\'imite tolerable}\\
+\hline
+\multicolumn{2}{|l|}{Actores: Repositor}\\
+\hline
+\multicolumn{2}{|l|}{Precondici\'on: True}\\
+\hline
+\multicolumn{2}{|l|}{PostCondici\'on: Se actualiza el l\'imite tolerable de alg\'un producto}\\
+\hline
+Curso Normal & Curso Alternativo\\
+\hline
+1.1 El repositor decide modificar el l\'imite tolerable de alg\'un ingrediente en particular & 
+\\
+\hline
+2.1 El repositor ingresa al sistema el ingrediente que quiere actualizar y su correspondiente l\'imite actualizado & 
+\\
+\hline
+3.1 El software actualiza el l\'imite tolerable para el ingrediente que fue se\~{n}alado &
+\\
+\hline
+4.1 Fin Caso de Uso &
+\\
+\hline
+\end{tabularx}
+\end{center}
+
+
+\bigskip
+La igual que sucedio con los primeros casos de uso, los casos de uso 5 y 6 tambi\'en se encuentran correlacionados aunque at\'omicamente no lo est\'en.
+A su vez, tambi\'en es claro que en una secuencia de acciones del mundo real, estos casos de uso podr\'ian estar relacionados con los casos
+de uso 1(realizando orden) y 10(recibiendo pedido de compra). Estas relaciones secuenciales se ver\'an modeladas posteriormente en el diagrama de actividad
+referente a todo lo que sucede con respecto al stock cuando se realiza una orden.
+
+\bigskip
+
+
+\begin{center}
+\begin{tabularx}{14cm}{|X|X|}
+\hline
+\multicolumn{2}{|l|}{Nombre Casos de uso: Instaurando Men\'u vacio}\\
+\hline
+\multicolumn{2}{|l|}{Actores: Operador}\\
+\hline
+\multicolumn{2}{|l|}{Precondici\'on: True}\\
+\hline
+\multicolumn{2}{|l|}{PostCondici\'on: Se carga el men\'u vacio en el sistema}\\
+\hline
+Curso Normal & Curso Alternativo\\
+\hline
+1.1 El Operador carga un men\'i vacio al sistema & 
+\\
+\hline
+2.1 El sistema se actualiza para trabajar con este nuevo men\'u vacio & 
+\\
+\hline
+3.1 Fin Caso de Uso &
+\\
+\hline
+\end{tabularx}
+\end{center}
+
+\bigskip
+
+\begin{center}
+\begin{tabularx}{14cm}{|X|X|}
+\hline
+\multicolumn{2}{|l|}{Nombre Casos de uso: Cambiando Men\'u}\\
+\hline
+\multicolumn{2}{|l|}{Actores: Operador}\\
+\hline
+\multicolumn{2}{|l|}{Precondici\'on: True}\\
+\hline
+\multicolumn{2}{|l|}{PostCondici\'on: Se actualiza el men\'u}\\
+\hline
+Curso Normal & Curso Alternativo\\
+\hline
+1.1 El operador posee una nueva actualizaci\'on para el men\'u & 
+\\
+\hline
+2.1 El operador carga en el sistema la actualizaci\'on & 
+\\
+\hline
+3.1 El software mira el n\'umero de local al que pertenece el operador &
+\\
+\hline
+4.1 El software consulta la hora. Se incluye Casos de uso 11 &
+\\
+\hline
+5.1 El software calcula si el operador se encuentro apto para modificar el men\'u & El operador no se encuentra apt\'o. Ir a 7.1
+\\
+\hline
+6.1 El software actualiza el men\'u &
+\\
+\hline
+7.1 Fin Caso de Uso &
+\\
+\hline
+\end{tabularx}
+\end{center}
+
+\bigskip
+
+\begin{center}
+\begin{tabularx}{14cm}{|X|X|}
+\hline
+\multicolumn{2}{|l|}{Nombre Casos de uso: Ingresando n\'umero de locales}\\
+\hline
+\multicolumn{2}{|l|}{Actores: Operador}\\
+\hline
+\multicolumn{2}{|l|}{Precondici\'on: True}\\
+\hline
+\multicolumn{2}{|l|}{PostCondici\'on: Se ingresan los n\'umeros de los locales}\\
+\hline
+Curso Normal & Curso Alternativo\\
+\hline
+1.1 El Operador carga los n\'umeros asignados a cada local & 
+\\
+\hline
+2.1 El sistema actualiza los n\'umeros de los locales para realizar los c\'alculos de round robin & 
+\\
+\hline
+3.1 Fin Caso de Uso &
+\\
+\hline
+\end{tabularx}
+\end{center}
+
+\bigskip
+
+Los 3 casos de uso anteriormente descriptos son los que m\'as estan relacionados con el hecho de la actualizaci\'on del men\'u. Esto, como ya se
+explic\'o con anterioridad, se mostrar\'a de una manera m\'as visual en un diagrama de actividad que muestre lo que sucede al actualizar un men\'u
+en el mundo y en la interfaz. Mientras que luego, con una m\'aquina de estados, se modelar\'a lo que sucede dentro de la m\'aquina con esta acci\'on.
+
+\bigskip
+
+\begin{center}
+\begin{tabularx}{14cm}{|X|X|}
+\hline
+\multicolumn{2}{|l|}{Nombre Casos de uso: Recibiendo pedido de compra}\\
+\hline
+\multicolumn{2}{|l|}{Actores: Impresora}\\
+\hline
+\multicolumn{2}{|l|}{Precondici\'on: True}\\
+\hline
+\multicolumn{2}{|l|}{PostCondici\'on: La impresora recibe un nuevo pedido de compra}\\
+\hline
+Curso Normal & Curso Alternativo\\
+\hline
+1.1 El software posee uno o muchos ingrendientes que deben ser repuestos & 
+\\
+\hline
+2.1 El software genera el pedido de compra para satisfacer la necesidades calculadas & 
+\\
+\hline
+3.1 El software manda a la impresora la correspondiente orden de compra &
+\\
+\hline
+4.1 Fin Caso de Uso &
+\\
+\hline
+\end{tabularx}
+\end{center}
+
+\bigskip
+
+\begin{center}
+\begin{tabularx}{14cm}{|X|X|}
+\hline
+\multicolumn{2}{|l|}{Nombre Casos de uso: Consultando Hora}\\
+\hline
+\multicolumn{2}{|l|}{Actores: Servidor de hora de internet}\\
+\hline
+\multicolumn{2}{|l|}{Precondici\'on: Un operador esta intentando actualizar el men\'u}\\
+\hline
+\multicolumn{2}{|l|}{PostCondici\'on: Se obtiene una actualizaci\'on de la hora}\\
+\hline
+Curso Normal & Curso Alternativo\\
+\hline
+1.1 El software requiere la hora para calculos de round robin & 
+\\
+\hline
+2.1 El Software le pide al servidor una actualizaci\'on de la hora & 
+\\
+\hline
+3.1 El Servidor devuelve lo solicitado al software &
+\\
+\hline
+4.1 Fin Caso de Uso &
+\\
+\hline
+\end{tabularx}
+\end{center}
 
 
 
 \subsection*{Diagramas de Actividad}
 \addcontentsline{toc}{subsection}{Diagrmas de Actividad}
+
+
+Los diagramas de actividad son una representaci\'on para mostrar el secuenciamiento de varias acciones que se encuentran relacionadas por alg\'un
+hilo conductor. Los diagramas de actividad se encuentran enriquecedos por el hecho de poder soportar varios actores en un mismo hilo mediante la 
+separaci\'on por andariveles de las interacciones de cada actor, es por esto que son muy adecuados para modelar las acciones que suceden entre la
+m\'aquina y los actores externos e incluso las acciones que suceden entre los actores externos sin interacci\'on con la m\'aquina.
+
+Si bien las interacciones entre el mundo y la m\'aquina ya fueron descriptas en el diagrama de casos de uso, se realiz\'o de forma diferente
+ya que la t\'ecnica de casos de uso se basa en centrarse at\'omicamente en cada caso de uso y solo se explicita una relaci\'on entre dos casos de
+uso cuando la relaci\'on es inmediata.
+
+En contraposici\'on a los casos de uso, se utilizar\'an los diagramas de actividad para modelar las secuencias de acciones que sucederi\'an en la 
+pizzer\'ia, sin centrarse en cada paso de la secuencia particularmente (dado que ya fueron explayados en los casos de uso).
+
+Se decidi\'o que la t\'ecnica ser\'ia utlizada para los siguientes casos particulares:
+
+\begin{itemize}
+\item El ciclo de vida completo de una orden.
+\item Ejemplo de manejo de stock.
+\item Actualizaci\'on del men\'u.
+\end{itemize}
+
+
+\subsubsection*{Ciclo de vida de una orden}
+\addcontentsline{toc}{subsubsection}{Ciclo de vida de una orden}
+
+Este diagrama de actividad sirve para agrupar las acciones sucecidas en el ciclo de vida de una orden, es decir desde el momento que un cliente
+pide una orden hasta el momento que recibe su pizza(o bien no la recibe porque no se puede satisfacer). Cabe destacar que en el diagrama de actividad
+se abstraen varias situaciones para centrarse solamente en la orden en s\'i. Es decir, si bien usar los ingrendientes para realizar una orden podr\'ia
+desencadenar un pedido al proveedor, no ser\'a modelado en este diagrama, sino en el siguiente.
+
+En este diagrama se destaca la diferencia entre que el pedido se cocine en el local donde el cliente se encuentra o en otro, por lo que se 
+diferencian entre el cocinero y el mozo del local propio y el cocinero y el mozo del local externo donde el cliente va a ir a buscar la pizza.
+
+
+
+\subsubsection*{Ejemplo de manejo de stock}
+\addcontentsline{toc}{subsubsection}{Ejemplo de manejo de stock}
+
+
+\subsubsection*{Actualizaci\'on del men\'u}
+\addcontentsline{toc}{subsubsection}{Actualizaci\'on del men\'u}
+
+
+\bigskip
 
 \subsection*{M\'aquinas de Estado Finita}
 \addcontentsline{toc}{subsection}{M\'aquinas de Estado Finita}

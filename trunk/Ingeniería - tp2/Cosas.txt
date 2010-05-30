@@ -26,3 +26,9 @@ Bueno, habria que ir haciendo todas estas cosas, no se quieren dividir algo o po
 Bueno y aparte faltaria el informe completo explicando porque fuimos diviendo asi, voy a intentar escribir un poco de eso lo antes posible asi no queda todo el informe para el final.
 
 Fede.
+
+
+
+Preguntas: 
+-Que pasa con los casos de uso que son chiquitos pero no se podrian poner dentro de otro caso de uso. van? no van? (para mi van, aunque sean chiquitos, por ahi sin descripcion)
+-que pasa con actualizando limite tolerable
