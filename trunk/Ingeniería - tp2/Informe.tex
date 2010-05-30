@@ -460,7 +460,7 @@ Curso Normal & Curso Alternativo\\
 \end{tabularx}
 \end{center}
 
-
+\newpage
 
 \subsection*{Diagramas de Actividad}
 \addcontentsline{toc}{subsection}{Diagrmas de Actividad}
@@ -498,14 +498,30 @@ desencadenar un pedido al proveedor, no ser\'a modelado en este diagrama, sino e
 En este diagrama se destaca la diferencia entre que el pedido se cocine en el local donde el cliente se encuentra o en otro, por lo que se 
 diferencian entre el cocinero y el mozo del local propio y el cocinero y el mozo del local externo donde el cliente va a ir a buscar la pizza.
 
+% aca va el diagrama de actividad de ciclo de vida de una orden
 
+\bigskip
 
 \subsubsection*{Ejemplo de manejo de stock}
 \addcontentsline{toc}{subsubsection}{Ejemplo de manejo de stock}
 
+Este diagrama de actividad se utilizar\'a para modelar las acciones pertinentes al manejo de stock cuando se realiza una orden. Dado que solo
+se quiere modelar lo relacionado con el stock, ya que los otros aspectos respectivos a la realizaci\'on de una orden fueron modelados anteriormente,
+el diagrama presenta una secuencia de acciones donde un cliente realiza una orden que se puede satisfacer por dicho local para poder mostrar concretamente
+que sucede con el stock sin p\'erdida de generalidad.
+
+% aca va el diagrama de actividad de manejo de stock
+
+\bigskip
 
 \subsubsection*{Actualizaci\'on del men\'u}
 \addcontentsline{toc}{subsubsection}{Actualizaci\'on del men\'u}
+
+Este diagrama de actividad sirve para modelar el hilo de ejecuci\'on de las acciones referidas a la actualizaci\'on de un men\'u en cuanto a la interacci\'on
+de los actores externos participantes con la m\'aquina. Lo que sucede dentro de la m\'aquina para mantener una consistencia entre los locales es inherente
+a la m\'aquina misma por lo que ser\'a modelado posteriormente con la t\'ecnica de m\'aquinas de estados.
+
+% aca va el diagrama de actividad de actualizacion de menu
 
 
 \bigskip
