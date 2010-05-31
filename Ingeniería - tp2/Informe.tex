@@ -17,15 +17,6 @@
 
 \section*{Introducci\'on}
 \addcontentsline{toc}{section}{Introducci\'on}
-El objetivo de este trabajo es proporsionar la documentaci\'on necesaria para establecer un marco a los objetivos proporcionados por la c\'atedra. Dichos objetivos fueron refinados por los directivos de la cadena Pizza Hack y se presentan en un diagrama, el mismo es considerado un modelo final. La documentaci\'on a presentar modela comportamientos presentados en el trabajo pr\'actico n\'umero 1.
-Para el cumplimiento de este objetivo se tuvo en cuenta la trazabilidad de los modelos proporcionados con el diagrama de objetivos recibido y la trazabilidad entre los distintos modelos realizados a efecto de reflejar de manera eficiente y clara los distintos comportamientos que se requieren para cumplir los objetivos brindados por la c\'atedra.
-A fin de abordar la realizaci\'on de diversos modelos que reflejen los comportamientos pedidos, se decidi\'o realizar los siguientes modelos:
-\begin{itemize}
-\item Casos de Uso: Este modelo se utiliz\'o para poder modelar los comportamientos que involucran al mundo y a la m\'aquina, es decir, las que involucran a los humanos, la interacci\'on con la impresora y, finalmente, al servidor de internet.
-\item Modelo Conceptual: Este modelo se utiliz\'o para poder mostrar todas las clases que participan en cumplir todos los objetivos finales.
-\item Diagrama de Actividad: Este modelo se utiliz\'o para aclarar el comportamiento de la actualizaci\'on de men\'u, para la realizaci\'on de un pedido que puede realizarse o no en la sucursal donde se esta, y para modelar el pedido de reposici\'on de un ingrediente cuyo nivel es menor al limite tolerable. 
-\item M\'aquina de estado finita: Este modelo se utiliz\'o para poder describir de manera mas eficiente el comportamiento del software en todas las actividades que lo involucran.
-\end{itemize}
 
 
 \newpage
@@ -131,7 +122,9 @@ Local.allInstances().men\'u$\rightarrow$asSet()$\rightarrow$size()$=1$
 Para todo dep\'osito, cada ingrediente cuyo nivel de stock se encuentre por debajo de mínimo tolerable tiene que estar en un \'unico pedido de reposición relacionado con el local correspondiente al dep\'osito en cuesti\'on.
 
 \underline{context Depósito de stock}
+
 self.ingrediente$\rightarrow$select(i|i.disponibilidad.cantidad$<$disponibilidad.límite)$\rightarrow$
+
 forAll(i$|$i.pedidodereposición.size()$=1$ and i.pedidodereposición$\rightarrow$forAll(p$|$p.local.depósitodestock$=$self))
 
 \medskip
@@ -141,13 +134,16 @@ Se pide, para un pedido de reposici\'on, una cantidad de stock mayor o igual al 
 Esto es as\'i para que una vez que se realiza el pedido, seguro se cuente con el m\'inimo necesario.
 
 \underline{context Ingredientes}
+
 self.pedidodereposición$\rightarrow$.forAll(p|p.cantidad$\geq$self.disponibilidad.límite)
+
 
 \medskip
 
 La impresora utilizada en un pedido de reposición es la impresora del local que emitió dicho pedido.
 
 \underline{context Pedido de reposición}
+
 self.Impresora$=$self.Local.Impresora
 
 
