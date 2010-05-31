@@ -36,7 +36,7 @@ de esta desici\'on.
 En un aspecto general, se divieron las t\'ecnicas de especificaci\'on seg\'un los siguientes crit\'erios:
 
 \begin{itemize}
-\item Modelo Conceptual: Se utilizar\'a para un entendimiento global del funcionamiento del sofware, entiendendo las entidas que interactuan dentro y con el mismo.
+\item Modelo Conceptual: Se utilizar\'a para un entendimiento global del funcionamiento del sofware, entiendendo las entidades que interactuan dentro y con el mismo.
 \item Diagrama de Casos de Uso: Se utilizar\'a para mostrar todas las interacciones que la m\'aquina tiene con los diversos actores.
 \item Diagramas de Actividad: Se utilizar\'an para mostrar secuencias de acciones, usualmente agruparan diversos casos de uso que posean un hilo conductor.
 \item Maquinas de Estado Finitas: Se utilizar\'an para mostrar las acciones que ocurren principalmente dentro de la m\'aquina para de esta manera, junto a los dem\'as esqumas
@@ -48,6 +48,101 @@ En un aspecto general, se divieron las t\'ecnicas de especificaci\'on seg\'un lo
 
 \subsection*{Modelo Conceptual}
 \addcontentsline{toc}{subsection}{Modelo Conceptual}
+
+El modelo conceptual es una primera aproximaci\'on a todo lo que se quiere describir detalladamente en el transcurso de este trabajo. Explica 
+de manera temprana la relaci\'on que existe entre los actores externos y las diferentes partes que componen a la pizzer\'ia para lograr un buen
+entendimiento de las interconexiones presentes sin indicar ning\'un tipo de comportamiento por el momento.
+
+A continuaci\'on se presenta el diagrama realizado para este modelo, seguido de las pertinentes explicaciones.
+
+% Aca va el diagrama del modelo conceptual
+
+
+\medskip
+
+Del diagrama anterior se explayan los siguientes puntos para un mejor entendimiento:
+
+\begin{itemize}
+\item Dado que hay diferentes cargos dentro del personal se decidi\'o por utilizar el recurso de herencia para identificarlos. Si bien cada subclase
+no tiene ning\'un atributo muy distintivo, el repositor tiene algunas relaciones particulares. Este fue el factor determinante para elegir usar herencia
+y no poner el tipo de personal como un atributo enumerado, ya que entonces habr\'ia que poner las relaciones del repositor a personal y luego 
+restringir por OCL que el relacionado sea de tipo repositor.
+\item Por la clase men\'u se entiende el men\'u que la pizzer\'ia ofrece m\'as all\'a del stock que se encuentre disponible.
+\item Por la clase producto se entiende cualquier producto que la pizzer\'ia alguna vez ofreci\'o. Esto se realiz\'o de esta manera dado que pensar 
+los productos solamente como los que se encuentran en el men\'u podr\'ia traer inconsistencias. Un cliente puede realizar un pedido que contenga un producto
+que est\'a en el men\'u (y haya stock para realizarlo), pero una vez hecho este pedido, el producto podr\'ia ser removido del men\'u en una actualizaci\'on,
+y a\'un as\'i el pedido con el producto desaparecido del men\'u podr\'ia perdurar en el sistema dado que no se realiz\'o todav\'ia. Es por esto que
+pueden existir productos por fuera del men\'u.
+\item El cliente esta pensado como una persona o un grupo de personas dentro un local, por eso la multiplicidad cliente-local es uno. Si esa persona
+o grupo de personas se movilizacen hac\'ia otro local no hay raz\'on para no pensarlos como un nuevo cliente dentro del otro local.
+\item Un pedido de reposici\'on esta conformado por ingrendientes y sus cantidades pedidas, por lo que se opt\'o por utilizar una agregaci\'on calificada
+para modelar esto.
+\end{itemize}
+
+Cosas que no me gustan aca:
+
+habria que cambiar la relacion de pedidorepo-repositor, por pedidorepo-impresora
+el mozo por ahi deberia estar unido a cliente
+ver en general toda la validez del modelo
+
+
+\medskip
+
+A continuaci\'on se detallar\'an las restricciones sobre el modelo que no se desprenden del diagrama mediante el lenguaje OCL, indicando en cada
+caso que fue lo que se quizo restringir en idioma castellano.
+
+\medskip
+
+
+Se explicitaron las correspondencias de cada local con cada tipo de empleado (clase personal y sus subclases).
+
+
+\underline{context Local}
+
+self.personal$\rightarrow$select(p$|$p.isKindOf(Jefe de Chefs)).size()$=1$
+
+self.personal$\rightarrow$select(p$|$p.isKindOf(Cocinero)).size()$>0$
+
+self.personal$\rightarrow$select(p$|$p.isKindOf(Mozo)).size()$>0$
+
+self.personal$\rightarrow$select(p$|$p.isKindOf(Operador)).size()$=1$
+
+self.personal$\rightarrow$select(p$|$p.isKindOf(Repositor)).size()$=1$
+
+\medskip
+
+El men\'u es el mismo para todos los locales.
+
+\underline{context Local}
+
+Local.allInstances().men\'u$\rightarrow$asSet()$\rightarrow$size()$=1$
+
+\medskip
+
+Para todo dep\'osito, cada ingrediente cuyo nivel de stock se encuentre por debajo de mínimo tolerable tiene que estar en un \'unico pedido de reposición relacionado con el local correspondiente al dep\'osito en cuesti\'on.
+
+\underline{context Depósito de stock}
+self.ingrediente$\rightarrow$select(i|i.disponibilidad.cantidad$<$disponibilidad.límite)$\rightarrow$
+forAll(i$|$i.pedidodereposición.size()$=1$ and i.pedidodereposición$\rightarrow$forAll(p$|$p.local.depósitodestock$=$self))
+
+\medskip
+
+Explicar mejor
+Se pide, para un pedido de reposici\'on, una cantidad de stock mayor o igual al límite tolerable de los ingredientes que se encuentran en el pedido de reposición. 
+Esto es as\'i para que una vez que se realiza el pedido, seguro se cuente con el m\'inimo necesario.
+
+\underline{context Ingredientes}
+self.pedidodereposición$\rightarrow$.forAll(p|p.cantidad$\geq$self.disponibilidad.límite)
+
+\medskip
+
+La impresora utilizada en un pedido de reposición es la impresora del local que emitió dicho pedido.
+
+\underline{context Pedido de reposición}
+self.Impresora$=$self.Local.Impresora
+
+
+\newpage
 
 \subsection*{Diagrama de Casos de Uso}
 \addcontentsline{toc}{subsection}{Diagrama de Casos de Uso}
