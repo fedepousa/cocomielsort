@@ -1,5 +1,5 @@
 \documentclass[a4paper,10pt]{article}
-%\usepackage{a4wide} <-- me parece que va a quedar mejor con esto
+%\usepackage{a4wide}
 \usepackage{graphicx}
 \usepackage{verbatim}
 \usepackage{subfig}
@@ -18,11 +18,30 @@
 
 \section*{Introducci\'on}
 \addcontentsline{toc}{section}{Introducci\'on}
+El objetivo de este trabajo es proporcionar la documentaci\'on necesaria para establecer un marco a los objetivos proporcionados por la c\'atedra. Dichos objetivos fueron refinados por los directivos de la cadena Pizza Hack y se presentan en un diagrama, el mismo es considerado un modelo final. 
+
+La documentaci\'on a presentar modela comportamientos presentados en el trabajo pr\'actico n\'umero 1.
+Para el cumplimiento de este objetivo se tuvo en cuenta la trazabilidad de los modelos proporcionados con los diagramas de objetivos y de contexto recibidos y tambi\'e resulto importante mantener la trazabilidad entre los distintos modelos realizados a efecto de reflejar de manera eficiente y clara los distintos comportamientos.
+Con este fin, se utilizaron diferentes t\'ecnicas de especificaci\'on. A continuaci\'on se establece una introducci\'on a la idea final de cada t\'ecnica:
+\begin{itemize}
+\item Casos de Uso: Este modelo se utiliz\'o para poder modelar los comportamientos que involucran al mundo y a la m\'aquina, es decir, las que involucran a los humanos, la interacci\'on con la impresora y al servidor de internet para sentar algunos ejemplos.
+\item Modelo Conceptual: Este modelo se utiliz\'o para poder mostrar los diferentes componentes  que participan para cumplir todos los objetivos finales.
+\item Diagrama de Actividad: Este modelo se utiliz\'o para aclarar el comportamiento de algunas secuencias de acciones entre varios actores diferentes.
+\item M\'aquina de estado finita: Este modelo se utiliz\'o para poder describir de manera mas eficiente el comportamiento del software en algunas actividades que cobran mayor importancia por dentro del mismo.
+\end{itemize}
+
+A medida que se vayan realizando los diferentes modelos, se adjuntaran sus explicaciones en base a las decisiones tomadas, as\'i como tambi\'en se mostrar\'a como los diferentes modelos
+encajan entre s\'i.
+
+Por \'ultimo, se presentaran algunas discusiones y conclusiones finales sobre lo realizado.
 
 
 \newpage
-\section*{Presunciones}
-\addcontentsline{toc}{section}{Presunciones}
+\section*{Aclaraciones Generales}
+\addcontentsline{toc}{section}{Aclaraciones Generales}
+
+inconsistencias
+
 
 
 \newpage
@@ -96,63 +115,6 @@ caso que fue lo que se quizo restringir en idioma castellano.
 
 \medskip
 
-
-% DEJE ESTO SI QUIEREN VER COMO QUEDA UN ENUMERATE
-%\begin{enumerate}
-%\item Se explicitaron las correspondencias de cada local con cada tipo de empleado (clase personal y sus subclases).
-
-%\medskip
-
-%\underline{\textbf{context Local}}
-
-%self.personal$\rightarrow$select(p$|$p.isKindOf(Jefe de Chefs)).size()$=1$
-
-%self.personal$\rightarrow$select(p$|$p.isKindOf(Cocinero)).size()$>0$
-
-%self.personal$\rightarrow$select(p$|$p.isKindOf(Mozo)).size()$>0$
-
-%self.personal$\rightarrow$select(p$|$p.isKindOf(Operador)).size()$=1$
-
-%self.personal$\rightarrow$select(p$|$p.isKindOf(Repositor)).size()$=1$
-
-%\item El men\'u es el mismo para todos los locales.
-
-%\medskip
-
-%\underline{\textbf{context Local}}
-
-%Local.allInstances().men\'u$\rightarrow$asSet()$\rightarrow$size()$=1$
-
-%\item Para todo dep\'osito, cada ingrediente cuyo nivel de stock se encuentre por debajo de mínimo tolerable tiene que estar en un \'unico pedido de reposición relacionado con el local correspondiente al dep\'osito en cuesti\'on.
-
-%\medskip
-
-%\underline{\textbf{context Depósito de stock}}
-
-%self.ingrediente$\rightarrow$select(i|i.disponibilidad.cantidad$<$disponibilidad.límite)$\rightarrow$
-
-%forAll(i$|$i.pedidodereposición.size()$=1$ and 
-
-%i.pedidodereposición$\rightarrow$forAll(p$|$p.local.depósitodestock$=$self))
-
-%\item Explicar mejor
-%Se pide, para un pedido de reposici\'on, una cantidad de stock mayor o igual al límite tolerable de los ingredientes que se encuentran en el pedido de reposición. Esto es as\'i para que una vez que se realiza el pedido, seguro se cuente con el m\'inimo necesario.
-
-%\medskip
-
-%\underline{\textbf{context Ingredientes}}
-
-%self.pedidodereposición$\rightarrow$.forAll(p|p.cantidad$\geq$self.disponibilidad.límite)
-
-%\item La impresora utilizada en un pedido de reposición es la impresora del local que emitió dicho pedido.
-
-%\medskip
-
-%\underline{\textbf{context Pedido de reposición}}
-
-%self.Impresora$=$self.Local.Impresora
-%\end{enumerate}
-
 Se explicitaron las correspondencias de cada local con cada tipo de empleado (clase personal y sus subclases).
 
 \medskip
@@ -196,7 +158,8 @@ i.pedidodereposición$\rightarrow$forAll(p$|$p.local.depósitodestock$=$self))
 \medskip
 
 Explicar mejor
-Se pide, para un pedido de reposici\'on, una cantidad de stock mayor o igual al límite tolerable de los ingredientes que se encuentran en el pedido de reposición. Esto es as\'i para que una vez que se realiza el pedido, seguro se cuente con el m\'inimo necesario.
+Se pide, para un pedido de reposici\'on, una cantidad de stock mayor o igual al límite tolerable de los ingredientes que se encuentran en el pedido de reposición. 
+Esto es as\'i para que una vez que se realiza el pedido, seguro se cuente con el m\'inimo necesario.
 
 \medskip
 
@@ -220,7 +183,7 @@ self.Impresora$=$self.Local.Impresora
 \addcontentsline{toc}{subsection}{Diagrama de Casos de Uso}
 
 Esta t\'ecnica sirve para mostrar como son las interacciones entre el mundo y la m\'aquina, es decir que se abstraen varias de las relaciones presentes
-obviando las relaciones propias entre actores que se encuentran por fuera de la m\'aquina, as\'i como las interacciones que son intr\'insecas de la m\'aquina.
+obviando las relaciones prop\'ias entre actores que se encuentran por fuera de la m\'aquina, as\'i como las interacciones que son intr\'insecas de la m\'aquina.
 
 \subsubsection*{Diagrama}
 \addcontentsline{toc}{subsubsection}{Diagrama}
@@ -237,11 +200,13 @@ y luego se detallar\'a en particular cada caso de uso.
 
 
 \subsubsection*{Detalles Casos de Uso}
-\addcontentsline{toc}{subsubsection}{Detalles de Caso de Uso}
+\addcontentsline{toc}{subsubsection}{Detalles de Casos de Uso}
 
-A continuaci\'on se detallar\'a cada caso de uso, dando la descripci\'on de la sucesi\'on de hechos, adem\'as de los actores y la pre y Postcondici\'on.
+A continuaci\'on se detallar\'a cada caso de uso, dando la descripci\'on de la sucesi\'on de hechos, adem\'as de los actores y la pre y postcondici\'on.
 
-Para seguir un hilo conductor, los casos de uso se encuentran numerados en forma secuencial agrupados por el o los actores participantes. Se seguir\'a este mismo secuenciamiento para realizar la descripci\'on.
+Para seguir un hilo conductor, los casos de uso se encuentran numerados en forma secuencial agrupados por el o los actores participantes.
+
+Se seguir\'a este mismo secuenciamiento para realizar la descripci\'on.
 
 \bigskip
 
@@ -253,17 +218,17 @@ pedido por parte del cliente.
 \begin{center}
 \begin{tabularx}{14cm}{|X|X|}
 \hline
-\multicolumn{2}{|l|}{Nombre Caso de uso: Realizando orden}\\
+\multicolumn{2}{|l|}{Nombre Casos de uso: Realizando orden}\\
 \hline
 \multicolumn{2}{|l|}{Actores: Cliente}\\
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: True}\\
 \hline
-\multicolumn{2}{|l|}{Postcondici\'on: Se logra hacer el pedido}\\
+\multicolumn{2}{|l|}{PostCondici\'on: Se logra hacer el pedido}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
-1.1 El cliente realiza una orden. & 1.2 La orden no es válida. Ir a 5.1.
+1.1 El cliente realiza una orden. & 1.2 La orden no es válida. Fin de C.U.
 \\
 \hline
 2.1 El sistema verifica que se puede realizar la orden (si hay stock). &
@@ -292,13 +257,13 @@ Curso Normal & Curso Alternativo\\
 \begin{center}
 \begin{tabularx}{14cm}{|X|X|}
 \hline
-\multicolumn{2}{|l|}{Nombre Caso de uso: Eligiendo Local}\\
+\multicolumn{2}{|l|}{Nombre Casos de uso: Eligiendo Local}\\
 \hline
 \multicolumn{2}{|l|}{Actores: Cliente}\\
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: El cliente realiz\'o un pedido que no se puede efectuar en el propio local}\\
 \hline
-\multicolumn{2}{|l|}{Postcondici\'on: El cliente elige un nuevo local}\\
+\multicolumn{2}{|l|}{PostCondici\'on: El cliente elige un nuevo local}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
@@ -317,14 +282,14 @@ Curso Normal & Curso Alternativo\\
 \end{tabularx}
 \end{center}
 
-\medskip
+Este caso de uso, en contraste a la mayor\'ia de los dem\'as, contiene una precondici\'on. Este se incluye para imponer una restricci\'on que no
+se puede imponer desde el diagrama mismo dado a que no existe expresividad para esto. 
 
-Este caso de uso, en contraste a la mayor\'ia de los dem\'as, contiene una precondici\'on no trivial. Ésta se incluye para imponer una restricci\'on que no
-se puede imponer desde el diagrama mismo dado a que no contamos con la expresividad suficiente para ello.
-
-Esta precondici\'on se incluye para mostrar que este caso de uso no tiene sentido por sí solo sin una precedencia directa del caso de uso
-\textit{Realizando Nueva Orden}. Esto no se puede expresar en el diagrama mismo dado que la etiqueta presente en la relaci\'on entre los dos casos de uso es de tipo \textit{<<extiende>>}. Se consideró esto as\'i dado que no siempre que se realiza una nueva orden se elige otro local, por lo que no ser\'ia correcto
-el uso de de una etiqueta \textit{<<incluye>>}. Luego, se usa esta precondici\'on para indicar esta restricci\'on y para poder detallar la descripci\'on del caso de uso
+La precondici\'on del caso de uso dice El cliente realiz\'o un pedido que no se puede efectuar en el propio local.
+Esta precondici\'on se incluye para mostrar que este caso de uso no tiene sentido por si solo sin una precedencia directa del caso de uso
+Realizando Nueva Orden. Esto no se puede expresar en el diagrama mismo dado que la etiqueta presente en la relaci\'on entre los dos casos de uso 
+aparece la etiqueta extiende. Esto es as\'i dado que no siempre que se realiza una nueva orden se elige otro local, por lo que no ser\'ia correcta
+la inclusi\'on de una etiqueta incluye. Luego, se usa esta precondici\'on para indicar esta restricci\'on y para poder la descripci\'on del caso de uso
 ya asumiendo que el cliente realiz\'o una orden que no pudo ser satisfecha en el propio local.
 
 \bigskip
@@ -332,13 +297,13 @@ ya asumiendo que el cliente realiz\'o una orden que no pudo ser satisfecha en el
 \begin{center}
 \begin{tabularx}{14cm}{|X|X|}
 \hline
-\multicolumn{2}{|l|}{Nombre Caso de uso: Informando Orden Terminada}\\
+\multicolumn{2}{|l|}{Nombre Casos de uso: Informando Orden Terminada}\\
 \hline
 \multicolumn{2}{|l|}{Actores: Mozo, Cocinero}\\
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: Existe una orden en proceso}\\
 \hline
-\multicolumn{2}{|l|}{Postcondici\'on: Se informa que hay se finaliz\'o una orden}\\
+\multicolumn{2}{|l|}{PostCondici\'on: Se informa que hay se finaliz\'o una orden}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
@@ -365,13 +330,13 @@ Curso Normal & Curso Alternativo\\
 \begin{center}
 \begin{tabularx}{14cm}{|X|X|}
 \hline
-\multicolumn{2}{|l|}{Nombre Caso de uso: Informando nueva orden}\\
+\multicolumn{2}{|l|}{Nombre Casos de uso: Informando nueva orden}\\
 \hline
 \multicolumn{2}{|l|}{Actores: Cocinero}\\
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: Un cliente realizo un pedido}\\
 \hline
-\multicolumn{2}{|l|}{Postcondici\'on: El cocinero es informado de la nueva orden a realizar}\\
+\multicolumn{2}{|l|}{PostCondici\'on: El cocinero es informado de la nueva orden a realizar}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
@@ -384,14 +349,17 @@ Curso Normal & Curso Alternativo\\
 \end{tabularx}
 \end{center}
 
+
 \medskip
 
 Se puede notar que los casos de uso descriptos hasta el momento se encuentran bastante relacionados, dado que todos juntos conforman una secuencia
 com\'un de una cena completa de un cliente en un determinado local. Si bien esta relaci\'on es evidente, en el diagrama de casos de uso no se encuentran
-en un hilo secuencial debido a que no se consideró apropiado. Desde un punto de vista de casos de usos at\'omicos, no ser\'ia correcto relacionar todos los casos de uso
-anteriormente descriptos ya que, por ejemplo, entre la realizaci\'on de una nueva orden y la informaci\'on de una orden finalizada pueden pasar horas y muchos otros sucesos, por lo que no ser\'ia correcto unirlos en el diagrama.
+en un hilo secuencial dado que esto no es correcto. Desde un punto de vista de casos de usos at\'omicos no ser\'ia correcto relacionar todos los casos de uso
+anteriormente descriptos ya que por ejemplo, entre la realizaci\'on de una nueva orden y la informaci\'on de una orden finalizada pueden pasar horas
+en el medio y muchos otros sucesos, por lo que no ser\'ia correcto unirlos en el diagrama.
 
-Sin embargo, como la relaci\'on secuencial es notor\'ia, estos casos de uso ser\'an posteriormente agrupados en diagramas de actividad que muestren
+
+Sin embargo, como la relaci\'on secuencial es notor\'ia, estos casos de uso ser\'an posteriormente agrupados en un diagrama de actividad que muestre
 un hilo de ejecuci\'on completo.
 
 \bigskip
@@ -399,13 +367,13 @@ un hilo de ejecuci\'on completo.
 \begin{center}
 \begin{tabularx}{14cm}{|X|X|}
 \hline
-\multicolumn{2}{|l|}{Nombre Caso de uso: Cargando Stock}\\
+\multicolumn{2}{|l|}{Nombre Casos de uso: Cargando Stock}\\
 \hline
 \multicolumn{2}{|l|}{Actores: Repositor}\\
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: True}\\
 \hline
-\multicolumn{2}{|l|}{Postcondici\'on: Se carga el stock en el sistema}\\
+\multicolumn{2}{|l|}{PostCondici\'on: Se carga el stock en el sistema}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
@@ -430,13 +398,13 @@ Curso Normal & Curso Alternativo\\
 \begin{center}
 \begin{tabularx}{14cm}{|X|X|}
 \hline
-\multicolumn{2}{|l|}{Nombre Caso de uso: Actualizando l\'imite tolerable}\\
+\multicolumn{2}{|l|}{Nombre Casos de uso: Actualizando l\'imite tolerable}\\
 \hline
 \multicolumn{2}{|l|}{Actores: Repositor}\\
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: True}\\
 \hline
-\multicolumn{2}{|l|}{Postcondici\'on: Se actualiza el l\'imite tolerable de alg\'un producto}\\
+\multicolumn{2}{|l|}{PostCondici\'on: Se actualiza el l\'imite tolerable de alg\'un producto}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
@@ -457,9 +425,10 @@ Curso Normal & Curso Alternativo\\
 
 
 \bigskip
-Al igual que sucedió con los primeros casos de uso, los casos de uso 5 y 6 tambi\'en se encuentran correlacionados aunque at\'omicamente no lo est\'en.
+La igual que sucedio con los primeros casos de uso, los casos de uso 5 y 6 tambi\'en se encuentran correlacionados aunque at\'omicamente no lo est\'en.
 A su vez, tambi\'en es claro que en una secuencia de acciones del mundo real, estos casos de uso podr\'ian estar relacionados con los casos
-de uso 1 (\textit{Realizando Nueva Orden}) y 10 (\textit{Recibiendo Pedido de Compra}). Nuevamente, estas relaciones secuenciales se ver\'an modeladas en un diagrama de actividad referente a todo lo que sucede con respecto al stock cuando se realiza una orden.
+de uso 1(realizando orden) y 10(recibiendo pedido de compra). Estas relaciones secuenciales se ver\'an modeladas posteriormente en el diagrama de actividad
+referente a todo lo que sucede con respecto al stock cuando se realiza una orden.
 
 \bigskip
 
@@ -467,13 +436,13 @@ de uso 1 (\textit{Realizando Nueva Orden}) y 10 (\textit{Recibiendo Pedido de Co
 \begin{center}
 \begin{tabularx}{14cm}{|X|X|}
 \hline
-\multicolumn{2}{|l|}{Nombre Caso de uso: Instaurando Men\'u vacio}\\
+\multicolumn{2}{|l|}{Nombre Casos de uso: Instaurando Men\'u vacio}\\
 \hline
 \multicolumn{2}{|l|}{Actores: Operador}\\
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: True}\\
 \hline
-\multicolumn{2}{|l|}{Postcondici\'on: Se carga el men\'u vacio en el sistema}\\
+\multicolumn{2}{|l|}{PostCondici\'on: Se carga el men\'u vacio en el sistema}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
@@ -494,13 +463,13 @@ Curso Normal & Curso Alternativo\\
 \begin{center}
 \begin{tabularx}{14cm}{|X|X|}
 \hline
-\multicolumn{2}{|l|}{Nombre Caso de uso: Cambiando Men\'u}\\
+\multicolumn{2}{|l|}{Nombre Casos de uso: Cambiando Men\'u}\\
 \hline
 \multicolumn{2}{|l|}{Actores: Operador}\\
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: True}\\
 \hline
-\multicolumn{2}{|l|}{Postcondici\'on: Se actualiza el men\'u}\\
+\multicolumn{2}{|l|}{PostCondici\'on: Se actualiza el men\'u}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
@@ -516,7 +485,7 @@ Curso Normal & Curso Alternativo\\
 4.1 El software consulta la hora. Se incluye Casos de uso 11 &
 \\
 \hline
-5.1 El software calcula si el operador se encuentro apto para modificar el men\'u & El operador no se encuentra apto. Ir a 7.1
+5.1 El software calcula si el operador se encuentro apto para modificar el men\'u & El operador no se encuentra apt\'o. Ir a 7.1
 \\
 \hline
 6.1 El software actualiza el men\'u &
@@ -533,13 +502,13 @@ Curso Normal & Curso Alternativo\\
 \begin{center}
 \begin{tabularx}{14cm}{|X|X|}
 \hline
-\multicolumn{2}{|l|}{Nombre Caso de uso: Ingresando n\'umero de locales}\\
+\multicolumn{2}{|l|}{Nombre Casos de uso: Ingresando n\'umero de locales}\\
 \hline
 \multicolumn{2}{|l|}{Actores: Operador}\\
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: True}\\
 \hline
-\multicolumn{2}{|l|}{Postcondici\'on: Se ingresan los n\'umeros de los locales}\\
+\multicolumn{2}{|l|}{PostCondici\'on: Se ingresan los n\'umeros de los locales}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
@@ -555,24 +524,24 @@ Curso Normal & Curso Alternativo\\
 \end{tabularx}
 \end{center}
 
-\medskip
+\bigskip
 
-Los tres casos de uso anteriormente descriptos son los que m\'as están relacionados la actualizaci\'on del men\'u. Esto, como ya se
-explic\'o con anterioridad, se mostrar\'a de una manera m\'as visual en un diagrama de actividad referente a lo que sucede al actualizar un men\'u, tanto
-en el mundo y en la interfaz. Mientras que, luego, con una m\'aquina de estados, se modelar\'a lo que sucede dentro de la m\'aquina con esta acci\'on.
+Los 3 casos de uso anteriormente descriptos son los que m\'as estan relacionados con el hecho de la actualizaci\'on del men\'u. Esto, como ya se
+explic\'o con anterioridad, se mostrar\'a de una manera m\'as visual en un diagrama de actividad que muestre lo que sucede al actualizar un men\'u
+en el mundo y en la interfaz. Mientras que luego, con una m\'aquina de estados, se modelar\'a lo que sucede dentro de la m\'aquina con esta acci\'on.
 
 \bigskip
 
 \begin{center}
 \begin{tabularx}{14cm}{|X|X|}
 \hline
-\multicolumn{2}{|l|}{Nombre Caso de uso: Recibiendo pedido de compra}\\
+\multicolumn{2}{|l|}{Nombre Casos de uso: Recibiendo pedido de compra}\\
 \hline
 \multicolumn{2}{|l|}{Actores: Impresora}\\
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: True}\\
 \hline
-\multicolumn{2}{|l|}{Postcondici\'on: La impresora recibe un nuevo pedido de compra}\\
+\multicolumn{2}{|l|}{PostCondici\'on: La impresora recibe un nuevo pedido de compra}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
@@ -596,17 +565,17 @@ Curso Normal & Curso Alternativo\\
 \begin{center}
 \begin{tabularx}{14cm}{|X|X|}
 \hline
-\multicolumn{2}{|l|}{Nombre Caso de uso: Consultando Hora}\\
+\multicolumn{2}{|l|}{Nombre Casos de uso: Consultando Hora}\\
 \hline
 \multicolumn{2}{|l|}{Actores: Servidor de hora de internet}\\
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: Un operador esta intentando actualizar el men\'u}\\
 \hline
-\multicolumn{2}{|l|}{Postcondici\'on: Se obtiene una actualizaci\'on de la hora}\\
+\multicolumn{2}{|l|}{PostCondici\'on: Se obtiene una actualizaci\'on de la hora}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
-1.1 El software requiere la hora para cálculos de \textit{Round-Robin}& 
+1.1 El software requiere la hora para calculos de round robin & 
 \\
 \hline
 2.1 El Software le pide al servidor una actualizaci\'on de la hora & 
@@ -627,24 +596,26 @@ Curso Normal & Curso Alternativo\\
 \addcontentsline{toc}{subsection}{Diagrmas de Actividad}
 
 
-Los diagramas de actividad son una representaci\'on muy útiles para mostrar el secuenciamiento de varias acciones que se encuentran relacionadas por alg\'un
+Los diagramas de actividad son una representaci\'on para mostrar el secuenciamiento de varias acciones que se encuentran relacionadas por alg\'un
 hilo conductor. Los diagramas de actividad se encuentran enriquecedos por el hecho de poder soportar varios actores en un mismo hilo mediante la 
-separaci\'on por andariveles de las interacciones de cada actor. Es por esto que son muy adecuados para modelar las acciones que suceden entre la
+separaci\'on por andariveles de las interacciones de cada actor, es por esto que son muy adecuados para modelar las acciones que suceden entre la
 m\'aquina y los actores externos e incluso las acciones que suceden entre los actores externos sin interacci\'on con la m\'aquina.
 
-Si bien las interacciones entre el mundo y la m\'aquina ya fueron descriptas en el diagrama de casos de uso, mediante diagramas de actividad se encontraron nuevas formas de describir el funcionamiento del sistema.
+Si bien las interacciones entre el mundo y la m\'aquina ya fueron descriptas en el diagrama de casos de uso, se realiz\'o de forma diferente
+ya que la t\'ecnica de casos de uso se basa en centrarse at\'omicamente en cada caso de uso y solo se explicita una relaci\'on entre dos casos de
+uso cuando la relaci\'on es inmediata.
 
-Mientras la t\'ecnica de casos de uso se basa en centrarse at\'omicamente en cada caso de uso y solo se explicita una relaci\'on entre dos casos de
-uso cuando la relaci\'on es inmediata, los diagramsa de actividad permiten modelar las secuencias de acciones que suceden en la 
+En contraposici\'on a los casos de uso, se utilizar\'an los diagramas de actividad para modelar las secuencias de acciones que sucederi\'an en la 
 pizzer\'ia, sin centrarse en cada paso de la secuencia particularmente (dado que ya fueron explayados en los casos de uso).
 
-\noindent Se decidi\'o que la t\'ecnica ser\'ia utlizada para los siguientes casos particulares:
+Se decidi\'o que la t\'ecnica ser\'ia utlizada para los siguientes casos particulares:
 
 \begin{itemize}
 \item El ciclo de vida completo de una orden.
 \item Ejemplo de manejo de stock.
 \item Actualizaci\'on del men\'u.
 \end{itemize}
+
 
 \subsubsection*{Ciclo de vida de una orden}
 \addcontentsline{toc}{subsubsection}{Ciclo de vida de una orden}
@@ -695,12 +666,143 @@ a la m\'aquina misma por lo que ser\'a modelado posteriormente con la t\'ecnica 
 \section*{Discusi\'on}
 \addcontentsline{toc}{section}{Discusi\'on}
 
+Durante el desarrollo del presente trabajo pr\'actico, se fue explicando en cada momento el porque de la elecci\'on de las diferentes
+t\'ecnicas de modelado en cada uso en particular. Dicha decisi\'on es en parte arbitraria y en parte no, es decir hubo decisiones que estuvieron
+influenciadas por la naturaleza de las t\'ecnicas en s\'i mismas mientras que hubo otras desiciones que fueron m\'as all\'a de las t\'ecnicas
+y que tuvieron que ver con la expresividad que se le quizo dar a cada parte del trabajo en particular. Con lo anteriormente dicho, lo que se quiere notar
+es que hubo partes de la soluci\'on donde no hubo decisiones personales, por ejemplo la t\'ecnica de casos de uso sirve para modelar las interacciones
+entre el mundo y la m\'aquina y eso no fue una desici\'on del grupo, mientras que la cantidad y la especificidad de los diagramas de actividad
+y las m\'aquinas de estado, si fueron una decision tomada por el grupo.
 
+En lo siguiente, se ver\'a porque las decisiones se tomaron de esta manera, explicando como estas decisiones logran que la conjuci\'on
+de los modelos prediquen sobre todos los aspectos necesarios expuestos en los diagramas de objetivo y en el diagrama de contexto.
+
+\subsection*{Diagrama de Contexto}
+\addcontentsline{toc}{subsection}{Diagrama de Contexto}
+Se puede ver que el diagrama de contexto se encuentra explicado en su totalidad por los diferentes modelos que se explayaron en este trabajo pr\'actico.
+
+Por un lado, el diagrama de Casos de Uso modela todas las interacciones que existen entre la m\'aquina y el mundo. Es decir, cada caso uso explica
+at\'omicamente cada una de las relaciones presentes entre un actor externo y el software, como por ejemplo la interacci\'on que existe entre
+el cocinero y el software, cuando el primero le avisa al segundo que la orden fue finalizada. 
+
+Dada la naturaleza de la t\'ecnica, quedan por fuera de la misma, las interacciones presentes entre los actores externos en los que la m\'aquina
+no tiene participaci\'on. 
+
+Para resolver esto, se utilizaron los diferentes diagramas de actividad. Basicamente, se puede notar, que cada una de las relaciones del diagrama de
+contexto se puede categorizar en una o m\'as de las 3 siguientes categorias:
+\begin{itemize}
+\item Las relaciones que tienen inferencia en una orden de un producto.
+\item Las relaciones que tienen inferencia sobre el manejo adecuado del stock de la pizzer\'ia.
+\item Las relaciones que tienen inferencia sobre la actualizaci\'on y el correcto mantenimiento del men\'u.
+\end{itemize}
+
+Es por esto, que se decidi\'o realizar tres diferentes diagramas de actividad, para englobar las diferentes acciones y mostrar as\'i como 
+estan relacionadas en el mundo real, aspecto que se escapaba de los casos de uso, debido a su atomicidad.
+
+
+
+Por otro lado, el modelo conceptual tambi\'en aporta a la explicaci\'on del diagrama de contexto, aunque como ya se mencion\'o, su aporte
+es un poco m\'as transversal a todos los objetivos y al diagrama de contexto, dando una visi\'on m\'as general.
+
+
+Por \'ultimo, cabe destacar que las m\'aquinas de estado no realizaron un mayor aporte a la explicaci\'on de este diagrama, dado que estan m\'as bien
+centradas en lo que sucede dentro del software.
+
+\subsection*{Diagramas de Obejetivos}
+\addcontentsline{toc}{subsection}{Diagramas de Objetivos}
+
+\subsubsection*{Pedido a distancia}
+\addcontentsline{toc}{subsubsection}{Pedido a distancia}
+
+
+
+ 
+\subsubsection*{Mantener men\'u estandar}
+\addcontentsline{toc}{subsubsection}{Mantener men\'u estandar}
+
+El objetivo de mantener un men\'u estandar posee un refinamiento en tres subobjetivos. Por un lado se encuentra el simple objetivo referente
+al men\'u vacio, este objetivo no tiene complejidad y se encuentra descripto en un caso de uso que hace referencia a esta acci\'on at\'omica.
+
+Por otro lado, los otros dos subobjetivos si presentan una complejidad mayor y tratan sobre el aspecto m\'as importante, que es como lograr una 
+correcta sincronizaci\'on. Los comportamientos del sistema referentes a la satisfabilidad de estos subobjetivos se encuentran explicados de dos maneras
+diferentes: Por un lado existe un diagrama de actividad que explica lo que sucede por fuera de la m\'aquina, es decir explica lo que sucede entre todos
+los actores que tienen que ver en esta acci\'on, y por el otro se encuentra una m\'aquina de estados que muestra lo que sucede dentro del software
+mismo, al momento de querer lograr estos subobjetivos.
+
+\subsubsection*{Nivel adecuado de stock}
+\addcontentsline{toc}{subsubsection}{Nivel adecuado de stock}
+
+Este objetivo se encuentra abordado de diferentes maneras tambi\'en. Se encuentra explicado mediante los casos de uso que hacen referencia a la 
+interacci\'on entre la m\'aquina y los diferentes actores que tiene influencia en la variabilidad del stock como el repositor y el cliente, y 
+tambi\'en por los actores que son influenciados por la variabilidad del stock, como podr\'ia ser la impresora.
+
+Adem\'as se puede encontrar un diagrama de actividad que modela toda una secuencia que podr\'ia suceder en el mundo real, mostrando como 
+esta secuencia se relaciona con el stock.
+
+\subsubsection*{Brindar servicios del men\'u}
+\addcontentsline{toc}{subsubsection}{Brinda servicios del men\'u}
+
+Este objetivo se encuentra refinado en dos subobjetivos que predican sobre poder realizar una orden, o impedir que se realice si no se puede.
+Estos subobjetivos se encuentra explicados por diferentes partes del trabajo pr\'actico. Por una lado, todo lo referente a stock esta bastante
+ligado al objetivo anterior y, por ende, se encuentra explicado en el diagrama de actividad mencionado anteriormente, y en los casos de uso correspondientes.
+Mientras que todo lo referente al pedido de una orden en s\'i y lo que sucede con ella se encuentra tambi\'en explicado de dos formas diferentes.
+Por un lado se tienen los casos de uso at\'omicos inherentes a cada parte de la acci\'on total de pedir una pizza y recibirla, ejemplos de esto
+podr\'ian ser los casos de uso Informando nueva orden y eligiendo local. Por otro lado, se tiene un diagrama de actividad espec\'ifico para el
+ciclo de vida de una orden que muestra como interactuan todas las partes y las diferentes alternativas que se pueden presentar.
 
 
 \newpage
 \section*{Conclusiones}
 \addcontentsline{toc}{section}{Conclusiones}
+
+
+Luego de finalizar con los modelos presentados en este trabajo, se lleg\'o a varias conclusiones.
+
+En primer lugar se encontr\'o un gran contraste entre el primer trabajo pr\'actico y el segundo.
+En el primer trabajo el enunciado era bastante vago y ambiguo debido a que se describ\'ia una situaci\'on coloquial. Esto
+trajo aparejado el hecho de que la principal acci\'on del grupo fue tomar una gran cantidad de decisiones y fundamentar las diferentes
+alternativas posibles, en los cuales los modelos a utilizar no eran muy restrictivos. Por otro lado, en este segundo trabajo pr\'actico el grupo se encontr\'o
+con una aproximaci\'on m\'as formal, por lo que la mayor\'ia de las decisiones fueron sobre cual modelo utilizar para explicar cada parte de lo
+entregado por la c\'atedra, pero una vez realizado esto el trabajo tuvo m\'as que ver con la correcta utilizaci\'on de las t\'ecnicas (sus sintaxis, sus restricciones)
+y no con presentar alternativas, ya que estas ya habia sido podadas entre el primer trabajo y los supuestos directivos de la pizzer\'ia.
+
+En segundo lugar, se concluye en que las etapas al encarar el trabajo fueron satisfactorias aunque se podr\'ian considerar otras maneras.
+A saber, la primer etapa del trabajo consisti\'o en definir el alcance de cada modelo por sobre lo que se quer\'ia explayar. Una vez hecho esto, 
+se comenzo con el modelo conceptual dado que provee una idea temprana de como se relacionan todas las partes involucradas en el manejo de la pizzer\'ia.
+Al tener la idea dada por el modelo conceptual, se prosigui\'o con la realizaci\'on de los casos de uso, dado que estos pueden explicar bien de manera
+at\'omica como es la relaci\'on entre la m\'aquina y los diferentes actores. Una vez tenidas las relaciones de forma individual, se realizaron los 
+diagramas de actividad para poder agrupar estar relaciones individuales en secuencias de acciones m\'as representativas de posibles escenarios del mundo real.
+Por \'ultimo, se abordaron las m\'aquinas de estado para dar una mayor explicaci\'on a las acciones internas del software.
+modelo conceptual primero para entender todas las partes
+
+\medskip
+
+Por otro lado, una conclusi\'on importante a la que se lleg\'o tiene que ver con la idea de saber si se esta subespecificando o sobreespecificando.
+Si bien en el trabajo se presenta el resultado final, el proceso de elegir que modelos utilizar para describir cada parte no fue menor. En todos
+los momentos de este proceso surgi\'o la duda de si estan quedando cosas sin explicar o si las explicaciones son redudantes. Para dar un ejemplo 
+concreto se citar\'a un aspectos ligados a estos problemas. 
+
+Un ejemplo asociado a estos problemas podr\'ia ser el subobjetivo presente en la rama central del objetivo Mantener[Nivel Adecuado de Stock en cada local].
+En este subobjetivo podemos ver que hay var\'ias acciones ligadas al software. Esto trajo la duda si esta parte deber\'ia ser modelada con una
+m\'aquina de estados.
+
+ Por un lado, si se realizaba esta m\'aquina, se podr\'ia pensar que hay demasiada redundancia en cuanto a la explicaci\'on
+de manejo de stock, ya que se encontrar\'ia abordado por los cuatro modelos, y adem\'as seguramente esta m\'aquina no aportar\'ia mucho m\'as que otro
+modelo como el diagrama de actividad.
+
+Por otro lado, si no se realizaba esta m\'aquina, se podr\'ia pensar que lo que sucede dentro del software para, por ejemplo, hacer las cuentas sobre los ingredientes
+podr\'ia quedar subespecificado.
+
+En este caso en particular, se decidi\'o que la m\'aquina ser\'ia redundante ya que la cuenta sobre los ingredientes es bastante trivial y la acci\'on importante
+es la relaci\'on con la impresora, acci\'on que ya se encuentra explicada en los casos de uso y en el diagrama de actividad.
+
+Este caso particular, ejemplifica como esto va suceciendo a medida que se toman las decisiones, que usualmente fueron decididas en base al 
+criterio de los ingredientes sobre cuanto se quiere ahondar en cada cuesti\'on.
+
+\medskip
+
+Por \'ultimo, al igual que en el primer trabajo pr\'actico, se concluye en que siempre ser\'ia una herramienta muy buena poder contrastar
+las ideas grupales y los diagramas con alg\'un experto de dominio con el fin de limar ambiguedades y posibles inconsistencias.
 
 
 
