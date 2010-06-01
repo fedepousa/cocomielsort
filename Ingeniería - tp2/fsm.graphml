@@ -1,0 +1,984 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:y="http://www.yworks.com/xml/graphml" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd">
+  <!--Created by yFiles for Java 2.7-->
+  <key for="graphml" id="d0" yfiles.type="resources"/>
+  <key attr.name="url" attr.type="string" for="node" id="d1"/>
+  <key attr.name="description" attr.type="string" for="node" id="d2"/>
+  <key for="node" id="d3" yfiles.type="nodegraphics"/>
+  <key attr.name="Description" attr.type="string" for="graph" id="d4">
+    <default/>
+  </key>
+  <key attr.name="url" attr.type="string" for="edge" id="d5"/>
+  <key attr.name="description" attr.type="string" for="edge" id="d6"/>
+  <key for="edge" id="d7" yfiles.type="edgegraphics"/>
+  <graph edgedefault="directed" id="G">
+    <node id="n0">
+      <data key="d3">
+        <y:GenericNode configuration="com.yworks.bpmn.Event.withShadow">
+          <y:Geometry height="30.0" width="30.0" x="22.33333333333337" y="104.00000000000023"/>
+          <y:Fill color="#FFFFFFE6" color2="#D4D4D4CC" transparent="false"/>
+          <y:BorderStyle color="#27AE27" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="13.0" y="34.0"/>
+          <y:StyleProperties>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.type" value="PLAIN"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.line.color" value="#000000"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill" value="#ffffff"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill2" value="#d4d4d4"/>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.characteristic" value="START"/>
+          </y:StyleProperties>
+        </y:GenericNode>
+      </data>
+    </node>
+    <node id="n1">
+      <data key="d3">
+        <y:GenericNode configuration="com.yworks.bpmn.Event.withShadow">
+          <y:Geometry height="30.0" width="30.0" x="-197.66666666666663" y="98.00000000000023"/>
+          <y:Fill color="#FFFFFFE6" color2="#D4D4D4CC" transparent="false"/>
+          <y:BorderStyle color="#B11F1F" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="13.0" y="34.0"/>
+          <y:StyleProperties>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.type" value="PLAIN"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.line.color" value="#000000"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill" value="#ffffff"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill2" value="#d4d4d4"/>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.characteristic" value="END"/>
+          </y:StyleProperties>
+        </y:GenericNode>
+      </data>
+    </node>
+    <node id="n2">
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="15.0" width="76.0" x="-220.66666666666663" y="53.00000000000023"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle hasColor="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="54.197265625" x="10.9013671875" y="-1.4814453125">Cliente_j</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n3">
+      <data key="d3">
+        <y:GenericNode configuration="com.yworks.bpmn.Event.withShadow">
+          <y:Geometry height="30.0" width="30.0" x="214.848761904762" y="104.00000000000023"/>
+          <y:Fill color="#FFFFFFE6" color2="#D4D4D4CC" transparent="false"/>
+          <y:BorderStyle color="#27AE27" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="13.0" y="34.0"/>
+          <y:StyleProperties>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.type" value="PLAIN"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.line.color" value="#000000"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill" value="#ffffff"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill2" value="#d4d4d4"/>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.characteristic" value="START"/>
+          </y:StyleProperties>
+        </y:GenericNode>
+      </data>
+    </node>
+    <node id="n4">
+      <data key="d3">
+        <y:GenericNode configuration="com.yworks.bpmn.Event.withShadow">
+          <y:Geometry height="30.0" width="30.0" x="413.697523809524" y="104.00000000000023"/>
+          <y:Fill color="#FFFFFFE6" color2="#D4D4D4CC" transparent="false"/>
+          <y:BorderStyle color="#27AE27" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="13.0" y="34.0"/>
+          <y:StyleProperties>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.type" value="PLAIN"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.line.color" value="#000000"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill" value="#ffffff"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill2" value="#d4d4d4"/>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.characteristic" value="START"/>
+          </y:StyleProperties>
+        </y:GenericNode>
+      </data>
+    </node>
+    <node id="n5">
+      <data key="d3">
+        <y:GenericNode configuration="com.yworks.bpmn.Event.withShadow">
+          <y:Geometry height="30.0" width="30.0" x="569.395047619048" y="104.00000000000023"/>
+          <y:Fill color="#FFFFFFE6" color2="#D4D4D4CC" transparent="false"/>
+          <y:BorderStyle color="#27AE27" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="13.0" y="34.0"/>
+          <y:StyleProperties>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.type" value="PLAIN"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.line.color" value="#000000"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill" value="#ffffff"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill2" value="#d4d4d4"/>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.characteristic" value="START"/>
+          </y:StyleProperties>
+        </y:GenericNode>
+      </data>
+    </node>
+    <node id="n6">
+      <data key="d3">
+        <y:GenericNode configuration="com.yworks.bpmn.Event.withShadow">
+          <y:Geometry height="30.0" width="30.0" x="-197.66666666666663" y="352.0000000000007"/>
+          <y:Fill color="#FFFFFFE6" color2="#D4D4D4CC" transparent="false"/>
+          <y:BorderStyle color="#B11F1F" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="13.0" y="34.0"/>
+          <y:StyleProperties>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.type" value="PLAIN"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.line.color" value="#000000"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill" value="#ffffff"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill2" value="#d4d4d4"/>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.characteristic" value="END"/>
+          </y:StyleProperties>
+        </y:GenericNode>
+      </data>
+    </node>
+    <node id="n7">
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="15.0" width="76.0" x="-220.66666666666663" y="250.00000000000045"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle hasColor="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="43.48046875" x="16.259765625" y="-1.4814453125">Local_i</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n8">
+      <data key="d3">
+        <y:GenericNode configuration="com.yworks.bpmn.Event.withShadow">
+          <y:Geometry height="30.0" width="30.0" x="22.33333333333337" y="352.0000000000007"/>
+          <y:Fill color="#FFFFFFE6" color2="#D4D4D4CC" transparent="false"/>
+          <y:BorderStyle color="#27AE27" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="13.0" y="34.0"/>
+          <y:StyleProperties>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.type" value="PLAIN"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.line.color" value="#000000"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill" value="#ffffff"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill2" value="#d4d4d4"/>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.characteristic" value="START"/>
+          </y:StyleProperties>
+        </y:GenericNode>
+      </data>
+    </node>
+    <node id="n9">
+      <data key="d3">
+        <y:GenericNode configuration="com.yworks.bpmn.Event.withShadow">
+          <y:Geometry height="30.0" width="30.0" x="214.848761904762" y="352.0000000000007"/>
+          <y:Fill color="#FFFFFFE6" color2="#D4D4D4CC" transparent="false"/>
+          <y:BorderStyle color="#27AE27" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="13.0" y="34.0"/>
+          <y:StyleProperties>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.type" value="PLAIN"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.line.color" value="#000000"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill" value="#ffffff"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill2" value="#d4d4d4"/>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.characteristic" value="START"/>
+          </y:StyleProperties>
+        </y:GenericNode>
+      </data>
+    </node>
+    <node id="n10">
+      <data key="d3">
+        <y:GenericNode configuration="com.yworks.bpmn.Event.withShadow">
+          <y:Geometry height="30.0" width="30.0" x="413.697523809524" y="352.0000000000007"/>
+          <y:Fill color="#FFFFFFE6" color2="#D4D4D4CC" transparent="false"/>
+          <y:BorderStyle color="#27AE27" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="13.0" y="34.0"/>
+          <y:StyleProperties>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.type" value="PLAIN"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.line.color" value="#000000"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill" value="#ffffff"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill2" value="#d4d4d4"/>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.characteristic" value="START"/>
+          </y:StyleProperties>
+        </y:GenericNode>
+      </data>
+    </node>
+    <node id="n11">
+      <data key="d3">
+        <y:GenericNode configuration="com.yworks.bpmn.Event.withShadow">
+          <y:Geometry height="31.962890625" width="148.630859375" x="525.579617931548" y="351.0185546875007"/>
+          <y:Fill color="#FFFFFFE6" color2="#D4D4D4CC" transparent="false"/>
+          <y:BorderStyle color="#27AE27" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="108.630859375" x="20.0" y="7.0">t &lt; fin_quantum_i</y:NodeLabel>
+          <y:StyleProperties>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.type" value="PLAIN"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.line.color" value="#000000"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill" value="#ffffff"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill2" value="#d4d4d4"/>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.characteristic" value="START"/>
+          </y:StyleProperties>
+        </y:GenericNode>
+      </data>
+    </node>
+    <node id="n12">
+      <data key="d3">
+        <y:GenericNode configuration="com.yworks.bpmn.Event.withShadow">
+          <y:Geometry height="30.0" width="30.0" x="756.092571428572" y="352.0000000000007"/>
+          <y:Fill color="#FFFFFFE6" color2="#D4D4D4CC" transparent="false"/>
+          <y:BorderStyle color="#27AE27" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="108.630859375" x="-39.3154296875" y="6.0185546875">t &lt; fin_quantum_i</y:NodeLabel>
+          <y:StyleProperties>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.type" value="PLAIN"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.line.color" value="#000000"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill" value="#ffffff"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill2" value="#d4d4d4"/>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.characteristic" value="START"/>
+          </y:StyleProperties>
+        </y:GenericNode>
+      </data>
+    </node>
+    <node id="n13">
+      <data key="d3">
+        <y:GenericNode configuration="com.yworks.bpmn.Event.withShadow">
+          <y:Geometry height="30.0" width="30.0" x="614.092571428572" y="552.5000000000005"/>
+          <y:Fill color="#FFFFFFE6" color2="#D4D4D4CC" transparent="false"/>
+          <y:BorderStyle color="#27AE27" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="13.0" y="34.0"/>
+          <y:StyleProperties>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.type" value="PLAIN"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.line.color" value="#000000"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill" value="#ffffff"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill2" value="#d4d4d4"/>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.characteristic" value="START"/>
+          </y:StyleProperties>
+        </y:GenericNode>
+      </data>
+    </node>
+    <node id="n14">
+      <data key="d3">
+        <y:GenericNode configuration="com.yworks.bpmn.Event.withShadow">
+          <y:Geometry height="30.0" width="30.0" x="718.0000000000001" y="483.3333333333335"/>
+          <y:Fill color="#FFFFFFE6" color2="#D4D4D4CC" transparent="false"/>
+          <y:BorderStyle color="#27AE27" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="13.0" y="34.0"/>
+          <y:StyleProperties>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.type" value="PLAIN"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.line.color" value="#000000"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill" value="#ffffff"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill2" value="#d4d4d4"/>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.characteristic" value="START"/>
+          </y:StyleProperties>
+        </y:GenericNode>
+      </data>
+    </node>
+    <node id="n15">
+      <data key="d3">
+        <y:GenericNode configuration="com.yworks.bpmn.Event.withShadow">
+          <y:Geometry height="30.0" width="30.0" x="230.66666666666674" y="242.50000000000045"/>
+          <y:Fill color="#FFFFFFE6" color2="#D4D4D4CC" transparent="false"/>
+          <y:BorderStyle color="#27AE27" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="13.0" y="34.0"/>
+          <y:StyleProperties>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.type" value="PLAIN"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.line.color" value="#000000"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill" value="#ffffff"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill2" value="#d4d4d4"/>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.characteristic" value="START"/>
+          </y:StyleProperties>
+        </y:GenericNode>
+      </data>
+    </node>
+    <node id="n16">
+      <data key="d3">
+        <y:GenericNode configuration="com.yworks.bpmn.Event.withShadow">
+          <y:Geometry height="30.0" width="30.0" x="28.000000000000057" y="216.00000000000068"/>
+          <y:Fill color="#FFFFFFE6" color2="#D4D4D4CC" transparent="false"/>
+          <y:BorderStyle color="#27AE27" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="13.0" y="34.0"/>
+          <y:StyleProperties>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.type" value="PLAIN"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.line.color" value="#000000"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill" value="#ffffff"/>
+            <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill2" value="#d4d4d4"/>
+            <y:Property class="java.lang.String" name="com.yworks.bpmn.characteristic" value="START"/>
+          </y:StyleProperties>
+        </y:GenericNode>
+      </data>
+    </node>
+    <edge id="e0" source="n1" target="n0">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="-71.16667175292969" y="61.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="FreeSerif" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.6357421875" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="72.49609375" x="75.36618102461286" y="-29.4944877966892">entra al local i</y:EdgeLabel>
+          <y:Arc height="55.020450592041016" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e1" source="n0" target="n3">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="133.59104919433594" y="70.87113952636719"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="FreeSerif" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.6357421875" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="59.6591796875" x="66.89940433534622" y="-27.668831190273522">elige pizza!</y:EdgeLabel>
+          <y:Arc height="48.12885665893555" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e2" source="n0" target="n0">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="37.33333206176758" y="119.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e3" source="n0" target="n0">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="37.33333206176758" y="119.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e4" source="n3" target="n3">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="229.8487548828125" y="119.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e5" source="n3" target="n3">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="229.8487548828125" y="119.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e6" source="n1" target="n1">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="-182.6666717529297" y="113.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e7" source="n4" target="n4">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="428.697509765625" y="119.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e8" source="n4" target="n4">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="428.697509765625" y="119.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e9" source="n3" target="n4">
+      <data key="d6"/>
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="329.27313232421875" y="51.87207794189453"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="stail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="100.22265625" x="44.914531812756195" y="-23.4821585043605">muestra locales?</y:EdgeLabel>
+          <y:Arc height="67.12792205810547" ratio="1.35033118724823" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e10" source="n4" target="n0">
+      <data key="d6"/>
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="233.0154266357422" y="216.84103393554688"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="head" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="38.857421875" x="-157.7597384047454" y="35.691466381998424">volver</y:EdgeLabel>
+          <y:Arc height="97.8410415649414" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e11" source="n5" target="n5">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="584.39501953125" y="119.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e12" source="n5" target="n5">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="584.39501953125" y="119.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e13" source="n4" target="n5">
+      <data key="d6"/>
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="506.5462646484375" y="64.07562255859375"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="stail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="71.376953125" x="43.9747826415894" y="-24.04109146634096">elegir local!</y:EdgeLabel>
+          <y:Arc height="54.92437744140625" ratio="1.4110534191131592" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e14" source="n6" target="n6">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="-182.6666717529297" y="367.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e15" source="n8" target="n8">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="37.33333206176758" y="367.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e16" source="n8" target="n8">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="37.33333206176758" y="367.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e17" source="n6" target="n6">
+      <data key="d6"/>
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="-182.6666717529297" y="367.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e18" source="n6" target="n6">
+      <data key="d6"/>
+      <data key="d7">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="-182.66666666666663" y="283.0000000000007"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="free" modelPosition="anywhere" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="72.056640625" x="32.221165974934934" y="-58.32815551757744">elige pizza?</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="free" modelPosition="anywhere" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="100.22265625" x="-162.97316996256507" y="-34.37210083007744">muestra locales?</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="free" modelPosition="anywhere" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="38.857421875" x="-12.750513712565066" y="-40.37210083007744">volver</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="free" modelPosition="anywhere" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="67.580078125" x="-130.75051371256507" y="-59.32815551757744">elegir local</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="free" modelPosition="anywhere" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="86.142578125" x="23.249486287434934" y="-76.32815551757744">reserva stock?</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e19" source="n6" target="n8">
+      <data key="d6"/>
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="-72.66667175292969" y="389.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="head" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="91.2578125" x="0.6196293729258855" y="-0.522436634988253">entra al local i?</y:EdgeLabel>
+          <y:Arc height="-22.0" ratio="-0.4000000059604645" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e20" source="n9" target="n9">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="229.8487548828125" y="367.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e21" source="n9" target="n9">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="229.8487548828125" y="367.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e22" source="n8" target="n9">
+      <data key="d6"/>
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="133.59104919433594" y="318.87115478515625"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="43.140625" x="69.2265583448414" y="-28.832395867479363">elige p</y:EdgeLabel>
+          <y:Arc height="48.12885665893555" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e23" source="n10" target="n10">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="428.697509765625" y="367.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e24" source="n10" target="n10">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="428.697509765625" y="367.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e25" source="n9" target="n10">
+      <data key="d6"/>
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="329.27313232421875" y="317.2878112792969"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="head" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="60.900390625" x="45.263432219029255" y="-29.605635744753044">que hora?</y:EdgeLabel>
+          <y:Arc height="49.712188720703125" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e26" source="n11" target="n11">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="599.89501953125" y="367.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e27" source="n11" target="n11">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="599.89501953125" y="367.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e28" source="n10" target="n11">
+      <data key="d6"/>
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="514.2962646484375" y="324.20062255859375"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="free" modelPosition="anywhere" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="242.16015625" x="-50.48490942193132" y="-73.7735546852719">[inicio_quantum_i &lt;= t &lt; fin_quantum_i]</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="free" modelPosition="anywhere" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="92.95703125" x="13.71821544087004" y="-52.77355475320769">consultar stock</y:EdgeLabel>
+          <y:Arc height="42.79937744140625" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e29" source="n12" target="n12">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="771.0925903320312" y="367.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e30" source="n12" target="n12">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="771.0925903320312" y="367.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e31" source="n11" target="n12">
+      <data key="d6"/>
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="685.4937744140625" y="324.20062255859375"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="free" modelPosition="anywhere" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="98.95703125" x="34.574736938430874" y="-53.54928292009254">muestra locales!</y:EdgeLabel>
+          <y:Arc height="42.79939270019531" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e32" source="n12" target="n8">
+      <data key="d6"/>
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="404.21295166015625" y="469.4398193359375"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="free" modelPosition="anywhere" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="38.857421875" x="-324.6522921665734" y="109.06092432599883">volver</y:EdgeLabel>
+          <y:Arc height="102.4398193359375" ratio="0.5584383010864258" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e33" source="n10" target="n9">
+      <data key="d6"/>
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="329.27313232421875" y="380.7121887207031"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="88.17578125" x="-91.24990142531612" y="13.073322711196909">consultar hora</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="free" modelPosition="anywhere" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="137.154296875" x="-147.43900639559138" y="33.01146325166093">[t fuera del quantum_i]</y:EdgeLabel>
+          <y:Arc height="13.712188720703125" ratio="0.27583152055740356" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e34" source="n13" target="n13">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="629.0925903320312" y="567.5"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e35" source="n13" target="n13">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="629.0925903320312" y="567.5"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e36" source="n14" target="n13">
+      <data key="d6"/>
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="698.3379516601562" y="558.8935546875"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="stail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="84.876953125" x="-8.45065247333639" y="10.625020345052235">reserva stock!</y:EdgeLabel>
+          <y:Arc height="31.205745697021484" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e37" source="n13" target="n6">
+      <data key="d6"/>
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="197.20147705078125" y="572.56201171875"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="101.5" x="-264.0784396275109" y="2.128532565969067">termina compra?</y:EdgeLabel>
+          <y:Arc height="108.4767837524414" ratio="0.5189321041107178" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e38" source="n14" target="n14">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="733.0" y="498.3333435058594"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e39" source="n14" target="n14">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="733.0" y="498.3333435058594"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e40" source="n14" target="n14">
+      <data key="d6"/>
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="733.0" y="498.3333435058594"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e41" source="n12" target="n14">
+      <data key="d6"/>
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="784.8795776367188" y="442.1898193359375"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="72.642578125" x="6.393942918204743" y="27.04772949218784">elegir local?</y:EdgeLabel>
+          <y:Arc height="34.1865234375" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e42" source="n5" target="n15">
+      <data key="d6"/>
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="425.4984130859375" y="213.8504638671875"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="free" modelPosition="anywhere" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="90.173828125" x="-111.25315154571206" y="73.14456067455302">entra al local j!</y:EdgeLabel>
+          <y:Arc height="27.657791137695312" ratio="0.30231255292892456" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e43" source="n8" target="n13">
+      <data key="d6"/>
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="325.2251892089844" y="490.82525634765625"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="145.0" x="451.9709759883484" y="143.41797429632288">retira pedido reservado?</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="412.37687882341686" y="154.90407886571495"/>
+          <y:Arc height="-24.891727447509766" ratio="-0.15935717523097992" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e44" source="n15" target="n15">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="245.6666717529297" y="257.5"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e45" source="n15" target="n15">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="245.6666717529297" y="257.5"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e46" source="n16" target="n1">
+      <data key="d6"/>
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="-81.52503967285156" y="194.35955810546875"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="head" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="100.234375" x="-192.27664055268195" y="-28.64363390660472">termina compra!</y:EdgeLabel>
+          <y:Arc height="25.231842041015625" ratio="0.39632898569107056" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e47" source="n16" target="n16">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="43.0" y="231.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e48" source="n16" target="n16">
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="43.0" y="231.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e49" source="n15" target="n16">
+      <data key="d6"/>
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="142.51856994628906" y="258.12896728515625"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="143.734375" x="-120.57750193277991" y="1.2497550538540168">retira pedido reservado!</y:EdgeLabel>
+          <y:Arc height="13.997112274169922" ratio="0.2739270031452179" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e50" source="n16" target="n16">
+      <data key="d6"/>
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="43.0" y="231.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e51" source="n13" target="n13">
+      <data key="d6"/>
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="629.0925903320312" y="567.5"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e52" source="n13" target="n13">
+      <data key="d6"/>
+      <data key="d7">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="629.092571428572" y="622.5000000000005"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="145.0" x="16.390178850447" y="26.419311523437955">retira pedido reservado?</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="free" modelPosition="anywhere" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="91.439453125" x="-16.609821149553" y="57.419311523437955">entra al local j?</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+  </graph>
+  <data key="d0">
+    <y:Resources/>
+  </data>
+</graphml>
