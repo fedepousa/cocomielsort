@@ -13,13 +13,12 @@
   <key for="edge" id="d7" yfiles.type="edgegraphics"/>
   <graph edgedefault="directed" id="G">
     <node id="n0" yfiles.foldertype="group">
-      <data key="d2"/>
       <data key="d3">
         <y:TableNode configuration="YED_POOL_NODE">
           <y:Geometry height="458.5" width="670.0" x="34.0" y="42.5"/>
           <y:Fill color="#FFF2BC" color2="#D4D4D4CC" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="15" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="21.45361328125" modelName="internal" modelPosition="l" rotationAngle="270.0" textColor="#000000" visible="true" width="251.3681640625" x="4.0" y="103.56591796875">Proceso de actualizacion de menu</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="15" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="21.999267578125" modelName="internal" modelPosition="l" rotationAngle="270.0" textColor="#000000" visible="true" width="207.271728515625" x="4.0" y="125.6141357421875">Proceso de actualización de menú</y:NodeLabel>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="custom" rotationAngle="270.0" textColor="#000000" visible="true" width="78.15625" x="33.0" y="14.50390625">Jefe de chefs<y:LabelModel>
               <y:RowNodeLabelModel offset="3.0"/>
             </y:LabelModel>
@@ -101,13 +100,12 @@ de internet <y:LabelModel>
       </data>
       <graph edgedefault="directed" id="n0:">
         <node id="n0::n0">
-          <data key="d2"/>
           <data key="d3">
             <y:GenericNode configuration="com.yworks.bpmn.Event.withShadow">
               <y:Geometry height="30.0" width="30.0" x="107.5" y="58.25"/>
               <y:Fill color="#FFFFFFE6" color2="#D4D4D4CC" transparent="false"/>
               <y:BorderStyle color="#B11F1F" type="line" width="1.0"/>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="13.0" y="34.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="13.0" y="34.0"/>
               <y:StyleProperties>
                 <y:Property class="java.lang.String" name="com.yworks.bpmn.type" value="PLAIN"/>
                 <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.line.color" value="#000000"/>
@@ -119,13 +117,12 @@ de internet <y:LabelModel>
           </data>
         </node>
         <node id="n0::n1">
-          <data key="d2"/>
           <data key="d3">
             <y:GenericNode configuration="com.yworks.bpmn.Event.withShadow">
               <y:Geometry height="30.0" width="30.0" x="643.75" y="58.25"/>
               <y:Fill color="#FFFFFFE6" color2="#D4D4D4CC" transparent="false"/>
               <y:BorderStyle color="#B11F1F" type="line" width="1.0"/>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="13.0" y="34.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="13.0" y="34.0"/>
               <y:StyleProperties>
                 <y:Property class="java.lang.String" name="com.yworks.bpmn.type" value="TERMINATE"/>
                 <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.line.color" value="#000000"/>
@@ -137,13 +134,12 @@ de internet <y:LabelModel>
           </data>
         </node>
         <node id="n0::n2">
-          <data key="d2"/>
           <data key="d3">
             <y:GenericNode configuration="com.yworks.bpmn.Gateway.withShadow">
               <y:Geometry height="45.0" width="45.0" x="448.75" y="296.6875"/>
               <y:Fill color="#FFFFFFE6" color2="#D4D4D4CC" transparent="false"/>
               <y:BorderStyle color="#E38B00" type="line" width="1.0"/>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="eight_pos" modelPosition="ne" textColor="#000000" visible="true" width="4.0" x="49.0" y="-4.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="eight_pos" modelPosition="ne" textColor="#000000" visible="true" width="4.0" x="49.0" y="-4.0"/>
               <y:StyleProperties>
                 <y:Property class="java.lang.String" name="com.yworks.bpmn.type" value="GATEWAY_PLAIN"/>
                 <y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.line.color" value="#000000"/>
@@ -158,11 +154,11 @@ de internet <y:LabelModel>
     <node id="n1">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="107.5" x="150.0" y="105.75"/>
+          <y:Geometry height="30.0" width="107.5" x="136.25" y="105.75"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="34.2529296875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="107.57470703125" x="-0.037353515625" y="-2.12646484375">Decide cambios 
-en el menu</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="FreeSerif" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="37.58154296875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="97.25874328613281" x="5.120628356933594" y="-3.790771484375">Decide cambios 
+en el menú</y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
@@ -173,8 +169,8 @@ en el menu</y:NodeLabel>
           <y:Geometry height="45.0" width="107.5" x="136.25" y="188.0"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="34.2529296875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="110.30419921875" x="-1.402099609375" y="5.37353515625">Realiza cunsulta 
-de actualizacion</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="FreeSerif" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="37.58154296875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="99.595458984375" x="3.9522705078125" y="3.709228515625">Realiza cunsulta 
+de actualización</y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
@@ -182,10 +178,10 @@ de actualizacion</y:NodeLabel>
     <node id="n3">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="107.5" x="153.75" y="420.375"/>
+          <y:Geometry height="30.0" width="107.5" x="207.75" y="420.375"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.12646484375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="109.51708984375" x="-1.008544921875" y="5.436767578125">Procesa consulta</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="FreeSerif" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.790771484375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="97.65052795410156" x="4.924736022949219" y="4.6046142578125">Procesa consulta</y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
@@ -196,8 +192,8 @@ de actualizacion</y:NodeLabel>
           <y:Geometry height="30.0" width="123.75" x="128.125" y="304.1875"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="34.2529296875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="107.89208984375" x="7.928955078125" y="-2.12646484375">Recibe pedido
-de Actualizacion</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="FreeSerif" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="37.58154296875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="94.53024291992188" x="14.609878540039062" y="-3.790771484375">Recibe pedido
+de actualización</y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
@@ -208,7 +204,7 @@ de Actualizacion</y:NodeLabel>
           <y:Geometry height="30.0" width="97.5" x="273.75" y="304.1875"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="34.2529296875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="85.35791015625" x="6.071044921875" y="-2.12646484375">Calcula 
+          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="FreeSerif" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="37.58154296875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="75.51469421386719" x="10.992652893066406" y="-3.790771484375">Calcula 
 Round-robin</y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
@@ -220,8 +216,8 @@ Round-robin</y:NodeLabel>
           <y:Geometry height="30.0" width="71.25" x="538.125" y="269.1875"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="34.2529296875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="61.88427734375" x="4.682861328125" y="-2.12646484375">Actualiza
-Menu</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="FreeSerif" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="37.58154296875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="57.6185302734375" x="6.81573486328125" y="-3.790771484375">Actualiza
+Menú</y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
@@ -229,10 +225,10 @@ Menu</y:NodeLabel>
     <node id="n7">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="135.0" x="346.25" y="179.25"/>
+          <y:Geometry height="30.0" width="135.0" x="346.25" y="195.5"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.12646484375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="106.48291015625" x="14.258544921875" y="5.436767578125">Recibe negacion</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="FreeSerif" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.790771484375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="96.86695861816406" x="19.06652069091797" y="4.6046142578125">Recibe negación</y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
@@ -243,7 +239,7 @@ Menu</y:NodeLabel>
           <y:Geometry height="30.0" width="142.91666666666669" x="530.8333333333333" y="179.25"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.12646484375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="131.77197265625" x="5.572347005208371" y="5.436767578125">Recibe confirmacion</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="FreeSerif" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.790771484375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="120.96171569824219" x="10.977475484212277" y="4.6046142578125">Recibe confirmación</y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
@@ -264,7 +260,7 @@ Menu</y:NodeLabel>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="101.7109375" x="-0.6264500950040315" y="17.1435546875">Informa cambios</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="85.6031494140625" x="2.0" y="16.928955078125">Informa cambios</y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
@@ -285,7 +281,7 @@ Menu</y:NodeLabel>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="head" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="85.421875" x="-82.2839251718834" y="34.1123046875">Consulta hora</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="six_pos" modelPosition="thead" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="70.95919799804688" x="-37.469719519981965" y="57.67041015625">Consulta hora</y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
@@ -296,7 +292,7 @@ Menu</y:NodeLabel>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="79.580078125" x="53.54295506715903" y="-52.0751953125">Informa hora</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="six_pos" modelPosition="stail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="66.94140625" x="16.971843766678774" y="-28.51708984375">Informa hora</y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
@@ -307,7 +303,7 @@ Menu</y:NodeLabel>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="65.751953125" x="5.8740234375" y="2.0">se puede 
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.7841796875" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="55.9554443359375" x="10.77227783203125" y="2.0">¿Se puede 
 actualizar?</y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
@@ -327,11 +323,11 @@ actualizar?</y:EdgeLabel>
       <data key="d7">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
-            <y:Point x="560.8333333333334" y="345.75"/>
+            <y:Point x="573.75" y="319.1875"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="13.931640625" x="36.27283732096362" y="16.88620846770533">Si</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="14.00250244140625" x="37.564300537109375" y="2.0">Sí</y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
@@ -352,7 +348,7 @@ actualizar?</y:EdgeLabel>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="20.236328125" x="-17.253097923473433" y="-59.7965087890625">No</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="six_pos" modelPosition="ttail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="18.65594482421875" x="-24.68659510730396" y="-68.8355712890625">No</y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
