@@ -203,7 +203,7 @@
           <y:Geometry height="15.0" width="76.0" x="105.0" y="437.0"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle hasColor="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="63.671875" x="6.1640625" y="-1.4814453125">Software_i</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="145.333984375" x="-34.6669921875" y="-1.4814453125">Software Actualización_i</y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
@@ -231,7 +231,7 @@
           <y:Geometry height="15.0" width="76.0" x="780.4680991735538" y="147.5"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle hasColor="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="44.546875" x="15.7265625" y="-1.4814453125">Cliente</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="54.197265625" x="10.9013671875" y="-1.4814453125">Cliente_j</y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
@@ -287,7 +287,7 @@
           <y:Geometry height="15.0" width="76.0" x="1087.5045041322314" y="158.25623140495867"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle hasColor="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="59.552734375" x="8.2236328125" y="-1.4814453125">Repositor</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="69.021484375" x="3.4892578125" y="-1.4814453125">Repositor_i</y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
@@ -377,6 +377,41 @@
         </y:GenericNode>
       </data>
     </node>
+    <node id="n25">
+      <data key="d2"/>
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="30.0" width="30.0" x="493.7377414736843" y="63.455859873684226"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.12646484375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="1317.431640625" x="-643.7158203125" y="5.436767578125007">Los i de la izquierda van de 1 hasta el numero de locales y se refieren al numero de locales. Los m de la derecha van de 1 a cantidad de ingredientes. j de 1 a cantidad de clientes. ¡¡¡Hay un ciclo por cada m!!! </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n26">
+      <data key="d2"/>
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="30.0" width="30.0" x="1323.9194664421054" y="525.6943750736843"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.12646484375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="434.98681640625" x="-202.493408203125" y="5.436767578125">Hay una copia de cada uno de los 3 nodos de la derecha por cada m</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n27">
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="15.0" width="76.0" x="1107.8711157024795" y="330.0"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle hasColor="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="186.54296875" x="-55.271484375" y="-1.4814453125">Software Pedidos y Stock Bajo_i</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
     <edge id="e0" source="n1" target="n0">
       <data key="d7">
         <y:ArcEdge>
@@ -462,7 +497,7 @@ actualización!_i</y:EdgeLabel>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="standard" target="none"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="FreeSerif" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.6357421875" modelName="six_pos" modelPosition="head" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="74.3369140625" x="4.9402316161746285" y="-60.66943551195175">No actualice!_i</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="FreeSerif" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.6357421875" modelName="six_pos" modelPosition="shead" preferredPlacement="anywhere" ratio="0.5" rotationAngle="330.0" textColor="#000000" visible="true" width="113.08203125" x="15.35186767578125" y="-141.80930858200333">Actualización global!_i</y:EdgeLabel>
           <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.6357421875" modelName="free" modelPosition="anywhere" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="194.576171875" x="263.61271508939126" y="-92.09916570082191">[inicio_quantum_i &lt;= t &lt; fin_quantum]</y:EdgeLabel>
           <y:Arc height="119.5394058227539" ratio="1.3329054117202759" type="fixedRatio"/>
         </y:ArcEdge>
@@ -506,7 +541,7 @@ actualización?_i</y:EdgeLabel>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="FreeSerif" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.6357421875" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="113.08203125" x="-201.7026224955897" y="66.08408438940091">Actualización global!_i</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="FreeSerif" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.6357421875" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="74.3369140625" x="-182.3300639018397" y="66.08408438940091">No actualice!_i</y:EdgeLabel>
           <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.6357421875" modelName="free" modelPosition="anywhere" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="234.5517578125" x="-260.64666550034207" y="88.7375019261234">[not ( inicio_quantum_i &lt;= t &lt; fin_quantum_i )]</y:EdgeLabel>
         </y:BezierEdge>
       </data>
@@ -611,7 +646,7 @@ actualización?_i</y:EdgeLabel>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="white_delta"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="ttail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="68.705078125" x="0.10280983437814939" y="-28.75761627953898">Imprimir_i?</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="ttail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="85.908203125" x="0.10280983437814939" y="-28.75761627953898">Imprimir_i_m?</y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
@@ -697,7 +732,7 @@ actualización?_i</y:EdgeLabel>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="standard" target="none"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="FreeSerif" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.6357421875" modelName="six_pos" modelPosition="head" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="61.1630859375" x="-71.339599609375" y="-15.983192153062248">FaltaStock_i</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="FreeSerif" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.6357421875" modelName="six_pos" modelPosition="head" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="67.6083984375" x="-74.562255859375" y="-16.50651819684515">FaltaStock_m</y:EdgeLabel>
           <y:Arc height="0.0" ratio="0.0" type="fixedRatio"/>
         </y:ArcEdge>
       </data>
@@ -712,7 +747,7 @@ actualización?_i</y:EdgeLabel>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="standard" target="none"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="FreeSerif" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.6357421875" modelName="six_pos" modelPosition="head" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="56.8662109375" x="-123.373779296875" y="-17.6357421875">Imprimir_i!</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="FreeSerif" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.6357421875" modelName="six_pos" modelPosition="head" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="71.2021484375" x="-130.541748046875" y="-17.6357421875">Imprimir_i_m!</y:EdgeLabel>
           <y:Arc height="0.0" ratio="0.0" type="fixedRatio"/>
         </y:ArcEdge>
       </data>
@@ -727,7 +762,7 @@ actualización?_i</y:EdgeLabel>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="standard" target="none"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="FreeSerif" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.6357421875" modelName="six_pos" modelPosition="head" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="74.7275390625" x="-76.72754806400917" y="-51.55863952636719">CargarStock_i?</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="FreeSerif" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.6357421875" modelName="six_pos" modelPosition="head" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="81.1728515625" x="-83.17286056400917" y="-51.55863952636719">CargarStock_m?</y:EdgeLabel>
           <y:Arc height="2.1955231204628944E-5" ratio="9.305775279244699E-7" type="fixedRatio"/>
         </y:ArcEdge>
       </data>
@@ -742,7 +777,7 @@ actualización?_i</y:EdgeLabel>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="standard" target="none"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="FreeSerif" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.6357421875" modelName="six_pos" modelPosition="head" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="51.7392578125" x="188.26268433626024" y="31.239548398275588">StockOk_i</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="FreeSerif" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.6357421875" modelName="six_pos" modelPosition="head" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="58.1845703125" x="185.04002808626024" y="31.092273888619673">StockOk_m</y:EdgeLabel>
           <y:Arc height="-25.60704803466797" ratio="-0.2984653413295746" type="fixedRatio"/>
         </y:ArcEdge>
       </data>
