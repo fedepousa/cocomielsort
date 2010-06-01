@@ -17,7 +17,7 @@
           <y:Geometry height="47.0" width="122.0" x="14.9166666666666" y="-83.75"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="68.60848999023438" x="26.695755004882812" y="27.363555908203125">Jefe de chefs</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="68.60848999023438" x="26.695755004882812" y="25.962890625">Jefe de chefs</y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="clase" use3DEffect="false">
             <y:AttributeLabel/>
             <y:MethodLabel/>
@@ -33,7 +33,7 @@
           <y:Geometry height="47.0" width="122.0" x="14.916666666666544" y="-30.25"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="50.63037109375" x="35.684814453125" y="27.363555908203125">Cocinero</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="50.63037109375" x="35.684814453125" y="25.962890625">Cocinero</y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="clase" use3DEffect="false">
             <y:AttributeLabel/>
             <y:MethodLabel/>
@@ -49,7 +49,7 @@
           <y:Geometry height="47.0" width="122.0" x="14.916666666666544" y="16.75"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="32.628265380859375" x="44.68586730957031" y="27.363555908203125">Mozo</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="32.628265380859375" x="44.68586730957031" y="25.962890625">Mozo</y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="clase" use3DEffect="false">
             <y:AttributeLabel/>
             <y:MethodLabel/>
@@ -65,7 +65,7 @@
           <y:Geometry height="47.0" width="122.0" x="14.916666666666515" y="70.25"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="54.63616943359375" x="33.681915283203125" y="27.363555908203125">Operador</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="54.63616943359375" x="33.681915283203125" y="25.962890625">Operador</y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="clase" use3DEffect="false">
             <y:AttributeLabel/>
             <y:MethodLabel/>
@@ -81,7 +81,7 @@
           <y:Geometry height="47.0" width="122.0" x="14.916666666666544" y="123.75"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="53.8446044921875" x="34.07769775390625" y="27.363555908203125">Repositor</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="53.8446044921875" x="34.07769775390625" y="25.962890625">Repositor</y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="clase" use3DEffect="false">
             <y:AttributeLabel/>
             <y:MethodLabel/>
@@ -97,7 +97,7 @@
           <y:Geometry height="47.0" width="122.0" x="191.91666666666663" y="16.75"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="48.63946533203125" x="36.680267333984375" y="27.363555908203125">Personal</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="48.63946533203125" x="36.680267333984375" y="25.962890625">Personal</y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="clase" use3DEffect="false">
             <y:AttributeLabel/>
             <y:MethodLabel/>
@@ -113,7 +113,7 @@
           <y:Geometry height="47.0" width="122.0" x="14.916666666666544" y="219.25"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="57.92236328125" x="32.038818359375" y="27.363555908203125">Impresora</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="57.92236328125" x="32.038818359375" y="25.962890625">Impresora</y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="clase" use3DEffect="false">
             <y:AttributeLabel/>
             <y:MethodLabel/>
@@ -129,7 +129,7 @@
           <y:Geometry height="47.0" width="122.0" x="355.66666666666674" y="16.75"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="32.61627197265625" x="44.691864013671875" y="27.363555908203125">Local</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="32.61627197265625" x="44.691864013671875" y="25.962890625">Local</y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="clase" use3DEffect="false">
             <y:AttributeLabel/>
             <y:MethodLabel/>
@@ -145,7 +145,7 @@
           <y:Geometry height="47.0" width="122.0" x="784.9999999999998" y="16.75"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="93.30291748046875" x="14.348541259765625" y="27.363555908203125">Depósito de stock</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="93.30291748046875" x="14.348541259765625" y="25.962890625">Depósito de stock</y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="clase" use3DEffect="false">
             <y:AttributeLabel/>
             <y:MethodLabel/>
@@ -161,7 +161,7 @@
           <y:Geometry height="47.0" width="122.0" x="784.9999999999998" y="282.0"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="67.92486572265625" x="27.037567138671875" y="27.363555908203125">Ingredientes</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="67.92486572265625" x="27.037567138671875" y="25.962890625">Ingredientes</y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="clase" use3DEffect="false">
             <y:AttributeLabel/>
             <y:MethodLabel/>
@@ -177,7 +177,7 @@
           <y:Geometry height="84.25" width="116.66666666666674" x="896.3333333333333" y="130.75"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="79.35458374023438" x="18.656041463216184" y="27.363555908203125">Disponibilidad</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="79.35458374023438" x="18.656041463216184" y="25.962890625">Disponibilidad</y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="asociación" use3DEffect="false">
             <y:AttributeLabel>int: cantidad
 int: límite</y:AttributeLabel>
@@ -194,7 +194,7 @@ int: límite</y:AttributeLabel>
           <y:Geometry height="47.0" width="122.0" x="536.5833333333333" y="282.0"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="51.302001953125" x="35.3489990234375" y="27.363555908203125">Producto</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="51.302001953125" x="35.3489990234375" y="25.962890625">Producto</y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="clase" use3DEffect="false">
             <y:AttributeLabel/>
             <y:MethodLabel/>
@@ -210,7 +210,7 @@ int: límite</y:AttributeLabel>
           <y:Geometry height="47.0" width="122.0" x="355.66666666666674" y="282.0"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="33.971527099609375" x="44.01423645019531" y="27.363555908203125">Menú</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="33.971527099609375" x="44.01423645019531" y="25.962890625">Menú</y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="clase" use3DEffect="false">
             <y:AttributeLabel/>
             <y:MethodLabel/>
@@ -226,7 +226,7 @@ int: límite</y:AttributeLabel>
           <y:Geometry height="47.0" width="122.0" x="536.5833333333333" y="112.5"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="39.320587158203125" x="41.33970642089844" y="27.363555908203125">Pedido</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="39.320587158203125" x="41.33970642089844" y="25.962890625">Pedido</y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="clase" use3DEffect="false">
             <y:AttributeLabel/>
             <y:MethodLabel/>
@@ -242,7 +242,7 @@ int: límite</y:AttributeLabel>
           <y:Geometry height="47.0" width="122.0" x="536.5833333333333" y="16.75"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="40.639862060546875" x="40.68006896972656" y="27.363555908203125">Cliente</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="40.639862060546875" x="40.68006896972656" y="25.962890625">Cliente</y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="clase" use3DEffect="false">
             <y:AttributeLabel/>
             <y:MethodLabel/>
@@ -258,7 +258,7 @@ int: límite</y:AttributeLabel>
           <y:Geometry height="70.5" width="116.66666666666674" x="658.5833333333333" y="185.5"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="51.985626220703125" x="32.34052022298181" y="27.363555908203125">Cantidad</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="51.985626220703125" x="32.34052022298181" y="25.962890625">Cantidad</y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="asociación" use3DEffect="false">
             <y:AttributeLabel>int: cantidad</y:AttributeLabel>
             <y:MethodLabel/>
@@ -274,7 +274,7 @@ int: límite</y:AttributeLabel>
           <y:Geometry height="47.0" width="122.0" x="14.916666666666544" y="296.25"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="57.286712646484375" x="32.35664367675781" y="27.363555908203125">Proveedor</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="57.286712646484375" x="32.35664367675781" y="25.962890625">Proveedor</y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="clase" use3DEffect="false">
             <y:AttributeLabel/>
             <y:MethodLabel/>
@@ -290,7 +290,7 @@ int: límite</y:AttributeLabel>
           <y:Geometry height="47.0" width="122.0" x="185.29166666666666" y="282.0"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="109.94976806640625" x="6.025115966796875" y="27.363555908203125">Pedido de reposición</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="109.94976806640625" x="6.025115966796875" y="25.962890625">Pedido de reposición</y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="clase" use3DEffect="false">
             <y:AttributeLabel/>
             <y:MethodLabel/>
@@ -303,12 +303,12 @@ int: límite</y:AttributeLabel>
       <data key="d2"><![CDATA[UMLClass]]></data>
       <data key="d3">
         <y:UMLClassNode>
-          <y:Geometry height="47.0" width="121.99999999999994" x="185.29166666666666" y="329.0"/>
+          <y:Geometry height="55.178988326848184" width="169.02918287937734" x="185.29166666666663" y="329.0"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="69.63992309570312" x="26.18003845214841" y="27.363555908203125">int: cantidad</y:NodeLabel>
-          <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="&lt;&lt;Agregación&gt;&gt;" use3DEffect="false">
-            <y:AttributeLabel/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="4.0" x="82.51459143968867" y="25.962890625"/>
+          <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="agregación calificada" use3DEffect="false">
+            <y:AttributeLabel>int: cantidad </y:AttributeLabel>
             <y:MethodLabel/>
           </y:UML>
         </y:UMLClassNode>
@@ -382,7 +382,7 @@ int: límite</y:AttributeLabel>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="none"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="50.090667724609375" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="11.587890625" x="2.0000025431313873" y="-0.7506561279296875">1
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="45.888671875" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="11.587890625" x="2.0000025431313873" y="1.350341796875">1
 
 1</y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
@@ -395,7 +395,7 @@ int: límite</y:AttributeLabel>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="none"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.363555908203125" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="43.943359375" x="-1.0631612141926894" y="2.0">1..*   1</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="43.943359375" x="-1.0631612141926894" y="2.0">1..*   1</y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
@@ -417,7 +417,7 @@ int: límite</y:AttributeLabel>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="white_diamond"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="219.08978271484375" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="24.96484375" x="1.9999999999997726" y="-218.69500732421875">1..*
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="199.48046875" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="24.96484375" x="1.9999999999997726" y="-208.89035034179688">1..*
 
 
 
@@ -441,6 +441,7 @@ int: límite</y:AttributeLabel>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="none"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="shead" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="53.53515625" x="-56.2283935546875" y="-19.962890625">*          *</y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
@@ -451,7 +452,7 @@ int: límite</y:AttributeLabel>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="none"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="234.45333862304688" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="11.587890625" x="2.0000101725261175" y="-226.3767852783203">1
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="213.443359375" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="11.587890625" x="2.0000101725261175" y="-215.87179565429688">1
 
 
 
@@ -486,7 +487,7 @@ int: límite</y:AttributeLabel>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="none"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.363555908203125" modelName="six_pos" modelPosition="shead" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="62.93359375" x="-60.9276123046875" y="-21.363555908203125">1            *</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="shead" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="62.93359375" x="-60.9276123046875" y="-19.962890625">1            *</y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
@@ -499,7 +500,7 @@ int: límite</y:AttributeLabel>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="none"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.363555908203125" modelName="six_pos" modelPosition="thead" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="59.13671875" x="0.41080729166662877" y="50.869720458984375">1           *</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="thead" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="59.13671875" x="0.41080729166662877" y="52.2703857421875">1           *</y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
@@ -510,7 +511,7 @@ int: límite</y:AttributeLabel>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="none"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="126.908447265625" modelName="six_pos" modelPosition="shead" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="24.96484375" x="-26.964823404947992" y="-124.74072265625">*
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="115.703125" modelName="six_pos" modelPosition="shead" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="24.96484375" x="-26.964823404947992" y="-119.1380615234375">*
 
 
 
@@ -533,7 +534,7 @@ int: límite</y:AttributeLabel>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="none"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="172.99911499023438" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="24.96484375" x="-30.42431640625" y="-0.3745574951171875">1..*
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="157.591796875" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="24.96484375" x="-30.42431640625" y="7.3291015625">1..*
 
 
 
@@ -556,7 +557,7 @@ int: límite</y:AttributeLabel>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="none"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.363555908203125" modelName="six_pos" modelPosition="stail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="95.294921875" x="10.104456583658731" y="2.0">1..*                 *</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="stail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="95.294921875" x="10.104456583658731" y="2.0">1..*                 *</y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
@@ -570,7 +571,7 @@ int: límite</y:AttributeLabel>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="none"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.363555908203125" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="417.84765625" x="5.7428487141926325" y="-18.00830078125">1                                                                                                         1</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="417.84765625" x="5.7428487141926325" y="-18.00830078125">1                                                                                                         1</y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
@@ -583,7 +584,7 @@ int: límite</y:AttributeLabel>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="none"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.363555908203125" modelName="six_pos" modelPosition="stail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="262.17578125" x="8.350017869893605" y="2.0">1                                                                1</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="stail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="262.17578125" x="8.350017869893605" y="2.0">1                                                                1</y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
@@ -597,7 +598,7 @@ int: límite</y:AttributeLabel>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="none"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.363555908203125" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="116.08984375" x="2.7885936262420614" y="-125.516845703125">*                          1</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="116.08984375" x="2.7885936262420614" y="-125.516845703125">*                          1</y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
@@ -605,12 +606,12 @@ int: límite</y:AttributeLabel>
     <edge id="e20" source="n18" target="n9">
       <data key="d6">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+          <y:Path sx="36.73362516212717" sy="-4.089494163424092" tx="0.0" ty="0.0">
             <y:Point x="845.9999999999998" y="352.5"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="none"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.363555908203125" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="539.529296875" x="4.134328206380076" y="2.0">*                                                                                                                                      1..*</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="482.576171875" x="9.119287077709373" y="2.0">*                                                                                                                       1..*</y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
