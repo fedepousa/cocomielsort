@@ -1,5 +1,5 @@
 \documentclass[a4paper,10pt]{article}
-%\usepackage{a4wide}
+%\usepackage{a4wide} <-- me parece que va a quedar mejor con esto
 \usepackage{graphicx}
 \usepackage{verbatim}
 \usepackage{subfig}
@@ -96,6 +96,63 @@ caso que fue lo que se quizo restringir en idioma castellano.
 
 \medskip
 
+
+% DEJE ESTO SI QUIEREN VER COMO QUEDA UN ENUMERATE
+%\begin{enumerate}
+%\item Se explicitaron las correspondencias de cada local con cada tipo de empleado (clase personal y sus subclases).
+
+%\medskip
+
+%\underline{\textbf{context Local}}
+
+%self.personal$\rightarrow$select(p$|$p.isKindOf(Jefe de Chefs)).size()$=1$
+
+%self.personal$\rightarrow$select(p$|$p.isKindOf(Cocinero)).size()$>0$
+
+%self.personal$\rightarrow$select(p$|$p.isKindOf(Mozo)).size()$>0$
+
+%self.personal$\rightarrow$select(p$|$p.isKindOf(Operador)).size()$=1$
+
+%self.personal$\rightarrow$select(p$|$p.isKindOf(Repositor)).size()$=1$
+
+%\item El men\'u es el mismo para todos los locales.
+
+%\medskip
+
+%\underline{\textbf{context Local}}
+
+%Local.allInstances().men\'u$\rightarrow$asSet()$\rightarrow$size()$=1$
+
+%\item Para todo dep\'osito, cada ingrediente cuyo nivel de stock se encuentre por debajo de mínimo tolerable tiene que estar en un \'unico pedido de reposición relacionado con el local correspondiente al dep\'osito en cuesti\'on.
+
+%\medskip
+
+%\underline{\textbf{context Depósito de stock}}
+
+%self.ingrediente$\rightarrow$select(i|i.disponibilidad.cantidad$<$disponibilidad.límite)$\rightarrow$
+
+%forAll(i$|$i.pedidodereposición.size()$=1$ and 
+
+%i.pedidodereposición$\rightarrow$forAll(p$|$p.local.depósitodestock$=$self))
+
+%\item Explicar mejor
+%Se pide, para un pedido de reposici\'on, una cantidad de stock mayor o igual al límite tolerable de los ingredientes que se encuentran en el pedido de reposición. Esto es as\'i para que una vez que se realiza el pedido, seguro se cuente con el m\'inimo necesario.
+
+%\medskip
+
+%\underline{\textbf{context Ingredientes}}
+
+%self.pedidodereposición$\rightarrow$.forAll(p|p.cantidad$\geq$self.disponibilidad.límite)
+
+%\item La impresora utilizada en un pedido de reposición es la impresora del local que emitió dicho pedido.
+
+%\medskip
+
+%\underline{\textbf{context Pedido de reposición}}
+
+%self.Impresora$=$self.Local.Impresora
+%\end{enumerate}
+
 Se explicitaron las correspondencias de cada local con cada tipo de empleado (clase personal y sus subclases).
 
 \medskip
@@ -139,8 +196,7 @@ i.pedidodereposición$\rightarrow$forAll(p$|$p.local.depósitodestock$=$self))
 \medskip
 
 Explicar mejor
-Se pide, para un pedido de reposici\'on, una cantidad de stock mayor o igual al límite tolerable de los ingredientes que se encuentran en el pedido de reposición. 
-Esto es as\'i para que una vez que se realiza el pedido, seguro se cuente con el m\'inimo necesario.
+Se pide, para un pedido de reposici\'on, una cantidad de stock mayor o igual al límite tolerable de los ingredientes que se encuentran en el pedido de reposición. Esto es as\'i para que una vez que se realiza el pedido, seguro se cuente con el m\'inimo necesario.
 
 \medskip
 
@@ -183,7 +239,7 @@ y luego se detallar\'a en particular cada caso de uso.
 \subsubsection*{Detalles Casos de Uso}
 \addcontentsline{toc}{subsubsection}{Detalles de Caso de Uso}
 
-A continuaci\'on se detallar\'a cada caso de uso, dando la descripci\'on de la sucesi\'on de hechos, adem\'as de los actores y la pre y postcondici\'on.
+A continuaci\'on se detallar\'a cada caso de uso, dando la descripci\'on de la sucesi\'on de hechos, adem\'as de los actores y la pre y Postcondici\'on.
 
 Para seguir un hilo conductor, los casos de uso se encuentran numerados en forma secuencial agrupados por el o los actores participantes. Se seguir\'a este mismo secuenciamiento para realizar la descripci\'on.
 
@@ -203,11 +259,11 @@ pedido por parte del cliente.
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: True}\\
 \hline
-\multicolumn{2}{|l|}{PostCondici\'on: Se logra hacer el pedido}\\
+\multicolumn{2}{|l|}{Postcondici\'on: Se logra hacer el pedido}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
-1.1 El cliente realiza una orden. & 1.2 La orden no es válida. Fin de C.U.
+1.1 El cliente realiza una orden. & 1.2 La orden no es válida. Ir a 5.1.
 \\
 \hline
 2.1 El sistema verifica que se puede realizar la orden (si hay stock). &
@@ -242,7 +298,7 @@ Curso Normal & Curso Alternativo\\
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: El cliente realiz\'o un pedido que no se puede efectuar en el propio local}\\
 \hline
-\multicolumn{2}{|l|}{PostCondici\'on: El cliente elige un nuevo local}\\
+\multicolumn{2}{|l|}{Postcondici\'on: El cliente elige un nuevo local}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
@@ -282,7 +338,7 @@ ya asumiendo que el cliente realiz\'o una orden que no pudo ser satisfecha en el
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: Existe una orden en proceso}\\
 \hline
-\multicolumn{2}{|l|}{PostCondici\'on: Se informa que hay se finaliz\'o una orden}\\
+\multicolumn{2}{|l|}{Postcondici\'on: Se informa que hay se finaliz\'o una orden}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
@@ -315,7 +371,7 @@ Curso Normal & Curso Alternativo\\
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: Un cliente realizo un pedido}\\
 \hline
-\multicolumn{2}{|l|}{PostCondici\'on: El cocinero es informado de la nueva orden a realizar}\\
+\multicolumn{2}{|l|}{Postcondici\'on: El cocinero es informado de la nueva orden a realizar}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
@@ -349,7 +405,7 @@ un hilo de ejecuci\'on completo.
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: True}\\
 \hline
-\multicolumn{2}{|l|}{PostCondici\'on: Se carga el stock en el sistema}\\
+\multicolumn{2}{|l|}{Postcondici\'on: Se carga el stock en el sistema}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
@@ -380,7 +436,7 @@ Curso Normal & Curso Alternativo\\
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: True}\\
 \hline
-\multicolumn{2}{|l|}{PostCondici\'on: Se actualiza el l\'imite tolerable de alg\'un producto}\\
+\multicolumn{2}{|l|}{Postcondici\'on: Se actualiza el l\'imite tolerable de alg\'un producto}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
@@ -411,13 +467,13 @@ de uso 1 (\textit{Realizando Nueva Orden}) y 10 (\textit{Recibiendo Pedido de Co
 \begin{center}
 \begin{tabularx}{14cm}{|X|X|}
 \hline
-\multicolumn{2}{|l|}{Nombre Casos de uso: Instaurando Men\'u vacio}\\
+\multicolumn{2}{|l|}{Nombre Caso de uso: Instaurando Men\'u vacio}\\
 \hline
 \multicolumn{2}{|l|}{Actores: Operador}\\
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: True}\\
 \hline
-\multicolumn{2}{|l|}{PostCondici\'on: Se carga el men\'u vacio en el sistema}\\
+\multicolumn{2}{|l|}{Postcondici\'on: Se carga el men\'u vacio en el sistema}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
@@ -438,13 +494,13 @@ Curso Normal & Curso Alternativo\\
 \begin{center}
 \begin{tabularx}{14cm}{|X|X|}
 \hline
-\multicolumn{2}{|l|}{Nombre Casos de uso: Cambiando Men\'u}\\
+\multicolumn{2}{|l|}{Nombre Caso de uso: Cambiando Men\'u}\\
 \hline
 \multicolumn{2}{|l|}{Actores: Operador}\\
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: True}\\
 \hline
-\multicolumn{2}{|l|}{PostCondici\'on: Se actualiza el men\'u}\\
+\multicolumn{2}{|l|}{Postcondici\'on: Se actualiza el men\'u}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
@@ -477,13 +533,13 @@ Curso Normal & Curso Alternativo\\
 \begin{center}
 \begin{tabularx}{14cm}{|X|X|}
 \hline
-\multicolumn{2}{|l|}{Nombre Casos de uso: Ingresando n\'umero de locales}\\
+\multicolumn{2}{|l|}{Nombre Caso de uso: Ingresando n\'umero de locales}\\
 \hline
 \multicolumn{2}{|l|}{Actores: Operador}\\
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: True}\\
 \hline
-\multicolumn{2}{|l|}{PostCondici\'on: Se ingresan los n\'umeros de los locales}\\
+\multicolumn{2}{|l|}{Postcondici\'on: Se ingresan los n\'umeros de los locales}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
@@ -510,13 +566,13 @@ en el mundo y en la interfaz. Mientras que, luego, con una m\'aquina de estados,
 \begin{center}
 \begin{tabularx}{14cm}{|X|X|}
 \hline
-\multicolumn{2}{|l|}{Nombre Casos de uso: Recibiendo pedido de compra}\\
+\multicolumn{2}{|l|}{Nombre Caso de uso: Recibiendo pedido de compra}\\
 \hline
 \multicolumn{2}{|l|}{Actores: Impresora}\\
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: True}\\
 \hline
-\multicolumn{2}{|l|}{PostCondici\'on: La impresora recibe un nuevo pedido de compra}\\
+\multicolumn{2}{|l|}{Postcondici\'on: La impresora recibe un nuevo pedido de compra}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
@@ -540,17 +596,17 @@ Curso Normal & Curso Alternativo\\
 \begin{center}
 \begin{tabularx}{14cm}{|X|X|}
 \hline
-\multicolumn{2}{|l|}{Nombre Casos de uso: Consultando Hora}\\
+\multicolumn{2}{|l|}{Nombre Caso de uso: Consultando Hora}\\
 \hline
 \multicolumn{2}{|l|}{Actores: Servidor de hora de internet}\\
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: Un operador esta intentando actualizar el men\'u}\\
 \hline
-\multicolumn{2}{|l|}{PostCondici\'on: Se obtiene una actualizaci\'on de la hora}\\
+\multicolumn{2}{|l|}{Postcondici\'on: Se obtiene una actualizaci\'on de la hora}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
-1.1 El software requiere la hora para calculos de round robin & 
+1.1 El software requiere la hora para cálculos de \textit{Round-Robin}& 
 \\
 \hline
 2.1 El Software le pide al servidor una actualizaci\'on de la hora & 
