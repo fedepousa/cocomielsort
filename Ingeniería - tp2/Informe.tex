@@ -164,7 +164,7 @@ self.Impresora$=$self.Local.Impresora
 \addcontentsline{toc}{subsection}{Diagrama de Casos de Uso}
 
 Esta t\'ecnica sirve para mostrar como son las interacciones entre el mundo y la m\'aquina, es decir que se abstraen varias de las relaciones presentes
-obviando las relaciones prop\'ias entre actores que se encuentran por fuera de la m\'aquina, as\'i como las interacciones que son intr\'insecas de la m\'aquina.
+obviando las relaciones propias entre actores que se encuentran por fuera de la m\'aquina, as\'i como las interacciones que son intr\'insecas de la m\'aquina.
 
 \subsubsection*{Diagrama}
 \addcontentsline{toc}{subsubsection}{Diagrama}
@@ -181,13 +181,11 @@ y luego se detallar\'a en particular cada caso de uso.
 
 
 \subsubsection*{Detalles Casos de Uso}
-\addcontentsline{toc}{subsubsection}{Detalles de Casos de Uso}
+\addcontentsline{toc}{subsubsection}{Detalles de Caso de Uso}
 
 A continuaci\'on se detallar\'a cada caso de uso, dando la descripci\'on de la sucesi\'on de hechos, adem\'as de los actores y la pre y postcondici\'on.
 
-Para seguir un hilo conductor, los casos de uso se encuentran numerados en forma secuencial agrupados por el o los actores participantes.
-
-Se seguir\'a este mismo secuenciamiento para realizar la descripci\'on.
+Para seguir un hilo conductor, los casos de uso se encuentran numerados en forma secuencial agrupados por el o los actores participantes. Se seguir\'a este mismo secuenciamiento para realizar la descripci\'on.
 
 \bigskip
 
@@ -199,7 +197,7 @@ pedido por parte del cliente.
 \begin{center}
 \begin{tabularx}{14cm}{|X|X|}
 \hline
-\multicolumn{2}{|l|}{Nombre Casos de uso: Realizando orden}\\
+\multicolumn{2}{|l|}{Nombre Caso de uso: Realizando orden}\\
 \hline
 \multicolumn{2}{|l|}{Actores: Cliente}\\
 \hline
@@ -238,7 +236,7 @@ Curso Normal & Curso Alternativo\\
 \begin{center}
 \begin{tabularx}{14cm}{|X|X|}
 \hline
-\multicolumn{2}{|l|}{Nombre Casos de uso: Eligiendo Local}\\
+\multicolumn{2}{|l|}{Nombre Caso de uso: Eligiendo Local}\\
 \hline
 \multicolumn{2}{|l|}{Actores: Cliente}\\
 \hline
@@ -263,14 +261,14 @@ Curso Normal & Curso Alternativo\\
 \end{tabularx}
 \end{center}
 
-Este caso de uso, en contraste a la mayor\'ia de los dem\'as, contiene una precondici\'on. Este se incluye para imponer una restricci\'on que no
-se puede imponer desde el diagrama mismo dado a que no existe expresividad para esto. 
+\medskip
 
-La precondici\'on del caso de uso dice El cliente realiz\'o un pedido que no se puede efectuar en el propio local.
-Esta precondici\'on se incluye para mostrar que este caso de uso no tiene sentido por si solo sin una precedencia directa del caso de uso
-Realizando Nueva Orden. Esto no se puede expresar en el diagrama mismo dado que la etiqueta presente en la relaci\'on entre los dos casos de uso 
-aparece la etiqueta extiende. Esto es as\'i dado que no siempre que se realiza una nueva orden se elige otro local, por lo que no ser\'ia correcta
-la inclusi\'on de una etiqueta incluye. Luego, se usa esta precondici\'on para indicar esta restricci\'on y para poder la descripci\'on del caso de uso
+Este caso de uso, en contraste a la mayor\'ia de los dem\'as, contiene una precondici\'on no trivial. Ésta se incluye para imponer una restricci\'on que no
+se puede imponer desde el diagrama mismo dado a que no contamos con la expresividad suficiente para ello.
+
+Esta precondici\'on se incluye para mostrar que este caso de uso no tiene sentido por sí solo sin una precedencia directa del caso de uso
+\textit{Realizando Nueva Orden}. Esto no se puede expresar en el diagrama mismo dado que la etiqueta presente en la relaci\'on entre los dos casos de uso es de tipo \textit{<<extiende>>}. Se consideró esto as\'i dado que no siempre que se realiza una nueva orden se elige otro local, por lo que no ser\'ia correcto
+el uso de de una etiqueta \textit{<<incluye>>}. Luego, se usa esta precondici\'on para indicar esta restricci\'on y para poder detallar la descripci\'on del caso de uso
 ya asumiendo que el cliente realiz\'o una orden que no pudo ser satisfecha en el propio local.
 
 \bigskip
@@ -278,7 +276,7 @@ ya asumiendo que el cliente realiz\'o una orden que no pudo ser satisfecha en el
 \begin{center}
 \begin{tabularx}{14cm}{|X|X|}
 \hline
-\multicolumn{2}{|l|}{Nombre Casos de uso: Informando Orden Terminada}\\
+\multicolumn{2}{|l|}{Nombre Caso de uso: Informando Orden Terminada}\\
 \hline
 \multicolumn{2}{|l|}{Actores: Mozo, Cocinero}\\
 \hline
@@ -311,7 +309,7 @@ Curso Normal & Curso Alternativo\\
 \begin{center}
 \begin{tabularx}{14cm}{|X|X|}
 \hline
-\multicolumn{2}{|l|}{Nombre Casos de uso: Informando nueva orden}\\
+\multicolumn{2}{|l|}{Nombre Caso de uso: Informando nueva orden}\\
 \hline
 \multicolumn{2}{|l|}{Actores: Cocinero}\\
 \hline
@@ -330,17 +328,14 @@ Curso Normal & Curso Alternativo\\
 \end{tabularx}
 \end{center}
 
-
 \medskip
 
 Se puede notar que los casos de uso descriptos hasta el momento se encuentran bastante relacionados, dado que todos juntos conforman una secuencia
 com\'un de una cena completa de un cliente en un determinado local. Si bien esta relaci\'on es evidente, en el diagrama de casos de uso no se encuentran
-en un hilo secuencial dado que esto no es correcto. Desde un punto de vista de casos de usos at\'omicos no ser\'ia correcto relacionar todos los casos de uso
-anteriormente descriptos ya que por ejemplo, entre la realizaci\'on de una nueva orden y la informaci\'on de una orden finalizada pueden pasar horas
-en el medio y muchos otros sucesos, por lo que no ser\'ia correcto unirlos en el diagrama.
+en un hilo secuencial debido a que no se consideró apropiado. Desde un punto de vista de casos de usos at\'omicos, no ser\'ia correcto relacionar todos los casos de uso
+anteriormente descriptos ya que, por ejemplo, entre la realizaci\'on de una nueva orden y la informaci\'on de una orden finalizada pueden pasar horas y muchos otros sucesos, por lo que no ser\'ia correcto unirlos en el diagrama.
 
-
-Sin embargo, como la relaci\'on secuencial es notor\'ia, estos casos de uso ser\'an posteriormente agrupados en un diagrama de actividad que muestre
+Sin embargo, como la relaci\'on secuencial es notor\'ia, estos casos de uso ser\'an posteriormente agrupados en diagramas de actividad que muestren
 un hilo de ejecuci\'on completo.
 
 \bigskip
@@ -348,7 +343,7 @@ un hilo de ejecuci\'on completo.
 \begin{center}
 \begin{tabularx}{14cm}{|X|X|}
 \hline
-\multicolumn{2}{|l|}{Nombre Casos de uso: Cargando Stock}\\
+\multicolumn{2}{|l|}{Nombre Caso de uso: Cargando Stock}\\
 \hline
 \multicolumn{2}{|l|}{Actores: Repositor}\\
 \hline
@@ -379,7 +374,7 @@ Curso Normal & Curso Alternativo\\
 \begin{center}
 \begin{tabularx}{14cm}{|X|X|}
 \hline
-\multicolumn{2}{|l|}{Nombre Casos de uso: Actualizando l\'imite tolerable}\\
+\multicolumn{2}{|l|}{Nombre Caso de uso: Actualizando l\'imite tolerable}\\
 \hline
 \multicolumn{2}{|l|}{Actores: Repositor}\\
 \hline
@@ -406,10 +401,9 @@ Curso Normal & Curso Alternativo\\
 
 
 \bigskip
-La igual que sucedio con los primeros casos de uso, los casos de uso 5 y 6 tambi\'en se encuentran correlacionados aunque at\'omicamente no lo est\'en.
+Al igual que sucedió con los primeros casos de uso, los casos de uso 5 y 6 tambi\'en se encuentran correlacionados aunque at\'omicamente no lo est\'en.
 A su vez, tambi\'en es claro que en una secuencia de acciones del mundo real, estos casos de uso podr\'ian estar relacionados con los casos
-de uso 1(realizando orden) y 10(recibiendo pedido de compra). Estas relaciones secuenciales se ver\'an modeladas posteriormente en el diagrama de actividad
-referente a todo lo que sucede con respecto al stock cuando se realiza una orden.
+de uso 1 (\textit{Realizando Nueva Orden}) y 10 (\textit{Recibiendo Pedido de Compra}). Nuevamente, estas relaciones secuenciales se ver\'an modeladas en un diagrama de actividad referente a todo lo que sucede con respecto al stock cuando se realiza una orden.
 
 \bigskip
 
@@ -466,7 +460,7 @@ Curso Normal & Curso Alternativo\\
 4.1 El software consulta la hora. Se incluye Casos de uso 11 &
 \\
 \hline
-5.1 El software calcula si el operador se encuentro apto para modificar el men\'u & El operador no se encuentra apt\'o. Ir a 7.1
+5.1 El software calcula si el operador se encuentro apto para modificar el men\'u & El operador no se encuentra apto. Ir a 7.1
 \\
 \hline
 6.1 El software actualiza el men\'u &
@@ -505,11 +499,11 @@ Curso Normal & Curso Alternativo\\
 \end{tabularx}
 \end{center}
 
-\bigskip
+\medskip
 
-Los 3 casos de uso anteriormente descriptos son los que m\'as estan relacionados con el hecho de la actualizaci\'on del men\'u. Esto, como ya se
-explic\'o con anterioridad, se mostrar\'a de una manera m\'as visual en un diagrama de actividad que muestre lo que sucede al actualizar un men\'u
-en el mundo y en la interfaz. Mientras que luego, con una m\'aquina de estados, se modelar\'a lo que sucede dentro de la m\'aquina con esta acci\'on.
+Los tres casos de uso anteriormente descriptos son los que m\'as están relacionados la actualizaci\'on del men\'u. Esto, como ya se
+explic\'o con anterioridad, se mostrar\'a de una manera m\'as visual en un diagrama de actividad referente a lo que sucede al actualizar un men\'u, tanto
+en el mundo y en la interfaz. Mientras que, luego, con una m\'aquina de estados, se modelar\'a lo que sucede dentro de la m\'aquina con esta acci\'on.
 
 \bigskip
 
@@ -577,26 +571,24 @@ Curso Normal & Curso Alternativo\\
 \addcontentsline{toc}{subsection}{Diagrmas de Actividad}
 
 
-Los diagramas de actividad son una representaci\'on para mostrar el secuenciamiento de varias acciones que se encuentran relacionadas por alg\'un
+Los diagramas de actividad son una representaci\'on muy útiles para mostrar el secuenciamiento de varias acciones que se encuentran relacionadas por alg\'un
 hilo conductor. Los diagramas de actividad se encuentran enriquecedos por el hecho de poder soportar varios actores en un mismo hilo mediante la 
-separaci\'on por andariveles de las interacciones de cada actor, es por esto que son muy adecuados para modelar las acciones que suceden entre la
+separaci\'on por andariveles de las interacciones de cada actor. Es por esto que son muy adecuados para modelar las acciones que suceden entre la
 m\'aquina y los actores externos e incluso las acciones que suceden entre los actores externos sin interacci\'on con la m\'aquina.
 
-Si bien las interacciones entre el mundo y la m\'aquina ya fueron descriptas en el diagrama de casos de uso, se realiz\'o de forma diferente
-ya que la t\'ecnica de casos de uso se basa en centrarse at\'omicamente en cada caso de uso y solo se explicita una relaci\'on entre dos casos de
-uso cuando la relaci\'on es inmediata.
+Si bien las interacciones entre el mundo y la m\'aquina ya fueron descriptas en el diagrama de casos de uso, mediante diagramas de actividad se encontraron nuevas formas de describir el funcionamiento del sistema.
 
-En contraposici\'on a los casos de uso, se utilizar\'an los diagramas de actividad para modelar las secuencias de acciones que sucederi\'an en la 
+Mientras la t\'ecnica de casos de uso se basa en centrarse at\'omicamente en cada caso de uso y solo se explicita una relaci\'on entre dos casos de
+uso cuando la relaci\'on es inmediata, los diagramsa de actividad permiten modelar las secuencias de acciones que suceden en la 
 pizzer\'ia, sin centrarse en cada paso de la secuencia particularmente (dado que ya fueron explayados en los casos de uso).
 
-Se decidi\'o que la t\'ecnica ser\'ia utlizada para los siguientes casos particulares:
+\noindent Se decidi\'o que la t\'ecnica ser\'ia utlizada para los siguientes casos particulares:
 
 \begin{itemize}
 \item El ciclo de vida completo de una orden.
 \item Ejemplo de manejo de stock.
 \item Actualizaci\'on del men\'u.
 \end{itemize}
-
 
 \subsubsection*{Ciclo de vida de una orden}
 \addcontentsline{toc}{subsubsection}{Ciclo de vida de una orden}
