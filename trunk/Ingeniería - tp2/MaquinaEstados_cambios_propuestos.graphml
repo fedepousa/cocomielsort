@@ -1050,20 +1050,7 @@ actualización?_i</y:EdgeLabel>
         </y:SplineEdge>
       </data>
     </edge>
-    <edge id="e51" source="n8" target="n8">
-      <data key="d7">
-        <y:SplineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
-            <y:Point x="344.96890149726323" y="522.9687150484211"/>
-            <y:Point x="321.0828920993685" y="557.0"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.6357421875" modelName="six_pos" modelPosition="thead" preferredPlacement="anywhere" ratio="0.5" rotationAngle="330.0" textColor="#000000" visible="true" width="141.001953125" x="-95.81817624075518" y="-72.1394606835866">Actualización global?_j (j!=i)</y:EdgeLabel>
-        </y:SplineEdge>
-      </data>
-    </edge>
-    <edge id="e52" source="n7" target="n7">
+    <edge id="e51" source="n7" target="n7">
       <data key="d7">
         <y:SplineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -1072,7 +1059,7 @@ actualización?_i</y:EdgeLabel>
         </y:SplineEdge>
       </data>
     </edge>
-    <edge id="e53" source="n7" target="n7">
+    <edge id="e52" source="n7" target="n7">
       <data key="d7">
         <y:SplineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -1083,6 +1070,33 @@ actualización?_i</y:EdgeLabel>
           <y:Arrows source="none" target="standard"/>
           <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.6357421875" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="61.265625" x="-2.7755496751339024" y="39.75461068025493">Dame hora?</y:EdgeLabel>
         </y:SplineEdge>
+      </data>
+    </edge>
+    <edge id="e53" source="n16" target="n16">
+      <data key="d6"/>
+      <data key="d7">
+        <y:ArcEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="874.56787109375" y="439.7810363769531"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:Arc height="0.0" ratio="1.0" type="fixedRatio"/>
+        </y:ArcEdge>
+      </data>
+    </edge>
+    <edge id="e54" source="n8" target="n8">
+      <data key="d6"/>
+      <data key="d7">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="370.0" y="517.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.6357421875" modelName="six_pos" modelPosition="shead" preferredPlacement="anywhere" ratio="0.5" rotationAngle="330.0" textColor="#000000" visible="true" width="141.001953125" x="-145.81693134845696" y="-68.43551403319958">Actualización global?_j (j!=i)</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
       </data>
     </edge>
   </graph>
