@@ -664,6 +664,67 @@ a la m\'aquina misma por lo que ser\'a modelado posteriormente con la t\'ecnica 
 \subsection*{M\'aquinas de Estados Finitas}
 \addcontentsline{toc}{subsection}{M\'aquinas de Estados Finitas}
 
+Las m\'aquinas de estados finitas son importantes en este trabajo pr\'actico para poder modelar las acciones que suceden totalmente dentro del software. En este trabajo en particular hay muchas interacciones entre el software y los agentes externos y no existen tantas acciones dentro del mismo que necesiten de una explicaci\'on con m\'aquinas de estado, por lo que este modelo se utilizar\'a en pocos casos. 
+
+En particular en este trabajo, esta t\'ecnica se utiliz\'o para modelar dos aspectos que son relevantes al software por dentro, siendo dignos de una explicaci\'on m\'as hexaustiva. Por un lado se explicar\'a el proceso de actualizaci\'on de men\'u, viendo como se realiza la sincronizaci\'on entre los diferentes locales. Por otro lado, se utilizar\'a la t\'ecnica para explicar como el software puede revisar el stock de otros locales para derivar el pedido de un cliente.
+
+
+\subsubsection*{Sincronizaci\'on del men\'u}
+
+En esta m\'aquina de estados se explicar\'an los cambios internos del software a respuesta de los est\'imulos externos. Para modelar los est\'imulos externos se realizar\'an m\'aquinas de estados por cada agente externo que interactue con el sistema.
+
+A continuaci\'on se ir\'an explicando cada agente, para llegar a la explicaci\'on final del accionamiento del software.
+El \'indice i en cada m\'aquina de estados, va desde 1 hasta la cantidad de locales y hace referencia al n\'umero del local.
+
+\noindent \underline{Jefe de chefs}:
+
+\begin{figure}[H]
+\centering
+\subfloat{\includegraphics[width=1.0\textwidth]{Imagenes/JefedeChefs.png}}
+\caption{Jefe de Chefs}
+\end{figure}
+
+El accionar del jefe de chefs es muy simple, cuando tenga ganas va a querer actualizar y esto es lo \'unico significante que hace. Esta acci\'on tendra que ser \emph{escuchada} por el operador de su propio local.
+
+\bigskip
+
+\noindent \underline{Servidor de hora de internet}:
+
+\begin{figure}[H]
+\centering
+\subfloat{\includegraphics[width=1.0\textwidth]{Imagenes/Servidor.png}}
+\caption{Servidor de hora}
+\end{figure}
+
+El accionar del servidor de hora tambi\'en es simple, solamente esta dispuesto a escuchar una acci\'on que es que le pidan la hora, cuando esta sucede, setea el tiempo en la hora actual del d\'ia. Es el mismo servidor por todos los locales por eso no tiene diferenciaci\'on de \'indice ni en el nombre del servidor ni en la acci\'on Dame hora.
+
+\bigskip
+
+\noindent \underline{Operador}: 
+
+\begin{figure}[H]
+\centering
+\subfloat{\includegraphics[width=1.0\textwidth]{Imagenes/Operador.png}}
+\caption{Operador}
+\end{figure}
+
+El Operador ya tiene algunas acciones que merecen una explicaci\'on m\'as detallada. Por un lado el operador debe escuchar la acci\'on de actualizar generada por su propio jefe de chefs, luego una vez que posee una actualizaci\'on del jefe de chefs, busca instaurar esta actualizaci\'on en el software del local, generando la acci\'on \emph{Instaura actualizacion}. Aqu\'i el Operador, pasa a un estado intermedio donde espera a que el software le diga si se pudo instaurar globalmente la actualizaci\'on o si no se pudo. Durante este estado, el Operador no escucha actualizaciones de su jefe de chefs. Adem\'as cabe destacar que si el software no le da permiso al operador para instaurar la actualizaci\'on esta actualizaci\'on se pierde y el jefe de chefs debe volver a generarla. Estas fueron decisiones tomadas por el grupo, ya que no se especifica como debe ser esto ni en los objetivos ni en el diagrama de contexto, por lo que qued\'o a criterio del grupo.
+
+\bigskip
+
+\noindent \underline{SoftwareLocal}:
+
+\begin{figure}[H]
+\centering
+\subfloat{\includegraphics[width=1.0\textwidth]{Imagenes/SoftActualizacion.png}}
+\caption{Operador}
+\end{figure}
+
+
+El software comienza en un estado inicial donde lo que tiene permitido hacer es escuchar las actualizaciones globales de los otros locales o, por otro lado, esperar un pedido de instauraci\'on de actualizaci\'on de su propio operador. Una vez que su operador le pide instaurar una actualizaci\'on, el software pasa a un estado donde va a querer hacer una actualizaci\'on. En este estado el software pide la hora al servidor para saber si es su momento para actualizar o no. Si es su momento, despues de un timeout el software \emph{saldr\'a} por la transici\'on superior, generando una actualizaci\'on global que sera escuchada por los dem\'as locales. En caso de no ser su momento, no realizar\'a su actulizaci\'on volviendo al estado inicial.
+
+
+
 
 \newpage
 
