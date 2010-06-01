@@ -18,29 +18,28 @@
 
 \section*{Introducci\'on}
 \addcontentsline{toc}{section}{Introducci\'on}
-El objetivo de este trabajo es proporcionar la documentaci\'on necesaria para establecer un marco a los objetivos proporcionados por la c\'atedra. Dichos objetivos fueron refinados por los directivos de la cadena Pizza Hack y se presentan en un diagrama, el mismo es considerado un modelo final. 
+El objetivo de este trabajo es proporcionar la documentaci\'on necesaria para establecer un marco a los objetivos proporcionados por la c\'atedra. Dichos objetivos fueron refinados por los directivos de la cadena Pizza Hack y se presentan en un diagrama, el mismo es considerado un modelo final, es decir que no se presentaban opciones. 
 
 La documentaci\'on a presentar modela comportamientos presentados en el trabajo pr\'actico n\'umero 1.
-Para el cumplimiento de este objetivo se tuvo en cuenta la trazabilidad de los modelos proporcionados con los diagramas de objetivos y de contexto recibidos y tambi\'e resulto importante mantener la trazabilidad entre los distintos modelos realizados a efecto de reflejar de manera eficiente y clara los distintos comportamientos.
+Para el cumplimiento de este objetivo se tuvo en cuenta la trazabilidad de los modelos proporcionados con los diagramas de objetivos y de contexto recibidos y tambi\'en result\'o importante mantener la trazabilidad entre los distintos modelos realizados a efecto de reflejar de manera eficiente y clara los distintos comportamientos.
 Con este fin, se utilizaron diferentes t\'ecnicas de especificaci\'on. A continuaci\'on se establece una introducci\'on a la idea final de cada t\'ecnica:
 \begin{itemize}
-\item Casos de Uso: Este modelo se utiliz\'o para poder modelar los comportamientos que involucran al mundo y a la m\'aquina, es decir, las que involucran a los humanos, la interacci\'on con la impresora y al servidor de internet para sentar algunos ejemplos.
-\item Modelo Conceptual: Este modelo se utiliz\'o para poder mostrar los diferentes componentes  que participan para cumplir todos los objetivos finales.
+\item Casos de Uso: Este modelo se utiliz\'o para poder explicar los comportamientos que involucran al mundo y a la m\'aquina, es decir, las que involucran a los humanos, la interacci\'on con la impresora y al servidor de internet para sentar algunos ejemplos.
+\item Modelo Conceptual: Este modelo se utiliz\'o para poder mostrar los diferentes componentes que participan para cumplir todos los objetivos finales.
 \item Diagrama de Actividad: Este modelo se utiliz\'o para aclarar el comportamiento de algunas secuencias de acciones entre varios actores diferentes.
-\item M\'aquina de estado finita: Este modelo se utiliz\'o para poder describir de manera mas eficiente el comportamiento del software en algunas actividades que cobran mayor importancia por dentro del mismo.
+\item M\'aquina de estados finita: Este modelo se utiliz\'o para poder describir de manera m\'as eficiente el comportamiento del software en algunas actividades que cobran mayor importancia por dentro del mismo.
 \end{itemize}
 
 A medida que se vayan realizando los diferentes modelos, se adjuntaran sus explicaciones en base a las decisiones tomadas, as\'i como tambi\'en se mostrar\'a como los diferentes modelos
 encajan entre s\'i.
 
-Por \'ultimo, se presentaran algunas discusiones y conclusiones finales sobre lo realizado.
+Por \'ultimo, se presentar\'an algunas discusiones y conclusiones finales sobre lo realizado.
 
 
-\newpage
 \section*{Aclaraciones Generales}
 \addcontentsline{toc}{section}{Aclaraciones Generales}
 
-inconsistencias
+En este trabajo pr\'actico solo se realiz\'o una presunci\'on importante. Al leer los diagramas de objetivos, el diagrama de contexto y los escenarios presentados se pudieron observar algunas inconsistencias, por ejemplo en el diagrama de contexto no existe relaci\'on entre el mozo y el cliente y, sin embargo, los escenarios no indican lo mismo. En estos casos, se decidi\'o seguir la linea de los diagramas y no de los escenarios, aunque cada decisi\'on se encuentra detallada en el cuerpo del trabajo.
 
 
 
@@ -49,17 +48,17 @@ inconsistencias
 
 \section*{Vistas}
 \addcontentsline{toc}{section}{Vistas}
-En esta secci\'on presentaremos las diferentes especificaciones realizadas durante el presenta trabajo pr\'actico.
+En esta secci\'on presentaremos las diferentes especificaciones realizadas durante el presente trabajo pr\'actico.
 Se explicar\'a como se abord\'o cada parte del trabajo, explicando para que momentos fue utilizada cada t\'ecnica de especificaci\'on, y el porque
 de esta desici\'on.
 
-En un aspecto general, se divieron las t\'ecnicas de especificaci\'on seg\'un los siguientes crit\'erios:
+En un aspecto general, se dividieron las t\'ecnicas de especificaci\'on seg\'un los siguientes crit\'erios:
 
 \begin{itemize}
-\item Modelo Conceptual: Se utilizar\'a para un entendimiento global del funcionamiento del sofware, entiendendo las entidades que interactuan dentro y con el mismo.
+\item Modelo Conceptual: Se utilizar\'a para un entendimiento global del funcionamiento total de la pizzer\'ia, entiendendo las entidades que interactuan dentro y con el mismo.
 \item Diagrama de Casos de Uso: Se utilizar\'a para mostrar todas las interacciones que la m\'aquina tiene con los diversos actores.
-\item Diagramas de Actividad: Se utilizar\'an para mostrar secuencias de acciones, usualmente agruparan diversos casos de uso que posean un hilo conductor.
-\item Maquinas de Estado Finitas: Se utilizar\'an para mostrar las acciones que ocurren principalmente dentro de la m\'aquina para de esta manera, junto a los dem\'as esqumas
+\item Diagramas de Actividad: Se utilizar\'an para mostrar secuencias de acciones, usualmente agrupar\'an diversos casos de uso que posean un hilo conductor.
+\item M\'aquinas de Estado Finitas: Se utilizar\'an para mostrar las acciones que ocurren principalmente dentro de la m\'aquina para de esta manera, junto a los dem\'as esquemas
 , poder dar un panorama completo del comportamiento del software.
 \end{itemize}
 
@@ -70,14 +69,14 @@ En un aspecto general, se divieron las t\'ecnicas de especificaci\'on seg\'un lo
 \addcontentsline{toc}{subsection}{Modelo Conceptual}
 
 El modelo conceptual es una primera aproximaci\'on a todo lo que se quiere describir detalladamente en el transcurso de este trabajo. Explica 
-de manera temprana la relaci\'on que existe entre los actores externos y las diferentes partes que componen a la pizzer\'ia para lograr un buen
+de manera temprana la relaci\'on que existe entre los actores externos y las diferentes partes que componen a la pizzer\'ia, para lograr un buen
 entendimiento de las interconexiones presentes sin indicar ning\'un tipo de comportamiento por el momento.
 
 A continuaci\'on se presenta el diagrama realizado para este modelo, seguido de las pertinentes explicaciones.
 
 \begin{figure}[H]
 \centering
-\subfloat{\includegraphics[width=1.3\textwidth]{Imagenes/ModeloConceptual.png}}
+\subfloat{\includegraphics[width=1.0\textwidth]{Imagenes/ModeloConceptual.png}}
 \caption{Modelo Conceptual}
 \end{figure}
 
@@ -102,11 +101,6 @@ o grupo de personas se movilizacen hac\'ia otro local no hay raz\'on para no pen
 para modelar esto.
 \end{itemize}
 
-Cosas que no me gustan aca:
-
-habria que cambiar la relacion de pedidorepo-repositor, por pedidorepo-impresora
-el mozo por ahi deberia estar unido a cliente
-ver en general toda la validez del modelo
 
 \medskip
 
@@ -115,7 +109,7 @@ caso que fue lo que se quizo restringir en idioma castellano.
 
 \medskip
 
-Se explicitaron las correspondencias de cada local con cada tipo de empleado (clase personal y sus subclases).
+Se explicitan las correspondencias de cada local con cada tipo de empleado (clase personal y sus subclases).
 
 \medskip
 
@@ -131,7 +125,7 @@ self.personal$\rightarrow$select(p$|$p.isKindOf(Operador)).size()$=1$
 
 self.personal$\rightarrow$select(p$|$p.isKindOf(Repositor)).size()$=1$
 
-\medskip
+\bigskip
 
 \noindent El men\'u es el mismo para todos los locales.
 
@@ -141,9 +135,9 @@ self.personal$\rightarrow$select(p$|$p.isKindOf(Repositor)).size()$=1$
 
 Local.allInstances().men\'u$\rightarrow$asSet()$\rightarrow$size()$=1$
 
-\medskip
+\bigskip
 
-Para todo dep\'osito, cada ingrediente cuyo nivel de stock se encuentre por debajo de mínimo tolerable tiene que estar en un \'unico pedido de reposición relacionado con el local correspondiente al dep\'osito en cuesti\'on.
+\noindent Para todo dep\'osito, cada ingrediente cuyo nivel de stock se encuentre por debajo de mínimo tolerable tiene que estar en un \'unico pedido de reposición relacionado con el local correspondiente al dep\'osito en cuesti\'on.
 
 \medskip
 
@@ -155,10 +149,9 @@ forAll(i$|$i.pedidodereposición.size()$=1$ and
 
 i.pedidodereposición$\rightarrow$forAll(p$|$p.local.depósitodestock$=$self))
 
-\medskip
+\bigskip
 
-Explicar mejor
-Se pide, para un pedido de reposici\'on, una cantidad de stock mayor o igual al límite tolerable de los ingredientes que se encuentran en el pedido de reposición. 
+\noindent Se pide, para un pedido de reposici\'on, una cantidad de stock mayor o igual al límite tolerable de los ingredientes que se encuentran en el pedido de reposición. 
 Esto es as\'i para que una vez que se realiza el pedido, seguro se cuente con el m\'inimo necesario.
 
 \medskip
@@ -167,9 +160,9 @@ Esto es as\'i para que una vez que se realiza el pedido, seguro se cuente con el
 
 self.pedidodereposición$\rightarrow$.forAll(p|p.cantidad$\geq$self.disponibilidad.límite)
 
-\medskip
+\bigskip
 
-La impresora utilizada en un pedido de reposición es la impresora del local que emitió dicho pedido.
+\noindent La impresora utilizada en un pedido de reposición es la impresora del local que emitió dicho pedido.
 
 \medskip
 
@@ -224,23 +217,23 @@ pedido por parte del cliente.
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: True}\\
 \hline
-\multicolumn{2}{|l|}{PostCondici\'on: Se logra hacer el pedido}\\
+\multicolumn{2}{|l|}{Postcondici\'on: Se logra hacer el pedido}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
-1.1 El cliente realiza una orden. & 1.2 La orden no es válida. Fin de C.U.
+1.1 El cliente realiza una orden. & 
 \\
 \hline
-2.1 El sistema verifica que se puede realizar la orden (si hay stock). &
+2.1 El sistema verifica que se puede realizar la orden (stock). Si hay stock ir a 3.1, si no hay stock ir a 4.1&
 \\
 \hline
-3.1 En caso de que haya stock, el sistema toma el pedido. &
+3.1 El sistema toma el pedido y decrementa el stock debidamente. &
 \\
 \hline
-3.1.1 Se incluye el caso de uso ``Informando nueva orden''. &
+3.1.1 Se incluye el caso de uso ``Informando nueva orden''. Ir a 5.1 &
 \\
 \hline
-4.1 En caso de que no haya stock, el sistema notifica que no se puede realizar el pedido. &
+4.1 El sistema notifica que no se puede realizar el pedido. Busca otros locales con stock & Si no hay otros locales con stock ir a 5.1
 \\
 \hline
 4.1.1 Se extiende al caso de uso ``Eligiendo local''. &
@@ -263,7 +256,7 @@ Curso Normal & Curso Alternativo\\
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: El cliente realiz\'o un pedido que no se puede efectuar en el propio local}\\
 \hline
-\multicolumn{2}{|l|}{PostCondici\'on: El cliente elige un nuevo local}\\
+\multicolumn{2}{|l|}{Postcondici\'on: El cliente elige un nuevo local}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
@@ -273,7 +266,7 @@ Curso Normal & Curso Alternativo\\
 2.1 El cliente elige un local de la lista recibida & 2.2 El cliente no eligen ning\'ung local. Ir a 4.1.
 \\
 \hline
-3.1 El software debe informar la nueva orden en el local elegido. Se incluye Caso de Uso Informando Nueva Orden &
+3.1 El software debe informar la nueva orden en el local elegido y decrementa el stock del local elegido. Se incluye Caso de Uso Informando Nueva Orden &
 \\
 \hline
 4.1 Fin Caso de Uso &
@@ -285,11 +278,11 @@ Curso Normal & Curso Alternativo\\
 Este caso de uso, en contraste a la mayor\'ia de los dem\'as, contiene una precondici\'on. Este se incluye para imponer una restricci\'on que no
 se puede imponer desde el diagrama mismo dado a que no existe expresividad para esto. 
 
-La precondici\'on del caso de uso dice El cliente realiz\'o un pedido que no se puede efectuar en el propio local.
+La precondici\'on del caso de uso dice \emph{el cliente realiz\'o un pedido que no se puede efectuar en el propio local}.
 Esta precondici\'on se incluye para mostrar que este caso de uso no tiene sentido por si solo sin una precedencia directa del caso de uso
-Realizando Nueva Orden. Esto no se puede expresar en el diagrama mismo dado que la etiqueta presente en la relaci\'on entre los dos casos de uso 
+\emph{Realizando Nueva Orden}. Esto no se puede expresar en el diagrama mismo dado que  en la relaci\'on entre los dos casos de uso 
 aparece la etiqueta extiende. Esto es as\'i dado que no siempre que se realiza una nueva orden se elige otro local, por lo que no ser\'ia correcta
-la inclusi\'on de una etiqueta incluye. Luego, se usa esta precondici\'on para indicar esta restricci\'on y para poder la descripci\'on del caso de uso
+la inclusi\'on de una etiqueta incluye. Luego, se usa esta precondici\'on para indicar esta restricci\'on y para poder hacer la descripci\'on del caso de uso
 ya asumiendo que el cliente realiz\'o una orden que no pudo ser satisfecha en el propio local.
 
 \bigskip
@@ -303,7 +296,7 @@ ya asumiendo que el cliente realiz\'o una orden que no pudo ser satisfecha en el
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: Existe una orden en proceso}\\
 \hline
-\multicolumn{2}{|l|}{PostCondici\'on: Se informa que hay se finaliz\'o una orden}\\
+\multicolumn{2}{|l|}{Postcondici\'on: Se informa que se finaliz\'o una orden}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
@@ -334,9 +327,9 @@ Curso Normal & Curso Alternativo\\
 \hline
 \multicolumn{2}{|l|}{Actores: Cocinero}\\
 \hline
-\multicolumn{2}{|l|}{Precondici\'on: Un cliente realizo un pedido}\\
+\multicolumn{2}{|l|}{Precondici\'on: Un cliente realiz\'o un pedido}\\
 \hline
-\multicolumn{2}{|l|}{PostCondici\'on: El cocinero es informado de la nueva orden a realizar}\\
+\multicolumn{2}{|l|}{Postcondici\'on: El cocinero es informado de la nueva orden a realizar}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
@@ -373,7 +366,7 @@ un hilo de ejecuci\'on completo.
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: True}\\
 \hline
-\multicolumn{2}{|l|}{PostCondici\'on: Se carga el stock en el sistema}\\
+\multicolumn{2}{|l|}{Postcondici\'on: Se carga el stock en el sistema}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
@@ -404,7 +397,7 @@ Curso Normal & Curso Alternativo\\
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: True}\\
 \hline
-\multicolumn{2}{|l|}{PostCondici\'on: Se actualiza el l\'imite tolerable de alg\'un producto}\\
+\multicolumn{2}{|l|}{Postcondici\'on: Se actualiza el l\'imite tolerable de alg\'un producto}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
@@ -425,7 +418,7 @@ Curso Normal & Curso Alternativo\\
 
 
 \bigskip
-La igual que sucedio con los primeros casos de uso, los casos de uso 5 y 6 tambi\'en se encuentran correlacionados aunque at\'omicamente no lo est\'en.
+Al igual que sucedi\'o con los primeros casos de uso, los casos de uso 5 y 6 tambi\'en se encuentran correlacionados aunque at\'omicamente no lo est\'en.
 A su vez, tambi\'en es claro que en una secuencia de acciones del mundo real, estos casos de uso podr\'ian estar relacionados con los casos
 de uso 1(realizando orden) y 10(recibiendo pedido de compra). Estas relaciones secuenciales se ver\'an modeladas posteriormente en el diagrama de actividad
 referente a todo lo que sucede con respecto al stock cuando se realiza una orden.
@@ -436,20 +429,20 @@ referente a todo lo que sucede con respecto al stock cuando se realiza una orden
 \begin{center}
 \begin{tabularx}{14cm}{|X|X|}
 \hline
-\multicolumn{2}{|l|}{Nombre Casos de uso: Instaurando Men\'u vacio}\\
+\multicolumn{2}{|l|}{Nombre Casos de uso: Instaurando Men\'u vac\'io}\\
 \hline
 \multicolumn{2}{|l|}{Actores: Operador}\\
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: True}\\
 \hline
-\multicolumn{2}{|l|}{PostCondici\'on: Se carga el men\'u vacio en el sistema}\\
+\multicolumn{2}{|l|}{Postcondici\'on: Se carga el men\'u vacio en el sistema}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
-1.1 El Operador carga un men\'i vacio al sistema & 
+1.1 El Operador carga un men\'u vac\'io al sistema & 
 \\
 \hline
-2.1 El sistema se actualiza para trabajar con este nuevo men\'u vacio & 
+2.1 El sistema se actualiza para trabajar con este nuevo men\'u vac\'io & 
 \\
 \hline
 3.1 Fin Caso de Uso &
@@ -469,7 +462,7 @@ Curso Normal & Curso Alternativo\\
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: True}\\
 \hline
-\multicolumn{2}{|l|}{PostCondici\'on: Se actualiza el men\'u}\\
+\multicolumn{2}{|l|}{Postcondici\'on: Se actualiza el men\'u}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
@@ -508,7 +501,7 @@ Curso Normal & Curso Alternativo\\
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: True}\\
 \hline
-\multicolumn{2}{|l|}{PostCondici\'on: Se ingresan los n\'umeros de los locales}\\
+\multicolumn{2}{|l|}{Postcondici\'on: Se ingresan los n\'umeros de los locales}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
@@ -541,7 +534,7 @@ en el mundo y en la interfaz. Mientras que luego, con una m\'aquina de estados, 
 \hline
 \multicolumn{2}{|l|}{Precondici\'on: True}\\
 \hline
-\multicolumn{2}{|l|}{PostCondici\'on: La impresora recibe un nuevo pedido de compra}\\
+\multicolumn{2}{|l|}{Postcondici\'on: La impresora recibe un nuevo pedido de compra}\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
@@ -597,7 +590,7 @@ Curso Normal & Curso Alternativo\\
 
 
 Los diagramas de actividad son una representaci\'on para mostrar el secuenciamiento de varias acciones que se encuentran relacionadas por alg\'un
-hilo conductor. Los diagramas de actividad se encuentran enriquecedos por el hecho de poder soportar varios actores en un mismo hilo mediante la 
+hilo conductor. Los diagramas de actividad se encuentran enriquecidos por el hecho de poder soportar varios actores en un mismo hilo mediante la 
 separaci\'on por andariveles de las interacciones de cada actor, es por esto que son muy adecuados para modelar las acciones que suceden entre la
 m\'aquina y los actores externos e incluso las acciones que suceden entre los actores externos sin interacci\'on con la m\'aquina.
 
@@ -628,7 +621,11 @@ desencadenar un pedido al proveedor, no ser\'a modelado en este diagrama, sino e
 En este diagrama se destaca la diferencia entre que el pedido se cocine en el local donde el cliente se encuentra o en otro, por lo que se 
 diferencian entre el cocinero y el mozo del local propio y el cocinero y el mozo del local externo donde el cliente va a ir a buscar la pizza.
 
-% aca va el diagrama de actividad de ciclo de vida de una orden
+\begin{figure}[H]
+\centering
+\subfloat{\includegraphics[width=1.0\textwidth]{Imagenes/DA-Pedido.png}}
+\caption{Ciclo de vida de una orden}
+\end{figure}
 
 \bigskip
 
@@ -640,7 +637,11 @@ se quiere modelar lo relacionado con el stock, ya que los otros aspectos respect
 el diagrama presenta una secuencia de acciones donde un cliente realiza una orden que se puede satisfacer por dicho local para poder mostrar concretamente
 que sucede con el stock sin p\'erdida de generalidad.
 
-% aca va el diagrama de actividad de manejo de stock
+\begin{figure}[H]
+\centering
+\subfloat{\includegraphics[width=1.0\textwidth]{Imagenes/DA-ReposicionStock.png}}
+\caption{Ejemplo de manejo de stock}
+\end{figure}
 
 \bigskip
 
@@ -651,7 +652,11 @@ Este diagrama de actividad sirve para modelar el hilo de ejecuci\'on de las acci
 de los actores externos participantes con la m\'aquina. Lo que sucede dentro de la m\'aquina para mantener una consistencia entre los locales es inherente
 a la m\'aquina misma por lo que ser\'a modelado posteriormente con la t\'ecnica de m\'aquinas de estados.
 
-% aca va el diagrama de actividad de actualizacion de menu
+\begin{figure}[H]
+\centering
+\subfloat{\includegraphics[width=1.0\textwidth]{Imagenes/DA-ActualizacionMenu.png}}
+\caption{Actualizaci\'on del men\'u}
+\end{figure}
 
 
 \bigskip
