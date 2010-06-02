@@ -71,7 +71,9 @@ En un aspecto general, se dividieron las t\'ecnicas de especificaci\'on seg\'un 
 
 El modelo conceptual es una primera aproximaci\'on a todo lo que se quiere describir detalladamente en el transcurso de este trabajo. Explica 
 de manera temprana la relaci\'on que existe entre los actores externos y las diferentes partes que componen a la pizzer\'ia, para lograr un buen
-entendimiento de las interconexiones presentes sin indicar ning\'un tipo de comportamiento por el momento. Tomamos la convención de dejar
+entendimiento de las interconexiones presentes sin indicar ning\'un tipo de comportamiento por el momento. 
+
+Tomamos la convención de dejar
 las etiquetas de cada relación con el mismo nombre que las clases correspondientes a la misma. Hicimos esto para facilitar la lectura del diagrama
 y de las restricciones en lenguaje OCL realizadas.
 
@@ -205,7 +207,7 @@ y luego se detallar\'a en particular cada caso de uso.
 \end{figure}
 
 
-\subsubsection*{Detalles Casos de Uso}
+\subsubsection*{Detalles Caso de Uso}
 \addcontentsline{toc}{subsubsection}{Detalles de Casos de Uso}
 
 A continuaci\'on se detallar\'a cada caso de uso, dando la descripci\'on de la sucesi\'on de hechos, adem\'as de los actores y la pre y postcondici\'on.
@@ -279,7 +281,7 @@ Curso Normal & Curso Alternativo\\
 2.1 El cliente elige un local de la lista recibida & 2.2 El cliente no eligen ning\'ung local. Ir a 4.1.
 \\
 \hline
-3.1 El software debe informar la nueva orden en el local elegido y decrementa el stock del local elegido. Se incluye Caso de Uso Informando Nueva Orden &
+3.1 El software debe informar la nueva orden en el local elegido y decrementa el stock del local elegido. Se incluye caso de uso ``Informando Nueva Orden'' &
 \\
 \hline
 4.1 Fin Caso de Uso &
@@ -319,7 +321,7 @@ Curso Normal & Curso Alternativo\\
 2.1 El cocinero ingresa en el sistema la finalizaci\'on de la orden pertinente & 
 \\
 \hline
-3.1 El software actualiza el sistema de ordenes, tildando como realizada la orden que el cocinero notific\'o &
+3.1 El software actualiza el sistema de órdenes, tildando como realizada la orden que el cocinero notific\'o &
 \\
 \hline
 4.1 El software avisa al mozo correspondiente que la orden se encuentra finalizada para retirar &
@@ -439,7 +441,7 @@ Curso Normal & Curso Alternativo\\
 \bigskip
 Al igual que sucedi\'o con los primeros casos de uso, los casos de uso 5 y 6 tambi\'en se encuentran correlacionados aunque at\'omicamente no lo est\'en.
 A su vez, tambi\'en es claro que en una secuencia de acciones del mundo real, estos casos de uso podr\'ian estar relacionados con los casos
-de uso 1(realizando orden) y 10(recibiendo pedido de compra). Estas relaciones secuenciales se ver\'an modeladas posteriormente en el diagrama de actividad
+de uso 1(Realizando Orden) y 10(Recibiendo pedido de compra). Estas relaciones secuenciales se ver\'an modeladas posteriormente en el diagrama de actividad
 referente a todo lo que sucede con respecto al stock cuando se realiza una orden.
 
 \bigskip
@@ -587,7 +589,7 @@ Curso Normal & Curso Alternativo\\
 \hline
 Curso Normal & Curso Alternativo\\
 \hline
-1.1 El software requiere la hora para calculos de round robin & 
+1.1 El software requiere la hora para cálculos de round robin & 
 \\
 \hline
 2.1 El Software le pide al servidor una actualizaci\'on de la hora & 
@@ -632,7 +634,7 @@ Se decidi\'o que la t\'ecnica ser\'ia utlizada para los siguientes casos particu
 \subsubsection*{Ciclo de vida de una orden}
 \addcontentsline{toc}{subsubsection}{Ciclo de vida de una orden}
 
-Este diagrama de actividad sirve para agrupar las acciones sucecidas en el ciclo de vida de una orden, es decir desde el momento que un cliente
+Este diagrama de actividad sirve para agrupar las acciones sucedidas en el ciclo de vida de una orden, es decir, desde el momento que un cliente
 pide una orden hasta el momento que recibe su pizza(o bien no la recibe porque no se puede satisfacer). Cabe destacar que en el diagrama de actividad
 se abstraen varias situaciones para centrarse solamente en la orden en s\'i. Es decir, si bien usar los ingrendientes para realizar una orden podr\'ia
 desencadenar un pedido al proveedor, no ser\'a modelado en este diagrama, sino en el siguiente.
@@ -651,7 +653,7 @@ diferencian entre el cocinero y el mozo del local propio y el cocinero y el mozo
 \subsubsection*{Ejemplo de manejo de stock}
 \addcontentsline{toc}{subsubsection}{Ejemplo de manejo de stock}
 
-Este diagrama de actividad se utilizar\'a para modelar las acciones pertinentes al manejo de stock cuando se realiza una orden. Dado que solo
+Este diagrama de actividad se utilizar\'a para modelar las acciones pertinentes al manejo de stock cuando se realiza una orden. Dado que sólo
 se quiere modelar lo relacionado con el stock, ya que los otros aspectos respectivos a la realizaci\'on de una orden fueron modelados anteriormente,
 el diagrama presenta una secuencia de acciones donde un cliente realiza una orden que se puede satisfacer por dicho local para poder mostrar concretamente
 que sucede con el stock sin p\'erdida de generalidad.
@@ -669,7 +671,7 @@ que sucede con el stock sin p\'erdida de generalidad.
 
 Este diagrama de actividad sirve para modelar el hilo de ejecuci\'on de las acciones referidas a la actualizaci\'on de un men\'u en cuanto a la interacci\'on
 de los actores externos participantes con la m\'aquina. Lo que sucede dentro de la m\'aquina para mantener una consistencia entre los locales es inherente
-a la m\'aquina misma por lo que ser\'a modelado posteriormente con la t\'ecnica de m\'aquinas de estados.
+a la m\'aquina misma, por lo que ser\'a modelado posteriormente con la t\'ecnica de m\'aquinas de estados.
 
 \begin{figure}[H]
 \centering
@@ -685,13 +687,13 @@ a la m\'aquina misma por lo que ser\'a modelado posteriormente con la t\'ecnica 
 
 Las m\'aquinas de estados finitas son importantes en este trabajo pr\'actico para poder modelar las acciones que suceden totalmente dentro del software. En este trabajo en particular hay muchas interacciones entre el software y los agentes externos y no existen tantas acciones dentro del mismo que necesiten de una explicaci\'on con m\'aquinas de estado, por lo que este modelo se utilizar\'a en pocos casos. 
 
-En particular en este trabajo, esta t\'ecnica se utiliz\'o para modelar dos aspectos que son relevantes al software por dentro, siendo dignos de una explicaci\'on m\'as hexaustiva. Por un lado se explicar\'a el proceso de actualizaci\'on de men\'u, viendo como se realiza la sincronizaci\'on entre los diferentes locales. Por otro lado, se utilizar\'a la t\'ecnica para explicar como el software puede revisar el stock de otros locales para derivar el pedido de un cliente.
+En particular en este trabajo, esta t\'ecnica se utiliz\'o para modelar dos aspectos que son relevantes al software por dentro, siendo dignos de una explicaci\'on m\'as exhaustiva. Por un lado se explicar\'a el proceso de actualizaci\'on de men\'u, viendo como se realiza la sincronizaci\'on entre los diferentes locales. Por otro lado, se utilizar\'a la t\'ecnica para explicar como el software puede revisar el stock de otros locales para derivar el pedido de un cliente.
 
 
 \subsubsection*{Sincronizaci\'on del men\'u}
 \addcontentsline{toc}{subsubsection}{Sincronizaci\'on del men\'u}
 
-En esta m\'aquina de estados se explicar\'an los cambios internos del software a respuesta de los est\'imulos externos. Para modelar los est\'imulos externos se realizar\'an m\'aquinas de estados por cada agente externo que interactue con el sistema.
+En esta m\'aquina de estados se explicar\'an los cambios internos del software a respuesta de los est\'imulos externos. Para modelar los est\'imulos externos se realizar\'an m\'aquinas de estados por cada agente externo que interactúe con el sistema.
 
 A continuaci\'on se ir\'an explicando cada agente, para llegar a la explicaci\'on final del accionamiento del software.
 El \'indice i en cada m\'aquina de estados, va desde 1 hasta la cantidad de locales y hace referencia al n\'umero del local.
@@ -741,7 +743,7 @@ El Operador ya tiene algunas acciones que merecen una explicaci\'on m\'as detall
 \end{figure}
 
 
-El software comienza en un estado inicial donde lo que tiene permitido hacer es escuchar las actualizaciones globales de los otros locales o, por otro lado, esperar un pedido de instauraci\'on de actualizaci\'on de su propio operador. Una vez que su operador le pide instaurar una actualizaci\'on, el software pasa a un estado donde va a querer hacer una actualizaci\'on. En este estado el software pide la hora al servidor para saber si es su momento para actualizar o no. Si es su momento, despues de un timeout el software \emph{saldr\'a} por la transici\'on superior, generando una actualizaci\'on global que sera escuchada por los dem\'as locales. En caso de no ser su momento, no realizar\'a su actulizaci\'on volviendo al estado inicial.
+El software comienza en un estado inicial donde lo que tiene permitido hacer es escuchar las actualizaciones globales de los otros locales o, por otro lado, esperar un pedido de instauraci\'on de actualizaci\'on de su propio operador. Una vez que su operador le pide instaurar una actualizaci\'on, el software pasa a un estado donde va a querer hacer una actualizaci\'on. En este estado el software pide la hora al servidor para saber si es su momento para actualizar o no. Si es su momento, despues de un timeout el software \emph{saldr\'a} por la transici\'on superior, generando una actualizaci\'on global que sera escuchada por los dem\'as locales. En caso de no ser su momento, no realizar\'a su actualizaci\'on volviendo al estado inicial.
 
 
 
