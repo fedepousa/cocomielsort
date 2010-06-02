@@ -144,7 +144,7 @@ Local.allInstances().men\'u$\rightarrow$asSet()$\rightarrow$size()$=1$
 
 \underline{\textbf{context Depósito de stock}}
 
-self.allInstances()$\rightarrow$select(d$|$d.cantidad$<$d.límite)$\rightarrow$forAll(d$|$d.ingredientes.pedidodereposición.size()$=1$ and d.ingredientes.pedidodereposición$\rightarrow$forAll(p$|$p.local.depósitodestock$=$d.depósitodesotck) 
+allInstances()$\rightarrow$select(d$|$d.cantidad$<$d.límite)$\rightarrow$forAll(d$|$d.deposito.local.pedido.intersection(d.ingrediente.pedido).size()$=1$ )    
 
 \bigskip
 
