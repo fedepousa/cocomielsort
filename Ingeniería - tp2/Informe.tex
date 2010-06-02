@@ -670,6 +670,7 @@ En particular en este trabajo, esta t\'ecnica se utiliz\'o para modelar dos aspe
 
 
 \subsubsection*{Sincronizaci\'on del men\'u}
+\addcontentsline{toc}{subsubsection}{Sincronizaci\'on del men\'u}
 
 En esta m\'aquina de estados se explicar\'an los cambios internos del software a respuesta de los est\'imulos externos. Para modelar los est\'imulos externos se realizar\'an m\'aquinas de estados por cada agente externo que interactue con el sistema.
 
@@ -722,6 +723,11 @@ El Operador ya tiene algunas acciones que merecen una explicaci\'on m\'as detall
 
 
 El software comienza en un estado inicial donde lo que tiene permitido hacer es escuchar las actualizaciones globales de los otros locales o, por otro lado, esperar un pedido de instauraci\'on de actualizaci\'on de su propio operador. Una vez que su operador le pide instaurar una actualizaci\'on, el software pasa a un estado donde va a querer hacer una actualizaci\'on. En este estado el software pide la hora al servidor para saber si es su momento para actualizar o no. Si es su momento, despues de un timeout el software \emph{saldr\'a} por la transici\'on superior, generando una actualizaci\'on global que sera escuchada por los dem\'as locales. En caso de no ser su momento, no realizar\'a su actulizaci\'on volviendo al estado inicial.
+
+
+
+\subsubsection*{Pedido a distancia}
+\addcontentsline{toc}{subsubsection}{Pedido a distancia}
 
 
 
