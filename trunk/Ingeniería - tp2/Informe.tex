@@ -697,7 +697,7 @@ El accionar del jefe de chefs es muy simple, cuando tenga ganas va a querer actu
 \caption{Servidor de hora}
 \end{figure}
 
-El accionar del servidor de hora tambi\'en es simple, solamente esta dispuesto a escuchar una acci\'on que es que le pidan la hora, cuando esta sucede, setea el tiempo en la hora actual del d\'ia. Es el mismo servidor por todos los locales por eso no tiene diferenciaci\'on de \'indice ni en el nombre del servidor ni en la acci\'on Dame hora.
+El accionar del servidor de hora tambi\'en es simple, solamente esta dispuesto a escuchar una acci\'on que es que le pidan la hora, cuando esta sucede, setea el tiempo en la hora actual del d\'ia. Es el mismo servidor por todos los locales por eso no tiene diferenciaci\'on de \'indice ni en el nombre del servidor, pero si tiene \'indice la transicion para no forzar que todas las m\'aquinas pidan hora al mismo tiempo.
 
 \bigskip
 
@@ -718,7 +718,7 @@ El Operador ya tiene algunas acciones que merecen una explicaci\'on m\'as detall
 \begin{figure}[H]
 \centering
 \subfloat{\includegraphics[width=1.0\textwidth]{Imagenes/SoftActualizacion.png}}
-\caption{Operador}
+\caption{Software}
 \end{figure}
 
 
@@ -728,6 +728,34 @@ El software comienza en un estado inicial donde lo que tiene permitido hacer es 
 
 \subsubsection*{Pedido a distancia}
 \addcontentsline{toc}{subsubsection}{Pedido a distancia}
+
+En un pedido a distancia solo se presentar\'an dos diferentes m\'aquinas de estado, una por el cliente de un local y otra por el software de cada local. Para simplicidad del modelo se asume que un solo cliente por local esta involucrado por vez en este proceso.
+
+A continuaci\'on se presenta la m\'aquina de estados del cliente.
+
+\begin{figure}[H]
+\centering
+\subfloat{\includegraphics[width=1.0\textwidth]{Imagenes/Cliente.png}}
+\caption{Cliente}
+\end{figure}
+
+El cliente empieza en un estado inicial en donde lo que puede hacer es pedir una pizza, si la pizza puede ser hecha por el mismo local o si ningun local puede satisfacerlo, el cliente vuelve al estado inicial ya sea satisfecho o no, pero sin nada m\'as que hacer en esta secuencia. Por otro lado, el software puede presentarle una lista de locales para elegir y el cliente pasa a un estado de elecci\'on. Si no elige ning\'un local, termina el proceso. Si, por el contrario, elige un local, pasara a un estado donde se generara el pedido al otro local terminando el proceso.
+
+
+Luego, se presenta la m\'aquina de estados del software de cada local.
+Antes que nada cabe destacar que en todo nodo la fsm esta \emph{escuchando} el pedido StockTodos de las demas maquinas as\'i como tambi\'en los pedidoslocal de las dem\'as m\'aquinas que les mandan pedidos, lo cual se omite para una mayor claridad del dibujo ya que no aporte mayor informaci\'on m\'as que la idea intuitiva que un local siempre tiene que estar dispuesto a recibir un pedido de otra m\'aquina o a que le pidan su stock.
+
+\begin{figure}[H]
+\centering
+\subfloat{\includegraphics[width=1.0\textwidth]{Imagenes/FSMpedidoadistancia.png}}
+\caption{Software}
+\end{figure}
+
+La m\'aquina comienza en un estado inicial donde lo \'unico que hace es escuchar el pedido de un cliente. Luego de que un cliente hace un pedido, el software va a revisar su stock propio y se va a setear la variable yopuedoi en base a si puede satisfacer el pedido o no. Si puede satisfacerlo, lo satisface y vuelve al estado inicial esperando por otro cliente. Si no puede, pasara a un estado para preguntar por los otros. Aqui el software pide la hora para saber si esta en su quantum, con una soluci\'on an\'aloga a la propuesta en la m\'aquina de estados para actualizar el men\'u. Una vez que esta en su hora, genera una transicion denominada, StockTodosi! que sera escuchada por todas las maquinas, que indicar\'an si pueden realizar el pedido en cuesti\'on. Si nadie puede satisfacer el pedido, el software vuelve al estado inicial a esperar por otro cliente. Si existen otros locales que puedan hacer el pedido, el software se los lista al cliente.
+
+Aqu\'i pueden pasar dos cosas. En primer lugar, el cliente podr\'ia no elegir ning\'un local a distancia por lo que se vuelve al estado inicial. Por otro lado, el cliente puede elegir un local y setear la variable localelegidoi, de esta manera el software saldra por la unica transici\'on que tenga la condici\'on true, llegando a un estado donde lo que va a hacer es generar un pedido externo al local correspondiente.
+
+De esta manera, se genera todo el ciclo posible en un pedido a distancia, mostrando la funcionalidad del software en funci\'on de los requisitos del cliente.
 
 
 
@@ -786,7 +814,7 @@ centradas en lo que sucede dentro del software.
 \subsubsection*{Pedido a distancia}
 \addcontentsline{toc}{subsubsection}{Pedido a distancia}
 
-
+Este objetivo se centra en el hecho de poder pedir a distancia, pero si vemos las refinaciones vemos que este diagrama se centra en el hecho de las acciones internas que deben ocurrir para esto, ya que toda hoja esta asignada al software. Es por esto, que este objetivo se explica con una m\'aquina de estado, ya que muestra que pasa con el software por dentro para lograr un pedido a distancia.
 
  
 \subsubsection*{Mantener men\'u estandar}
