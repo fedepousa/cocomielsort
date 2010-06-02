@@ -116,7 +116,7 @@
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="standard" target="none"/>
           <y:EdgeLabel alignment="center" distance="2.0" fontFamily="FreeSerif" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.993408203125" modelName="six_pos" modelPosition="shead" preferredPlacement="anywhere" ratio="0.5" rotationAngle="330.0" textColor="#000000" visible="true" width="98.09828186035156" x="15.35186767578125" y="-126.69190650435121">Actualización global!_i</y:EdgeLabel>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.6357421875" modelName="free" modelPosition="anywhere" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="194.576171875" x="263.6127452611852" y="-92.09904884197408">[inicio_quantum_i &lt;= t &lt; fin_quantum]</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.6357421875" modelName="free" modelPosition="anywhere" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="220.689453125" x="250.55610463618518" y="-92.09904884197408">[inicio_quantum_i &lt;= hora_i &lt; fin_quantum]</y:EdgeLabel>
           <y:Arc height="119.5394058227539" ratio="1.3329054117202759" type="fixedRatio"/>
         </y:ArcEdge>
       </data>
@@ -143,7 +143,7 @@ actualización?_i</y:EdgeLabel>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="FreeSerif" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.993408203125" modelName="six_pos" modelPosition="thead" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="51.45391845703125" x="40.18088122914912" y="-17.817269572460646">Dame hora!</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="FreeSerif" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.993408203125" modelName="six_pos" modelPosition="thead" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="59.229644775390625" x="32.40515491078975" y="-17.817269572460646">Dame hora_i!</y:EdgeLabel>
           <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="free" modelPosition="anywhere" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="50.482421875" x="29.146013573086975" y="-48.56449081687481">{t_i = 0}</y:EdgeLabel>
           <y:Arc height="44.65937805175781" ratio="1.0" type="fixedRatio"/>
         </y:ArcEdge>
@@ -160,7 +160,7 @@ actualización?_i</y:EdgeLabel>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
           <y:EdgeLabel alignment="center" distance="2.0" fontFamily="FreeSerif" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.993408203125" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="65.33628845214844" x="-177.82975109666393" y="66.08408438940091">No actualice!_i</y:EdgeLabel>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.6357421875" modelName="free" modelPosition="anywhere" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="234.5517578125" x="-260.646665500342" y="88.73750192612329">[not ( inicio_quantum_i &lt;= t &lt; fin_quantum_i )]</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.6357421875" modelName="free" modelPosition="anywhere" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="260.6650390625" x="-273.703306125342" y="88.73750192612329">[not ( inicio_quantum_i &lt;= hora_i &lt; fin_quantum_i )]</y:EdgeLabel>
         </y:BezierEdge>
       </data>
     </edge>
@@ -186,7 +186,7 @@ actualización?_i</y:EdgeLabel>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
           <y:EdgeLabel alignment="center" distance="2.0" fontFamily="FreeSerif" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.993408203125" modelName="six_pos" modelPosition="head" preferredPlacement="anywhere" ratio="0.5" rotationAngle="330.0" textColor="#000000" visible="true" width="107.53309631347656" x="-129.9631904740191" y="-54.70397691077028">Actualización global?_i-1</y:EdgeLabel>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="free" modelPosition="anywhere" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="34.375" x="-192.39802663832995" y="11.54080821347543">........</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="free" modelPosition="anywhere" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="34.375" x="-192.39802663832998" y="11.54080821347543">........</y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
@@ -300,20 +300,7 @@ actualización?_i</y:EdgeLabel>
         </y:SplineEdge>
       </data>
     </edge>
-    <edge id="e16" source="n0" target="n0">
-      <data key="d7">
-        <y:SplineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
-            <y:Point x="448.2101200842106" y="1101.7447609936844"/>
-            <y:Point x="395.1300992000001" y="1117.6687672589474"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.6357421875" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="61.265625" x="-2.7755496751339024" y="39.75454964509868">Dame hora?</y:EdgeLabel>
-        </y:SplineEdge>
-      </data>
-    </edge>
-    <edge id="e17" source="n1" target="n1">
+    <edge id="e16" source="n1" target="n1">
       <data key="d7">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
