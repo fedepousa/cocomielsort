@@ -71,7 +71,9 @@ En un aspecto general, se dividieron las t\'ecnicas de especificaci\'on seg\'un 
 
 El modelo conceptual es una primera aproximaci\'on a todo lo que se quiere describir detalladamente en el transcurso de este trabajo. Explica 
 de manera temprana la relaci\'on que existe entre los actores externos y las diferentes partes que componen a la pizzer\'ia, para lograr un buen
-entendimiento de las interconexiones presentes sin indicar ning\'un tipo de comportamiento por el momento.
+entendimiento de las interconexiones presentes sin indicar ning\'un tipo de comportamiento por el momento. Tomamos la convención de dejar
+las etiquetas de cada relación con el mismo nombre que las clases correspondientes a la misma. Hicimos esto para facilitar la lectura del diagrama
+y de las restricciones en lenguaje OCL realizadas.
 
 A continuaci\'on se presenta el diagrama realizado para este modelo, seguido de las pertinentes explicaciones.
 
@@ -110,7 +112,7 @@ caso que fue lo que se quizo restringir en idioma castellano.
 
 \medskip
 
-Se explicitan las correspondencias de cada local con cada tipo de empleado (clase personal y sus subclases).
+\noindent Se explicitan las correspondencias de cada local con cada tipo de empleado (clase personal y sus subclases).
 
 \medskip
 
@@ -142,9 +144,11 @@ Local.allInstances().men\'u$\rightarrow$asSet()$\rightarrow$size()$=1$
 
 \medskip
 
-\underline{\textbf{context Depósito de stock}}
+\underline{\textbf{context Disponibilidad}}
 
-allInstances()$\rightarrow$select(d$|$d.cantidad$<$d.límite)$\rightarrow$forAll(d$|$d.deposito.local.pedido.intersection(d.ingrediente.pedido).size()$=1$ )    
+Disponibilidad.allInstances()$\rightarrow$select(d$|$d.cantidad$<$d.límite)$\rightarrow$
+
+forAll(d$|$d.depósito.local.pedido.intersection(d.ingrediente.pedido).size()$=1$)    
 
 \bigskip
 
@@ -153,9 +157,11 @@ Esto es as\'i para que una vez que se realiza el pedido, seguro se cuente con el
 
 \medskip
 
-\underline{\textbf{context Ingredientes}}
+\underline{\textbf{context Disponibilidad}}
 
-self.pedidodereposición$\rightarrow$.forAll(p|p.cantidad$\geq$self.disponibilidad.límite)
+Disponibilidad.allInstances()$\rightarrow$select(d$|$d.cantidad$<$d.límite)$\rightarrow$
+
+forAll(d$|$d.depósito.local.pedido.intersection(d.ingrediente.pedido).cantidad$\rightarrow$forAll(c$|$c$>$d.límite))
 
 \bigskip
 
@@ -175,7 +181,7 @@ self.Impresora$=$self.Local.Impresora
 
 \underline{\textbf{context Pedido}}
 
-pedido.local $=$ pedido.cliente.local
+self.local $=$ self.cliente.local
 
 \newpage
 
@@ -194,7 +200,7 @@ y luego se detallar\'a en particular cada caso de uso.
 
 \begin{figure}[H]
 \centering
-\scalebox{1.0}{\includegraphics[width=1.0\textwidth]{Imagenes/CasosDeUso.png}}
+\scalebox{1.0}{\includegraphics[width=0.8\textwidth]{Imagenes/CasosDeUso.png}}
 \caption{Diagrama de Casos de Uso}
 \end{figure}
 
@@ -694,7 +700,7 @@ El \'indice i en cada m\'aquina de estados, va desde 1 hasta la cantidad de loca
 
 \begin{figure}[H]
 \centering
-\scalebox{0.5}{\includegraphics[width=1.0\textwidth]{Imagenes/JefedeChefs.png}}
+\scalebox{0.5}{\includegraphics[width=0.9\textwidth]{Imagenes/JefedeChefs.png}}
 \caption{Jefe de Chefs}
 \end{figure}
 
@@ -706,7 +712,7 @@ El accionar del jefe de chefs es muy simple, cuando tenga ganas va a querer actu
 
 \begin{figure}[H]
 \centering
-\scalebox{0.3}{\includegraphics[width=1.0\textwidth]{Imagenes/Servidor.png}}
+\scalebox{0.3}{\includegraphics[width=0.9\textwidth]{Imagenes/Servidor.png}}
 \caption{Servidor de hora}
 \end{figure}
 
@@ -718,7 +724,7 @@ El accionar del servidor de hora tambi\'en es simple, solamente esta dispuesto a
 
 \begin{figure}[H]
 \centering
-\scalebox{0.5}{\includegraphics[width=1.0\textwidth]{Imagenes/Operador.png}}
+\scalebox{0.5}{\includegraphics[width=0.9\textwidth]{Imagenes/Operador.png}}
 \caption{Operador}
 \end{figure}
 

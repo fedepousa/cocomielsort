@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:y="http://www.yworks.com/xml/graphml" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml/1.0/ygraphml.xsd">
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:y="http://www.yworks.com/xml/graphml" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd">
   <!--Created by yFiles for Java 2.7-->
   <key for="graphml" id="d0" yfiles.type="resources"/>
   <key attr.name="url" attr.type="string" for="node" id="d1"/>
@@ -15,7 +15,7 @@
           <y:Geometry height="100.0" width="60.0" x="194.0" y="652.875"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.634078979492188" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="67.73681640625" x="-3.868408203125" y="104.0">Impresora</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.582275390625" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="56.642120361328125" x="1.6789398193359375" y="104.0">Impresora</y:NodeLabel>
           <y:SVGModel svgBoundsPolicy="0">
             <y:SVGContent refid="1"/>
           </y:SVGModel>
@@ -28,7 +28,7 @@
           <y:Geometry height="100.0" width="60.0" x="194.0" y="127.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.634078979492188" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="47.92578125" x="6.037109375" y="104.0">Cliente</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.582275390625" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="41.51432800292969" x="9.242835998535156" y="104.0">Cliente</y:NodeLabel>
           <y:SVGModel svgBoundsPolicy="0">
             <y:SVGContent refid="1"/>
           </y:SVGModel>
@@ -41,7 +41,7 @@
           <y:Geometry height="100.0" width="60.0" x="738.0" y="127.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.634078979492188" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="64.18212890625" x="-2.091064453125" y="104.0">Repositor</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.582275390625" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="54.49955749511719" x="2.7502212524414062" y="104.0">Repositor</y:NodeLabel>
           <y:SVGModel svgBoundsPolicy="0">
             <y:SVGContent refid="1"/>
           </y:SVGModel>
@@ -54,7 +54,7 @@
           <y:Geometry height="49.0" width="145.5" x="357.0" y="127.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.634078979492188" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="128.38232421875" x="8.558837890625" y="14.182960510253906">1.Realizando Orden</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.582275390625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="107.85586547851562" x="18.822067260742188" y="14.7088623046875">1.Realizando Orden</y:NodeLabel>
           <y:Shape type="ellipse"/>
         </y:ShapeNode>
       </data>
@@ -65,7 +65,7 @@
           <y:Geometry height="61.0" width="179.0" x="340.25" y="231.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.634078979492188" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="107.68896484375" x="35.655517578125" y="20.182960510253906">2.Eligiendo local</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.582275390625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="92.72807312011719" x="43.135963439941406" y="20.7088623046875">2.Eligiendo local</y:NodeLabel>
           <y:Shape type="ellipse"/>
         </y:ShapeNode>
       </data>
@@ -76,7 +76,7 @@
           <y:Geometry height="100.0" width="60.0" x="194.0" y="455.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.634078979492188" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="63.50927734375" x="-1.754638671875" y="104.0">Operador</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.582275390625" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="53.0322265625" x="3.48388671875" y="104.0">Operador</y:NodeLabel>
           <y:SVGModel svgBoundsPolicy="0">
             <y:SVGContent refid="1"/>
           </y:SVGModel>
@@ -86,10 +86,10 @@
     <node id="n6">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="39.0" width="114.0" x="340.25" y="404.0"/>
+          <y:Geometry height="44.0" width="122.0" x="332.25" y="399.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="37.268157958984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="91.61669921875" x="11.191650390625" y="0.8659210205078125">7.Instaurando
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="35.16455078125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="75.04219055175781" x="23.478904724121094" y="4.417724609375">7.Instaurando
 menú vacío</y:NodeLabel>
           <y:Shape type="ellipse"/>
         </y:ShapeNode>
@@ -98,10 +98,10 @@ menú vacío</y:NodeLabel>
     <node id="n7">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="39.0" width="114.0" x="340.25" y="465.0"/>
+          <y:Geometry height="44.0" width="122.0" x="332.25" y="460.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="37.268157958984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="87.99853515625" x="13.000732421875" y="0.8659210205078125">8.Cambiando
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="35.16455078125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="73.61381530761719" x="24.193092346191406" y="4.417724609375">8.Cambiando
 menú</y:NodeLabel>
           <y:Shape type="ellipse"/>
         </y:ShapeNode>
@@ -113,7 +113,7 @@ menú</y:NodeLabel>
           <y:Geometry height="100.0" width="60.0" x="738.0" y="514.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.634078979492188" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="60.01171875" x="-0.005859375" y="104.0">Cocinero</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.582275390625" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="51.603851318359375" x="4.1980743408203125" y="104.0">Cocinero</y:NodeLabel>
           <y:SVGModel svgBoundsPolicy="0">
             <y:SVGContent refid="1"/>
           </y:SVGModel>
@@ -126,7 +126,7 @@ menú</y:NodeLabel>
           <y:Geometry height="50.0" width="110.0" x="552.0" y="539.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="37.268157958984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="89.7822265625" x="10.10888671875" y="6.3659210205078125">4.Informando
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="35.16455078125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="75.04219055175781" x="17.478904724121094" y="7.417724609375">4.Informando
 nueva orden</y:NodeLabel>
           <y:Shape type="ellipse"/>
         </y:ShapeNode>
@@ -138,7 +138,7 @@ nueva orden</y:NodeLabel>
           <y:Geometry height="100.0" width="60.0" x="738.0" y="320.5"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.634078979492188" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="38.6201171875" x="10.68994140625" y="104.0">Mozo</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.582275390625" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="34.29454040527344" x="12.852729797363281" y="104.0">Mozo</y:NodeLabel>
           <y:SVGModel svgBoundsPolicy="0">
             <y:SVGContent refid="1"/>
           </y:SVGModel>
@@ -148,10 +148,10 @@ nueva orden</y:NodeLabel>
     <node id="n11">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="50.0" width="110.0" x="547.0" y="392.0"/>
+          <y:Geometry height="61.0" width="122.0" x="547.0" y="381.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="53.90223693847656" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="89.7822265625" x="10.10888671875" y="-1.9511184692382812">3.Informando
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="50.746826171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="75.04219055175781" x="23.478904724121094" y="5.1265869140625">3.Informando
 orden
 terminado</y:NodeLabel>
           <y:Shape type="ellipse"/>
@@ -161,10 +161,10 @@ terminado</y:NodeLabel>
     <node id="n12">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="39.0" width="90.0" x="572.0" y="145.5"/>
+          <y:Geometry height="44.0" width="105.0" x="557.0" y="140.5"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="37.268157958984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="77.34716796875" x="6.326416015625" y="0.8659210205078125">5.Cargando
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="35.16455078125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="64.22549438476562" x="20.387252807617188" y="4.417724609375">5.Cargando
 stock</y:NodeLabel>
           <y:Shape type="ellipse"/>
         </y:ShapeNode>
@@ -173,10 +173,10 @@ stock</y:NodeLabel>
     <node id="n13">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="53.125" width="114.0" x="317.5" y="652.875"/>
+          <y:Geometry height="68.0" width="122.0" x="317.5" y="652.875"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="53.90223693847656" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="93.85107421875" x="10.074462890625" y="-0.38861846923828125">10.Recibiendo
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="50.746826171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="79.37925720214844" x="21.31037139892578" y="8.6265869140625">10.Recibiendo
 pedido de
 compra</y:NodeLabel>
           <y:Shape type="ellipse"/>
@@ -186,10 +186,10 @@ compra</y:NodeLabel>
     <node id="n14">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="49.0" width="110.0" x="567.0" y="203.0"/>
+          <y:Geometry height="55.0" width="116.0" x="567.0" y="203.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="37.268157958984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="99.15771484375" x="5.421142578125" y="5.8659210205078125">6.Actualizando
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="35.16455078125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="82.98915100097656" x="16.50542449951172" y="9.917724609375">6.Actualizando
 límite tolerable</y:NodeLabel>
           <y:Shape type="ellipse"/>
         </y:ShapeNode>
@@ -201,7 +201,7 @@ límite tolerable</y:NodeLabel>
           <y:Geometry height="100.0" width="60.0" x="731.0" y="687.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="37.268157958984375" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="105.6259765625" x="-22.81298828125" y="104.0">Servidor de
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="35.16455078125" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="85.49530029296875" x="-12.747650146484375" y="104.0">Servidor de
 hora de internet</y:NodeLabel>
           <y:SVGModel svgBoundsPolicy="0">
             <y:SVGContent refid="1"/>
@@ -212,10 +212,10 @@ hora de internet</y:NodeLabel>
     <node id="n16">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="40.875" width="110.0" x="552.0" y="716.5625"/>
+          <y:Geometry height="55.0" width="122.0" x="540.0" y="702.4375"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="37.268157958984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="104.3310546875" x="2.83447265625" y="1.8034210205078125">11.Consultando
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="35.16455078125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="85.88485717773438" x="18.057571411132812" y="9.917724609375">11.Consultando
 hora</y:NodeLabel>
           <y:Shape type="ellipse"/>
         </y:ShapeNode>
@@ -224,10 +224,10 @@ hora</y:NodeLabel>
     <node id="n17">
       <data key="d3">
         <y:ShapeNode>
-          <y:Geometry height="63.0" width="114.0" x="340.25" y="526.0"/>
+          <y:Geometry height="68.0" width="122.0" x="340.25" y="526.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="53.90223693847656" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="86.85595703125" x="13.572021484375" y="4.548881530761719">9.Ingresando
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="50.746826171875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="71.43229675292969" x="25.283851623535156" y="8.6265869140625">9.Ingresando
 número de
 locales</y:NodeLabel>
           <y:Shape type="ellipse"/>
@@ -257,7 +257,7 @@ locales</y:NodeLabel>
     <edge id="e2" source="n5" target="n6">
       <data key="d6">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="-57.0" ty="0.0"/>
+          <y:Path sx="0.0" sy="0.0" tx="-61.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="none"/>
           <y:BendStyle smoothed="false"/>
@@ -267,7 +267,7 @@ locales</y:NodeLabel>
     <edge id="e3" source="n5" target="n7">
       <data key="d6">
         <y:PolyLineEdge>
-          <y:Path sx="1.0" sy="-20.5" tx="-57.0" ty="0.0"/>
+          <y:Path sx="1.0" sy="-20.5" tx="-61.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="none"/>
           <y:BendStyle smoothed="false"/>
@@ -287,7 +287,7 @@ locales</y:NodeLabel>
     <edge id="e5" source="n11" target="n10">
       <data key="d6">
         <y:PolyLineEdge>
-          <y:Path sx="55.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:Path sx="61.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="none"/>
           <y:BendStyle smoothed="false"/>
@@ -297,7 +297,7 @@ locales</y:NodeLabel>
     <edge id="e6" source="n2" target="n12">
       <data key="d6">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="45.0" ty="0.0"/>
+          <y:Path sx="0.0" sy="0.0" tx="52.5" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="none"/>
           <y:BendStyle smoothed="false"/>
@@ -307,7 +307,7 @@ locales</y:NodeLabel>
     <edge id="e7" source="n0" target="n13">
       <data key="d6">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="-57.0" ty="0.0"/>
+          <y:Path sx="0.0" sy="0.0" tx="-61.00000000000001" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="none"/>
           <y:BendStyle smoothed="false"/>
@@ -317,7 +317,7 @@ locales</y:NodeLabel>
     <edge id="e8" source="n14" target="n2">
       <data key="d6">
         <y:PolyLineEdge>
-          <y:Path sx="55.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:Path sx="58.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="none"/>
           <y:BendStyle smoothed="false"/>
@@ -327,7 +327,7 @@ locales</y:NodeLabel>
     <edge id="e9" source="n16" target="n15">
       <data key="d6">
         <y:PolyLineEdge>
-          <y:Path sx="55.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:Path sx="61.00000000000001" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="none"/>
           <y:BendStyle smoothed="false"/>
@@ -337,7 +337,7 @@ locales</y:NodeLabel>
     <edge id="e10" source="n5" target="n17">
       <data key="d6">
         <y:PolyLineEdge>
-          <y:Path sx="29.996525412690062" sy="-20.409730838437326" tx="-57.0" ty="0.0"/>
+          <y:Path sx="29.996525412690062" sy="-20.409730838437326" tx="-61.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="none"/>
           <y:BendStyle smoothed="false"/>
@@ -350,26 +350,12 @@ locales</y:NodeLabel>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.363555908203125" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="73.451171875" x="2.0" y="-37.18177795410156">&lt;extiende&gt;</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="head" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="73.451171875" x="-75.451171875" y="-36.4814453125">&lt;extiende&gt;</y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e12" source="n3" target="n9">
-      <data key="d6">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
-            <y:Point x="545.2387295081967" y="218.46516393442624"/>
-            <y:Point x="528.8657786885245" y="408.391393442623"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.363555908203125" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="64.01171875" x="73.59941454294915" y="131.06055713090745">&lt;incluye&gt;</y:EdgeLabel>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e13" source="n8" target="n11">
+    <edge id="e12" source="n8" target="n11">
       <data key="d6">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -379,17 +365,29 @@ locales</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e14" source="n7" target="n16">
+    <edge id="e13" source="n3" target="n9">
       <data key="d6">
-        <y:PolyLineEdge>
+        <y:BezierEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
-            <y:Point x="490.90368852459017" y="541.6188524590166"/>
+            <y:Point x="648.0" y="230.5"/>
+            <y:Point x="435.0" y="465.5"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.363555908203125" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="64.01171875" x="122.78630972124756" y="113.33925716212548">&lt;incluye&gt;</y:EdgeLabel>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="head" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="64.01171875" x="-3.9226420950382135" y="167.3972625732422">&lt;incluye&gt;</y:EdgeLabel>
+        </y:BezierEdge>
+      </data>
+    </edge>
+    <edge id="e14" source="n7" target="n16">
+      <data key="d6">
+        <y:BezierEdge>
+          <y:Path sx="54.179239015306905" sy="10.120059114101252" tx="0.0" ty="0.0">
+            <y:Point x="515.0" y="598.5"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="head" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="64.01171875" x="26.700530947813604" y="144.80474853515625">&lt;incluye&gt;</y:EdgeLabel>
+        </y:BezierEdge>
       </data>
     </edge>
   </graph>
