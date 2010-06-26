@@ -1,0 +1,47 @@
+Cosas para la reentrega:
+
+En primer lugar, en la pagina 3 nos dice que una presuncion es discutible, despues hace referencia
+en la pagina 4 y en las conclusiones a que esta mejor pensar primero el diagrma de contexto. Estas
+cosas ya no las hciimos y no tiene mucho sentido hacerlas ahora, nos dijo esteban que no pasaba nada
+pero que queda mejor si presentamos primero el diagrma de contexto y despues objetivos.
+
+Cosas para hacer:
+
+- Cambiar el orden de contexto con objetivos, y ver que todas las explicaciones queden consistentes.
+- Para esta reentrega del TP, elaboren una nueva sección listando los requerimientos obtenidos. 
+Verifiquen que se correspondan con las hojas del diagrama asignadas al sistema, y chequeen que no 
+sobren ni falten requerimientos importantes.
+-Pagina 4: Cambiar mantener por evitar como es marcado en la hoja y agregar y-refinamiento que esta 
+marcado
+-Pag 5: Hacer los pequeños cambios marcados en la hoja
+-Pag 6: hay un parrafo que tiene una pregunta marcada, seguramente es una boludes, hay que ver con doc 
+que escribio ese parrafo para ver a que se refiere bien.
+-Pag 7: sacar el objetivo blando que esta marcado
+- Diagrama de objetivos: Refinar rama en pagina 9 y nos falta lo mas importante de la reentrega que es
+hablar sobre un objetivo que no pusimos y la relacion entre dos objetivos. Abajo transcribo lo que dice el tp
+- Pagina 12, 13 y 14. Cambiar todas las referencias a personal, refinando en los diferentes tipos de personal
+- Cambiar todo lo que tenga que ver con motopizza por telefono
+- Pag 16: revisar los escenarios que tienen marcadas cosas boludas.
+
+
+Las cosas importantes para hacer serian cambiar la explicacion de motopizza por telefono, refinar una rama de objetivos
+y hablar de un objetivo nuevo que es lo que transcribo abajo.
+
+
+En cuanto a la motopizza:
+
+Primero nos marco en la explicacion del diagrama de objetivos, especificamente en la explicacion de la motopizza en la pagina 8
+"No es eficiente, el es telefono es mucho mas confiable, no tiene sentido plantearlo antes que el telefono"
+Pag 15 en la explicacion de motopizza en contexto: Lo mismo, no tiene sentido antes que el telefono
+
+Ergo, cambiar motopizza por telefono, cambiando las explicaciones en los diagramas y cambiando y las apariciones en los diagramas. Y bueno,
+en cualquier lugar que aparezca algo relacionado a la motopizza.
+
+En cuanto a refinar la rama de objetivos:
+En el diagrama de objetivos de la pagina 9: Marca el objetivo principal y dice "Este objetivo no se deduce, habria que refinar el objetivo de mayor nivel.
+
+
+En cuanto al objetivo que nos falta dice:
+"FALTA ver el impacto del objetivo de monitorear el stock con el objetivo de compras de pizza. Esta claro que para poder monitorear el stock es necesario LOGRAR[
+conocer la pizza ordenada, preparadas y entregadas]. Este objetivo no es trivial, sus dependencias no son triviales  y sin embargo ni siquiera lo estan mencionando".
+En cuanto a esto mismo, en la pagina 5 nos puso sobre el objetivo 1.1.4.1.1 "Como se relacionan los objetivos de monitorear stock con el objetivo de preparacion de pizza"
