@@ -56,7 +56,7 @@ Si bien en el trabajo original el orden de los modelos se propuso al reves, para
 \subsection*{Modelo de Agentes}
 \addcontentsline{toc}{subsection}{Modelo de Agentes}
 
-El modelo de agentes se caracteriza por sus diagramas de contexto, en los cuales se muestran los diferentes agentes que actuan en la solucionar y,
+El modelo de agentes se caracteriza por sus diagramas de contexto, en los cuales se muestran los diferentes agentes que act\'uan en la soluci\'on y,
 a la vez, se muestra la interacci\'on que existe entre estos agentes mediante los fen\'omenos que los relacionan. Dicho esto, se desprende que un
 diagrama de contexto solo muestra una posible soluci\'on ya que se trata de una visi\'on global del sistema. Es por esto que se presentan diferentes
 diagramas de contexto seg\'un la soluci\'on discutida.
@@ -116,9 +116,9 @@ Se refiere al cliente que entra al local, tanto a individuos como a grupos.
 \paragraph{Menu impreso:}
 En esta familia de soluciones, contamos con un menu impreso que debe ser actualizado en todo momento para seguir siendo consistente con la realidad. Cada vez que se quiere actualizar debe ser reeimpreso.
 \\
-\paragraph{Motopizza:}
-Sistema de humanos de alta complejidad encargado de realizar diversas tareas. Debe encargarse de actualizar los datos que vienen de afuera, para esto recorre todas las demas sucursales (lo que puede actualizar son los cambios de menu y peticiones de pedidos) Ademas debe recorrer pizzerias para informar que va un cliente si es posible y propagar el menu local. Ese sistema es sumamente ineficiente.
-El mismo nace como una opci\'on tolerante a fallas de la soluci\'on informatizada de este grupo de objetivos.
+\paragraph{Operador Telef\'onico:}
+El operador telef\'onico es el encargado de la comunicaci\'on entre los locales en esta visi\'on manual.
+Debe encargarse de actualizar los datos que vienen de afuera y debe informar a las dem\'as pizzerias si un cliente hiz\'o un pedido a distancia en dicha pizzer\'ia, previa consulta de stock. Tambi\'en es el encargado de la propagaci\'on de una actualizaci\'on de men\'u en su propio local. Este alternativa nace como una opci\'on tolerante a fallas como ser\'ia la ca\'ida del servidor de internet en la opci\'on automatizada. 
 
 
 
@@ -219,7 +219,8 @@ para mantener un menú estandarizado simplemente tenemos que aseguranos que sea 
 La presunción 1.3.1.2 es explicada en mayor detalle en la sección de presunciones.
 Las opciones mediante las cuales se puede lograr el objetivo 1.3.1.1 consisten en establecer manualmente la comunicación, entre sucursales o dejarla en manos del software, que operaría a través de internet. 
 
-La opción manual consiste en delegar la tarea de mantener la comunicación a un miembro del Personal, distinguido por su movilidad a través de una moto. Su versatilidad le permite adaptarse a muy variadas situaciones, por ejemplo, en el caso general, con sólo comunicarse telefónicamente le alcanzaría, pero ante una falla en este servicio, podría trasladarse a cada una de las sucursales restantes informando novedades y a la vez recibiéndolas. 
+La opción manual consiste en delegar la tarea de mantener la comunicación a un miembro del Personal, distinguido como operador telef\'onico. 
+Como su nombre lo indica, el operador realiza la comunicaci\'on entre los locales mediante el uso del telefono.
 
 Por supuesto, esta solución tiene como defecto principal la velocidad. No se puede, de esta manera, suponer que la información que tenemos de las otras sucursales es absolutamente actualizada, por lo que podrían ocurrir algunos conflictos debidos a este retraso en la transmisión de información. Como ejemplo de esto, ante el pedido de una variedad que se consideraba disponible en uns sucursal remota, este sería autorizado, para luego verificar que la información de la que se disponía era desactualizada. 
 Una de las razones que nos hizo considerar la opción manual es su superioridad en términos de tolerancia a fallas. Si esto resulta una característica importante, sería conveniente considerar esta posibilidad.

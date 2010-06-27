@@ -80,7 +80,7 @@ velocidad]</y:NodeLabel>
           <y:Geometry height="30.0" width="104.97265625" x="745.2686942737029" y="815.1919067864969"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="55.295806884765625" x="24.838424682617188" y="5.803955078125">Motopizza</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="11" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.18359375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="95.82373046875" x="4.574462890625" y="6.408203125">Operador Telefonico</y:NodeLabel>
           <y:Shape type="hexagon"/>
         </y:ShapeNode>
       </data>
