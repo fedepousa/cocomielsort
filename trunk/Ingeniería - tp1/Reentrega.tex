@@ -171,17 +171,28 @@ En el anterior diagrama se muestra una dependencia entre el objetivo 1.1 y el 1.
 
 
 A continuación nos enfocaremos en el objetivo 1.1.4.1.1. 
+
+\begin{figure}[H]
+\centering
+\subfloat{\includegraphics[width=1.0\textwidth]{imagenes/RefMonitoreo.png}}
+\caption{}
+\end{figure}
+
 \subsubsection*{Mantener [Monitoreo de stock]}
-Como vemos, consideramos que existe la opción de asignar la concreción de este objetivo por un lado al Personal, y por otro al Software en conjunto con el Personal. Esta apreciación merece algunas observaciones.
-En primer lugar, asignarlo al Personal consistiría en que los cocineros actualicen con cada pedido el stock disponible, descontando manualmente, mediante una interfaz provista por el software, los ingredientes utilizados en cada caso.  
+Como vemos, para lograr este objetivo, los objetivos m\'as refinados se encuentran asignados al software y al personal conjuntamente. 
 
+Esta opción de asignarlo al Software en conjunto con el Personal consiste en que el software asocie cada variedad de pizza a los ingredientes, con sus cantidades correspondientes, necesarios para prepararla. De esta manera, en el instante mismo en que se genera un pedido, el sistema actualizaría las cantidades disponibles de cada ingrediente de manera automática y sin intervención del personal. Para poder lograr todo esto, se puede ver como el objetivo principal se encuentra refinado en tres objetivos de menor nivel. Por un lado es necesario conocer las pizzas que fueron ordenadas y preparadas, por otro lado hace falta conocer los ingrendientes necesarios para cada pizza y, por \'ultimo, hace falta conocer los ingresos de stock que se generan. 
 
-La opción de asignarlo al Software en conjunto con el Personal consiste en que el software asocie cada variedad de pizza a los ingredientes, con sus cantidades correspondientes, necesarios para prepararla. De esta manera, en el instante mismo en que se genera un pedido, el sistema actualizaría las cantidades disponibles de cada ingrediente de manera automática y sin intervención del personal. Sin embargo, por no ser exactas las cantidades registradas en la receta, sería necesario que el Personal haga un inventario completo periódicamente y actualice la disponibilidad de ingredientes con los valores reales.
+El tercero es el m\'as trivial de los 3 y se encuentra adjutado al personal y al software que son los encargados de hacer los pedidos de stock y el ingreso del mismo, variando las interacciones entre el personas y el software dependiendo de la soluci\'on elegida para esto.
 
-En este sentido, la expectativa 1.1.4.1.3 tiene varias implicaciones. En el caso de cumplir el objetivo 1.1.4.1.1 con una solución mixta, el Personal debería actualizar las existencias con una periodicidad dada por la eventual inexactitud de las recetas. En el caso de cumplirlo sólo mediante la participación del Personal, sería necesario que la actualización de las existencias fuera casi permanente.
+En segundo lugar, el objetivo de conocer los objetivos precisos es un objetivo que no es nada trivial pero que ya se encuentra explicado en otra secci\'on del diagrama, por lo que en este nivel se adjunta directamente al cocinero y al software que son los encargados de conocer los ingredientes.
+
+Por \'ultimo, se encuentra el objetivo m\'as relevante de los 3 que es el hecho de conocer los movimientos de las ordenes que se realizaron en la pizzer\'ia. Este objetivo se encuentra nuevamente refinado en otros 3 distintos. Estos 3 objetivos si son m\'as at\'omicos y se encuentran directamente adjutados a los agentes necesarios.
+
 
 La decisión respecto del objetivo 1.1.4.1.2 está relacionada con las consideraciones mencionadas, ya que, en caso de tenerlo, sería deseable aprovechar las capacidades de monitoreo de stock provistas por el software para alertar al personal de manera que realice un pedido al proveedor si fuera necesario. Las dos políticas de recarga de stock son mencionadas debido a que, si bien la recarga de stock al acabarse es mejor en relación a maximizar la eficiencia en el manejo de stock, ya que se realiza un pedido de mercadería sólo cuando es necesario, es claramente deficiente en relación a la satisfacción del cliente, ya que permite que haya variedades de pizza no disponibles.
 
+\medskip
 
 La realización de pedidos a distancia, reservando el stock necesario para prepararlo, está relacionada con la precisión del monitoreo de stock. Por lo que ahora nos centraremos en el objetivo 1.1.2:
 \subsubsection*{Lograr [Cancelar pedido a distancia sin vigencia]}

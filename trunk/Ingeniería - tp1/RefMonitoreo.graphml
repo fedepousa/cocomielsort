@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:y="http://www.yworks.com/xml/graphml" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd">
+  <!--Created by yFiles for Java 2.7-->
+  <key for="graphml" id="d0" yfiles.type="resources"/>
+  <key attr.name="url" attr.type="string" for="node" id="d1"/>
+  <key attr.name="description" attr.type="string" for="node" id="d2"/>
+  <key for="node" id="d3" yfiles.type="nodegraphics"/>
+  <key attr.name="Description" attr.type="string" for="graph" id="d4">
+    <default/>
+  </key>
+  <key attr.name="url" attr.type="string" for="edge" id="d5"/>
+  <key attr.name="description" attr.type="string" for="edge" id="d6"/>
+  <key for="edge" id="d7" yfiles.type="edgegraphics"/>
+  <graph edgedefault="directed" id="G">
+    <node id="n0">
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="57.888671875" width="153.2265625" x="324.32230660414336" y="80.68993410176643"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.7841796875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="130.57843017578125" x="11.324066162109375" y="12.55224609375">1.1.4.1.1: Mantener[
+Monitoreo de stock local ]</y:NodeLabel>
+          <y:Shape type="parallelogram"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n1">
+      <data key="d2"/>
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="69.888671875" width="180.2265625" x="100.7734375" y="182.111328125"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="11" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="42.39794921875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="167.30810546875" x="6.459228515625" y="13.745361328125">1.1.4.1.1.1 Lograr[Conocer las
+pizzas ordenadas y
+preparadas</y:NodeLabel>
+          <y:Shape type="parallelogram"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n2">
+      <data key="d2"/>
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="69.888671875" width="174.2265625" x="334.0" y="182.111328125"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="11" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="42.39794921875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="148.9658203125" x="12.63037109375" y="13.745361328125">1.1.4.1.1.2 Lograr[Conocer
+ingrendientes
+precisos]</y:NodeLabel>
+          <y:Shape type="parallelogram"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n3">
+      <data key="d2"/>
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="64.0" width="161.0" x="602.0" y="188.0"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="11" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="29.5986328125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="148.9658203125" x="6.01708984375" y="17.20068359375">1.1.4.1.1.3 Lograr[Conocer
+Ingresos de stock]</y:NodeLabel>
+          <y:Shape type="parallelogram"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n4">
+      <data key="d2"/>
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="69.888671875" width="140.0" x="-2.0" y="334.111328125"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="11" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="42.39794921875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="159.40185546875" x="-9.700927734375" y="13.745361328125">1.1.4.1.1.1.1 Lograr[Conocer
+pizzas
+ordenadas]</y:NodeLabel>
+          <y:Shape type="parallelogram"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n5">
+      <data key="d2"/>
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="69.888671875" width="140.0" x="164.0" y="334.111328125"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="11" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="55.197265625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="111.60986328125" x="14.195068359375" y="7.345703125">1.1.4.1.1.1.2 Lograr
+[Conocer
+pizzas
+preparadas]</y:NodeLabel>
+          <y:Shape type="parallelogram"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n6">
+      <data key="d2"/>
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="69.888671875" width="145.0" x="334.0" y="334.111328125"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="11" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="55.197265625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="111.60986328125" x="16.695068359375" y="7.345703125">1.1.4.1.1.1.3 Lograr
+[Conocer
+pizzas
+entregradas]</y:NodeLabel>
+          <y:Shape type="parallelogram"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n7">
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="9.58495188101486" width="10.24562072190652" x="182.22495466336267" y="287.4672778517664"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="4.0" x="3.1228103609532525" y="2.7924759405074155"/>
+          <y:Shape type="ellipse"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n8">
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="9.58495188101486" width="10.24562072190652" x="395.8127774931901" y="160.41504811898514"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="4.0" x="3.1228103609532525" y="2.7924759405074155"/>
+          <y:Shape type="ellipse"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n9">
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="37.888671875" width="84.21875" x="64.87813676330154" y="452.75"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.7841796875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="53.29290771484375" x="15.462921142578125" y="2.55224609375">Software, 
+Mozo</y:NodeLabel>
+          <y:Shape type="hexagon"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n10">
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="37.888671875" width="84.21875" x="-39.37186323669846" y="452.75"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.7841796875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="53.29290771484375" x="15.462921142578125" y="2.55224609375">Software, 
+Cliente</y:NodeLabel>
+          <y:Shape type="hexagon"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n11">
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="37.888671875" width="84.21875" x="191.890625" y="452.75"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.7841796875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="53.29290771484375" x="15.462921142578125" y="2.55224609375">Software, 
+Cocinero</y:NodeLabel>
+          <y:Shape type="hexagon"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n12">
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="37.888671875" width="84.21875" x="364.390625" y="452.75"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.7841796875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="53.29290771484375" x="15.462921142578125" y="2.55224609375">Software, 
+Mozo</y:NodeLabel>
+          <y:Shape type="hexagon"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n13">
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="37.888671875" width="84.21875" x="379.00390625" y="282.0"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.7841796875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="53.29290771484375" x="15.462921142578125" y="2.55224609375">Software, 
+Cocinero</y:NodeLabel>
+          <y:Shape type="hexagon"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n14">
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="37.888671875" width="84.21875" x="640.390625" y="282.0"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.7841796875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="53.29290771484375" x="15.462921142578125" y="2.55224609375">Software, 
+Personal</y:NodeLabel>
+          <y:Shape type="hexagon"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <edge id="e0" source="n1" target="n8">
+      <data key="d7">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e1" source="n2" target="n8">
+      <data key="d7">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e2" source="n3" target="n8">
+      <data key="d7">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e3" source="n8" target="n0">
+      <data key="d7">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e4" source="n4" target="n7">
+      <data key="d7">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e5" source="n5" target="n7">
+      <data key="d7">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e6" source="n6" target="n7">
+      <data key="d7">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e7" source="n7" target="n1">
+      <data key="d7">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e8" source="n10" target="n4">
+      <data key="d7">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e9" source="n9" target="n4">
+      <data key="d7">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e10" source="n11" target="n5">
+      <data key="d7">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e11" source="n12" target="n6">
+      <data key="d7">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e12" source="n13" target="n2">
+      <data key="d7">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e13" source="n14" target="n3">
+      <data key="d7">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+  </graph>
+  <data key="d0">
+    <y:Resources/>
+  </data>
+</graphml>
