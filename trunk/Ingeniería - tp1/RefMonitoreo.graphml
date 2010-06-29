@@ -25,7 +25,6 @@ Monitoreo de stock local ]</y:NodeLabel>
       </data>
     </node>
     <node id="n1">
-      <data key="d2"/>
       <data key="d3">
         <y:ShapeNode>
           <y:Geometry height="69.888671875" width="180.2265625" x="100.7734375" y="182.111328125"/>
@@ -39,7 +38,6 @@ preparadas</y:NodeLabel>
       </data>
     </node>
     <node id="n2">
-      <data key="d2"/>
       <data key="d3">
         <y:ShapeNode>
           <y:Geometry height="69.888671875" width="174.2265625" x="334.0" y="182.111328125"/>
@@ -53,7 +51,6 @@ precisos]</y:NodeLabel>
       </data>
     </node>
     <node id="n3">
-      <data key="d2"/>
       <data key="d3">
         <y:ShapeNode>
           <y:Geometry height="64.0" width="161.0" x="602.0" y="188.0"/>
@@ -66,7 +63,6 @@ Ingresos de stock]</y:NodeLabel>
       </data>
     </node>
     <node id="n4">
-      <data key="d2"/>
       <data key="d3">
         <y:ShapeNode>
           <y:Geometry height="69.888671875" width="140.0" x="-2.0" y="334.111328125"/>
@@ -80,7 +76,6 @@ ordenadas]</y:NodeLabel>
       </data>
     </node>
     <node id="n5">
-      <data key="d2"/>
       <data key="d3">
         <y:ShapeNode>
           <y:Geometry height="69.888671875" width="140.0" x="164.0" y="334.111328125"/>
@@ -95,7 +90,6 @@ preparadas]</y:NodeLabel>
       </data>
     </node>
     <node id="n6">
-      <data key="d2"/>
       <data key="d3">
         <y:ShapeNode>
           <y:Geometry height="69.888671875" width="145.0" x="334.0" y="334.111328125"/>
@@ -126,7 +120,7 @@ entregradas]</y:NodeLabel>
           <y:Geometry height="9.58495188101486" width="10.24562072190652" x="395.8127774931901" y="160.41504811898514"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="4.0" x="3.1228103609532525" y="2.7924759405074155"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="4.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="4.0" x="3.122810360953281" y="2.792475940507444"/>
           <y:Shape type="ellipse"/>
         </y:ShapeNode>
       </data>
@@ -149,7 +143,8 @@ Mozo</y:NodeLabel>
           <y:Geometry height="37.888671875" width="84.21875" x="-39.37186323669846" y="452.75"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.7841796875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="53.29290771484375" x="15.462921142578125" y="2.55224609375">Software, 
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="FreeSerif" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="47.17626953125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="60.285064697265625" x="11.966842651367188" y="-4.643798828125">Menu
+electronico 
 Cliente</y:NodeLabel>
           <y:Shape type="hexagon"/>
         </y:ShapeNode>
