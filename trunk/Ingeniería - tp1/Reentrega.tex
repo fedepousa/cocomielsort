@@ -81,8 +81,16 @@ El menú electrónico consiste en un menú interactivo ofrecido a los usuarios a
 \paragraph{Cliente:}
 El cliente que entra al local. Se refiere tanto a individuos como a grupos.
 \\
-\paragraph{Personal:}
-Se refiere al conjunto de personas que trabajan en el local, éstos son: los mozos, el cajero y los cocineros.
+\paragraph{Mozo:}
+En esta soluci\'on automatizada el mozo solo se encuentra a la espera de que el software le indica que hay una pizza para entregar, y luego se la entrega a la mesa y los clientes correspondientes.
+\\
+\paragraph{Cajero:}
+Es el encargado de recibir la plata de los clientes y luego registrar el pago de un cliente en el software.
+\\
+\paragraph{Cocinero:}
+El cocinero se encarga, como indica su nombre, de la realizaci\'on de la pizzas. Sin embargo, el cocinero tambi\'en tiene m\'as responsabilidades. Por un lado, es el encargado de generar las actulizaciones del men\'u del local, para luego entregarselo al software y que este se encargue de la sincronizaci\'on con el resto de los locales. Por otro lado, se le asigno al cocinero todo lo relacionado al manejo del stock. El software le indica que hay escasez de un ingrediente, el cocinero se encarga de interactuar con el proveedor y luego ingresa el stock al software. 
+
+Si bien esta responsabilidad fue asignada al cocinero, lo mismo se podr\'ia haber hecho con cualquier otro miembro del personal o bien se podr\'ia tener una persona indicada solo para este, es por esto que muchas veces en el diagrama de objetivos el monitereo de stock se asignara al personal en general, dando libertad de asignaci\'on efectiva, inclusive dando a entender que esta acci\'on podr\'ia no tener una persona asginada permanente, sino que podr\'ia encargarse cualquier personal que se encuentre disponible al momento de necesitarlo.
 \\
 
 La solución presentada en general prioriza la satisfacción del cliente, ya que al ocuparse el software de manera casi íntegra del manejo de stock, resulta posible descontar inmediatamente la disponibilidad de un determinado ingrediente al registrarse un pedido, incluso antes de iniciarse su preparación. Esto evita que al ocurrir varios pedidos concurrentes se acepten pedidos para los cuáles no se dispone de stock suficiente.
@@ -107,9 +115,19 @@ En este caso, el siguiete diagrama de contexto muestra los agentes involucrados 
 \paragraph{Proveedor:}
 El proveedor es el encargado de reponer el stock a pedido de nuestro local. Incluye todo el sistema de compra y transporte de productos hasta el local.
 \\
-\paragraph{Personal:}
-Se refiere a todo el conjunto de personas empleadas en el local. El conjunto tiene una gran interacción con la maquina y con el cliente dado que debe cumplir varias funciones. Actualizar nivel de stock, cuando se hace una nueva compra debe registrarse el cambio. Debe ingresar un pedido al sistema (proveniente de un cliente) para que este evalue si puede o no satisfacerlo. Debe registrar el pago de un cliente. Recibe la confirmación de satisfacción por parte del software, que le indica que puede confirmarle el pedido a un cliente. Tiene también la tarea de pedir al proveedor lo que haga falta corroborando el estado del stock. Debe llevar/recibir/confirmar/servir un pedido.Tiene el deber de actualizar el menu cuando lo crea pertinente.
+
+\paragraph{Mozo:}
+En este caso el mozo tiene mucha m\'as interacci\'on ya que no existe el men\'u electr\'onico como en la opci\'on anterior. Se encarga de manejar las ordenes de los clientes, de entregar las pizzas y de averiguar si los pedidos se pueden satisfacer.
 \\
+
+\paragraph{Cajero:}
+Posee la misma interacci\'on que antes, solo le abonan las pizzas y registrar los pagos en el software.
+\\
+
+\paragraph{Cocinero:}
+En este caso el cocinero tiene las mismas responsabilidades que en el diagrama anterior, pero sumado al hecho de que en esta alternativa manual es el cocinero el que maneja el stock en su totalidad. No solo genera el ingreso del stock, si no que tambi\'en se encarga de la actualizaci\'on del stock en su totalidad. Al igual que antes, el hecho de asignarselo al cocinero es nuevamente arbitrario pudiendose hacer lo mismo con cualquier miembro del personal que se encuentre disponible.
+\\
+
 \paragraph{Cliente:}
 Se refiere al cliente que entra al local, tanto a individuos como a grupos.
 \\
