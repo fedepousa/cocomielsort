@@ -1,0 +1,107 @@
+TODO: CHEQUEAR SI LAS FOREING KEY EN LAS DEBILES VA SUBRAYADA O NO \\
+\begin{itemize}
+
+\item TELÉFONO( \underline{idTel}, \underline{númeroJuzgado}, númeroTel) 
+	\begin{itemize}
+		\item CK = \{(idTel, númeroJuzgado)\}
+		\item PK = \{(idTel, númeroJuzgado)\}
+		\item FK = \{(númeroJuzgado)\}
+	\end{itemize}
+	
+\item JUZGADO( \underline{númeroJuzgado}, fechaCreación, dirección)
+	\begin{itemize}
+		\item CK = \{(númeroJuzgado)\}
+		\item PK = \{(númeroJuzgado)\}
+		\item FK = \{ \}
+	\end{itemize}
+
+\item TELÉFONO( \underline{idTel}, \underline{idSala}, númeroTel) 
+	\begin{itemize}
+		\item CK = \{(idTel, idSala)\}
+		\item PK = \{(idTel, idSala)\}
+		\item FK = \{(idSala)\}
+	\end{itemize}
+\item SALA( \underline{idSala}, nombreSala)
+	\begin{itemize}
+		\item CK = \{(idSala)\}
+		\item PK = \{(idSala)\}
+		\item FK = \{ \}
+	\end{itemize}
+	
+\item TELÉFONO( \underline{idTel}, \underline{idCámara}, númeroTel) 
+	\begin{itemize}
+		\item CK = \{(idTel, idCámara)\}
+		\item PK = \{(idTel, idCámara)\}
+		\item FK = \{(idCámara)\}
+	\end{itemize}
+\item CÁMARA( \underline{idCámara}, nombreCámara)
+	\begin{itemize}
+		\item CK = \{(idCámara)\}
+		\item PK = \{(idCámara)\}
+		\item FK = \{ \}
+	\end{itemize}
+	
+	
+	\begin{center}
+TODO: HASTA ACA COMPLETE 
+\end{center}
+	
+\item CONCURSO( \underline{idConcurso})
+	\begin{itemize}
+		\item CK = \{ \}
+		\item PK = \{ \}
+		\item FK = \{ \}
+	\end{itemize}
+	
+\item INSCRIPCIÓN( \underline{idInscripción}, ordenMérito, nombreUniversidad, promedio, fechaTitulo)
+	\begin{itemize}
+		\item CK = \{ \}
+		\item PK = \{ \}
+		\item FK = \{ \}
+	\end{itemize}
+\item SECRETARÍA( \underline{idSecretaría})
+	\begin{itemize}
+		\item CK = \{ \}
+		\item PK = \{ \}
+		\item FK = \{ \}
+	\end{itemize}
+\item CAUSAS( \underline{númeroCausa}, fechaApertura, descripción, \dashuline{númeroCausaOriginal}) \\
+	\begin{itemize}
+		\item CK = \{ \}
+		\item PK = \{ \}
+		\item FK = \{ \}
+	\end{itemize}
+\item MOVIMIENTO( \underline{idMovimiento}, descripción, fecha) \\
+TODO: No tengo idea que tengo que hacer cuando tiene una especializacion 
+	\begin{itemize}
+		\item CK = \{ \}
+		\item PK = \{ \}
+		\item FK = \{ \}
+	\end{itemize}
+\item ABOGADO( \underline{cuil}, númerodeLegajo, telParticular, apellido, nombre)
+	\begin{itemize}
+		\item CK = \{ \}
+		\item PK = \{ \}
+		\item FK = \{ \}
+	\end{itemize}
+\item NORMA( \underline{númeroNorma}, fechaPublicación, tipo)
+	\begin{itemize}
+		\item CK = \{ \}
+		\item PK = \{ \}
+		\item FK = \{ \}
+	\end{itemize}
+\item ACARGO(  \underline{númeroNorma}, \underline{númeroJuzgado}, \dashuline{cuil}) \\
+	\begin{itemize}
+		\item CK = \{ \}
+		\item PK = \{ \}
+		\item FK = \{ \}
+	\end{itemize}
+\item SECRETARIO( \underline{númeroNorma}, \underline{idSecretaría}, \dashuline{cuil}) \\
+	\begin{itemize}
+		\item CK = \{ \}
+		\item PK = \{ \}
+		\item FK = \{ \}
+	\end{itemize}
+\end{itemize}
+
+
