@@ -8,11 +8,11 @@ TODO: CHEQUEAR SI LAS FOREING KEY EN LAS DEBILES VA SUBRAYADA O NO \\
 		\item FK = \{(númeroJuzgado)\}
 	\end{itemize}
 	
-\item JUZGADO( \underline{númeroJuzgado}, fechaCreación, dirección)
+\item JUZGADO( \underline{númeroJuzgado}, fechaCreación, dirección, \dashuline{idSala})
 	\begin{itemize}
 		\item CK = \{(númeroJuzgado)\}
 		\item PK = \{(númeroJuzgado)\}
-		\item FK = \{ \}
+		\item FK = \{(idSala)\}
 	\end{itemize}
 
 \item TELÉFONO( \underline{idTel}, \underline{idSala}, númeroTel) 
@@ -21,11 +21,11 @@ TODO: CHEQUEAR SI LAS FOREING KEY EN LAS DEBILES VA SUBRAYADA O NO \\
 		\item PK = \{(idTel, idSala)\}
 		\item FK = \{(idSala)\}
 	\end{itemize}
-\item SALA( \underline{idSala}, nombreSala)
+\item SALA( \underline{idSala}, nombreSala, \dashuline{idCámara})
 	\begin{itemize}
 		\item CK = \{(idSala)\}
 		\item PK = \{(idSala)\}
-		\item FK = \{ \}
+		\item FK = \{(idCámara)\}
 	\end{itemize}
 	
 \item TELÉFONO( \underline{idTel}, \underline{idCámara}, númeroTel) 
@@ -40,68 +40,75 @@ TODO: CHEQUEAR SI LAS FOREING KEY EN LAS DEBILES VA SUBRAYADA O NO \\
 		\item PK = \{(idCámara)\}
 		\item FK = \{ \}
 	\end{itemize}
+		
 	
-	
-	\begin{center}
-TODO: HASTA ACA COMPLETE 
-\end{center}
-	
-\item CONCURSO( \underline{idConcurso})
+\item CONCURSO( \underline{idConcurso},\dashuline{idCámara})
 	\begin{itemize}
-		\item CK = \{ \}
-		\item PK = \{ \}
-		\item FK = \{ \}
+		\item CK = \{(idConcurso)\}
+		\item PK = \{(idConcurso)\}
+		\item FK = \{(idCámara)\}
 	\end{itemize}
 	
-\item INSCRIPCIÓN( \underline{idInscripción}, ordenMérito, nombreUniversidad, promedio, fechaTitulo)
+\item INSCRIPCIÓN( \underline{idInscripción}, ordenMérito, nombreUniversidad, promedio, fechaTitulo, \dashuline{idConcurso}, \dashuline{cuil})
 	\begin{itemize}
-		\item CK = \{ \}
-		\item PK = \{ \}
-		\item FK = \{ \}
+		\item CK = \{(idInscripción)\}
+		\item PK = \{(idInscripción)\}
+		\item FK = \{(idConcurso),(cuil)\}
 	\end{itemize}
-\item SECRETARÍA( \underline{idSecretaría})
-	\begin{itemize}
-		\item CK = \{ \}
-		\item PK = \{ \}
-		\item FK = \{ \}
-	\end{itemize}
-\item CAUSAS( \underline{númeroCausa}, fechaApertura, descripción, \dashuline{númeroCausaOriginal}) \\
-	\begin{itemize}
-		\item CK = \{ \}
-		\item PK = \{ \}
-		\item FK = \{ \}
-	\end{itemize}
-\item MOVIMIENTO( \underline{idMovimiento}, descripción, fecha) \\
-TODO: No tengo idea que tengo que hacer cuando tiene una especializacion 
-	\begin{itemize}
-		\item CK = \{ \}
-		\item PK = \{ \}
-		\item FK = \{ \}
-	\end{itemize}
+	
 \item ABOGADO( \underline{cuil}, númerodeLegajo, telParticular, apellido, nombre)
 	\begin{itemize}
-		\item CK = \{ \}
-		\item PK = \{ \}
-		\item FK = \{ \}
+		\item CK = \{(cuil)\}
+		\item PK = \{(cuil)\}
+		\item FK = \{\}
 	\end{itemize}
+	
 \item NORMA( \underline{númeroNorma}, fechaPublicación, tipo)
 	\begin{itemize}
-		\item CK = \{ \}
-		\item PK = \{ \}
-		\item FK = \{ \}
+		\item CK = \{(númeroNorma)\}
+		\item PK = \{(númeroNorma)\}
+		\item FK = \{\}
 	\end{itemize}
-\item ACARGO(  \underline{númeroNorma}, \underline{númeroJuzgado}, \dashuline{cuil}) \\
+	
+\item ACARGO(  \underline{númeroNorma}, \underline{númeroJuzgado}, \dashuline{cuil})
+	\begin{itemize}
+		\item CK = \{(númeroNorma,númeroJuzgado)\}
+		\item PK = \{(númeroNorma,númeroJuzgado)\}
+		\item FK = \{(cuil)\}
+	\end{itemize}
+	
+	
+\item SECRETARIO( \underline{númeroNorma}, \underline{idSecretaría}, \dashuline{cuil})
+	\begin{itemize}
+		\item CK = \{(númeroNorma,idSecretaría)\}
+		\item PK = \{(númeroNorma,idSecretaría)\}
+		\item FK = \{(cuil)\}
+	\end{itemize}
+
+
+
+\item SECRETARÍA( \underline{idSecretaría}, \dashuline{númeroJuzgado})
+	\begin{itemize}
+		\item CK = \{(idSecretaría)\}
+		\item PK = \{(idSecretaría)\}
+		\item FK = \{(númeroJuzgado)\}
+	\end{itemize}
+	
+\item CAUSAS( \underline{númeroCausa}, fechaApertura, descripción, \dashuline{númeroCausaOriginal}, \dashuline{idSecretaría})
+	\begin{itemize}
+		\item CK = \{(númeroCausa)\}
+		\item PK = \{(númeroCausa)\}
+		\item FK = \{(númeroCausaOriginal),(idSecretaría)\}
+	\end{itemize}
+	
+\item MOVIMIENTO( \underline{idMovimiento}, descripción, fecha, \dashuline{númeroCausa}
+\\TODO: No tengo idea que tengo que hacer cuando tiene una especializacion 
 	\begin{itemize}
 		\item CK = \{ \}
 		\item PK = \{ \}
 		\item FK = \{ \}
-	\end{itemize}
-\item SECRETARIO( \underline{númeroNorma}, \underline{idSecretaría}, \dashuline{cuil}) \\
-	\begin{itemize}
-		\item CK = \{ \}
-		\item PK = \{ \}
-		\item FK = \{ \}
-	\end{itemize}
-\end{itemize}
+	\end{itemize} 
+	
+	
 
-
+\end{itemize}		
