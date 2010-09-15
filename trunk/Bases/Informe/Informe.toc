@@ -3,9 +3,9 @@
 \contentsline {section}{\numberline {2}Asunciones Generales}{4}{section.2}
 \contentsline {section}{\numberline {3}Modelo de Entidad Relacion}{4}{section.3}
 \contentsline {section}{\numberline {4}Modelo Relacional Derivado}{5}{section.4}
-\contentsline {section}{\numberline {5}Dise\~{n}o F\'isico}{6}{section.5}
-\contentsline {section}{\numberline {6}Restricciones adicionales al modelo}{7}{section.6}
-\contentsline {section}{\numberline {7}Store Procedures/Triggers}{8}{section.7}
-\contentsline {section}{\numberline {8}Conclus\IeC {\'\i }on}{9}{section.8}
-\contentsline {section}{\numberline {9}Bibliograf\'ia}{10}{section.9}
-\contentsline {section}{\numberline {10}Anexos}{11}{section.10}
+\contentsline {section}{\numberline {5}Dise\~{n}o F\'isico}{7}{section.5}
+\contentsline {section}{\numberline {6}Restricciones adicionales al modelo}{8}{section.6}
+\contentsline {section}{\numberline {7}Store Procedures/Triggers}{9}{section.7}
+\contentsline {section}{\numberline {8}Conclus\IeC {\'\i }on}{10}{section.8}
+\contentsline {section}{\numberline {9}Bibliograf\'ia}{11}{section.9}
+\contentsline {section}{\numberline {10}Anexos}{12}{section.10}
