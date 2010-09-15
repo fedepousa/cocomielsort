@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.9.3)  14 SEP 2010 21:41
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.9.3)  14 SEP 2010 23:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -438,32 +438,109 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--2
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 6.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--6
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 10.
 (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 6.
- [5]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 10.
 
-! LaTeX Error: There's no line here to end.
+Underfull \hbox (badness 10000) in paragraph at lines 15--17
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.104 \
-       
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+ []
 
-) [6] (./fisico.tex) [7] (./restricciones.tex) [8] (./store.tex) [9]
-(./conclu.tex) [10] (./biblio.tex) [11] (./anexos.tex) [12] (./Informe.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--34
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--47
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--61
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 72--74
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--88
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--102
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--116
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--131
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 143--145
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--160
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 173--175
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--190
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 202--204
+
+ []
+
+
+Overfull \hbox (16.4071pt too wide) in paragraph at lines 216--218
+[]\OT1/cmr/m/n/10.95 MOVIMIENTO.idMovimiento puede no es-tar en DECLARA-CIONES.
+idMovimiento. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--218
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--230
+
+ []
+
+) [8] (./fisico.tex) [9] (./restricciones.tex) [10] (./store.tex) [11]
+(./conclu.tex) [12] (./biblio.tex) [13] (./anexos.tex) [14] (./Informe.aux) ) 
 Here is how much of TeX's memory you used:
- 8036 strings out of 495061
- 110640 string characters out of 1182622
- 199321 words of memory out of 3000000
+ 8038 strings out of 495061
+ 110654 string characters out of 1182622
+ 201321 words of memory out of 3000000
  11029 multiletter control sequences out of 15000+50000
  10679 words of font info for 41 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
@@ -477,9 +554,9 @@ fonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss
 10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></
 usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/t
 exmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Informe.pdf (12 pages, 500683 bytes).
+Output written on Informe.pdf (14 pages, 504533 bytes).
 PDF statistics:
- 151 PDF objects out of 1000 (max. 8388607)
- 24 named destinations out of 1000 (max. 500000)
+ 161 PDF objects out of 1000 (max. 8388607)
+ 26 named destinations out of 1000 (max. 500000)
  91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

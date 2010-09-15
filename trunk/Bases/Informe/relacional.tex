@@ -1,4 +1,8 @@
-TODO: CHEQUEAR SI LAS FOREING KEY EN LAS DEBILES VA SUBRAYADA O NO \\
+Aca quedan pendientes del MR.\\
+
+TODO: Chequear si la foreing key en las debiles va subrayada o no (dado q en el manual no esta subrayada)
+TODO: Todos los telefonos tienen el mismo nombre, eso no jode para las Restricciones? \\
+TODO: Hacer Restricciones de la relacion unaria \\
 \begin{itemize}
 
 \item TELÉFONO( \underline{idTel}, \underline{númeroJuzgado}, númeroTel) 
@@ -6,39 +10,82 @@ TODO: CHEQUEAR SI LAS FOREING KEY EN LAS DEBILES VA SUBRAYADA O NO \\
 		\item CK = \{(idTel, númeroJuzgado)\}
 		\item PK = \{(idTel, númeroJuzgado)\}
 		\item FK = \{(númeroJuzgado)\}
+		\item Restricciones:
+			\begin{itemize}
+			\item  TELÉFONO.númeroJuzgado debe estar en JUZGADO.númeroJuzgado.
+			\\
+			
+			\end{itemize}
 	\end{itemize}
+	
+
 	
 \item JUZGADO( \underline{númeroJuzgado}, fechaCreación, dirección, \dashuline{idSala})
 	\begin{itemize}
 		\item CK = \{(númeroJuzgado)\}
 		\item PK = \{(númeroJuzgado)\}
 		\item FK = \{(idSala)\}
+		\item Restricciones:
+			\begin{itemize}
+			\item JUZGADO.númeroJuzgado puede no estar en TELÉFONO.númeroJuzgado.
+			\item JUZGADO.idSala no puede ser NULO.
+			\item JUZGADO.númeroJuzgado debe estar en ACARGO.númeroJuzgado.
+			\\
+			\end{itemize}
 	\end{itemize}
+
 
 \item TELÉFONO( \underline{idTel}, \underline{idSala}, númeroTel) 
 	\begin{itemize}
 		\item CK = \{(idTel, idSala)\}
 		\item PK = \{(idTel, idSala)\}
 		\item FK = \{(idSala)\}
+		\item Restricciones:
+			\begin{itemize}
+			\item TELÉFONO.idSala debe estar en  SALA.idSala.
+			\\
+			\end{itemize}
 	\end{itemize}
+
+
 \item SALA( \underline{idSala}, nombreSala, \dashuline{idCámara})
 	\begin{itemize}
 		\item CK = \{(idSala)\}
 		\item PK = \{(idSala)\}
 		\item FK = \{(idCámara)\}
+		\item Restricciones:
+			\begin{itemize}
+			\item SALA.idSala puede no estar en TELÉFONO.idSala.
+			\item SALA.idCámara no puede ser NULO.
+			\\
+			\end{itemize}
 	\end{itemize}
+	
 	
 \item TELÉFONO( \underline{idTel}, \underline{idCámara}, númeroTel) 
 	\begin{itemize}
 		\item CK = \{(idTel, idCámara)\}
 		\item PK = \{(idTel, idCámara)\}
 		\item FK = \{(idCámara)\}
+		\item Restricciones:
+			\begin{itemize}
+			\item TELÉFONO.idCámara debe estar en CÁMARA.idCámara.
+			\\
+			\end{itemize}
 	\end{itemize}
+
+
 \item CÁMARA( \underline{idCámara}, nombreCámara)
 	\begin{itemize}
 		\item CK = \{(idCámara)\}
 		\item PK = \{(idCámara)\}
 		\item FK = \{ \}
+		\item Restricciones:
+			\begin{itemize}
+			\item CÁMARA.idCámara debe estar en TELÉFONO.idTeléfono.
+			\item CÁMARA.idCámara puede no estar en CONCURSO.idCámara.
+			\\			
+			\end{itemize}
 	\end{itemize}
 		
 	
@@ -47,34 +94,70 @@ TODO: CHEQUEAR SI LAS FOREING KEY EN LAS DEBILES VA SUBRAYADA O NO \\
 		\item CK = \{(idConcurso)\}
 		\item PK = \{(idConcurso)\}
 		\item FK = \{(idCámara)\}
+		\item Restricciones:
+			\begin{itemize}
+			\item CONCURSO.idCámara no puede ser NULO.
+			\item CONCURSO.idConcurso puede no estar en INSCRIPCIÓN.idConcurso.
+			\\			
+			\end{itemize}		
 	\end{itemize}
+	
 	
 \item INSCRIPCIÓN( \underline{idInscripción}, ordenMérito, nombreUniversidad, promedio, fechaTitulo, \dashuline{idConcurso}, \dashuline{cuil})
 	\begin{itemize}
 		\item CK = \{(idInscripción)\}
 		\item PK = \{(idInscripción)\}
 		\item FK = \{(idConcurso),(cuil)\}
+		\item Restricciones:
+			\begin{itemize}
+			\item INSCRIPCIÓN.idConcurso no puede ser NULO.
+			\item INSCRIPCIÓN.cuil no puede ser NULO.
+			\\
+			\end{itemize}
 	\end{itemize}
+	
 	
 \item ABOGADO( \underline{cuil}, númerodeLegajo, telParticular, apellido, nombre)
 	\begin{itemize}
 		\item CK = \{(cuil)\}
 		\item PK = \{(cuil)\}
 		\item FK = \{\}
+		\item Restricciones:
+			\begin{itemize}
+			\item ABOGADO.cuil puede no estar en INSCRIPCIÓN.cuil.
+			\item ABOGADO.cuil puede no estar en ACARGO.cuil.
+			\item ABOGADO.cuil puede no estar en SECRETARIO.cuil.
+			\\
+			\end{itemize}
 	\end{itemize}
+
 	
 \item NORMA( \underline{númeroNorma}, fechaPublicación, tipo)
 	\begin{itemize}
 		\item CK = \{(númeroNorma)\}
 		\item PK = \{(númeroNorma)\}
 		\item FK = \{\}
+		\item Restricciones:
+			\begin{itemize}
+			\item NORMA.númeroNorma puede no estar en ACARGO.númeroNorma.
+			\item NORMA.númeroNorma puede no estar en SECRETARIO.númeroNorma.
+			\\
+			\end{itemize}
 	\end{itemize}
+
 	
 \item ACARGO(  \underline{númeroNorma}, \underline{númeroJuzgado}, \dashuline{cuil})
 	\begin{itemize}
 		\item CK = \{(númeroNorma,númeroJuzgado)\}
 		\item PK = \{(númeroNorma,númeroJuzgado)\}
 		\item FK = \{(cuil)\}
+		\item Restricciones:
+			\begin{itemize}
+			\item ACARGO.númeroJuzgado debe estar en JUZGADO.númeroJuzgado.
+			\item ACARGO.númeroNorma debe estar en NORMA.númeroNorma.
+			\item ACARGO.cuil debe estar en ABOGADO.cuil.
+			\\
+			\end{itemize}
 	\end{itemize}
 	
 	
@@ -83,8 +166,14 @@ TODO: CHEQUEAR SI LAS FOREING KEY EN LAS DEBILES VA SUBRAYADA O NO \\
 		\item CK = \{(númeroNorma,idSecretaría)\}
 		\item PK = \{(númeroNorma,idSecretaría)\}
 		\item FK = \{(cuil)\}
+		\item Restricciones:
+			\begin{itemize}
+			\item SECRETARIO.númeroNorma debe estar en NORMA.númeroNorma.
+			\item SECRETARIO.cuil debe estar en ABOGADO.cuil.
+			\item SECRETARIO.idSecretaría debe estar en SECRETARÍA.
+			\\
+			\end{itemize}
 	\end{itemize}
-
 
 
 \item SECRETARÍA( \underline{idSecretaría}, \dashuline{númeroJuzgado})
@@ -92,23 +181,54 @@ TODO: CHEQUEAR SI LAS FOREING KEY EN LAS DEBILES VA SUBRAYADA O NO \\
 		\item CK = \{(idSecretaría)\}
 		\item PK = \{(idSecretaría)\}
 		\item FK = \{(númeroJuzgado)\}
+		\item Restricciones:
+			\begin{itemize}
+			\item SECRETARÍA.númeroJuzgado no puede ser NULO.
+			\item SECRETARÍA.idSecretaría puede no estar en CAUSAS.idSecretaría.
+			\item SECRETARÍA.idSecretaría debe estar en SECRETARIO.idSecretaria.
+			\\
+			\end{itemize}
 	\end{itemize}
+
 	
 \item CAUSAS( \underline{númeroCausa}, fechaApertura, descripción, \dashuline{númeroCausaOriginal}, \dashuline{idSecretaría})
 	\begin{itemize}
 		\item CK = \{(númeroCausa)\}
 		\item PK = \{(númeroCausa)\}
 		\item FK = \{(númeroCausaOriginal),(idSecretaría)\}
+		\item Restricciones:
+			\begin{itemize}
+			\item CAUSAS.idSecretaría no puede ser NULO.
+			\item CAUSAS.númeroCausa puede no estar en MOVIMIENTOS.númeroCausa.
+			\\
+			\end{itemize}
+			TODO: Las Restricciones de las unarias requieren definir roles creo, lo cuelgo.
 	\end{itemize}
+
 	
-\item MOVIMIENTO( \underline{idMovimiento}, descripción, fecha, \dashuline{númeroCausa}
-\\TODO: No tengo idea que tengo que hacer cuando tiene una especializacion 
+\item MOVIMIENTO( \underline{idMovimiento}, descripción, fecha, \dashuline{númeroCausa}, tipo)
+	\begin{itemize}
+		\item CK = \{(idMovimiento)\}
+		\item PK = \{(idMovimiento)\}
+		\item FK = \{(númeroCausa)\}
+		\item Restricciones:
+			\begin{itemize}
+			\item MOVIMIENTO.idMovimiento puede no estar en DECLARACIONES.idMovimiento.
+			\\
+			\end{itemize}
+	\end{itemize} 
+	
+\item DECLARACIONES(\underline{idMovimiento}, dni, motivo, apellido, nombre)
 	\begin{itemize}
 		\item CK = \{ \}
 		\item PK = \{ \}
 		\item FK = \{ \}
-	\end{itemize} 
+		\item Restricciones:
+			\begin{itemize}
+			\item DECLARACIONES.idMovimiento debe estar en MOVIMIENTO.idMovimiento.
+			\\
+			\end{itemize}
+	\end{itemize}
 	
 	
-
 \end{itemize}		
