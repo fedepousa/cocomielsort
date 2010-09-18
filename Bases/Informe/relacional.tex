@@ -1,23 +1,23 @@
 Aca quedan pendientes del MR.\\
 
 TODO: Chequear si la foreing key en las debiles va subrayada o no (dado q en el manual no esta subrayada)
-TODO: Todos los telefonos tienen el mismo nombre, eso no jode para las Restricciones? \\
 TODO: Hacer Restricciones de la relacion unaria \\
+TODO: No se como poner la referencia de CAUSAS me marece lo de la interrelacion unaria.
 \begin{itemize}
 
-\item TELÉFONO( \underline{idTel}, \underline{númeroJuzgado}, númeroTel) 
+\item TELÉFONO\_J( \underline{idTel}, \underline{númeroJuzgado}, númeroTel) 
 	\begin{itemize}
 		\item CK = \{(idTel, númeroJuzgado)\}
 		\item PK = \{(idTel, númeroJuzgado)\}
 		\item FK = \{(númeroJuzgado)\}
+		\item númeroJuzgado hace referencia a JUZGADO.númeroJuzgado.
 		\item Restricciones:
 			\begin{itemize}
-			\item  TELÉFONO.númeroJuzgado debe estar en JUZGADO.númeroJuzgado.
+			\item  TELÉFONO\_J.númeroJuzgado debe estar en JUZGADO.númeroJuzgado.
 			\\
 			
 			\end{itemize}
-	\end{itemize}
-	
+	\end{itemize}	
 
 	
 \item JUZGADO( \underline{númeroJuzgado}, fechaCreación, dirección, \dashuline{idSala})
@@ -26,8 +26,9 @@ TODO: Hacer Restricciones de la relacion unaria \\
 		\item PK = \{(númeroJuzgado)\}
 		\item FK = \{(idSala)\}
 		\item Restricciones:
+		\item idSala hace referencia a SALA.idSala.
 			\begin{itemize}
-			\item JUZGADO.númeroJuzgado puede no estar en TELÉFONO.númeroJuzgado.
+			\item JUZGADO.númeroJuzgado puede no estar en TELÉFONO\_J.númeroJuzgado.
 			\item JUZGADO.idSala no puede ser NULO.
 			\item JUZGADO.númeroJuzgado debe estar en ACARGO.númeroJuzgado.
 			\\
@@ -35,14 +36,15 @@ TODO: Hacer Restricciones de la relacion unaria \\
 	\end{itemize}
 
 
-\item TELÉFONO( \underline{idTel}, \underline{idSala}, númeroTel) 
+\item TELÉFONO\_S( \underline{idTel}, \underline{idSala}, númeroTel) 
 	\begin{itemize}
 		\item CK = \{(idTel, idSala)\}
 		\item PK = \{(idTel, idSala)\}
 		\item FK = \{(idSala)\}
+		\item idSala hace referncia a SALA.idSala.
 		\item Restricciones:
 			\begin{itemize}
-			\item TELÉFONO.idSala debe estar en  SALA.idSala.
+			\item TELÉFONO\_S.idSala debe estar en  SALA.idSala.
 			\\
 			\end{itemize}
 	\end{itemize}
@@ -53,23 +55,25 @@ TODO: Hacer Restricciones de la relacion unaria \\
 		\item CK = \{(idSala)\}
 		\item PK = \{(idSala)\}
 		\item FK = \{(idCámara)\}
+		\item idCámara hace referencia a CÁMARA.idCámara.
 		\item Restricciones:
 			\begin{itemize}
-			\item SALA.idSala puede no estar en TELÉFONO.idSala.
+			\item SALA.idSala puede no estar en TELÉFONO\_S.idSala.
 			\item SALA.idCámara no puede ser NULO.
 			\\
 			\end{itemize}
 	\end{itemize}
 	
 	
-\item TELÉFONO( \underline{idTel}, \underline{idCámara}, númeroTel) 
+\item TELÉFONO\_C( \underline{idTel}, \underline{idCámara}, númeroTel) 
 	\begin{itemize}
 		\item CK = \{(idTel, idCámara)\}
 		\item PK = \{(idTel, idCámara)\}
 		\item FK = \{(idCámara)\}
+		\item idCámara hace referencia referencia a CÁMARA.idCámara.
 		\item Restricciones:
 			\begin{itemize}
-			\item TELÉFONO.idCámara debe estar en CÁMARA.idCámara.
+			\item TELÉFONO\_C.idCámara debe estar en CÁMARA.idCámara.
 			\\
 			\end{itemize}
 	\end{itemize}
@@ -82,7 +86,7 @@ TODO: Hacer Restricciones de la relacion unaria \\
 		\item FK = \{ \}
 		\item Restricciones:
 			\begin{itemize}
-			\item CÁMARA.idCámara debe estar en TELÉFONO.idTeléfono.
+			\item CÁMARA.idCámara debe estar en TELÉFONO\_C.idTeléfono.
 			\item CÁMARA.idCámara puede no estar en CONCURSO.idCámara.
 			\\			
 			\end{itemize}
@@ -94,6 +98,7 @@ TODO: Hacer Restricciones de la relacion unaria \\
 		\item CK = \{(idConcurso)\}
 		\item PK = \{(idConcurso)\}
 		\item FK = \{(idCámara)\}
+		\item idCámara hace referencia a CÁMARA.idCámara.
 		\item Restricciones:
 			\begin{itemize}
 			\item CONCURSO.idCámara no puede ser NULO.
@@ -108,6 +113,8 @@ TODO: Hacer Restricciones de la relacion unaria \\
 		\item CK = \{(idInscripción)\}
 		\item PK = \{(idInscripción)\}
 		\item FK = \{(idConcurso),(cuil)\}
+		\item idConcurso hace referencia a CONCURSO.idConcurso.
+		\item cuil hace referencia a ABOGADO.cuil.
 		\item Restricciones:
 			\begin{itemize}
 			\item INSCRIPCIÓN.idConcurso no puede ser NULO.
@@ -151,6 +158,7 @@ TODO: Hacer Restricciones de la relacion unaria \\
 		\item CK = \{(númeroNorma,númeroJuzgado)\}
 		\item PK = \{(númeroNorma,númeroJuzgado)\}
 		\item FK = \{(cuil)\}
+		\item cuil hace referencia a ABOGADO.cuil.
 		\item Restricciones:
 			\begin{itemize}
 			\item ACARGO.númeroJuzgado debe estar en JUZGADO.númeroJuzgado.
@@ -166,6 +174,7 @@ TODO: Hacer Restricciones de la relacion unaria \\
 		\item CK = \{(númeroNorma,idSecretaría)\}
 		\item PK = \{(númeroNorma,idSecretaría)\}
 		\item FK = \{(cuil)\}
+		\item cuil hace referencia a ABOGADO.cuil.
 		\item Restricciones:
 			\begin{itemize}
 			\item SECRETARIO.númeroNorma debe estar en NORMA.númeroNorma.
@@ -181,6 +190,7 @@ TODO: Hacer Restricciones de la relacion unaria \\
 		\item CK = \{(idSecretaría)\}
 		\item PK = \{(idSecretaría)\}
 		\item FK = \{(númeroJuzgado)\}
+		\item númeroJuzgado hace referencia JUZGADO.númeroJuazgado.
 		\item Restricciones:
 			\begin{itemize}
 			\item SECRETARÍA.númeroJuzgado no puede ser NULO.
@@ -196,6 +206,7 @@ TODO: Hacer Restricciones de la relacion unaria \\
 		\item CK = \{(númeroCausa)\}
 		\item PK = \{(númeroCausa)\}
 		\item FK = \{(númeroCausaOriginal),(idSecretaría)\}
+		\item 
 		\item Restricciones:
 			\begin{itemize}
 			\item CAUSAS.idSecretaría no puede ser NULO.
@@ -211,6 +222,7 @@ TODO: Hacer Restricciones de la relacion unaria \\
 		\item CK = \{(idMovimiento)\}
 		\item PK = \{(idMovimiento)\}
 		\item FK = \{(númeroCausa)\}
+		\item númeroCausa hace referencia a CAUSA.númeroCausa.
 		\item Restricciones:
 			\begin{itemize}
 			\item MOVIMIENTO.idMovimiento puede no estar en DECLARACIONES.idMovimiento.
