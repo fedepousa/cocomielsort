@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 21-09-2010 a las 20:23:13
+-- Tiempo de generación: 21-09-2010 a las 22:35:13
 -- Versión del servidor: 5.1.41
 -- Versión de PHP: 5.3.1
 
@@ -78,6 +78,62 @@ INSERT INTO `acargo` (`id_norma`, `id_juzgado`, `cuil_abogado`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `auditoria_concurso`
+--
+
+CREATE TABLE IF NOT EXISTS `auditoria_concurso` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `tipo` enum('Ins','Del','Upd') NOT NULL,
+  `new_id_camara` bigint(20) DEFAULT NULL,
+  `new_id_concurso` bigint(20) DEFAULT NULL,
+  `old_id_camara` bigint(20) DEFAULT NULL,
+  `old_id_concurso` bigint(20) DEFAULT NULL,
+  `usuario` varchar(40) NOT NULL,
+  `fecha` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Volcar la base de datos para la tabla `auditoria_concurso`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `auditoria_inscripcion`
+--
+
+CREATE TABLE IF NOT EXISTS `auditoria_inscripcion` (
+  `id_aud` bigint(20) NOT NULL AUTO_INCREMENT,
+  `tipo` enum('Ins','Upd','Del') DEFAULT NULL,
+  `old_id` bigint(20) DEFAULT NULL,
+  `old_orden_merito` bigint(20) DEFAULT NULL,
+  `old_nombre_universidad` varchar(50) DEFAULT NULL,
+  `old_promedio` float DEFAULT NULL,
+  `old_fecha_titulo` datetime DEFAULT NULL,
+  `old_id_concurso` bigint(20) DEFAULT NULL,
+  `old_cuil_abogado` int(11) DEFAULT NULL,
+  `new_id` bigint(20) DEFAULT NULL,
+  `new_orden_merito` bigint(20) DEFAULT NULL,
+  `new_nombre_universidad` varchar(50) DEFAULT NULL,
+  `new_promedio` float DEFAULT NULL,
+  `new_fecha_titulo` datetime DEFAULT NULL,
+  `new_id_concurso` bigint(20) DEFAULT NULL,
+  `new_cuil_abogado` bigint(20) DEFAULT NULL,
+  `usuario` varchar(50) NOT NULL,
+  `fecha` datetime NOT NULL,
+  PRIMARY KEY (`id_aud`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Volcar la base de datos para la tabla `auditoria_inscripcion`
+--
+
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `camara`
 --
 
@@ -141,7 +197,7 @@ CREATE TABLE IF NOT EXISTS `concurso` (
   `id_camara` bigint(20) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_camara` (`id_camara`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Volcar la base de datos para la tabla `concurso`
@@ -149,6 +205,31 @@ CREATE TABLE IF NOT EXISTS `concurso` (
 
 INSERT INTO `concurso` (`id`, `id_camara`) VALUES
 (1, 1);
+
+--
+-- (Evento) desencadenante `concurso`
+--
+DROP TRIGGER IF EXISTS `auditoria_concurso_ins`;
+DELIMITER //
+CREATE TRIGGER `auditoria_concurso_ins` AFTER INSERT ON `concurso`
+ FOR EACH ROW INSERT INTO auditoria_concurso(tipo, new_id_camara, new_id_concurso, usuario, fecha)
+VALUES ('Ins',NEW.id_camara, NEW.id, CURRENT_USER(), NOW())
+//
+DELIMITER ;
+DROP TRIGGER IF EXISTS `auditoria_concurso_upd`;
+DELIMITER //
+CREATE TRIGGER `auditoria_concurso_upd` AFTER UPDATE ON `concurso`
+ FOR EACH ROW INSERT INTO auditoria_concurso(tipo, new_id_camara, new_id_concurso,old_id_camara,old_id_concurso, usuario, fecha)
+VALUES ('Upd',NEW.id_camara, NEW.id,OLD.id_camara, OLD.id, CURRENT_USER(), NOW())
+//
+DELIMITER ;
+DROP TRIGGER IF EXISTS `auditoria_concurso_del`;
+DELIMITER //
+CREATE TRIGGER `auditoria_concurso_del` AFTER DELETE ON `concurso`
+ FOR EACH ROW INSERT INTO auditoria_concurso(tipo, old_id_camara, old_id_concurso, usuario, fecha)
+VALUES ('Del',OLD.id_camara, OLD.id, CURRENT_USER(), NOW())
+//
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -195,7 +276,7 @@ CREATE TABLE IF NOT EXISTS `inscripcion` (
   PRIMARY KEY (`id`),
   KEY `id_concurso` (`id_concurso`),
   KEY `cuil_abogado` (`cuil_abogado`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=35 ;
 
 --
 -- Volcar la base de datos para la tabla `inscripcion`
@@ -211,6 +292,31 @@ INSERT INTO `inscripcion` (`id`, `orden_merito`, `nombre_universidad`, `promedio
 (7, 7, 'uniH', 9, '1992-09-24 13:37:50', 1, 7),
 (8, 8, 'uniA', 4, '2000-09-01 13:38:47', 1, 8),
 (9, 9, 'UADE', 10, '1993-09-05 13:39:24', 1, 9);
+
+--
+-- (Evento) desencadenante `inscripcion`
+--
+DROP TRIGGER IF EXISTS `auditoria_inscripcion_ins`;
+DELIMITER //
+CREATE TRIGGER `auditoria_inscripcion_ins` AFTER INSERT ON `inscripcion`
+ FOR EACH ROW INSERT INTO auditoria_inscripcion(tipo, new_id, new_orden_merito, new_nombre_universidad, new_promedio, new_fecha_titulo, new_id_concurso, new_cuil_abogado, usuario, fecha)
+VALUES ('Ins',NEW.id, NEW.orden_merito, NEW.nombre_universidad, NEW.promedio, NEW.fecha_titulo, NEW.id_concurso, NEW.cuil_abogado, CURRENT_USER() , NOW())
+//
+DELIMITER ;
+DROP TRIGGER IF EXISTS `auditoria_inscripcion_upd`;
+DELIMITER //
+CREATE TRIGGER `auditoria_inscripcion_upd` AFTER UPDATE ON `inscripcion`
+ FOR EACH ROW INSERT INTO auditoria_inscripcion(tipo, old_id, old_orden_merito, old_nombre_universidad, old_promedio, old_fecha_titulo, old_id_concurso, old_cuil_abogado,new_id, new_orden_merito, new_nombre_universidad, new_promedio, new_fecha_titulo, new_id_concurso, new_cuil_abogado, usuario, fecha)
+VALUES ('Upd',OLD.id, OLD.orden_merito, OLD.nombre_universidad, OLD.promedio, OLD.fecha_titulo, OLD.id_concurso, OLD.cuil_abogado,NEW.id, NEW.orden_merito, NEW.nombre_universidad, NEW.promedio, NEW.fecha_titulo, NEW.id_concurso, NEW.cuil_abogado, CURRENT_USER() , NOW())
+//
+DELIMITER ;
+DROP TRIGGER IF EXISTS `auditoria_inscripcion_del`;
+DELIMITER //
+CREATE TRIGGER `auditoria_inscripcion_del` AFTER DELETE ON `inscripcion`
+ FOR EACH ROW INSERT INTO auditoria_inscripcion(tipo, old_id, old_orden_merito, old_nombre_universidad, old_promedio, old_fecha_titulo, old_id_concurso, old_cuil_abogado, usuario, fecha)
+VALUES ('Del',OLD.id, OLD.orden_merito, OLD.nombre_universidad, OLD.promedio, OLD.fecha_titulo, OLD.id_concurso, OLD.cuil_abogado, CURRENT_USER() , NOW())
+//
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -437,3 +543,39 @@ CREATE TABLE IF NOT EXISTS `telefono_s` (
 INSERT INTO `telefono_s` (`id`, `id_sala`, `numero_tel`) VALUES
 (1, 10, 123456),
 (1, 11, 1234567);
+
+DELIMITER $$
+--
+-- Procedimientos
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ranking`()
+begin
+SELECT nombre 'Nombre de la Sala', declaraciones 'Cantidad de Declaraciones'
+FROM sala, (
+	SELECT id_sala, count( * ) declaraciones
+	FROM juzgado, (
+		SELECT id_juzgado
+		FROM secretaria, (
+			SELECT id_secretaria
+			FROM causas, (
+				SELECT *
+				FROM movimiento
+				WHERE id
+				IN (
+					SELECT id_movimiento
+					FROM declaraciones
+				)
+				) AS movConDec
+			WHERE movConDec.id_causa = causas.id
+			)secConDec
+		WHERE secConDec.id_secretaria = secretaria.id
+		) AS juzConDec
+	WHERE juzConDec.id_juzgado = juzgado.id
+	GROUP BY id_sala
+	) AS salaConDec
+WHERE sala.id = salaConDec.id_sala
+ORDER BY declaraciones DESC
+LIMIT 0 , 30;
+end$$
+
+DELIMITER ;
