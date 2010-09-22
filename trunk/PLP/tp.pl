@@ -68,11 +68,16 @@ agregarPreLista([], P, P).
 agregarPreLista([X], Ls, P) :- agregarPre(X, Ls, P).
 agregarPreLista([X | [Y | Xs]], Ls, P) :- agregarPreLista([Y | Xs], Ls, CasiP), agregarPre(X, Ls, OtroP), append(CasiP, OtroP, P). 
 
-% palabrasExacto(0, Sigma, [[]]).
+palabrasExacto(0, Sigma, []).
 palabrasExacto(1, [X | Xs], P) :- palabrasExacto(1, Xs, CasiP), append([[X]], CasiP, P).
 palabrasExacto(K, [], []) :- K \= 0. 
 palabrasExacto(K, [X | Xs], P) :- K > 1, AntK is K-1, palabrasExacto(AntK, [X | Xs], CasiP), agregarPreLista([X | Xs], CasiP, P). 
 
+palabrasHasta(1, Sigma, P) :- palabrasExacto(1, Sigma, P).
+palabrasHasta(K, Sigma, P) :- K > 1, palabrasExacto(K, Sigma, CasiP), AntK is K-1, palabrasHasta(AntK, Sigma, AuxP), append(CasiP, AuxP, P).
+
+
+% Ejercicio 5
 
 
 
