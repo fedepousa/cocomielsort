@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 21-09-2010 a las 22:35:13
+-- Tiempo de generación: 23-09-2010 a las 01:42:41
 -- Versión del servidor: 5.1.41
 -- Versión de PHP: 5.3.1
 
@@ -88,6 +88,8 @@ CREATE TABLE IF NOT EXISTS `auditoria_concurso` (
   `new_id_concurso` bigint(20) DEFAULT NULL,
   `old_id_camara` bigint(20) DEFAULT NULL,
   `old_id_concurso` bigint(20) DEFAULT NULL,
+  `old_fecha` date DEFAULT NULL,
+  `new_fecha` date DEFAULT NULL,
   `usuario` varchar(40) NOT NULL,
   `fecha` datetime NOT NULL,
   PRIMARY KEY (`id`)
@@ -195,6 +197,7 @@ INSERT INTO `causas` (`id`, `fecha_apertura`, `descripcion`, `id_causa_original`
 CREATE TABLE IF NOT EXISTS `concurso` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `id_camara` bigint(20) NOT NULL,
+  `fecha` date NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_camara` (`id_camara`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
@@ -203,8 +206,8 @@ CREATE TABLE IF NOT EXISTS `concurso` (
 -- Volcar la base de datos para la tabla `concurso`
 --
 
-INSERT INTO `concurso` (`id`, `id_camara`) VALUES
-(1, 1);
+INSERT INTO `concurso` (`id`, `id_camara`, `fecha`) VALUES
+(1, 1, '2010-09-21');
 
 --
 -- (Evento) desencadenante `concurso`
@@ -212,22 +215,22 @@ INSERT INTO `concurso` (`id`, `id_camara`) VALUES
 DROP TRIGGER IF EXISTS `auditoria_concurso_ins`;
 DELIMITER //
 CREATE TRIGGER `auditoria_concurso_ins` AFTER INSERT ON `concurso`
- FOR EACH ROW INSERT INTO auditoria_concurso(tipo, new_id_camara, new_id_concurso, usuario, fecha)
-VALUES ('Ins',NEW.id_camara, NEW.id, CURRENT_USER(), NOW())
+ FOR EACH ROW INSERT INTO auditoria_concurso(tipo, new_id_camara, new_id_concurso,new_fecha, usuario, fecha)
+VALUES ('Ins',NEW.id_camara, NEW.id,NEW.fecha, CURRENT_USER(), NOW())
 //
 DELIMITER ;
 DROP TRIGGER IF EXISTS `auditoria_concurso_upd`;
 DELIMITER //
 CREATE TRIGGER `auditoria_concurso_upd` AFTER UPDATE ON `concurso`
- FOR EACH ROW INSERT INTO auditoria_concurso(tipo, new_id_camara, new_id_concurso,old_id_camara,old_id_concurso, usuario, fecha)
-VALUES ('Upd',NEW.id_camara, NEW.id,OLD.id_camara, OLD.id, CURRENT_USER(), NOW())
+ FOR EACH ROW INSERT INTO auditoria_concurso(tipo, new_id_camara, new_id_concurso,old_id_camara,old_id_concurso, old_fecha,new_fecha,usuario, fecha)
+VALUES ('Upd',NEW.id_camara, NEW.id,OLD.id_camara, OLD.id,OLD.fecha, NEW.fecha, CURRENT_USER(), NOW())
 //
 DELIMITER ;
 DROP TRIGGER IF EXISTS `auditoria_concurso_del`;
 DELIMITER //
 CREATE TRIGGER `auditoria_concurso_del` AFTER DELETE ON `concurso`
- FOR EACH ROW INSERT INTO auditoria_concurso(tipo, old_id_camara, old_id_concurso, usuario, fecha)
-VALUES ('Del',OLD.id_camara, OLD.id, CURRENT_USER(), NOW())
+ FOR EACH ROW INSERT INTO auditoria_concurso(tipo, old_id_camara, old_id_concurso,old_fecha,usuario, fecha)
+VALUES ('Del',OLD.id_camara, OLD.id,OLD.fecha, CURRENT_USER(), NOW())
 //
 DELIMITER ;
 
