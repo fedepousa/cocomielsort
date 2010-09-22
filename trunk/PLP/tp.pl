@@ -79,6 +79,10 @@ palabrasHasta(K, Sigma, P) :- K > 1, palabrasExacto(K, Sigma, CasiP), AntK is K-
 
 % Ejercicio 5
 
+lenguajeSimpleHasta(K, E, P) :- literales(E, Sigma), palabrasHasta(K, Sigma, P), match(E, P).
+
+% Hay que preguntar si el 4 tiene que devolver una lista con todas las palabras o si tiene que ir listando de a una, porque asi queda
+% consistente con lo que pide en el 5 para hacer generate and test
 
 
 
