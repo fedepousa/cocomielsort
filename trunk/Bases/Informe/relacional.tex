@@ -155,7 +155,7 @@ TODO: No se como poner la referencia de CAUSAS me marece lo de la interrelacion 
 	
 \item ACARGO(  \underline{númeroNorma}, \underline{númeroJuzgado}, \dashuline{cuil})
 	\begin{itemize}
-		\item CK = \{(númeroNorma,númeroJuzgado)\}
+		\item CK = \{(númeroNorma,númeroJuzgado),(númeroNorma,Cuil)\}
 		\item PK = \{(númeroNorma,númeroJuzgado)\}
 		\item FK = \{(cuil)\}
 		\item cuil hace referencia a ABOGADO.cuil.
@@ -171,7 +171,7 @@ TODO: No se como poner la referencia de CAUSAS me marece lo de la interrelacion 
 	
 \item SECRETARIO( \underline{númeroNorma}, \underline{idSecretaría}, \dashuline{cuil})
 	\begin{itemize}
-		\item CK = \{(númeroNorma,idSecretaría)\}
+		\item CK = \{(númeroNorma,idSecretaría),(númeroNorma,cuil)\}
 		\item PK = \{(númeroNorma,idSecretaría)\}
 		\item FK = \{(cuil)\}
 		\item cuil hace referencia a ABOGADO.cuil.
