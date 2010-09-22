@@ -1,17 +1,17 @@
 CREATE TRIGGER auditoria_concurso_ins AFTER INSERT ON concurso
 FOR EACH ROW
-INSERT INTO auditoria_concurso(tipo, new_id_camara, new_id_concurso, usuario, fecha)
-VALUES ('Ins',NEW.id_camara, NEW.id, CURRENT_USER(), NOW());
+INSERT INTO auditoria_concurso(tipo, new_id_camara, new_id_concurso,new_fecha, usuario, fecha)
+VALUES ('Ins',NEW.id_camara, NEW.id,NEW.fecha, CURRENT_USER(), NOW());
 
 CREATE TRIGGER auditoria_concurso_del AFTER DELETE ON concurso
 FOR EACH ROW
-INSERT INTO auditoria_concurso(tipo, old_id_camara, old_id_concurso, usuario, fecha)
-VALUES ('Del',OLD.id_camara, OLD.id, CURRENT_USER(), NOW());
+INSERT INTO auditoria_concurso(tipo, old_id_camara, old_id_concurso,old_fecha,usuario, fecha)
+VALUES ('Del',OLD.id_camara, OLD.id,OLD.fecha, CURRENT_USER(), NOW());
 
 CREATE TRIGGER auditoria_concurso_upd AFTER UPDATE ON concurso
 FOR EACH ROW
-INSERT INTO auditoria_concurso(tipo, new_id_camara, new_id_concurso,old_id_camara,old_id_concurso, usuario, fecha)
-VALUES ('Upd',NEW.id_camara, NEW.id,OLD.id_camara, OLD.id, CURRENT_USER(), NOW());
+INSERT INTO auditoria_concurso(tipo, new_id_camara, new_id_concurso,old_id_camara,old_id_concurso, old_fecha,new_fecha,usuario, fecha)
+VALUES ('Upd',NEW.id_camara, NEW.id,OLD.id_camara, OLD.id,OLD.fecha, NEW.fecha, CURRENT_USER(), NOW());
 
 
 ---------------------------------------------------------------------------------
