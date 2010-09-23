@@ -1,3 +1,13 @@
+
+        
+
+
+DELIMITER $$
+--
+-- Procedures
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `acomodados`()
+begin
 SELECT DISTINCT nombre
 FROM abogado AS a, concurso AS c, acargo, inscripcion AS i, norma AS n, secretario AS s
 WHERE   (a.cuil = acargo.cuil_abogado OR a.cuil = s.cuil_abogado) 
@@ -64,4 +74,6 @@ WHERE   (a.cuil = acargo.cuil_abogado OR a.cuil = s.cuil_abogado)
                                    )
                         )
             )
-        
+end$$
+
+DELIMITER ;
