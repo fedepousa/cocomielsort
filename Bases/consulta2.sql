@@ -1,6 +1,6 @@
-SELECT nombre
+SELECT DISTINCT nombre
 FROM abogado AS a, concurso AS c, acargo, inscripcion AS i, norma AS n, secretario AS s
-WHERE   (a.cuil = acargo.cuil_abogado OR a.cuil = secretario.cuil_abogado) 
+WHERE   (a.cuil = acargo.cuil_abogado OR a.cuil = s.cuil_abogado) 
         -- El abogado a fue nombrado juez o secretario
         
         AND a.cuil = i.cuil_abogado 
@@ -13,13 +13,14 @@ WHERE   (a.cuil = acargo.cuil_abogado OR a.cuil = secretario.cuil_abogado)
         -- El concurso c es el que esta vigente para la norma n.
         -- Es decir, c es el ultimo concurso antes de que se publicara la norma n.
             (
-            SELECT concurso AS conc
-            WHERE   conc.fecha <= norm.fecha
-                    AND conc.fecha >= ALL (
+            SELECT id
+            FROM concurso AS conc
+            WHERE   conc.fecha <= n.fecha_publicacion
+                    AND (conc.fecha >= ALL (
                         SELECT fecha
                         FROM concurso conc1
-                        WHERE conc1.fecha <= norm.fecha
-                        )
+                        WHERE conc1.fecha <= n.fecha_publicacion
+                        ))
             )
         AND EXISTS (    
         -- Existe un abogado inscripto en el mismo concurso,  
@@ -40,9 +41,9 @@ WHERE   (a.cuil = acargo.cuil_abogado OR a.cuil = secretario.cuil_abogado)
                     -- corresponda al concurso c.
                         SELECT *
                         FROM norma AS norm, acargo AS acargo2, secretario AS secretario2
-                        WHERE  norm.fecha <= n.fecha 
+                        WHERE  norm.fecha_publicacion <= n.fecha_publicacion 
                                -- La norma norm es anterior a la norma n
-                               AND norm.fecha >= c.fecha    
+                               AND norm.fecha_publicacion >= c.fecha    
                                -- El concurso c ya estaba vigente cuando 
                                -- se hizo la norma norm.
                                AND 
