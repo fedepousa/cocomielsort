@@ -232,9 +232,9 @@ TODO: No se como poner la referencia de CAUSAS me marece lo de la interrelacion 
 	
 \item DECLARACIONES(\underline{idMovimiento}, dni, motivo, apellido, nombre)
 	\begin{itemize}
-		\item CK = \{ \}
-		\item PK = \{ \}
-		\item FK = \{ \}
+		\item CK = \{(idMovimiento)\}
+		\item PK = \{(idMovimiento)\}
+		\item FK = \{(númeroCausa)\}
 		\item Restricciones:
 			\begin{itemize}
 			\item DECLARACIONES.idMovimiento debe estar en MOVIMIENTO.idMovimiento.
