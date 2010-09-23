@@ -1,0 +1,88 @@
+Para realizar las consultas que fueron requeridas por las consignas del trabajo se decidió implementar las soluciones mediante Stored Procedures, para de esta forma poder acceder a las mismas de forma sencilla y cómoda.
+
+\underline{Consulta:}
+
+\textbf{El nombre de las salas que más declaraciones tomaron en el último año.}
+
+Esta consulta es generada mediante el siguiente codigo:
+
+\begin{verbatim}
+
+SELECT nombre 'Nombre de la Sala', declaraciones 'Cantidad de Declaraciones'
+FROM sala, (
+	SELECT id_sala, count( * ) declaraciones
+	FROM juzgado, (
+		SELECT id_juzgado
+		FROM secretaria, (
+			SELECT id_secretaria
+			FROM causas, (
+				SELECT *
+				FROM movimiento
+				WHERE id
+				IN (
+					SELECT id_movimiento
+					FROM declaraciones
+				)
+				) AS movConDec
+			WHERE movConDec.id_causa = causas.id
+			)secConDec
+		WHERE secConDec.id_secretaria = secretaria.id
+		) AS juzConDec
+	WHERE juzConDec.id_juzgado = juzgado.id
+	GROUP BY id_sala
+	) AS salaConDec
+WHERE sala.id = salaConDec.id_sala
+ORDER BY declaraciones DESC
+LIMIT 0 , 30
+
+\end{verbatim}
+
+La idea que se implemento es ir recorriendo desde las movimientos que fueron declaraciones hasta llegar a las Salas donde estos fueron originados, para ello se fue asociando las identificaciones correspondientes que enlazaban las diferentes tablas durante el camino. De esta forma se obtuvo una tabla con un campo sala y otro que indica la cantidad de declaraciones que fueron tomadas por la misma. Luego se procedió a ordenarlas de forma decreciente según la cantidad de declaraciones.
+
+\underline{Consulta:}
+
+\textbf{El nombre de los jueces/secretarios que fueron nombrados por cada cámara a pesar de haber postulantes con un orden de mérito mejor que aún no habían sido designados.}
+
+DOC!
+
+\underline{Control:}
+
+\textbf{Registro automático de datos de control de las altas, bajas y modificaciones de concursos y sus resultados}
+
+Para realizar esta tarea usamos la funcionalidad que nos provee el motor de la base de datos llamada "disparadores" o "triggers". La idea es llevar el control de los cambios que se realizan en las tablas relacionadas con la gestión de los concursos (Concurso e Inscripción). Para realizar esto creamos un conjunto de disparadores que registran los movimientos que se realizan en estas tablas y guardan dicha información en otras tablas creadas únicamente para este propósito.
+
+El siguiente código implementa los triggers que mencionamos anteriormente:
+
+\begin{verbatim}
+CREATE TRIGGER auditoria_concurso_ins AFTER INSERT ON concurso
+FOR EACH ROW
+INSERT INTO auditoria_concurso(tipo, new_id_camara, new_id_concurso,new_fecha, usuario, fecha)
+VALUES ('Ins',NEW.id_camara, NEW.id,NEW.fecha, CURRENT_USER(), NOW());
+
+CREATE TRIGGER auditoria_concurso_del AFTER DELETE ON concurso
+FOR EACH ROW
+INSERT INTO auditoria_concurso(tipo, old_id_camara, old_id_concurso,old_fecha,usuario, fecha)
+VALUES ('Del',OLD.id_camara, OLD.id,OLD.fecha, CURRENT_USER(), NOW());
+
+CREATE TRIGGER auditoria_concurso_upd AFTER UPDATE ON concurso
+FOR EACH ROW
+INSERT INTO auditoria_concurso(tipo, new_id_camara, new_id_concurso,old_id_camara,old_id_concurso, old_fecha,new_fecha,usuario, fecha)
+VALUES ('Upd',NEW.id_camara, NEW.id,OLD.id_camara, OLD.id,OLD.fecha, NEW.fecha, CURRENT_USER(), NOW());
+
+CREATE TRIGGER auditoria_inscripcion_ins AFTER INSERT ON inscripcion
+FOR EACH ROW
+INSERT INTO auditoria_inscripcion(tipo, new_id, new_orden_merito, new_nombre_universidad, new_promedio, new_fecha_titulo, new_id_concurso, new_cuil_abogado, usuario, fecha)
+VALUES ('Ins',NEW.id, NEW.orden_merito, NEW.nombre_universidad, NEW.promedio, NEW.fecha_titulo, NEW.id_concurso, NEW.cuil_abogado, CURRENT_USER() , NOW());
+
+CREATE TRIGGER auditoria_inscripcion_del AFTER DELETE ON inscripcion
+FOR EACH ROW
+INSERT INTO auditoria_inscripcion(tipo, old_id, old_orden_merito, old_nombre_universidad, old_promedio, old_fecha_titulo, old_id_concurso, old_cuil_abogado, usuario, fecha)
+VALUES ('Del',OLD.id, OLD.orden_merito, OLD.nombre_universidad, OLD.promedio, OLD.fecha_titulo, OLD.id_concurso, OLD.cuil_abogado, CURRENT_USER() , NOW());
+
+CREATE TRIGGER auditoria_inscripcion_upd AFTER UPDATE ON inscripcion
+FOR EACH ROW
+INSERT INTO auditoria_inscripcion(tipo, old_id, old_orden_merito, old_nombre_universidad, old_promedio, old_fecha_titulo, old_id_concurso, old_cuil_abogado,new_id, new_orden_merito, new_nombre_universidad, new_promedio, new_fecha_titulo, new_id_concurso, new_cuil_abogado, usuario, fecha)
+VALUES ('Upd',OLD.id, OLD.orden_merito, OLD.nombre_universidad, OLD.promedio, OLD.fecha_titulo, OLD.id_concurso, OLD.cuil_abogado,NEW.id, NEW.orden_merito, NEW.nombre_universidad, NEW.promedio, NEW.fecha_titulo, NEW.id_concurso, NEW.cuil_abogado, CURRENT_USER() , NOW());
+
+\end{verbatim}
+
