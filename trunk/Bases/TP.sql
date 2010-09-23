@@ -2,10 +2,10 @@
 -- version 3.2.4
 -- http://www.phpmyadmin.net
 --
--- Servidor: localhost
--- Tiempo de generación: 23-09-2010 a las 01:42:41
--- Versión del servidor: 5.1.41
--- Versión de PHP: 5.3.1
+-- Host: localhost
+-- Generation Time: Sep 23, 2010 at 05:57 
+-- Server version: 5.1.41
+-- PHP Version: 5.3.1
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
@@ -16,13 +16,13 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de datos: `TP`
+-- Database: `ejercicios`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `abogado`
+-- Table structure for table `abogado`
 --
 
 CREATE TABLE IF NOT EXISTS `abogado` (
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `abogado` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Volcar la base de datos para la tabla `abogado`
+-- Dumping data for table `abogado`
 --
 
 INSERT INTO `abogado` (`cuil`, `numero_legajo`, `telefono`, `nombre`, `apellido`) VALUES
@@ -52,7 +52,7 @@ INSERT INTO `abogado` (`cuil`, `numero_legajo`, `telefono`, `nombre`, `apellido`
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `acargo`
+-- Table structure for table `acargo`
 --
 
 CREATE TABLE IF NOT EXISTS `acargo` (
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `acargo` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Volcar la base de datos para la tabla `acargo`
+-- Dumping data for table `acargo`
 --
 
 INSERT INTO `acargo` (`id_norma`, `id_juzgado`, `cuil_abogado`) VALUES
@@ -78,7 +78,7 @@ INSERT INTO `acargo` (`id_norma`, `id_juzgado`, `cuil_abogado`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `auditoria_concurso`
+-- Table structure for table `auditoria_concurso`
 --
 
 CREATE TABLE IF NOT EXISTS `auditoria_concurso` (
@@ -96,14 +96,14 @@ CREATE TABLE IF NOT EXISTS `auditoria_concurso` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- Volcar la base de datos para la tabla `auditoria_concurso`
+-- Dumping data for table `auditoria_concurso`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `auditoria_inscripcion`
+-- Table structure for table `auditoria_inscripcion`
 --
 
 CREATE TABLE IF NOT EXISTS `auditoria_inscripcion` (
@@ -129,14 +129,14 @@ CREATE TABLE IF NOT EXISTS `auditoria_inscripcion` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- Volcar la base de datos para la tabla `auditoria_inscripcion`
+-- Dumping data for table `auditoria_inscripcion`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `camara`
+-- Table structure for table `camara`
 --
 
 CREATE TABLE IF NOT EXISTS `camara` (
@@ -147,7 +147,7 @@ CREATE TABLE IF NOT EXISTS `camara` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Volcar la base de datos para la tabla `camara`
+-- Dumping data for table `camara`
 --
 
 INSERT INTO `camara` (`id`, `nombre`, `direccion`) VALUES
@@ -156,7 +156,7 @@ INSERT INTO `camara` (`id`, `nombre`, `direccion`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `causas`
+-- Table structure for table `causas`
 --
 
 CREATE TABLE IF NOT EXISTS `causas` (
@@ -171,7 +171,7 @@ CREATE TABLE IF NOT EXISTS `causas` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
--- Volcar la base de datos para la tabla `causas`
+-- Dumping data for table `causas`
 --
 
 INSERT INTO `causas` (`id`, `fecha_apertura`, `descripcion`, `id_causa_original`, `id_secretaria`) VALUES
@@ -191,7 +191,7 @@ INSERT INTO `causas` (`id`, `fecha_apertura`, `descripcion`, `id_causa_original`
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `concurso`
+-- Table structure for table `concurso`
 --
 
 CREATE TABLE IF NOT EXISTS `concurso` (
@@ -203,14 +203,14 @@ CREATE TABLE IF NOT EXISTS `concurso` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
--- Volcar la base de datos para la tabla `concurso`
+-- Dumping data for table `concurso`
 --
 
 INSERT INTO `concurso` (`id`, `id_camara`, `fecha`) VALUES
 (1, 1, '2010-09-21');
 
 --
--- (Evento) desencadenante `concurso`
+-- Triggers `concurso`
 --
 DROP TRIGGER IF EXISTS `auditoria_concurso_ins`;
 DELIMITER //
@@ -237,7 +237,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `declaraciones`
+-- Table structure for table `declaraciones`
 --
 
 CREATE TABLE IF NOT EXISTS `declaraciones` (
@@ -251,7 +251,7 @@ CREATE TABLE IF NOT EXISTS `declaraciones` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Volcar la base de datos para la tabla `declaraciones`
+-- Dumping data for table `declaraciones`
 --
 
 INSERT INTO `declaraciones` (`id_movimiento`, `dni`, `motivo`, `nombre`, `apellido`) VALUES
@@ -265,7 +265,7 @@ INSERT INTO `declaraciones` (`id_movimiento`, `dni`, `motivo`, `nombre`, `apelli
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `inscripcion`
+-- Table structure for table `inscripcion`
 --
 
 CREATE TABLE IF NOT EXISTS `inscripcion` (
@@ -282,7 +282,7 @@ CREATE TABLE IF NOT EXISTS `inscripcion` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=35 ;
 
 --
--- Volcar la base de datos para la tabla `inscripcion`
+-- Dumping data for table `inscripcion`
 --
 
 INSERT INTO `inscripcion` (`id`, `orden_merito`, `nombre_universidad`, `promedio`, `fecha_titulo`, `id_concurso`, `cuil_abogado`) VALUES
@@ -297,7 +297,7 @@ INSERT INTO `inscripcion` (`id`, `orden_merito`, `nombre_universidad`, `promedio
 (9, 9, 'UADE', 10, '1993-09-05 13:39:24', 1, 9);
 
 --
--- (Evento) desencadenante `inscripcion`
+-- Triggers `inscripcion`
 --
 DROP TRIGGER IF EXISTS `auditoria_inscripcion_ins`;
 DELIMITER //
@@ -324,7 +324,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `juzgado`
+-- Table structure for table `juzgado`
 --
 
 CREATE TABLE IF NOT EXISTS `juzgado` (
@@ -337,7 +337,7 @@ CREATE TABLE IF NOT EXISTS `juzgado` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=113 ;
 
 --
--- Volcar la base de datos para la tabla `juzgado`
+-- Dumping data for table `juzgado`
 --
 
 INSERT INTO `juzgado` (`id`, `fecha_creacion`, `direccion`, `id_sala`) VALUES
@@ -349,7 +349,7 @@ INSERT INTO `juzgado` (`id`, `fecha_creacion`, `direccion`, `id_sala`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `movimiento`
+-- Table structure for table `movimiento`
 --
 
 CREATE TABLE IF NOT EXISTS `movimiento` (
@@ -363,7 +363,7 @@ CREATE TABLE IF NOT EXISTS `movimiento` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
 
 --
--- Volcar la base de datos para la tabla `movimiento`
+-- Dumping data for table `movimiento`
 --
 
 INSERT INTO `movimiento` (`id`, `descripcion`, `fecha`, `tipo`, `id_causa`) VALUES
@@ -390,7 +390,7 @@ INSERT INTO `movimiento` (`id`, `descripcion`, `fecha`, `tipo`, `id_causa`) VALU
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `norma`
+-- Table structure for table `norma`
 --
 
 CREATE TABLE IF NOT EXISTS `norma` (
@@ -401,7 +401,7 @@ CREATE TABLE IF NOT EXISTS `norma` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Volcar la base de datos para la tabla `norma`
+-- Dumping data for table `norma`
 --
 
 INSERT INTO `norma` (`id`, `fecha_publicacion`, `tipo`) VALUES
@@ -411,7 +411,7 @@ INSERT INTO `norma` (`id`, `fecha_publicacion`, `tipo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `sala`
+-- Table structure for table `sala`
 --
 
 CREATE TABLE IF NOT EXISTS `sala` (
@@ -424,7 +424,7 @@ CREATE TABLE IF NOT EXISTS `sala` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
--- Volcar la base de datos para la tabla `sala`
+-- Dumping data for table `sala`
 --
 
 INSERT INTO `sala` (`id`, `nombre`, `direccion`, `id_camara`) VALUES
@@ -434,7 +434,7 @@ INSERT INTO `sala` (`id`, `nombre`, `direccion`, `id_camara`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `secretaria`
+-- Table structure for table `secretaria`
 --
 
 CREATE TABLE IF NOT EXISTS `secretaria` (
@@ -445,7 +445,7 @@ CREATE TABLE IF NOT EXISTS `secretaria` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1122 ;
 
 --
--- Volcar la base de datos para la tabla `secretaria`
+-- Dumping data for table `secretaria`
 --
 
 INSERT INTO `secretaria` (`id`, `id_juzgado`) VALUES
@@ -457,7 +457,7 @@ INSERT INTO `secretaria` (`id`, `id_juzgado`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `secretario`
+-- Table structure for table `secretario`
 --
 
 CREATE TABLE IF NOT EXISTS `secretario` (
@@ -471,19 +471,20 @@ CREATE TABLE IF NOT EXISTS `secretario` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Volcar la base de datos para la tabla `secretario`
+-- Dumping data for table `secretario`
 --
 
 INSERT INTO `secretario` (`id_norma`, `id_secretaria`, `cuil_abogado`) VALUES
 (1, 1011, 6),
 (1, 1021, 7),
 (2, 1111, 8),
-(2, 1121, 9);
+(2, 1121, 9),
+(1, 1111, 1);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `telefono_c`
+-- Table structure for table `telefono_c`
 --
 
 CREATE TABLE IF NOT EXISTS `telefono_c` (
@@ -495,7 +496,7 @@ CREATE TABLE IF NOT EXISTS `telefono_c` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Volcar la base de datos para la tabla `telefono_c`
+-- Dumping data for table `telefono_c`
 --
 
 INSERT INTO `telefono_c` (`id`, `id_camara`, `numero_tel`) VALUES
@@ -504,7 +505,7 @@ INSERT INTO `telefono_c` (`id`, `id_camara`, `numero_tel`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `telefono_j`
+-- Table structure for table `telefono_j`
 --
 
 CREATE TABLE IF NOT EXISTS `telefono_j` (
@@ -516,7 +517,7 @@ CREATE TABLE IF NOT EXISTS `telefono_j` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Volcar la base de datos para la tabla `telefono_j`
+-- Dumping data for table `telefono_j`
 --
 
 INSERT INTO `telefono_j` (`id`, `id_juzgado`, `numero_tel`) VALUES
@@ -528,7 +529,7 @@ INSERT INTO `telefono_j` (`id`, `id_juzgado`, `numero_tel`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `telefono_s`
+-- Table structure for table `telefono_s`
 --
 
 CREATE TABLE IF NOT EXISTS `telefono_s` (
@@ -540,7 +541,7 @@ CREATE TABLE IF NOT EXISTS `telefono_s` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Volcar la base de datos para la tabla `telefono_s`
+-- Dumping data for table `telefono_s`
 --
 
 INSERT INTO `telefono_s` (`id`, `id_sala`, `numero_tel`) VALUES
@@ -549,8 +550,79 @@ INSERT INTO `telefono_s` (`id`, `id_sala`, `numero_tel`) VALUES
 
 DELIMITER $$
 --
--- Procedimientos
+-- Procedures
 --
+CREATE DEFINER=`root`@`localhost` PROCEDURE `acomodados`()
+begin
+SELECT DISTINCT nombre
+FROM abogado AS a, concurso AS c, acargo, inscripcion AS i, norma AS n, secretario AS s
+WHERE   (a.cuil = acargo.cuil_abogado OR a.cuil = s.cuil_abogado) 
+        -- El abogado a fue nombrado juez o secretario
+        
+        AND a.cuil = i.cuil_abogado 
+        -- La inscripcion i corresponde al abogado a
+        
+        AND c.id = i.id_concurso  
+        -- La inscripcion i corresponde al concurso c
+        
+        AND c.id IN 
+        -- El concurso c es el que esta vigente para la norma n.
+        -- Es decir, c es el ultimo concurso antes de que se publicara la norma n.
+            (
+            SELECT id
+            FROM concurso AS conc
+            WHERE   conc.fecha <= n.fecha_publicacion
+                    AND (conc.fecha >= ALL (
+                        SELECT fecha
+                        FROM concurso conc1
+                        WHERE conc1.fecha <= n.fecha_publicacion
+                        ))
+            )
+        AND EXISTS (    
+        -- Existe un abogado inscripto en el mismo concurso,  
+        -- con menor orden de merito, que
+        -- no esta entre los nombrados jueces o secretarios.
+            SELECT *
+            FROM abogado AS abog, inscripcion AS insc
+            WHERE   abog.cuil = insc.cuil_abogado 
+                    -- La inscripcion insc corresponde al abogado abog.
+                    AND insc.orden_merito < i.orden_merito  
+                    -- El orden de merito de la inscripcion insc
+                    -- es menor que el de la inscripcion i.
+                    AND insc.id_concurso = i.id_concurso    
+                    -- Las inscripciones insc e i 
+                    -- corresponden al mismo concurso
+                    AND NOT EXISTS (    
+                    -- No esta nombrado el abogado abog por una norma que 
+                    -- corresponda al concurso c.
+                        SELECT *
+                        FROM norma AS norm, acargo AS acargo2, secretario AS secretario2
+                        WHERE  norm.fecha_publicacion <= n.fecha_publicacion 
+                               -- La norma norm es anterior a la norma n
+                               AND norm.fecha_publicacion >= c.fecha    
+                               -- El concurso c ya estaba vigente cuando 
+                               -- se hizo la norma norm.
+                               AND 
+                               -- El abogado aparece nombrado juez o aparece nombrado 
+                               -- secretario bajo la norma norm.
+                                   (
+                                       (acargo2.cuil_abogado = abog.cuil 
+                                       -- El abogado abog aparece nombrado juez.
+                                       AND norm.id = acargo2.id_norma 
+                                       -- El nombramiento corresponde a la norma norm.
+                                       ) 
+                                    OR 
+                                       (secretario2.cuil_abogado = abog.cuil 
+                                       -- El abogado abog aparece nombrado secretario.
+                                       AND norm.id = secretario2.id_norma 
+                                       -- El nombramiento corresponde a la norma norm.
+                                       ) 
+                                   )
+                        )
+            )
+LIMIT 0 , 30;
+end$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ranking`()
 begin
 SELECT nombre 'Nombre de la Sala', declaraciones 'Cantidad de Declaraciones'
