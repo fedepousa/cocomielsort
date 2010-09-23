@@ -619,8 +619,7 @@ WHERE   (a.cuil = acargo.cuil_abogado OR a.cuil = s.cuil_abogado)
                                        ) 
                                    )
                         )
-            )
-LIMIT 0 , 30;
+            );
 end$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ranking`()

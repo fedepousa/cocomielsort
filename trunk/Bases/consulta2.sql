@@ -73,7 +73,7 @@ WHERE   (a.cuil = acargo.cuil_abogado OR a.cuil = s.cuil_abogado)
                                        ) 
                                    )
                         )
-            )
+            );
 end$$
 
 DELIMITER ;
