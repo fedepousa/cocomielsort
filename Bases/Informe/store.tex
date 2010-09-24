@@ -4,7 +4,7 @@ Para realizar las consultas que fueron requeridas por las consignas del trabajo 
 
 \textbf{El nombre de las salas que más declaraciones tomaron en el último año.}
 
-Esta consulta es generada mediante el siguiente codigo:
+Esta consulta es generada mediante el siguiente código:
 
 \begin{verbatim}
 
@@ -39,11 +39,13 @@ LIMIT 0 , 30
 
 La idea que se implemento es ir recorriendo desde las movimientos que fueron declaraciones hasta llegar a las Salas donde estos fueron originados, para ello se fue asociando las identificaciones correspondientes que enlazaban las diferentes tablas durante el camino. De esta forma se obtuvo una tabla con un campo sala y otro que indica la cantidad de declaraciones que fueron tomadas por la misma. Luego se procedió a ordenarlas de forma decreciente según la cantidad de declaraciones.
 
+Se denomino \textbf{ranking()}, al Stored Procedure que implementa esta consulta.
+
 \underline{Consulta:}
 
 \textbf{El nombre de los jueces/secretarios que fueron nombrados por cada cámara a pesar de haber postulantes con un orden de mérito mejor que aún no habían sido designados.}
 
-Esta consulta es generada mediante el siguiente codigo:
+Esta consulta es generada mediante el siguiente código:
 
 \begin{verbatim}
 SELECT DISTINCT nombre
@@ -120,7 +122,7 @@ WHERE
 \end{verbatim}
 
 Para resolver la consulta se identifican un abogado, la norma que lo nombra como juez o secretario y a su inscripción en el concurso vigente al momento de publicarse esa norma. Logrado esto, se buscan los abogados que tenían mejor posición en el orden de mérito del concurso vigente para los cuales no existía ninguna norma que los nombrara. Si este último conjunto no es vacío, entonces el abogado identificado fue nombrado habiendo todavía postulantes con un orden de mérito mejor que aún no habían sido designados.
-Se denominó ``acomodados'' al Stored Procedure con la intención de reflejar con un poco de humor la principal característica de los abogados cuyos nombres aparecen.
+Se denominó \textbf{acomodados()} al Stored Procedure con la intención de reflejar con un poco de humor la principal característica de los abogados cuyos nombres aparecen.
 
 
 \underline{Control:}
