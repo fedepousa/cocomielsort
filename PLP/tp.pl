@@ -121,3 +121,11 @@ matchExacto(K, rep1(E), P ) :-   between(1, K, Ke),
                                 append(PrimerP, SegundoP, P).
 matchExacto(K, rep1(E), P ) :-   matchExacto(K, E, P).
 % matchExacto(3,concat(choice([a,a],[b]),choice(choice([a],[a,b]), [a,b,a])),P).
+
+
+% lenguajeInteligenteHasta (+K,+E,−P) 
+
+lenguajeInteligenteHasta(K,E,P) :- between(1, K, Ke), matchExacto(Ke, E, P).
+
+
+% lenguajeInteligenteHasta(3,concat(choice([a,a],[b]),choice(choice([a],[a,b]), [a,b,a])),P).
