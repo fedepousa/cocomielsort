@@ -1,0 +1,40 @@
+
+ACA VA EL DER
+
+Restricciones adicionales al DER:
+
+\begin{itemize}
+\item Toda causa esta en un y solo un rol de la interrelación unaria. Es decir, o es la original para un tema dado, o es copia de otra anterior.
+\item Un Abogado no puede tener dos inscripciones diferentes para el mismo concurso. Esta restricción se podría evitar con un modelado diferente, pero en las explicaciones subsecuentes se verá porque se optó por este modelo.
+\item Una norma debe designar al menos un juez o un secretario.
+\end{itemize}
+
+
+
+A continuación, se detallará cuales fueron las decisiones importantes a la hora de realizar el Diagrama de Entidad Relación:
+
+
+En primer lugar, el grupo se encontró con diferentes opciones para modelar las normas que rigen los nombramientos de los jueces y los secretarios. 
+Se explicará solamente el caso de las interrelacion entre Abogado, Norma y Juzgado, dado que la relación entre Abogado, Norma y Secretaría es análoga.
+
+Las dos opciones principales consistían en una interrelación ternaria por un lado, y una agregación por el otro.
+En el caso de la agregación, la idea se basaba en relacionar Abogado con Juzgado y, al hacer una agregación entre estos dos, interrelacionarlos con las normas. Sin embargo, este modelo traía aparejado una interpretación distinta a la requerida por el enunciado. En caso de utilizar esta forma, se hubiese permitido tener una norma relacionada dos veces con el mismo abogado, pero con diferente juzgado, lo cual no es valido. 
+
+Dado lo explicado anteriormente, se optó por utilizar una relación ternaria, dado que se ajustaba mejor a los requerimientos elicitados. 
+Es importante destacar que era necesario una relación de este tipo para lograr \emph{tener historia} en las normas; ya que dado que una norma tiene fecha de publicación, podría ser que dos normas diferentes hagan referencia al mismo par de Juzgado y Abogado.
+
+
+\bigskip
+
+En segundo lugar, se mostrará porque las inscripciones se encuentra modeladas de la forma presentada. 
+
+Al tener las inscripciones como una entidad relacionada con los Abogados y con los Concursos, necesitamos la restricción adicional que dice que un Abogado no puede tener dos Inscripciones para el mismo Concurso. Existe otra forma de modelar esto que sería unir directamente Abogado con Concursos, y poner todos los atributos respectivos a la Inscripción en la interrelación. Si bien esto es valido y hubiese evitado la restricción adicional, se consideró que la inscripción tenia fuerza y una cantidad de atributos necesaria como para ser considerada una entidad aparte.
+
+\bigskip
+
+En último lugar, se explicará la interrelación unaria en las causas. 
+
+Dado que las causas se deben agrupar por los hechos a los que hacen referencia, se barajó la idea de poner el motivo de la causa como una entidad aparte, pero se consideró que esto no tenía una relevancia necesaria como para ser modelado con una entidad nueva. 
+
+De esta manera, se optó una interralación unaria que relaciona las causas entre sí dependiendo del motivo de las mismas. Para realizar esto, se vieron diferentes maneras de hacerlo. Las diferentes maneras estaban basadas en la cardinalidad y la participación de las causas. Finalmente, se eligió utilizar una interrelación con cardinalidad 1:N, en donde la interpretación de la misma es que para un motivo dado hay una causa original que fue la primera en llegar, y luego estan las causas del mismo hecho que llegaron despues que tiene una foreign key a la causa original.
+
