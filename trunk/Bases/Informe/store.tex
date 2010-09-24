@@ -40,7 +40,7 @@ LIMIT 0 , 30
 La idea que se implemento es ir recorriendo desde las movimientos que fueron declaraciones hasta llegar a las Salas donde estos fueron originados, para ello se fue asociando las identificaciones correspondientes que enlazaban las diferentes tablas durante el camino. De esta forma se obtuvo una tabla con un campo sala y otro que indica la cantidad de declaraciones que fueron tomadas por la misma. Luego se procedió a ordenarlas de forma decreciente según la cantidad de declaraciones.
 
 Se denomino \textbf{ranking()}, al Stored Procedure que implementa esta consulta.
-
+\bigskip
 \underline{Consulta:}
 
 \textbf{El nombre de los jueces/secretarios que fueron nombrados por cada cámara a pesar de haber postulantes con un orden de mérito mejor que aún no habían sido designados.}
@@ -124,7 +124,7 @@ WHERE
 Para resolver la consulta se identifican un abogado, la norma que lo nombra como juez o secretario y a su inscripción en el concurso vigente al momento de publicarse esa norma. Logrado esto, se buscan los abogados que tenían mejor posición en el orden de mérito del concurso vigente para los cuales no existía ninguna norma que los nombrara. Si este último conjunto no es vacío, entonces el abogado identificado fue nombrado habiendo todavía postulantes con un orden de mérito mejor que aún no habían sido designados.
 Se denominó \textbf{acomodados()} al Stored Procedure con la intención de reflejar con un poco de humor la principal característica de los abogados cuyos nombres aparecen.
 
-
+\bigskip
 \underline{Control:}
 
 \textbf{Registro automático de datos de control de las altas, bajas y modificaciones de concursos y sus resultados}
@@ -136,33 +136,51 @@ El siguiente código implementa los triggers que mencionamos anteriormente:
 \begin{verbatim}
 CREATE TRIGGER auditoria_concurso_ins AFTER INSERT ON concurso
 FOR EACH ROW
-INSERT INTO auditoria_concurso(tipo, new_id_camara, new_id_concurso,new_fecha, usuario, fecha)
+INSERT INTO auditoria_concurso(tipo, new_id_camara, new_id_concurso
+,new_fecha, usuario, fecha)
 VALUES ('Ins',NEW.id_camara, NEW.id,NEW.fecha, CURRENT_USER(), NOW());
 
 CREATE TRIGGER auditoria_concurso_del AFTER DELETE ON concurso
 FOR EACH ROW
-INSERT INTO auditoria_concurso(tipo, old_id_camara, old_id_concurso,old_fecha,usuario, fecha)
+INSERT INTO auditoria_concurso(tipo, old_id_camara, old_id_concurso,
+old_fecha,usuario, fecha)
 VALUES ('Del',OLD.id_camara, OLD.id,OLD.fecha, CURRENT_USER(), NOW());
 
 CREATE TRIGGER auditoria_concurso_upd AFTER UPDATE ON concurso
 FOR EACH ROW
-INSERT INTO auditoria_concurso(tipo, new_id_camara, new_id_concurso,old_id_camara,old_id_concurso, old_fecha,new_fecha,usuario, fecha)
-VALUES ('Upd',NEW.id_camara, NEW.id,OLD.id_camara, OLD.id,OLD.fecha, NEW.fecha, CURRENT_USER(), NOW());
+INSERT INTO auditoria_concurso(tipo, new_id_camara, new_id_concurso,
+old_id_camara,old_id_concurso, old_fecha,new_fecha,usuario, fecha)
+VALUES ('Upd',NEW.id_camara, NEW.id,OLD.id_camara, OLD.id,OLD.fecha, 
+NEW.fecha, CURRENT_USER(), NOW());
 
 CREATE TRIGGER auditoria_inscripcion_ins AFTER INSERT ON inscripcion
 FOR EACH ROW
-INSERT INTO auditoria_inscripcion(tipo, new_id, new_orden_merito, new_nombre_universidad, new_promedio, new_fecha_titulo, new_id_concurso, new_cuil_abogado, usuario, fecha)
-VALUES ('Ins',NEW.id, NEW.orden_merito, NEW.nombre_universidad, NEW.promedio, NEW.fecha_titulo, NEW.id_concurso, NEW.cuil_abogado, CURRENT_USER() , NOW());
+INSERT INTO auditoria_inscripcion(tipo, new_id, new_orden_merito, 
+new_nombre_universidad, new_promedio, new_fecha_titulo, new_id_concurso,
+ new_cuil_abogado, usuario, fecha)
+VALUES ('Ins',NEW.id, NEW.orden_merito, NEW.nombre_universidad,
+ NEW.promedio, NEW.fecha_titulo, NEW.id_concurso, NEW.cuil_abogado,
+  CURRENT_USER() , NOW());
 
 CREATE TRIGGER auditoria_inscripcion_del AFTER DELETE ON inscripcion
 FOR EACH ROW
-INSERT INTO auditoria_inscripcion(tipo, old_id, old_orden_merito, old_nombre_universidad, old_promedio, old_fecha_titulo, old_id_concurso, old_cuil_abogado, usuario, fecha)
-VALUES ('Del',OLD.id, OLD.orden_merito, OLD.nombre_universidad, OLD.promedio, OLD.fecha_titulo, OLD.id_concurso, OLD.cuil_abogado, CURRENT_USER() , NOW());
+INSERT INTO auditoria_inscripcion(tipo, old_id, old_orden_merito, 
+old_nombre_universidad, old_promedio, old_fecha_titulo, old_id_concurso,
+ old_cuil_abogado, usuario, fecha)
+VALUES ('Del',OLD.id, OLD.orden_merito, OLD.nombre_universidad, 
+OLD.promedio, OLD.fecha_titulo, OLD.id_concurso, OLD.cuil_abogado, 
+CURRENT_USER() , NOW());
 
 CREATE TRIGGER auditoria_inscripcion_upd AFTER UPDATE ON inscripcion
 FOR EACH ROW
-INSERT INTO auditoria_inscripcion(tipo, old_id, old_orden_merito, old_nombre_universidad, old_promedio, old_fecha_titulo, old_id_concurso, old_cuil_abogado,new_id, new_orden_merito, new_nombre_universidad, new_promedio, new_fecha_titulo, new_id_concurso, new_cuil_abogado, usuario, fecha)
-VALUES ('Upd',OLD.id, OLD.orden_merito, OLD.nombre_universidad, OLD.promedio, OLD.fecha_titulo, OLD.id_concurso, OLD.cuil_abogado,NEW.id, NEW.orden_merito, NEW.nombre_universidad, NEW.promedio, NEW.fecha_titulo, NEW.id_concurso, NEW.cuil_abogado, CURRENT_USER() , NOW());
+INSERT INTO auditoria_inscripcion(tipo, old_id, old_orden_merito,
+old_nombre_universidad, old_promedio, old_fecha_titulo, old_id_concurso,
+old_cuil_abogado,new_id, new_orden_merito, new_nombre_universidad, new_promedio,
+new_fecha_titulo, new_id_concurso, new_cuil_abogado, usuario, fecha)
+VALUES ('Upd',OLD.id, OLD.orden_merito, OLD.nombre_universidad, OLD.promedio,
+OLD.fecha_titulo, OLD.id_concurso, OLD.cuil_abogado,NEW.id, NEW.orden_merito,
+NEW.nombre_universidad, NEW.promedio, NEW.fecha_titulo, NEW.id_concurso,
+NEW.cuil_abogado, CURRENT_USER() , NOW());
 
 \end{verbatim}
 

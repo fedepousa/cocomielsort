@@ -1,6 +1,3 @@
-
-ACA VA EL DER
-
 Restricciones adicionales al DER:
 
 \begin{itemize}
@@ -21,7 +18,7 @@ Las dos opciones principales consistían en una interrelación ternaria por un l
 En el caso de la agregación, la idea se basaba en relacionar Abogado con Juzgado y, al hacer una agregación entre estos dos, interrelacionarlos con las normas. Sin embargo, este modelo traía aparejado una interpretación distinta a la requerida por el enunciado. En caso de utilizar esta forma, se hubiese permitido tener una norma relacionada dos veces con el mismo abogado, pero con diferente juzgado, lo cual no es valido. 
 
 Dado lo explicado anteriormente, se optó por utilizar una relación ternaria, dado que se ajustaba mejor a los requerimientos elicitados. 
-Es importante destacar que era necesario una relación de este tipo para lograr \emph{tener historia} en las normas; ya que dado que una norma tiene fecha de publicación, podría ser que dos normas diferentes hagan referencia al mismo par de Juzgado y Abogado.
+Es importante destacar que era necesario una relación de este tipo para lograr \textit{tener historia} en las normas; ya que dado que una norma tiene fecha de publicación, podría ser que dos normas diferentes hagan referencia al mismo par de Juzgado y Abogado.
 
 
 \bigskip
@@ -38,3 +35,4 @@ Dado que las causas se deben agrupar por los hechos a los que hacen referencia, 
 
 De esta manera, se optó una interralación unaria que relaciona las causas entre sí dependiendo del motivo de las mismas. Para realizar esto, se vieron diferentes maneras de hacerlo. Las diferentes maneras estaban basadas en la cardinalidad y la participación de las causas. Finalmente, se eligió utilizar una interrelación con cardinalidad 1:N, en donde la interpretación de la misma es que para un motivo dado hay una causa original que fue la primera en llegar, y luego estan las causas del mismo hecho que llegaron despues que tiene una foreign key a la causa original.
 
+\newpage
