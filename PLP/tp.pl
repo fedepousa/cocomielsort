@@ -19,7 +19,7 @@ literal(choice(E, _), A) :- literal(E, A).
 literal(choice(_, F), A) :- literal(F, A).
 literal(concat(E, _), A) :- literal(E, A).
 literal(concat(_, F), A) :- literal(F, A).
-literal(rep(E), A) :- literal(E, A).
+literal(rep1(E), A) :- literal(E, A).
 
 % Ejemplos
 % literal(choice(choice([a],[a,b]), [a,b,a]),A).
@@ -43,8 +43,8 @@ match(choice(E, _), P) :- match(E, P).
 match(choice(E, F), P) :- not(match(E, P)), match(F, P).
 % match(concat(E, F), P) :- match(E, P, _, T), match(F, T).
 % la de arriba es la primera implementacion, la reemplazamos por la de abajo.
-match(concat(E, F), P) :- append(A,B, P), match(A, E), match(B, F).
-match(rep(E), P) :- match(rep(E), P, _, Tail), vacia(Tail).  
+match(concat(E, F), P) :- append(A,B, P), match( E, A), match( F, B).
+match(rep1(E), P) :- match(rep1(E), P, _, Tail), vacia(Tail).  
 
 
 % match(+E, +S, -Matched, -Tail)
@@ -52,11 +52,11 @@ match(Xs, S, Xs, T) :- esLista(Xs), append(Xs, T, S).
 match(choice(E, _), S, M, T) :- match(E, S, M, T). 
 match(choice(_, F), S, M, T) :- match(F, S, M, T). 
 match(concat(E, F), S, M, T) :- match(E, S, CasiM, Tail), match(F, Tail, CasiMDos, T), append(CasiM, CasiMDos, M). 
-match(rep(E), S, S, []) :- match(E,S).
-match(rep(E), S, M, T) :- not(match(E,S)), match(E, S, CasiM, Tail), match(rep(E), Tail, CasiMDos, T), append(CasiM, CasiMDos, M). 
+match(rep1(E), S, S, []) :- match(E,S).
+match(rep1(E), S, M, T) :- not(match(E,S)), match(E, S, CasiM, Tail), match(rep1(E), Tail, CasiMDos, T), append(CasiM, CasiMDos, M). 
 
 % Ejemplos
-% match(rep(concat([a], choice([a], [b]))), [a, b]).
+% match(rep1(concat([a], choice([a], [b]))), [a, b]).
 
 
 % Ejercicio 4
@@ -114,10 +114,10 @@ matchExacto(K, concat(E,F), P ) :-  between(1, K, Ke),
                                     Kf is K - Ke,
                                     matchExacto(Kf, F, SegundoP),
                                     append(PrimerP,SegundoP,P).
-matchExacto(K, rep(E), P ) :-   between(1, K, Ke),
+matchExacto(K, rep1(E), P ) :-   between(1, K, Ke),
                                 matchExacto(Ke, E, PrimerP),
                                 Kf is K - Ke,
-                                matchExacto(Kf, rep(E), SegundoP),
+                                matchExacto(Kf, rep1(E), SegundoP),
                                 append(PrimerP, SegundoP, P).
-matchExacto(K, rep(E), P ) :-   matchExacto(K, E, P).
+matchExacto(K, rep1(E), P ) :-   matchExacto(K, E, P).
 % matchExacto(3,concat(choice([a,a],[b]),choice(choice([a],[a,b]), [a,b,a])),P).
