@@ -1,5 +1,4 @@
 \select@language {spanish}
-\contentsline {section}{\numberline {1}Modelo de Entidad Relacion}{4}{section.1}
+\contentsline {section}{\numberline {1}Modelo de Entidad Relacion}{3}{section.1}
 \contentsline {section}{\numberline {2}Modelo Relacional Derivado}{6}{section.2}
-\contentsline {section}{\numberline {3}Dise\~{n}o F\'isico}{10}{section.3}
-\contentsline {section}{\numberline {4}Store Procedures/Triggers}{11}{section.4}
+\contentsline {section}{\numberline {3}Store Procedures/Triggers}{10}{section.3}

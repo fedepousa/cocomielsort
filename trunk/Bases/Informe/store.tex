@@ -40,7 +40,10 @@ LIMIT 0 , 30
 La idea que se implemento es ir recorriendo desde las movimientos que fueron declaraciones hasta llegar a las Salas donde estos fueron originados, para ello se fue asociando las identificaciones correspondientes que enlazaban las diferentes tablas durante el camino. De esta forma se obtuvo una tabla con un campo sala y otro que indica la cantidad de declaraciones que fueron tomadas por la misma. Luego se procedió a ordenarlas de forma decreciente según la cantidad de declaraciones.
 
 Se denomino \textbf{ranking()}, al Stored Procedure que implementa esta consulta.
+
 \bigskip
+
+
 \underline{Consulta:}
 
 \textbf{El nombre de los jueces/secretarios que fueron nombrados por cada cámara a pesar de haber postulantes con un orden de mérito mejor que aún no habían sido designados.}
@@ -125,6 +128,8 @@ Para resolver la consulta se identifican un abogado, la norma que lo nombra como
 Se denominó \textbf{acomodados()} al Stored Procedure con la intención de reflejar con un poco de humor la principal característica de los abogados cuyos nombres aparecen.
 
 \bigskip
+
+
 \underline{Control:}
 
 \textbf{Registro automático de datos de control de las altas, bajas y modificaciones de concursos y sus resultados}
