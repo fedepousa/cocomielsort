@@ -37,6 +37,14 @@ literales(E, Sigma) :- setof(X, literal(E,X),Sigma).
 
 vacia([]).
 
+% match(E, P) :- matchConGrupos(E, P).
+% No estoy seguro sobre esto, el enunciado del tp dice que
+% se evaluara "Reuso de predicados previamente definidos".
+% El matchConGrupos no esta previamente definido, pero hace lo mismo,
+% por ahi no entendi bien e implemente mal el matchConGrupos.
+
+
+
 % match(+E, +Palabra)
 match(Xs, P) :- esLista(Xs), P = Xs.
 match(choice(E, _), P) :- match(E, P).
@@ -129,3 +137,79 @@ lenguajeInteligenteHasta(K,E,P) :- between(1, K, Ke), matchExacto(Ke, E, P).
 
 
 % lenguajeInteligenteHasta(3,concat(choice([a,a],[b]),choice(choice([a],[a,b]), [a,b,a])),P).
+
+
+% Segunda parte
+
+% Ejercicio 7
+
+% matchConGrupos(+E,?Palabra) 
+matchConGrupos(group(X,E),P) :- matchConGrupos(E, P), var(X), X = P. % no estoy seguro si hay que instanciarlo con P o con que.
+matchConGrupos(group(X,E),P) :- matchConGrupos(E, P), nonvar(X). % no estoy seguro si hay que instanciarlo con P o con que.
+% matchConGrupos
+
+matchConGrupos(Xs, P) :- esLista(Xs), P = Xs.
+matchConGrupos(choice(E, _), P) :- matchConGrupos(E, P).
+matchConGrupos(choice(E, F), P) :- not(matchConGrupos(E, P)), matchConGrupos(F, P).
+matchConGrupos(concat(E, F), P) :- append(A,B, P), matchConGrupos( E, A), matchConGrupos( F, B).
+matchConGrupos(rep1(E), P) :- matchConGrupos(rep1(E), P, _, Tail), vacia(Tail).  
+
+
+
+% matchConGrupos(+E, +S, -Matched, -Tail)
+matchConGrupos(group(X,E) , S, M, T) :- matchConGrupos(E, S, M, T), var(X), X = M.
+matchConGrupos(group(X,E) , S, M, T) :- matchConGrupos(E, S, M, T), nonvar(X).
+matchConGrupos(Xs, S, Xs, T) :- esLista(Xs), append(Xs, T, S).
+matchConGrupos(choice(E, _), S, M, T) :- matchConGrupos(E, S, M, T). 
+matchConGrupos(choice(_, F), S, M, T) :- matchConGrupos(F, S, M, T). 
+matchConGrupos(concat(E, F), S, M, T) :- matchConGrupos(E, S, CasiM, Tail), matchConGrupos(F, Tail, CasiMDos, T), append(CasiM, CasiMDos, M). 
+matchConGrupos(rep1(E), S, S, []) :- matchConGrupos(E,S).
+matchConGrupos(rep1(E), S, M, T) :- not(matchConGrupos(E,S)), matchConGrupos(E, S, CasiM, Tail), matchConGrupos(rep1(E), Tail, CasiMDos, T), append(CasiM, CasiMDos, M). 
+
+% Ejemplos
+% matchConGrupos(concat(group(X,rep1([a])) ,rep1([a])) ,[a,a,a,a]).
+% matchConGrupos(rep1(group(X, choice([a],[b]))) ,[a,b]).
+% matchConGrupos(concat(group(X, choice([a,b,a],[c,d])), [a,b,a]), [c,d,a,b,a]).
+% matchConGrupos(rep1(group([a], choice([a], [b]))), [b], M, T).
+
+
+
+% Ejercicio 8
+% incluidoHasta (+K,+E1,+E2) que sea verdadero si todas las palabras de longitud entre 1 y K que
+% pertenecen a L(E1), tambien pertenecen a L(E2). 
+
+incluidoHasta(K,E1,E2) :- not(hayDiferenciaHasta(K, E1, E2)).
+% Ejemplos
+% incluidoHasta(2, choice( choice([a],[a,b]), [a,b,c] ), choice([a], [a,b])).
+% El primer lenguaje esta incluido en el segundo hasta longitud dos, pero no mas.
+
+% incluidoHasta(5, choice([a,b,b,b,c], [a,a,a,b,c]),concat(rep1([a]), concat(rep1([b]), rep1([c])))).
+% incluidoHasta(4, choice([a,b,b,b,c], [a,a,a,b,c]),concat(rep1([a]), concat(rep1([b]), rep1([c])))).
+% incluidoHasta(6, choice([a,b,b,b,c], [a,a,a,b,c]),concat(rep1([a]), concat(rep1([b]), rep1([c])))).
+% El primer lenguaje esta incluido en el segundo hasta cualquier longitud.
+
+
+
+% hayDiferenciaHasta(+K,+E1,+E2) que sea verdadero si existe alguna
+% palabra de longitud entre 1 y K que pertenezca a L(E1) y no a L(E2).
+
+
+hayDiferenciaHasta(K, E1, E2) :- lenguajeInteligenteHasta(K,E1,P), not(match(E2, P)).
+
+% Ejemplos
+% hayDiferenciaHasta( 2, choice( [a,b], [c,c,c]), concat([a],[b])).
+% hayDiferenciaHasta( 3, choice( [a,b], [c,c,c]), concat([a],[b])).
+% "ab" esta en el segundo lenguajes, mientras que "ccc" no, por lo tanto 
+% no hay diferencia hasta 2, pero si hasta 3.
+
+
+% Ejercicio 9
+% igualesHasta(+K,+E1,+E2)
+igualesHasta(K,E1,E2) :- incluidoHasta(K, E1, E2), incluidoHasta(K, E2, E1).
+
+
+% Ejemplos
+% concat(choice([a],choice([a,a], choice([a,a,a], choice([a,a,a,a], choice([a,a,a,a,a], choice([a,a,a,a,a,a], [a,a,a,a,a,a,a])))))), [b,c])
+% concat(rep1([a]), concat([b],[c]))
+% igualesHasta(9, concat(choice([a],choice([a,a], choice([a,a,a], choice([a,a,a,a], choice([a,a,a,a,a], choice([a,a,a,a,a,a], [a,a,a,a,a,a,a])))))), [b,c]), concat(rep1([a]), concat([b],[c]))).
+% Son iguales hasta el nueve ya que el primer lenguaje es concatenacion de hasta 7 'a' con "bc".
