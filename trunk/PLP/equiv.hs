@@ -2,8 +2,10 @@ module Equiv where
 import List
 -- Definición del tipo de datos
 
-data Ce a = C [a] (a -> [a])
+data Ce a = C [a] (a -> [a]) 
 
+
+ 
 
 
 -- Ejercicio 1
@@ -26,6 +28,12 @@ todos_distintos ls = C ls (\x -> if x `elem` ls then [id x] else [])
 -- Ejercicio 5
 modulo :: Integer -> Ce Integer
 modulo n = C [1..] (\x -> if x > 0 then [ y | y <- [1..], y `mod` n == x `mod` n] else []) 
+
+
+modulo2::Integer->Ce Integer
+modulo2 n = C [1..] (\x-> if x>0 then  (filter (\y-> (mod y n == mod x n)) [1..]) else [])
+
+
 
 -- Ejercicio 6
 
