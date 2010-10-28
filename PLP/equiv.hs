@@ -77,8 +77,12 @@ clases (C dom fun) = nubBy (\xs ys -> xs \\ ys == []) (map f dom)
 						where f a = clase (C dom fun) a
 
 
+clases2 :: Eq a => Ce a -> [[a]]
+clases2 ce = nub [ clase ce x | x <- dominio ce]
 
 
 
 
+
+--infParesModulo4 = C [2,4..20]  (\x -> (if (mod x 2 /= 0 ) then [] else filter (\y-> mod y 4 == mod x 4) [2,4..20]))
 
