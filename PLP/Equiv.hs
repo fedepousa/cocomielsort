@@ -52,14 +52,10 @@ fromJust (Just a)      =  a
 fromJust Nothing       =  error "Maybe.fromJust: Nothing"
 
 
-union_disjunta::Ce a->Ce a->Ce a
+union_disjunta:: Eq a => Ce a->Ce a->Ce a
 union_disjunta (C dom1 f1) (C dom2 f2) = (C (map (fromJust) (filter isJust (concat superDom)) ) (\x-> (if ((null(take 1 (f1 x))) && (null(take 1 (f2 x))) ) then [] else ( if  (null(take 1 (f1 x))) then  (f2 x) else (f1 x)))))
-						where superDom = [ [fst x,snd x]  | x<- ( zip ((maybear dom1) ++ infNothing) ((maybear dom2) ++ infNothing))]
+						where superDom = [ [fst x,snd x]  | x<- ( fst(break (\x -> (fst x == Nothing) && (snd x == Nothing))(zip ((maybear dom1) ++ infNothing) ((maybear dom2) ++ infNothing))))]
 
- --Prueba de que funciona con cosas infinitas
-infParesModulo4 = C [2,4..]  (\x -> (if (mod x 2 /= 0 ) then [] else filter (\y-> mod y 4 == mod x 4) [2,4..]))
-infImParesModulo3 = C  [1,3..]  (\x -> (if (mod x 2 ==0) then [] else (filter (\y-> mod y 3 == mod x 3) [1,3..])))
-union = union_disjunta  infImParesModulo3 infParesModulo4
 
 
 
