@@ -94,8 +94,7 @@ sinNothing (Just x) = x
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Ejercicio 13
 {-
-La idea fue usar foldr
-Lista inicial tenemos [1..h-1]
+La idea fue usar foldNat
 Caso base tenemos la lista con las ctes definidas ( de cero a k)
 Y la funcion lo que hace es tomar un elemento y la lista (ya foldeada), itera en los elementos de esa lista, y devuelve la lista original mas lo siguiente:
 Toma cada elemento de la lista y lo convina con sus otros elementos usando los dos constructores binarios y asi construye los del siguiente nivel.
