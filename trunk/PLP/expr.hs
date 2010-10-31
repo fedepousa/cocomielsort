@@ -2,8 +2,6 @@ module Expr where
 import Equiv
 import List
  
-
-
 -- Definicion del tipo de datos
 
 data Exp = Cte Integer | Suma Exp Exp | Mult Exp Exp | Var String | Let String Exp Exp deriving (Eq, Show)
@@ -52,27 +50,32 @@ evaluar exp = evaluarPrima exp []
 
 evaluarPrima::Exp->Contexto->Integer
 evaluarPrima = fold f_cte f_suma f_mult f_var f_let
-    where 
+    where
      f_cte = \x contexto -> x
      f_suma = \x y contexto -> (x contexto) + (y contexto)
      f_mult = \x y contexto -> (x contexto) * (y contexto)
      f_var = \str contexto  -> snd (head ( filter (\x-> ( fst x == str)) contexto))
      f_let = \str exp1F exp2F contexto -> exp2F (agregar contexto  str (exp1F contexto))
 
-   
+  
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Ejercicio 12
+{-
+Es lo mismo que la funcion anterior nada mas que chequea si la variable no esta definida devuelve un Nothing.
+tanto sumap como multp si reciben algun Nothing, devuelven Nothing.
+
+-}
 evaluar_prudente::Exp->Maybe Integer
 evaluar_prudente exp = evaluar_prudentePrima exp []
 
 evaluar_prudentePrima::Exp->Contexto->Maybe Integer
-evaluar_prudentePrima = fold f_cteP f_sumaP f_multP f_varP f_letP 
-    where 
+evaluar_prudentePrima = fold f_cteP f_sumaP f_multP f_varP f_letP
+    where
      f_cteP = \x contexto -> Just x
-     f_sumaP = \x y contexto -> if (algunoEsNothing (x contexto) (y contexto) ) then Nothing 
+     f_sumaP = \x y contexto -> if (algunoEsNothing (x contexto) (y contexto) ) then Nothing
               else  ( mybeFunc (+) (x contexto) (y contexto)  )
-     f_multP = \x y contexto -> if (algunoEsNothing (x contexto) (y contexto) ) then Nothing 
+     f_multP = \x y contexto -> if (algunoEsNothing (x contexto) (y contexto) ) then Nothing
               else  ( mybeFunc (*) (x contexto) (y contexto)  )
      f_varP = \str contexto ->  if  (length ( ( filter (\x -> ( fst x == str)) contexto)) ==0) then Nothing
               else Just (snd (head ( filter (\x-> ( fst x == str)) contexto)))
@@ -98,17 +101,31 @@ Y la funcion lo que hace es tomar un elemento y la lista (ya foldeada), itera en
 Toma cada elemento de la lista y lo convina con sus otros elementos usando los dos constructores binarios y asi construye los del siguiente nivel.
 Esto lo va a hacer h veces dado que la lista inicial tiene esa cantidad de elementos
  -}
+foldNat :: (b -> b) -> b -> Integer -> b
+foldNat s z 0 = z
+foldNat s z n = s (foldNat s z (n-1))
+
 generar::Integer->Integer->[Exp]
-generar k h = foldr (\x lista -> concat[[Suma (lista!!e1) (lista!!e2), Mult (lista!!e1) (lista!!e2) ] | e1<-[0..(length lista -1)], e2<-[e1..(length lista -1)]   ] ++ lista ) [Cte i | i<-[0..k]] [1..h-1]
+generar k h = nub ( foldNat (\lista -> concat[[Suma e1 e2, Mult e1 e2 ] | e1<-lista, e2<-lista] ++ lista ) [Cte i | i<-[0..k]] (h-1))
+
  
- 
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Ejercicio 14
+{-
+devuelve un Exp que el dominio es  "generar k h"  y la funcion asociada que devuele los elementos
+de la partcion que se le pida, primero chequea si el elemento esta enel dominio para hacer eso
+usa evaluar_prudente y le pegunta si es Nothing en ese caso devolvemos la lista vacia como corresponde
+en caso que pertenezca al dominio, iteramos el dominio y con evaluar prudente chequeamos si los elementos
+dan el mismo resultado y por lo tanto pertenecen a la misa clase, en se caso, lo devolvemos
+-}
+
 sinJust (Just x) = x
 isNothing Nothing = True
 isNothing _ = False
 
 generar_clases::Integer->Integer->Ce Exp
-generar_clases k h = ( C (generar k h) (\x ->if (isNothing (evaluar_prudente x)) then [] 
+generar_clases k h = ( C (generar k h) (\x ->if (isNothing (evaluar_prudente x)) then []
         else ([e | e<- (generar k h) ,   (evaluar_prudente x) ==  (evaluar_prudente e)]  ) ))
+
