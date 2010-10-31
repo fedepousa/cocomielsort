@@ -126,6 +126,6 @@ isNothing Nothing = True
 isNothing _ = False
 
 generar_clases::Integer->Integer->Ce Exp
-generar_clases k h = ( C (generar k h) (\x ->if (isNothing (evaluar_prudente x)) then []
-        else ([e | e<- (generar k h) ,   (evaluar_prudente x) ==  (evaluar_prudente e)]  ) ))
+generar_clases k h = ( C (generar k h) (\x ->if x `elem` (generar k h) then ([e | e<- (generar k h) ,   (evaluar_prudente x) ==  (evaluar_prudente e)]  )
+        else  [] ))
 
