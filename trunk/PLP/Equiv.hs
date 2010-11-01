@@ -26,19 +26,19 @@ todos_distintos :: Eq a => [a] -> Ce a
 todos_distintos ls = C ls (\x -> if x `elem` ls then [id x] else [])
 
 -- Ejercicio 5
-modulo :: Integer -> Ce Integer
-modulo n = C [1..] (\x -> if x > 0 then [ y | y <- [1..], y `mod` n == x `mod` n] else []) 
-
-
-modulo2::Integer->Ce Integer
-modulo2 n = C [1..] (\x-> if x>0 then  (filter (\y-> (mod y n == mod x n)) [1..]) else [])
+modulo::Integer->Ce Integer
+modulo n = C [1..] (\x-> if x>0 then  (filter (\y-> (mod y n == mod x n)) [1..]) else [])
 
 
 
 -- Ejercicio 6
+{-
+
+
+
+-}
 maybear::[a]->[Maybe a]
 maybear lista = map (Just) lista
-
 
 infNothing::[Maybe a]
 infNothing = [Nothing | x<-[1..]]
