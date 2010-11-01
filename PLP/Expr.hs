@@ -114,10 +114,10 @@ generar k h = nub ( foldNat (\lista -> concat[[Suma e1 e2, Mult e1 e2 ] | e1<-li
 -- Ejercicio 14
 {-
 devuelve un Exp que el dominio es  "generar k h"  y la funcion asociada que devuele los elementos
-de la partcion que se le pida, primero chequea si el elemento esta enel dominio para hacer eso
-usa evaluar_prudente y le pegunta si es Nothing en ese caso devolvemos la lista vacia como corresponde
-en caso que pertenezca al dominio, iteramos el dominio y con evaluar prudente chequeamos si los elementos
-dan el mismo resultado y por lo tanto pertenecen a la misa clase, en se caso, lo devolvemos
+de la partcion que se le pida, primero chequea si el elemento esta en el dominio.
+Sino esta, devolvemos la lista vacia como corresponde.
+En caso que pertenezca al dominio, iteramos el dominio y con evaluar prudente chequeamos si los elementos
+dan el mismo resultado y por lo tanto pertenecen a la misa clase, en ese caso, lo devolvemos
 -}
 
 sinJust (Just x) = x
@@ -127,4 +127,6 @@ isNothing _ = False
 generar_clases::Integer->Integer->Ce Exp
 generar_clases k h = ( C (generar k h) (\x ->if x `elem` (generar k h) then ([e | e<- (generar k h) ,   (evaluar_prudente x) ==  (evaluar_prudente e)]  )
         else  [] ))
+
+
 
