@@ -1,0 +1,12 @@
+<START Tx1>
+<UPDATE Tx1, ITEM=A, OLD VALUE=4>
+<START Tx2>
+<COMMIT Tx1>
+<UPDATE Tx2, ITEM=B, OLD VALUE=1>
+<START CKPT(Tx1, Tx2)>
+<UPDATE Tx2, ITEM=B, OLD VALUE=9>
+<END CKPT>
+
+
+Mensaje de validacion: INVALIDO
+	Al hacer un START CHECKPOINT, la lista de transacciones dada sólo debe contener a las activas (que hayan tenido un START anteriormente pero no un COMMIT).

@@ -1,0 +1,22 @@
+<START Tx1>
+<START Tx2>
+<START CKPT(Tx1)>
+<UPDATE Tx1, ITEM=B, OLD VALUE=1>
+<END CKPT>
+<UPDATE Tx3, ITEM=C, OLD VALUE=8>
+<START CKPT(Tx2, Tx3)>
+<UPDATE Tx2, ITEM=B, OLD VALUE=4>
+<START Tx3>
+<UPDATE Tx3, ITEM=A, OLD VALUE=2>
+<COMMIT Tx3>
+<COMMIT Tx2>
+<END CKPT>
+<COMMIT Tx1>
+<UPDATE Tx2, ITEM=C, OLD VALUE=2>
+
+
+Mensaje de validacion: INVALIDO
+	La primera acción de Tx3 debe ser <START Tx3>
+	Dado que Tx2 hace COMMIT, su última acción debe ser <COMMIT Tx2>
+	Al hacer END CHECKPOINT, todas las transacciones activas en ese checkpoint deben haber hecho COMMIT
+	Al hacer un START CHECKPOINT, la lista de transacciones dada sólo debe contener a las activas (que hayan tenido un START anteriormente pero no un COMMIT)

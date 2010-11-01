@@ -1,0 +1,35 @@
+<ubadb.tools.scheduleAnalyzer.ternaryLocking.TernaryLockingSchedule>
+  <transactions>
+    <string>t1</string>
+    <string>t2</string>
+  </transactions>
+  <items>
+    <string>a</string>
+    <string>b</string>
+  </items>
+  <actions>
+    <ubadb.tools.scheduleAnalyzer.ternaryLocking.TernaryLockingAction>
+      <transaction>t1</transaction>
+      <item>a</item>
+      <type>RLOCK</type>
+    </ubadb.tools.scheduleAnalyzer.ternaryLocking.TernaryLockingAction>
+    <ubadb.tools.scheduleAnalyzer.ternaryLocking.TernaryLockingAction>
+      <transaction>t2</transaction>
+      <item>b</item>
+      <type>WLOCK</type>
+    </ubadb.tools.scheduleAnalyzer.ternaryLocking.TernaryLockingAction>
+    <ubadb.tools.scheduleAnalyzer.ternaryLocking.TernaryLockingAction>
+      <transaction>t2</transaction>
+      <type>COMMIT</type>
+    </ubadb.tools.scheduleAnalyzer.ternaryLocking.TernaryLockingAction>
+    <ubadb.tools.scheduleAnalyzer.ternaryLocking.TernaryLockingAction>
+      <transaction>t1</transaction>
+      <item>a</item>
+      <type>UNLOCK</type>
+    </ubadb.tools.scheduleAnalyzer.ternaryLocking.TernaryLockingAction>
+    <ubadb.tools.scheduleAnalyzer.ternaryLocking.TernaryLockingAction>
+      <transaction>t1</transaction>
+      <type>COMMIT</type>
+    </ubadb.tools.scheduleAnalyzer.ternaryLocking.TernaryLockingAction>
+  </actions>
+</ubadb.tools.scheduleAnalyzer.ternaryLocking.TernaryLockingSchedule>

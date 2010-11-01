@@ -1,0 +1,13 @@
+<START Tx1>
+<START Tx2>
+<UPDATE Tx2, ITEM=A, OLD VALUE=1>
+<START CKPT(Tx1, Tx2)>
+<UPDATE Tx1, ITEM=A, OLD VALUE=7>
+<UPDATE Tx2, ITEM=B, OLD VALUE=9>
+<COMMIT Tx1>
+<END CKPT>
+<COMMIT Tx2>
+
+
+Mensaje de validacion: INVALIDO
+	Al hacer END CHECKPOINT, todas las transacciones activas en ese checkpoint deben haber hecho COMMIT.

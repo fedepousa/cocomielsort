@@ -1,0 +1,10 @@
+<START Tx2>
+<UPDATE Tx1, ITEM=A, OLD VALUE=4>
+<START Tx1>
+<START CKPT(Tx1, Tx2)>
+<UPDATE Tx2, ITEM=A, OLD VALUE=1>
+<COMMIT Tx1>
+
+
+Mensaje de validacion: INVALIDO
+	La primer acción de Tx1 debe ser <START Tx1>

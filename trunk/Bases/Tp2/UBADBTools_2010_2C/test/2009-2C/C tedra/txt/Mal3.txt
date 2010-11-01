@@ -1,0 +1,16 @@
+<START Tx1>
+<START Tx2>
+<START CKPT(Tx1, Tx2)>
+<UPDATE Tx2, ITEM=A, OLD VALUE=4>
+<START Tx2>
+<UPDATE Tx2, ITEM=B, OLD VALUE=1>
+<UPDATE Tx1, ITEM=A, OLD VALUE=2>
+<COMMIT Tx1>
+<UPDATE Tx2, ITEM=B, OLD VALUE=9>
+<COMMIT Tx1>
+<COMMIT Tx2>
+
+
+Mensaje de validacion: INVALIDO
+	Puede haber como máximo un <START Tx2>
+	Puede haber como máximo un <COMMIT Tx1>
