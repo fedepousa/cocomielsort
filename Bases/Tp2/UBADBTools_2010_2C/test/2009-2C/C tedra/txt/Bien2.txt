@@ -1,0 +1,19 @@
+<START Tx1>
+<START CKPT(Tx1)>
+<START Tx2>
+<UPDATE Tx2, ITEM=A, OLD VALUE=1>
+<UPDATE Tx2, ITEM=D, OLD VALUE=9>
+<START Tx3>
+<UPDATE Tx3, ITEM=C, OLD VALUE=3>
+<UPDATE Tx1, ITEM=B, OLD VALUE=8>
+<COMMIT Tx1>
+<END CKPT>
+
+
+Mensaje de validacion: 		Log VALIDO
+Transacciones a deshacer: 	Tx2, Tx3
+Cambios en la base de datos:
+	C:=3 (deshaciendo el paso 8)
+	D:=9 (deshaciendo el paso 5)
+	A:=1 (deshaciendo el paso 4)
+Cambios en el log: 			Se agregan los registros <ABORT Tx2><ABORT Tx3> y luego Flush Log

@@ -1,0 +1,74 @@
+<ubadbtools.recoveryLogAnalyzer.common.RecoveryLog>
+  <logRecords>
+    <ubadbtools.recoveryLogAnalyzer.logRecords.StartLogRecord>
+      <transaction>Tx1</transaction>
+    </ubadbtools.recoveryLogAnalyzer.logRecords.StartLogRecord>
+    <ubadbtools.recoveryLogAnalyzer.logRecords.StartLogRecord>
+      <transaction>Tx2</transaction>
+    </ubadbtools.recoveryLogAnalyzer.logRecords.StartLogRecord>
+    <ubadbtools.recoveryLogAnalyzer.logRecords.StartCheckpointLogRecord>
+      <transactions class="java.util.Arrays$ArrayList">
+        <a class="string-array">
+          <string>Tx1</string>
+        </a>
+      </transactions>
+    </ubadbtools.recoveryLogAnalyzer.logRecords.StartCheckpointLogRecord>
+    <ubadbtools.recoveryLogAnalyzer.logRecords.UpdateLogRecord>
+      <transaction>Tx1</transaction>
+      <item>B</item>
+      <oldValue>1</oldValue>
+    </ubadbtools.recoveryLogAnalyzer.logRecords.UpdateLogRecord>
+    <ubadbtools.recoveryLogAnalyzer.logRecords.EndCheckpointLogRecord/>
+    <ubadbtools.recoveryLogAnalyzer.logRecords.UpdateLogRecord>
+      <transaction>Tx3</transaction>
+      <item>C</item>
+      <oldValue>8</oldValue>
+    </ubadbtools.recoveryLogAnalyzer.logRecords.UpdateLogRecord>
+    <ubadbtools.recoveryLogAnalyzer.logRecords.StartCheckpointLogRecord>
+      <transactions class="java.util.Arrays$ArrayList">
+        <a class="string-array">
+          <string>Tx2</string>
+          <string>Tx3</string>
+        </a>
+      </transactions>
+    </ubadbtools.recoveryLogAnalyzer.logRecords.StartCheckpointLogRecord>
+    <ubadbtools.recoveryLogAnalyzer.logRecords.UpdateLogRecord>
+      <transaction>Tx2</transaction>
+      <item>B</item>
+      <oldValue>4</oldValue>
+    </ubadbtools.recoveryLogAnalyzer.logRecords.UpdateLogRecord>
+    <ubadbtools.recoveryLogAnalyzer.logRecords.StartLogRecord>
+      <transaction>Tx3</transaction>
+    </ubadbtools.recoveryLogAnalyzer.logRecords.StartLogRecord>
+    <ubadbtools.recoveryLogAnalyzer.logRecords.UpdateLogRecord>
+      <transaction>Tx3</transaction>
+      <item>A</item>
+      <oldValue>2</oldValue>
+    </ubadbtools.recoveryLogAnalyzer.logRecords.UpdateLogRecord>
+    <ubadbtools.recoveryLogAnalyzer.logRecords.CommitLogRecord>
+      <transaction>Tx3</transaction>
+    </ubadbtools.recoveryLogAnalyzer.logRecords.CommitLogRecord>
+    <ubadbtools.recoveryLogAnalyzer.logRecords.CommitLogRecord>
+      <transaction>Tx2</transaction>
+    </ubadbtools.recoveryLogAnalyzer.logRecords.CommitLogRecord>
+    <ubadbtools.recoveryLogAnalyzer.logRecords.EndCheckpointLogRecord/>
+    <ubadbtools.recoveryLogAnalyzer.logRecords.CommitLogRecord>
+      <transaction>Tx1</transaction>
+    </ubadbtools.recoveryLogAnalyzer.logRecords.CommitLogRecord>
+    <ubadbtools.recoveryLogAnalyzer.logRecords.UpdateLogRecord>
+      <transaction>Tx2</transaction>
+      <item>C</item>
+      <oldValue>2</oldValue>
+    </ubadbtools.recoveryLogAnalyzer.logRecords.UpdateLogRecord>
+  </logRecords>
+  <items class="linked-hash-set">
+    <string>B</string>
+    <string>C</string>
+    <string>A</string>
+  </items>
+  <transactions class="linked-hash-set">
+    <string>Tx1</string>
+    <string>Tx2</string>
+    <string>Tx3</string>
+  </transactions>
+</ubadbtools.recoveryLogAnalyzer.common.RecoveryLog>

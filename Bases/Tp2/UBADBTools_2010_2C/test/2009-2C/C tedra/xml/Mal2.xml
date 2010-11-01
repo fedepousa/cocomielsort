@@ -1,0 +1,36 @@
+<ubadbtools.recoveryLogAnalyzer.common.RecoveryLog>
+  <logRecords>
+    <ubadbtools.recoveryLogAnalyzer.logRecords.StartLogRecord>
+      <transaction>Tx1</transaction>
+    </ubadbtools.recoveryLogAnalyzer.logRecords.StartLogRecord>
+    <ubadbtools.recoveryLogAnalyzer.logRecords.UpdateLogRecord>
+      <transaction>Tx1</transaction>
+      <item>A</item>
+      <oldValue>4</oldValue>
+    </ubadbtools.recoveryLogAnalyzer.logRecords.UpdateLogRecord>
+    <ubadbtools.recoveryLogAnalyzer.logRecords.StartLogRecord>
+      <transaction>Tx2</transaction>
+    </ubadbtools.recoveryLogAnalyzer.logRecords.StartLogRecord>
+    <ubadbtools.recoveryLogAnalyzer.logRecords.UpdateLogRecord>
+      <transaction>Tx2</transaction>
+      <item>A</item>
+      <oldValue>1</oldValue>
+    </ubadbtools.recoveryLogAnalyzer.logRecords.UpdateLogRecord>
+    <ubadbtools.recoveryLogAnalyzer.logRecords.CommitLogRecord>
+      <transaction>Tx2</transaction>
+    </ubadbtools.recoveryLogAnalyzer.logRecords.CommitLogRecord>
+    <ubadbtools.recoveryLogAnalyzer.logRecords.UpdateLogRecord>
+      <transaction>Tx2</transaction>
+      <item>B</item>
+      <oldValue>4</oldValue>
+    </ubadbtools.recoveryLogAnalyzer.logRecords.UpdateLogRecord>
+  </logRecords>
+  <items class="linked-hash-set">
+    <string>A</string>
+    <string>B</string>
+  </items>
+  <transactions class="linked-hash-set">
+    <string>Tx1</string>
+    <string>Tx2</string>
+  </transactions>
+</ubadbtools.recoveryLogAnalyzer.common.RecoveryLog>

@@ -1,0 +1,16 @@
+<START Tx1>
+<START Tx2>
+<UPDATE Tx2, ITEM=B, OLD VALUE=1>
+<START CKPT(Tx1, Tx2)>
+<UPDATE Tx2, ITEM=B, OLD VALUE=9>
+<START Tx3>
+<END CKPT>
+<UPDATE Tx3, ITEM=A, OLD VALUE=2>
+<COMMIT Tx3>
+<END CKPT>
+<COMMIT Tx2>
+<COMMIT Tx1>
+
+
+Mensaje de validacion: INVALIDO
+	Si hay un END CHECKPOINT, antes tiene que haber un START CHECKPOINT (sin END CHECKPOINT en el medio)

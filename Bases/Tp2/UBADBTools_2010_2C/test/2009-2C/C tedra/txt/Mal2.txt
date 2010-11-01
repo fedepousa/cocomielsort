@@ -1,0 +1,10 @@
+<START Tx1>
+<UPDATE Tx1, ITEM=A, OLD VALUE=4>
+<START Tx2>
+<UPDATE Tx2, ITEM=A, OLD VALUE=1>
+<COMMIT Tx2>
+<UPDATE Tx2, ITEM=B, OLD VALUE=4>
+
+
+Mensaje de validacion: INVALIDO
+	Dado que Tx2 hace COMMIT, su última acción debe ser <COMMIT Tx2>

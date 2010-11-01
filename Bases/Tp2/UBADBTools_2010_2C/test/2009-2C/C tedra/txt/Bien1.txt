@@ -1,0 +1,19 @@
+<START Tx1>
+<START Tx2>
+<UPDATE Tx1, ITEM=B, OLD VALUE=4>
+<START Tx3>
+<UPDATE Tx2, ITEM=A, OLD VALUE=3>
+<START CKPT(Tx1, Tx2, Tx3)>
+<UPDATE Tx3, ITEM=B, OLD VALUE=3>
+<UPDATE Tx1, ITEM=B, OLD VALUE=8>
+<COMMIT Tx2>
+<COMMIT Tx1>
+<UPDATE Tx3, ITEM=A, OLD VALUE=5>
+<COMMIT Tx3>
+<END CKPT>
+
+
+Mensaje de validacion: 			Log VALIDO
+Transacciones a deshacer: 		Ninguna
+Cambios en la base de datos:	Ninguno
+Cambios en el log: 				Ninguno
