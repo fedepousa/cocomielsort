@@ -23,6 +23,8 @@ import ubadbtools.queryOptimizer.gui.QueryNodeGuiMapper;
 import ubadbtools.queryOptimizer.optimizer.heuristics.CascadingSelectionsHeuristic;
 import ubadbtools.queryOptimizer.optimizer.heuristics.Heuristic;
 import ubadbtools.queryOptimizer.optimizer.heuristics.PushSelectionsHeuristic;
+import ubadbtools.queryOptimizer.optimizer.heuristics.PushSelectionsWithJoinConditionHeuristic;
+import ubadbtools.queryOptimizer.optimizer.heuristics.ReplaceProductsHeuristic;
 import ubadbtools.queryOptimizer.optimizer.heuristics.SwapLeavesHeuristic;
 
 public class MainApplyHeuristic
@@ -39,21 +41,19 @@ public class MainApplyHeuristic
 		
 		displayTree(tree1, "Original");
 		
-		Heuristic heuristic = new SwapLeavesHeuristic();
+		//Heuristic heuristic = new SwapLeavesHeuristic();
+		Heuristic heuristic = new ReplaceProductsHeuristic();
 		
 		heuristic.applyHeuristic(tree1);
 		
+		//if(tree1==null) System.out.println("VACIO!");
 		
-		displayTree(tree1, "Swap");
+		displayTree(tree1, "Heuristica");
 		
 //		aux = th.condicionesJunta(tree1);
 //		for(QuerySingleCondition actual : aux){
 //			System.out.println(actual.toString());
 //		}
-		
-		
-		
-		
 		
 		//Heuristic heuristic = new SwapLeavesHeuristic();
 		//heuristic.applyHeuristic(tree1);
