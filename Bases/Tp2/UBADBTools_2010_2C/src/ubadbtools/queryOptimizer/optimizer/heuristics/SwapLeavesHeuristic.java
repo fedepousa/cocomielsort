@@ -35,7 +35,7 @@ public class SwapLeavesHeuristic extends Heuristic
 		TreeHelper th = new TreeHelper();
 		
 		//Flag para marcar si pude agregar un nuevo nodo
-		boolean salir;
+		boolean agregue;
 		//Variables Auxiliares
 		RelationNode t1,t2;
 		String s1,s2;
@@ -78,7 +78,7 @@ public class SwapLeavesHeuristic extends Heuristic
 		//Sigo procesando el resto de las condiciones
 		while(!condsJunta.isEmpty()){
 			//Uso este flag para indicar si agregue un nodo o no
-			salir=false;
+			agregue=false;
 			//Busco entre las condiciones restantes alguna que pueda unir con lo que ya calcule
 			for(QuerySingleCondition actual : condsJunta){
 				//Calculo los aliases de la condicion
@@ -94,10 +94,9 @@ public class SwapLeavesHeuristic extends Heuristic
 					procesadas.add(s2);
 					tablasFaltantes.remove(t2);
 					condsJunta.remove(actual);
-					salir=true;
+					agregue=true;
+					break;
 				}
-				//Como agregue una tabla termino
-				if (salir) break;
 				
 				//Me fijo si la otra tabla me sirve
 				if (procesadas.contains(s2)){
@@ -109,13 +108,12 @@ public class SwapLeavesHeuristic extends Heuristic
 					procesadas.add(s1);
 					tablasFaltantes.remove(t1);
 					condsJunta.remove(actual);
-					salir=true;
+					agregue=true;
+					break;
 				}
-				//Como agregue una tabla termino
-				if (salir) break;
 			}
 			//Chequeo si no pude agregar ninguna condicion de junta
-			if (!salir){
+			if (!agregue){
 				//Agrego un nuevo nodo producto con una tabla alguna condicion de junta pendiente
 				pAux = new ProductNode();
 				s1=((FieldOperand) (condsJunta.get(0).getLeftOperand())).getField().getRelationAlias();
