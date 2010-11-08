@@ -7,6 +7,7 @@ import java.util.List;
 import ubadbtools.queryOptimizer.common.QueryField;
 import ubadbtools.queryOptimizer.common.QueryNode;
 import ubadbtools.queryOptimizer.common.QuerySingleInputNode;
+import ubadbtools.queryOptimizer.common.TreeHelper;
 import ubadbtools.queryOptimizer.common.conditions.FieldOperand;
 import ubadbtools.queryOptimizer.common.conditions.LiteralOperand;
 import ubadbtools.queryOptimizer.common.conditions.QueryAndSingleConditions;
@@ -19,28 +20,75 @@ import ubadbtools.queryOptimizer.common.projection.ProjectionNode;
 import ubadbtools.queryOptimizer.common.relation.RelationNode;
 import ubadbtools.queryOptimizer.common.selection.SelectionNode;
 import ubadbtools.queryOptimizer.gui.QueryNodeGuiMapper;
+import ubadbtools.queryOptimizer.optimizer.heuristics.CascadingSelectionsHeuristic;
 import ubadbtools.queryOptimizer.optimizer.heuristics.Heuristic;
 import ubadbtools.queryOptimizer.optimizer.heuristics.PushSelectionsHeuristic;
+import ubadbtools.queryOptimizer.optimizer.heuristics.SwapLeavesHeuristic;
 
 public class MainApplyHeuristic
 {
 	public static void main(String[] args)
 	{
-		QueryNode tree1 = createTree2();
+		TreeHelper th = new TreeHelper();
 		
-		//Mostrar árbol original
-		displayTree(tree1, "Original");
+		List<QuerySingleCondition> aux;
+		List<String> aux2;
 		
-		Heuristic heuristic = new PushSelectionsHeuristic();
+		QueryNode tree1 = createTree3();
+		
+		
+		//displayTree(tree1, "Original");
+		
+		Heuristic heuristic = new SwapLeavesHeuristic();
 		
 		heuristic.applyHeuristic(tree1);
-		System.out.println(tree1.isProjection());
-		System.out.println(tree1.isSelection());
-		System.out.println(((ProjectionNode) tree1).getLowerNode().isProjection());
-		System.out.println(((ProjectionNode) tree1).getLowerNode().isSelection());
 		
-		//Mostrar árbol cambiado
-		displayTree(tree1, "Con heurísticas");
+		aux2 = th.aliases(tree1);
+		for(String actual : aux2)
+			System.out.println(actual);
+		
+		
+		//displayTree(tree1, "Swap");
+		
+//		aux = th.condicionesJunta(tree1);
+//		for(QuerySingleCondition actual : aux){
+//			System.out.println(actual.toString());
+//		}
+		
+		
+		
+		
+		
+		//Heuristic heuristic = new SwapLeavesHeuristic();
+		//heuristic.applyHeuristic(tree1);
+		
+		//displayTree(tree1, "Con heuristicas");
+		
+		
+		//List<RelationNode> aux = new ArrayList<RelationNode>();
+		
+		//aux= th.tablas(tree1);
+		
+//		for(RelationNode actual : aux){
+//			System.out.println(actual.getRelationName());
+//		}
+		
+		//System.out.println(th.alias2tabla(tree1, "C").getRelationName());
+		
+		
+		//Mostrar ï¿½rbol original
+		//displayTree(tree1, "Original");
+		
+		//Heuristic heuristic = new PushSelectionsHeuristic();
+		
+		//heuristic.applyHeuristic(tree1);
+		//System.out.println(tree1.isProjection());
+		//System.out.println(tree1.isSelection());
+		//System.out.println(((ProjectionNode) tree1).getLowerNode().isProjection());
+		//System.out.println(((ProjectionNode) tree1).getLowerNode().isSelection());
+		
+		//Mostrar ï¿½rbol cambiado
+		//displayTree(tree1, "Con heurï¿½sticas");
 	}
 	
 	private static ProjectionNode createTree()
@@ -138,6 +186,60 @@ public class MainApplyHeuristic
 		List<QueryField> projectedFields = Collections.singletonList(new QueryField("A","a2"));
 		ProjectionNode project = new ProjectionNode(projectedFields);
 		project.linkWith(selectAxB);
+		return project;
+	}
+	
+	private static QueryNode createTree3(){
+		
+		/*select A.patente
+		 * from Clientes C,Autos A,Prestamos P
+		 * where P.Cid = C.id and P.Aid = A.id and C.nombre = "Juan"  
+		 */
+		
+		RelationNode relC = new RelationNode("Clientes","C");
+		
+		RelationNode relA = new RelationNode("Autos","A");
+	
+		RelationNode relP = new RelationNode("Prestamos","P");
+		
+		//C x A 
+		ProductNode prod1 = new ProductNode();
+		prod1.linkWith(relC,relA);
+		
+		//(C x A) x P
+		ProductNode prod2 = new ProductNode();
+		prod2.linkWith(prod1,relP);
+		
+		QueryConditionOperand selectAOperand1 = new FieldOperand(new QueryField("P","Cid"));
+		QueryConditionOperand selectAOperand2 = new FieldOperand(new QueryField("C","id"));
+		
+		QueryConditionOperand selectAOperand3 = new FieldOperand(new QueryField("P","Aid"));
+		QueryConditionOperand selectAOperand4 = new FieldOperand(new QueryField("A","id"));
+		
+		QueryConditionOperand selectAOperand5 = new FieldOperand(new QueryField("C","nombre"));
+		QueryConditionOperand selectAOperand6 = new LiteralOperand("Juan");
+		
+		QuerySingleCondition query1 = new QuerySingleCondition(selectAOperand1,QueryConditionOperator.EQUAL,selectAOperand2);
+		QuerySingleCondition query2 = new QuerySingleCondition(selectAOperand3,QueryConditionOperator.EQUAL,selectAOperand4);
+		QuerySingleCondition query3 = new QuerySingleCondition(selectAOperand5,QueryConditionOperator.EQUAL,selectAOperand6);
+		
+		
+		List<QuerySingleCondition> lista = new ArrayList<QuerySingleCondition>();
+		lista.add(query1);
+		lista.add(query2);
+		lista.add(query3);
+		
+		QueryAndSingleConditions queryDelNodo = new QueryAndSingleConditions(lista); 
+		
+		//Select
+		QuerySingleInputNode selectNodo = new SelectionNode(queryDelNodo);
+		selectNodo.linkWith(prod2);
+		
+		//Projeccion
+		List<QueryField> projectedFields = Collections.singletonList(new QueryField("A","Patente"));
+		
+		ProjectionNode project = new ProjectionNode(projectedFields);
+		project.linkWith(selectNodo);
 		return project;
 	}
 	
