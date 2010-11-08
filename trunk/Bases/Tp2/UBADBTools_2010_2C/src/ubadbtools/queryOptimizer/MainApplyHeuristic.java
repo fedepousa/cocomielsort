@@ -37,18 +37,14 @@ public class MainApplyHeuristic
 		QueryNode tree1 = createTree3();
 		
 		
-		//displayTree(tree1, "Original");
+		displayTree(tree1, "Original");
 		
 		Heuristic heuristic = new SwapLeavesHeuristic();
 		
 		heuristic.applyHeuristic(tree1);
 		
-		aux2 = th.aliases(tree1);
-		for(String actual : aux2)
-			System.out.println(actual);
 		
-		
-		//displayTree(tree1, "Swap");
+		displayTree(tree1, "Swap");
 		
 //		aux = th.condicionesJunta(tree1);
 //		for(QuerySingleCondition actual : aux){
