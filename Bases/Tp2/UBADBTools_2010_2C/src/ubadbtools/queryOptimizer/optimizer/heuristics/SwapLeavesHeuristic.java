@@ -34,44 +34,59 @@ public class SwapLeavesHeuristic extends Heuristic
 	{
 		TreeHelper th = new TreeHelper();
 		
+		//Flag para marcar si pude agregar un nuevo nodo
 		boolean salir;
+		//Variables Auxiliares
 		RelationNode t1,t2;
 		String s1,s2;
 		ProductNode nuevaBase, pAux;
+		//la variable nuevaBase se usa para armar desde cero toda la parte inferior del arbol correspondiente a los producton cartesianos y las tablas.
 		nuevaBase =null;
 		
-		//Calculo las tablas con las relaciones y las cond de junta
+		//Calculo las condiciones de junta
 		List<QuerySingleCondition> condsJunta = th.condicionesJunta(qN);
 		
 		//En esta lista guardo las tablas que ya fueron procedadas (solo el alias)
 		List<String> procesadas = new ArrayList<String>();
 		
-		//Por procesar
+		//Guardo en una lista las tablas por procesar
 		List<RelationNode> tablasFaltantes = th.tablas(qN);
 		
+		//La idea del algorimto es armar la base del arbol utilizando las condiciones de junta y luego completar con las tablas que no esten relacionadas a ninguna condicion de junta
+		
+		//Si hay alguna condicion de junta?
 		if (!condsJunta.isEmpty()){
 			//Creo el primer producto utilizando la primer condicion de junta
 			nuevaBase = new ProductNode();
+			//Obtengo los aliases y las tablas de los 2 operadores de la condiciones
 			s1=((FieldOperand) (condsJunta.get(0).getLeftOperand())).getField().getRelationAlias();
 			t1= th.alias2tabla(qN, s1);
 			s2=((FieldOperand) (condsJunta.get(0).getRightOperand())).getField().getRelationAlias();
 			t2= th.alias2tabla(qN, s2);
+			//Linkeo las 2 tablas con el nuevo nodo de producto
 			nuevaBase.linkWith(t1, t2);
+			//Elimino la condicion
 			condsJunta.remove(0);
+			//Remuevo las tablas que fueron procesadas
 			tablasFaltantes.remove(t1);
 			tablasFaltantes.remove(t2);
+			//Agrego los aliases de las tablas procesadas
 			procesadas.add(s1);
 			procesadas.add(s2);
 		}
 		
+		//Sigo procesando el resto de las condiciones
 		while(!condsJunta.isEmpty()){
 			//Uso este flag para indicar si agregue un nodo o no
 			salir=false;
 			//Busco entre las condiciones restantes alguna que pueda unir con lo que ya calcule
 			for(QuerySingleCondition actual : condsJunta){
+				//Calculo los aliases de la condicion
 				s1=((FieldOperand) (actual.getLeftOperand())).getField().getRelationAlias();
 				s2=((FieldOperand) (actual.getRightOperand())).getField().getRelationAlias();
+				//Me fijo si puedo si una tabla comparte atributos con lo procesado
 				if (procesadas.contains(s1)){
+					//En caso de que pase creo un nodo nuevo con la tabla y lo uno a lo calculado
 					pAux = new ProductNode();
 					t2= th.alias2tabla(qN, s2);
 					pAux.linkWith(nuevaBase,t2);
@@ -81,10 +96,12 @@ public class SwapLeavesHeuristic extends Heuristic
 					condsJunta.remove(actual);
 					salir=true;
 				}
-				
+				//Como agregue una tabla termino
 				if (salir) break;
 				
+				//Me fijo si la otra tabla me sirve
 				if (procesadas.contains(s2)){
+					//En caso de que pase creo un nodo nuevo con la tabla y lo uno a lo calculado
 					pAux = new ProductNode();
 					t1= th.alias2tabla(qN, s1);
 					pAux.linkWith(nuevaBase,t1);
@@ -94,10 +111,12 @@ public class SwapLeavesHeuristic extends Heuristic
 					condsJunta.remove(actual);
 					salir=true;
 				}
-				
+				//Como agregue una tabla termino
 				if (salir) break;
 			}
+			//Chequeo si no pude agregar ninguna condicion de junta
 			if (!salir){
+				//Agrego un nuevo nodo producto con una tabla alguna condicion de junta pendiente
 				pAux = new ProductNode();
 				s1=((FieldOperand) (condsJunta.get(0).getLeftOperand())).getField().getRelationAlias();
 				t1= th.alias2tabla(qN, s1);
@@ -116,19 +135,25 @@ public class SwapLeavesHeuristic extends Heuristic
 			}
 		
 		//Busco la base del arbol y la modifico en caso de ser necesario
+		
+		//Si no habia ningun seleccion salgo sin modificar nada
 		if (qN.isRelation() || qN.isProduct()) return;
 		
+		//Si es una projeccion bajo un nodo
 		if (qN.isProjection()){
 			qN = ((ProjectionNode) qN).getLowerNode();
 		}
 		
+		//Si luego de la projeccion no hay una seleccion salgo sin tocar nada
 		if (!qN.isSelection()) return;
 		
+		//Si llegue al bloque de las seleccion bajo hasta la ultima
 		while (qN.isSelection()){
 			//Vay al final de las selecciones
 			qN = ((QuerySingleInputNode) qN).getLowerNode();
 		}
 		
+		//Modifico la base del arbol con los nuevos productos
 		qN = qN.getUpperNode();
 		((QuerySingleInputNode) qN).linkWith(nuevaBase);
 				
