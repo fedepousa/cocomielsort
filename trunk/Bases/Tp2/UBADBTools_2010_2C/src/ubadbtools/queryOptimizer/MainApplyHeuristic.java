@@ -42,7 +42,8 @@ public class MainApplyHeuristic
 		displayTree(tree1, "Original");
 		
 		//Heuristic heuristic = new SwapLeavesHeuristic();
-		Heuristic heuristic = new ReplaceProductsHeuristic();
+		//Heuristic heuristic = new ReplaceProductsHeuristic();
+		Heuristic heuristic = new PushSelectionsHeuristic();
 		
 		heuristic.applyHeuristic(tree1);
 		
