@@ -66,6 +66,18 @@ public class TreeHelper
 			return aux;
 		}
 		
+		if (qN.isJoin()){
+			aux.addAll(condiciones(((QueryDoubleInputNode) qN).getLeftLowerNode()));
+			aux.addAll(condiciones(((QueryDoubleInputNode) qN).getRightLowerNode()));
+			return aux;
+		}
+		
+		if (qN.isNaturalJoin()){
+			aux.addAll(condiciones(((QueryDoubleInputNode) qN).getLeftLowerNode()));
+			aux.addAll(condiciones(((QueryDoubleInputNode) qN).getRightLowerNode()));
+			return aux;
+		}
+		
 		//Si es una relacion termino.
 		if (qN.isRelation()){
 			return aux;
