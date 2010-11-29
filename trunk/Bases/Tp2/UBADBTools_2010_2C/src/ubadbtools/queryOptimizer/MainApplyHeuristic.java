@@ -36,14 +36,14 @@ public class MainApplyHeuristic
 		List<QuerySingleCondition> aux;
 		List<String> aux2;
 		
-		QueryNode tree1 = createTree3();
+		QueryNode tree1 = createTree2();
 		
 		
 		displayTree(tree1, "Original");
 		
-		//Heuristic heuristic = new SwapLeavesHeuristic();
+		Heuristic heuristic = new SwapLeavesHeuristic();
 		//Heuristic heuristic = new ReplaceProductsHeuristic();
-		Heuristic heuristic = new PushSelectionsHeuristic();
+		//Heuristic heuristic = new PushSelectionsHeuristic();
 		
 		heuristic.applyHeuristic(tree1);
 		
