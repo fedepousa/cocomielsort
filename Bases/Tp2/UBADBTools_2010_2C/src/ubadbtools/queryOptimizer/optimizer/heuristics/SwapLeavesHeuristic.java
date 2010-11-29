@@ -124,13 +124,19 @@ public class SwapLeavesHeuristic extends Heuristic
 			}
 		}
 		
+		//Si no habia nada que juntar salgo
+		if (nuevaBase == null) return;
+		
 		//Proceso las tablas que no tenian ninguna condicion de junta
-		if (!tablasFaltantes.isEmpty())
+		if (!tablasFaltantes.isEmpty())	
 			for (RelationNode actual : tablasFaltantes){
 				pAux = new ProductNode();
 				pAux.linkWith(nuevaBase,actual);
 				nuevaBase = pAux;
 			}
+		
+		
+		
 		
 		//Busco la base del arbol y la modifico en caso de ser necesario
 		
