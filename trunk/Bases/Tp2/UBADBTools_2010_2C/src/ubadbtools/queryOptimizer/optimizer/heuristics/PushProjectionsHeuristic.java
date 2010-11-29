@@ -11,7 +11,14 @@ import ubadbtools.queryOptimizer.common.QueryDoubleInputNode;
 import ubadbtools.queryOptimizer.common.QueryField;
 import ubadbtools.queryOptimizer.common.QueryNode;
 import ubadbtools.queryOptimizer.common.QuerySingleInputNode;
+import ubadbtools.queryOptimizer.common.conditions.LiteralOperand;
+import ubadbtools.queryOptimizer.common.conditions.QueryCondition;
+import ubadbtools.queryOptimizer.common.conditions.QueryConditionOperand;
+import ubadbtools.queryOptimizer.common.conditions.QueryConditionOperator;
+import ubadbtools.queryOptimizer.common.conditions.QuerySingleCondition;
+import ubadbtools.queryOptimizer.common.join.JoinNode;
 import ubadbtools.queryOptimizer.common.projection.ProjectionNode;
+import ubadbtools.queryOptimizer.common.relation.RelationNode;
 
 /**
  * 
@@ -39,13 +46,66 @@ public class PushProjectionsHeuristic extends Heuristic
 		 System.out.println("PushProjectionsHeuristic");
 	}
 	
+	public List<String> tablas(QueryNode qN){
+		//Devuelve una lista con los alias de las tablas involucrados de ahi para abajos
+		
+		//Si es una proyeccion llamo para abajo
+		if(qN.isProjection() || qN.isSelection()){
+			return tablas(((QuerySingleInputNode) qN).getLowerNode());
+		}
+		
+		
+		List<String> resultado = new ArrayList<String>();
+		
+		//Si es un join/naturalJoin/producto
+		//el resultado es apendear el resultado de la llamada recursiva de sus hijos
+		if(qN.isJoin()  || qN.isNaturalJoin() || qN.isProduct() ){
+			List<String> tablaIzq = tablas(( (QueryDoubleInputNode) qN).getLeftLowerNode());
+			List<String> tablaDer = tablas(( (QueryDoubleInputNode) qN).getRightLowerNode());
+			//apendeo las listas
+			for(String nuevo : tablaDer){
+				resultado.add(nuevo);
+			}
+			for(String nuevo : tablaIzq){
+				resultado.add(nuevo);
+			}
+			return resultado;
+		}
+		
+		//Si es una relacion agrego el alias a la lista.
+		if(qN.isRelation()){
+			
+			resultado.add( ((RelationNode ) qN).getRelationAlias());
+							
+		}
+		
+		return resultado;
+	
+		
+		
+		
+		}
+		
+	public Map<String, Set<String> > copioDiccionario(Map<String, Set<String> > dic){
+		//hace una copia del diccionario dic al diccionario copia
+		
+		Map<String, Set<String> > resultado = new HashMap<String, Set<String>>();
+		for (String clave : dic.keySet()){
+			//TODO: Estoy suponiendo que el conjunto (dic.get(clave)) se copia
+			resultado.put(clave, dic.get(clave));
+		}
+		
+		return resultado;
+	
+	}
+	
+
+	
+	
 	public void resolve(QueryNode qN){
 	
-		// TODO Auto-generated method stub
-
 		
-		//Creamos diccionario que vamos a ir llevando para abajo
-	 
+		 
 		
 		//Si es proyeccion
 		if(qN.isProjection()){
@@ -97,7 +157,7 @@ public class PushProjectionsHeuristic extends Heuristic
 			}
 				
 					
-			//Creamos nodo se proyeccion
+			//Creamos nodo de proyeccion
 			ProjectionNode nuevoNodo = new ProjectionNode(lista);
 			
 			//Linkeamos
@@ -132,35 +192,222 @@ public class PushProjectionsHeuristic extends Heuristic
 		
 		
 		//Si es producto
+		if( qN.isProduct()){
+			//me guardo el diccionario como backup
+			Map<String,Set<String> > diccionario_backUp = copioDiccionario(diccionario);
+			
+			//Creo la lista de relaciones involucradas de izquierda
+			List< String> relacionesInvolucradasIzquierda = new ArrayList<String>();
+			relacionesInvolucradasIzquierda = tablas(((QueryDoubleInputNode) qN).getLeftLowerNode() );
+			
+			//borro del diccionario las claves de tablas que no esten involucradas de ahi para abajo (en hijo izquierda)
+			Set<String> dic_Set = diccionario.keySet();
+			for(String clave  : dic_Set ){
+				//Si la clave no esta involucrada, la borro
+				if (! (relacionesInvolucradasIzquierda.contains(clave))){
+					diccionario.remove(clave);
+				}
+				
+			}
+			
+			//Llamo a la funcion con la rama izquierda
+			resolve( ((QueryDoubleInputNode) qN).getLeftLowerNode() );
+			
+			
+			
+					
+			//Reestablezco el diccionario original
+			diccionario.clear();
+			diccionario = copioDiccionario(diccionario_backUp);
+			
+			
+			
+			//Creo la lista de relaciones involucradas de derecha
+			List< String> relacionesInvolucradasDerecha = new ArrayList<String>();
+			relacionesInvolucradasDerecha = tablas(((QueryDoubleInputNode) qN).getRightLowerNode() );
+			
+			//borro del diccionario las claves de tablas que no esten involucradas de ahi para abajo (en hijo derecha)
+			dic_Set = diccionario.keySet();
+			for(String clave  : dic_Set ){
+				//Si la clave no esta involucrada, la borro
+				if (! (relacionesInvolucradasDerecha.contains(clave))){
+					diccionario.remove(clave);
+				}
+				
+			}
+			
+			//Llamo a la funcion con la rama derecha
+			resolve( ((QueryDoubleInputNode) qN).getRightLowerNode() );
+			
+		return ;
+		}
+					
+
+		
+		
+		//Si es Join
+		if( qN.isJoin()){
+			//TODO: Falta agregar las condiciones del join
+			
+			//Interpreto la condicion del join
+			QueryCondition condicion = ((JoinNode) qN).getCondition();
+			QueryConditionOperator operando = ((QuerySingleCondition) condicion).getOperator();
+			QueryConditionOperand op1 = ((QuerySingleCondition) condicion).getLeftOperand();
+			QueryConditionOperand op2 = ((QuerySingleCondition) condicion).getRightOperand();
+			//Aca no se como saber si son FieldOperand o LiteralOperand, necesitamos saberlo para ver como pusheamos en el diccionario
+			
+			
+			
+			
+			
 			
 			//me guardo el diccionario como backup
-		
-				//calculo las tablas presentes en la rama izquierda
-				//saco del diccionario lo sobrante 
-				//Llamo a rama izquirda
+			Map<String,Set<String> > diccionario_backUp = copioDiccionario(diccionario);
 			
-		
-			//cuando termina, reestablezco diccionario
+			//Creo la lista de relaciones involucradas de izquierda
+			List< String> relacionesInvolucradasIzquierda = new ArrayList<String>();
+			relacionesInvolucradasIzquierda = tablas(((QueryDoubleInputNode) qN).getLeftLowerNode() );
 			
-				//calculo las tablas presentes en la rama derecha
-				//saco del diccionario lo sobrante 
-				//llamo a rama derecha
+			//borro del diccionario las claves de tablas que no esten involucradas de ahi para abajo (en hijo izquierda)
+			Set<String> dic_Set = diccionario.keySet();
+			for(String clave  : dic_Set ){
+				//Si la clave no esta involucrada, la borro
+				if (! (relacionesInvolucradasIzquierda.contains(clave))){
+					diccionario.remove(clave);
+				}
+				
+			}
+			
+			//Llamo a la funcion con la rama izquierda
+			resolve( ((QueryDoubleInputNode) qN).getLeftLowerNode() );
+			
+			
+			
+			//Reestablezco el diccionario original
+			diccionario.clear();
+			diccionario = copioDiccionario(diccionario_backUp);
+			
+			//Creo la lista de relaciones involucradas de derecha
+			List< String> relacionesInvolucradasDerecha = new ArrayList<String>();
+			relacionesInvolucradasDerecha = tablas(((QueryDoubleInputNode) qN).getRightLowerNode() );
+			
+			//borro del diccionario las claves de tablas que no esten involucradas de ahi para abajo (en hijo derecha)
+			dic_Set = diccionario.keySet();
+			for(String clave  : dic_Set ){
+				//Si la clave no esta involucrada, la borro
+				if (! (relacionesInvolucradasDerecha.contains(clave))){
+					diccionario.remove(clave);
+				}
+				
+			}
+			
+			//Llamo a la funcion con la rama derecha
+			resolve( ((QueryDoubleInputNode) qN).getRightLowerNode() );
+			
+		return ;
+		}
+		
+		
+		
+		//Si es NaturalJoin
+		if( qN.isJoin()){
+			//TODO: infiero las condicciones de junta y las agrego al diccionario
+			
+			//me guardo el diccionario como backup
+			Map<String,Set<String> > diccionario_backUp = copioDiccionario(diccionario);
+			
+			//Creo la lista de relaciones involucradas de izquierda
+			List< String> relacionesInvolucradasIzquierda = new ArrayList<String>();
+			relacionesInvolucradasIzquierda = tablas(((QueryDoubleInputNode) qN).getLeftLowerNode() );
+			
+			//borro del diccionario las claves de tablas que no esten involucradas de ahi para abajo (en hijo izquierda)
+			Set<String> dic_Set = diccionario.keySet();
+			for(String clave  : dic_Set ){
+				//Si la clave no esta involucrada, la borro
+				if (! (relacionesInvolucradasIzquierda.contains(clave))){
+					diccionario.remove(clave);
+				}
+				
+			}
+			
+			//Llamo a la funcion con la rama izquierda
+			resolve( ((QueryDoubleInputNode) qN).getLeftLowerNode() );
+			
+			
+			
+			//Reestablezco el diccionario original
+			diccionario.clear();
+			diccionario = copioDiccionario(diccionario_backUp);
+			
+			//Creo la lista de relaciones involucradas de derecha
+			List< String> relacionesInvolucradasDerecha = new ArrayList<String>();
+			relacionesInvolucradasDerecha = tablas(((QueryDoubleInputNode) qN).getRightLowerNode() );
+			
+			//borro del diccionario las claves de tablas que no esten involucradas de ahi para abajo (en hijo derecha)
+			dic_Set = diccionario.keySet();
+			for(String clave  : dic_Set ){
+				//Si la clave no esta involucrada, la borro
+				if (! (relacionesInvolucradasDerecha.contains(clave))){
+					diccionario.remove(clave);
+				}
+				
+			}
+			
+			//Llamo a la funcion con la rama derecha
+			resolve( ((QueryDoubleInputNode) qN).getRightLowerNode() );
+			
+		return ;
+		}
 		
 				
-		//Si es join
-			// agregamos al diccionario la condicion de junta
-			//hago lo mismo de producto
-		
-		//Si es natural join
-			//infiero las condicciones de junta y las agrego al diccionario
-			//hago lo mismo de producto
+		//si es una relacion
+		if(qN.isRelation()){
+			//Creamos la lista de querys fields
+			List<QueryField> lista = new ArrayList<QueryField>();
+			
+			for(String clave : diccionario.keySet()){
+				for (String significado : diccionario.get(clave)){
+					//Para cada clave, para cada significado
+					QueryField nuevaQ = new QueryField(clave, significado);
+					lista.add(nuevaQ);
+										
+				}
+				
+			}
+				
+					
+			//Creamos nodo de proyeccion
+			ProjectionNode nuevoNodo = new ProjectionNode(lista);
+			
+			//Linkeamos
+			// nuevo -> qN
+				nuevoNodo.linkWith(qN);
+			//qn.padre->nuevo
+				//Le preguntamos al padre si es Single o Double
+				if (qN.getUpperNode().getClass().equals(QuerySingleInputNode.class)){
+					//Si es single
+					((QuerySingleInputNode) (qN.getUpperNode())).linkWith(nuevoNodo);
+				}else{
+					//Es double entonce lo casteamos bien
+					QueryDoubleInputNode padre = ((QueryDoubleInputNode) (qN.getUpperNode()));
+					if(padre.getLeftLowerNode().equals(qN)){
+						//Si qN era hijo izquierda
+						//Lo agregamos a la izquierda
+						padre.linkWith(nuevoNodo, padre.getRightLowerNode());
+					}else{
+						//Si qN era hijo izquierda
+						//Lo agregamos a la izquierda
+						padre.linkWith(padre.getLeftLowerNode(), nuevoNodo);			
+					}
+				}
+				
+				return ;
+			
+		}
 		
 			
 		
-		//Si es relacion
-			//Creo un nodo projeccion con el diccionario
-			//No tiene llamda recursiva
-			//No modifico el diccionario
+
 		
 	
 		
