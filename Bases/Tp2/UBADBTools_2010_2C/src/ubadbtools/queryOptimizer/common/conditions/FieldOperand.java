@@ -9,12 +9,16 @@ public class FieldOperand implements QueryConditionOperand
 	public FieldOperand(QueryField field)
 	{
 		this.field = field;
+	 
 	}
 
 	public QueryField getField()
 	{
 		return field;
 	}
+	
+
+	
 	
 	@Override
 	public String toString()

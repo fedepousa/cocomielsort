@@ -14,6 +14,17 @@ public class LiteralOperand implements QueryConditionOperand
 		return value;
 	}
 	
+	
+	public boolean isQueryField(){
+		return false;
+	}
+	
+	public boolean isQueryLiteral(){
+		
+		return true;
+	}
+	
+	
 	@Override
 	public String toString()
 	{
