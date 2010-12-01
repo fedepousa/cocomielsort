@@ -6,12 +6,12 @@
 \usepackage{color}
 \usepackage{graphicx}
 \usepackage{float}
-%\usepackage{ucs}
-%\usepackage[utf8x]{inputenc}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
 \usepackage{fontenc}
-%\usepackage{listings}
+\usepackage{listings}
 \usepackage{amssymb}
-%\usepackage{slashbox}
+\usepackage{slashbox}
 \usepackage{url} 
 \usepackage[margin=2cm]{geometry}
 \usepackage[bookmarks=true]{hyperref}
@@ -36,15 +36,15 @@
 \newpage
 
 
-\section{Heurísticas}
+\section{Heur\'isticas}
 
-En esta sección presentaremos las diferentes heurísticas que se aplicaron para el presente trabajo práctico. 
+En esta secci\'on presentaremos las diferentes heur\'isticas que se aplicaron para el presente trabajo pr\'actico. 
 
-Para implementar las heurísticas se tomó como punto de partida el hecho de que el input del programa sea un arbol canónico. Además, se destaca que para la implementación de cada heurística se asume que el arbol ya sufrió los cambios de las heurísticas que la preceden.
+Para implementar las heurísticas se tom\'o como punto de partida el hecho de que el input del programa sea un arbol can\'onico. Adem\'as, se destaca que para la implementaci\'on de cada heur\'istica se asume que el arbol ya sufri\'o los cambios de las heurísticas que la preceden.
 
 \subsection{Cascada de Selecciones}
 
-El input de esta heurística es directamente el arbol canónico por lo que, al momento de ejecutarse la misma, se puede asumir que el arbol solo tendra un nodo de selección, donde es probable que la seleccion tenga condiciones multiples. La idea de esta heurística es entonces
+El input de esta heur\'istica es directamente el arbol can\'onico por lo que, al momento de ejecutarse la misma, se puede asumir que el arbol solo tendra un nodo de selecci\'on, donde es probable que la seleccion tenga condiciones multiples. La idea de esta heurística es entonces
 poder partir este único nodo de selección con varias condiciones en muchos nodos de selección con una sola condicion en cada uno de los nodos. Esto es importante dado que luego, al estar cada selección por separado, las mismas se pueden manipular mejor para optimizar el arbol, ya sea bajando las selecciones lo
 más cerca de las hojas posible, o bien juntandolas con los productos cartesianos para generar natural joins.
 
@@ -73,9 +73,25 @@ La implementación de la heurística es bastante directa dada la fuerte asunció
 
 \subsection{Bajar Selecciones}
 
+El input de esta heur\'istica es el arbol que se pudieron bajar las selecciones que se juntan con los productos para cambiarlos por juntas. Es por esto, que para esta heur\'istica se asume que todas las selecciones que existen todav\'ia en el arbol, se presentan como una secuencia de selecciones simples luego de la \'unica proyeccion y antes del primer producto o junta. 
+
+La implementaci\'on de esta heur\'istica se basa en recortar todas las selecciones anteriormente mencionadas y se van bajando recursivamente hacia las diferentes ramas del arbol, chequeando previamente que selecciones se deben bajar por cuales ramas. Cuando se llega al primer producto o junta, se procesa la rama derecha que, dado que se tratan de arboles sesgados a izquierda, se sabe que es una relaci\'on. Por lo cual, lo \'unico que se tiene que hacer es ver cuales de las selecciones que se hab\'ian recolectado al bajar por arbol corresponden a dicha tabla. Luego, se sigue recursivamente con el algoritmo por la rama izquierda.
+
+
+
+
 \subsection{Bajar Proyecciones}
 
+Para esta \'ultima he\'uristica se tomaron las siguientes decisiones.
 
+\begin{itemize}
+ \item Crear proyecciones nuevas despues de las selecciones: Se crearon nuevos nodos de proyecci\'on arriba de los nodos de selecci\'on para que solamente perduren los campos necesarios en los nodos m\'as altos del arbol. Se podr\'ia haber puesto nuevas proyecciones en cada uno de los nodos del arbol de entrada siempre que se pudiese achicar algo, pero se tom\'o esta decisi\'on dado que de otra manera el arbol podr\'ia quedar muy sobrecargado, quedando un arbol de 2n nodos, con n proyecciones. Esta desici\'on es tan solo eso, ser\'ia bueno ver como una extensi\'on a este trabajo si la desici\'on tomada es la mejor.
+
+\item Crear proyecciones antes de las relaciones, proyectando solamente los campos que son utilizados en alg\'un nodo del arbol. Es importante destacar que no se pueden desprender cuales son los campos de una relaci\'on por lo que siempre se proyectan todos los campos usados en el arbol para esa relaci\'on. La soluci\'on a esto ser\'ia trabajar con el cat\'alogo de la base, pero en este caso, solo agrega complejidad sin añadir ninguna mejora a la idea del tp.
+
+\end{itemize}
+
+Para la implementaci\'on de esta heur\'istica lo que se hiz\'o fue implementar una funci\'on que se aplica recursivamente desde la ra\'iz del arbol hasta las relaciones. La funci\'on identifica que tipo de nodo se esta trabajando y actua en consecuencia, si se trata de una selecci\'on o una relaci\'on se crea un nodo de proyecci\'on intermedio con los campos pertinentes para esa rama del arbol.
 
 
 

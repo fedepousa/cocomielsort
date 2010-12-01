@@ -1,9 +1,9 @@
 \select@language {spanish}
-\contentsline {section}{\numberline {1}Heurísticas}{3}{section.1}
+\contentsline {section}{\numberline {1}Heur\'isticas}{3}{section.1}
 \contentsline {subsection}{\numberline {1.1}Cascada de Selecciones}{3}{subsection.1.1}
 \contentsline {subsection}{\numberline {1.2}Intercambiar hojas}{3}{subsection.1.2}
 \contentsline {subsection}{\numberline {1.3}Bajar selecciones con condiciones de junta}{3}{subsection.1.3}
 \contentsline {subsection}{\numberline {1.4}Reemplazar productos cartesianos}{4}{subsection.1.4}
 \contentsline {subsection}{\numberline {1.5}Bajar Selecciones}{4}{subsection.1.5}
 \contentsline {subsection}{\numberline {1.6}Bajar Proyecciones}{4}{subsection.1.6}
-\contentsline {section}{\numberline {2}Casos de Test}{4}{section.2}
+\contentsline {section}{\numberline {2}Casos de Test}{5}{section.2}

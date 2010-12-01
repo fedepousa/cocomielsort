@@ -27,7 +27,6 @@ public class PushSelectionsHeuristic extends Heuristic
 	@Override
 	protected void internalApplyHeuristic(QueryNode qN)
 	{
-		// TODO Auto-generated method stub
 		TreeHelper th = new TreeHelper();
 		QueryNode qNAux,qNDer,qNCond,qNUlt;
 		
@@ -70,12 +69,24 @@ public class PushSelectionsHeuristic extends Heuristic
 		
 		//Proceso la ultima hoja
 		qNDer = qNAux;
+		
+		QueryNode qPadre = qNAux.getUpperNode();
+		
 		qNUlt = qNDer;
+		
 		for (QuerySingleCondition actual : conds)
 			if ( ((FieldOperand) actual.getLeftOperand()).getField().getRelationAlias() == ((RelationNode) qNDer).getRelationAlias()){
 				qNCond = new SelectionNode(actual); 
 				((QuerySingleInputNode) qNCond).linkWith(qNUlt);
-				((QueryDoubleInputNode) qNAux).linkWith(((QueryDoubleInputNode) qNAux).getLeftLowerNode(),qNCond);
+				if(qPadre.isProjection() || qPadre.isSelection()){
+					((QuerySingleInputNode) qPadre).linkWith(qNCond);
+				}
+				
+				if(qPadre.isProduct() || qPadre.isJoin() || qPadre.isNaturalJoin()){
+					((QueryDoubleInputNode) qPadre).linkWith(qNCond, ((QueryDoubleInputNode) qPadre).getRightLowerNode());
+				}
+				
+					
 				qNUlt = qNCond;
 			}
 		

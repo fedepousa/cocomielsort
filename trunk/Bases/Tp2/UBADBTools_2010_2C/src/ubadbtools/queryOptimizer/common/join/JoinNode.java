@@ -17,4 +17,9 @@ public class JoinNode extends QueryDoubleInputNode
 	{
 		return condition;
 	}
+	
+	public void setCondition(QueryCondition q)
+	{
+		condition = q;
+	}
 }
