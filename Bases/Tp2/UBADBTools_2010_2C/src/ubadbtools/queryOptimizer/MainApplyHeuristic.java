@@ -23,6 +23,7 @@ import ubadbtools.queryOptimizer.gui.QueryNodeGuiMapper;
 import ubadbtools.queryOptimizer.optimizer.heuristics.CascadingSelectionsHeuristic;
 import ubadbtools.queryOptimizer.optimizer.heuristics.Heuristic;
 import ubadbtools.queryOptimizer.optimizer.heuristics.PushSelectionsHeuristic;
+import ubadbtools.queryOptimizer.optimizer.heuristics.PushProjectionsHeuristic;
 import ubadbtools.queryOptimizer.optimizer.heuristics.PushSelectionsWithJoinConditionHeuristic;
 import ubadbtools.queryOptimizer.optimizer.heuristics.ReplaceProductsHeuristic;
 import ubadbtools.queryOptimizer.optimizer.heuristics.SwapLeavesHeuristic;
@@ -36,59 +37,44 @@ public class MainApplyHeuristic
 		List<QuerySingleCondition> aux;
 		List<String> aux2;
 		
-		QueryNode tree1 = createTree2();
+		QueryNode tree1 = createTree5();
 		
 		
 		displayTree(tree1, "Original");
-		
-		Heuristic heuristic = new SwapLeavesHeuristic();
-		//Heuristic heuristic = new ReplaceProductsHeuristic();
-		//Heuristic heuristic = new PushSelectionsHeuristic();
-		
+		Heuristic heuristic = new CascadingSelectionsHeuristic();
 		heuristic.applyHeuristic(tree1);
-		
-		//if(tree1==null) System.out.println("VACIO!");
-		
-		displayTree(tree1, "Heuristica");
-		
-//		aux = th.condicionesJunta(tree1);
-//		for(QuerySingleCondition actual : aux){
-//			System.out.println(actual.toString());
-//		}
-		
-		//Heuristic heuristic = new SwapLeavesHeuristic();
-		//heuristic.applyHeuristic(tree1);
-		
-		//displayTree(tree1, "Con heuristicas");
+		displayTree(tree1, "Cascading");
 		
 		
-		//List<RelationNode> aux = new ArrayList<RelationNode>();
+		tree1 = createTree5();
+		heuristic = new SwapLeavesHeuristic();
+		heuristic.applyHeuristic(tree1);
+		displayTree(tree1, "Swap");
 		
-		//aux= th.tablas(tree1);
-		
-//		for(RelationNode actual : aux){
-//			System.out.println(actual.getRelationName());
-//		}
-		
-		//System.out.println(th.alias2tabla(tree1, "C").getRelationName());
+		tree1 = createTree5();
+		heuristic = new PushSelectionsWithJoinConditionHeuristic();
+		heuristic.applyHeuristic(tree1);
+		displayTree(tree1, "SelecJoin");
 		
 		
-		//Mostrar �rbol original
-		//displayTree(tree1, "Original");
+		tree1 = createTree5();
+		heuristic = new ReplaceProductsHeuristic();
+		heuristic.applyHeuristic(tree1);
+		displayTree(tree1, "ReplaceProd");
 		
-		//Heuristic heuristic = new PushSelectionsHeuristic();
+		tree1 = createTree5();
+		heuristic = new PushSelectionsHeuristic();
+		heuristic.applyHeuristic(tree1);
+		displayTree(tree1, "PushSel");
 		
-		//heuristic.applyHeuristic(tree1);
-		//System.out.println(tree1.isProjection());
-		//System.out.println(tree1.isSelection());
-		//System.out.println(((ProjectionNode) tree1).getLowerNode().isProjection());
-		//System.out.println(((ProjectionNode) tree1).getLowerNode().isSelection());
-		
-		//Mostrar �rbol cambiado
-		//displayTree(tree1, "Con heur�sticas");
+		tree1 = createTree5();
+		heuristic = new PushProjectionsHeuristic();
+		heuristic.applyHeuristic(tree1);
+		displayTree(tree1, "PushPro");
+			
 	}
 	
-	private static ProjectionNode createTree()
+	private static ProjectionNode createTree1()
 	{
 		//A
 		RelationNode relA = new RelationNode("Auto","A");
@@ -113,30 +99,6 @@ public class MainApplyHeuristic
 		ProjectionNode project = new ProjectionNode(projectedFields);
 		project.linkWith(selectAxB);
 		return project;
-		/*
-		//A
-		RelationNode relA = new RelationNode("Auto","A");
-		
-		//B
-		RelationNode relB = new RelationNode("Bote","B");
-		
-		//Sel(A)
-		QueryConditionOperand selectAOperand1 = new FieldOperand(new QueryField("A","a1"));
-		QueryConditionOperand selectAOperand2 = new LiteralOperand("1");
-		QueryCondition selectACondition = new QuerySingleCondition(selectAOperand1,QueryConditionOperator.EQUAL,selectAOperand2);
-		QuerySingleInputNode selectA = new SelectionNode(selectACondition);
-		selectA.linkWith(relA);
-		
-		//(Sel A) x B
-		ProductNode prod = new ProductNode();
-		prod.linkWith(selectA,relB);
-		
-		//Proj(Sel(A) x B)
-		List<QueryField> projectedFields = Collections.singletonList(new QueryField("A","a2"));
-		ProjectionNode project = new ProjectionNode(projectedFields);
-		project.linkWith(prod);
-		return project;
-		*/
 	}
 	
 	private static QueryNode createTree2(){
@@ -240,6 +202,151 @@ public class MainApplyHeuristic
 		return project;
 	}
 	
+	private static QueryNode createTree4(){
+		//A
+		RelationNode relA = new RelationNode("Auto","A");
+		
+		//B
+		RelationNode relB = new RelationNode("Bote","B");
+		
+		//A x B
+		ProductNode prod = new ProductNode();
+		prod.linkWith(relA,relB);
+		
+		//Projeccion
+		List<QueryField> projectedFields = new ArrayList<QueryField>();
+		QueryField aux = new QueryField("A", "Patente");
+		projectedFields.add(aux);
+		aux = new QueryField("A", "BlaBla");
+		projectedFields.add(aux);
+		aux = new QueryField("B", "Color");
+		projectedFields.add(aux);
+		aux = new QueryField("B", "Otro"); 
+		projectedFields.add(aux);
+		ProjectionNode project = new ProjectionNode(projectedFields);
+		project.linkWith(prod);
+		return project;
+		
+	
+	}
+	
+	private static QueryNode createTree5(){
+		RelationNode rel0 = new RelationNode("Autos","A");
+		RelationNode rel1 = new RelationNode("Polizas","P");
+		ProductNode prod0 = new ProductNode();
+		prod0.linkWith(rel0,rel1);
+
+
+		List<QueryField> projectedFields = new ArrayList<QueryField>();
+		QueryField projectedField;
+		projectedField = new QueryField("A","id");
+		projectedFields.add(projectedField);
+		ProjectionNode projecciones = new ProjectionNode(projectedFields);
+
+
+		List<QuerySingleCondition> conds = new ArrayList<QuerySingleCondition>();
+		QueryConditionOperand selectAOperandA;
+		QueryConditionOperand selectAOperandB;
+		QuerySingleCondition query;
+		selectAOperandA = new FieldOperand(new QueryField("A","patente "));
+		selectAOperandB = new FieldOperand(new QueryField("P","patente"));
+		query = new QuerySingleCondition(selectAOperandA,QueryConditionOperator.EQUAL,selectAOperandB);
+		conds.add(query);
+		selectAOperandA = new FieldOperand(new QueryField("A","persona "));
+		selectAOperandB = new FieldOperand(new QueryField("P","persona"));
+		query = new QuerySingleCondition(selectAOperandA,QueryConditionOperator.EQUAL,selectAOperandB);
+		conds.add(query);
+		QueryAndSingleConditions queryDelNodo = new QueryAndSingleConditions(conds);
+		QuerySingleInputNode selecciones = new SelectionNode(queryDelNodo);
+
+
+		projecciones.linkWith(selecciones);
+		selecciones.linkWith(prod0);
+
+		return projecciones;
+
+	}
+	
+	private static QueryNode createTree6(){
+		RelationNode rel0 = new RelationNode("Autos","A");
+		RelationNode rel1 = new RelationNode("Polizas","P");
+		ProductNode prod0 = new ProductNode();
+		prod0.linkWith(rel0,rel1);
+
+
+		List<QueryField> projectedFields = new ArrayList<QueryField>();
+		QueryField projectedField;
+		projectedField = new QueryField("A","id");
+		projectedFields.add(projectedField);
+		ProjectionNode projecciones = new ProjectionNode(projectedFields);
+
+
+		List<QuerySingleCondition> conds = new ArrayList<QuerySingleCondition>();
+		QueryConditionOperand selectAOperandA;
+		QueryConditionOperand selectAOperandB;
+		QuerySingleCondition query;
+		selectAOperandA = new FieldOperand(new QueryField("A","persona "));
+		selectAOperandB = new FieldOperand(new QueryField("P","persona"));
+		query = new QuerySingleCondition(selectAOperandA,QueryConditionOperator.EQUAL,selectAOperandB);
+		conds.add(query);
+		QueryAndSingleConditions queryDelNodo = new QueryAndSingleConditions(conds);
+		QuerySingleInputNode selecciones = new SelectionNode(queryDelNodo);
+
+
+		projecciones.linkWith(selecciones);
+		selecciones.linkWith(prod0);
+
+		return projecciones;
+
+	}
+	
+	private static QueryNode createTree7(){
+		RelationNode rel0 = new RelationNode("Autos","A");
+
+
+		List<QueryField> projectedFields = new ArrayList<QueryField>();
+		QueryField projectedField;
+		projectedField = new QueryField("A","patente");
+		projectedFields.add(projectedField);
+		ProjectionNode projecciones = new ProjectionNode(projectedFields);
+
+
+
+		projecciones.linkWith(rel0);
+
+		return projecciones;
+
+	}
+	
+	private static QueryNode createTree8(){
+		RelationNode rel0 = new RelationNode("Autos","A");
+
+
+		List<QueryField> projectedFields = new ArrayList<QueryField>();
+		QueryField projectedField;
+		projectedField = new QueryField("A","id");
+		projectedFields.add(projectedField);
+		ProjectionNode projecciones = new ProjectionNode(projectedFields);
+
+
+		List<QuerySingleCondition> conds = new ArrayList<QuerySingleCondition>();
+		QueryConditionOperand selectAOperandA;
+		QueryConditionOperand selectAOperandB;
+		QuerySingleCondition query;
+		selectAOperandA = new FieldOperand(new QueryField("A","id"));
+		selectAOperandB = new LiteralOperand("3");
+		query = new QuerySingleCondition(selectAOperandA,QueryConditionOperator.EQUAL,selectAOperandB);
+		conds.add(query);
+		QueryAndSingleConditions queryDelNodo = new QueryAndSingleConditions(conds);
+		QuerySingleInputNode selecciones = new SelectionNode(queryDelNodo);
+
+
+		projecciones.linkWith(selecciones);
+		selecciones.linkWith(rel0);
+
+		return projecciones;
+
+	}
 	private static void displayTree(QueryNode tree, String message)
 	{
 		QueryNodeGuiMapper mapper = new QueryNodeGuiMapper();

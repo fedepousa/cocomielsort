@@ -1,13 +1,15 @@
 package ubadbtools.queryOptimizer.optimizer.heuristics;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import ubadbtools.queryOptimizer.common.QueryDoubleInputNode;
 import ubadbtools.queryOptimizer.common.QueryNode;
 import ubadbtools.queryOptimizer.common.QuerySingleInputNode;
-import ubadbtools.queryOptimizer.common.conditions.FieldOperand;
+import ubadbtools.queryOptimizer.common.conditions.QueryAndSingleConditions;
 import ubadbtools.queryOptimizer.common.conditions.QueryCondition;
 import ubadbtools.queryOptimizer.common.conditions.QuerySingleCondition;
 import ubadbtools.queryOptimizer.common.join.JoinNode;
-import ubadbtools.queryOptimizer.common.join.NaturalJoinNode;
 import ubadbtools.queryOptimizer.common.product.ProductNode;
 import ubadbtools.queryOptimizer.common.selection.SelectionNode;
 
@@ -57,10 +59,10 @@ public class ReplaceProductsHeuristic extends Heuristic
 					//TODO: Consutar bien el tema del join natural y el comun
 					
 					//Me fijo si es una junta natural y creo un nuevo nodo segun el caso
-					if ( ((FieldOperand) ((QuerySingleCondition) cond).getLeftOperand()).getField().getFieldName() == ((FieldOperand) ((QuerySingleCondition) cond).getRightOperand()).getField().getFieldName() )
-						jNode = new NaturalJoinNode();
-					else
-						jNode = new JoinNode(cond);
+					//if ( ((FieldOperand) ((QuerySingleCondition) cond).getLeftOperand()).getField().getFieldName() == ((FieldOperand) ((QuerySingleCondition) cond).getRightOperand()).getField().getFieldName() )
+					//	jNode = new NaturalJoinNode();
+					//else
+					jNode = new JoinNode(cond);
 					
 					//Lo enlazo con los hijos correspondientes
 					jNode.linkWith(((ProductNode) qI).getLeftLowerNode(),((ProductNode) qI).getRightLowerNode());
@@ -82,6 +84,22 @@ public class ReplaceProductsHeuristic extends Heuristic
 						}
 						else
 						{
+							while(abuelo!=null && abuelo.isSelection() && ((SelectionNode) abuelo).getCondition().isJoinCondition() ){
+								if(((JoinNode) jNode).getCondition() instanceof QuerySingleCondition){
+									List<QuerySingleCondition> lista = new ArrayList<QuerySingleCondition>();
+									lista.add((QuerySingleCondition) (((JoinNode) jNode).getCondition()));
+									lista.add((QuerySingleCondition) ((SelectionNode) abuelo).getCondition());
+									QueryAndSingleConditions bla = new QueryAndSingleConditions(lista);
+									((JoinNode) jNode).setCondition(bla);
+				
+								} else{
+									List<QuerySingleCondition> lista = ((QueryAndSingleConditions) (((JoinNode) jNode).getCondition())).getSingleConditions();
+									lista.add((QuerySingleCondition) ((SelectionNode) abuelo).getCondition());
+									QueryAndSingleConditions bla = new QueryAndSingleConditions(lista);
+									((JoinNode) jNode).setCondition(bla);
+								}
+								abuelo = abuelo.getUpperNode();
+							}
 							//Caso en que el abuelo sea un nodo con un hijo
 							((QuerySingleInputNode) abuelo).linkWith(jNode);
 						}
@@ -97,7 +115,6 @@ public class ReplaceProductsHeuristic extends Heuristic
 				qI = ((QuerySingleInputNode) qI).getLowerNode();
 		}
 		
-		// TODO Auto-generated method stub
 		System.out.println("ReplaceProductsHeuristic");
 	}
 }

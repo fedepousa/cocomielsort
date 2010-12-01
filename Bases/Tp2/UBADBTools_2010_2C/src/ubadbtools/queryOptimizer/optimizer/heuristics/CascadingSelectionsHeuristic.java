@@ -17,7 +17,7 @@ import ubadbtools.queryOptimizer.common.selection.SelectionNode;
  */
 public class CascadingSelectionsHeuristic extends Heuristic
 {
-	//No depende de ninguna heurística
+	//No depende de ninguna heurï¿½stica
 	
 	@Override
 	protected void internalApplyHeuristic(QueryNode queryNode)
@@ -41,7 +41,8 @@ public class CascadingSelectionsHeuristic extends Heuristic
 				}
 				listaSel.get(size-1).linkWith(((SelectionNode) queryNode).getLowerNode());
 			}
-		}else{
+		}
+		if(queryNode.isProjection()){
 			queryNode = ((ProjectionNode) queryNode).getLowerNode();
 			this.internalApplyHeuristic(queryNode);
 		}

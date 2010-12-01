@@ -102,9 +102,13 @@ public class PushSelectionsWithJoinConditionHeuristic extends Heuristic
 				}
 			}
 			//Si use alguna condicion entonces tengo que eliminarla de la lista
-			if (aBorrar!=null) condsJunta.remove(aBorrar);
-			//Sigo para el nodo producto de la izquierda
-			qI = ((QueryDoubleInputNode) qI).getLeftLowerNode();
+			if (aBorrar!=null) {
+				condsJunta.remove(aBorrar);
+			} else {
+				//Sigo para el nodo producto de la izquierda
+				qI = ((QueryDoubleInputNode) qI).getLeftLowerNode();
+				}
+			
 		}
 			
 		// TODO Auto-generated method stub

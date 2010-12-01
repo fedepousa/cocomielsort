@@ -11,7 +11,8 @@ import ubadbtools.queryOptimizer.common.QueryDoubleInputNode;
 import ubadbtools.queryOptimizer.common.QueryField;
 import ubadbtools.queryOptimizer.common.QueryNode;
 import ubadbtools.queryOptimizer.common.QuerySingleInputNode;
-import ubadbtools.queryOptimizer.common.conditions.LiteralOperand;
+import ubadbtools.queryOptimizer.common.conditions.FieldOperand;
+import ubadbtools.queryOptimizer.common.conditions.QueryAndSingleConditions;
 import ubadbtools.queryOptimizer.common.conditions.QueryCondition;
 import ubadbtools.queryOptimizer.common.conditions.QueryConditionOperand;
 import ubadbtools.queryOptimizer.common.conditions.QueryConditionOperator;
@@ -19,6 +20,7 @@ import ubadbtools.queryOptimizer.common.conditions.QuerySingleCondition;
 import ubadbtools.queryOptimizer.common.join.JoinNode;
 import ubadbtools.queryOptimizer.common.projection.ProjectionNode;
 import ubadbtools.queryOptimizer.common.relation.RelationNode;
+import ubadbtools.queryOptimizer.common.selection.SelectionNode;
 
 /**
  * 
@@ -44,6 +46,11 @@ public class PushProjectionsHeuristic extends Heuristic
 		 this.diccionario = new HashMap<String,Set<String> >();
 		 resolve(qN);
 		 System.out.println("PushProjectionsHeuristic");
+		 
+		 //Caso correcion de proyecciones
+		 if(((ProjectionNode) qN).getLowerNode().isProjection()){
+			 ((ProjectionNode) qN).linkWith( ((ProjectionNode) (((ProjectionNode) qN).getLowerNode())).getLowerNode());
+		 }
 	}
 	
 	public List<String> tablas(QueryNode qN){
@@ -131,9 +138,9 @@ public class PushProjectionsHeuristic extends Heuristic
 					diccionario.put(actual.getRelationAlias(),aux2);
 				}
 				//Sigo con la funcion para abajo
-				resolve(((QuerySingleInputNode) qN).getLowerNode());
+				
 			}
-			
+			resolve(((QuerySingleInputNode) qN).getLowerNode());
 		return ;	
 		}
 		
@@ -162,10 +169,10 @@ public class PushProjectionsHeuristic extends Heuristic
 			
 			//Linkeamos
 			// nuevo -> qN
-				nuevoNodo.linkWith(qN);
+				
 			//qn.padre->nuevo
 				//Le preguntamos al padre si es Single o Double
-				if (qN.getUpperNode().getClass().equals(QuerySingleInputNode.class)){
+				if (qN.getUpperNode().isSelection() || qN.getUpperNode().isProjection()){
 					//Si es single
 					((QuerySingleInputNode) (qN.getUpperNode())).linkWith(nuevoNodo);
 				}else{
@@ -181,7 +188,45 @@ public class PushProjectionsHeuristic extends Heuristic
 						padre.linkWith(padre.getLeftLowerNode(), nuevoNodo);			
 					}
 				}
+				nuevoNodo.linkWith(qN);
+				
+			//Agregamos la seleccion al diccionario, ya sabemos que va a ser una sola seleccion.
+				QuerySingleCondition cond = ((QuerySingleCondition) ((SelectionNode) qN).getCondition());
 			
+			//Agregamos el left operand (Si es un field)
+				if(cond.getLeftOperand().getClass().equals(FieldOperand.class)){
+					FieldOperand actual = (FieldOperand) (cond.getLeftOperand());
+					if(diccionario.containsKey(actual.getField().getRelationAlias())){
+						//Tomo el conjunto de definicion
+						Set<String> aux2 = diccionario.get(actual.getField().getRelationAlias());
+						//Agrego la nueva parte de definicion
+						aux2.add(actual.getField().getFieldName());
+						diccionario.put(actual.getField().getRelationAlias(),aux2);
+						
+					}else{
+					//Si la clave no estaba	
+						Set<String> aux2 = new HashSet<String>();
+						aux2.add(actual.getField().getFieldName());
+						diccionario.put(actual.getField().getRelationAlias(),aux2);
+					}
+				}
+			//Agregamos el right operand (Si es un field)
+				if(cond.getRightOperand().getClass().equals(FieldOperand.class)){
+					FieldOperand actual = (FieldOperand) (cond.getRightOperand());
+					if(diccionario.containsKey(actual.getField().getRelationAlias())){
+						//Tomo el conjunto de definicion
+						Set<String> aux2 = diccionario.get(actual.getField().getRelationAlias());
+						//Agrego la nueva parte de definicion
+						aux2.add(actual.getField().getFieldName());
+						diccionario.put(actual.getField().getRelationAlias(),aux2);
+						
+					}else{
+					//Si la clave no estaba	
+						Set<String> aux2 = new HashSet<String>();
+						aux2.add(actual.getField().getFieldName());
+						diccionario.put(actual.getField().getRelationAlias(),aux2);
+					}
+				}
 			//Llamos para abajo
 			resolve(((QuerySingleInputNode) qN).getLowerNode());			
 		
@@ -227,8 +272,10 @@ public class PushProjectionsHeuristic extends Heuristic
 			relacionesInvolucradasDerecha = tablas(((QueryDoubleInputNode) qN).getRightLowerNode() );
 			
 			//borro del diccionario las claves de tablas que no esten involucradas de ahi para abajo (en hijo derecha)
-			dic_Set = diccionario.keySet();
-			for(String clave  : dic_Set ){
+			Set<String> dic_Set2 = diccionario.keySet();
+			Set<String> dic_Set3 = new HashSet<String>(dic_Set2);
+			
+			for(String clave  : dic_Set3 ){
 				//Si la clave no esta involucrada, la borro
 				if (! (relacionesInvolucradasDerecha.contains(clave))){
 					diccionario.remove(clave);
@@ -247,20 +294,100 @@ public class PushProjectionsHeuristic extends Heuristic
 		
 		//Si es Join
 		if( qN.isJoin()){
-			//TODO: Falta agregar las condiciones del join
 			
-			//Interpreto la condicion del join
-			QueryCondition condicion = ((JoinNode) qN).getCondition();
-			QueryConditionOperator operando = ((QuerySingleCondition) condicion).getOperator();
-			QueryConditionOperand op1 = ((QuerySingleCondition) condicion).getLeftOperand();
-			QueryConditionOperand op2 = ((QuerySingleCondition) condicion).getRightOperand();
-			//Aca no se como saber si son FieldOperand o LiteralOperand, necesitamos saberlo para ver como pusheamos en el diccionario
+			QueryCondition cond = ((JoinNode) qN).getCondition();
+			//Vamos a ver si es una sola condicion o sin son varias
+			if(cond.getClass().equals(QuerySingleCondition.class)){
+				QuerySingleCondition condSingle = (QuerySingleCondition) (cond);
+				//Si es una sola, agregamos sus operandos como en la seleccion
+				
+				//Agregamos el left operand (Si es un field)
+				if(condSingle.getLeftOperand().getClass().equals(FieldOperand.class)){
+					FieldOperand actual = (FieldOperand) (condSingle.getLeftOperand());
+					if(diccionario.containsKey(actual.getField().getRelationAlias())){
+						//Tomo el conjunto de definicion
+						Set<String> aux2 = diccionario.get(actual.getField().getRelationAlias());
+						//Agrego la nueva parte de definicion
+						aux2.add(actual.getField().getFieldName());
+						diccionario.put(actual.getField().getRelationAlias(),aux2);
+						
+					}else{
+					//Si la clave no estaba	
+						Set<String> aux2 = new HashSet<String>();
+						aux2.add(actual.getField().getFieldName());
+						diccionario.put(actual.getField().getRelationAlias(),aux2);
+					}
+				}
+			//Agregamos el right operand (Si es un field)
+				if(condSingle.getRightOperand().getClass().equals(FieldOperand.class)){
+					FieldOperand actual = (FieldOperand) (condSingle.getRightOperand());
+					if(diccionario.containsKey(actual.getField().getRelationAlias())){
+						//Tomo el conjunto de definicion
+						Set<String> aux2 = diccionario.get(actual.getField().getRelationAlias());
+						//Agrego la nueva parte de definicion
+						aux2.add(actual.getField().getFieldName());
+						diccionario.put(actual.getField().getRelationAlias(),aux2);
+						
+					}else{
+					//Si la clave no estaba	
+						Set<String> aux2 = new HashSet<String>();
+						aux2.add(actual.getField().getFieldName());
+						diccionario.put(actual.getField().getRelationAlias(),aux2);
+					}
+				}
+				
+				
+				
+				
+				
+			}
+			
+			
+			//Si es mas de un operando
+			if(cond.getClass().equals(QueryAndSingleConditions.class)){
+				QueryAndSingleConditions condAnd = (QueryAndSingleConditions) (cond);
+				List<QuerySingleCondition> listaCond = condAnd.getSingleConditions();
+				for(QuerySingleCondition condSingle : listaCond){
+					//Agregamos el left operand (Si es un field)
+					if(condSingle.getLeftOperand().getClass().equals(FieldOperand.class)){
+						FieldOperand actual = (FieldOperand) (condSingle.getLeftOperand());
+						if(diccionario.containsKey(actual.getField().getRelationAlias())){
+							//Tomo el conjunto de definicion
+							Set<String> aux2 = diccionario.get(actual.getField().getRelationAlias());
+							//Agrego la nueva parte de definicion
+							aux2.add(actual.getField().getFieldName());
+							diccionario.put(actual.getField().getRelationAlias(),aux2);
+							
+						}else{
+						//Si la clave no estaba	
+							Set<String> aux2 = new HashSet<String>();
+							aux2.add(actual.getField().getFieldName());
+							diccionario.put(actual.getField().getRelationAlias(),aux2);
+						}
+					}
+				//Agregamos el right operand (Si es un field)
+					if(condSingle.getRightOperand().getClass().equals(FieldOperand.class)){
+						FieldOperand actual = (FieldOperand) (condSingle.getRightOperand());
+						if(diccionario.containsKey(actual.getField().getRelationAlias())){
+							//Tomo el conjunto de definicion
+							Set<String> aux2 = diccionario.get(actual.getField().getRelationAlias());
+							//Agrego la nueva parte de definicion
+							aux2.add(actual.getField().getFieldName());
+							diccionario.put(actual.getField().getRelationAlias(),aux2);
+							
+						}else{
+						//Si la clave no estaba	
+							Set<String> aux2 = new HashSet<String>();
+							aux2.add(actual.getField().getFieldName());
+							diccionario.put(actual.getField().getRelationAlias(),aux2);
+						}
+					}
+				}
+			}
 			
 			
 			
-			
-			
-			
+		
 			//me guardo el diccionario como backup
 			Map<String,Set<String> > diccionario_backUp = copioDiccionario(diccionario);
 			
@@ -270,7 +397,8 @@ public class PushProjectionsHeuristic extends Heuristic
 			
 			//borro del diccionario las claves de tablas que no esten involucradas de ahi para abajo (en hijo izquierda)
 			Set<String> dic_Set = diccionario.keySet();
-			for(String clave  : dic_Set ){
+			Set<String> dic_Set2 = new HashSet<String>(dic_Set);
+			for(String clave  : dic_Set2 ){
 				//Si la clave no esta involucrada, la borro
 				if (! (relacionesInvolucradasIzquierda.contains(clave))){
 					diccionario.remove(clave);
@@ -293,7 +421,8 @@ public class PushProjectionsHeuristic extends Heuristic
 			
 			//borro del diccionario las claves de tablas que no esten involucradas de ahi para abajo (en hijo derecha)
 			dic_Set = diccionario.keySet();
-			for(String clave  : dic_Set ){
+			Set<String> dic_Set8 = new HashSet<String>(dic_Set);
+			for(String clave  : dic_Set8 ){
 				//Si la clave no esta involucrada, la borro
 				if (! (relacionesInvolucradasDerecha.contains(clave))){
 					diccionario.remove(clave);
@@ -308,11 +437,12 @@ public class PushProjectionsHeuristic extends Heuristic
 		}
 		
 		
-		
+		/*
 		//Si es NaturalJoin
-		if( qN.isJoin()){
+		if( qN.isNaturalJoin()){
 			//TODO: infiero las condicciones de junta y las agrego al diccionario
 			
+			
 			//me guardo el diccionario como backup
 			Map<String,Set<String> > diccionario_backUp = copioDiccionario(diccionario);
 			
@@ -358,7 +488,7 @@ public class PushProjectionsHeuristic extends Heuristic
 			
 		return ;
 		}
-		
+		*/
 				
 		//si es una relacion
 		if(qN.isRelation()){
@@ -381,10 +511,10 @@ public class PushProjectionsHeuristic extends Heuristic
 			
 			//Linkeamos
 			// nuevo -> qN
-				nuevoNodo.linkWith(qN);
+				
 			//qn.padre->nuevo
 				//Le preguntamos al padre si es Single o Double
-				if (qN.getUpperNode().getClass().equals(QuerySingleInputNode.class)){
+				if (qN.getUpperNode().isSelection() || qN.getUpperNode().isProjection()){
 					//Si es single
 					((QuerySingleInputNode) (qN.getUpperNode())).linkWith(nuevoNodo);
 				}else{
@@ -400,7 +530,7 @@ public class PushProjectionsHeuristic extends Heuristic
 						padre.linkWith(padre.getLeftLowerNode(), nuevoNodo);			
 					}
 				}
-				
+				nuevoNodo.linkWith(qN);
 				return ;
 			
 		}

@@ -84,6 +84,11 @@ public class SwapLeavesHeuristic extends Heuristic
 				//Calculo los aliases de la condicion
 				s1=((FieldOperand) (actual.getLeftOperand())).getField().getRelationAlias();
 				s2=((FieldOperand) (actual.getRightOperand())).getField().getRelationAlias();
+				if(procesadas.contains(s1) && procesadas.contains(s2)){
+					condsJunta.remove(actual);
+					agregue = true;
+					break;
+				}
 				//Me fijo si puedo si una tabla comparte atributos con lo procesado
 				if (procesadas.contains(s1)){
 					//En caso de que pase creo un nodo nuevo con la tabla y lo uno a lo calculado
@@ -121,6 +126,7 @@ public class SwapLeavesHeuristic extends Heuristic
 				pAux.linkWith(nuevaBase,t1);
 				nuevaBase = pAux;
 				procesadas.add(s1);
+				tablasFaltantes.remove(t1);
 			}
 		}
 		
