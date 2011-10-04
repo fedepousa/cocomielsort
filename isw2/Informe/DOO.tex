@@ -1,3 +1,63 @@
 \section{Dise\~{n}o Orientado a Objetos}
 
-Para realizar el dise\~{n}o orientado a objetos 
+Pequeña intro a todo el diseno junto.
+
+\subsection{Logging}
+
+\subsection{Postulaci\'on a candidato}
+
+\subsection{Votaci\'on}
+
+%clase
+
+En esta secci\'on se presenta un subconjunto de las clases del diagrama original que son pertinentes al problema de la votaci\'on.
+
+A continuaci\'on se reproduce dicho subconjunto separado del diagrama original, para luego poder explicitar cada decisi\'on tomada sobre cada una de las clases presentes.
+
+ACA va el diagrama de clases.
+
+\subsubsection{Usuario}
+
+El usuario representa a un posible votante o candidato, pero en este caso, solo nos importa el mismo como votante. La entidad del mundo real a la que hace referencia es el votante al momento de iniciarse el proceso electoral. Cualquier usuario debe ser capaz de responder a los mensajes DNI, nombre, registrarQueVoto, yaVotaste. Los mismos se utilizan para:
+
+\begin{itemize}
+\item DNI: Es un mensaje esencial al usuario, que lo identica como objeto entre los de su misma clase. El mismo hace referencia directa a un usuario del sistema, por lo que tambi\'en servir\'a para hacer el recuento de votos. Es decir que los votos en el sistema se dividiran de acuerdo al DNI del candidato al que hacen referencia.
+\item nombre: Responde al nombre del persona real que hace referencia el usuario.
+\item registrarQueVoto: Es un mensaje que permite registrarle al usuario que ya voto para que no pueda volver a votar.
+\item yaVotaste: Es un mensaje que permite preguntarle al usuario si ya voto. Sirve para cumplir con la restricci\'on de que un usuario no pueda volver a sufragar.
+\item cantidadMaximaDeVotos: Es un mensaje que responde cuantos postulantes puede votar un usuario.
+\end{itemize}
+
+En cuanto a los mensajes presentandos anteriormente, desde un punto de vista estrictamente paradigm\'atico, no queda claro que sea responsabilidad del usuario saber que ya voto. Sin embargo, se decidi\'o hacerlo de esta forma para reducirle la complejidad al modelo.
+
+Por el mismo motivo se encuentra el mensaje cantidadMaximaDeVotos que, bajo el consejo de Fernando Astesuain, se puso dentro del usuario para que sea simple la votaci\'on. Directamente se puede votar una collection de candidatos y chequar cuantos puede votar realmente mediante este mensaje.
+
+En el diagrama, se puede observar que los usuarios estan subclasificados en Alumno, Graduado y Profesor. Esta subclasificaci\'on no es muy relevante a esta parte del problema, ya que concierne a las restricciones para las postulaciones de candidato. Como se ver\'a luego, la interfaz de votaci\'on es la que sabe si se trata de un alumno o graduado, o si se trata de un profesor, para saber si puede votar una o dos veces.
+
+Esto lo hicimos de esta forma para seguir una de las principales reglas de diseño en cuanto a que los objetos sean cohesivos. Buscamos tener un usuario que no sepa hacer cosas como votar, o candidatearse o tener otras responsabilidades; sino que pueda responder mensajes muy b\'asicos con pocas responsabilidades.
+
+\subsubsection{urnaElectoral}
+
+La urnaElectoral reifica el concepto de urna que se tendr\'ia en el dominio del problema. La urna es la encargada de llevar los votos de cada una de las votaciones que haya. Una primer idea hab\'ia sido subclasificar la urna dependiendo del claustro a la que pertenezca. Sin embargo, con la busqueda de tener objetos bien cohesivos, nos dimos cuenta que realmente no importa a que claustro pertenezca la urna, sino que simplemente debe guardar los votos de la elecci\'on para la que fue asignada. Esto quiere decir que el sistema problablemente tenga m\'as de una urna, que van a ser una para Alumnos, una para Graaduados y una para Profesores; pero estas urnas van a hacer equivalentes, son todas instancias de la misma clase porque las responsabilidades que tienen son las de ser una urna independientes del claustro. Dicho esto, las responsabilidades de una urna son:
+
+\begin{itemize} 
+\item registrarVotoA:, Este mensaje lo que hace es justamente \emph{meter} un voto en la urna. Dado que lo \'unico que queremos es registrar el voto, la urna solo necesita saber a quien se esta votando.
+\item registrarVotoEnBlanco. Este mensaje deja registrar un voto en blanco. Nos parece que es una buena decisi\'on de diseño desambiguar el voto en blanco respecto del voto v\'alido, para tener conceptos diferentes reificados de forma diferente y que un voto en blanco no sea simplemente un voto a nil de un voto v\'alido.
+\item votosEnBlanco. Es el mensaje que representar\'ia abrir la urna y poder contar los votos en blanco que hubo.
+\item votosValidos. Es un mensaje que nos devuelve una lista de candidatos junto con la cantidad de votos que tuvieron durante la elecci\'on.
+\end{itemize}
+
+
+
+
+
+
+
+%secuencia
+
+%objeto
+
+
+
+\subsection{Clausura del acto electoral}
+
