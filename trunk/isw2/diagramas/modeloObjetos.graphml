@@ -1,538 +1,571 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:y="http://www.yworks.com/xml/graphml" xmlns:yed="http://www.yworks.com/xml/yed/3" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd">
-  <!--Created by yFiles for Java 2.8-->
-  <key for="graphml" id="d0" yfiles.type="resources"/>
-  <key for="port" id="d1" yfiles.type="portgraphics"/>
-  <key for="port" id="d2" yfiles.type="portgeometry"/>
-  <key for="port" id="d3" yfiles.type="portuserdata"/>
-  <key attr.name="url" attr.type="string" for="node" id="d4"/>
-  <key attr.name="description" attr.type="string" for="node" id="d5"/>
-  <key for="node" id="d6" yfiles.type="nodegraphics"/>
-  <key attr.name="Description" attr.type="string" for="graph" id="d7"/>
-  <key attr.name="url" attr.type="string" for="edge" id="d8"/>
-  <key attr.name="description" attr.type="string" for="edge" id="d9"/>
-  <key for="edge" id="d10" yfiles.type="edgegraphics"/>
-  <graph edgedefault="directed" id="G">
-    <data key="d7"/>
-    <node id="n0">
-      <data key="d4"/>
-      <data key="d5"><![CDATA[UMLClass]]></data>
-      <data key="d6">
-        <y:UMLClassNode>
-          <y:Geometry height="99.0" width="130.0" x="608.5" y="372.76939999999985"/>
-          <y:Fill color="#FFCC00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="58.818359375" x="35.5908203125" y="3.0">usuario</y:NodeLabel>
-          <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel/>
-            <y:MethodLabel>+DNI
+<!--Created by yFiles for Java 2.8-->
+<key attr.name="url" attr.type="string" for="edge" id="d0"/>
+<key attr.name="description" attr.type="string" for="edge" id="d1"/>
+<key for="edge" id="d2" yfiles.type="edgegraphics"/>
+<key attr.name="Description" attr.type="string" for="graph" id="d3"/>
+<key for="graphml" id="d4" yfiles.type="resources"/>
+<key for="port" id="d5" yfiles.type="portgraphics"/>
+<key for="port" id="d6" yfiles.type="portgeometry"/>
+<key for="port" id="d7" yfiles.type="portuserdata"/>
+<key attr.name="url" attr.type="string" for="node" id="d8"/>
+<key attr.name="description" attr.type="string" for="node" id="d9"/>
+<key for="node" id="d10" yfiles.type="nodegraphics"/>
+<graph edgedefault="directed" id="G">
+<data key="d3"></data>
+<node id="n0">
+<data key="d8"></data>
+<data key="d9"><![CDATA[UMLClass]]></data>
+<data key="d10">
+<y:UMLClassNode>
+<y:Geometry height="99.0" width="130.0" x="738.4797570850202" y="203.59298869984377"/>
+<y:Fill color="#CCCCCC" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="3.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.158203125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="54.50830078125" x="37.745849609375" y="3.0">usuario</y:NodeLabel>
+<y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
+<y:AttributeLabel></y:AttributeLabel>
+<y:MethodLabel>+DNI
 +nombre
 +registrarQueVoto
 +yaVotaste</y:MethodLabel>
-          </y:UML>
-        </y:UMLClassNode>
-      </data>
-    </node>
-    <node id="n1">
-      <data key="d4"/>
-      <data key="d5"><![CDATA[UMLClass]]></data>
-      <data key="d6">
-        <y:UMLClassNode>
-          <y:Geometry height="80.0" width="100.0" x="485.5" y="530.5898"/>
-          <y:Fill color="#FFCC00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="58.21533203125" x="20.892333984375" y="3.0">alumno</y:NodeLabel>
-          <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel/>
-            <y:MethodLabel>+LU
+</y:UML>
+</y:UMLClassNode>
+</data>
+</node>
+<node id="n1">
+<data key="d8"></data>
+<data key="d9"><![CDATA[UMLClass]]></data>
+<data key="d10">
+<y:UMLClassNode>
+<y:Geometry height="80.0" width="100.0" x="615.4797570850202" y="361.4133886998439"/>
+<y:Fill color="#CCCCCC" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="3.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.158203125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="53.8544921875" x="23.07275390625" y="3.0">alumno</y:NodeLabel>
+<y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
+<y:AttributeLabel></y:AttributeLabel>
+<y:MethodLabel>+LU
 +materias
 </y:MethodLabel>
-          </y:UML>
-        </y:UMLClassNode>
-      </data>
-    </node>
-    <node id="n2">
-      <data key="d4"/>
-      <data key="d5"><![CDATA[UMLClass]]></data>
-      <data key="d6">
-        <y:UMLClassNode>
-          <y:Geometry height="80.0" width="112.0" x="617.5" y="530.5898"/>
-          <y:Fill color="#FFCC00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="74.05908203125" x="18.970458984375" y="3.0">graduado</y:NodeLabel>
-          <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel/>
-            <y:MethodLabel>+fechaDeEgreso
+</y:UML>
+</y:UMLClassNode>
+</data>
+</node>
+<node id="n2">
+<data key="d8"></data>
+<data key="d9"><![CDATA[UMLClass]]></data>
+<data key="d10">
+<y:UMLClassNode>
+<y:Geometry height="80.0" width="112.0" x="747.4797570850202" y="361.4133886998439"/>
+<y:Fill color="#CCCCCC" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="3.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.158203125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="67.83837890625" x="22.080810546875" y="3.0">graduado</y:NodeLabel>
+<y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
+<y:AttributeLabel></y:AttributeLabel>
+<y:MethodLabel>+fechaDeEgreso
 +mesesDocente</y:MethodLabel>
-          </y:UML>
-        </y:UMLClassNode>
-      </data>
-    </node>
-    <node id="n3">
-      <data key="d4"/>
-      <data key="d5"><![CDATA[UMLClass]]></data>
-      <data key="d6">
-        <y:UMLClassNode>
-          <y:Geometry height="80.0" width="112.0" x="761.5" y="530.5898"/>
-          <y:Fill color="#FFCC00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="63.0458984375" x="24.47705078125" y="3.0">docente</y:NodeLabel>
-          <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel/>
-            <y:MethodLabel>+mesesDocente</y:MethodLabel>
-          </y:UML>
-        </y:UMLClassNode>
-      </data>
-    </node>
-    <node id="n4">
-      <data key="d4"/>
-      <data key="d5"><![CDATA[UMLClass]]></data>
-      <data key="d6">
-        <y:UMLClassNode>
-          <y:Geometry height="61.0" width="167.0" x="120.05760000000032" y="255.60919999999976"/>
-          <y:Fill color="#FFCC00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="110.02490234375" x="28.487548828125" y="3.0">candidateador</y:NodeLabel>
-          <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel/>
-            <y:MethodLabel>+candidatear: unUsuario</y:MethodLabel>
-          </y:UML>
-        </y:UMLClassNode>
-      </data>
-    </node>
-    <node id="n5">
-      <data key="d4"/>
-      <data key="d5"><![CDATA[UMLClass]]></data>
-      <data key="d6">
-        <y:UMLClassNode>
-          <y:Geometry height="85.0" width="234.0" x="91.05760000000032" y="470.92959999999994"/>
-          <y:Fill color="#FFCC00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="188.8310546875" x="22.58447265625" y="25.96875">chequeadorRestricciones</y:NodeLabel>
-          <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="interface" use3DEffect="true">
-            <y:AttributeLabel/>
-            <y:MethodLabel>+chequearRestricciones: unUsuario</y:MethodLabel>
-          </y:UML>
-        </y:UMLClassNode>
-      </data>
-    </node>
-    <node id="n6">
-      <data key="d4"/>
-      <data key="d5"><![CDATA[UMLClass]]></data>
-      <data key="d6">
-        <y:UMLClassNode>
-          <y:Geometry height="61.0" width="226.0" x="-151.94239999999968" y="674.4295999999999"/>
-          <y:Fill color="#FFCC00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="58.21533203125" x="83.892333984375" y="3.0">alumno</y:NodeLabel>
-          <y:UML clipContent="false" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel/>
-            <y:MethodLabel>+chequearRestricciones: unUsuario</y:MethodLabel>
-          </y:UML>
-        </y:UMLClassNode>
-      </data>
-    </node>
-    <node id="n7">
-      <data key="d4"/>
-      <data key="d5"><![CDATA[UMLClass]]></data>
-      <data key="d6">
-        <y:UMLClassNode>
-          <y:Geometry height="61.0" width="226.0" x="95.05760000000032" y="674.4295999999999"/>
-          <y:Fill color="#FFCC00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="74.05908203125" x="75.970458984375" y="3.0">graduado</y:NodeLabel>
-          <y:UML clipContent="false" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel/>
-            <y:MethodLabel>+chequearRestricciones: unUsuario</y:MethodLabel>
-          </y:UML>
-        </y:UMLClassNode>
-      </data>
-    </node>
-    <node id="n8">
-      <data key="d4"/>
-      <data key="d5"><![CDATA[UMLClass]]></data>
-      <data key="d6">
-        <y:UMLClassNode>
-          <y:Geometry height="61.0" width="226.0" x="342.0576000000003" y="674.4295999999999"/>
-          <y:Fill color="#FFCC00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="63.0458984375" x="81.47705078125" y="3.0">docente</y:NodeLabel>
-          <y:UML clipContent="false" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel/>
-            <y:MethodLabel>+chequearRestricciones: unUsuario</y:MethodLabel>
-          </y:UML>
-        </y:UMLClassNode>
-      </data>
-    </node>
-    <node id="n9">
-      <data key="d4"/>
-      <data key="d5"><![CDATA[UMLClass]]></data>
-      <data key="d6">
-        <y:UMLClassNode>
-          <y:Geometry height="128.0" width="234.0" x="1106.25" y="301.10919999999976"/>
-          <y:Fill color="#FFCC00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="107.517578125" x="63.2412109375" y="3.0">mesaElectoral</y:NodeLabel>
-          <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel/>
-            <y:MethodLabel>+yo: unUsuario votoA: unCandidato
-+yoVotoEnBlanco: unUsuario
-+yoVotoAnulado: unUsuario
+</y:UML>
+</y:UMLClassNode>
+</data>
+</node>
+<node id="n3">
+<data key="d8"></data>
+<data key="d9"><![CDATA[UMLClass]]></data>
+<data key="d10">
+<y:UMLClassNode>
+<y:Geometry height="80.0" width="112.0" x="891.4797570850202" y="361.4133886998439"/>
+<y:Fill color="#CCCCCC" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="3.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.158203125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="76.36328125" x="17.818359375" y="3.0">profesores</y:NodeLabel>
+<y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
+<y:AttributeLabel></y:AttributeLabel>
+<y:MethodLabel>+mesesDocente</y:MethodLabel>
+</y:UML>
+</y:UMLClassNode>
+</data>
+</node>
+<node id="n4">
+<data key="d8"></data>
+<data key="d9"><![CDATA[UMLClass]]></data>
+<data key="d10">
+<y:UMLClassNode>
+<y:Geometry height="61.0" width="167.0" x="268.61373861336006" y="213.2414115384613"/>
+<y:Fill color="#CCCCCC" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="3.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.158203125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="99.55126953125" x="33.724365234375" y="3.0">candidateador</y:NodeLabel>
+<y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
+<y:AttributeLabel></y:AttributeLabel>
+<y:MethodLabel>+candidatear: unUsuario</y:MethodLabel>
+</y:UML>
+</y:UMLClassNode>
+</data>
+</node>
+<node id="n5">
+<data key="d8"></data>
+<data key="d9"><![CDATA[UMLClass]]></data>
+<data key="d10">
+<y:UMLClassNode>
+<y:Geometry height="85.0" width="234.0" x="239.61373861336006" y="530.6091999999999"/>
+<y:Fill color="#CCCCCC" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="3.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.158203125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="171.52734375" x="31.236328125" y="25.962890625">chequeadorRestricciones</y:NodeLabel>
+<y:UML clipContent="true" constraint="" omitDetails="false" stereotype="interface" use3DEffect="true">
+<y:AttributeLabel></y:AttributeLabel>
+<y:MethodLabel>+chequearRestricciones: unUsuario</y:MethodLabel>
+</y:UML>
+</y:UMLClassNode>
+</data>
+</node>
+<node id="n6">
+<data key="d8"></data>
+<data key="d9"><![CDATA[UMLClass]]></data>
+<data key="d10">
+<y:UMLClassNode>
+<y:Geometry height="61.0" width="226.0" x="-3.3862613866399442" y="760.3749441295546"/>
+<y:Fill color="#CCCCCC" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="3.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.158203125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="53.8544921875" x="86.07275390625" y="3.0">alumno</y:NodeLabel>
+<y:UML clipContent="false" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
+<y:AttributeLabel></y:AttributeLabel>
+<y:MethodLabel>+chequearRestricciones: unUsuario</y:MethodLabel>
+</y:UML>
+</y:UMLClassNode>
+</data>
+</node>
+<node id="n7">
+<data key="d8"></data>
+<data key="d9"><![CDATA[UMLClass]]></data>
+<data key="d10">
+<y:UMLClassNode>
+<y:Geometry height="61.0" width="226.0" x="243.61373861336006" y="760.3749441295546"/>
+<y:Fill color="#CCCCCC" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="3.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.158203125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="67.83837890625" x="79.080810546875" y="3.0">graduado</y:NodeLabel>
+<y:UML clipContent="false" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
+<y:AttributeLabel></y:AttributeLabel>
+<y:MethodLabel>+chequearRestricciones: unUsuario</y:MethodLabel>
+</y:UML>
+</y:UMLClassNode>
+</data>
+</node>
+<node id="n8">
+<data key="d8"></data>
+<data key="d9"><![CDATA[UMLClass]]></data>
+<data key="d10">
+<y:UMLClassNode>
+<y:Geometry height="61.0" width="226.0" x="490.61373861336006" y="760.3749441295546"/>
+<y:Fill color="#CCCCCC" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="3.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.158203125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="76.36328125" x="74.818359375" y="3.0">profesores</y:NodeLabel>
+<y:UML clipContent="false" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
+<y:AttributeLabel></y:AttributeLabel>
+<y:MethodLabel>+chequearRestricciones: unUsuario</y:MethodLabel>
+</y:UML>
+</y:UMLClassNode>
+</data>
+</node>
+<node id="n9">
+<data key="d8"></data>
+<data key="d9"><![CDATA[UMLClass]]></data>
+<data key="d10">
+<y:UMLClassNode>
+<y:Geometry height="128.0" width="309.73279352226723" x="1171.3457755566803" y="189.09298869984377"/>
+<y:Fill color="#CCCCCC" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="3.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.158203125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="97.13916015625" x="106.29681668300861" y="3.0">mesaElectoral</y:NodeLabel>
+<y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
+<y:AttributeLabel></y:AttributeLabel>
+<y:MethodLabel>+registrarVotoDe: unUsuario A: unDNIDeCandidato
++registrarVotoEnBlancoDe: unUsuario
++registrarVotoAnuladoDe: unUsuario
 +votosEnBlanco
 +votosAnulados
 +votosValidos
 </y:MethodLabel>
-          </y:UML>
-        </y:UMLClassNode>
-      </data>
-    </node>
-    <node id="n10">
-      <data key="d4"/>
-      <data key="d5"><![CDATA[UMLClass]]></data>
-      <data key="d6">
-        <y:UMLClassNode>
-          <y:Geometry height="73.0" width="130.0" x="608.5" y="83.27591641791025"/>
-          <y:Fill color="#FFCC00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="64.14404296875" x="32.927978515625" y="3.0">elección</y:NodeLabel>
-          <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel/>
-            <y:MethodLabel>+iniciarComicio
-+iniciarPostulacion</y:MethodLabel>
-          </y:UML>
-        </y:UMLClassNode>
-      </data>
-    </node>
-    <edge id="e0" source="n1" target="n0">
-      <data key="d8"/>
-      <data key="d9"><![CDATA[UMLinherits]]></data>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="49.476806640625">
-            <y:Point x="535.5" y="508.4102000000001"/>
-            <y:Point x="673.5" y="508.4102000000001"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="white_delta"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="67.0" y="-20.19398701171872"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e1" source="n2" target="n0">
-      <data key="d8"/>
-      <data key="d9"><![CDATA[UMLinherits]]></data>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="49.476806640625"/>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="white_delta"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="2.0" y="-31.399806738281313"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e2" source="n3" target="n0">
-      <data key="d8"/>
-      <data key="d9"><![CDATA[UMLinherits]]></data>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="40.35919999999976">
-            <y:Point x="817.5" y="508.4102000000001"/>
-            <y:Point x="673.5" y="508.4102000000001"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="white_delta"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="-74.0" y="-20.19398701171872"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e3" source="n0" target="n4">
-      <data key="d9"/>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="-57.345771144278615" sy="-13.5" tx="0.0" ty="30.5">
-            <y:Point x="409.85591442786085" y="408.76939999999985"/>
-            <y:Point x="409.85591442786085" y="316.60919999999976"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="thead" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="110.40625" x="-311.3412037109372" y="-112.12895917968774">1 - candidateador</y:EdgeLabel>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e4" source="n4" target="n5">
-      <data key="d9"/>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="4.5" sy="0.0" tx="0.0" ty="0.0"/>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="ttail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="171.2734375" x="1.999998071289383" y="126.23041176757806">1- chequeadorRestricciones</y:EdgeLabel>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e5" source="n7" target="n5">
-      <data key="d8"/>
-      <data key="d9"><![CDATA[UMLinherits]]></data>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="white_delta"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="1.999998071289383" y="-61.22036337890631"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e6" source="n8" target="n5">
-      <data key="d8"/>
-      <data key="d9"><![CDATA[UMLinherits]]></data>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="29.35919999999976">
-            <y:Point x="455.0576000000003" y="635.6091999999999"/>
-            <y:Point x="208.05760000000032" y="635.6091999999999"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="white_delta"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="-125.49998666992155" y="-36.82347822265638"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e7" source="n6" target="n5">
-      <data key="d8"/>
-      <data key="d9"><![CDATA[UMLinherits]]></data>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="38.35919999999976">
-            <y:Point x="-38.94239999999968" y="635.6091999999999"/>
-            <y:Point x="208.05760000000032" y="635.6091999999999"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="white_delta"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="121.50000188598665" y="-36.82347822265638"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e8" source="n0" target="n9">
-      <data key="d9"/>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="57.16020000000009"/>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="ttail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="108.8359375" x="248.7947998046875" y="1.9999908203123482">1 - mesaElectoral</y:EdgeLabel>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e9" source="n10" target="n9">
-      <data key="d9"/>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="-14.0" tx="-108.0" ty="0.0">
-            <y:Point x="1115.25" y="105.77591641791025"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="thead" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="108.30859375" x="266.43536376953125" y="167.2395329467771">1 - mesaAlumnos</y:EdgeLabel>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e10" source="n10" target="n9">
-      <data key="d9"/>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="-20.0" tx="20.0" ty="-59.95268656716405">
-            <y:Point x="1243.25" y="99.77591641791025"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="thead" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="117.830078125" x="384.92584228515625" y="173.2395329467771">1- mesaGraduados</y:EdgeLabel>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e11" source="n10" target="n9">
-      <data key="d9"/>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="-25.68459174714657" tx="42.19148059701524" ty="-53.95268656716405">
-            <y:Point x="1265.4414805970152" y="94.09132467076368"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="ttail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="112.779296875" x="528.9449596009215" y="178.9241261474607">1 - mesaDocentes</y:EdgeLabel>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e12" source="n10" target="n4">
-      <data key="d9"/>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="80.0" ty="0.0">
-            <y:Point x="283.5576000000003" y="119.77591641791025"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.9375" modelName="six_pos" modelPosition="ttail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="110.40625" x="-322.96785166015593" y="93.7707829467771">1 - candidateador
-Alumnos</y:EdgeLabel>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e13" source="n10" target="n4">
-      <data key="d9"/>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="-12.268907563025211" tx="-34.53651741293527" ty="-20.170173507462597">
-            <y:Point x="169.02108258706505" y="107.50700885488504"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.9375" modelName="six_pos" modelPosition="ttail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="110.40625" x="-437.4792225887162" y="106.03968858642554">1 - candidateador
-Graduados</y:EdgeLabel>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e14" source="n10" target="n4">
-      <data key="d9"/>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="-25.071146368995315" tx="-63.53651741293527" ty="-23.220173507462597">
-            <y:Point x="140.02108258706505" y="94.70477004891494"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.9375" modelName="six_pos" modelPosition="thead" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="110.40625" x="-580.8609364559037" y="118.84192705078101">1 - candidateador
-Profesores</y:EdgeLabel>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e15" source="n4" target="n0">
-      <data key="d9"/>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="56.0423999999997" sy="0.0" tx="0.0" ty="6.5">
-            <y:Point x="259.6" y="428.76939999999985"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="ttail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="146.3828125" x="192.39218139648438" y="114.18468320312485">0..* - listaDeCandidatos</y:EdgeLabel>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e16" source="n10" target="n3">
-      <data key="d9"/>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="56.0" sy="0.0" tx="20.0" ty="-29.67313631840807">
-            <y:Point x="729.5" y="330.3462900497511"/>
-            <y:Point x="837.5" y="330.3462900497511"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.9375" modelName="six_pos" modelPosition="ttail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="79.69140625" x="110.0" y="332.27685749511716">0..* - padrón
-Docentes</y:EdgeLabel>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e17" source="n10" target="n2">
-      <data key="d9"/>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="62.929104477611986" sy="27.140747263681646" tx="0.0" ty="0.0">
-            <y:Point x="922.375" y="146.9166636815919"/>
-            <y:Point x="922.375" y="635.6091999999999"/>
-            <y:Point x="673.5" y="635.6091999999999"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.9375" modelName="free" modelPosition="anywhere" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="79.69140625" x="-153.00249992858232" y="468.1855540624513">0..* - padrón
-Graduados</y:EdgeLabel>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e18" source="n10" target="n1">
-      <data key="d9"/>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="20.0" tx="0.0" ty="0.0">
-            <y:Point x="942.375" y="139.77591641791025"/>
-            <y:Point x="942.375" y="654.4295999999999"/>
-            <y:Point x="535.5" y="654.4295999999999"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.9375" modelName="six_pos" modelPosition="thead" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="79.69140625" x="-284.71112060546875" y="480.93889057617184">0..* - padrón
-Alumnos</y:EdgeLabel>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e19" source="n10" target="n8">
-      <data key="d9"/>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="13.140747263681646" tx="0.0" ty="0.0">
-            <y:Point x="952.375" y="132.9166636815919"/>
-            <y:Point x="952.375" y="767.9166636815919"/>
-            <y:Point x="455.0576000000003" y="767.9166636815919"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="ttail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="145.287109375" x="-281.42927744140593" y="612.6379435058593">1 - chequeadorDocente</y:EdgeLabel>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e20" source="n10" target="n7">
-      <data key="d9"/>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="8.140747263681646" tx="0.0" ty="0.0">
-            <y:Point x="962.375" y="127.9166636815919"/>
-            <y:Point x="962.375" y="778.9166636815919"/>
-            <y:Point x="208.05760000000032" y="778.9166636815919"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="ttail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="160.404296875" x="-528.4322071289059" y="617.6379358764648">1 - chequeadorGraduados</y:EdgeLabel>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e21" source="n10" target="n6">
-      <data key="d9"/>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="4.1407472636816465" tx="0.0" ty="0.0">
-            <y:Point x="972.375" y="123.9166636815919"/>
-            <y:Point x="972.375" y="787.9166636815919"/>
-            <y:Point x="-38.94239999999968" y="787.9166636815919"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="ttail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="147.068359375" x="-775.4200000976559" y="621.6379358764648">1 - chequeadorAlumnos</y:EdgeLabel>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-  </graph>
-  <data key="d0">
-    <y:Resources/>
-  </data>
+</y:UML>
+</y:UMLClassNode>
+</data>
+</node>
+<node id="n10">
+<data key="d8"></data>
+<data key="d9"><![CDATA[UMLClass]]></data>
+<data key="d10">
+<y:UMLClassNode>
+<y:Geometry height="162.6356275303644" width="287.8340080971659" x="1041.0097431680163" y="524.5856396761131"/>
+<y:Fill color="#CCCCCC" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="3.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.158203125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="55.5048828125" x="116.16456264233295" y="3.0">comicio</y:NodeLabel>
+<y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
+<y:AttributeLabel></y:AttributeLabel>
+<y:MethodLabel>+iniciarComicioConPadrones: padrones
+	conChequeadoresRestricciones: chequeadores
++iniciarPostulacionConCandidatos: candidatos
++terminarComicio: mesasElectorales</y:MethodLabel>
+</y:UML>
+</y:UMLClassNode>
+</data>
+</node>
+<node id="n11">
+<data key="d8"></data>
+<data key="d9"><![CDATA[UMLClass]]></data>
+<data key="d10">
+<y:UMLClassNode>
+<y:Geometry height="80.0" width="145.37287449392704" x="723.1068825910932" y="56.255592748426665"/>
+<y:Fill color="#CCCCCC" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="3.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.158203125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="71.7294921875" x="36.82169115321352" y="3.0">logueador</y:NodeLabel>
+<y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
+<y:AttributeLabel></y:AttributeLabel>
+<y:MethodLabel>+login: unDNI 
+password: unPassword</y:MethodLabel>
+</y:UML>
+</y:UMLClassNode>
+</data>
+</node>
+<node id="n12">
+<data key="d8"></data>
+<data key="d9"><![CDATA[UMLClass]]></data>
+<data key="d10">
+<y:UMLClassNode>
+<y:Geometry height="116.05425101214576" width="145.37287449392704" x="1112.2403099696355" y="760.3749441295546"/>
+<y:Fill color="#CCCCCC" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="3.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.158203125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="129.37890625" x="7.996984121963521" y="25.962890625">resultadosElección</y:NodeLabel>
+<y:UML clipContent="false" constraint="" omitDetails="false" stereotype="abstracta" use3DEffect="true">
+<y:AttributeLabel></y:AttributeLabel>
+<y:MethodLabel>+candidatos
++posicionesEnConflicto
++votos: unCandidato</y:MethodLabel>
+</y:UML>
+</y:UMLClassNode>
+</data>
+</node>
+<node id="n13">
+<data key="d8"></data>
+<data key="d9"><![CDATA[UMLClass]]></data>
+<data key="d10">
+<y:UMLClassNode>
+<y:Geometry height="75.722525506073" width="155.41983805668008" x="996.8525569331982" y="948.4237215481298"/>
+<y:Fill color="#CCCCCC" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="3.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.158203125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="146.37158203125" x="4.524128012715039" y="3.0">resultadosCompletos</y:NodeLabel>
+<y:UML clipContent="false" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
+<y:AttributeLabel></y:AttributeLabel>
+<y:MethodLabel>+vocales</y:MethodLabel>
+</y:UML>
+</y:UMLClassNode>
+</data>
+</node>
+<node id="n14">
+<data key="d8"></data>
+<data key="d9"><![CDATA[UMLClass]]></data>
+<data key="d10">
+<y:UMLClassNode>
+<y:Geometry height="75.722525506073" width="167.0" x="1217.5810994433198" y="948.4237215481298"/>
+<y:Fill color="#CCCCCC" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="3.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.158203125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="154.54736328125" x="6.226318359375" y="3.0">resultadosConflictivos</y:NodeLabel>
+<y:UML clipContent="false" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
+<y:AttributeLabel></y:AttributeLabel>
+<y:MethodLabel>+resolverConflicto: 
+listaCandidatos</y:MethodLabel>
+</y:UML>
+</y:UMLClassNode>
+</data>
+</node>
+<node id="n15">
+<data key="d8"></data>
+<data key="d9"><![CDATA[UMLClass]]></data>
+<data key="d10">
+<y:UMLClassNode>
+<y:Geometry height="162.6356275303644" width="287.8340080971659" x="674.6963562753036" y="524.5856396761131"/>
+<y:Fill color="#CCCCCC" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="3.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.158203125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="81.93017578125" x="102.95191615795795" y="3.0">postulación</y:NodeLabel>
+<y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
+<y:AttributeLabel></y:AttributeLabel>
+<y:MethodLabel>+iniciarPostulacion: padrones
++terminarPostulación: padrones
++candidatear: unUsuario</y:MethodLabel>
+</y:UML>
+</y:UMLClassNode>
+</data>
+</node>
+<edge id="e0" source="n1" target="n0">
+<data key="d0"></data>
+<data key="d1"><![CDATA[UMLinherits]]></data>
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="0.0" sy="0.0" tx="0.0" ty="49.476806640625">
+<y:Point x="665.4797570850202" y="339.233788699844"/>
+<y:Point x="803.4797570850202" y="339.233788699844"/>
+</y:Path>
+<y:LineStyle color="#000000" type="line" width="1.0"/>
+<y:Arrows source="none" target="white_delta"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="67.0000207568952" y="-20.193976192734112"/>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e1" source="n2" target="n0">
+<data key="d0"></data>
+<data key="d1"><![CDATA[UMLinherits]]></data>
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="0.0" sy="0.0" tx="0.0" ty="49.476806640625"/>
+<y:LineStyle color="#000000" type="line" width="1.0"/>
+<y:Arrows source="none" target="white_delta"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="2.0000207568951964" y="-31.399765401718696"/>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e2" source="n3" target="n0">
+<data key="d0"></data>
+<data key="d1"><![CDATA[UMLinherits]]></data>
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="0.0" sy="0.0" tx="0.0" ty="40.35919999999976">
+<y:Point x="947.4797570850202" y="339.233788699844"/>
+<y:Point x="803.4797570850202" y="339.233788699844"/>
+</y:Path>
+<y:LineStyle color="#000000" type="line" width="1.0"/>
+<y:Arrows source="none" target="white_delta"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="-73.9999792431048" y="-20.193976192734112"/>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e3" source="n0" target="n4">
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="-57.345771144278615" sy="-28.5" tx="69.36996507643963" ty="-19.148422838617535"/>
+<y:LineStyle color="#000000" type="dashed" width="1.0"/>
+<y:Arrows source="standard" target="none"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="shead" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="62.34765625" x="-72.4782507274798" y="-19.962888985703103">&lt;&lt;usa&gt;&gt;</y:EdgeLabel>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e4" source="n4" target="n5">
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="4.5" sy="0.0" tx="0.0" ty="0.0"/>
+<y:LineStyle color="#000000" type="line" width="1.0"/>
+<y:Arrows source="none" target="standard"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="ttail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="167.39453125" x="1.9999995996881808" y="228.263527392578">1- chequeadorRestricciones</y:EdgeLabel>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e5" source="n7" target="n5">
+<data key="d0"></data>
+<data key="d1"><![CDATA[UMLinherits]]></data>
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+<y:LineStyle color="#000000" type="line" width="1.0"/>
+<y:Arrows source="none" target="white_delta"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="1.9999995996881808" y="-74.39244941959782"/>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e6" source="n8" target="n5">
+<data key="d0"></data>
+<data key="d1"><![CDATA[UMLinherits]]></data>
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="0.0" sy="0.0" tx="0.0" ty="29.35919999999976">
+<y:Point x="603.61373861336" y="635.6091999999999"/>
+<y:Point x="356.61373861336006" y="635.6091999999999"/>
+</y:Path>
+<y:LineStyle color="#000000" type="line" width="1.0"/>
+<y:Arrows source="none" target="white_delta"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="-125.4999698827337" y="-122.75084638671888"/>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e7" source="n6" target="n5">
+<data key="d0"></data>
+<data key="d1"><![CDATA[UMLinherits]]></data>
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="0.0" sy="0.0" tx="0.0" ty="38.35919999999976">
+<y:Point x="109.61373861336006" y="635.6091999999999"/>
+<y:Point x="356.61373861336006" y="635.6091999999999"/>
+</y:Path>
+<y:LineStyle color="#000000" type="line" width="1.0"/>
+<y:Arrows source="none" target="white_delta"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="121.49999959968818" y="-122.75084638671888"/>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e8" source="n0" target="n9">
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="0.0" sy="-28.542510121457497" tx="0.0" ty="-28.542510121457497"/>
+<y:LineStyle color="#000000" type="dashed" width="1.0"/>
+<y:Arrows source="standard" target="none"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="62.34765625" x="120.26860128178782" y="2.000002504167526">&lt;&lt;usa&gt;&gt;</y:EdgeLabel>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e9" source="n10" target="n9">
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="59.93927125506116" sy="-39.57248178137627" tx="-81.34615384615381" ty="-36.41880781462328"/>
+<y:LineStyle color="#000000" type="dashed" width="1.0"/>
+<y:Arrows source="none" target="standard"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="thead" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="66.525390625" x="-68.52533895021475" y="-197.32662799937498">&lt;&lt;crea&gt;&gt;</y:EdgeLabel>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e10" source="n15" target="n4">
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="-7.301761051590233" sy="21.402664777328027" tx="-34.53651741293527" ty="-20.170173507462597">
+<y:Point x="811.3115992722963" y="1019.2170947983998"/>
+<y:Point x="-50.27995060728722" y="1019.2170947983998"/>
+<y:Point x="-50.27995060728722" y="223.5712380309987"/>
+</y:Path>
+<y:LineStyle color="#000000" type="dashed" width="1.0"/>
+<y:Arrows source="none" target="standard"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="ttail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="66.525390625" x="-619.3482364842962" y="-461.6792502502513">&lt;&lt;crea&gt;&gt;</y:EdgeLabel>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e11" source="n4" target="n0">
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="15.778432388663646" sy="15.851577161382465" tx="0.0" ty="6.5"/>
+<y:LineStyle color="#000000" type="line" width="1.0"/>
+<y:Arrows source="none" target="standard"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="ttail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="144.900390625" x="147.84724976080145" y="2.0000016392968973">0..* - listaDeCandidatos</y:EdgeLabel>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e12" source="n13" target="n12">
+<data key="d0"></data>
+<data key="d1"><![CDATA[UMLinherits]]></data>
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+<y:Point x="1074.5624759615382" y="915.8515595594899"/>
+<y:Point x="1184.926747216599" y="915.8515595594899"/>
+</y:Path>
+<y:LineStyle color="#000000" type="line" width="1.0"/>
+<y:Arrows source="none" target="white_delta"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="53.182111589068654" y="-30.568606456135058"/>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e13" source="n14" target="n12">
+<data key="d0"></data>
+<data key="d1"><![CDATA[UMLinherits]]></data>
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="0.0" sy="0.0" tx="5.6843418860808015E-14" ty="12.336899345412967">
+<y:Point x="1301.0810994433198" y="915.8515595594899"/>
+<y:Point x="1184.926747216599" y="915.8515595594899"/>
+</y:Path>
+<y:LineStyle color="#000000" type="line" width="1.0"/>
+<y:Arrows source="none" target="white_delta"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="-60.077131357540566" y="-30.568606456135058"/>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e14" source="n14" target="n13">
+<data key="d0"></data>
+<data key="d1"><![CDATA[UMLuses]]></data>
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="0.0" sy="0.0" tx="74.0941781376514" ty="0.0"/>
+<y:LineStyle color="#000000" type="dashed" width="1.0"/>
+<y:Arrows source="none" target="short"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="66.525390625" x="-65.94825278340113" y="2.0000111566350824">&lt;&lt;crea&gt;&gt;</y:EdgeLabel>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e15" source="n10" target="n12">
+<data key="d0"></data>
+<data key="d1"><![CDATA[UMLuses]]></data>
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="-20.0" sy="35.695120065789865" tx="-20.0" ty="-43.8806073384053"/>
+<y:LineStyle color="#000000" type="dashed" width="1.0"/>
+<y:Arrows source="none" target="short"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="thead" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="66.525390625" x="-68.5254012209009" y="45.09357205924209">&lt;&lt;crea&gt;&gt;</y:EdgeLabel>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e16" source="n11" target="n0">
+<data key="d1"/>
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="0.0" sy="0.0" tx="-7.6864372469634645" ty="32.552786234817745"/>
+<y:LineStyle color="#000000" type="line" width="1.0"/>
+<y:Arrows source="none" target="standard"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="82.064453125" x="1.999984877119232" y="24.691517896986795"> 0..* usuarios</y:EdgeLabel>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e17" source="n15" target="n5">
+<data key="d0"></data>
+<data key="d1"><![CDATA[UMLuses]]></data>
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="-143.89174790886923" sy="-29.97385344129549" tx="0.0" ty="0.0">
+<y:Point x="521.3294179655863" y="575.9295999999999"/>
+</y:Path>
+<y:LineStyle color="#000000" type="dashed" width="1.0"/>
+<y:Arrows source="none" target="short"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="thead" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="62.34765625" x="-203.82389290193305" y="-20.82709250669575">&lt;&lt;usa&gt;&gt;</y:EdgeLabel>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e18" source="n10" target="n0">
+<data key="d0"></data>
+<data key="d1"><![CDATA[UMLuses]]></data>
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="-117.52340587044546" sy="11.969158527328432" tx="64.96824645748939" ty="18.463943403114627">
+<y:Point x="1067.4033413461539" y="271.5569321029584"/>
+</y:Path>
+<y:LineStyle color="#000000" type="dashed" width="1.0"/>
+<y:Arrows source="none" target="short"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="62.34765625" x="2.0000210336538657" y="-140.04461987218298">&lt;&lt;usa&gt;&gt;</y:EdgeLabel>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e19" source="n15" target="n10">
+<data key="d0"></data>
+<data key="d1"><![CDATA[UMLuses]]></data>
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="-50.40485829959505" sy="-64.48564550607261" tx="7.464823160950118" ty="-64.48564550607261"/>
+<y:LineStyle color="#000000" type="dashed" width="1.0"/>
+<y:Arrows source="none" target="short"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="thead" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="66.525390625" x="5.993808653055339" y="-19.962868334308496">&lt;&lt;crea&gt;&gt;</y:EdgeLabel>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+</graph>
+<data key="d4">
+<y:Resources/>
+</data>
 </graphml>
