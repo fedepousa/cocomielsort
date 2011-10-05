@@ -34,6 +34,54 @@ Luego de resolver la necesidad de utilizar interfaces para poder interactuar ent
 
 \subsection{Logging}
 
+En esta secci\'on se presenta todo lo referente al loggin al sistema. Al comenzar el diseño del tp, esta cuesti\'on no fue tomada como esencial ya que no era una de las funcionalidades b\'asicas a tener en cuenta en este sprint. Sin embargo, a medida que se fue desarrollando el diseño de todo el sistema, fue emergiendo la necesidad de explicar el modulo de logging, ya que resuelve cuestiones importantes para las dem\'as funcionalidades del sistema.
+
+A continuaci\'on se presenta la parte del diagrama de clases que se refiere al logging para poder explicar de forma m\'as detallada las responsabilidades de cada clase y las reglas de diseño que nos llevaron a realizar el mismo.
+
+ACA va el diagrama de clases.
+
+
+\subsubsection{interfazLogueador}
+
+La interfaz del logueador es un objeto que representa cual va a ser la interacci\'on del usuario real cuando quiera loguearse al sistema. Como se ver\'a en la explicaci\'on del logueador, este tiene ciertas funcionalidades e informaci\'on que no queremos que sea accesible ni manejable desde el exterior. Es por esto que se decidi\'o utilizar una interfaz de logueador con la siguiente responsabilidad.
+
+\begin{itemize}
+\item login: password:. Este mensaje contiene la \'unica responsabilidad de la interfaz de logueador, que es permitirle al usuario real loguearse en el sistema.
+\end{itemize}
+
+La principal idea de esta interfaz se basa en las reglas de diseño vistas durante las pr\'acticas de la materia que nos indica que es un buena decisi\'on poner una interfaz para poder interactuar con cosas interiores al modelo de una forma controlada. De esta forma un usuario real solamente podr\'a acceder a la funcionalidad de logging y no podr\'a acceder a otra informaci\'on interesante que pueda tener el modelo interno de datos. 
+
+\subsubsection{Logueador}
+
+El logueador es un objeto que tendra como responsabilidad manejar todo lo pertinente al ingreso al sistema de una persona. Si bien su responsabilidad principal es el mensaje de logging, maneja otras informaciones necesarias para el loggin como saber en que etapa de las elecciones estamos. Estas son cosas que no queremos que el usuario real pueda acceder, por lo cual justifica la necesidad de una interfaz para interactuar con este objeto.
+
+El logueador funciona de la siguiente manera. El objeto sabe que interfaz le corresponde a cada usuario, por lo que el mismo tiene una representaci\'on interna de las asociaciones entre los usuarios del sistema y las interfaz de usuario. Esta representaci\'on se va modificando dependiendo el estado de las elecciones actuales (postulaci\'on, idle, votaci\'on, etc).
+Lo que hace el logueador es entonces, cuando loguea a un usuario, devolver una interfaz de usuario seg\'un la representaci\'on que tenga de la asociaci\'on entre el usuario que quiere loguear y la interfaz que le corresponde. Es decir, si la elecci\'on est\'a en \'epoca de votaci\'on entonces los usuarios del sistema estaran asociados a interfaces de usuario que en realidad son interfaces para votaci\'on. De esta forma, lo que hace el logueador es simplemente devolver la interfaz que esta asociada para que se puede interactuar con el sistema, por ejemplo para votar, mediante esta interfaz que es nuestra fachada para interactuar con el sistema interno.
+
+El logueador resuelve esta situaci\'on mediante los siguientes mensajes:
+
+\begin{itemize}
+\item login: password:. Es el mensaje esencial de un logueador que es justamente su funci\'on principal, la de loguear. Este mensaje va a ser utilizado desde la interfaz de logueador que es la \'unica manera que tiene un usuario real para hablar.
+\item actualizarOpcionesDisponibles:. Este mensaje es el que permite asociar a los usuarios con las diferentes interfaces disponibles para interactuar con el sistema. De esta manera, los usuarios siempre tendr\'an una interfaz de usuario asociada, pero al utilizar este mensaje, esas interfaces podr\'an cambiar, asociandose con la interfaz necesar\'ia para la \'epoca de la elecci\'on pertinente. Entonces, a partir del uso de este mensaje, cuando los usuarios se logueen, podran interactuar con VOX mediante la interfaz que les corresponda con ese per\'iodo de las elecciones. Entonces si utilizamos este mensaje para asociar a los usuarios con una interfaz de postulaci\'on, lo que estaremos logrando es que el usuario cuando se loguee solo puede interactuar con el sistema mediante una interfaz de postulaci\'on que solo tendr\'a como opci\'on de funcionalidad posible el hecho de candidatearse; ya que por la \'epoca de las elecciones en las que se encuentra el sistema, no se deber\'ia poner hacer otra cosa.
+\end{itemize}
+
+
+\subsubsection{elecci\'on}
+
+En esta funcionalidad en particular, la de loguearse, las responsabilidades de esta clase se basan en manejar los tiempos de las elecciones para saber que se puede hacer con el sistema en este momento. La clase elecci\'on es el principal punto de interacci\'on para un administrador del sistema. Lo cual probablemente inducir\'ia a tener una interfaz para administrador que ser\'a adherida al modelo, en caso de necesitarla, en otra iteraci\'on del presente desarrollo.
+
+Luego, este objeto es responsable de indicar en que etapa de las elecciones esta el sistema, mediante la asignaci\'on de las diferentes interfaces a los usuarios. Los mensajes para cumplir con estas responsabilidades son:
+
+\begin{itemize}
+\item iniciarPostulacion:. Este mensaje se encarga de hablar con el logueador para que ahora todos los usuarios tengan asociada una interfaz para postulaci\'on.
+\item cerrarPostulacion:. Este mensaje sirve para que cuando falten 14 dias para la elecci\'on la postulaci\'on se cierre y ahora los usuarios reales no puedan interactuar con la interfaz para postulaci\'on, sino que solo pueden ver los candidatos.
+\item iniciarComicio: Este mensaje sirve para asociar a los usuarios con las interfaces de votaci\'on de manera que sea posible interactuar con el sistema para poder emitir un voto.
+\item FinalizarComicio: Con este mensaje se da por cerrada una elecci\'on y esto influye en el sistema de loggin por que ahora los usuarios reales solo podr\'an interactuar con una interfaz que lo \'unico que les deja hacer es ver los resultados de la elecci\'on. 
+\end{itemize}
+
+
+
+
 \subsection{Postulaci\'on a candidato}
 
 \subsection{Votaci\'on}
