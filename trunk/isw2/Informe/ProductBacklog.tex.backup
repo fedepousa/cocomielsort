@@ -7,7 +7,7 @@ Las mismas se clasifican seg\'un las diferentes funcionalidades atacadas del sis
 \subsection{Logueo al sistema}
 
 
-\medskip
+\bigskip
 
 \begin{tabular}{|l|}
 \hline
@@ -19,10 +19,13 @@ De forma que: Pueda utilizar las diferentes opciones del mismo, como la votaci\'
 \hline
 \end{tabular}
 
-
-
+\medskip
+Story points: 1
 
 \medskip
+Bussines value: 10
+
+\bigskip
 
 \begin{tabular}{|l|}
 \hline
@@ -34,9 +37,14 @@ De forma que: Nadie pueda candidatearme o votar por mi. \\
 \hline
 \end{tabular}
 
-
+\medskip
+Story points: 1
 
 \medskip
+Bussines value: 10
+
+
+\bigskip
 
 \begin{tabular}{|l|}
 \hline
@@ -48,8 +56,33 @@ De forma que: Nadie pueda utilizar mis datos o mi cuenta.\\
 \hline
 \end{tabular}
 
+\medskip
+Story points: 1
 
 \medskip
+Bussines value: 10
+
+
+\bigskip
+
+\begin{tabular}{|l|}
+\hline
+Como: Usuario\\
+\hline
+Quiero: Poder cambiar mi constrase\~na\\
+\hline
+De forma que: Pueda cambiar la constrase\~na que me dan por defecto.\\
+\hline
+\end{tabular}
+
+\medskip
+Story points: 1
+
+\medskip
+Bussines value: 10
+
+
+\bigskip
 
 
 \subsection{Postularse como candidato}
@@ -64,6 +97,13 @@ De forma que: los usuarios interesados puedan candidatearse \\
 \hline
 \end{tabular}
 
+\medskip
+Story points: 1
+
+\medskip
+Bussines value: 10
+
+\bigskip
 
 \begin{tabular}{|l|}
 \hline
@@ -75,8 +115,14 @@ De forma que: Pueda presentarme en las siguientes elecciones \\
 \hline
 \end{tabular}
 
+\medskip
+Story points: 1
 
 \medskip
+Bussines value: 10
+
+
+\bigskip
 
 \begin{tabular}{|l|}
 \hline
@@ -88,21 +134,33 @@ De forma que: Pueda arrenpetirme de postularme como candidato \\
 \hline
 \end{tabular}
 
+\medskip
+Story points: 1
 
 \medskip
+Bussines value: 10
+
+
+\bigskip
 
 \begin{tabular}{|l|}
 \hline
 Como: Junta electoral\\
 \hline
-Quiero: Que el proceso de postulaci\'ion chequee los requerimientos del postulado\\
+Quiero: Que el proceso de postulaci\'on chequee los requerimientos del postulado\\
 \hline
 De forma que: Solo puedan postularse las personas que cumplan con los requisitos establecidos \\
 \hline
 \end{tabular}
 
+\medskip
+Story points: 1
 
 \medskip
+Bussines value: 10
+
+
+\bigskip
 
 \begin{tabular}{|l|}
 \hline
@@ -114,10 +172,33 @@ De forma que: Los requerimientos puedan ser adaptables \\
 \hline
 \end{tabular}
 
+\medskip
+Story points: 1
 
 \medskip
+Bussines value: 10
+
+\bigskip
 
 \subsection{Emisi\'on de voto}
+
+
+\begin{tabular}{|l|}
+\hline
+Como: Junta electoral\\
+\hline
+Quiero: Poder abrir etapa de votaci\'on\\
+\hline
+De forma que: se termine la etapa de postulaci\'on y comience la votaci\'on de los candidatos\\
+\hline
+\end{tabular}
+
+\medskip
+Story points: 1
+
+\medskip
+Bussines value: 10
+\bigskip
 
 \begin{tabular}{|l|}
 \hline
@@ -129,8 +210,14 @@ De forma que: mi voto quede registrado para la votaci\'on actual.\\
 \hline
 \end{tabular}
 
+\medskip
+Story points: 1
 
 \medskip
+Bussines value: 10
+
+
+\bigskip
 
 \begin{tabular}{|l|}
 \hline
@@ -142,8 +229,14 @@ De forma que: Pueda ir teniendo idea de que porcentaje de empadronados se presen
 \hline
 \end{tabular}
 
+\medskip
+Story points: 1
 
 \medskip
+Bussines value: 10
+
+
+\bigskip
 
 \begin{tabular}{|l|}
 \hline
@@ -157,6 +250,13 @@ De forma que: tenga una forma de demostrar mi participaci\'on en la votaci\'on\\
 
 
 \medskip
+Story points: 1
+
+\medskip
+Bussines value: 10
+
+
+\bigskip
 
 \begin{tabular}{|l|}
 \hline
@@ -164,27 +264,57 @@ Como: Usuario\\
 \hline
 Quiero: Que mi voto sea an\'onimo\\
 \hline
-De forma que:  \\
+De forma que: Nadie se entere de mi voto  \\
 \hline
 \end{tabular}
 
+\medskip
+Story points: 1
 
 \medskip
+Bussines value: 10
+
+\bigskip
 
 \subsection{Finalizaci\'on del comicio}
 
 \begin{tabular}{|l|}
 \hline
-Como: Usuario\\
+Como: Junta electoral\\
 \hline
-Quiero: Poder loguearme al sistema\\
+Quiero: Poder cerrar el per\'iodo de votaci\'on\\
 \hline
-De forma que: Pueda utilizar las diferentes opciones del mismo, como la votaci\'on. \\
+De forma que: se de paso al escrutinio de los votos\\
 \hline
 \end{tabular}
 
+\medskip
+Story points: 1 
 
 \medskip
+Bussines value: 10
+
+
+\bigskip
+
+\begin{tabular}{|l|}
+\hline
+Como: Junta electoral\\
+\hline
+Quiero: que se labre un acta con los resultados\\
+\hline
+De forma que: se obtenga una presentaci\'on formal de los resultados de la votaci\'on \\
+\hline
+\end{tabular}
+
+\medskip
+Story points: 1
+
+\medskip
+Bussines value: 10
+
+
+\bigskip
 
 \begin{tabular}{|l|}
 \hline
@@ -196,15 +326,26 @@ De forma que: Pueda utilizar las diferentes opciones del mismo, como la votaci\'
 \hline
 \end{tabular}
 
+\medskip
+Story points: 1
 
 \medskip
+Bussines value: 10
+
+\bigskip
 
 \begin{tabular}{|l|}
 \hline
-Como: Usuario\\
+Como: Junta Electoral\\
 \hline
-Quiero: Poder loguearme al sistema\\
+Quiero: Ser notificada de los conflictos en la designaci\'on de cargos\\
 \hline
-De forma que: Pueda utilizar las diferentes opciones del mismo, como la votaci\'on. \\
+De forma que: se puedan resolver mediante mecanismos ad hoc \\
 \hline
 \end{tabular}
+
+\medskip
+Story points: 1
+
+\medskip
+Bussines value: 10
