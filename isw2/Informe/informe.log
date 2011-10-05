@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.1.17)  5 OCT 2011 16:32
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.1.17)  5 OCT 2011 16:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -390,7 +390,7 @@ LaTeX Info: Redefining \pageref on input line 23.
 \openout3 = `informe.out'.
 
 \AtBeginShipoutBox=\box34
- (./caratula.tex <logo_dc.jpg, id=51, 215.6055pt x 83.5923pt>
+ (./caratula.tex <logo_dc.jpg, id=79, 215.6055pt x 83.5923pt>
 File: logo_dc.jpg Graphic file (type jpg)
 
 <use logo_dc.jpg>
@@ -407,7 +407,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 13.
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-<logo_uba.jpg, id=52, 225.4824pt x 231.7458pt>
+<logo_uba.jpg, id=80, 225.4824pt x 231.7458pt>
 File: logo_uba.jpg Graphic file (type jpg)
  <use logo_uba.jpg>
 Underfull \hbox (badness 10000) in paragraph at lines 13--13
@@ -426,29 +426,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--13
 (./BurndownCharts.tex) [9] (./DOO.tex
 (/usr/share/texmf-texlive/tex/latex/ucs/data/uni-0.def
 File: uni-0.def 2004/10/17 UCS: Unicode data U+0000..U+00FF
-) [10] [11] [12])
-[13] (./informe.aux) ) 
+) [10] [11] [12] [13]
+[14] [15]
+Overfull \hbox (52.378pt too wide) in paragraph at lines 211--213
+[]\OT1/cmr/m/n/10.95 Tras va-rias co-la-bo-ra-cio-nes pro-duc-to de la fi-na-li
+-za-ci^^Son de los co-mi-cios que no son in-clu^^S^^Pdas, "mesaElectoral.[]v^^S
+^^Pa
+ []
+
+) [16] (./informe.aux) ) 
 Here is how much of TeX's memory you used:
- 7946 strings out of 493911
- 110105 string characters out of 1155272
+ 7971 strings out of 493911
+ 110517 string characters out of 1155272
  200519 words of memory out of 3000000
- 11028 multiletter control sequences out of 15000+50000
+ 11043 multiletter control sequences out of 15000+50000
  11938 words of font info for 44 fonts, out of 3000000 for 9000
  706 hyphenation exceptions out of 8191
  38i,8n,36p,1557b,486s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
-cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/sha
-re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-tex
-live/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/t
-ype1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/a
-msfonts/cm/cmsl10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
-cmss10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmssbx10.pf
-b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/sha
-re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on informe.pdf (13 pages, 547625 bytes).
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
+m/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pf
+b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/s
+hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-
+texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/font
+s/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/publ
+ic/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
+m/cmsl10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss10.pf
+b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/s
+hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-
+texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on informe.pdf (16 pages, 573518 bytes).
 PDF statistics:
- 184 PDF objects out of 1000 (max. 8388607)
- 35 named destinations out of 1000 (max. 500000)
- 107 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 239 PDF objects out of 1000 (max. 8388607)
+ 45 named destinations out of 1000 (max. 500000)
+ 163 words of extra memory for PDF output out of 10000 (max. 10000000)
 
