@@ -7,9 +7,12 @@
 \contentsline {section}{\numberline {2}Sprint Backlog}{5}{section.2}
 \contentsline {section}{\numberline {3}Dise\~{n}o Orientado a Objetos}{5}{section.3}
 \contentsline {subsection}{\numberline {3.1}Logging}{7}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Postulaci\'on a candidato}{7}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Votaci\'on}{7}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Usuario}{7}{subsubsection.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.2}urnaElectoral}{7}{subsubsection.3.3.2}
-\contentsline {subsubsection}{\numberline {3.3.3}interfazParaVotaci\'on}{8}{subsubsection.3.3.3}
-\contentsline {subsection}{\numberline {3.4}Clausura del acto electoral}{8}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.1.1}interfazLogueador}{7}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Logueador}{7}{subsubsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.3}elecci\'on}{8}{subsubsection.3.1.3}
+\contentsline {subsection}{\numberline {3.2}Postulaci\'on a candidato}{8}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Votaci\'on}{8}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Usuario}{8}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}urnaElectoral}{9}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}interfazParaVotaci\'on}{9}{subsubsection.3.3.3}
+\contentsline {subsection}{\numberline {3.4}Clausura del acto electoral}{10}{subsection.3.4}
