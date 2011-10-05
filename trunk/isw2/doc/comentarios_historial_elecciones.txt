@@ -1,0 +1,13 @@
+
+
+
+
+
+\section{Confección de actas electorales y actualización del historial}
+
+
+Al finalizar la elección y unas vez resueltos eventuales conflictos o ambi\"uedades en los resultados electorales es necesario crear un acta. Una instancia de ActaElectoral sólo responde a los mensajes con sus colaboradores internos, sin realizar cómputos. Ésta decisión se tomó debido a que el mensaje de inicialización de instancia es el que contiene la mayor parte de la lógica de implementación, que se ocupa de garantizar que los resultados para cada uno de los claustros estén completos. Otra de las funcionalidades del ActaElectoral es la de registrar la fecha de confección, que será relevante para posteriores consultas.
+
+
+Una vez creada el acta correspondiente, la misma será agregada a una instancia de HistorialElecciones, que guardará los registros históricos. La idea de esta clase es que exista una sola instancia de la misma ya que es deseable que haya un registro único para facilitar futuras consultas. En la prueba de concepto esta clase está implementada de manera que si se interrumpe la ejecución del programa las actas serán perdidas pero en futuras iteracions los registros serán almacenados en algún soporte persistente con tolerancia a fallas, posiblemente mediante redundancia.
+
