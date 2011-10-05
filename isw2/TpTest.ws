@@ -18,14 +18,7 @@ profesor3:= UsuarioProfesor newProfesorConDni: 234234343 mesesDocente: 30.
 profesor4:= UsuarioProfesor newProfesorConDni: 657657236 mesesDocente: 100.
 setProfesores:= Set  new.  setProfesores add: profesor1. setProfesores add: profesor2. setProfesores add: profesor3.  setProfesores add: profesor4.
 
-padrones:= Dictionary new.
-padrones at: 'Alumnos' put: (setAlumnos).
-padrones at: 'Graduados' put: (setGraduados).
-padrones at: 'Profesores' put: (setProfesores).
-
-
-
-
+ 
 
 "Armo chequeadores ---------------------------------------------------------------------------------------------------------------------------------------------------------------------" 
 
@@ -40,37 +33,40 @@ dicChequeadores at: 'Profesores' put: chProf.
 
 
 "Sistema de login ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
-SL := SistemaLogin new.
+eleccion2011:= Eleccion newEleccionPadronAlumno: setAlumnos padronGraduados: setGraduados padronProfesores: setProfesores chequeadorAlumnos: chAlu chequeadorGraduados: chGr chequeadorProfesores: chProf.
+
 
 	"Iniciamos postulacion ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
-	SL iniciarPostulacionConPadron: padrones conChqueadores: dicChequeadores.
-
+	eleccion2011 iniciarPostulacion.
+	
+	"creamos LogueadorInterfaz para q los usaurios se puedan comunicar"
+	interfazLogueador:= LogueadorInterfaz new:  (eleccion2011 logueador).
 
 		"aca deben ir todos los eventos relacionados con la interaccion del sistema en el tiempo de postulacion"
 	
 			"se postula un alumno que se puede candidatear"
-				soyAlumnoConDni123:= SL login: 123 password: ''.
+				soyAlumnoConDni123:=  	interfazLogueador login: 123 password: ''. 
 				soyAlumnoConDni123 candidatearme.
 
 			"se postula un alumno que no se puede candidatear"
-				soyAlumnoConDni789:= SL login: 789 password: ''.
+				soyAlumnoConDni789:=   interfazUsuario login: 789 password: ''.
 				soyAlumnoConDni789 candidatearme.
 
 
 
 	"Iniciamos comicio----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
-	SL iniciarComicioConPadron: padrones.
+	eleccion2011  iniciarComicio.
 
 		"aca deben ir todos los eventos relacionados con la interaccion del sistema en el tiempo que se puede votar	"
 
 			"Un alumno vota"		
-			soyAlumno456:= SL login: 456 password: ''.
+			soyAlumno456:=  interfazUsuario login: 456 password: ''.
 			soyAlumno456 listaCandidatos
 
-			soyAlumno456 votoUnCandidato: 123.  
+			soyAlumno456 votoA:  #(123) copy.  
 
 			"prueba votar otra vez"
-			soyAlumno456 votoUnCandidato: 123.  
+			soyAlumno456 votoA: #(123) copy. 
 
 
 

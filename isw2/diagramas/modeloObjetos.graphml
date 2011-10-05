@@ -42,7 +42,7 @@
           <y:Geometry height="80.0" width="100.0" x="467.8405436066122" y="389.4133886998439"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="3.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="58.21533203125" x="20.892333984375" y="3.0">alumno</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="58.21533203125" x="20.892333984375" y="4.0">alumno</y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel/>
             <y:MethodLabel>+LU
@@ -60,7 +60,7 @@
           <y:Geometry height="80.0" width="112.0" x="599.8405436066122" y="389.4133886998439"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="3.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="74.05908203125" x="18.970458984375" y="3.0">graduado</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="74.05908203125" x="18.970458984375" y="4.0">graduado</y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel/>
             <y:MethodLabel>+fechaDeEgreso
@@ -77,7 +77,7 @@
           <y:Geometry height="80.0" width="112.0" x="743.8405436066122" y="389.4133886998439"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="3.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="66.20068359375" x="22.899658203125" y="3.0">profesor</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="66.20068359375" x="22.899658203125" y="4.0">profesor</y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel/>
             <y:MethodLabel>+mesesDocente</y:MethodLabel>
@@ -93,7 +93,7 @@
           <y:Geometry height="61.0" width="167.0" x="120.97452513495205" y="241.2414115384613"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="3.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="110.02490234375" x="28.487548828125" y="3.0">candidateador</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="110.02490234375" x="28.487548828125" y="4.0">candidateador</y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel/>
             <y:MethodLabel>+candidatear: unUsuario</y:MethodLabel>
@@ -109,7 +109,7 @@
           <y:Geometry height="85.0" width="234.0" x="91.97452513495205" y="558.6091999999999"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="3.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="188.8310546875" x="22.58447265625" y="25.96875">chequeadorRestricciones</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="188.8310546875" x="22.58447265625" y="4.0">chequeadorRestricciones</y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="interface" use3DEffect="true">
             <y:AttributeLabel/>
             <y:MethodLabel>+chequearRestricciones: unUsuario</y:MethodLabel>
@@ -211,7 +211,7 @@ password: unPassword
           <y:Geometry height="103.00000000000006" width="287.8340080971659" x="527.0571427968956" y="571.4125679470263"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="3.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="64.14404296875" x="111.84498256420795" y="3.0">elección</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="64.14404296875" x="111.84498256420795" y="4.0">elección</y:NodeLabel>
           <y:UML clipContent="false" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel/>
             <y:MethodLabel>+iniciarPostulacion
@@ -262,7 +262,7 @@ password: unPassword
           <y:Geometry height="91.0" width="226.0" x="1603.4393556005396" y="118.7582728346955"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="158.958984375" x="33.5205078125" y="3.0">interfazParaVotación</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="158.958984375" x="33.5205078125" y="4.0">interfazParaVotación</y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel/>
             <y:MethodLabel>+votoUnCandidato: unCandidato
@@ -280,7 +280,7 @@ password: unPassword
           <y:Geometry height="91.0" width="226.0" x="2221.060262754825" y="118.7582728346955"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="212.86962890625" x="6.565185546875" y="3.0">interfazParaElecciónCerrada</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="212.86962890625" x="6.565185546875" y="4.0">interfazParaElecciónCerrada</y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel/>
             <y:MethodLabel/>
@@ -296,7 +296,7 @@ password: unPassword
           <y:Geometry height="80.0" width="184.0" x="743.8405436066122" y="-266.83822643700717"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="3.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="139.16064453125" x="22.419677734375" y="3.0">interfazLogueador</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="135.7138671875" x="24.14306640625" y="3.0">logueadorInterfaz</y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel/>
             <y:MethodLabel>+login: unDNI 
@@ -314,7 +314,7 @@ password: unPassword
           <y:Geometry height="166.05425101214576" width="686.372874493927" x="865.2169474759341" y="725.2885428935075"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="3.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="134.10791015625" x="276.1324821688385" y="25.96875">resultadoElección</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="134.10791015625" x="276.1324821688386" y="4.0">resultadoElección</y:NodeLabel>
           <y:UML clipContent="false" constraint="" omitDetails="false" stereotype="abstracta" use3DEffect="true">
             <y:AttributeLabel>+newConEscrutinio: unConteoDeVotos cantidadDeRepresentantes: unaCantidad
 </y:AttributeLabel>
@@ -376,7 +376,7 @@ password: unPassword
           <y:Geometry height="91.0" width="252.50608388388537" x="1918.4758775005073" y="118.7582728346955"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="237.90478515625" x="7.3006493638176835" y="3.0">interfazParaPostulacionCerrada</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="237.90478515625" x="7.3006493638176835" y="4.0">interfazParaPostulacionCerrada</y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel/>
             <y:MethodLabel>+listaCandidatos</y:MethodLabel>
