@@ -1,6 +1,36 @@
 \section{Dise\~{n}o Orientado a Objetos}
 
-Pequeña intro a todo el diseno junto.
+A continuaci\'on se presenta el diseño orientado a objetos de todo el sistema implementado.
+
+Dado que se quiere hacer hincapie en diferentes funcionalidades, se presentar\'a primero el sistema en su totalidad y luego se ir\'a explicando cada una de las partes m\'as importantes.
+
+
+%Aca va el diagrama
+
+
+Antes de pasar a la explicaci\'on de cada una de las funcionalidades, se fundamentaran algunas decisiones de dise\~{n}o a un nivel m\'as alto y no dentro de una funcionalidad en particular.
+
+
+\begin{itemize}
+\item Desacomplamiento de las funcionalidades: El sistema VOX es lo suficientemente chico como para poder implementarlo sin la necesidad de un buen diseño y a\'un as\'i podr\'ia funcionar. Se podr\'ia hacer que existan pocos objetos que tengan muchas responsabilidades distintas sobre el sistema. Por ejemplo, podr\'ia haber un solo objeto que reifique a las elecciones en s\'i y que se encargue de la votaci\'on, de la postulaci\'on de candidatos y de todas las responsabilidades a implementar. Sin embargo, se decidi\'o realizar un dise\~{n}o orientado a objetos que se fundamente sobre las reglas vistas en la materia para obtener una mejor implementaci\'on del sistema. Es por esto que se decidi\'o no tener un objeto muy poco cohesivo, como ser\'ia esta elecci\'on multitarea, sino que dividieron las responsabilidades en diferentes objetos que representen diferentes entes de la realidad. No es lo mismo querer postularse a candidato que querer emitir un voto, por lo que nos pareci\'o interesante tener estas funcionalidades bien desambiguadas. Ademas, esta decisi\'on tambien gana en otro tema muy importante para un buen diseño que es el bajo acomplamiento. Al separar las funcionalidades, el sistema es mucho m\'as tolerante a lo que puede suceder si solo una de estas funcionalidades cambia su comportamiento. En una elecci\'on pr\'oxima, la postulaci\'on a candidatos podr\'ia ser completamente diferente y esto no afectar a todo lo referente a la emisi\'on de un voto, o al sistema de logging.
+
+\item Usuarios reificados. Charlando con los diferentes docentes de la materia, nos resulto interesante reificar el concepto de usuario del sistema. A priori un usuario pod\'ia ser simplemente un identificador, pero nos parecio adecuado reificar este concepto para tener informaci\'on que de otra forma corresponder\'ia a un sistema externo. Reificando el usuario y teniendo, por ejemplo en el caso del Alumno, la cantidad de materias, lo que podemos hacer es tener una sola interacci\'on con un sistema externo al comienzo de un acto electoral y de esa forma ya tener la informaci\'on necesaria en los objetos pertinentes, sin hacer m\'as complejo el dise\~{n}o. De hecho, nos parece que tambi\'en es una buena forma de mostrar la principal caracter\'istica de SCRUM, que es ser una metodolog\'ia iterativa-incremental; al modelarlo de esta forma, se trivializa un poco la interacci\'on con los sistemas externos, dejando esta funcionalidad para un sprint posterior. Por el momento, el modelo soporta el hecho de que al comenzar un acto electoral se cargan los padrones de los usuarios y con esto se obtiene la informaci\'on deseada. Esta forma de ingresar la informaci\'on de los usuarios es la funcionalidad que se podr\'ia incrementar en una iteraci\'on posterior.
+
+
+
+\item Utilizaci\'on de interfaces. En variadas ocasiones se nos presento el problema de como modelar la interacci\'on entre todos los objetos del sistema y el usuario final que se encuentra detr\'as de la pantalla. Existen muchos mensajes que van a ser \emph{lanzados} seg\'un las acciones de un usuario del software en el mundo real. De esta forma, parecer\'ia que la interfaz gr\'afica tiene muchas responsabilidades porque necesita \emph{hablar} con muchos objetos. Por ejemplo para poder votar, parecer\'ia que el usuario del software tiene que hablar directamente con una urna, cuando no queremos eso ya que no es deseado que se pueda interactuar con el modelo interno del sistema. Por otro lado, tampoco es deseado que la interfaz gr\'afica de un software, como podr\'ia ser la pagina web de este sistema, tenga m\'as l\'ogica que simplemente renderizar lo que se le pide.
+
+Es por esto que se decidio implementar una serie de interfaces para poder interactuar con el sistema de forma controlada. De esta manera, lo que sucede es que cuando un usuario del mundo real se loguea al sistema, la interfaz gr\'afica queda \emph{pegada} a una interfaz de uso del sistema, que ser\'a diferente dependiendo en la etapa que se encuentre la elecci\'on. Por ejemplo, si un usuario se loguea cuando la votaci\'on no esta abierta, sino que se estan postulando los candidatos, la interfaz gr\'afica solo tendr\'a comunicaci\'on con la interfazParaPostulaci\'on, la cual solo permitir\'a realizar acciones de postulaci\'on.
+
+Tambi\'en se utiliz\'o una interfaz para el logging que ser\'a explicada cuando se explaye esta funcionalidad en particular.
+
+\item Subclasificaci\'on de las interfaces.
+
+Luego de resolver la necesidad de utilizar interfaces para poder interactuar entre el mundo real y el sistema externo, se vi\'o que se necesitaban diferentes interfaces seg\'un la \'epoca del acto electoral que transcurra, de modo que el sistema tenga un bajo acomplamiento y no haya un solo objeto manejando todo. Dado que se tienen diferentes interfaces, pero que todas representan la misma idea de ser la \emph{cara} del sistema frente al usuario real, nos pareci\'o pertinente realizar una subclasificaci\'on de las interfaces ya que esta idea se condice con el mundo real, en donde esta desambiguada la responsabilidad de efectuar la votaci\'on, la de postularse a candidato y las dem\'as.
+
+
+\end{itemize}
+
 
 \subsection{Logging}
 
@@ -48,12 +78,29 @@ La urnaElectoral reifica el concepto de urna que se tendr\'ia en el dominio del 
 \end{itemize}
 
 
+\subsubsection{interfazParaVotaci\'on}
+
+La interfaz para votaci\'on es el objeto que principalmente maneja el sufragio de un usuario. Representa lo que en el mundo real ser\'ia la autoridad de mesa cuando el votante va a emitir su voto. Desde este punto de vista, la responsabilidad de los objetos de esta clase es manejar el momento del voto en s\'i. Este objeto intenta ser lo m\'as cohesivo posible responsabilizandose solamente por el acto de la votaci\'on, mientras que las dem\'as funcionalidades quedan como responsabilidad de otros objetos. Para lograr encargarse de estas cosas, las instancias de esta clase saben responder los siguientes mensajes:
+
+\begin{itemize}
+\item votarCandidatos:. Este mensaje toma una colecci\'on de candidatos a votar y trata de emitir el voto. Al tratar de emitir el voto, se chequea que el usuario no haya votado, y se chequea que la cantidad de gente que esta queriendo votar sea menor o igual a la m\'axima cantidad de personas que puede votar. Si se puede emitir el voto, entonces esta interfaz es la responsable de comunicarse con la urna para \emph{introducirle} un voto por cada candidato votado, as\'i como tambi\'en se responsabiliza de indicar que el usuario ya vot\'o.
+\item votoEnBlanco. Este mensaje se encuentra para que un usuario tenga la posibilidad de votar en blanco. Nuevamente argumentamos que desde un punto de vista del paradigma de objetos, nos parece bien desambiguar los votos en blanco para que no haya colisi\'on de conceptos del dominio del problema, como nos indica una de las mencionadas reglas de dise\~{n}o.
+\end{itemize}
 
 
 
 
+\bigskip
+
+Si bien el diagrama de clases, m\'as la explicaci\'on del mismo, nos da una idea aproximada de como interact\'uan los objetos entre s\'i, presentaremos a continuaci\'on un diagrama de secuencia que indica como ser\'ia una traza posible de las interacciones din\'amicas entre diferentes objetos involucrados en el proceso de votaci\'on.
 
 %secuencia
+
+\bigskip
+
+Por \'ultimo, nos parece interesante mostrar un diagrama de instancias que resalte como ser\'ia la relaci\'on de conocimiento entre diferentes objetos en el transcurso de una votaci\'on.
+
+En este caso se presenta una caso donde un Alumno, un Graduado y un Profesor quieren emitir su voto.
 
 %objeto
 
