@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:y="http://www.yworks.com/xml/graphml" xmlns:yed="http://www.yworks.com/xml/yed/3" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd">
-  <!--Created by yFiles for Java 2.8-->
+  <!--Created by yFiles for Java HEAD-Current-->
   <key for="graphml" id="d0" yfiles.type="resources"/>
   <key for="port" id="d1" yfiles.type="portgraphics"/>
   <key for="port" id="d2" yfiles.type="portgeometry"/>
@@ -173,7 +173,7 @@
           <y:Geometry height="128.0" width="309.73279352226723" x="1023.7065620782723" y="217.09298869984377"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="3.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="107.517578125" x="101.10760769863361" y="3.0">mesaElectoral</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="94.822265625" x="107.45526394863361" y="3.0">UrnaElctoral</y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel/>
             <y:MethodLabel>+registrarVotoA: unDNIDeCandidato
@@ -749,7 +749,6 @@ password: unPassword
       </data>
     </edge>
     <edge id="e27" source="n14" target="n2">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="15.133603238866385" ty="0.0"/>
@@ -761,7 +760,6 @@ password: unPassword
       </data>
     </edge>
     <edge id="e28" source="n14" target="n1">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-113.94992976947856" sy="-45.453672469119624" tx="39.18367346938783" ty="0.0"/>
@@ -773,7 +771,6 @@ password: unPassword
       </data>
     </edge>
     <edge id="e29" source="n14" target="n3">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="128.86639676113361" sy="0.0" tx="0.0" ty="0.0"/>
@@ -785,7 +782,6 @@ password: unPassword
       </data>
     </edge>
     <edge id="e30" source="n17" target="n0">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="32.83471586514827" tx="0.0" ty="0.0">
