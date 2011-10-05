@@ -4,9 +4,16 @@
 \BOOKMARK [1][-]{section.4}{Burndown Charts}{}
 \BOOKMARK [1][-]{section.5}{Dise\361o Orientado a Objetos}{}
 \BOOKMARK [2][-]{subsection.5.1}{Logging}{section.5}
+\BOOKMARK [3][-]{subsubsection.5.1.1}{interfazLogueador}{subsection.5.1}
+\BOOKMARK [3][-]{subsubsection.5.1.2}{Logueador}{subsection.5.1}
+\BOOKMARK [3][-]{subsubsection.5.1.3}{elecci\363n}{subsection.5.1}
 \BOOKMARK [2][-]{subsection.5.2}{Postulaci\363n a candidato}{section.5}
 \BOOKMARK [2][-]{subsection.5.3}{Votaci\363n}{section.5}
 \BOOKMARK [3][-]{subsubsection.5.3.1}{Usuario}{subsection.5.3}
 \BOOKMARK [3][-]{subsubsection.5.3.2}{urnaElectoral}{subsection.5.3}
 \BOOKMARK [3][-]{subsubsection.5.3.3}{interfazParaVotaci\363n}{subsection.5.3}
 \BOOKMARK [2][-]{subsection.5.4}{Clausura del acto electoral}{section.5}
+\BOOKMARK [3][-]{subsubsection.5.4.1}{ResultadoEleccion}{subsection.5.4}
+\BOOKMARK [3][-]{subsubsection.5.4.2}{ResultadoCompleto}{subsection.5.4}
+\BOOKMARK [3][-]{subsubsection.5.4.3}{ResultadoConflictivo}{subsection.5.4}
+\BOOKMARK [3][-]{subsubsection.5.4.4}{EleccionConflictivaException}{subsection.5.4}

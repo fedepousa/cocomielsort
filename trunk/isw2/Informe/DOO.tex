@@ -156,3 +156,70 @@ En este caso se presenta una caso donde un Alumno, un Graduado y un Profesor qui
 
 \subsection{Clausura del acto electoral}
 
+En esta secci\'on, se mostrar\'a como se atac\'o el diseño correspondiente al cierre del acto electoral, en el cual se tienen que resolver algunas situaciones como la generaci\'on de actas y la resoluci\'on de los conflictos.
+
+A continuaci\'on se reproduce el sector del diagrama de clases correspondiente a la clausura del acto electoral.
+
+
+ACA va el diagrama.
+
+
+
+Lo que se busca en esta simple jerarquía es reificar los distintos posibles resultados de una votación correspondiente a un claustro. Uno de los objetivos al diseñar este módulo fue permitir extender fácilmente la lógica de Vox agregándo resolución automática de conflictos a las funcionalidades provistas.
+
+La implementación entregada como prueba de concepto permite agregar resolución a un tipo de conflicto en particular sin modificar en absoluto el código existente. Esto se puede realizar agregando una subclase de ResultadoEleccion que devuelva una instancia de True al mensaje esteResultado?conEscrutinio: cantidadDeRepresentantes: . La manera en la que lo implementamos fue utilizando una ligera modificación del patrón Factory Method, cuya implementación fue mostrada en las clases teóricas como ejemplo de un idiom de Smalltalk. 
+
+Por mencionar un ejemplo, se podrían resolver automáticamente los conflictos de empate sin modificar el comportamiento en los casos de falta de candidatos, siendo conflictos de empate en los que ocurre un empate de votos entre dos candidatos y no es posible distinguir cuál de los dos debe ser representante y cuál suplente.
+
+\subsubsection{ResultadoEleccion}
+
+
+La clase ResultadoEleccion representa el resultado de una elección y como tal no existe una instancia concreta del mismo, es por eso que resulta una clase abstracta. 
+
+\subsubsection{ResultadoCompleto}
+La clase ResultadoCompleto por su parte representa el resultado de una elección en la que se pudo determinar sin ambigüedades cuáles serán los representantes y cuáles los suplentes, ya sea debido a que la misma no existió desde un principio o porque la misma fue resuelta ya sea por la junta electoral o eventualmente por algún algoritmo incorporado a Vox.
+
+
+\subsubsection{ResultadoConflictivo}
+Por último, la clase ResultadoConflictivo representa el resultado de una elección a partir del cual no puede automáticamente deducirse qué candidatos deberían ser representantes y cuáles suplentes. Esta última admite la resolución manual del conflicto ingresando una lista de representantes y de suplentes. No se aplican restricciones sobre la lista de representantes y suplentes, excepto que la longitud de la lista de representantes debe ser exactamente la correspondiente a la elección.
+
+
+
+
+Se está suponiendo que el único eje de cambio en la resolución automática de conflictos es respecto del tipo de conflictos y no de los claustros. La razón para tal suposición es que se cree que tal resolución deberá ser lo más objetiva posible y por lo tanto recurrirá a métodos estocásticos en el caso de empate, por ejemplo, o incluirá automáticamente como representantes incluso a aquellos candidatos que no hayan obtenido el 10 porciento de votos usualmente requerido.
+
+Pese a esta suposición, es importante mencionar que el diseño podría modificarse ligeramente para permitir la inclusión algoritmos de resolución automática de conflictos diferentes para cada claustro. Una buena razón para no hacerlo inicialmente y sacrificar dicha cualidad es que se prefiere priorizar la cohesión de la clase ResultadoEleccion y sus subclases, manteniendo un único eje de cambio.
+
+
+\subsubsection{EleccionConflictivaException}
+EleccionConflictivaException es una excepción que será lanzada si se intenta se manda el mensaje representantes o suplentes a una instancia de la clase ResultadoConflictivo. De esta manera se permite manejar este tipo de situaciones solicitando la intervención de un usuario administrador, que actuará en nombre de la junta electoral, indicando una resolución manual al conflicto surgido. Cualquier instancia de esta clase responde al mensaje parameter con la instancia de ResultadoConflictivo que lanzó la excepción.
+
+
+
+Para la mejor comprensión de la implementación entregada es importante comentar que la semántica de ResultadoEleccion $>>$ newConEscrutinio: cantidadDeRepresentantes:  es crear una instancia de una de sus subclases cuando dicha subclase es la única que responde afirmativamente al mensaje "esteResultado?conEscrutinio: cantidadDeRepresentantes: ". De no existir una subclase que responda afirmativamente a dicho mensaje se retorna una instancia de ResultadoConflictivo. Por esta razón ResultadoConflictivo responde siempre negativamente a dicho mensaje. Si existieran varias subclases de ResultadoEleccion que fueran compatibles con los parámetros, se lanza otra excepción, que no es incluída en los diagramas de clases porque consideramos que no es esencial al modelo, sino accidental y debida a la implementación de la prueba de concepto.
+
+
+
+Explicación del diagrama de secuencia
+
+
+
+
+El siguiente diagrama de secuencia muestra las colaboraciones al darse por finalizados los comicios. En este caso no surgieron ambigüedades en cuanto a los resultados. 
+
+
+Tras varias colaboraciones producto de la finalización de los comicios que no son incluídas, "mesaElectoral" envía el mensaje 
+"newConEscrutinio: conteoDeVotos cantidadDeRepresentantes: cantidad" a la clase ResultadoEleccion, la cual se envía a sí misma el mensaje "identificarSubclasesParaEscrutinio: conteoDeVotos cantidadDeRepresentantes: cantidad". 
+
+Dicho envío de mensaje genera la ejecución de un nuevo método por parte del mismo objeto (en el grafiquito tiene que aparecer otra cajita, como cuando Nicolás mostró el patrón visitor), en el cual se envía a las subclases de ResultadoEleccion el mensaje "esteResultado?conEscrutinio: conteoDeVotos cantidadDeRepresentantes: cantidad", al cual ResultadoCompleto responde afirmativamente y ResultadoConflictivo responde negativamente.
+
+Tras esto se termina la ejecución del segundo método de ResultadoEleccion, que retorna una lista que contiene únicamente a la clase ResultadoCompleto y devuelve de esta manera la ejecución al primer método invocado.
+
+Posteriormente se llama al método ResultadoCompleto $>>$ newConEscrutinio: conteoDeVotos cantidadDeRepresentantes: cantidad
+que realizar varios cómputos, para generar las listas de representantes y suplentes, las cuales incluye como parámetros del mensaje "newConEscturinio: conteoDeVotos Representantes: representantes Suplentes: suplentes" que se envía a sí misma.
+
+Esto genera la ejecución de un segundo método de ResultadoCompleto, en la cual se crea una instancia concreta, "resultadoEleccionEstudiantes2011", a la cuál se envía el mensaje "initializeEscrutinio: conteoDeVotos Representantes: representantes Suplentes: representantes". La respuesta a este mensaje es la "resultadoEleccionEstudiantes2011" en sí misma, así como también es la respuesta a todos los mensajes todavía siendo procesados.
+
+
+Posteriormente "mesaElectoralEstudiantes" envía a "resultadoEleccionEstudiantes2011" el mensaje representantes, al cuál responde con la lista que contiene a los usuarios correspondientes a Federico Pousa y Facundo Carrillo.
+
