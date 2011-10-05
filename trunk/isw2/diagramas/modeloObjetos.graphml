@@ -379,7 +379,7 @@ password: unPassword
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="237.90478515625" x="7.3006493638176835" y="3.0">interfazParaPostulacionCerrada</y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel/>
-            <y:MethodLabel/>
+            <y:MethodLabel>+listaCandidatos</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
       </data>
