@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.1.17)  6 OCT 2011 16:33
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.1.17)  6 OCT 2011 16:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -509,7 +509,7 @@ osResultados.png (PNG copy)>] (./Conclusiones.tex) [24] (./informe.aux) )
 Here is how much of TeX's memory you used:
  8068 strings out of 493911
  113551 string characters out of 1155272
- 199519 words of memory out of 3000000
+ 199504 words of memory out of 3000000
  11100 multiletter control sequences out of 15000+50000
  11938 words of font info for 44 fonts, out of 3000000 for 9000
  706 hyphenation exceptions out of 8191
@@ -526,7 +526,7 @@ share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf
 nts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-texlive/fonts/type1
 /public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
 fonts/cm/cmtt10.pfb>
-Output written on informe.pdf (24 pages, 1526550 bytes).
+Output written on informe.pdf (24 pages, 1526064 bytes).
 PDF statistics:
  334 PDF objects out of 1000 (max. 8388607)
  63 named destinations out of 1000 (max. 500000)

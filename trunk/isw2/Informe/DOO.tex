@@ -48,7 +48,7 @@ A continuaci\'on se presenta la parte del diagrama de clases que se refiere al l
 
 
 
-\subsubsection{interfazLogueador}
+\subsubsection{InterfazLogueador}
 
 La interfaz del logueador es un objeto que representa cual va a ser la interacci\'on del usuario real cuando quiera loguearse al sistema. Como se ver\'a en la explicaci\'on del logueador, este tiene ciertas funcionalidades e informaci\'on que no queremos que sea accesible ni manejable desde el exterior. Es por esto que se decidi\'o utilizar una interfaz de logueador con la siguiente responsabilidad.
 
@@ -72,7 +72,7 @@ El logueador resuelve esta situaci\'on mediante los siguientes mensajes:
 \item actualizarOpcionesDisponibles:. Este mensaje es el que permite asociar a los usuarios con las diferentes interfaces disponibles para interactuar con el sistema. De esta manera, los usuarios siempre tendr\'an una interfaz de usuario asociada, pero al utilizar este mensaje, esas interfaces podr\'an cambiar, asociandose con la interfaz necesar\'ia para la \'epoca de la elecci\'on pertinente. Entonces, a partir del uso de este mensaje, cuando los usuarios se logueen, podran interactuar con VOX mediante la interfaz que les corresponda con ese per\'iodo de las elecciones. Entonces si utilizamos este mensaje para asociar a los usuarios con una interfaz de postulaci\'on, lo que estaremos logrando es que el usuario cuando se loguee solo puede interactuar con el sistema mediante una interfaz de postulaci\'on que solo tendr\'a como opci\'on de funcionalidad posible el hecho de candidatearse; ya que por la \'epoca de las elecciones en las que se encuentra el sistema, no se deber\'ia poner hacer otra cosa.
 \end{itemize}
 
-\subsubsection{elecci\'on}
+\subsubsection{Elecci\'on}
 
 En esta funcionalidad en particular, la de loguearse, las responsabilidades de esta clase se basan en manejar los tiempos de las elecciones para saber que se puede hacer con el sistema en este momento. La clase elecci\'on es el principal punto de interacci\'on para un administrador del sistema. Lo cual probablemente inducir\'ia a tener una interfaz para administrador que ser\'a adherida al modelo, en caso de necesitarla, en otra iteraci\'on del presente desarrollo.
 
@@ -120,7 +120,7 @@ Para esto, se reproduce el subconjunto de clases del diagrama original, que corr
 
 
 
-\subsubsection{candidateador}
+\subsubsection{Candidateador}
 
 La idea del candidateador es tener un objeto que reifique el concepto que se tendr\'ia en una votaci\'on sin un sistema inform\'atico, en el cual un potencial candidato ir\'ia hacia una persona dedicada a la tarea de la postulaci\'on para postularse. Esta persona ser\'ia la encargada de, por un lado, mirar que el aspirante no aparezca ya en la lista de candidatos, de forma que no pueda haber un candidato postulado dos veces. Luego, esta persona ser\'ia tambi\'en la encargada de utilizar alg\'un sistema externo, o alg\'un catalogo de legajos, para fijarse si el potencial candidato cumple los requisitos necesarios. Nos parece que la tarea de chequear las restricciones es una responsabilidad grande como para asignarsela a un objeto dedicado solamente a eso. Es por esto que en este punto, el candidateador solo chequear\'a las restricciones colaborando con otro objeto que se encargar\'a del chequeo propiamente dicho.
 
@@ -131,7 +131,7 @@ Luego, para resolver las responsabilidades de una forma bien cohesiva, se tiene 
 \end{itemize}
 
 
-\subsubsection{interfazParaPostulaci\'on}
+\subsubsection{InterfazParaPostulaci\'on}
 
 Esta interfaz tiene un comportamiento similiar a todas las dem\'as interfaces de usuario. Lo que hace es dar una puerta de entrada al sistema para poder interactuar con el subsistema de postulaci\'on, pero sin tener acceso a mensajes o informaciones internas que no queremos que un usuario real pueda acceder. Si el usuario real pudiese interactuar directamente con el candidateador, podr\'ia eventualmente tener acceso a la lista de candidatos, situaci\'on que no queremos que ocurra. Es por esto que la \'unica responsabilidad de la interfaz es tener un mensaje para candidatear a un usuario, y se encarga de enviar esta petici\'on al candidateador real.
 
@@ -198,7 +198,7 @@ En el diagrama, se puede observar que los usuarios estan subclasificados en Alum
 
 Esto lo hicimos de esta forma para seguir una de las principales reglas de diseño en cuanto a que los objetos sean cohesivos. Buscamos tener un usuario que no sepa hacer cosas como votar, o candidatearse o tener otras responsabilidades; sino que pueda responder mensajes muy b\'asicos con pocas responsabilidades.
 
-\subsubsection{urnaElectoral}
+\subsubsection{UrnaElectoral}
 
 La urnaElectoral reifica el concepto de urna que se tendr\'ia en el dominio del problema. La urna es la encargada de llevar los votos de cada una de las votaciones que haya. Una primer idea hab\'ia sido subclasificar la urna dependiendo del claustro a la que pertenezca. Sin embargo, con la busqueda de tener objetos bien cohesivos, nos dimos cuenta que realmente no importa a que claustro pertenezca la urna, sino que simplemente debe guardar los votos de la elecci\'on para la que fue asignada. Esto quiere decir que el sistema problablemente tenga m\'as de una urna, que van a ser una para Alumnos, una para Graduados y una para Profesores; pero estas urnas van a hacer equivalentes, son todas instancias de la misma clase porque las responsabilidades que tienen son las de ser una urna independientes del claustro. Dicho esto, las responsabilidades de una urna son:
 
@@ -210,7 +210,7 @@ La urnaElectoral reifica el concepto de urna que se tendr\'ia en el dominio del 
 \end{itemize}
 
 
-\subsubsection{interfazParaVotaci\'on}
+\subsubsection{InterfazParaVotaci\'on}
 
 La interfaz para votaci\'on es el objeto que principalmente maneja el sufragio de un usuario. Representa lo que en el mundo real ser\'ia la autoridad de mesa cuando el votante va a emitir su voto. Desde este punto de vista, la responsabilidad de los objetos de esta clase es manejar el momento del voto en s\'i. Este objeto intenta ser lo m\'as cohesivo posible responsabilizandose solamente por el acto de la votaci\'on, mientras que las dem\'as funcionalidades quedan como responsabilidad de otros objetos. Para lograr encargarse de estas cosas, las instancias de esta clase saben responder los siguientes mensajes:
 
