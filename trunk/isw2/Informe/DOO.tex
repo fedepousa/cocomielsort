@@ -67,6 +67,9 @@ El logueador resuelve esta situaci\'on mediante los siguientes mensajes:
 \item actualizarOpcionesDisponibles:. Este mensaje es el que permite asociar a los usuarios con las diferentes interfaces disponibles para interactuar con el sistema. De esta manera, los usuarios siempre tendr\'an una interfaz de usuario asociada, pero al utilizar este mensaje, esas interfaces podr\'an cambiar, asociandose con la interfaz necesar\'ia para la \'epoca de la elecci\'on pertinente. Entonces, a partir del uso de este mensaje, cuando los usuarios se logueen, podran interactuar con VOX mediante la interfaz que les corresponda con ese per\'iodo de las elecciones. Entonces si utilizamos este mensaje para asociar a los usuarios con una interfaz de postulaci\'on, lo que estaremos logrando es que el usuario cuando se loguee solo puede interactuar con el sistema mediante una interfaz de postulaci\'on que solo tendr\'a como opci\'on de funcionalidad posible el hecho de candidatearse; ya que por la \'epoca de las elecciones en las que se encuentra el sistema, no se deber\'ia poner hacer otra cosa.
 \end{itemize}
 
+\begin{center}
+\includegraphics[scale=0.35]{diagramas/modeloClases.png} 
+\end{center}
 
 \subsubsection{elecci\'on}
 
@@ -88,14 +91,19 @@ Luego, este objeto es responsable de indicar en que etapa de las elecciones esta
 
 A continuaci\'on, se presenta un diagrama de secuencia que sirve para entender de forma din\'amica la interacci\'on entre los diferentes objetos en una traza particular para la funcionalidad de logueo.
 
-ACA va el diagrama de secuencia.
+\begin{center}
+\includegraphics[scale=0.3]{diagramas/diagramaSecuenciaSeLogueaUnAlumno.png}
+\end{center}
+
 
 
 
 
 Por \'ultimo, se presenta un diagrama de objetos, para poder identificar las colaboraciones entres los diferentes objetos del sistema en un momento en particular.
 
-ACA va el diagrama de objetos.
+\begin{center}
+\includegraphics[scale=0.3]{diagramas/modeloDeObjetosLogging.png}
+\end{center}
 
 
 
@@ -143,16 +151,19 @@ Cada tipo de chequeador diferente, chequea mediante el reglamento propio a cada 
 
 A continuaci\'on se presenta la traza correspondiente a un graduado que se quiere candidatear mediante un diagrama de secuencia. De esta forma, se pueden ver las interacciones que tienen los diferentes objetos cuando un graduado se quiere candidatear.
 
-ACA va el diagrama de secuencias.
+\begin{center}
+\includegraphics[scale=0.35]{diagramas/diagramaGraduadoSeCandidateaExitosamente.png}
+\end{center}
+
 
 
 \bigskip
 
 Por \'ultimo, se presenta un diagrama de objetos para esta funcionalidad.
 
-ACA va el diagrama de objetos.
-
-
+\begin{center}
+\includegraphics[scale=0.3]{diagramas/modeloDeObjetosCandidatearse.png}
+\end{center}
 
 \subsection{Votaci\'on}
 
@@ -162,7 +173,9 @@ En esta secci\'on se presenta un subconjunto de las clases del diagrama original
 
 A continuaci\'on se reproduce dicho subconjunto separado del diagrama original, para luego poder explicitar cada decisi\'on tomada sobre cada una de las clases presentes.
 
-ACA va el diagrama de clases.
+\begin{center}
+\includegraphics[scale=0.3]{diagramas/modeloDeClasesVotacion.png}
+\end{center}
 
 \subsubsection{Usuario}
 
@@ -212,7 +225,10 @@ La interfaz para votaci\'on es el objeto que principalmente maneja el sufragio d
 
 Si bien el diagrama de clases, m\'as la explicaci\'on del mismo, nos da una idea aproximada de como interact\'uan los objetos entre s\'i, presentaremos a continuaci\'on un diagrama de secuencia que indica como ser\'ia una traza posible de las interacciones din\'amicas entre diferentes objetos involucrados en el proceso de votaci\'on.
 
-ACA va el diagrama de secuencia.
+\begin{center}
+\includegraphics[scale=0.4]{diagramas/diagramaSecuenciaVotaUnAlumno.png}
+\end{center}
+
 
 \bigskip
 
@@ -220,8 +236,9 @@ Por \'ultimo, nos parece interesante mostrar un diagrama de instancias que resal
 
 En este caso se presenta una caso donde un Alumno, un Graduado y un Profesor quieren emitir su voto.
 
-ACA va el diagrama de objetos.
-
+\begin{center}
+\includegraphics[scale=0.25]{diagramas/modeloDeObjetosVotacion.png}
+\end{center}
 
 
 \subsection{Clausura del acto electoral}
@@ -230,9 +247,9 @@ En esta secci\'on, se mostrar\'a como se atac\'o el diseño correspondiente al c
 
 A continuaci\'on se reproduce el sector del diagrama de clases correspondiente a la clausura del acto electoral.
 
-
-ACA va el diagrama.
-
+\begin{center}
+\includegraphics[scale=0.19]{diagramas/modeloDeClasesResultados.png}
+\end{center}
 
 
 Lo que se busca en esta simple jerarquía es reificar los distintos posibles resultados de una votación correspondiente a un claustro. Uno de los objetivos al diseñar este módulo fue permitir extender fácilmente la lógica de Vox agregándo resolución automática de conflictos a las funcionalidades provistas.
@@ -291,9 +308,13 @@ El siguiente diagrama de secuencia muestra las colaboraciones al darse por final
 % Posteriormente "mesaElectoralEstudiantes" envía a "resultadoEleccionEstudiantes2011" el mensaje representantes, al cuál responde con la lista que contiene a los usuarios correspondientes a Federico Pousa y Facundo Carrillo.
 
 
-ACA va el diagrama de secuencia.
+\begin{center}
+\includegraphics[scale=0.2]{diagramas/diagramaUrnaElectoralGeneraResultadosCompletos.png}
+\end{center}
 
 
 Por \'ultimo se presenta un diagrama de objetos que representan las relaciones de conocimiento entre los diferentes objetos.
 
-ACA va el diagrama de objetos.
+\begin{center}
+\includegraphics[scale=0.25]{diagramas/modeloDeObjetosResultados.png}
+\end{center}

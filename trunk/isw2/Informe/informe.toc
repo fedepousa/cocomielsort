@@ -7,17 +7,17 @@
 \contentsline {subsection}{\numberline {5.1}Logging}{12}{subsection.5.1}
 \contentsline {subsubsection}{\numberline {5.1.1}interfazLogueador}{12}{subsubsection.5.1.1}
 \contentsline {subsubsection}{\numberline {5.1.2}Logueador}{12}{subsubsection.5.1.2}
-\contentsline {subsubsection}{\numberline {5.1.3}elecci\'on}{13}{subsubsection.5.1.3}
-\contentsline {subsection}{\numberline {5.2}Postulaci\'on a candidato}{14}{subsection.5.2}
-\contentsline {subsubsection}{\numberline {5.2.1}candidateador}{14}{subsubsection.5.2.1}
-\contentsline {subsubsection}{\numberline {5.2.2}interfazParaPostulaci\'on}{14}{subsubsection.5.2.2}
-\contentsline {subsubsection}{\numberline {5.2.3}Chequeador de Restricciones}{14}{subsubsection.5.2.3}
-\contentsline {subsection}{\numberline {5.3}Votaci\'on}{15}{subsection.5.3}
-\contentsline {subsubsection}{\numberline {5.3.1}Usuario}{15}{subsubsection.5.3.1}
-\contentsline {subsubsection}{\numberline {5.3.2}urnaElectoral}{15}{subsubsection.5.3.2}
-\contentsline {subsubsection}{\numberline {5.3.3}interfazParaVotaci\'on}{16}{subsubsection.5.3.3}
-\contentsline {subsection}{\numberline {5.4}Clausura del acto electoral}{16}{subsection.5.4}
-\contentsline {subsubsection}{\numberline {5.4.1}ResultadoEleccion}{17}{subsubsection.5.4.1}
-\contentsline {subsubsection}{\numberline {5.4.2}ResultadoCompleto}{17}{subsubsection.5.4.2}
-\contentsline {subsubsection}{\numberline {5.4.3}ResultadoConflictivo}{17}{subsubsection.5.4.3}
-\contentsline {subsubsection}{\numberline {5.4.4}EleccionConflictivaException}{17}{subsubsection.5.4.4}
+\contentsline {subsubsection}{\numberline {5.1.3}elecci\'on}{14}{subsubsection.5.1.3}
+\contentsline {subsection}{\numberline {5.2}Postulaci\'on a candidato}{15}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}candidateador}{16}{subsubsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2}interfazParaPostulaci\'on}{16}{subsubsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.3}Chequeador de Restricciones}{16}{subsubsection.5.2.3}
+\contentsline {subsection}{\numberline {5.3}Votaci\'on}{17}{subsection.5.3}
+\contentsline {subsubsection}{\numberline {5.3.1}Usuario}{18}{subsubsection.5.3.1}
+\contentsline {subsubsection}{\numberline {5.3.2}urnaElectoral}{19}{subsubsection.5.3.2}
+\contentsline {subsubsection}{\numberline {5.3.3}interfazParaVotaci\'on}{19}{subsubsection.5.3.3}
+\contentsline {subsection}{\numberline {5.4}Clausura del acto electoral}{20}{subsection.5.4}
+\contentsline {subsubsection}{\numberline {5.4.1}ResultadoEleccion}{21}{subsubsection.5.4.1}
+\contentsline {subsubsection}{\numberline {5.4.2}ResultadoCompleto}{21}{subsubsection.5.4.2}
+\contentsline {subsubsection}{\numberline {5.4.3}ResultadoConflictivo}{21}{subsubsection.5.4.3}
+\contentsline {subsubsection}{\numberline {5.4.4}EleccionConflictivaException}{22}{subsubsection.5.4.4}
