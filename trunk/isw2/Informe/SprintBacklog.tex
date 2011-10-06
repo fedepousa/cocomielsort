@@ -12,42 +12,44 @@ Dado que as\'i lo requiere el enunciado, que en este caso cumplir\'ia el rol de 
 \subsection*{Logging}
 
 \textsl{Como usuario quiero poder logear al sistema de manera que pueda utilizar las diferentes opciones del mismo, como la votaci\'on.}
-
+%2 50
 \begin{itemize}
- \item Ventana de logeo
+ \item Armar funcionalidad para logear
  \item Entrar al sistema logeado
 \end{itemize}
 
 \medskip
 
 \textsl{Como usario quiero que nadie se logee a mi cuenta de manera que nadie pueda candidatearme a mi o votar por mi.}
-
+%3 100
 \begin{itemize}
- \item Configuraci\'on de base de datos de contrase\~nas.
  \item Autenticaci\'on de constrase\~nas mediante un hash
- \item Ventana de mensaje de error en caso de contrase\~na incorrecta.
+ \item Mensaje de error en caso de contrase\~na incorrecta.
 \end{itemize}
 \bigskip
 
 \subsection*{Postulaci\'on de candidatos}
 
 \textsl{Como junta electoral quiero poder abrir la etapa de postulaciones de forma que los usuarios interesados puedan candidatearse}
-
+%5 20
 \begin{itemize}
- \item Armar formulario para iniciar etapa de postulaciones
+ \item Armar funcionalidad para iniciar etapa de postulaciones
  \item Verificar que el usuario corresponde a un miembro de la junta electoral
 \end{itemize}
 
 \medskip
 
 \textsl{Como aspirante a candidato quiero poder posultarme como candidato de forma que pueda presentarme en las siguientes elecciones}
+%2 20
 \begin{itemize}
- \item Armar ventana con formulario para candidatearse
+ \item Armar funcionalidad para que el aspirante pueda candidatearse
  \item Registrar un nuevo candidato
+ \item Testear el agregado de candidatos
 \end{itemize}
 
 \medskip
 
+%5 50
 \textsl{Como junta electoral quiero que el proceso de postulaci\'on chequee los requerimientos del postulado de forma que solo puedan postularse las personas que cumplan con los requerimientos establecidos}
 \begin{itemize}
  \item Validar el candidato utilizando las reglas para validar dicho candidato.
@@ -55,7 +57,7 @@ Dado que as\'i lo requiere el enunciado, que en este caso cumplir\'ia el rol de 
 \end{itemize}
 
 \medskip
-
+%8 75
 \textsl{Como junta electoral quiero poder cambiar el reglamento de postulaci\'on de forma que los requerimientos puedan ser adaptables}
 \begin{itemize}
  \item Crear validador de candidatos para cada claustro.
@@ -67,17 +69,19 @@ Dado que as\'i lo requiere el enunciado, que en este caso cumplir\'ia el rol de 
 \subsection*{Votaci\'on}
 
 \textsl{Como junta electoral quiero poder abrir la etapa de votaci\'on de forma que se termine la etapa de postualaci\'on y comienze la votaci\'on de candidatos}
-
+%5 100
 \begin{itemize}
- \item Armar formulario para iniciar el inicio de los comicios
+ \item Armar funcionalidad para cerrar postulaciones
+ \item Armar funcionalidad para iniciar el inicio de los comicios
  \item Colectar los candidatos que fueron correctamente validados 
  \item Verificar que el usuario es miembro de la junta electoral
+ \iten Testear el cierre de postulaciones
 \end{itemize}
 
 \medskip
 
 \textsl{Como usuario quiero poder emitir mi voto de forma que mi voto quede registrado para la votaci\'on actual}
-
+%1 50
 \begin{itemize}
  \item Verficar que el usuario no haya votado
  \item Verificar que el candidato no pueda votar a miembros no candidatos de su claustro
@@ -89,20 +93,20 @@ Dado que as\'i lo requiere el enunciado, que en este caso cumplir\'ia el rol de 
 \subsection*{Clausura del acto electoral y generaci\'on de resultados}
 
 \textsl{Como junta electoral quiero poder cerrar el per\'iodo de votaci\'on de forma que se de paso al escrutinio de votos}
-
+%3 20
 \begin{itemize}
- \item Armar formulario para cerrar los comicios
+ \item Funcionalidad para cerrar los comicios
  \item Realizar el armado del escrutino por cada claustro
 \end{itemize}
 
 \medskip
 
 \textsl{Como junta electoral quiero que se labre un acta con los resultados de forma que se obtenga una presentaci\'on formal de los resultados de la votaci\'on}
-
+%3 100
 \begin{itemize}
  \item Decidir los candidatos que resutaron electos.
  \item Armar el acta con los resultados
- \item Permitir la impresi\'on del acta
+ \item Testear funcionalidad del armado de acta
 \end{itemize}
 
 \bigskip
