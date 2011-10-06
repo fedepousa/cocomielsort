@@ -1,18 +1,17 @@
 <?xml version="1.0"?>
 
 <st-source>
-<time-stamp>From VisualWorks® Personal Use Edition, 7.8 of 30 de marzo de 2011 on 5 de octubre de 2011 at 3:14:03</time-stamp>
+<time-stamp>From VisualWorks® NonCommercial, 7.7.1 of 26 de julio de 2010 on 6 de octubre de 2011 at 16:35:28</time-stamp>
 
 
 <component-created>
-<name>TP_Conflictos</name> <type>package</type>
-</component-created><!-- Package TP_Conflictos* -->
+<name>TP_conflictos</name> <type>package</type>
+</component-created><!-- Package TP_conflictos* -->
 
 
-<component-property>
-<name>TP_Conflictos</name> <type>package</type>
-<property>comment</property> <value>'En este paquete pongo las clases referidas a los conflictos con los resultados de una elección.'</value>
-</component-property>
+<component-created>
+<name>TP_conflictos</name> <type>package</type>
+</component-created>
 
 <class>
 <name>ResultadoEleccion</name>
@@ -25,7 +24,7 @@
 <imports></imports>
 <category></category>
 <attributes>
-<package>TP_Conflictos</package>
+<package>TP_conflictos</package>
 </attributes>
 </class>
 
@@ -45,7 +44,7 @@
 <imports></imports>
 <category></category>
 <attributes>
-<package>TP_Conflictos</package>
+<package>TP_conflictos</package>
 </attributes>
 </class>
 
@@ -65,7 +64,7 @@
 <imports></imports>
 <category></category>
 <attributes>
-<package>TP_Conflictos</package>
+<package>TP_conflictos</package>
 </attributes>
 </class>
 
@@ -85,7 +84,7 @@
 <imports></imports>
 <category></category>
 <attributes>
-<package>TP_Conflictos</package>
+<package>TP_conflictos</package>
 </attributes>
 </class>
 
@@ -105,7 +104,7 @@
 <imports></imports>
 <category></category>
 <attributes>
-<package>TP_Conflictos</package>
+<package>TP_conflictos</package>
 </attributes>
 </class>
 
@@ -125,7 +124,7 @@
 <imports></imports>
 <category></category>
 <attributes>
-<package>TP_Conflictos</package>
+<package>TP_conflictos</package>
 </attributes>
 </class>
 
@@ -135,105 +134,97 @@
 </comment>
 
 <methods>
-<class-id>NumeroIncorrectoDeRepresentantesException</class-id> <category>initialize-release</category>
-
-<body package="TP_Conflictos" selector="initialize">initialize	"Initialize a newly created instance. This method must answer the receiver."	super initialize.	" *** Replace this comment with the appropriate initialization code *** "	^self</body>
-</methods>
-
-
-<methods>
 <class-id>ResultadoEleccion class</class-id> <category>instance creation</category>
 
-<body package="TP_Conflictos" selector="newConEscrutinio:cantidadDeRepresentantes:">newConEscrutinio: conteoDeVotos cantidadDeRepresentantes: cantidad	"Answer a newly created and initialized instance."	| result matchingClasses |	matchingClasses := self subclasses select: [:e | e matchConEscrutinio: conteoDeVotos CantidadRepresentantes: cantidad].	(matchingClasses size &gt; 1) ifTrue: [ EleccionConflictivaException raiseWith: (ResultadoConflictivo newConEscrutinio: conteoDeVotos cantidadDeRepresentantes: cantidad)].	(matchingClasses isEmpty  ) ifTrue: [result := ResultadoConflictivo newConEscrutinio: conteoDeVotos cantidadDeRepresentantes: cantidad. ]	ifFalse: [	result := (matchingClasses any) newConEscrutinio: conteoDeVotos cantidadDeRepresentantes: cantidad.].	^result.</body>
+<body package="TP_conflictos" selector="newConEscrutinio:cantidadDeRepresentantes:">newConEscrutinio: conteoDeVotos cantidadDeRepresentantes: cantidad	"Answer a newly created and initialized instance."	| result matchingClasses |	matchingClasses := self subclasses select: [:e | e matchConEscrutinio: conteoDeVotos CantidadRepresentantes: cantidad].	(matchingClasses size &gt; 1) ifTrue: [ EleccionConflictivaException raiseWith: (ResultadoConflictivo newConEscrutinio: conteoDeVotos cantidadDeRepresentantes: cantidad)].	(matchingClasses isEmpty  ) ifTrue: [result := ResultadoConflictivo newConEscrutinio: conteoDeVotos cantidadDeRepresentantes: cantidad. ]	ifFalse: [	result := (matchingClasses any) newConEscrutinio: conteoDeVotos cantidadDeRepresentantes: cantidad.].	^result.</body>
 </methods>
 
 
 <methods>
 <class-id>ResultadoEleccion</class-id> <category>getters</category>
 
-<body package="TP_Conflictos" selector="candidatos">candidatos	(self escrutinio) keys.</body>
+<body package="TP_conflictos" selector="escrutinio">escrutinio	^SubclassResponsibilityError.</body>
 
-<body package="TP_Conflictos" selector="escrutinio">escrutinio	^SubclassResponsibilityError.</body>
+<body package="TP_conflictos" selector="candidatos">candidatos	(self escrutinio) keys.</body>
 </methods>
 
 <methods>
 <class-id>ResultadoEleccion</class-id> <category>listarResultados</category>
 
-<body package="TP_Conflictos" selector="votos:">votos: unCandidato	self escrutinio at: unCandidato</body>
+<body package="TP_conflictos" selector="votos:">votos: unCandidato	self escrutinio at: unCandidato</body>
 </methods>
 
 
 <methods>
 <class-id>ResultadoCompleto class</class-id> <category>instance creation</category>
 
-<body package="TP_Conflictos" selector="newConEscrutinio:cantidadDeRepresentantes:">newConEscrutinio: conteoDeVotos cantidadDeRepresentantes: cantidad	"Answer a newly created and initialized instance."	| reps sups sortBlock ordenados totalVotosValidos  |	totalVotosValidos := conteoDeVotos inject: 0 into: [ :acum :v | ^acum + v.].	sortBlock := [ :a :b | ^(conteoDeVotos at: a) &gt; conteoDeVotos at: b. ].	ordenados := SortedCollection sortBlock: sortBlock.	ordenados addAll: conteoDeVotos keys.	reps := Array new.	sups:= Array new.	ordenados inject: 0 into: [ :acum :e | (acum &lt; cantidad) ifTrue: [reps add e] ifFalse: [ sups add: e.]. ^acum+1.].	sups := sups select: [ :e | ^(((conteoDeVotos at: e) * 10) &gt; totalVotosValidos).].	^self newConEscturinio: conteoDeVotos Representantes: reps Suplentes: sups.</body>
+<body package="TP_conflictos" selector="matchConEscrutinio:CantidadRepresentantes:">matchConEscrutinio: conteoDeVotos CantidadRepresentantes: cantidad	| reps sups sortBlock ordenados totalVotosValidos  result |	totalVotosValidos := conteoDeVotos inject: 0 into: [ :acum :v | acum + v.].	sortBlock := [ :a :b | (conteoDeVotos at: a) &gt; (conteoDeVotos at: b). ].	ordenados := SortedCollection sortBlock: sortBlock.	ordenados addAll: conteoDeVotos keys.	ordenados := ordenados select: [ :e | (((conteoDeVotos at: e) * 10) &gt; totalVotosValidos).].	result := (ordenados size &gt;= cantidad).	ordenados select: [ :e | (((conteoDeVotos at: e) * 10) &gt; totalVotosValidos).].	reps := List new.	sups:= List new.	ordenados inject: 0 into: [ :acum :e | (acum &lt; cantidad) ifTrue: [reps add: e] ifFalse: [ sups add: e.]. acum+1.].		^result and: [((sups size = 0) or: [((conteoDeVotos at: (reps last)) &gt; (conteoDeVotos at: (sups first)))])].</body>
 
-<body package="TP_Conflictos" selector="newConEscturinio:Representantes:Suplentes:">newConEscturinio: conteoDeVotos Representantes: representantes Suplentes: suplentes	"Answer a newly created and initialized instance."	^super new initializeEscrutinio: conteoDeVotos Representantes: representantes Suplentes: suplentes.</body>
+<body package="TP_conflictos" selector="newConEscrutinio:cantidadDeRepresentantes:">newConEscrutinio: conteoDeVotos cantidadDeRepresentantes: cantidad	"Answer a newly created and initialized instance."	| reps sups sortBlock ordenados totalVotosValidos  |	totalVotosValidos := conteoDeVotos inject: 0 into: [ :acum :v | acum + v.].	sortBlock := [ :a :b | (conteoDeVotos at: a) &gt; (conteoDeVotos at: b). ].	ordenados := SortedCollection sortBlock: sortBlock.	ordenados addAll: conteoDeVotos keys.	reps := List new.	sups:= List new.	ordenados inject: 0 into: [ :acum :e | (acum &lt; cantidad) ifTrue: [reps add: e] ifFalse: [ sups add: e.]. acum+1.].	sups := sups select: [ :e | (((conteoDeVotos at: e) * 10) &gt; totalVotosValidos).].	^self newConEscturinio: conteoDeVotos Representantes: reps Suplentes: sups.</body>
+
+<body package="TP_conflictos" selector="newConEscturinio:Representantes:Suplentes:">newConEscturinio: conteoDeVotos Representantes: representantes Suplentes: suplentes	"Answer a newly created and initialized instance."	^super new initializeEscrutinio: conteoDeVotos Representantes: representantes Suplentes: suplentes.</body>
 </methods>
 
 
 <methods>
-<class-id>ResultadoCompleto</class-id> <category>match</category>
+<class-id>ResultadoCompleto</class-id> <category>initialize-release</category>
 
-<body package="TP_Conflictos" selector="matchConEscrutinio:CantidadRepresentantes:">matchConEscrutinio: conteoDeVotos CantidadRepresentantes: cantidad	| reps sups sortBlock ordenados totalVotosValidos  result |	totalVotosValidos := conteoDeVotos inject: 0 into: [ :acum :v | ^acum + v.].	sortBlock := [ :a :b | ^(conteoDeVotos at: a) &gt; conteoDeVotos at: b. ].	ordenados := SortedCollection sortBlock: sortBlock.	ordenados addAll: conteoDeVotos keys.	ordenados := ordenados select: [ :e | ^(((conteoDeVotos at: e) * 10) &gt; totalVotosValidos).].	result := (ordenados size &gt;= cantidad).	ordenados select: [ :e | ^(((conteoDeVotos at: e) * 10) &gt; totalVotosValidos).].	reps := Array new.	sups:= Array new.	ordenados inject: 0 into: [ :acum :e | (acum &lt; cantidad) ifTrue: [reps add e] ifFalse: [ sups add: e.]. ^acum+1.].		^result &amp; ((sups size = 0) | ((conteoDeVotos at: (reps last)) &gt; (conteoDeVotos at: (sups first)))).</body>
+<body package="TP_conflictos" selector="initializeEscrutinio:Representantes:Suplentes:">initializeEscrutinio: conteoDeVotos Representantes: listaRepresentantes Suplentes: listaSuplentes	"Initialize a newly created instance. This method must answer the receiver."	super initialize.	escrutinio := conteoDeVotos.	representantes := listaRepresentantes.	suplentes := listaSuplentes.	^self</body>
 </methods>
 
 <methods>
 <class-id>ResultadoCompleto</class-id> <category>accessing</category>
 
-<body package="TP_Conflictos" selector="representantes">representantes	^representantes</body>
+<body package="TP_conflictos" selector="representantes">representantes	^representantes</body>
 
-<body package="TP_Conflictos" selector="suplentes">suplentes	^suplentes</body>
-</methods>
-
-<methods>
-<class-id>ResultadoCompleto</class-id> <category>initialize-release</category>
-
-<body package="TP_Conflictos" selector="initializeEscrutinio:Representantes:Suplentes:">initializeEscrutinio: conteoDeVotos Representantes: listaRepresentantes Suplentes: listaSuplentes	"Initialize a newly created instance. This method must answer the receiver."	super initialize.	escrutinio := conteoDeVotos.	representantes := listaRepresentantes.	suplentes := listaSuplentes.	^self</body>
-</methods>
-
-
-<methods>
-<class-id>ResultadoConflictivo class</class-id> <category>instance creation</category>
-
-<body package="TP_Conflictos" selector="newConEscrutinio:cantidadDeRepresentantes:">newConEscrutinio: conteoDeVotos cantidadDeRepresentantes: cantidad	"Answer a newly created and initialized instance."	^super new initializeEscrutinio: conteoDeVotos cantidadDeRepresentantes: cantidad.</body>
-</methods>
-
-
-<methods>
-<class-id>ResultadoConflictivo</class-id> <category>match</category>
-
-<body package="TP_Conflictos" selector="matchConEscrutinio:CantidadRepresentantes:">matchConEscrutinio: conteoDeVotos CantidadRepresentantes: cantidad"	| reps sups sortBlock ordenados totalVotosValidos  result |"	^false.	"totalVotosValidos := conteoDeVotos inject: 0 into: [ :acum :v | ^acum + v.].	sortBlock := [ :a :b | ^(conteoDeVotos at: a) &gt; conteoDeVotos at: b. ].	ordenados := SortedCollection sortBlock: sortBlock.	ordenados addAll: conteoDeVotos keys.	result := (ordenados size &lt; cantidad).	ordenados select: [ :e | ^(((conteoDeVotos at: e) * 10) &gt; totalVotosValidos).].	reps := Array new.	sups:= Array new.	ordenados inject: 0 into: [ :acum :e | (acum &lt; cantidad) ifTrue: [reps add e] ifFalse: [ sups add: e.]. ^acum+1.].		^result | ((sups size = 0) &amp; ((conteoDeVotos at: (reps last)) &gt; (conteoDeVotos at: (sups first))))."</body>
-</methods>
-
-<methods>
-<class-id>ResultadoConflictivo</class-id> <category>resolucionDeConflicto</category>
-
-<body package="TP_Conflictos" selector="suplentes">suplentes	^EleccionConflictivaException signalWith: self.</body>
-
-<body package="TP_Conflictos" selector="representantes">representantes	^EleccionConflictivaException signalWith: self.</body>
-
-<body package="TP_Conflictos" selector="resolverConRepresentantes:Suplentes:">resolverConRepresentantes: representantes Suplentes: suplentes		representantes size = cantidadDeReps ifFalse: [ (Exception new raise)].	^ResultadoCompleto newConEscturinio: (self escrutinio) Representantes: representantes Suplentes: suplentes.</body>
-</methods>
-
-<methods>
-<class-id>ResultadoConflictivo</class-id> <category>initialize-release</category>
-
-<body package="TP_Conflictos" selector="initializeEscrutinio:cantidadDeRepresentantes:">initializeEscrutinio: conteoDeVotos cantidadDeRepresentantes: cantidad	"Initialize a newly created instance. This method must answer the receiver."	super initialize.	cantidadDeReps := cantidad.	escrutinio := conteoDeVotos.	^self</body>
+<body package="TP_conflictos" selector="suplentes">suplentes	^suplentes</body>
 </methods>
 
 
 <methods>
 <class-id>EleccionConflictivaException</class-id> <category>initialize-release</category>
 
-<body package="TP_Conflictos" selector="initialize">initialize	"Initialize a newly created instance. This method must answer the receiver."	super initialize.	" *** Replace this comment with the appropriate initialization code *** "	^self</body>
+<body package="TP_conflictos" selector="initialize">initialize	"Initialize a newly created instance. This method must answer the receiver."	super initialize.	" *** Replace this comment with the appropriate initialization code *** "	^self</body>
 </methods>
 
 
 <methods>
 <class-id>ExistenVariosResultadosCompatiblesConLaEleccionException</class-id> <category>initialize-release</category>
 
-<body package="TP_Conflictos" selector="initialize">initialize	"Initialize a newly created instance. This method must answer the receiver."	super initialize.	" *** Replace this comment with the appropriate initialization code *** "	^self</body>
+<body package="TP_conflictos" selector="initialize">initialize	"Initialize a newly created instance. This method must answer the receiver."	super initialize.	" *** Replace this comment with the appropriate initialization code *** "	^self</body>
+</methods>
+
+
+<methods>
+<class-id>NumeroIncorrectoDeRepresentantesException</class-id> <category>initialize-release</category>
+
+<body package="TP_conflictos" selector="initialize">initialize	"Initialize a newly created instance. This method must answer the receiver."	super initialize.	" *** Replace this comment with the appropriate initialization code *** "	^self</body>
+</methods>
+
+
+<methods>
+<class-id>ResultadoConflictivo class</class-id> <category>instance creation</category>
+
+<body package="TP_conflictos" selector="matchConEscrutinio:CantidadRepresentantes:">matchConEscrutinio: conteoDeVotos CantidadRepresentantes: cantidad"	| reps sups sortBlock ordenados totalVotosValidos  result |"	^false.	"totalVotosValidos := conteoDeVotos inject: 0 into: [ :acum :v | acum + v.].	sortBlock := [ :a :b | (conteoDeVotos at: a) &gt; (conteoDeVotos at: b). ].	ordenados := SortedCollection sortBlock: sortBlock.	ordenados addAll: conteoDeVotos keys.	result := (ordenados size &lt; cantidad).	ordenados select: [ :e | (((conteoDeVotos at: e) * 10) &gt; totalVotosValidos).].	reps := List new.	sups:= List new.	ordenados inject: 0 into: [ :acum :e | (acum &lt; cantidad) ifTrue: [reps add: e] ifFalse: [ sups add: e.]. acum+1.].		^result or: [((sups size &gt; 0) and: [((conteoDeVotos at: (reps last)) &gt; (conteoDeVotos at: (sups first)))])]."</body>
+
+<body package="TP_conflictos" selector="newConEscrutinio:cantidadDeRepresentantes:">newConEscrutinio: conteoDeVotos cantidadDeRepresentantes: cantidad	"Answer a newly created and initialized instance."	^super new initializeEscrutinio: conteoDeVotos cantidadDeRepresentantes: cantidad.</body>
+</methods>
+
+
+<methods>
+<class-id>ResultadoConflictivo</class-id> <category>resolucionDeConflicto</category>
+
+<body package="TP_conflictos" selector="representantes">representantes	^EleccionConflictivaException signalWith: self.</body>
+
+<body package="TP_conflictos" selector="resolverConRepresentantes:Suplentes:">resolverConRepresentantes: representantes Suplentes: suplentes		representantes size = cantidadDeReps ifFalse: [ (Exception new raise)].	^ResultadoCompleto newConEscturinio: (self escrutinio) Representantes: representantes Suplentes: suplentes.</body>
+
+<body package="TP_conflictos" selector="suplentes">suplentes	^EleccionConflictivaException signalWith: self.</body>
+</methods>
+
+<methods>
+<class-id>ResultadoConflictivo</class-id> <category>initialize-release</category>
+
+<body package="TP_conflictos" selector="initializeEscrutinio:cantidadDeRepresentantes:">initializeEscrutinio: conteoDeVotos cantidadDeRepresentantes: cantidad	"Initialize a newly created instance. This method must answer the receiver."	super initialize.	cantidadDeReps := cantidad.	escrutinio := conteoDeVotos.	^self</body>
 </methods>
 
 
