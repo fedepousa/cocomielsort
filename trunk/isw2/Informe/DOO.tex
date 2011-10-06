@@ -6,7 +6,9 @@ Dado que se quiere hacer hincapie en diferentes funcionalidades, se presentar\'a
 
 
 \bigskip
-Aca va el diagrama
+\begin{center}
+\includegraphics[scale=0.35]{diagramas/modeloClases.png} 
+\end{center}
 \bigskip
 
 
@@ -40,7 +42,10 @@ En esta secci\'on se presenta todo lo referente al loggin al sistema. Al comenza
 
 A continuaci\'on se presenta la parte del diagrama de clases que se refiere al logging para poder explicar de forma m\'as detallada las responsabilidades de cada clase y las reglas de diseño que nos llevaron a realizar el mismo.
 
-ACA va el diagrama de clases.
+\begin{center}
+\includegraphics[scale=0.15]{diagramas/modeloDeClasesLogging.png}
+\end{center}
+
 
 
 \subsubsection{interfazLogueador}
@@ -66,10 +71,6 @@ El logueador resuelve esta situaci\'on mediante los siguientes mensajes:
 \item login: password:. Es el mensaje esencial de un logueador que es justamente su funci\'on principal, la de loguear. Este mensaje va a ser utilizado desde la interfaz de logueador que es la \'unica manera que tiene un usuario real para hablar.
 \item actualizarOpcionesDisponibles:. Este mensaje es el que permite asociar a los usuarios con las diferentes interfaces disponibles para interactuar con el sistema. De esta manera, los usuarios siempre tendr\'an una interfaz de usuario asociada, pero al utilizar este mensaje, esas interfaces podr\'an cambiar, asociandose con la interfaz necesar\'ia para la \'epoca de la elecci\'on pertinente. Entonces, a partir del uso de este mensaje, cuando los usuarios se logueen, podran interactuar con VOX mediante la interfaz que les corresponda con ese per\'iodo de las elecciones. Entonces si utilizamos este mensaje para asociar a los usuarios con una interfaz de postulaci\'on, lo que estaremos logrando es que el usuario cuando se loguee solo puede interactuar con el sistema mediante una interfaz de postulaci\'on que solo tendr\'a como opci\'on de funcionalidad posible el hecho de candidatearse; ya que por la \'epoca de las elecciones en las que se encuentra el sistema, no se deber\'ia poner hacer otra cosa.
 \end{itemize}
-
-\begin{center}
-\includegraphics[scale=0.35]{diagramas/modeloClases.png} 
-\end{center}
 
 \subsubsection{elecci\'on}
 

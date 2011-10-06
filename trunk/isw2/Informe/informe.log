@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.1.17)  6 OCT 2011 16:26
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.1.17)  6 OCT 2011 16:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -432,82 +432,85 @@ File: burn3.png Graphic file (type png)
  <use burn3.png> [10 <./burn3.png>]
 <burn1.png, id=206, 502.87875pt x 412.54124pt>
 File: burn1.png Graphic file (type png)
- <use burn1.png>) [11 <./burn1.png>] (./DOO.tex [12] [13]
-<diagramas/modeloClases.png, id=222, 1465.475pt x 1498.59875pt>
+ <use burn1.png>) [11 <./burn1.png>] (./DOO.tex <diagramas/modeloClases.png, id
+=213, 1465.475pt x 1498.59875pt>
 File: diagramas/modeloClases.png Graphic file (type png)
 
 <use diagramas/modeloClases.png>
-Overfull \hbox (29.22707pt too wide) in paragraph at lines 71--72
+Overfull \hbox (29.22707pt too wide) in paragraph at lines 10--11
  [] 
  []
 
-[14] [15 <./diagramas/modeloClases.png (PNG copy)>]
-<diagramas/diagramaSecuenciaSeLogueaUnAlumno.png, id=231, 943.525pt x 433.62pt>
+[12 <./diagramas/modeloClases.png (PNG copy)>] [13]
+<diagramas/modeloDeClasesLogging.png, id=223, 2928.9425pt x 1555.8125pt>
+File: diagramas/modeloDeClasesLogging.png Graphic file (type png)
+
+<use diagramas/modeloDeClasesLogging.png> [14 <./diagramas/modeloDeClasesLoggin
+g.png (PNG copy)>]
+<diagramas/diagramaSecuenciaSeLogueaUnAlumno.png, id=228, 943.525pt x 433.62pt>
 File: diagramas/diagramaSecuenciaSeLogueaUnAlumno.png Graphic file (type png)
-<use diagramas/diagramaSecuenciaSeLogueaUnAlumno.png>
-<diagramas/modeloDeObjetosLogging.png, id=232, 1373.13pt x 748.7975pt>
+<use diagramas/diagramaSecuenciaSeLogueaUnAlumno.png> [15]
+<diagramas/modeloDeObjetosLogging.png, id=233, 1373.13pt x 748.7975pt>
 File: diagramas/modeloDeObjetosLogging.png Graphic file (type png)
 
 <use diagramas/modeloDeObjetosLogging.png> [16 <./diagramas/diagramaSecuenciaSe
 LogueaUnAlumno.png (PNG copy)> <./diagramas/modeloDeObjetosLogging.png (PNG cop
 y)>]
-<diagramas/diagramaGraduadoSeCandidateaExitosamente.png, id=237, 1269.74374pt x
+<diagramas/diagramaGraduadoSeCandidateaExitosamente.png, id=238, 1269.74374pt x
  438.63875pt>
 File: diagramas/diagramaGraduadoSeCandidateaExitosamente.png Graphic file (type
  png)
  <use diagramas/diagramaGraduadoSeCandidateaExitosamente.png>
-[17]
-<diagramas/modeloDeObjetosCandidatearse.png, id=242, 913.4125pt x 493.845pt>
+<diagramas/modeloDeObjetosCandidatearse.png, id=239, 913.4125pt x 493.845pt>
 File: diagramas/modeloDeObjetosCandidatearse.png Graphic file (type png)
 
-<use diagramas/modeloDeObjetosCandidatearse.png>
-<diagramas/modeloDeClasesVotacion.png, id=243, 1583.9175pt x 1003.75pt>
+<use diagramas/modeloDeObjetosCandidatearse.png> [17 <./diagramas/diagramaGradu
+adoSeCandidateaExitosamente.png (PNG copy)> <./diagramas/modeloDeObjetosCandida
+tearse.png (PNG copy)>]
+<diagramas/modeloDeClasesVotacion.png, id=244, 1583.9175pt x 1003.75pt>
 File: diagramas/modeloDeClasesVotacion.png Graphic file (type png)
 
-<use diagramas/modeloDeClasesVotacion.png> [18 <./diagramas/diagramaGraduadoSeC
-andidateaExitosamente.png (PNG copy)> <./diagramas/modeloDeObjetosCandidatearse
-.png (PNG copy)>] [19 <./diagramas/modeloDeClasesVotacion.png (PNG copy)>]
-[20]
-<diagramas/diagramaSecuenciaVotaUnAlumno.png, id=257, 1045.9075pt x 545.03625pt
+<use diagramas/modeloDeClasesVotacion.png> [18 <./diagramas/modeloDeClasesVotac
+ion.png (PNG copy)>] [19]
+<diagramas/diagramaSecuenciaVotaUnAlumno.png, id=254, 1045.9075pt x 545.03625pt
 >
 File: diagramas/diagramaSecuenciaVotaUnAlumno.png Graphic file (type png)
  <use diagramas/diagramaSecuenciaVotaUnAlumno.png>
-<diagramas/modeloDeObjetosVotacion.png, id=258, 1483.5425pt x 951.555pt>
+<diagramas/modeloDeObjetosVotacion.png, id=255, 1483.5425pt x 951.555pt>
 File: diagramas/modeloDeObjetosVotacion.png Graphic file (type png)
 
-<use diagramas/modeloDeObjetosVotacion.png>
-<diagramas/modeloDeClasesResultados.png, id=259, 2752.2825pt x 1377.145pt>
+<use diagramas/modeloDeObjetosVotacion.png> [20 <./diagramas/diagramaSecuenciaV
+otaUnAlumno.png (PNG copy)> <./diagramas/modeloDeObjetosVotacion.png (PNG copy)
+>] <diagramas/modeloDeClasesResultados.png, id=260, 2752.2825pt x 1377.145pt>
 File: diagramas/modeloDeClasesResultados.png Graphic file (type png)
 
 <use diagramas/modeloDeClasesResultados.png>
-Overfull \hbox (39.24225pt too wide) in paragraph at lines 251--252
+Overfull \hbox (39.24225pt too wide) in paragraph at lines 252--253
  [] 
  []
 
-[21 <./diagramas/diagramaSecuenciaVotaUnAlumno.png (PNG copy)> <./diagramas/mod
-eloDeObjetosVotacion.png (PNG copy)>] [22 <./diagramas/modeloDeClasesResultados
-.png (PNG copy)>]
-<diagramas/diagramaUrnaElectoralGeneraResultadosCompletos.png, id=268, 2513.39p
+[21 <./diagramas/modeloDeClasesResultados.png (PNG copy)>]
+<diagramas/diagramaUrnaElectoralGeneraResultadosCompletos.png, id=265, 2513.39p
 t x 991.705pt>
 File: diagramas/diagramaUrnaElectoralGeneraResultadosCompletos.png Graphic file
  (type png)
 
 <use diagramas/diagramaUrnaElectoralGeneraResultadosCompletos.png>
-Overfull \hbox (18.97223pt too wide) in paragraph at lines 312--313
+Overfull \hbox (18.97223pt too wide) in paragraph at lines 313--314
  [] 
  []
 
-<diagramas/modeloDeObjetosResultados.png, id=269, 1672.2475pt x 951.555pt>
+<diagramas/modeloDeObjetosResultados.png, id=266, 1672.2475pt x 951.555pt>
 File: diagramas/modeloDeObjetosResultados.png Graphic file (type png)
 
-<use diagramas/modeloDeObjetosResultados.png> [23 <./diagramas/diagramaUrnaElec
-toralGeneraResultadosCompletos.png (PNG copy)>]) [24 <./diagramas/modeloDeObjet
-osResultados.png (PNG copy)>] (./Conclusiones.tex) [25] (./informe.aux) ) 
+<use diagramas/modeloDeObjetosResultados.png> [22 <./diagramas/diagramaUrnaElec
+toralGeneraResultadosCompletos.png (PNG copy)>]) [23 <./diagramas/modeloDeObjet
+osResultados.png (PNG copy)>] (./Conclusiones.tex) [24] (./informe.aux) ) 
 Here is how much of TeX's memory you used:
- 8064 strings out of 493911
- 113374 string characters out of 1155272
+ 8068 strings out of 493911
+ 113551 string characters out of 1155272
  199519 words of memory out of 3000000
- 11096 multiletter control sequences out of 15000+50000
+ 11100 multiletter control sequences out of 15000+50000
  11938 words of font info for 44 fonts, out of 3000000 for 9000
  706 hyphenation exceptions out of 8191
  38i,8n,44p,1562b,486s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -523,9 +526,9 @@ share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf
 nts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-texlive/fonts/type1
 /public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
 fonts/cm/cmtt10.pfb>
-Output written on informe.pdf (25 pages, 1422357 bytes).
+Output written on informe.pdf (24 pages, 1526550 bytes).
 PDF statistics:
- 338 PDF objects out of 1000 (max. 8388607)
- 64 named destinations out of 1000 (max. 500000)
- 292 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 334 PDF objects out of 1000 (max. 8388607)
+ 63 named destinations out of 1000 (max. 500000)
+ 297 words of extra memory for PDF output out of 10000 (max. 10000000)
 

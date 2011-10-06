@@ -5,24 +5,24 @@
 \contentsline {section}{\numberline {4}Product Increment}{9}{section.4}
 \contentsline {section}{\numberline {5}Burndown Charts}{10}{section.5}
 \contentsline {section}{\numberline {6}Dise\~{n}o Orientado a Objetos}{12}{section.6}
-\contentsline {subsection}{\numberline {6.1}Logging}{13}{subsection.6.1}
-\contentsline {subsubsection}{\numberline {6.1.1}interfazLogueador}{13}{subsubsection.6.1.1}
-\contentsline {subsubsection}{\numberline {6.1.2}Logueador}{13}{subsubsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1}Logging}{14}{subsection.6.1}
+\contentsline {subsubsection}{\numberline {6.1.1}interfazLogueador}{14}{subsubsection.6.1.1}
+\contentsline {subsubsection}{\numberline {6.1.2}Logueador}{14}{subsubsection.6.1.2}
 \contentsline {subsubsection}{\numberline {6.1.3}elecci\'on}{15}{subsubsection.6.1.3}
 \contentsline {subsection}{\numberline {6.2}Postulaci\'on a candidato}{16}{subsection.6.2}
-\contentsline {subsubsection}{\numberline {6.2.1}candidateador}{17}{subsubsection.6.2.1}
+\contentsline {subsubsection}{\numberline {6.2.1}candidateador}{16}{subsubsection.6.2.1}
 \contentsline {subsubsection}{\numberline {6.2.2}interfazParaPostulaci\'on}{17}{subsubsection.6.2.2}
 \contentsline {subsubsection}{\numberline {6.2.3}Chequeador de Restricciones}{17}{subsubsection.6.2.3}
 \contentsline {subsection}{\numberline {6.3}Votaci\'on}{18}{subsection.6.3}
-\contentsline {subsubsection}{\numberline {6.3.1}Usuario}{19}{subsubsection.6.3.1}
-\contentsline {subsubsection}{\numberline {6.3.2}urnaElectoral}{20}{subsubsection.6.3.2}
-\contentsline {subsubsection}{\numberline {6.3.3}interfazParaVotaci\'on}{20}{subsubsection.6.3.3}
+\contentsline {subsubsection}{\numberline {6.3.1}Usuario}{18}{subsubsection.6.3.1}
+\contentsline {subsubsection}{\numberline {6.3.2}urnaElectoral}{19}{subsubsection.6.3.2}
+\contentsline {subsubsection}{\numberline {6.3.3}interfazParaVotaci\'on}{19}{subsubsection.6.3.3}
 \contentsline {subsection}{\numberline {6.4}Clausura del acto electoral}{21}{subsection.6.4}
-\contentsline {subsubsection}{\numberline {6.4.1}ResultadoEleccion}{22}{subsubsection.6.4.1}
-\contentsline {subsubsection}{\numberline {6.4.2}ResultadoCompleto}{22}{subsubsection.6.4.2}
+\contentsline {subsubsection}{\numberline {6.4.1}ResultadoEleccion}{21}{subsubsection.6.4.1}
+\contentsline {subsubsection}{\numberline {6.4.2}ResultadoCompleto}{21}{subsubsection.6.4.2}
 \contentsline {subsubsection}{\numberline {6.4.3}ResultadoConflictivo}{22}{subsubsection.6.4.3}
-\contentsline {subsubsection}{\numberline {6.4.4}EleccionConflictivaException}{23}{subsubsection.6.4.4}
-\contentsline {section}{\numberline {7}Conclusiones}{25}{section.7}
-\contentsline {subsection}{\numberline {7.1}SCRUM}{25}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Dise\IeC {\~n}o orientado a objetos}{25}{subsection.7.2}
-\contentsline {subsection}{\numberline {7.3}Diagramas UML}{25}{subsection.7.3}
+\contentsline {subsubsection}{\numberline {6.4.4}EleccionConflictivaException}{22}{subsubsection.6.4.4}
+\contentsline {section}{\numberline {7}Conclusiones}{24}{section.7}
+\contentsline {subsection}{\numberline {7.1}SCRUM}{24}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Dise\IeC {\~n}o orientado a objetos}{24}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Diagramas UML}{24}{subsection.7.3}
