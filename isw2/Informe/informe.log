@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.1.17)  6 OCT 2011 16:21
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.1.17)  6 OCT 2011 16:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -390,7 +390,7 @@ LaTeX Info: Redefining \pageref on input line 23.
 \openout3 = `informe.out'.
 
 \AtBeginShipoutBox=\box34
- (./caratula.tex <logo_dc.jpg, id=91, 215.6055pt x 83.5923pt>
+ (./caratula.tex <logo_dc.jpg, id=111, 215.6055pt x 83.5923pt>
 File: logo_dc.jpg Graphic file (type jpg)
 
 <use logo_dc.jpg>
@@ -407,7 +407,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 13.
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-<logo_uba.jpg, id=92, 225.4824pt x 231.7458pt>
+<logo_uba.jpg, id=112, 225.4824pt x 231.7458pt>
 File: logo_uba.jpg Graphic file (type jpg)
  <use logo_uba.jpg>
 Underfull \hbox (badness 10000) in paragraph at lines 13--13
@@ -421,19 +421,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--13
 \tf@toc=\write4
 \openout4 = `informe.toc'.
 
- [2] (./ProductBacklog.tex [3] [4]) [5]
-(./SprintBacklog.tex [6]) [7] (./ProductIncrement.tex) [8]
-(./BurndownCharts.tex <burn3.png, id=168, 496.85625pt x 401.5pt>
-File: burn3.png Graphic file (type png)
-
-<use burn3.png> [9 <./burn3.png>]
-<burn1.png, id=177, 502.87875pt x 412.54124pt>
-File: burn1.png Graphic file (type png)
- <use burn1.png>) [10 <./burn1.png>] (./DOO.tex (/usr/share/texmf-texlive/tex/l
-atex/ucs/data/uni-0.def
+ [2] (./Introduccion.tex
+(/usr/share/texmf-texlive/tex/latex/ucs/data/uni-0.def
 File: uni-0.def 2004/10/17 UCS: Unicode data U+0000..U+00FF
-) [11]
-[12] <diagramas/modeloClases.png, id=192, 1465.475pt x 1498.59875pt>
+)) [3]
+(./ProductBacklog.tex [4] [5]) [6] (./SprintBacklog.tex [7]) [8]
+(./ProductIncrement.tex) [9] (./BurndownCharts.tex
+<burn3.png, id=197, 496.85625pt x 401.5pt>
+File: burn3.png Graphic file (type png)
+ <use burn3.png> [10 <./burn3.png>]
+<burn1.png, id=206, 502.87875pt x 412.54124pt>
+File: burn1.png Graphic file (type png)
+ <use burn1.png>) [11 <./burn1.png>] (./DOO.tex [12] [13]
+<diagramas/modeloClases.png, id=222, 1465.475pt x 1498.59875pt>
 File: diagramas/modeloClases.png Graphic file (type png)
 
 <use diagramas/modeloClases.png>
@@ -441,42 +441,42 @@ Overfull \hbox (29.22707pt too wide) in paragraph at lines 71--72
  [] 
  []
 
-[13] [14 <./diagramas/modeloClases.png (PNG copy)>]
-<diagramas/diagramaSecuenciaSeLogueaUnAlumno.png, id=202, 943.525pt x 433.62pt>
+[14] [15 <./diagramas/modeloClases.png (PNG copy)>]
+<diagramas/diagramaSecuenciaSeLogueaUnAlumno.png, id=231, 943.525pt x 433.62pt>
 File: diagramas/diagramaSecuenciaSeLogueaUnAlumno.png Graphic file (type png)
 <use diagramas/diagramaSecuenciaSeLogueaUnAlumno.png>
-<diagramas/modeloDeObjetosLogging.png, id=203, 1373.13pt x 748.7975pt>
+<diagramas/modeloDeObjetosLogging.png, id=232, 1373.13pt x 748.7975pt>
 File: diagramas/modeloDeObjetosLogging.png Graphic file (type png)
 
-<use diagramas/modeloDeObjetosLogging.png> [15 <./diagramas/diagramaSecuenciaSe
+<use diagramas/modeloDeObjetosLogging.png> [16 <./diagramas/diagramaSecuenciaSe
 LogueaUnAlumno.png (PNG copy)> <./diagramas/modeloDeObjetosLogging.png (PNG cop
 y)>]
-<diagramas/diagramaGraduadoSeCandidateaExitosamente.png, id=208, 1269.74374pt x
+<diagramas/diagramaGraduadoSeCandidateaExitosamente.png, id=237, 1269.74374pt x
  438.63875pt>
 File: diagramas/diagramaGraduadoSeCandidateaExitosamente.png Graphic file (type
  png)
  <use diagramas/diagramaGraduadoSeCandidateaExitosamente.png>
-[16]
-<diagramas/modeloDeObjetosCandidatearse.png, id=213, 913.4125pt x 493.845pt>
+[17]
+<diagramas/modeloDeObjetosCandidatearse.png, id=242, 913.4125pt x 493.845pt>
 File: diagramas/modeloDeObjetosCandidatearse.png Graphic file (type png)
 
 <use diagramas/modeloDeObjetosCandidatearse.png>
-<diagramas/modeloDeClasesVotacion.png, id=214, 1583.9175pt x 1003.75pt>
+<diagramas/modeloDeClasesVotacion.png, id=243, 1583.9175pt x 1003.75pt>
 File: diagramas/modeloDeClasesVotacion.png Graphic file (type png)
 
-<use diagramas/modeloDeClasesVotacion.png> [17 <./diagramas/diagramaGraduadoSeC
+<use diagramas/modeloDeClasesVotacion.png> [18 <./diagramas/diagramaGraduadoSeC
 andidateaExitosamente.png (PNG copy)> <./diagramas/modeloDeObjetosCandidatearse
-.png (PNG copy)>] [18 <./diagramas/modeloDeClasesVotacion.png (PNG copy)>]
-[19]
-<diagramas/diagramaSecuenciaVotaUnAlumno.png, id=228, 1045.9075pt x 545.03625pt
+.png (PNG copy)>] [19 <./diagramas/modeloDeClasesVotacion.png (PNG copy)>]
+[20]
+<diagramas/diagramaSecuenciaVotaUnAlumno.png, id=257, 1045.9075pt x 545.03625pt
 >
 File: diagramas/diagramaSecuenciaVotaUnAlumno.png Graphic file (type png)
  <use diagramas/diagramaSecuenciaVotaUnAlumno.png>
-<diagramas/modeloDeObjetosVotacion.png, id=229, 1483.5425pt x 951.555pt>
+<diagramas/modeloDeObjetosVotacion.png, id=258, 1483.5425pt x 951.555pt>
 File: diagramas/modeloDeObjetosVotacion.png Graphic file (type png)
 
 <use diagramas/modeloDeObjetosVotacion.png>
-<diagramas/modeloDeClasesResultados.png, id=230, 2752.2825pt x 1377.145pt>
+<diagramas/modeloDeClasesResultados.png, id=259, 2752.2825pt x 1377.145pt>
 File: diagramas/modeloDeClasesResultados.png Graphic file (type png)
 
 <use diagramas/modeloDeClasesResultados.png>
@@ -484,10 +484,10 @@ Overfull \hbox (39.24225pt too wide) in paragraph at lines 251--252
  [] 
  []
 
-[20 <./diagramas/diagramaSecuenciaVotaUnAlumno.png (PNG copy)> <./diagramas/mod
-eloDeObjetosVotacion.png (PNG copy)>] [21 <./diagramas/modeloDeClasesResultados
+[21 <./diagramas/diagramaSecuenciaVotaUnAlumno.png (PNG copy)> <./diagramas/mod
+eloDeObjetosVotacion.png (PNG copy)>] [22 <./diagramas/modeloDeClasesResultados
 .png (PNG copy)>]
-<diagramas/diagramaUrnaElectoralGeneraResultadosCompletos.png, id=239, 2513.39p
+<diagramas/diagramaUrnaElectoralGeneraResultadosCompletos.png, id=268, 2513.39p
 t x 991.705pt>
 File: diagramas/diagramaUrnaElectoralGeneraResultadosCompletos.png Graphic file
  (type png)
@@ -497,34 +497,35 @@ Overfull \hbox (18.97223pt too wide) in paragraph at lines 312--313
  [] 
  []
 
-<diagramas/modeloDeObjetosResultados.png, id=240, 1672.2475pt x 951.555pt>
+<diagramas/modeloDeObjetosResultados.png, id=269, 1672.2475pt x 951.555pt>
 File: diagramas/modeloDeObjetosResultados.png Graphic file (type png)
 
-<use diagramas/modeloDeObjetosResultados.png> [22 <./diagramas/diagramaUrnaElec
-toralGeneraResultadosCompletos.png (PNG copy)>]) [23 <./diagramas/modeloDeObjet
-osResultados.png (PNG copy)>] (./informe.aux) ) 
+<use diagramas/modeloDeObjetosResultados.png> [23 <./diagramas/diagramaUrnaElec
+toralGeneraResultadosCompletos.png (PNG copy)>]) [24 <./diagramas/modeloDeObjet
+osResultados.png (PNG copy)>] (./Conclusiones.tex) [25] (./informe.aux) ) 
 Here is how much of TeX's memory you used:
- 8046 strings out of 493911
- 113138 string characters out of 1155272
+ 8064 strings out of 493911
+ 113374 string characters out of 1155272
  199519 words of memory out of 3000000
- 11091 multiletter control sequences out of 15000+50000
+ 11096 multiletter control sequences out of 15000+50000
  11938 words of font info for 44 fonts, out of 3000000 for 9000
  706 hyphenation exceptions out of 8191
- 38i,8n,36p,1562b,486s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/fonts/
-type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/publi
-c/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
-cm/cmbxti10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10
-.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/s
-hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-t
-exlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/
-type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf-texlive/fonts/type1/publi
-c/amsfonts/cm/cmss10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
-cm/cmssbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10
-.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on informe.pdf (23 pages, 1414088 bytes).
+ 38i,8n,44p,1562b,486s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/
+share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf
+-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fo
+nts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-texlive/fonts/type1
+/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
+fonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr
+12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/
+share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf
+-texlive/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-texlive/fo
+nts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-texlive/fonts/type1
+/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
+fonts/cm/cmtt10.pfb>
+Output written on informe.pdf (25 pages, 1422357 bytes).
 PDF statistics:
- 303 PDF objects out of 1000 (max. 8388607)
- 57 named destinations out of 1000 (max. 500000)
- 252 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 338 PDF objects out of 1000 (max. 8388607)
+ 64 named destinations out of 1000 (max. 500000)
+ 292 words of extra memory for PDF output out of 10000 (max. 10000000)
 
