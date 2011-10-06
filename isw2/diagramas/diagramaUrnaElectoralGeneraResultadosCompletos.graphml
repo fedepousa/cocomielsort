@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:y="http://www.yworks.com/xml/graphml" xmlns:yed="http://www.yworks.com/xml/yed/3" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd">
+<!--Created by yFiles for Java 2.8-->
+<key attr.name="url" attr.type="string" for="edge" id="d0"/>
+<key attr.name="description" attr.type="string" for="edge" id="d1"/>
+<key for="edge" id="d2" yfiles.type="edgegraphics"/>
+<key attr.name="Description" attr.type="string" for="graph" id="d3"/>
+<key for="graphml" id="d4" yfiles.type="resources"/>
+<key for="port" id="d5" yfiles.type="portgraphics"/>
+<key for="port" id="d6" yfiles.type="portgeometry"/>
+<key for="port" id="d7" yfiles.type="portuserdata"/>
+<key attr.name="url" attr.type="string" for="node" id="d8"/>
+<key attr.name="description" attr.type="string" for="node" id="d9"/>
+<key for="node" id="d10" yfiles.type="nodegraphics"/>
+<graph edgedefault="directed" id="G">
+<data key="d3"></data>
+<node id="n0" yfiles.foldertype="group">
+<data key="d10">
+<y:TableNode configuration="YED_TABLE_NODE">
+<y:Geometry height="478.0" width="1235.0" x="-43.0" y="6.0"/>
+<y:Fill color="#ECF5FF" color2="#0042F440" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="1.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="15" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="21.45361328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="358.111328125" x="438.4443359375" y="4.0">urna electoral de alumnos genera sus resultados</y:NodeLabel>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="custom" textColor="#000000" visible="true" width="131.435546875" x="64.7822265625" y="33.0">urnaElectoralAlumnos<y:LabelModel>
+<y:ColumnNodeLabelModel offset="3.0"/>
+</y:LabelModel>
+<y:ModelParameter>
+<y:ColumnNodeLabelModelParameter id="column_0" inside="true" verticalPosition="0.0"/>
+</y:ModelParameter>
+</y:NodeLabel>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="custom" textColor="#000000" visible="true" width="108.583984375" x="377.2080078125" y="33.0">ResultadoElección<y:LabelModel>
+<y:ColumnNodeLabelModel offset="3.0"/>
+</y:LabelModel>
+<y:ModelParameter>
+<y:ColumnNodeLabelModelParameter id="column_1" inside="true" verticalPosition="0.0"/>
+</y:ModelParameter>
+</y:NodeLabel>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="custom" textColor="#000000" visible="true" width="123.501953125" x="862.7490234375" y="33.0">ResultadoConflictivo<y:LabelModel>
+<y:ColumnNodeLabelModel offset="3.0"/>
+</y:LabelModel>
+<y:ModelParameter>
+<y:ColumnNodeLabelModelParameter id="column_2" inside="true" verticalPosition="0.0"/>
+</y:ModelParameter>
+</y:NodeLabel>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="custom" textColor="#000000" visible="true" width="117.7890625" x="650.10546875" y="33.0">ResultadoCompleto<y:LabelModel>
+<y:ColumnNodeLabelModel offset="3.0"/>
+</y:LabelModel>
+<y:ModelParameter>
+<y:ColumnNodeLabelModelParameter id="column_3" inside="true" verticalPosition="0.0"/>
+</y:ModelParameter>
+</y:NodeLabel>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="custom" textColor="#000000" visible="true" width="203.201171875" x="1032.3994140625" y="33.0">resultadoEleccionEstudiantes2011<y:LabelModel>
+<y:ColumnNodeLabelModel offset="3.0"/>
+</y:LabelModel>
+<y:ModelParameter>
+<y:ColumnNodeLabelModelParameter id="column_4" inside="true" verticalPosition="0.0"/>
+</y:ModelParameter>
+</y:NodeLabel>
+<y:StyleProperties>
+<y:Property class="java.awt.Color" name="yed.table.section.color" value="#7192b2"/>
+<y:Property class="java.awt.Color" name="yed.table.header.color.main" value="#c4d7ed"/>
+<y:Property class="java.awt.Color" name="yed.table.lane.color.alternating" value="#abc8e2"/>
+<y:Property name="y.view.tabular.TableNodePainter.ALTERNATE_COLUMN_STYLE">
+<y:SimpleStyle fillColor="#474A4340" lineColor="#000000" lineType="line" lineWidth="1.0"/>
+</y:Property>
+<y:Property class="java.lang.String" name="yed.table.lane.style" value="lane.style.columns"/>
+<y:Property name="y.view.tabular.TableNodePainter.ALTERNATE_ROW_SELECTION_STYLE">
+<y:SimpleStyle fillColor="#474A4380" lineColor="#000000" lineType="line" lineWidth="3.0"/>
+</y:Property>
+<y:Property class="java.awt.Color" name="yed.table.lane.color.main" value="#c4d7ed"/>
+<y:Property name="y.view.tabular.TableNodePainter.ALTERNATE_ROW_STYLE">
+<y:SimpleStyle fillColor="#474A4340" lineColor="#000000" lineType="line" lineWidth="1.0"/>
+</y:Property>
+<y:Property class="java.awt.Color" name="yed.table.header.color.alternating" value="#abc8e2"/>
+<y:Property class="java.lang.Double" name="yed.table.header.height" value="24.0"/>
+<y:Property name="y.view.tabular.TableNodePainter.ALTERNATE_COLUMN_SELECTION_STYLE">
+<y:SimpleStyle fillColor="#474A4380" lineColor="#000000" lineType="line" lineWidth="3.0"/>
+</y:Property>
+</y:StyleProperties>
+<y:State autoResize="true" closed="false" closedHeight="80.0" closedWidth="100.0"/>
+<y:Insets bottom="0" bottomF="0.0" left="0" leftF="0.0" right="0" rightF="0.0" top="0" topF="0.0"/>
+<y:BorderInsets bottom="19" bottomF="18.648648648648646" left="6" leftF="6.0" right="76" rightF="75.5" top="20" topF="20.0"/>
+<y:Table autoResizeTable="true" defaultColumnWidth="120.0" defaultMinimumColumnWidth="80.0" defaultMinimumRowHeight="50.0" defaultRowHeight="80.0">
+<y:DefaultColumnInsets bottom="0.0" left="0.0" right="0.0" top="24.0"/>
+<y:DefaultRowInsets bottom="0.0" left="0.0" right="0.0" top="0.0"/>
+<y:Insets bottom="0.0" left="0.0" right="0.0" top="30.0"/>
+<y:Columns>
+<y:Column id="column_0" minimumWidth="80.0" width="261.0">
+<y:Insets bottom="0.0" left="0.0" right="0.0" top="24.0"/>
+</y:Column>
+<y:Column id="column_1" minimumWidth="80.0" width="341.0">
+<y:Insets bottom="0.0" left="0.0" right="0.0" top="24.0"/>
+</y:Column>
+<y:Column id="column_3" minimumWidth="80.0" width="214.0">
+<y:Insets bottom="0.0" left="0.0" right="0.0" top="24.0"/>
+</y:Column>
+<y:Column id="column_2" minimumWidth="80.0" width="217.0">
+<y:Insets bottom="0.0" left="0.0" right="0.0" top="24.0"/>
+</y:Column>
+<y:Column id="column_4" minimumWidth="80.0" width="202.0">
+<y:Insets bottom="0.0" left="0.0" right="0.0" top="24.0"/>
+</y:Column>
+</y:Columns>
+<y:Rows>
+<y:Row height="424.0" id="row_0" minimumHeight="50.0">
+<y:Insets bottom="0.0" left="0.0" right="0.0" top="0.0"/>
+</y:Row>
+</y:Rows>
+</y:Table>
+</y:TableNode>
+</data>
+<graph edgedefault="directed" id="n0:">
+<node id="n0::n0">
+<data key="d10">
+<y:GenericNode configuration="com.yworks.bpmn.Event.withShadow">
+<y:Geometry height="30.0" width="30.0" x="-37.0" y="80.0"/>
+<y:Fill color="#FFFFFFE6" color2="#D4D4D4CC" transparent="false"/>
+<y:BorderStyle color="#27AE27" type="line" width="1.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="13.0" y="34.0"/>
+<y:StyleProperties>
+<y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.line.color" value="#000000"/>
+<y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill2" value="#d4d4d4"/>
+<y:Property class="com.yworks.yfiles.bpmn.view.BPMNTypeEnum" name="com.yworks.bpmn.type" value="EVENT_TYPE_PLAIN"/>
+<y:Property class="com.yworks.yfiles.bpmn.view.EventCharEnum" name="com.yworks.bpmn.characteristic" value="EVENT_CHARACTERISTIC_START"/>
+<y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill" value="#ffffff"/>
+</y:StyleProperties>
+</y:GenericNode>
+</data>
+</node>
+<node id="n0::n1">
+<data key="d10">
+<y:ShapeNode>
+<y:Geometry height="369.0" width="30.0" x="125.5" y="80.0"/>
+<y:Fill color="#FFCC00" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="1.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="4.0" x="13.0" y="182.5"/>
+<y:Shape type="rectangle"/>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n0::n2">
+<data key="d10">
+<y:ShapeNode>
+<y:Geometry height="333.0" width="30.0" x="412.3828" y="106.86019736842104"/>
+<y:Fill color="#FFCC00" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="1.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="4.0" x="13.0" y="164.5"/>
+<y:Shape type="rectangle"/>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n0::n3">
+<data key="d10">
+<y:ShapeNode>
+<y:Geometry height="44.0" width="30.0" x="735.0" y="172.0"/>
+<y:Fill color="#FFCC00" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="1.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="4.0" x="13.0" y="20.0"/>
+<y:Shape type="rectangle"/>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n0::n4">
+<data key="d10">
+<y:ShapeNode>
+<y:Geometry height="47.86019736842104" width="30.0" x="931.0" y="233.13980263157896"/>
+<y:Fill color="#FFCC00" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="1.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="4.0" x="13.0" y="21.93009868421052"/>
+<y:Shape type="rectangle"/>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n0::n5">
+<data key="d10">
+<y:GenericNode configuration="com.yworks.bpmn.Event.withShadow">
+<y:Geometry height="30.0" width="30.0" x="-28.0" y="427.35135135135135"/>
+<y:Fill color="#FFFFFFE6" color2="#D4D4D4CC" transparent="false"/>
+<y:BorderStyle color="#B11F1F" type="line" width="1.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="eight_pos" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="13.0" y="34.0"/>
+<y:StyleProperties>
+<y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.line.color" value="#000000"/>
+<y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill2" value="#d4d4d4"/>
+<y:Property class="com.yworks.yfiles.bpmn.view.BPMNTypeEnum" name="com.yworks.bpmn.type" value="EVENT_TYPE_TERMINATE"/>
+<y:Property class="com.yworks.yfiles.bpmn.view.EventCharEnum" name="com.yworks.bpmn.characteristic" value="EVENT_CHARACTERISTIC_END"/>
+<y:Property class="java.awt.Color" name="com.yworks.bpmn.icon.fill" value="#ffffff"/>
+</y:StyleProperties>
+</y:GenericNode>
+</data>
+</node>
+<node id="n0::n6">
+<data key="d10">
+<y:ShapeNode>
+<y:Geometry height="138.0" width="30.0" x="442.3828" y="159.0"/>
+<y:Fill color="#FFCC00" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="1.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="4.0" x="13.0" y="67.0"/>
+<y:Shape type="rectangle"/>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n0::n7">
+<data key="d10">
+<y:ShapeNode>
+<y:Geometry height="63.0" width="30.0" x="735.0" y="321.0"/>
+<y:Fill color="#FFCC00" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="1.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="4.0" x="13.0" y="29.5"/>
+<y:Shape type="rectangle"/>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n0::n8">
+<data key="d10">
+<y:ShapeNode>
+<y:Geometry height="56.86019736842104" width="30.0" x="1086.5" y="383.0"/>
+<y:Fill color="#FFCC00" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="1.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="4.0" x="13.0" y="26.43009868421052"/>
+<y:Shape type="rectangle"/>
+</y:ShapeNode>
+</data>
+</node>
+</graph>
+</node>
+<edge id="n0::e0" source="n0::n0" target="n0::n1">
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="0.0" sy="0.0" tx="-8.15625" ty="-169.5"/>
+<y:LineStyle color="#000000" type="line" width="1.0"/>
+<y:Arrows source="none" target="standard"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="112.2109375" x="10.109580993652344" y="2.0">generarResultados</y:EdgeLabel>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="n0::e1" source="n0::n1" target="n0::n2">
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="0.0" sy="-140.7297297297297" tx="0.0" ty="-149.58992709815075"/>
+<y:LineStyle color="#000000" type="line" width="1.0"/>
+<y:Arrows source="none" target="standard"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="224.6875" x="16.074120947265612" y="1.9999989690007567">newConEscrutinio: unConteoDeVotos 
+cantidadDeRepresentantes: 500</y:EdgeLabel>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="n0::e2" source="n0::n1" target="n0::n5">
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="0.0" sy="177.85135135135133" tx="0.0" ty="0.0"/>
+<y:LineStyle color="#000000" type="dashed" width="1.0"/>
+<y:Arrows source="none" target="standard"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="105.90625" x="-114.6754150390625" y="2.0000024743982294">resultadoEleccion
+Estudiantes2011</y:EdgeLabel>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="n0::e3" source="n0::n2" target="n0::n2">
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="14.9765625" sy="-131.73066016333937" tx="14.9609375" ty="-122.09066016333941">
+<y:Point x="476.6328" y="141.62953720508168"/>
+<y:Point x="476.6328" y="151.26953720508163"/>
+</y:Path>
+<y:LineStyle color="#000000" type="line" width="1.0"/>
+<y:Arrows source="none" target="standard"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="free" modelPosition="anywhere" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="301.234375" x="4.060290234374975" y="-19.999994655269887">identificarSubclasesParaEscrutinio: conteoDeVotos 
+cantidadDeRepresentantes: cantidad</y:EdgeLabel>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="n0::e4" source="n0::n6" target="n0::n3">
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="1.25" sy="-47.0" tx="0.0" ty="-13.0"/>
+<y:LineStyle color="#000000" type="line" width="1.0"/>
+<y:Arrows source="none" target="standard"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="free" modelPosition="anywhere" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="264.689453125" x="-0.8305123046874314" y="0.5903999999999883">esteResultado?conEscrutinio: conteoDeVotos
+cantidadDeRepresentantes: cantidad</y:EdgeLabel>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="n0::e5" source="n0::n3" target="n0::n6">
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="0.0" sy="20.0" tx="-3.75" ty="-15.0">
+<y:Point x="596.75" y="214.0"/>
+</y:Path>
+<y:LineStyle color="#000000" type="dashed" width="1.0"/>
+<y:Arrows source="none" target="standard"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="27.53125" x="-87.44989013671875" y="2.0">true</y:EdgeLabel>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="n0::e6" source="n0::n6" target="n0::n4">
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="8.636400000000037" sy="12.13980263157896" tx="0.0" ty="-16.93009868421052"/>
+<y:LineStyle color="#000000" type="line" width="1.0"/>
+<y:Arrows source="none" target="standard"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="264.689453125" x="96.9703001464843" y="2.0000016061883343">esteResultado?conEscrutinio: conteoDeVotos
+cantidadDeRepresentantes: cantidad</y:EdgeLabel>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="n0::e7" source="n0::n4" target="n0::n6">
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="0.0" sy="23.06990131578948" tx="15.0078125" ty="52.13980263157896"/>
+<y:LineStyle color="#000000" type="dashed" width="1.0"/>
+<y:Arrows source="none" target="standard"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="31.310546875" x="-244.96124892578132" y="2.0000016061883343">false</y:EdgeLabel>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="n0::e8" source="n0::n6" target="n0::n2">
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="0.0" sy="61.93152771786026" tx="4.63960000000003" ty="38.140602631578986">
+<y:Point x="495.25" y="289.93152771786026"/>
+<y:Point x="495.25" y="311.5008"/>
+</y:Path>
+<y:LineStyle color="#000000" type="dashed" width="1.0"/>
+<y:Arrows source="none" target="standard"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="free" modelPosition="anywhere" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="122.916015625" x="35.252503564453036" y="1.590409163172808">[resultadoCompleto]</y:EdgeLabel>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="n0::e9" source="n0::n2" target="n0::n7">
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="0.0" sy="54.13980263157896" tx="0.0" ty="-25.0"/>
+<y:LineStyle color="#000000" type="line" width="1.0"/>
+<y:Arrows source="none" target="standard"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="216.61328125" x="37.99743027343743" y="2.0">newConEscrutinio: conteoDeVotos
+cantidadDeRepresentantes: cantidad</y:EdgeLabel>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="n0::e10" source="n0::n7" target="n0::n2">
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="0.0" sy="16.5" tx="-2.75" ty="95.63980263157896"/>
+<y:LineStyle color="#000000" type="dashed" width="1.0"/>
+<y:Arrows source="none" target="standard"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="203.201171875" x="-247.93561416015632" y="2.0">resultadoEleccionEstudiantes2011</y:EdgeLabel>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="n0::e11" source="n0::n8" target="n0::n2">
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="0.0" sy="-13.43009868421052" tx="0.0" ty="124.63980263157896"/>
+<y:LineStyle color="#000000" type="line" width="1.0"/>
+<y:Arrows source="standard" target="none"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="45.888671875" modelName="six_pos" modelPosition="shead" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="239.265625" x="-249.372802734375" y="-47.888671875">initializeEscrutinio: unConteoDeVotos 
+Representantes: unaListaRepresentantes
+Suplentes: unaListaSuplentes</y:EdgeLabel>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="n0::e12" source="n0::n8" target="n0::n2">
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="0.0" sy="18.56990131578948" tx="9.25" ty="156.63980263157896"/>
+<y:LineStyle color="#000000" type="dashed" width="1.0"/>
+<y:Arrows source="none" target="standard"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="24.68359375" x="-334.42627578125007" y="2.0">self</y:EdgeLabel>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="n0::e13" source="n0::n2" target="n0::n1">
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="0.0" sy="160.63980263157896" tx="7.0" ty="169.5"/>
+<y:LineStyle color="#000000" type="dashed" width="1.0"/>
+<y:Arrows source="none" target="standard"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="203.201171875" x="-230.04337172851564" y="2.0">resultadoEleccionEstudiantes2011</y:EdgeLabel>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="n0::e14" source="n0::n3" target="n0::n7">
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+<y:LineStyle color="#000000" type="line" width="1.0"/>
+<y:Arrows source="none" target="none"/>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+</graph>
+<data key="d4">
+<y:Resources/>
+</data>
+</graphml>
