@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:y="http://www.yworks.com/xml/graphml" xmlns:yed="http://www.yworks.com/xml/yed/3" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd">
+<!--Created by yFiles for Java 2.8-->
+<key attr.name="url" attr.type="string" for="edge" id="d0"/>
+<key attr.name="description" attr.type="string" for="edge" id="d1"/>
+<key for="edge" id="d2" yfiles.type="edgegraphics"/>
+<key attr.name="Description" attr.type="string" for="graph" id="d3"/>
+<key for="graphml" id="d4" yfiles.type="resources"/>
+<key for="port" id="d5" yfiles.type="portgraphics"/>
+<key for="port" id="d6" yfiles.type="portgeometry"/>
+<key for="port" id="d7" yfiles.type="portuserdata"/>
+<key attr.name="url" attr.type="string" for="node" id="d8"/>
+<key attr.name="description" attr.type="string" for="node" id="d9"/>
+<key for="node" id="d10" yfiles.type="nodegraphics"/>
+<graph edgedefault="directed" id="G">
+<data key="d3"/>
+<node id="n0">
+<data key="d9"/>
+<data key="d10">
+<y:ShapeNode>
+<y:Geometry height="92.0" width="168.0" x="463.0" y="60.0"/>
+<y:Fill color="#C0C0C0" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="1.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="153.34375" x="7.328125" y="37.0185546875">loggeadorElecciones2011</y:NodeLabel>
+<y:Shape type="ellipse"/>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n1">
+<data key="d9"/>
+<data key="d10">
+<y:ShapeNode>
+<y:Geometry height="92.0" width="168.0" x="168.0" y="60.0"/>
+<y:Fill color="#C0C0C0" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="1.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="94.57421875" x="36.712890625" y="37.0185546875">elecciones2011</y:NodeLabel>
+<y:Shape type="ellipse"/>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n2">
+<data key="d9"/>
+<data key="d10">
+<y:ShapeNode>
+<y:Geometry height="108.0" width="212.0" x="278.0" y="-77.0"/>
+<y:Fill color="#C0C0C0" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="1.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="201.19140625" x="5.404296875" y="45.0185546875">interfazLoggeadorElecciones2011</y:NodeLabel>
+<y:Shape type="ellipse"/>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n3">
+<data key="d9"/>
+<data key="d10">
+<y:ShapeNode>
+<y:Geometry height="49.0" width="121.0" x="57.17720697156892" y="226.0040518253295"/>
+<y:Fill color="#C0C0C0" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="1.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="96.794921875" x="12.1025390625" y="15.5185546875">padrónAlumnos</y:NodeLabel>
+<y:Shape type="ellipse"/>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n4">
+<data key="d9"/>
+<data key="d10">
+<y:ShapeNode>
+<y:Geometry height="49.0" width="121.0" x="193.35441394313784" y="228.008103650659"/>
+<y:Fill color="#C0C0C0" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="1.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="108.337890625" x="6.3310546875" y="15.5185546875">padrónGraduados</y:NodeLabel>
+<y:Shape type="ellipse"/>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n5">
+<data key="d9"/>
+<data key="d10">
+<y:ShapeNode>
+<y:Geometry height="49.0" width="121.0" x="327.7088278862757" y="230.016207301318"/>
+<y:Fill color="#C0C0C0" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="1.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="106.673828125" x="7.1630859375" y="15.5185546875">padrónProfesores</y:NodeLabel>
+<y:Shape type="ellipse"/>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n6">
+<data key="d9"/>
+<data key="d10">
+<y:ShapeNode>
+<y:Geometry height="62.0" width="213.0" x="511.41765577255137" y="204.03241460263592"/>
+<y:Fill color="#C0C0C0" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="1.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="183.4609375" x="14.76953125" y="22.0185546875">map(usuarios, interfazUsuario)</y:NodeLabel>
+<y:Shape type="ellipse"/>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e0" source="n1" target="n0">
+<data key="d1"/>
+<data key="d2">
+<y:SplineEdge>
+<y:Path sx="0.0" sy="-19.0" tx="0.0" ty="-19.0">
+<y:Point x="410.0" y="115.0"/>
+</y:Path>
+<y:LineStyle color="#000000" type="line" width="1.0"/>
+<y:Arrows source="none" target="standard"/>
+</y:SplineEdge>
+</data>
+</edge>
+<edge id="e1" source="n2" target="n0">
+<data key="d1"/>
+<data key="d2">
+<y:SplineEdge>
+<y:Path sx="0.0" sy="0.0" tx="-6.822793028431079" ty="0.0">
+<y:Point x="540.1772069715689" y="12.0"/>
+</y:Path>
+<y:LineStyle color="#000000" type="line" width="1.0"/>
+<y:Arrows source="none" target="standard"/>
+</y:SplineEdge>
+</data>
+</edge>
+<edge id="e2" source="n1" target="n3">
+<data key="d1"/>
+<data key="d2">
+<y:SplineEdge>
+<y:Path sx="-21.82279302843108" sy="0.004051825329469239" tx="0.0" ty="0.0">
+<y:Point x="218.0" y="176.00405182532947"/>
+<y:Point x="117.67720697156892" y="176.00405182532947"/>
+</y:Path>
+<y:LineStyle color="#000000" type="line" width="1.0"/>
+<y:Arrows source="none" target="standard"/>
+</y:SplineEdge>
+</data>
+</edge>
+<edge id="e3" source="n1" target="n4">
+<data key="d1"/>
+<data key="d2">
+<y:SplineEdge>
+<y:Path sx="1.8544139431378426" sy="3.0040518253294692" tx="0.0" ty="0.0"/>
+<y:LineStyle color="#000000" type="line" width="1.0"/>
+<y:Arrows source="none" target="standard"/>
+</y:SplineEdge>
+</data>
+</edge>
+<edge id="e4" source="n1" target="n5">
+<data key="d1"/>
+<data key="d2">
+<y:SplineEdge>
+<y:Path sx="35.17720697156892" sy="-2.9959481746705308" tx="0.0" ty="0.0">
+<y:Point x="287.1772069715689" y="193.00405182532947"/>
+<y:Point x="388.2088278862757" y="193.00405182532947"/>
+</y:Path>
+<y:LineStyle color="#000000" type="line" width="1.0"/>
+<y:Arrows source="none" target="standard"/>
+</y:SplineEdge>
+</data>
+</edge>
+<edge id="e5" source="n0" target="n6">
+<data key="d1"/>
+<data key="d2">
+<y:SplineEdge>
+<y:Path sx="0.0" sy="0.0" tx="5.4259447970789925" ty="0.0">
+<y:Point x="560.1772069715689" y="183.00405182532947"/>
+</y:Path>
+<y:LineStyle color="#000000" type="line" width="1.0"/>
+<y:Arrows source="none" target="standard"/>
+</y:SplineEdge>
+</data>
+</edge>
+</graph>
+<data key="d4">
+<y:Resources/>
+</data>
+</graphml>
