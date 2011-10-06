@@ -5,14 +5,16 @@ A continuaci\'on se presenta el diseño orientado a objetos de todo el sistema i
 Dado que se quiere hacer hincapie en diferentes funcionalidades, se presentar\'a primero el sistema en su totalidad y luego se ir\'a explicando cada una de las partes m\'as importantes.
 
 
-%Aca va el diagrama
+\bigskip
+Aca va el diagrama
+\bigskip
 
 
 Antes de pasar a la explicaci\'on de cada una de las funcionalidades, se fundamentaran algunas decisiones de dise\~{n}o a un nivel m\'as alto y no dentro de una funcionalidad en particular.
 
 
 \begin{itemize}
-\item Desacomplamiento de las funcionalidades: El sistema VOX es lo suficientemente chico como para poder implementarlo sin la necesidad de un buen diseño y a\'un as\'i podr\'ia funcionar. Se podr\'ia hacer que existan pocos objetos que tengan muchas responsabilidades distintas sobre el sistema. Por ejemplo, podr\'ia haber un solo objeto que reifique a las elecciones en s\'i y que se encargue de la votaci\'on, de la postulaci\'on de candidatos y de todas las responsabilidades a implementar. Sin embargo, se decidi\'o realizar un dise\~{n}o orientado a objetos que se fundamente sobre las reglas vistas en la materia para obtener una mejor implementaci\'on del sistema. Es por esto que se decidi\'o no tener un objeto muy poco cohesivo, como ser\'ia esta elecci\'on multitarea, sino que dividieron las responsabilidades en diferentes objetos que representen diferentes entes de la realidad. No es lo mismo querer postularse a candidato que querer emitir un voto, por lo que nos pareci\'o interesante tener estas funcionalidades bien desambiguadas. Ademas, esta decisi\'on tambien gana en otro tema muy importante para un buen diseño que es el bajo acomplamiento. Al separar las funcionalidades, el sistema es mucho m\'as tolerante a lo que puede suceder si solo una de estas funcionalidades cambia su comportamiento. En una elecci\'on pr\'oxima, la postulaci\'on a candidatos podr\'ia ser completamente diferente y esto no afectar a todo lo referente a la emisi\'on de un voto, o al sistema de logging.
+\item Desacomplamiento de las funcionalidades: El sistema VOX es lo suficientemente chico como para poder implementarlo sin la necesidad de un buen diseño y a\'un as\'i podr\'ia funcionar. Se podr\'ia hacer que existan pocos objetos que tengan muchas responsabilidades distintas sobre el sistema. Por ejemplo, podr\'ia haber un solo objeto que reifique a las elecciones en s\'i y que se encargue de la votaci\'on, de la postulaci\'on de candidatos y de todas las responsabilidades a implementar. Sin embargo, se decidi\'o realizar un dise\~{n}o orientado a objetos que se fundamente sobre las reglas vistas en la materia para obtener una mejor implementaci\'on del sistema. Es por esto que se decidi\'o no tener un objeto muy poco cohesivo, como ser\'ia esta elecci\'on multitarea, sino que se dividieron las responsabilidades en diferentes objetos que representen diferentes entes de la realidad. No es lo mismo querer postularse a candidato que querer emitir un voto, por lo que nos pareci\'o interesante tener estas funcionalidades bien desambiguadas. Adem\'as, esta decisi\'on tambien gana en otro tema muy importante para un buen diseño que es el bajo acomplamiento. Al separar las funcionalidades, el sistema es mucho m\'as tolerante a lo que puede suceder si solo una de estas funcionalidades cambia su comportamiento. En una elecci\'on pr\'oxima, la postulaci\'on a candidatos podr\'ia ser completamente diferente y esto no afectar a todo lo referente a la emisi\'on de un voto, o al sistema de logging.
 
 \item Usuarios reificados. Charlando con los diferentes docentes de la materia, nos resulto interesante reificar el concepto de usuario del sistema. A priori un usuario pod\'ia ser simplemente un identificador, pero nos parecio adecuado reificar este concepto para tener informaci\'on que de otra forma corresponder\'ia a un sistema externo. Reificando el usuario y teniendo, por ejemplo en el caso del Alumno, la cantidad de materias, lo que podemos hacer es tener una sola interacci\'on con un sistema externo al comienzo de un acto electoral y de esa forma ya tener la informaci\'on necesaria en los objetos pertinentes, sin hacer m\'as complejo el dise\~{n}o. De hecho, nos parece que tambi\'en es una buena forma de mostrar la principal caracter\'istica de SCRUM, que es ser una metodolog\'ia iterativa-incremental; al modelarlo de esta forma, se trivializa un poco la interacci\'on con los sistemas externos, dejando esta funcionalidad para un sprint posterior. Por el momento, el modelo soporta el hecho de que al comenzar un acto electoral se cargan los padrones de los usuarios y con esto se obtiene la informaci\'on deseada. Esta forma de ingresar la informaci\'on de los usuarios es la funcionalidad que se podr\'ia incrementar en una iteraci\'on posterior.
 
@@ -49,7 +51,7 @@ La interfaz del logueador es un objeto que representa cual va a ser la interacci
 \item login: password:. Este mensaje contiene la \'unica responsabilidad de la interfaz de logueador, que es permitirle al usuario real loguearse en el sistema.
 \end{itemize}
 
-La principal idea de esta interfaz se basa en las reglas de diseño vistas durante las pr\'acticas de la materia que nos indica que es un buena decisi\'on poner una interfaz para poder interactuar con cosas interiores al modelo de una forma controlada. De esta forma un usuario real solamente podr\'a acceder a la funcionalidad de logging y no podr\'a acceder a otra informaci\'on interesante que pueda tener el modelo interno de datos. 
+La principal idea de esta interfaz se basa en las reglas de diseño vistas durante las pr\'acticas de la materia que nos indica que es una buena decisi\'on poner una interfaz para poder interactuar con cosas interiores al modelo de una forma controlada. De esta forma un usuario real solamente podr\'a acceder a la funcionalidad de logging y no podr\'a acceder a otra informaci\'on interesante que pueda tener el modelo interno de datos. 
 
 \subsubsection{Logueador}
 
@@ -82,6 +84,23 @@ Luego, este objeto es responsable de indicar en que etapa de las elecciones esta
 
 
 
+\bigskip
+
+A continuaci\'on, se presenta un diagrama de secuencia que sirve para entender de forma din\'amica la interacci\'on entre los diferentes objetos en una traza particular para la funcionalidad de logueo.
+
+ACA va el diagrama de secuencia.
+
+
+
+
+Por \'ultimo, se presenta un diagrama de objetos, para poder identificar las colaboraciones entres los diferentes objetos del sistema en un momento en particular.
+
+ACA va el diagrama de objetos.
+
+
+
+
+
 \subsection{Postulaci\'on a candidato}
 
 En esta secci\'on se presenta la funcionalidad particular de postularse para ser candidato en las elecciones.
@@ -94,12 +113,12 @@ Para esto, se reproduce el subconjunto de clases del diagrama original, que corr
 
 \subsubsection{candidateador}
 
-La idea del candidateador es tener un objeto que reifique el concepto que se tendr\'ia en una votaci\'on si un sistema inform\'atico, en el cual un potencial candidato ir\'ia hacia una persona dedicada a la tarea de la postulaci\'on para postularse. Esta persona ser\'ia la encargada de, por un lado, mirar que esta persona no aparezca ya en la lista de candidatos, de forma que no pueda haber un candidato postulado dos veces. Luego, esta persona ser\'ia tambi\'en la encargada de utilizar alg\'un sistema externo, o algun catalogo de legajos, para fijarse si el potencial candidato cumple los requisitos necesarios. Nos parece que la tarea de chequear las restricciones es una responsabilidad grande como para asignarle un objeto dedicado solamente a eso. Es por esto que en este punto, el candidateador solo chequear\'a las restricciones colaborando con otro objeto que se encargar\'a del chequeo propiamente dicho.
+La idea del candidateador es tener un objeto que reifique el concepto que se tendr\'ia en una votaci\'on sin un sistema inform\'atico, en el cual un potencial candidato ir\'ia hacia una persona dedicada a la tarea de la postulaci\'on para postularse. Esta persona ser\'ia la encargada de, por un lado, mirar que el aspirante no aparezca ya en la lista de candidatos, de forma que no pueda haber un candidato postulado dos veces. Luego, esta persona ser\'ia tambi\'en la encargada de utilizar alg\'un sistema externo, o alg\'un catalogo de legajos, para fijarse si el potencial candidato cumple los requisitos necesarios. Nos parece que la tarea de chequear las restricciones es una responsabilidad grande como para asignarsela a un objeto dedicado solamente a eso. Es por esto que en este punto, el candidateador solo chequear\'a las restricciones colaborando con otro objeto que se encargar\'a del chequeo propiamente dicho.
 
 Luego, para resolver las responsabilidades de una forma bien cohesiva, se tiene un \'unico mensaje:
 
 \begin{itemize}
-\item candidatear:. Este mensaje es la \'unica responsabilidad que tiene el objeto, recibe un usuario a candidatear y se fija si ya pertenece a su lista interna. Ademas, en la implementaci\'on de este mensaje, el objeto candidateador colabora con el Chequeador para que este le diga si el postulante cumple con los requisitos. Dependiendo el caso del postulante, el candidateador lo sumar\'a a la lista de candidatos o no.
+\item candidatear:. Este mensaje es la \'unica responsabilidad que tiene el objeto, recibe un usuario a candidatear y se fija si ya pertenece a su lista interna. Adem\'as, en la implementaci\'on de este mensaje, el objeto candidateador colabora con el Chequeador para que este le diga si el postulante cumple con los requisitos. Dependiendo el caso del postulante, el candidateador lo sumar\'a a la lista de candidatos o no.
 \end{itemize}
 
 
@@ -112,9 +131,28 @@ Esta interfaz tiene un comportamiento similiar a todas las dem\'as interfaces de
 
 El problema de saber si un postulante cumple con los requisitos para ser candidato no es una responsabilidad menor, sobretodo por el hecho de que queremos darle extensibilidad a esta parte del diseño, permitiendo que cambien los reglamentos por los cuales se chequean los requisitos.
 
-Es por esto que existe el objeto chequeador de restricciones para desacoplar esta responsabilidad del candidateador. La clase chequeadorDeRestricciones adem\'as se encuentra subclasificado en chequeador de alumnos, chequeador de graduados y chequeador de profesores. De esta manera, los diferentes candidateadores conoceran diferentes chequeadores de forma de poder delegar las responsabilidad del chequeo en estos.
+Es por esto que existe el objeto chequeador de restricciones para desacoplar esta responsabilidad del candidateador. La clase chequeadorDeRestricciones adem\'as se encuentra subclasificada en chequeador de alumnos, chequeador de graduados y chequeador de profesores. De esta manera, los diferentes candidateadores conoceran diferentes chequeadores de forma de poder delegar las responsabilidad del chequeo en estos.
 
 Cada tipo de chequeador diferente, chequea mediante el reglamento propio a cada claustro, de forma que se puede desacoplar el chequeo de un graduado del de un alumno o un profesor.
+
+
+
+
+
+\bigskip
+
+A continuaci\'on se presenta la traza correspondiente a un graduado que se quiere candidatear mediante un diagrama de secuencia. De esta forma, se pueden ver las interacciones que tienen los diferentes objetos cuando un graduado se quiere candidatear.
+
+ACA va el diagrama de secuencias.
+
+
+\bigskip
+
+Por \'ultimo, se presenta un diagrama de objetos para esta funcionalidad.
+
+ACA va el diagrama de objetos.
+
+
 
 \subsection{Votaci\'on}
 
@@ -131,14 +169,14 @@ ACA va el diagrama de clases.
 El usuario representa a un posible votante o candidato, pero en este caso, solo nos importa el mismo como votante. La entidad del mundo real a la que hace referencia es el votante al momento de iniciarse el proceso electoral. Cualquier usuario debe ser capaz de responder a los mensajes DNI, nombre, registrarQueVoto, yaVotaste. Los mismos se utilizan para:
 
 \begin{itemize}
-\item DNI: Es un mensaje esencial al usuario, que lo identica como objeto entre los de su misma clase. El mismo hace referencia directa a un usuario del sistema, por lo que tambi\'en servir\'a para hacer el recuento de votos. Es decir que los votos en el sistema se dividiran de acuerdo al DNI del candidato al que hacen referencia.
-\item nombre: Responde al nombre del persona real que hace referencia el usuario.
-\item registrarQueVoto: Es un mensaje que permite registrarle al usuario que ya voto para que no pueda volver a votar.
-\item yaVotaste: Es un mensaje que permite preguntarle al usuario si ya voto. Sirve para cumplir con la restricci\'on de que un usuario no pueda volver a sufragar.
+\item DNI: Es un mensaje esencial al usuario, que lo identica como objeto entre los de su misma clase. El mismo hace referencia directa a un usuario del sistema, por lo que tambi\'en servir\'a para hacer el recuento de votos. Es decir que los votos en el sistema se dividir\'an de acuerdo al DNI del candidato al que hacen referencia.
+\item nombre: Responde al nombre de la persona real que hace referencia el usuario.
+\item registrarQueVoto: Es un mensaje que permite registrarle al usuario que ya vot\'o para que no pueda volver a votar.
+\item yaVotaste: Es un mensaje que permite preguntarle al usuario si ya vot\'o. Sirve para cumplir con la restricci\'on de que un usuario no pueda volver a sufragar.
 \item cantidadMaximaDeVotos: Es un mensaje que responde cuantos postulantes puede votar un usuario.
 \end{itemize}
 
-En cuanto a los mensajes presentandos anteriormente, desde un punto de vista estrictamente paradigm\'atico, no queda claro que sea responsabilidad del usuario saber que ya voto. Sin embargo, se decidi\'o hacerlo de esta forma para reducirle la complejidad al modelo.
+En cuanto a los mensajes presentandos anteriormente, desde un punto de vista estrictamente paradigm\'atico, no queda claro que sea responsabilidad del usuario saber que ya vot\'o. Sin embargo, se decidi\'o hacerlo de esta forma para reducirle la complejidad al modelo.
 
 Por el mismo motivo se encuentra el mensaje cantidadMaximaDeVotos que, bajo el consejo de Fernando Astesuain, se puso dentro del usuario para que sea simple la votaci\'on. Directamente se puede votar una collection de candidatos y chequar cuantos puede votar realmente mediante este mensaje.
 
@@ -148,7 +186,7 @@ Esto lo hicimos de esta forma para seguir una de las principales reglas de dise�
 
 \subsubsection{urnaElectoral}
 
-La urnaElectoral reifica el concepto de urna que se tendr\'ia en el dominio del problema. La urna es la encargada de llevar los votos de cada una de las votaciones que haya. Una primer idea hab\'ia sido subclasificar la urna dependiendo del claustro a la que pertenezca. Sin embargo, con la busqueda de tener objetos bien cohesivos, nos dimos cuenta que realmente no importa a que claustro pertenezca la urna, sino que simplemente debe guardar los votos de la elecci\'on para la que fue asignada. Esto quiere decir que el sistema problablemente tenga m\'as de una urna, que van a ser una para Alumnos, una para Graaduados y una para Profesores; pero estas urnas van a hacer equivalentes, son todas instancias de la misma clase porque las responsabilidades que tienen son las de ser una urna independientes del claustro. Dicho esto, las responsabilidades de una urna son:
+La urnaElectoral reifica el concepto de urna que se tendr\'ia en el dominio del problema. La urna es la encargada de llevar los votos de cada una de las votaciones que haya. Una primer idea hab\'ia sido subclasificar la urna dependiendo del claustro a la que pertenezca. Sin embargo, con la busqueda de tener objetos bien cohesivos, nos dimos cuenta que realmente no importa a que claustro pertenezca la urna, sino que simplemente debe guardar los votos de la elecci\'on para la que fue asignada. Esto quiere decir que el sistema problablemente tenga m\'as de una urna, que van a ser una para Alumnos, una para Graduados y una para Profesores; pero estas urnas van a hacer equivalentes, son todas instancias de la misma clase porque las responsabilidades que tienen son las de ser una urna independientes del claustro. Dicho esto, las responsabilidades de una urna son:
 
 \begin{itemize} 
 \item registrarVotoA:, Este mensaje lo que hace es justamente \emph{meter} un voto en la urna. Dado que lo \'unico que queremos es registrar el voto, la urna solo necesita saber a quien se esta votando.
@@ -174,7 +212,7 @@ La interfaz para votaci\'on es el objeto que principalmente maneja el sufragio d
 
 Si bien el diagrama de clases, m\'as la explicaci\'on del mismo, nos da una idea aproximada de como interact\'uan los objetos entre s\'i, presentaremos a continuaci\'on un diagrama de secuencia que indica como ser\'ia una traza posible de las interacciones din\'amicas entre diferentes objetos involucrados en el proceso de votaci\'on.
 
-%secuencia
+ACA va el diagrama de secuencia.
 
 \bigskip
 
@@ -182,7 +220,7 @@ Por \'ultimo, nos parece interesante mostrar un diagrama de instancias que resal
 
 En este caso se presenta una caso donde un Alumno, un Graduado y un Profesor quieren emitir su voto.
 
-%objeto
+ACA va el diagrama de objetos.
 
 
 
@@ -224,34 +262,38 @@ Pese a esta suposición, es importante mencionar que el diseño podría modifica
 
 
 \subsubsection{EleccionConflictivaException}
-EleccionConflictivaException es una excepción que será lanzada si se intenta se manda el mensaje representantes o suplentes a una instancia de la clase ResultadoConflictivo. De esta manera se permite manejar este tipo de situaciones solicitando la intervención de un usuario administrador, que actuará en nombre de la junta electoral, indicando una resolución manual al conflicto surgido. Cualquier instancia de esta clase responde al mensaje parameter con la instancia de ResultadoConflictivo que lanzó la excepción.
+EleccionConflictivaException es una excepción que será lanzada si se manda el mensaje representantes o suplentes a una instancia de la clase ResultadoConflictivo. De esta manera se permite manejar este tipo de situaciones solicitando la intervención de un usuario administrador, que actuará en nombre de la junta electoral, indicando una resolución manual al conflicto surgido. Cualquier instancia de esta clase responde al mensaje parameter con la instancia de ResultadoConflictivo que lanzó la excepción.
 
 
 
-Para la mejor comprensión de la implementación entregada es importante comentar que la semántica de ResultadoEleccion $>>$ newConEscrutinio: cantidadDeRepresentantes:  es crear una instancia de una de sus subclases cuando dicha subclase es la única que responde afirmativamente al mensaje "esteResultado?conEscrutinio: cantidadDeRepresentantes: ". De no existir una subclase que responda afirmativamente a dicho mensaje se retorna una instancia de ResultadoConflictivo. Por esta razón ResultadoConflictivo responde siempre negativamente a dicho mensaje. Si existieran varias subclases de ResultadoEleccion que fueran compatibles con los parámetros, se lanza otra excepción, que no es incluída en los diagramas de clases porque consideramos que no es esencial al modelo, sino accidental y debida a la implementación de la prueba de concepto.
+Para la mejor comprensión de la implementación entregada es importante comentar que la semántica de ResultadoEleccion $>>$ newConEscrutinio: cantidadDeRepresentantes:  es crear una instancia de una de sus subclases cuando dicha subclase es la única que responde afirmativamente al mensaje esteResultado?conEscrutinio: cantidadDeRepresentantes:. De no existir una subclase que responda afirmativamente a dicho mensaje se retorna una instancia de ResultadoConflictivo. Por esta razón ResultadoConflictivo responde siempre negativamente a dicho mensaje. Si existieran varias subclases de ResultadoEleccion que fueran compatibles con los parámetros, se lanza otra excepción, que no es incluída en los diagramas de clases porque consideramos que no es esencial al modelo, sino accidental y debida a la implementación de la prueba de concepto.
 
 
-
-Explicación del diagrama de secuencia
-
-
+\bigskip
 
 
 El siguiente diagrama de secuencia muestra las colaboraciones al darse por finalizados los comicios. En este caso no surgieron ambigüedades en cuanto a los resultados. 
 
 
-Tras varias colaboraciones producto de la finalización de los comicios que no son incluídas, "mesaElectoral" envía el mensaje 
-"newConEscrutinio: conteoDeVotos cantidadDeRepresentantes: cantidad" a la clase ResultadoEleccion, la cual se envía a sí misma el mensaje "identificarSubclasesParaEscrutinio: conteoDeVotos cantidadDeRepresentantes: cantidad". 
+% Tras varias colaboraciones producto de la finalización de los comicios que no son incluídas, "mesaElectoral" envía el mensaje 
+% "newConEscrutinio: conteoDeVotos cantidadDeRepresentantes: cantidad" a la clase ResultadoEleccion, la cual se envía a sí misma el mensaje "identificarSubclasesParaEscrutinio: conteoDeVotos cantidadDeRepresentantes: cantidad". 
+% 
+% Dicho envío de mensaje genera la ejecución de un nuevo método por parte del mismo objeto (en el grafiquito tiene que aparecer otra cajita, como cuando Nicolás mostró el patrón visitor), en el cual se envía a las subclases de ResultadoEleccion el mensaje "esteResultado?conEscrutinio: conteoDeVotos cantidadDeRepresentantes: cantidad", al cual ResultadoCompleto responde afirmativamente y ResultadoConflictivo responde negativamente.
+% 
+% Tras esto se termina la ejecución del segundo método de ResultadoEleccion, que retorna una lista que contiene únicamente a la clase ResultadoCompleto y devuelve de esta manera la ejecución al primer método invocado.
+% 
+% Posteriormente se llama al método ResultadoCompleto $>>$ newConEscrutinio: conteoDeVotos cantidadDeRepresentantes: cantidad
+% que realizar varios cómputos, para generar las listas de representantes y suplentes, las cuales incluye como parámetros del mensaje "newConEscturinio: conteoDeVotos Representantes: representantes Suplentes: suplentes" que se envía a sí misma.
+% 
+% Esto genera la ejecución de un segundo método de ResultadoCompleto, en la cual se crea una instancia concreta, "resultadoEleccionEstudiantes2011", a la cuál se envía el mensaje "initializeEscrutinio: conteoDeVotos Representantes: representantes Suplentes: representantes". La respuesta a este mensaje es la "resultadoEleccionEstudiantes2011" en sí misma, así como también es la respuesta a todos los mensajes todavía siendo procesados.
+% 
+% 
+% Posteriormente "mesaElectoralEstudiantes" envía a "resultadoEleccionEstudiantes2011" el mensaje representantes, al cuál responde con la lista que contiene a los usuarios correspondientes a Federico Pousa y Facundo Carrillo.
 
-Dicho envío de mensaje genera la ejecución de un nuevo método por parte del mismo objeto (en el grafiquito tiene que aparecer otra cajita, como cuando Nicolás mostró el patrón visitor), en el cual se envía a las subclases de ResultadoEleccion el mensaje "esteResultado?conEscrutinio: conteoDeVotos cantidadDeRepresentantes: cantidad", al cual ResultadoCompleto responde afirmativamente y ResultadoConflictivo responde negativamente.
 
-Tras esto se termina la ejecución del segundo método de ResultadoEleccion, que retorna una lista que contiene únicamente a la clase ResultadoCompleto y devuelve de esta manera la ejecución al primer método invocado.
-
-Posteriormente se llama al método ResultadoCompleto $>>$ newConEscrutinio: conteoDeVotos cantidadDeRepresentantes: cantidad
-que realizar varios cómputos, para generar las listas de representantes y suplentes, las cuales incluye como parámetros del mensaje "newConEscturinio: conteoDeVotos Representantes: representantes Suplentes: suplentes" que se envía a sí misma.
-
-Esto genera la ejecución de un segundo método de ResultadoCompleto, en la cual se crea una instancia concreta, "resultadoEleccionEstudiantes2011", a la cuál se envía el mensaje "initializeEscrutinio: conteoDeVotos Representantes: representantes Suplentes: representantes". La respuesta a este mensaje es la "resultadoEleccionEstudiantes2011" en sí misma, así como también es la respuesta a todos los mensajes todavía siendo procesados.
+ACA va el diagrama de secuencia.
 
 
-Posteriormente "mesaElectoralEstudiantes" envía a "resultadoEleccionEstudiantes2011" el mensaje representantes, al cuál responde con la lista que contiene a los usuarios correspondientes a Federico Pousa y Facundo Carrillo.
+Por \'ultimo se presenta un diagrama de objetos que representan las relaciones de conocimiento entre los diferentes objetos.
 
+ACA va el diagrama de objetos.
