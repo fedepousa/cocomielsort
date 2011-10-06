@@ -84,6 +84,38 @@ Luego, este objeto es responsable de indicar en que etapa de las elecciones esta
 
 \subsection{Postulaci\'on a candidato}
 
+En esta secci\'on se presenta la funcionalidad particular de postularse para ser candidato en las elecciones.
+
+
+Para esto, se reproduce el subconjunto de clases del diagrama original, que corresponden a esta secci\'on en particular.
+
+
+
+
+\subsubsection{candidateador}
+
+La idea del candidateador es tener un objeto que reifique el concepto que se tendr\'ia en una votaci\'on si un sistema inform\'atico, en el cual un potencial candidato ir\'ia hacia una persona dedicada a la tarea de la postulaci\'on para postularse. Esta persona ser\'ia la encargada de, por un lado, mirar que esta persona no aparezca ya en la lista de candidatos, de forma que no pueda haber un candidato postulado dos veces. Luego, esta persona ser\'ia tambi\'en la encargada de utilizar alg\'un sistema externo, o algun catalogo de legajos, para fijarse si el potencial candidato cumple los requisitos necesarios. Nos parece que la tarea de chequear las restricciones es una responsabilidad grande como para asignarle un objeto dedicado solamente a eso. Es por esto que en este punto, el candidateador solo chequear\'a las restricciones colaborando con otro objeto que se encargar\'a del chequeo propiamente dicho.
+
+Luego, para resolver las responsabilidades de una forma bien cohesiva, se tiene un \'unico mensaje:
+
+\begin{itemize}
+\item candidatear:. Este mensaje es la \'unica responsabilidad que tiene el objeto, recibe un usuario a candidatear y se fija si ya pertenece a su lista interna. Ademas, en la implementaci\'on de este mensaje, el objeto candidateador colabora con el Chequeador para que este le diga si el postulante cumple con los requisitos. Dependiendo el caso del postulante, el candidateador lo sumar\'a a la lista de candidatos o no.
+\end{itemize}
+
+
+\subsubsection{interfazParaPostulaci\'on}
+
+Esta interfaz tiene un comportamiento similiar a todas las dem\'as interfaces de usuario. Lo que hace es dar una puerta de entrada al sistema para poder interactuar con el subsistema de postulaci\'on, pero sin tener acceso a mensajes o informaciones internas que no queremos que un usuario real pueda acceder. Si el usuario real pudiese interactuar directamente con el candidateador, podr\'ia eventualmente tener acceso a la lista de candidatos, situaci\'on que no queremos que ocurra. Es por esto que la \'unica responsabilidad de la interfaz es tener un mensaje para candidatear a un usuario, y se encarga de enviar esta petici\'on al candidateador real.
+
+
+\subsubsection{Chequeador de Restricciones}
+
+El problema de saber si un postulante cumple con los requisitos para ser candidato no es una responsabilidad menor, sobretodo por el hecho de que queremos darle extensibilidad a esta parte del diseño, permitiendo que cambien los reglamentos por los cuales se chequean los requisitos.
+
+Es por esto que existe el objeto chequeador de restricciones para desacoplar esta responsabilidad del candidateador. La clase chequeadorDeRestricciones adem\'as se encuentra subclasificado en chequeador de alumnos, chequeador de graduados y chequeador de profesores. De esta manera, los diferentes candidateadores conoceran diferentes chequeadores de forma de poder delegar las responsabilidad del chequeo en estos.
+
+Cada tipo de chequeador diferente, chequea mediante el reglamento propio a cada claustro, de forma que se puede desacoplar el chequeo de un graduado del de un alumno o un profesor.
+
 \subsection{Votaci\'on}
 
 %clase
