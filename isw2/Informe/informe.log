@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.1.17)  6 OCT 2011 13:39
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.1.17)  6 OCT 2011 16:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -433,30 +433,98 @@ File: burn1.png Graphic file (type png)
 atex/ucs/data/uni-0.def
 File: uni-0.def 2004/10/17 UCS: Unicode data U+0000..U+00FF
 ) [11]
-[12] [13] [14] [15] [16] [17]) [18] (./informe.aux) ) 
+[12] <diagramas/modeloClases.png, id=192, 1465.475pt x 1498.59875pt>
+File: diagramas/modeloClases.png Graphic file (type png)
+
+<use diagramas/modeloClases.png>
+Overfull \hbox (29.22707pt too wide) in paragraph at lines 71--72
+ [] 
+ []
+
+[13] [14 <./diagramas/modeloClases.png (PNG copy)>]
+<diagramas/diagramaSecuenciaSeLogueaUnAlumno.png, id=202, 943.525pt x 433.62pt>
+File: diagramas/diagramaSecuenciaSeLogueaUnAlumno.png Graphic file (type png)
+<use diagramas/diagramaSecuenciaSeLogueaUnAlumno.png>
+<diagramas/modeloDeObjetosLogging.png, id=203, 1373.13pt x 748.7975pt>
+File: diagramas/modeloDeObjetosLogging.png Graphic file (type png)
+
+<use diagramas/modeloDeObjetosLogging.png> [15 <./diagramas/diagramaSecuenciaSe
+LogueaUnAlumno.png (PNG copy)> <./diagramas/modeloDeObjetosLogging.png (PNG cop
+y)>]
+<diagramas/diagramaGraduadoSeCandidateaExitosamente.png, id=208, 1269.74374pt x
+ 438.63875pt>
+File: diagramas/diagramaGraduadoSeCandidateaExitosamente.png Graphic file (type
+ png)
+ <use diagramas/diagramaGraduadoSeCandidateaExitosamente.png>
+[16]
+<diagramas/modeloDeObjetosCandidatearse.png, id=213, 913.4125pt x 493.845pt>
+File: diagramas/modeloDeObjetosCandidatearse.png Graphic file (type png)
+
+<use diagramas/modeloDeObjetosCandidatearse.png>
+<diagramas/modeloDeClasesVotacion.png, id=214, 1583.9175pt x 1003.75pt>
+File: diagramas/modeloDeClasesVotacion.png Graphic file (type png)
+
+<use diagramas/modeloDeClasesVotacion.png> [17 <./diagramas/diagramaGraduadoSeC
+andidateaExitosamente.png (PNG copy)> <./diagramas/modeloDeObjetosCandidatearse
+.png (PNG copy)>] [18 <./diagramas/modeloDeClasesVotacion.png (PNG copy)>]
+[19]
+<diagramas/diagramaSecuenciaVotaUnAlumno.png, id=228, 1045.9075pt x 545.03625pt
+>
+File: diagramas/diagramaSecuenciaVotaUnAlumno.png Graphic file (type png)
+ <use diagramas/diagramaSecuenciaVotaUnAlumno.png>
+<diagramas/modeloDeObjetosVotacion.png, id=229, 1483.5425pt x 951.555pt>
+File: diagramas/modeloDeObjetosVotacion.png Graphic file (type png)
+
+<use diagramas/modeloDeObjetosVotacion.png>
+<diagramas/modeloDeClasesResultados.png, id=230, 2752.2825pt x 1377.145pt>
+File: diagramas/modeloDeClasesResultados.png Graphic file (type png)
+
+<use diagramas/modeloDeClasesResultados.png>
+Overfull \hbox (39.24225pt too wide) in paragraph at lines 251--252
+ [] 
+ []
+
+[20 <./diagramas/diagramaSecuenciaVotaUnAlumno.png (PNG copy)> <./diagramas/mod
+eloDeObjetosVotacion.png (PNG copy)>] [21 <./diagramas/modeloDeClasesResultados
+.png (PNG copy)>]
+<diagramas/diagramaUrnaElectoralGeneraResultadosCompletos.png, id=239, 2513.39p
+t x 991.705pt>
+File: diagramas/diagramaUrnaElectoralGeneraResultadosCompletos.png Graphic file
+ (type png)
+
+<use diagramas/diagramaUrnaElectoralGeneraResultadosCompletos.png>
+Overfull \hbox (18.97223pt too wide) in paragraph at lines 312--313
+ [] 
+ []
+
+<diagramas/modeloDeObjetosResultados.png, id=240, 1672.2475pt x 951.555pt>
+File: diagramas/modeloDeObjetosResultados.png Graphic file (type png)
+
+<use diagramas/modeloDeObjetosResultados.png> [22 <./diagramas/diagramaUrnaElec
+toralGeneraResultadosCompletos.png (PNG copy)>]) [23 <./diagramas/modeloDeObjet
+osResultados.png (PNG copy)>] (./informe.aux) ) 
 Here is how much of TeX's memory you used:
- 7985 strings out of 493911
- 110704 string characters out of 1155272
- 200519 words of memory out of 3000000
- 11047 multiletter control sequences out of 15000+50000
+ 8046 strings out of 493911
+ 113138 string characters out of 1155272
+ 199519 words of memory out of 3000000
+ 11091 multiletter control sequences out of 15000+50000
  11938 words of font info for 44 fonts, out of 3000000 for 9000
  706 hyphenation exceptions out of 8191
  38i,8n,36p,1562b,486s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/
-fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1
-/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
-fonts/cm/cmbxti10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
-cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb><
-/usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/t
-exmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/
-fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf-texlive/fonts/type1
-/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
-fonts/cm/cmssbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
-cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-
-Output written on informe.pdf (18 pages, 612340 bytes).
+</usr/share/texmf-texlive/fonts/
+type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/publi
+c/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
+cm/cmbxti10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10
+.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/s
+hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-t
+exlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/
+type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf-texlive/fonts/type1/publi
+c/amsfonts/cm/cmss10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
+cm/cmssbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10
+.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on informe.pdf (23 pages, 1414088 bytes).
 PDF statistics:
- 270 PDF objects out of 1000 (max. 8388607)
- 52 named destinations out of 1000 (max. 500000)
- 197 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 303 PDF objects out of 1000 (max. 8388607)
+ 57 named destinations out of 1000 (max. 500000)
+ 252 words of extra memory for PDF output out of 10000 (max. 10000000)
 
