@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <st-source>
-<time-stamp>From VisualWorks® NonCommercial, 7.7.1 of 26 de julio de 2010 on 6 de octubre de 2011 at 16:35:40</time-stamp>
+<time-stamp>From VisualWorks® NonCommercial, 7.7.1 of 26 de julio de 2010 on 6 de octubre de 2011 at 16:45:23</time-stamp>
 
 
 <component-created>
@@ -19,7 +19,7 @@
 <super>Core.Object</super>
 <private>false</private>
 <indexed-type>none</indexed-type>
-<inst-vars>resultadoProfesores cantidadVotosEnBlanco fechaDeConfeccionDelActa resultadoGraduados resultadoEstudiantes representantesEstudiantes representantesGraduados representantesProfesores suplentesEstudiantes suplentesGraduados suplentesProfesores </inst-vars>
+<inst-vars>resultadoProfesores fechaDeConfeccionDelActa resultadoGraduados resultadoEstudiantes representantesEstudiantes representantesGraduados representantesProfesores suplentesEstudiantes suplentesGraduados suplentesProfesores </inst-vars>
 <class-inst-vars></class-inst-vars>
 <imports></imports>
 <category></category>
@@ -59,8 +59,6 @@
 
 <body package="TP_historial" selector="suplentesProfesores">suplentesProfesores	^suplentesProfesores.</body>
 
-<body package="TP_historial" selector="cantidadDeVotosEnBlanco">cantidadDeVotosEnBlanco		^cantidadVotosEnBlanco.</body>
-
 <body package="TP_historial" selector="representantesEstudiantes">representantesEstudiantes	^representantesEstudiantes.</body>
 
 <body package="TP_historial" selector="suplentesGraduados">suplentesGraduados	^suplentesGraduados.</body>
@@ -73,7 +71,7 @@
 <methods>
 <class-id>ActaElectoral</class-id> <category>initialize-release</category>
 
-<body package="TP_historial" selector="initializeConResultadoProfesores:resultadoGraduados:resultadoEstudiantes:">initializeConResultadoProfesores: resPro resultadoGraduados: resGrad resultadoEstudiantes: resEstu 	"Initialize a newly created instance. This method must answer the receiver."	representantesProfesores := resPro representantes.	representantesEstudiantes := resEstu representantes.	representantesGraduados := resGrad representantes.	resultadoProfesores := resPro.	resultadoGraduados := resGrad.	resultadoEstudiantes := resEstu.	fechaDeConfeccionDelActa := Date today.	^self</body>
+<body package="TP_historial" selector="initializeConResultadoProfesores:resultadoGraduados:resultadoEstudiantes:">initializeConResultadoProfesores: resPro resultadoGraduados: resGrad resultadoEstudiantes: resEstu 	"Initialize a newly created instance. This method must answer the receiver."	representantesProfesores := resPro representantes.	representantesEstudiantes := resEstu representantes.	representantesGraduados := resGrad representantes.	suplentesProfesores := resPro suplentes.	suplentesEstudiantes := resEstu suplentes.	suplentesGraduados := resGrad suplentes.	resultadoProfesores := resPro.	resultadoGraduados := resGrad.	resultadoEstudiantes := resEstu.	fechaDeConfeccionDelActa := Date today.	^self</body>
 </methods>
 
 
