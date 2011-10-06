@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <st-source>
-<time-stamp>From VisualWorks® NonCommercial, 7.7.1 of 26 de julio de 2010 on 6 de octubre de 2011 at 16:45:52</time-stamp>
+<time-stamp>From VisualWorks® NonCommercial, 7.7.1 of 26 de julio de 2010 on 6 de octubre de 2011 at 16:49:09</time-stamp>
 
 
 <component-created>
@@ -89,7 +89,7 @@
 </class>
 
 <class>
-<name>LogueadorInterfaz</name>
+<name>InterfazLogueador</name>
 <environment>Smalltalk</environment>
 <super>Core.Object</super>
 <private>false</private>
@@ -629,18 +629,18 @@
 
 
 <methods>
-<class-id>LogueadorInterfaz class</class-id> <category>instance creation</category>
+<class-id>InterfazLogueador class</class-id> <category>instance creation</category>
 
 <body package="TP" selector="new:">new: unLogueador	^(super new) logueador: unLogueador.</body>
 </methods>
 
 
 <methods>
-<class-id>LogueadorInterfaz</class-id> <category>exportables</category>
-
-<body package="TP" selector="logueador:">logueador: unLogueador		logueador:= unLogueador.</body>
+<class-id>InterfazLogueador</class-id> <category>exportables</category>
 
 <body package="TP" selector="login:password:">login: unDNI password: unPassword^ (logueador login: unDNI password: unPassword).</body>
+
+<body package="TP" selector="logueador:">logueador: unLogueador		logueador:= unLogueador.</body>
 </methods>
 
 
