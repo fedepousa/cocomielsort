@@ -1,18 +1,11 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.1.17)  6 OCT 2011 16:50
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.7.3)  7 OCT 2011 13:21
 entering extended mode
- restricted \write18 enabled.
  %&-line parsing enabled.
 **informe.tex
 (./informe.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, croatian, bulgarian, ukrainian, russian, czech, slovak, danish, dut
-ch, finnish, french, basque, ngerman, german, german-x-2009-06-19, ngerman-x-20
-09-06-19, ibycus, monogreek, greek, ancientgreek, hungarian, italian, latin, mo
-ngolian2a, mongolian, bokmal, nynorsk, romanian, irish, coptic, serbian, turkis
-h, welsh, esperanto, uppersorbian, estonian, indonesian, interlingua, icelandic
-, kurmanji, slovenian, polish, portuguese, spanish, galician, catalan, swedish,
- loaded.
+yphenation, loaded.
 (/usr/share/texmf-texlive/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texmf-texlive/tex/latex/base/size11.clo
@@ -81,6 +74,12 @@ File: babel.def 2008/07/06 v3.8l Babel common definitions
 \babel@savecnt=\count90
 \U@D=\dimen105
 )
+
+Package babel Warning: No hyphenation patterns were loaded for
+(babel)                the language `Spanish'
+(babel)                I will use the patterns loaded for \language=0 instead.
+
+\l@spanish = a dialect from \language0
 \es@datefmt=\count91
 \es@quottoks=\toks22
 \es@quotdepth=\count92
@@ -89,8 +88,7 @@ Package babel Info: Making . an active character on input line 585.
 Package babel Info: Making < an active character on input line 630.
 Package babel Info: Making > an active character on input line 630.
 Package babel Info: Making ' an active character on input line 657.
-))
-(/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
+)) (/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \@emptytoks=\toks23
 \symAMSa=\mathgroup4
@@ -196,8 +194,7 @@ Package ifvtex Info: VTeX not detected.
 \Gm@odd@mp=\dimen114
 \Gm@even@mp=\dimen115
 \Gm@dimlist=\toks32
-
-(/usr/share/texmf-texlive/tex/xelatex/xetexconfig/geometry.cfg))
+)
 (/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2009/10/09 v6.79a Hypertext links for LaTeX
 
@@ -229,7 +226,7 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )
-(/etc/texmf/tex/latex/config/hyperref.cfg
+(/usr/share/texmf-texlive/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 (/usr/share/texmf-texlive/tex/latex/oberdiek/kvoptions.sty
@@ -315,7 +312,7 @@ LaTeX Font Info:    ... okay on input line 23.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
 
-(/usr/share/texmf/tex/context/base/supp-pdf.mkii
+(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count115
 \scratchdimen=\dimen119
@@ -507,12 +504,12 @@ File: diagramas/modeloDeObjetosResultados.png Graphic file (type png)
 toralGeneraResultadosCompletos.png (PNG copy)>]) [23 <./diagramas/modeloDeObjet
 osResultados.png (PNG copy)>] (./Conclusiones.tex) [24] (./informe.aux) ) 
 Here is how much of TeX's memory you used:
- 8068 strings out of 493911
- 113551 string characters out of 1155272
- 199504 words of memory out of 3000000
- 11100 multiletter control sequences out of 15000+50000
+ 8067 strings out of 495061
+ 113468 string characters out of 1182622
+ 198519 words of memory out of 3000000
+ 11018 multiletter control sequences out of 15000+50000
  11938 words of font info for 44 fonts, out of 3000000 for 9000
- 706 hyphenation exceptions out of 8191
+ 28 hyphenation exceptions out of 8191
  38i,8n,44p,1562b,486s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/
 share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf
@@ -526,7 +523,7 @@ share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf
 nts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-texlive/fonts/type1
 /public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
 fonts/cm/cmtt10.pfb>
-Output written on informe.pdf (24 pages, 1526064 bytes).
+Output written on informe.pdf (24 pages, 1525993 bytes).
 PDF statistics:
  334 PDF objects out of 1000 (max. 8388607)
  63 named destinations out of 1000 (max. 500000)
