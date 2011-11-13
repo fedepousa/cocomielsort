@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.11.11)  12 NOV 2011 17:19
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.6)  13 NOV 2011 12:09
 entering extended mode
  %&-line parsing enabled.
 **ESCENARIOS.tex
@@ -57,7 +57,7 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 Package color Info: Driver file: pdftex.def on input line 130.
 
 (/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
+File: pdftex.def 2009/08/25 v0.04m Graphics/color for pdfTeX
 \Gread@gobject=\count90
 ))
 (/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
@@ -163,32 +163,32 @@ File: ucsencs.def 2003/11/29 Fixes to fontencodings LGR, T3
 (/usr/share/texmf-texlive/tex/latex/ucs/data/uni-0.def
 File: uni-0.def 2004/10/17 UCS: Unicode data U+0000..U+00FF
 )
-Overfull \hbox (28.178pt too wide) in paragraph at lines 17--17
+Overfull \hbox (28.178pt too wide) in paragraph at lines 18--18
 \OT1/cmr/m/n/10.95 ha-bili-ta votaci^^Son of-fline en menos de 0.31415926535897
 9323846264338327950
  []
 
-) [1
+[1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./performance.tex)
-[2] (./seguridad.tex) [3] (./modificabilidad.tex) [4] (./ESCENARIOS.aux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) [2] (./performance.tex) [
+3] (./seguridad.tex) [4] (./modificabilidad.tex) [5] (./ESCENARIOS.aux) ) 
 Here is how much of TeX's memory you used:
- 3894 strings out of 495061
- 50316 string characters out of 1182620
- 112706 words of memory out of 3000000
- 7064 multiletter control sequences out of 15000+50000
+ 3893 strings out of 495061
+ 50300 string characters out of 1182622
+ 113437 words of memory out of 3000000
+ 7063 multiletter control sequences out of 15000+50000
  6105 words of font info for 22 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  26i,5n,32p,743b,486s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr
-/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texm
-f-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/f
-onts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/p
-ublic/amsfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
-s/cm/cmti10.pfb>
-Output written on ESCENARIOS.pdf (4 pages, 78907 bytes).
+</usr/
+share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf
+-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fo
+nts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/pu
+blic/amsfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts
+/cm/cmti10.pfb>
+Output written on ESCENARIOS.pdf (5 pages, 85384 bytes).
 PDF statistics:
- 35 PDF objects out of 1000 (max. 8388607)
+ 38 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
