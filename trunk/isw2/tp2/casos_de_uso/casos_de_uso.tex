@@ -8,6 +8,37 @@
 \begin{document}
 
 
+%~  Que un usuario se loguee
+
+Ingresando al sistema.
+
+
+
+\begin{tabular}{ll}
+Actor & Votante \\
+\hline
+Pre condición & Ninguna \\
+\hline
+Pos condición & El usuario se encuentra autenticado. \\
+\hline
+\end{tabular}
+
+
+
+
+\begin{tabular}{c p{4cm}|p{4cm}}
+ & Curso normal & Curso alternativo \\
+ 1. & El votante indica su nombre de usuario y contraseña &  \\
+ 2. & Si los datos son correctos el usuario recibe una confirmación de que su nombre de usuario y contraseña son correctos & Si los datos son incorrectos el usuario recibe un mensaje de error indicándo que la combinación de nombre de usuario y contraseña es incorrecta \\
+ 3. & Se muestra la interfaz de voto electrónico & Ir al fin del caso de uso \\
+4. & Fin del caso de uso& \\ 
+\end{tabular}
+
+\bigskip
+
+%~  Que un usuario vote
+Votando:
+
 
 \begin{tabular}{ll}
 Actor & Votante \\
@@ -23,11 +54,29 @@ Pos condición & Se registra correctamente el voto del usuario \\
 
 \begin{tabular}{c p{4cm}|p{4cm}}
  & Curso normal & Curso alternativo \\
- 1. & Se muestra ante el usuario la lista de candidatos & \ldots \\
- 2. & El usuario selecciona el candidato de su preferencia & \ldots \\
- 3. & Se le informa al usuario que se ha enviado a su e\-mail el certificado del voto & \ldots \\
-
+ 1. & Se muestra ante el usuario la lista de candidatos &   \\
+ 2. & El usuario selecciona el candidato de su preferencia &   \\
+ 3. & Se pide confirmación al usuario mostrando claramente qué candidato ha elegido &   \\
+ 4. & El votante confirma su selección & Si el usuario no confirma, se descarta la selección del usuario  \\
+ 5. & Se le informa al usuario que se ha enviado a su e\-mail el certificado del voto & Ir al fin del caso de uso \\
+ 6. & Fin del caso de uso & \\
 \end{tabular}
+
+
+\bigskip
+
+%~  Que una agrupacion vea los resultados parciales
+Fiscalizando resultados parciales:
+
+En este caso de uso se accede desde la terminal de una agrupación política a una interfaz gráfica que permite ver los resultados disponibles en tiempo real.
+
+
+
+
+
+
+
+
 
 
 \end{document}
