@@ -1,0 +1,25 @@
+\section{An\'alisis de Riesgos}
+
+En esta secci\'on se analizar\'an los riesgos pertinentes al proyecto.
+
+El objetivo de este an\'alisis es poder crear un plan de mitigaci\'on y contingencia para poder controlar los riesgos que puedan afectar al proceso del desarrollo del producto, de manera que se pueda minimizar el impacto que los posibles riesgos produzcan en caso de manifestarse.
+
+Los pasos m\'as importantes en este an\'alisis son:
+
+\begin{itemize}
+\item Identificar los riesgos que puedan manifestarse.
+\item Analizarlos individualmente.
+\item Documentarlos. En este paso se utilizar\'a la representaci\'on de Glutch para especificarlos y luego se utilizar\'a la Matriz de Magnitudes del SEI para analizar el nivel del riesgo en base a su probabilidad de ocurrencia y a su severidad.
+\item Generar un plan de mitigaci\'on y contingencia para cada uno de los riesgos identificados.
+\end{itemize}
+
+
+\subsection{Riesgos}
+
+
+A continuaci\'on se muestran los riesgos m\'as relevantes identificados por el grupo, especificados y analizados como se explicit\'o anteriormente.
+
+\begin{itemize}
+\item 
+\end{itemize}
+
