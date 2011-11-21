@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.1.17)  21 NOV 2011 17:16
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.1.17)  21 NOV 2011 17:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -421,29 +421,43 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--13
 \tf@toc=\write4
 \openout4 = `informe.toc'.
 
- [2] (../escenarios/ESCENARIOS.tex
-(../escenarios/disponibilidad.tex
+ [2] (../casos_de_uso/casos_de_uso.tex
 (/usr/share/texmf-texlive/tex/latex/ucs/data/uni-0.def
 File: uni-0.def 2004/10/17 UCS: Unicode data U+0000..U+00FF
-))
-(../escenarios/performance.tex [3]) (../escenarios/seguridad.tex [4])
-(../escenarios/modificabilidad.tex) (../escenarios/usabilidad.tex [5]))
-[6] (../riesgos/riesgos.tex
+)
+Underfull \hbox (badness 3417) in paragraph at lines 31--31
+[]\OT1/cmr/m/n/10.95 El vo-tan-te in-di-ca su
+ []
+
+
+Underfull \hbox (badness 2376) in paragraph at lines 31--31
+\OT1/cmr/m/n/10.95 nom-bre de usua-rio y
+ []
+
+
+Underfull \hbox (badness 2376) in paragraph at lines 32--32
+\OT1/cmr/m/n/10.95 nom-bre de usua-rio y
+ []
+
+) [3] (../escenarios/ESCENARIOS.tex (../escenarios/disponibilidad.tex)
+(../escenarios/performance.tex [4]) (../escenarios/seguridad.tex [5])
+(../escenarios/modificabilidad.tex) (../escenarios/usabilidad.tex [6]))
+[7] (../riesgos/riesgos.tex
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 23.
  (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 23.
-[7]) [8] (./informe.aux) ) 
+[8]) [9] (./informe.aux) ) 
 Here is how much of TeX's memory you used:
- 7965 strings out of 493911
- 110513 string characters out of 1155272
+ 7970 strings out of 493911
+ 110611 string characters out of 1155272
  201519 words of memory out of 3000000
  11038 multiletter control sequences out of 15000+50000
  11585 words of font info for 43 fonts, out of 3000000 for 9000
  706 hyphenation exceptions out of 8191
- 38i,8n,36p,912b,654s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,9n,36p,912b,571s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/share/texmf-texlive/fonts/type1/public/amsfonts
 /cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.
 pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr
@@ -454,9 +468,9 @@ ic/amsfonts/cm/cmss10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts
 /cm/cmssbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy1
 0.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr
 /share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on informe.pdf (8 pages, 532316 bytes).
+Output written on informe.pdf (9 pages, 534255 bytes).
 PDF statistics:
- 151 PDF objects out of 1000 (max. 8388607)
- 34 named destinations out of 1000 (max. 500000)
+ 155 PDF objects out of 1000 (max. 8388607)
+ 35 named destinations out of 1000 (max. 500000)
  75 words of extra memory for PDF output out of 10000 (max. 10000000)
 
