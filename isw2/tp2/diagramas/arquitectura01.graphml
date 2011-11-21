@@ -146,7 +146,7 @@ y uno extra para el rectorado</y:NodeLabel>
 <y:Geometry height="47.612998962402344" width="39.25" x="1137.9090796019905" y="52.01153850610551"/>
 <y:Fill color="#CCCCFF" transparent="false"/>
 <y:BorderStyle color="#000000" type="line" width="1.0"/>
-<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="59.8515625" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="356.3359375" x="-158.54296875" y="51.612998962402344">información logging
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="59.8515625" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="356.3359375" x="-158.54296875" y="51.61299896240236">información logging
 (de este repo sale a que portal online te conectas,
 también puede tener la información para la conexión segura
 un certificado por ejemplo)</y:NodeLabel>
@@ -399,7 +399,7 @@ a poder anular votos de acá cuando haga falta.</y:NodeLabel>
 <node id="n31">
 <data key="d10">
 <y:ShapeNode>
-<y:Geometry height="337.3121577217963" width="676.02847754655" x="-927.5954951420338" y="548.8241901118719"/>
+<y:Geometry height="337.3121577217963" width="676.02847754655" x="-726.3557089082528" y="586.297891566265"/>
 <y:Fill color="#CCFFFF" transparent="false"/>
 <y:BorderStyle color="#000000" type="line" width="1.0"/>
 <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="87.77734375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="634.357421875" x="20.835527835774997" y="124.76740698589822">A este "conector" llegán los conteos de votos y tienen que ir para los fiscalizadores
