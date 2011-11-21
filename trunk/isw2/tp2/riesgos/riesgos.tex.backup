@@ -20,6 +20,70 @@ Los pasos m\'as importantes en este an\'alisis son:
 A continuaci\'on se muestran los riesgos m\'as relevantes identificados por el grupo, especificados y analizados como se explicit\'o anteriormente.
 
 \begin{itemize}
+\item Dificultades para funcionar co-operativamente con los sistemas de los partidos pol\'iticos: Dada la heterogeneidad natural en los sistemas de los partidos pol\'iticos, y que no hay experencias previas de cooperativiadad con estos sistemas, es posible que se encuentren dificultades para garantizar la comunicabilidad a todos los fiscalizadores pertinentes. \begin{itemize}                                                                                                                                                                                                                                                                                                                                                                            									   \item Probabilidad: Probable.
+                                                                           \item Severidad: Cr\'itica.
+									   \item Nivel: Alto								\end{itemize}
+
+\bigskip
+
+\item Problemas con las tecnolog\'ias a utilizar: Dado los atributos de calidad relevados, se necesitar\'a trabajar sobre muy diversas plataformas, al desconocer varias de estas plataformas de \'ultima generaci\'on es posible que se retrasen los tiempos de producci\'on al necesitar invertir tiempo en investigaci\'on de los diferentes dispositivos soportados por el software. 
+\begin{itemize}
+\item Probabilidad: Muy probable.
+\item Severidad: Media.
+\item Nivel: Alto.
+\end{itemize}
+
+\bigskip
+
+\item Reducci\'on de recursos humanos en la Software Factory: Dado que los recursos humanos del grupo de desarrollo estan sujetos a posibles renuncias, despidos o licencias por enfermedad o motivos personales es posible que el plan de trabajo no se pueda adaptar a la realidad al tener distintas horas hombre de trabajo a las planificadas.
+\begin{itemize}
+\item Probabilidad: Poco probable.
+\item Severidad: Cr\'itica.
+\item Nivel: Medio.
+\end{itemize}
+
+\bigskip
+
+\item Cambios en los requerimientos: Dado que la cantidad de Stakeholders es alta, es posible que alg\'un Stakeholder cambie alg\'un requerimiento durante fases m\'as tard\'ias del proceso productivo.
+\begin{itemize}
+\item Probabilidad: Probable.
+\item Severidad: Cr\'itica.
+\item Nivel: Alto.
+\end{itemize}
+
+\bigskip
+
+\item Incompatibilidades entre los requerimientos no funcionales: Dado que la cantidad de Stakeholders es alta, y sobretodo es un grupo muy heterogeneo, esto genera que los atributos de calidad relevados tengan difentes procendencias y, luego, es posible que los atributos conflictuen entre s\'i de alguna forma no prevista durante el QAW.
+\begin{itemize}
+\item Probabilidad: Probable.
+\item Severidad: Media.
+\item Nivel: Medio.
+\end{itemize}
+
+\bigskip
+
+\item Dificultades con las capacidades de los recursos tecnol\'ogicos disponibles: Dado que no hay antecedentes de este tipo de sistemas en la UBA, no hay estimaci\'on de cuales van a ser las distribuciones de usuarios en los diferentes horarios. Luego, es posible que la tecnolog\'ia disponible no sea suficiente para soporta la carga total del sistema.
+\begin{itemize}
+\item Probabilidad: Probable.
+\item Severidad: Cr\'itica.
+\item Nivel: Alto.
+\end{itemize}
+
+\bigskip
+
+\item Robo de claves del sistema: Dado que el prop\'osito del sistema tiene fines pol\'iticos relevantes, es posible que existan intentos de obtener las claves que permiten auntenticarse a los votantes para poder manipular las votaciones.
+\begin{itemize}
 \item 
 \end{itemize}
 
+
+\bigskip
+
+\item Recorte de presupuesto: Dado que el presupuesto para el sistema todav\'ia no esta aprobado porque depende de todo el presupuesto de la UBA ya que lo paga directamente rectorado, es posible que se generen recortes al presupuesto que pongan en riesgos la disponibilidad de recursos humanos y tecnol\'ogicos para el proyecto.
+\begin{itemize}
+\item Probabilidad: Probable.
+\item Severidad: Cr\'itica.
+\item Nivel: Alto.
+\end{itemize}
+
+\end{itemize}
