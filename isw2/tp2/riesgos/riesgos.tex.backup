@@ -73,7 +73,9 @@ A continuaci\'on se muestran los riesgos m\'as relevantes identificados por el g
 
 \item Robo de claves del sistema: Dado que el prop\'osito del sistema tiene fines pol\'iticos relevantes, es posible que existan intentos de obtener las claves que permiten auntenticarse a los votantes para poder manipular las votaciones.
 \begin{itemize}
-\item 
+\item Probabilidad: Poco probable.
+\item Severidad: Cr\'itica.
+\item Nivel: Medio.
 \end{itemize}
 
 
@@ -85,5 +87,58 @@ A continuaci\'on se muestran los riesgos m\'as relevantes identificados por el g
 \item Severidad: Cr\'itica.
 \item Nivel: Alto.
 \end{itemize}
+
+\end{itemize}
+
+\subsection{Planes de contingencia y mitigaci\'on}
+
+A continuaci\'on se presentar\'an las acciones a tener en cuenta en caso de que se presenten los riesgos anteriormente planteados.
+
+\begin{itemize}
+\item Dificultades para cooperar con los sistemas de los partidos pol\'iticos:
+\begin{itemize}
+\item Priorizar el relevamiento de las especificaciones de los sistemas a tener en cuenta.
+\item Mantener un contacto peri\'odico con los administradores de dichos sistemas.
+\item Generar reuniones con los administradores para poner en consenso el hecho de que los sistemas tengan una comunicaci\'on compatible.
+\end{itemize}
+
+\item Problemas con las tecnolog\'ias a utilizar:
+\begin{itemize}
+\item Relevar todas las diferentes plataformas que se quieren soportar en el sistema.
+\item Relevar las formaciones de los recursos humanos en cada una de las plataformas pertinentes.
+\item Generar un plan de capacitaci\'on en base a los relevamientos hechos anteriormente.
+\end{itemize}
+
+\item Reducci\'on de recursos humanos en la Software Factory:
+\begin{itemize}
+\item Relevar situaciones personales antes de comenzar con el desarrollo.
+\item 
+\end{itemize}
+
+\item Cambios en los requerimientos:
+\begin{itemize}
+\item 
+\end{itemize}
+
+\item Incompatibilidades entre los requerimientos no funcionales:
+\begin{itemize}
+\item 
+\end{itemize}
+
+\item Dificultades con las capacidades de los recursos tecnol\'ogicos disponibles:
+\begin{itemize}
+\item 
+\end{itemize}
+
+\item Robo de claves del sistema:
+\begin{itemize}
+\item 
+\end{itemize}
+
+\item Recorte de presupuesto:
+\begin{itemize}
+\item 
+\end{itemize}
+
 
 \end{itemize}
