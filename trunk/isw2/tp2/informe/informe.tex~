@@ -38,7 +38,7 @@
 
 \newpage
 
-%\input{../escenarios/ESCENARIOS}
+\input{../escenarios/ESCENARIOS}
 
 \newpage
 %\input{../arquitectura/arquitectura}
