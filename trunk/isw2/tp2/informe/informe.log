@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.1.17)  21 NOV 2011 18:19
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.1.17)  21 NOV 2011 18:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -390,7 +390,7 @@ LaTeX Info: Redefining \pageref on input line 23.
 \openout3 = `informe.out'.
 
 \AtBeginShipoutBox=\box34
- (./caratula.tex <logo_dc.jpg, id=35, 215.6055pt x 83.5923pt>
+ (./caratula.tex <logo_dc.jpg, id=51, 215.6055pt x 83.5923pt>
 File: logo_dc.jpg Graphic file (type jpg)
 
 <use logo_dc.jpg>
@@ -407,7 +407,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 13.
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-<logo_uba.jpg, id=36, 225.4824pt x 231.7458pt>
+<logo_uba.jpg, id=52, 225.4824pt x 231.7458pt>
 File: logo_uba.jpg Graphic file (type jpg)
  <use logo_uba.jpg>
 Underfull \hbox (badness 10000) in paragraph at lines 13--13
@@ -421,25 +421,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--13
 \tf@toc=\write4
 \openout4 = `informe.toc'.
 
- [2] (../casos_de_uso/casos_de_uso.tex
+ [2] (./plan.tex
 (/usr/share/texmf-texlive/tex/latex/ucs/data/uni-0.def
 File: uni-0.def 2004/10/17 UCS: Unicode data U+0000..U+00FF
-)
-Underfull \hbox (badness 3417) in paragraph at lines 31--31
-[]\OT1/cmr/m/n/10.95 El vo-tan-te in-di-ca su
- []
-
-
-Underfull \hbox (badness 2376) in paragraph at lines 31--31
-\OT1/cmr/m/n/10.95 nom-bre de usua-rio y
- []
-
-
-Underfull \hbox (badness 2376) in paragraph at lines 32--32
-\OT1/cmr/m/n/10.95 nom-bre de usua-rio y
- []
-
-) [3] [4] (../escenarios/ESCENARIOS.tex (../escenarios/disponibilidad.tex)
+) [3]) [4]
+(../escenarios/ESCENARIOS.tex (../escenarios/disponibilidad.tex)
 (../escenarios/performance.tex [5]) (../escenarios/seguridad.tex [6])
 (../escenarios/modificabilidad.tex) (../escenarios/usabilidad.tex [7]))
 [8] (../riesgos/riesgos.tex
@@ -449,28 +435,28 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 23.
-[9] [10]) [11] (./informe.aux) ) 
+[9]) [10] (./informe.aux) ) 
 Here is how much of TeX's memory you used:
- 7973 strings out of 493911
- 110639 string characters out of 1155272
+ 7978 strings out of 493911
+ 110668 string characters out of 1155272
  201519 words of memory out of 3000000
- 11038 multiletter control sequences out of 15000+50000
+ 11042 multiletter control sequences out of 15000+50000
  11585 words of font info for 43 fonts, out of 3000000 for 9000
  706 hyphenation exceptions out of 8191
- 38i,9n,36p,912b,571s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/fonts/type1/public/am
-sfonts/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
-mbx12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
-></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share
-/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texli
-ve/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type
-1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-texlive/fonts/type1/public/am
-sfonts/cm/cmssbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
-/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb
-></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on informe.pdf (11 pages, 538597 bytes).
+ 38i,8n,36p,912b,486s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texmf-texlive/fonts/type1/public/amsfont
+s/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12
+.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></us
+r/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texm
+f-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fo
+nts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/pub
+lic/amsfonts/cm/cmss10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
+s/cm/cmssbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></us
+r/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on informe.pdf (10 pages, 541200 bytes).
 PDF statistics:
- 167 PDF objects out of 1000 (max. 8388607)
- 38 named destinations out of 1000 (max. 500000)
- 75 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 182 PDF objects out of 1000 (max. 8388607)
+ 40 named destinations out of 1000 (max. 500000)
+ 107 words of extra memory for PDF output out of 10000 (max. 10000000)
 
