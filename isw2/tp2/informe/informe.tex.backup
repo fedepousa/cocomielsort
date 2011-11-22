@@ -13,6 +13,7 @@
 \usepackage{fontenc}
 \usepackage{listings}
 \usepackage{amssymb}
+\usepackage{amsmath}
 \usepackage{slashbox}
 \usepackage{url} 
 \usepackage[margin=2cm]{geometry}
@@ -30,20 +31,36 @@
 
 \newpage
 
-%\input{feanor}
+$
+\begin{equation}
+
+f(x) = 1 &+ \\
+ &g(x)
+
+\end{equation}
+$
+\input{plan}
 
 \newpage
 
-%\input{closest}
+\input{../casos_de_uso/casos_de_uso}
 
 \newpage
 
-%\input{countpas}
+\input{../escenarios/ESCENARIOS}
 
 \newpage
-%\input{homew}
+%\input{../arquitectura/arquitectura}
 
 \newpage
+
+\input{../riesgos/riesgos}
+
+\newpage
+
+%\input{conclusiones}
+
+
 
 
 \end{document}
