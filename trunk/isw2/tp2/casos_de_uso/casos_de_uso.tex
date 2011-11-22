@@ -1,19 +1,11 @@
-%~ 
-%~ \documentclass{article}
-%~ 
-%~ \usepackage[spanish, activeacute]{babel}
-%~ \usepackage[utf8x]{inputenc}
-%~ \usepackage{booktabs}
-%~ 
-%~ \begin{document}
-%~ 
+\section{Casos de Uso}
 
-%~  Que un usuario se loguee
+A continuaci\'on se presentan los principales casos de uso del sistema.
+Se presentan las principales interacciones que hay desde el exterior(votantes, rectorado, partidos pol\'iticos) con el sistema.
 
-Ingresando al sistema.
-
-
-
+\begin{itemize}
+\item Un usuario quieren ingresar al sistema
+\begin{center}
 \begin{tabular}{ll}
 Actor & Votante \\
 \hline
@@ -22,10 +14,7 @@ Pre condición & Ninguna \\
 Pos condición & El usuario se encuentra autenticado. \\
 \hline
 \end{tabular}
-
-
-
-
+\medskip
 \begin{tabular}{c p{4cm}|p{4cm}}
  & Curso normal & Curso alternativo \\
  1. & El votante indica su nombre de usuario y contraseña &  \\
@@ -33,13 +22,11 @@ Pos condición & El usuario se encuentra autenticado. \\
  3. & Se muestra la interfaz de voto electrónico & Ir al fin del caso de uso \\
 4. & Fin del caso de uso& \\ 
 \end{tabular}
+\end{center}
 
 \bigskip
-
-%~  Que un usuario vote
-Votando
-
-
+\item Un usuario quiere emitir un voto v\'alido.
+\begin{center}
 \begin{tabular}{ll}
 Actor & Votante \\
 \hline
@@ -48,10 +35,7 @@ Pre condición & El usuario se encuentra autenticado \\
 Pos condición & Se registra correctamente el voto del usuario \\
 \hline
 \end{tabular}
-
-
-
-
+\medskip
 \begin{tabular}{c p{4cm}|p{4cm}}
  & Curso normal & Curso alternativo \\
  1. & Se muestra ante el usuario la lista de candidatos &   \\
@@ -61,46 +45,116 @@ Pos condición & Se registra correctamente el voto del usuario \\
  5. & Se le informa al usuario que se ha enviado a su e\-mail el certificado del voto & Ir al fin del caso de uso \\
  6. & Fin del caso de uso & \\
 \end{tabular}
-
-
-\bigskip
-
-%~  Que una agrupacion vea los resultados parciales
-Fiscalizando resultados parciales:
-
-En este caso de uso se accede desde la terminal de una agrupación política a una interfaz gráfica que permite ver los resultados disponibles en tiempo real.
-
+\end{center}
 
 \bigskip
-Oberservando resultados parciales
-
+\item Fiscalizaci\'on de los resultados parciales.
+\begin{center}
 \begin{tabular}{ll}
-Actor & El usuario del rectorado \\
+Actor & El usuario del fiscalizador \\
 \hline
 Pre condición & El usuario se encuentra autenticado \\
 \hline
 Pos condición & Se entregan resultados parciales \\
 \hline
 \end{tabular}
-
-
+\medskip
 \begin{tabular}{c p{4cm}|p{4cm}}
  & Curso normal & Curso alternativo \\
- 1. & Se mustra opciones de resultados parciales por facultad con votaciones abiertas &   \\
+ 1. & Se muestran opciones de resultados parciales por facultad con votaciones abiertas &   \\
  2. & El usuario selecciona el resultado parcial a observar &   \\
  3. & Fin del caso de uso & \\
 \end{tabular}
+\end{center}
+
+
+\bigskip
+\item El rectorado quiere enviar nuevos reglamentos a las facultades.
+\begin{center}
+\begin{tabular}{ll}
+Actor & El usuario del rectorado \\
+\hline
+Pre condici\'on & El usuario se encuentra autenticado \\
+\hline
+Pos condici\'on & Las facultades reciben el nuevo reglamento \\
+\hline
+\end{tabular}
+\medskip
+% \begin{tabular}{c p{4cm}|p{4cm}}
+%  & Curso normal & Curso alternativo \\
+%  1. & Se muestran opciones de resultados parciales por facultad con votaciones abiertas &   \\
+%  2. & El usuario selecciona el resultado parcial a observar &   \\
+%  3. & Fin del caso de uso & \\
+% \end{tabular}
+\end{center}
+
+\bigskip
+\item Cambio de idioma en la interfaz de usuario.
+\begin{center}
+\begin{tabular}{ll}
+Actor & Votante \\
+\hline
+Pre condición & El usuario se encuentra autenticado \\
+\hline
+Pos condición & La interfaz se presenta en el usuario elegido \\
+\hline
+\end{tabular}
+\medskip
+\begin{tabular}{c p{4cm}|p{4cm}}
+ & Curso normal & Curso alternativo \\
+ 1. & El usuario selecciona la funcionalidad de modificar el idioma del sistema &   \\
+ 2. & El sistema despliega los diferentes idiomas disponibles &   \\
+ 3. & El usuario elije entre uno de las opciones disponibles & \\
+ 4. & El sistema modifica la interfaz del usuario con el idioma elegido & \\
+ 5. & Fin de caso de uso & \\
+\end{tabular}
+\end{center}
 
 
 
+\bigskip
+\item Conexi\'on desde diversas plataformas
+\begin{center}
+\begin{tabular}{ll}
+Actor & Votante \\
+\hline
+Pre condición &  \\
+\hline
+Pos condición & El usuario ingresa al sistema \\
+\hline
+\end{tabular}
+\medskip
+\begin{tabular}{c p{4cm}|p{4cm}}
+ & Curso normal & Curso alternativo \\
+ 1. & Un usuario quiere ingresar al sistema &   \\
+ 2. & El sistema chequea que la plataforma este soportada &   \\
+ 3. & Se procede con la autenticaci\'on del usuario & Se envia un mensaje al usuario que indica que la plaforma no esta soportada\\
+ 4. & Fin de caso de uso & \\
+\end{tabular}
+\end{center}
+
+\bigskip
+\item Auditabilidad de votantes
+\begin{center}
+\begin{tabular}{ll}
+Actor & Usuario del rectorado \\
+\hline
+Pre condición & El usuario se encuentra autenticado\\
+\hline
+Pos condición & El rectorado sabe que votantes sufragaron \\
+\hline
+\end{tabular}
+\medskip
+\begin{tabular}{c p{4cm}|p{4cm}}
+ & Curso normal & Curso alternativo \\
+ 1. & El rectorado selecciona la funcionalidad de auditabilidad &   \\
+ 2. & El sistema despliega la lista de la facultades disponibles &   \\
+ 3. & El recortorado elije la facultad que quiere auditar & Se envia un mensaje al usuario que indica que la plaforma no esta soportada\\
+ 4. & El sistema le envia al rectorado los votantes que sufragaron de la facultad seleccionada \\
+ 5. & Fin de caso de uso & \\
+\end{tabular}
+\end{center}
 
 
 
-
-
-
-
-
-%~ \end{document}
-
-
+\end{itemize}
