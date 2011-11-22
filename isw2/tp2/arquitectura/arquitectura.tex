@@ -6,7 +6,7 @@ Presentaremos la arquitectura explicando cómo se brindan las funcionalidades re
 
 El uso más habitual que se le dará al sistema será el de votar, por lo que comenzaremos explicando cómo se logra esta funcionalidad con la arquitectura propuesta, enfocándonos principalmente en el diagrama de componentes y conectores.
 
-Para votar, un usuario deberá conectarse por Internet al sitio designado por su Facultad a tal efecto. El browser que utiliza el usuario se comunicará con el componente Vox de la Facultad. El browser mostrará la opción de autenticarse frente al sistema mediante un nombre de usuario y contraseña, previamente generado por el usuario al momento de la creación de su cuenta.
+Para votar, un usuario deberá conectarse por Internet al sitio designado por su Facultad a tal efecto. El browser que utiliza el usuario se comunicará con el componente Vox de la Facultad. El browser mostrará la opción de autenticarse frente al sistema mediante un nombre de usuario y contraseña, previamente generado por el sistema.
 
 Esta información será enviada por una conexión encriptada y confiable al componente Vox de la Facultad que validará dicha información y retornará al browser un certificado de autenticación que será utilizado subsecuentemente para garantizar que la comunicación cumpla con las características de seguridad deseadas.
 
@@ -35,6 +35,14 @@ Para satisfacer las necesidades de fiscalización expresadas, tras procesarse el
 para luego ser enviado a través de un conector multicast seguro y con varias propiedades adicionales que serán oportunamente mencionadas.
 
 El proceso que seguirá una vez recibido por los componentes fiscalizadores de las agrupaciones políticas y rectorado consiste en registrar el voto para el candidato correspondiente. La frecuencia con que efectivamente se envían los votos deberá determinarse con mayor participación de los diferentes stakeholders, ya que el envío inmediato de los votos junto con la posibilidad de acceso en todo momento a la información de los votantes que ya emitieron su voto hace imposible la tarea de mantener el voto secreto. El funcionamiento de la cola de envíos queda por el momento indefinido, pero puede ser tan simple como enviar inmediatamente los votos encolados hasta un esquema más complejo, que contenga restricciones sobre la mínima cantidad de votos acumulados o la mínima cantidad de candidatos representados en los mismos, por ejemplo.
+
+En cada componente fiscalizador se recibe el conteo de votos de todas las facultades y se calculan los resultados totales. Luego mediante la interfaz por browser del fiscalizador es posible filtrar que porcentajes se muestran.
+
+En el componente fiscalizador es posible mediante la interfaz por browser filtrar que 
+
+El componente dedicado a las tareas administrativas del rectorado permite, mediante una comoda interfaz por browser, administrar las reglas de los comiicios y enviarlas en simultaneo a todas las facultades. La interfaz también da un marco para ingresar los candidatos que luego se propagaran a los repositorios de los componentes Vox-Facultad.
+\\
+Desde el sistema de rectorado se genera, antes de iniciar los comicios, las contraseñas para todos los usuarios y se les envia al correo electrónico que tengan registrado en el padrón. Luego a cada facultad se le envia la información necesaria para registrar el loggueo de sus votantes.
 
 
 % TODO seguir explicando 
