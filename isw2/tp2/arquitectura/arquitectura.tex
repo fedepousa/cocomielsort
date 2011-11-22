@@ -42,6 +42,16 @@ El componente dedicado a las tareas administrativas del rectorado permite, media
 \\
 Desde el sistema de rectorado se genera, antes de iniciar los comicios, las contraseñas para todos los usuarios y se les envia al correo electrónico que tengan registrado en el padrón. Luego a cada facultad se le envia la información necesaria para registrar el loggueo de sus votantes.
 %%felipe-----------------
+\\
+\\
+El comunicador merece una discusión aparte por sus varias particularidades. Recordemos que el comunicador debe ofrecer comunicación encriptada, confiable y no repudiable. Dado que no repudiación se logra a partir de la utilización de firmas digitales, consideramos esa explicación secundaria y nos centraremos en explicar cómo se logra encriptación y confiabilidad.
+
+Dado que existe dos tipos de comunicación, una entre componentes del sistema de la facultad y otra entre el portal y el browser, habrá algunos cambios en cuestiones de implementación que mencionaremos más tarde.
+
+Esencialmente la tarea del comunicador, al recibir datos que tiene que enviar, encriptará los datos, generará un mensaje con la información necesaria para que el otro extremo pueda procesar el mensaje, mandarlo y esperar una respuesta del otro extremo confirmando la recepción.
+En el caso de la recepción de un mensaje, se realiza el proceso inverso, se procede a desempaquetar los datos, luego se los desencripta y se entrega dichos datos al componente encargado de procesarlos.
+
+Como se puede apreciar, en el caso de la conexión entre el browser y el portal, es necesario utilizar algún tipo de entidad certificante, ya que no se puede determinar identidad del servidor de otra manera. Esto genera un pequeño cambio en los componentes, ya que el componente de encripción deberá comunicarse con la entidad certificante para obtener la clave pública del portal.
 
 % TODO seguir explicando 
 
@@ -50,12 +60,16 @@ Desde el sistema de rectorado se genera, antes de iniciar los comicios, las cont
 \subsection{Obtención de los atributos de calidad}
 
 
-Dada la necesidad de asegurar un nivel elevado de seguridad en todos los niveles, se utilizaron varias tácticas con dicho objetivo. En todas las comunicaciones se utiliza encripción, suma de verificación y un esquema de firmas para garantizas no repudio. La conexión de las interfaces gráficas para los votantes con el resto del sistema utilizan autenticación.
+Dada la necesidad de asegurar un nivel elevado de seguridad en todos los niveles, se utilizaron varias tácticas con dicho objetivo. En todas las comunicaciones se utiliza encripción, suma de verificación y un esquema de firmas para garantizar no repudio. La conexión de las interfaces gráficas para los votantes con el resto del sistema utilizan autenticación.
 
 
 Dado que los repositorios de usuarios que ya votaron y de cantidad de votos son críticos para lograr auditabilidad, los mismos se encuentran duplicados en diversas máquinas.
 
 Para mejorar la usabilidad se separó la interfaz gráfica del resto de los componentes, de manera que pueda evolucionar por separado, priorizando criterios de facilidad de uso y de aprendizaje.
+
+Para verificar que una persona cumple con las reglas establecidas para la votación es necesario consultar el padrón para disponer de la información de dicho votante. 
+
+
 
 
 %%disponibilidad => se pueden tener muchos portales ??
