@@ -13,6 +13,7 @@
 \usepackage{fontenc}
 \usepackage{listings}
 \usepackage{amssymb}
+\usepackage{amsmath}
 \usepackage{slashbox}
 \usepackage{url} 
 \usepackage[margin=2cm]{geometry}
@@ -30,11 +31,18 @@
 
 \newpage
 
-%\input{plan}
+\begin{equation}
+
+f(x) = 1 &+ \\
+ &g(x)
+
+\end{equation}
+
+\input{plan}
 
 \newpage
 
-%\input{../casos_de_uso/casos_de_uso}
+\input{../casos_de_uso/casos_de_uso}
 
 \newpage
 
