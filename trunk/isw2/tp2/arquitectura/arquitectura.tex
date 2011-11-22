@@ -1,4 +1,49 @@
 
+
+Presentaremos la arquitectura explicando cómo se brindan las funcionalidades requeridas, mencionando diseños alternativos y algunos aspectos relevantes de la comunicación. Por último se comentará cómo se logra cada atributo de calidad a partir de las tácticas utilizadas y la estructura descripta. 
+
+\section{Presentación de la arquitectura}
+
+El uso más habitual que se le dará al sistema será el de votar, por lo que comenzaremos explicando cómo se logra esta funcionalidad con la arquitectura propuesta, enfocándonos principalmente en el diagrama de componentes y conectores.
+
+Para votar, un usuario deberá conectarse por Internet al sitio designado por su Facultad a tal efecto. El browser que utiliza el usuario se comunicará con el componente Vox de la Facultad. El browser mostrará la opción de autenticarse frente al sistema mediante un nombre de usuario y contraseña, previamente generado por el usuario al momento de la creación de su cuenta.
+
+Esta información será enviada por una conexión encriptada y confiable al componente Vox de la Facultad que validará dicha información y retornará al browser un certificado de autenticación que será utilizado subsecuentemente para garantizar que la comunicación cumpla con las características de seguridad deseadas.
+
+Tras autenticar exitosamente al usuario, el browser mostrará los candidatos disponibles, también recibidos del componente Vox de la Facultad. Si el usuario concretara su voto luego recibiría un certificado del mismo, generado por el componente Vox de la Facultad.
+
+Con esta breve introducción se aprecia que será responsabilidad del componente Vox de la Facultad recibir combinaciones de nombres de usuario y contraseña y poder verificar su validez, también contar con la información de los candidatos y por último la capacidad de generar certificados de los votos recibidos, funcionalidades que veremos a continuación.
+
+
+El componente Vox de la Facultad resultó polémico debido a que gran parte de la funcionalidad será brindada por el mismo y existen varios intereses que entran en conflicto al momento de elegir una arquitectura en particular. Una primera propuesta, como puede verse en el diagrama % TODO referenciar al diagrama
+, se apoya fuertemente en la premisa de que los subcomponentes de administración de votos (VOX-Core) y portal online se ejecutarían en servidores diferentes y que podrían existir problemas de conexión entre los mismos, para lo que sería necesario proveer algún mecanismo que permitiera ejercer el derecho a voto aún sin poder contar con las funcionalidades de administración de votos. Esta alternativa no terminó de detallarse porque resultaron evidentes varias complicaciones que ponían en riesgo la seguridad del sistema y algunos criterios de usabilidad. Concretamente los defectos que encontramos en esta opción se relacionan con la necesidad de guardar los votos asociados a sus votantes en un repositorio externo a la facultad hasta tanto se recupere la conectividad con la facultad y que durante ese tiempo de desconexión el usuario no contaría con un certificado de su voto y, en el mejor de los casos, recibiría un mensaje informándole de los problemas de conexión y dejándolo con gran incertidumbre respecto del efectivo cómputo del mismo.
+
+
+Considerando la prioridad asignada a los atributos de calidad en el QAW realizado y siendo confiabilidad menos prioritario que usabilidad y que seguridad optamos por favorecer una estructura diferente, que aporta menos garantías de confiabilidad pero mejora sensiblemente los aspectos antes mencionados de usabilidad y seguridad.
+
+Se puede apreciar en el diagrama % TODO referenciar al diagrama
+que en la propuesta elegida se elimina la necesidad de mantener un repositorio de votos no procesados, como ocurría con la anterior opción. Sin embargo, para poder mantener la posibilidad de votar en todo momento, será necesario que el componente del portal esté siendo ejecutado en la Facultad misma. Varias sutilezas con respecto a este tema serán discutadas más adelante, al momento de referirse a las tácticas y soluciones encontradas para los atributos de calidad.
+
+
+La estructura propuesta permite que el conteo de votos se lleve a cabo en cada Facultad independientemente de las demás, pero esta descentralización, junto con la necesidad de fiscalizar los resultados realizando un recuento completo, conlleva un costo elevado en cuanto a la complejidad de la conexión entre las distintas facultades y los componentes correspondientes a la fiscalización realizada por cada agrupación política y por el rectorado.
+
+Para apreciar el funcionamiento del componente Vox-Facultad, seguiremos los pasos a realizarse para el proceso de un voto, asumiendo que la autenticación ya fue realizada. Una vez arribado el voto, a través del componente portal, el mismo es transmitido dentro de un mensaje al administrador de votos, junto con el nombre de usuario del sufragante. Dentro de VOX-Core, el componente del comunicador desencripta el mensaje y lo envía al auditor que verifica que el usuario no haya votado mediante un acceso al repositorio de gente que votó, verifica el cumplimiento por parte del usuario de las restricciones impuestas por rectorado, accediendo al administrador de datos de usuarios % TODO agregar algo por el estilo
+y verifica la validez del candidato accediendo al repositorio. % TODO agregar repositorio a los diagramas
+De haberse realizado todos los anteriores pasos con éxito, se registra un voto para el candidato correspondiente, se envía el voto al publicador y se genera, a partir del sistema externo HardToBreak, un certificado de la emisión del voto, que se retornado al comunicador. Es importante destacar que el voto en sí no contiene información del votante, pero podría contener algún tipo de hash o certificado, que mejore la auditabilidad del sistema. 
+ 
+Para satisfacer las necesidades de fiscalización expresadas, tras procesarse el voto, el mismo es introducido en una cola de envío, % TODO agregar cola al diagrama
+para luego ser enviado a través de un conector multicast seguro y con varias propiedades adicionales que serán oportunamente mencionadas.
+
+El proceso que seguirá una vez recibido por los componentes fiscalizadores de las agrupaciones políticas y rectorado consiste en registrar el voto para el candidato correspondiente. La frecuencia con que efectivamente se envían los votos deberá determinarse con mayor participación de los diferentes stakeholders, ya que el envío inmediato de los votos junto con la posibilidad de acceso en todo momento a la información de los votantes que ya emitieron su voto hace imposible la tarea de mantener el voto secreto. El funcionamiento de la cola de envíos queda por el momento indefinido, pero puede ser tan simple como enviar inmediatamente los votos encolados hasta un esquema más complejo, que contenga restricciones sobre la mínima cantidad de votos acumulados o la mínima cantidad de candidatos representados en los mismos, por ejemplo.
+
+
+% TODO seguir explicando 
+
+
+
+\subsection{Obtención de los atributos de calidad}
+
+
 Dada la necesidad de asegurar un nivel elevado de seguridad en todos los niveles, se utilizaron varias tácticas con dicho objetivo. En todas las comunicaciones se utiliza encripción, suma de verificación y un esquema de firmas para garantizas no repudio. La conexión de las interfaces gráficas para los votantes con el resto del sistema utilizan autenticación.
 
 
