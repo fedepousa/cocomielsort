@@ -12,3 +12,5 @@
 \contentsline {section}{\numberline {3}An\'alisis de Riesgos}{11}{section.3}
 \contentsline {subsection}{\numberline {3.1}Riesgos}{11}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Planes de contingencia y mitigaci\'on}{12}{subsection.3.2}
+\contentsline {section}{\numberline {4}Presentaci\IeC {\'o}n de la arquitectura}{14}{section.4}
+\contentsline {subsection}{\numberline {4.1}Obtenci\IeC {\'o}n de los atributos de calidad}{15}{subsection.4.1}
