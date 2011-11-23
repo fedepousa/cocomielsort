@@ -19,6 +19,11 @@
 \usepackage[margin=2cm]{geometry}
 \usepackage[bookmarks=true]{hyperref}
 
+\renewcommand{\labelitemi}{}
+\renewcommand{\labelitemii}{}
+\renewcommand{\labelitemiii}{}
+\renewcommand{\labelitemiv}{}
+
 
 
 \begin{document}
@@ -29,16 +34,8 @@
 
 \tableofcontents
 
-\newpage
+\newpage 
 
-$
-\begin{equation}
-
-f(x) = 1 &+ \\
- &g(x)
-
-\end{equation}
-$
 \input{plan}
 
 \newpage
@@ -50,13 +47,15 @@ $
 \input{../escenarios/ESCENARIOS}
 
 \newpage
-%\input{../arquitectura/arquitectura}
+\input{../arquitectura/arquitectura}
 
 \newpage
 
 \input{../riesgos/riesgos}
 
 \newpage
+
+\input{../arquitectura/arquitectura}
 
 %\input{conclusiones}
 
