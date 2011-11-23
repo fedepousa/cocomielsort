@@ -17,40 +17,6 @@
 <node id="n0">
 <data key="d10">
 <y:ShapeNode>
-<y:Geometry height="374.1571023796734" width="473.7006255364229" x="-838.3127681326646" y="47.49381668790065"/>
-<y:Fill color="#FFFF99" transparent="false"/>
-<y:BorderStyle color="#000000" type="line" width="1.0"/>
-<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="internal" modelPosition="tl" textColor="#000000" visible="true" width="170.880859375" x="4.0" y="4.0">comunicación
-encriptada y con no-repudio</y:NodeLabel>
-<y:Shape type="rectangle"/>
-</y:ShapeNode>
-</data>
-</node>
-<node id="n1">
-<data key="d10">
-<y:ShapeNode>
-<y:Geometry height="606.4211938663747" width="637.2585780564161" x="-261.634428948697" y="628.9761674924148"/>
-<y:Fill color="#FFFF99" transparent="false"/>
-<y:BorderStyle color="#000000" type="line" width="1.0"/>
-<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="tl" textColor="#000000" visible="true" width="108.56640625" x="4.0" y="4.0">sistema rectorado</y:NodeLabel>
-<y:Shape type="rectangle"/>
-</y:ShapeNode>
-</data>
-</node>
-<node id="n2">
-<data key="d10">
-<y:ShapeNode>
-<y:Geometry height="68.39999999999999" width="143.0" x="1188.8533371261583" y="-34.197205180640736"/>
-<y:Fill color="#FFCC00" transparent="false"/>
-<y:BorderStyle color="#000000" type="line" width="1.0"/>
-<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="4.0" x="69.5" y="32.199999999999996"/>
-<y:Shape type="rectangle"/>
-</y:ShapeNode>
-</data>
-</node>
-<node id="n3">
-<data key="d10">
-<y:ShapeNode>
 <y:Geometry height="292.0649072060632" width="641.0" x="349.5" y="-97.05000000000001"/>
 <y:Fill color="#FFFF99" transparent="false"/>
 <y:BorderStyle color="#000000" type="line" width="1.0"/>
@@ -59,29 +25,7 @@ encriptada y con no-repudio</y:NodeLabel>
 </y:ShapeNode>
 </data>
 </node>
-<node id="n4">
-<data key="d10">
-<y:ShapeNode>
-<y:Geometry height="606.4211938663747" width="324.54419496166497" x="-672.314188497881" y="577.6325994517412"/>
-<y:Fill color="#FFFF99" transparent="false"/>
-<y:BorderStyle color="#000000" type="line" width="1.0"/>
-<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="tl" textColor="#000000" visible="true" width="71.048828125" x="4.0" y="4.0">fiscalizador</y:NodeLabel>
-<y:Shape type="rectangle"/>
-</y:ShapeNode>
-</data>
-</node>
-<node id="n5">
-<data key="d10">
-<y:ShapeNode>
-<y:Geometry height="141.3339154944274" width="571.2911829134721" x="-254.5154192523836" y="-78.08391549442739"/>
-<y:Fill color="#FFFF99" transparent="false"/>
-<y:BorderStyle color="#000000" type="line" width="1.0"/>
-<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="tl" textColor="#000000" visible="true" width="38.41796875" x="4.0" y="4.0">portal</y:NodeLabel>
-<y:Shape type="rectangle"/>
-</y:ShapeNode>
-</data>
-</node>
-<node id="n6">
+<node id="n1">
 <data key="d10">
 <y:ShapeNode>
 <y:Geometry height="292.0649072060632" width="641.0" x="337.0" y="-84.15"/>
@@ -93,7 +37,76 @@ encriptada y con no-repudio</y:NodeLabel>
 </y:ShapeNode>
 </data>
 </node>
+<node id="n2">
+<data key="d10">
+<y:ShapeNode>
+<y:Geometry height="105.0" width="143.0" x="369.84107565579114" y="-57.44034992924384"/>
+<y:Fill color="#FFCC00" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="1.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="45.888671875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="89.646484375" x="26.6767578125" y="29.5556640625">VOX-Core
+(administrador
+votos)</y:NodeLabel>
+<y:Shape type="rectangle"/>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n3">
+<data key="d10">
+<y:ShapeNode>
+<y:Geometry height="374.1571023796734" width="473.7006255364229" x="-838.3127681326646" y="47.49381668790065"/>
+<y:Fill color="#FFFF99" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="1.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="internal" modelPosition="tl" textColor="#000000" visible="true" width="170.880859375" x="4.0" y="4.0">comunicación
+encriptada y con no-repudio</y:NodeLabel>
+<y:Shape type="rectangle"/>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n4">
+<data key="d10">
+<y:ShapeNode>
+<y:Geometry height="606.4211938663747" width="637.2585780564161" x="-261.634428948697" y="628.9761674924148"/>
+<y:Fill color="#FFFF99" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="1.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="tl" textColor="#000000" visible="true" width="108.56640625" x="4.0" y="4.0">sistema rectorado</y:NodeLabel>
+<y:Shape type="rectangle"/>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n5">
+<data key="d10">
+<y:ShapeNode>
+<y:Geometry height="68.39999999999999" width="143.0" x="1188.8533371261583" y="-34.197205180640736"/>
+<y:Fill color="#FFCC00" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="1.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="4.0" x="69.5" y="32.199999999999996"/>
+<y:Shape type="rectangle"/>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n6">
+<data key="d10">
+<y:ShapeNode>
+<y:Geometry height="606.4211938663747" width="324.54419496166497" x="-672.314188497881" y="577.6325994517412"/>
+<y:Fill color="#FFFF99" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="1.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="tl" textColor="#000000" visible="true" width="71.048828125" x="4.0" y="4.0">fiscalizador</y:NodeLabel>
+<y:Shape type="rectangle"/>
+</y:ShapeNode>
+</data>
+</node>
 <node id="n7">
+<data key="d10">
+<y:ShapeNode>
+<y:Geometry height="141.3339154944274" width="571.2911829134721" x="-254.5154192523836" y="-78.08391549442739"/>
+<y:Fill color="#FFFF99" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="1.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="tl" textColor="#000000" visible="true" width="38.41796875" x="4.0" y="4.0">portal</y:NodeLabel>
+<y:Shape type="rectangle"/>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n8">
 <data key="d10">
 <y:ShapeNode>
 <y:Geometry height="105.0" width="143.0" x="363.75" y="-41.75"/>
@@ -106,7 +119,7 @@ votos)</y:NodeLabel>
 </y:ShapeNode>
 </data>
 </node>
-<node id="n8">
+<node id="n9">
 <data key="d10">
 <y:ShapeNode>
 <y:Geometry height="105.0" width="143.0" x="825.9264191002948" y="-41.75"/>
@@ -117,7 +130,7 @@ votos)</y:NodeLabel>
 </y:ShapeNode>
 </data>
 </node>
-<node id="n9">
+<node id="n10">
 <data key="d10">
 <y:ShapeNode>
 <y:Geometry height="105.0" width="143.0" x="363.75" y="304.1035616905249"/>
@@ -129,7 +142,7 @@ rectorado</y:NodeLabel>
 </y:ShapeNode>
 </data>
 </node>
-<node id="n10">
+<node id="n11">
 <data key="d10">
 <y:ShapeNode>
 <y:Geometry height="105.0" width="143.0" x="827.0" y="225.01490720606319"/>
@@ -141,7 +154,7 @@ rectorado</y:NodeLabel>
 </y:ShapeNode>
 </data>
 </node>
-<node id="n11">
+<node id="n12">
 <data key="d10">
 <y:ShapeNode>
 <y:Geometry height="105.0" width="143.0" x="816.0" y="233.01490720606319"/>
@@ -152,7 +165,7 @@ rectorado</y:NodeLabel>
 </y:ShapeNode>
 </data>
 </node>
-<node id="n12">
+<node id="n13">
 <data key="d10">
 <y:ShapeNode>
 <y:Geometry height="68.39999999999999" width="143.0" x="1176.906900328587" y="-23.44999999999999"/>
@@ -163,7 +176,7 @@ rectorado</y:NodeLabel>
 </y:ShapeNode>
 </data>
 </node>
-<node id="n13">
+<node id="n14">
 <data key="d10">
 <y:ShapeNode>
 <y:Geometry height="1147.8766757555104" width="590.0" x="582.3743609406953" y="394.7668200408998"/>
@@ -174,7 +187,7 @@ rectorado</y:NodeLabel>
 </y:ShapeNode>
 </data>
 </node>
-<node id="n14">
+<node id="n15">
 <data key="d10">
 <y:ShapeNode>
 <y:Geometry height="105.0" width="143.0" x="689.375" y="596.0336200000002"/>
@@ -185,7 +198,7 @@ rectorado</y:NodeLabel>
 </y:ShapeNode>
 </data>
 </node>
-<node id="n15">
+<node id="n16">
 <data key="d10">
 <y:ShapeNode>
 <y:Geometry height="105.0" width="143.0" x="1011.5126959781869" y="1142.0336200000002"/>
@@ -200,10 +213,10 @@ necesita no-repudio</y:NodeLabel>
 </y:ShapeNode>
 </data>
 </node>
-<node id="n16">
+<node id="n17">
 <data key="d10">
 <y:SVGNode>
-<y:Geometry height="47.612998962402344" width="39.25" x="955.1996421267893" y="1035.727120518799"/>
+<y:Geometry height="47.612998962402344" width="39.25" x="1235.624914792093" y="1089.3106498035493"/>
 <y:Fill color="#CCCCFF" transparent="false"/>
 <y:BorderStyle color="#000000" type="line" width="1.0"/>
 <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="73.814453125" modelName="sandwich" modelPosition="n" textColor="#000000" visible="true" width="150.90625" x="-55.828125" y="-77.814453125">gente que voto
@@ -218,10 +231,10 @@ que se le dio)</y:NodeLabel>
 </y:SVGNode>
 </data>
 </node>
-<node id="n17">
+<node id="n18">
 <data key="d10">
 <y:SVGNode>
-<y:Geometry height="47.612998962402344" width="39.25" x="891.150477164281" y="1170.727120518799"/>
+<y:Geometry height="47.612998962402344" width="39.25" x="897.2165370833094" y="1170.727120518799"/>
 <y:Fill color="#CCCCFF" transparent="false"/>
 <y:BorderStyle color="#000000" type="line" width="1.0"/>
 <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="108.572265625" x="-34.6611328125" y="51.612998962402344">recuento de votos</y:NodeLabel>
@@ -232,7 +245,7 @@ que se le dio)</y:NodeLabel>
 </y:SVGNode>
 </data>
 </node>
-<node id="n18">
+<node id="n19">
 <data key="d10">
 <y:ShapeNode>
 <y:Geometry height="105.0" width="143.0" x="689.375" y="427.44066000000015"/>
@@ -243,7 +256,7 @@ que se le dio)</y:NodeLabel>
 </y:ShapeNode>
 </data>
 </node>
-<node id="n19">
+<node id="n20">
 <data key="d10">
 <y:ShapeNode>
 <y:Geometry height="30.0" width="30.0" x="1210.6590796019905" y="786.5357789265538"/>
@@ -254,7 +267,7 @@ que se le dio)</y:NodeLabel>
 </y:ShapeNode>
 </data>
 </node>
-<node id="n20">
+<node id="n21">
 <data key="d10">
 <y:ShapeNode>
 <y:Geometry height="75.15" width="205.45618320610686" x="101.54381679389314" y="-41.346653122101415"/>
@@ -268,7 +281,7 @@ decorator para la respuest)</y:NodeLabel>
 </y:ShapeNode>
 </data>
 </node>
-<node id="n21">
+<node id="n22">
 <data key="d10">
 <y:ShapeNode>
 <y:Geometry height="75.15" width="143.0" x="-237.5" y="-41.346653122101415"/>
@@ -279,7 +292,7 @@ decorator para la respuest)</y:NodeLabel>
 </y:ShapeNode>
 </data>
 </node>
-<node id="n22">
+<node id="n23">
 <data key="d10">
 <y:ShapeNode>
 <y:Geometry height="105.0" width="143.0" x="-654.4752302466404" y="915.2654307770425"/>
@@ -290,7 +303,7 @@ decorator para la respuest)</y:NodeLabel>
 </y:ShapeNode>
 </data>
 </node>
-<node id="n23">
+<node id="n24">
 <data key="d10">
 <y:ShapeNode>
 <y:Geometry height="105.0" width="143.0" x="-654.4752302466404" y="609.9180980754169"/>
@@ -301,7 +314,7 @@ decorator para la respuest)</y:NodeLabel>
 </y:ShapeNode>
 </data>
 </node>
-<node id="n24">
+<node id="n25">
 <data key="d10">
 <y:ShapeNode>
 <y:Geometry height="105.0" width="143.0" x="-654.4752302466404" y="762.5917644262297"/>
@@ -312,7 +325,7 @@ decorator para la respuest)</y:NodeLabel>
 </y:ShapeNode>
 </data>
 </node>
-<node id="n25">
+<node id="n26">
 <data key="d10">
 <y:ShapeNode>
 <y:Geometry height="105.0" width="143.0" x="-654.4752302466404" y="1067.9390971278553"/>
@@ -323,27 +336,13 @@ decorator para la respuest)</y:NodeLabel>
 </y:ShapeNode>
 </data>
 </node>
-<node id="n26">
+<node id="n27">
 <data key="d10">
 <y:SVGNode>
 <y:Geometry height="47.612998962402344" width="39.25" x="-438.89293986699386" y="774.505328923074"/>
 <y:Fill color="#CCCCFF" transparent="false"/>
 <y:BorderStyle color="#000000" type="line" width="1.0"/>
 <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="108.572265625" x="-34.6611328125" y="51.612998962402344">recuento de votos</y:NodeLabel>
-<y:SVGNodeProperties usingVisualBounds="true"/>
-<y:SVGModel svgBoundsPolicy="0">
-<y:SVGContent refid="1"/>
-</y:SVGModel>
-</y:SVGNode>
-</data>
-</node>
-<node id="n27">
-<data key="d10">
-<y:SVGNode>
-<y:Geometry height="47.612998962402344" width="39.25" x="1292.6033371261583" y="133.19743645323922"/>
-<y:Fill color="#CCCCFF" transparent="false"/>
-<y:BorderStyle color="#000000" type="line" width="1.0"/>
-<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="206.623046875" x="-83.6865234375" y="51.612998962402344">log de ataques...como lo usamos??</y:NodeLabel>
 <y:SVGNodeProperties usingVisualBounds="true"/>
 <y:SVGModel svgBoundsPolicy="0">
 <y:SVGContent refid="1"/>
@@ -369,7 +368,7 @@ local facultad</y:NodeLabel>
 <node id="n29">
 <data key="d10">
 <y:SVGNode>
-<y:Geometry height="47.612998962402344" width="39.25" x="650.375" y="103.10000000000002"/>
+<y:Geometry height="47.612998962402344" width="39.25" x="656.5506860831467" y="103.10000000000002"/>
 <y:Fill color="#CCCCFF" transparent="false"/>
 <y:BorderStyle color="#000000" type="line" width="1.0"/>
 <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="67.3984375" x="-14.07421875" y="51.612998962402344">candidatos</y:NodeLabel>
@@ -636,7 +635,7 @@ local facultad</y:NodeLabel>
 <y:Geometry height="219.40636139606676" width="429.1706892487176" x="-822.961002900012" y="-265.53550955754406"/>
 <y:Fill color="#FF0000" transparent="false"/>
 <y:BorderStyle color="#000000" type="line" width="1.0"/>
-<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="168.958984375" x="130.1058524368588" y="100.7217353855334">resolver el tema de las actas</y:NodeLabel>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="168.958984375" x="130.10585243685875" y="100.72173538553338">resolver el tema de las actas</y:NodeLabel>
 <y:Shape type="rectangle"/>
 </y:ShapeNode>
 </data>
@@ -644,7 +643,7 @@ local facultad</y:NodeLabel>
 <node id="n51">
 <data key="d10">
 <y:SVGNode>
-<y:Geometry height="47.612998962402344" width="39.25" x="962.9315213604244" y="868.0981114246761"/>
+<y:Geometry height="47.612998962402344" width="39.25" x="1220.4348426367146" y="839.2118921494434"/>
 <y:Fill color="#CCCCFF" transparent="false"/>
 <y:BorderStyle color="#000000" type="line" width="1.0"/>
 <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="45.4609375" x="-3.10546875" y="51.612998962402344">padrón</y:NodeLabel>
@@ -721,7 +720,7 @@ VOX-CORE</y:NodeLabel>
 <y:Geometry height="75.15" width="143.0" x="-529.314188497881" y="290.40661998391556"/>
 <y:Fill color="#FFCC00" transparent="false"/>
 <y:BorderStyle color="#000000" type="line" width="1.0"/>
-<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="81.783203125" x="30.6083984375" y="21.612109375000017">chequeador
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.92578125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="81.783203125" x="30.6083984375" y="21.61210937499999">chequeador
 autenficación</y:NodeLabel>
 <y:Shape type="rectangle"/>
 </y:ShapeNode>
@@ -796,7 +795,49 @@ autenficación</y:NodeLabel>
 </y:ShapeNode>
 </data>
 </node>
-<edge id="e0" source="n8" target="n7">
+<node id="n64">
+<data key="d10">
+<y:SVGNode>
+<y:Geometry height="47.612998962402344" width="39.25" x="542.8410756557911" y="38.07595412183042"/>
+<y:Fill color="#CCCCFF" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="1.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="91.509765625" x="-26.1298828125" y="51.612998962402344">gente que voto</y:NodeLabel>
+<y:SVGNodeProperties usingVisualBounds="true"/>
+<y:SVGModel svgBoundsPolicy="0">
+<y:SVGContent refid="1"/>
+</y:SVGModel>
+</y:SVGNode>
+</data>
+</node>
+<node id="n65">
+<data key="d10">
+<y:SVGNode>
+<y:Geometry height="47.612998962402344" width="39.25" x="562.0253430415734" y="-57.44034992924384"/>
+<y:Fill color="#CCCCFF" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="1.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="45.4609375" x="-3.10546875" y="51.612998962402344">padrón</y:NodeLabel>
+<y:SVGNodeProperties usingVisualBounds="true"/>
+<y:SVGModel svgBoundsPolicy="0">
+<y:SVGContent refid="1"/>
+</y:SVGModel>
+</y:SVGNode>
+</data>
+</node>
+<node id="n66">
+<data key="d10">
+<y:SVGNode>
+<y:Geometry height="47.612998962402344" width="39.25" x="-270.01425261743145" y="298.6073025800948"/>
+<y:Fill color="#CCCCFF" transparent="false"/>
+<y:BorderStyle color="#000000" type="line" width="1.0"/>
+<y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="89.69921875" x="-25.224609375" y="51.61299896240237">log de ataques</y:NodeLabel>
+<y:SVGNodeProperties usingVisualBounds="true"/>
+<y:SVGModel svgBoundsPolicy="0">
+<y:SVGContent refid="1"/>
+</y:SVGModel>
+</y:SVGNode>
+</data>
+</node>
+<edge id="e0" source="n9" target="n8">
 <data key="d2">
 <y:PolyLineEdge>
 <y:Path sx="-47.54999999999973" sy="0.0" tx="-61.149999999999636" ty="0.0"/>
@@ -809,7 +850,7 @@ y no repudio</y:EdgeLabel>
 </y:PolyLineEdge>
 </data>
 </edge>
-<edge id="e1" source="n9" target="n7">
+<edge id="e1" source="n10" target="n8">
 <data key="d2">
 <y:PolyLineEdge>
 <y:Path sx="0.0" sy="-52.5" tx="0.0" ty="0.0"/>
@@ -821,7 +862,7 @@ esta conexión es para poder enviar nuevas reglas</y:EdgeLabel>
 </y:PolyLineEdge>
 </data>
 </edge>
-<edge id="e2" source="n8" target="n12">
+<edge id="e2" source="n9" target="n13">
 <data key="d2">
 <y:PolyLineEdge>
 <y:Path sx="0.0" sy="7.105427357601002E-15" tx="30.91011450381734" ty="0.0"/>
@@ -834,7 +875,7 @@ encriptada y confiable
 </y:PolyLineEdge>
 </data>
 </edge>
-<edge id="e3" source="n17" target="n15">
+<edge id="e3" source="n18" target="n16">
 <data key="d2">
 <y:PolyLineEdge>
 <y:Path sx="0.0" sy="0.0" tx="-65.62747102931166" ty="0.0"/>
@@ -844,7 +885,7 @@ encriptada y confiable
 </y:PolyLineEdge>
 </data>
 </edge>
-<edge id="e4" source="n18" target="n14">
+<edge id="e4" source="n19" target="n15">
 <data key="d2">
 <y:PolyLineEdge>
 <y:Path sx="0.0" sy="0.0" tx="0.0" ty="-45.59295999999995"/>
@@ -857,7 +898,7 @@ y no repudio</y:EdgeLabel>
 </y:PolyLineEdge>
 </data>
 </edge>
-<edge id="e5" source="n20" target="n21">
+<edge id="e5" source="n21" target="n22">
 <data key="d2">
 <y:PolyLineEdge>
 <y:Path sx="31.235287079196457" sy="0.0" tx="56.99013934564482" ty="0.0"/>
@@ -868,7 +909,7 @@ y no repudio</y:EdgeLabel>
 </y:PolyLineEdge>
 </data>
 </edge>
-<edge id="e6" source="n7" target="n11">
+<edge id="e6" source="n8" target="n12">
 <data key="d2">
 <y:PolyLineEdge>
 <y:Path sx="30.48165388828079" sy="0.0" tx="0.0" ty="-17.617453755898794">
@@ -880,7 +921,7 @@ y no repudio</y:EdgeLabel>
 </y:PolyLineEdge>
 </data>
 </edge>
-<edge id="e7" source="n23" target="n26">
+<edge id="e7" source="n24" target="n27">
 <data key="d2">
 <y:PolyLineEdge>
 <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -892,7 +933,7 @@ y no repudio</y:EdgeLabel>
 </y:PolyLineEdge>
 </data>
 </edge>
-<edge id="e8" source="n22" target="n24">
+<edge id="e8" source="n23" target="n25">
 <data key="d2">
 <y:PolyLineEdge>
 <y:Path sx="0.0" sy="0.0" tx="0.0" ty="39.955977413244455"/>
@@ -903,7 +944,7 @@ y no repudio</y:EdgeLabel>
 </y:PolyLineEdge>
 </data>
 </edge>
-<edge id="e9" source="n22" target="n25">
+<edge id="e9" source="n23" target="n26">
 <data key="d2">
 <y:PolyLineEdge>
 <y:Path sx="0.0" sy="0.0" tx="0.0" ty="-45.28182626318926"/>
@@ -914,7 +955,7 @@ y no repudio</y:EdgeLabel>
 </y:PolyLineEdge>
 </data>
 </edge>
-<edge id="e10" source="n26" target="n24">
+<edge id="e10" source="n27" target="n25">
 <data key="d2">
 <y:PolyLineEdge>
 <y:Path sx="0.0" sy="0.0" tx="0.0" ty="-16.77993602195454"/>
@@ -924,7 +965,7 @@ y no repudio</y:EdgeLabel>
 </y:PolyLineEdge>
 </data>
 </edge>
-<edge id="e11" source="n28" target="n8">
+<edge id="e11" source="n28" target="n9">
 <data key="d2">
 <y:PolyLineEdge>
 <y:Path sx="0.0" sy="0.0" tx="0.0" ty="35.09716702290072"/>
@@ -934,7 +975,7 @@ y no repudio</y:EdgeLabel>
 </y:PolyLineEdge>
 </data>
 </edge>
-<edge id="e12" source="n29" target="n8">
+<edge id="e12" source="n29" target="n9">
 <data key="d0"></data>
 <data key="d1"><![CDATA[UMLuses]]></data>
 <data key="d2">
@@ -944,12 +985,12 @@ y no repudio</y:EdgeLabel>
 </y:Path>
 <y:LineStyle color="#000000" type="dashed" width="1.0"/>
 <y:Arrows source="none" target="short"/>
-<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="86.60609285092869" y="1.9999977111816634"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="83.54427768937694" y="1.9999977111816634"/>
 <y:BendStyle smoothed="false"/>
 </y:PolyLineEdge>
 </data>
 </edge>
-<edge id="e13" source="n29" target="n7">
+<edge id="e13" source="n29" target="n8">
 <data key="d0"></data>
 <data key="d1"><![CDATA[UMLuses]]></data>
 <data key="d2">
@@ -959,12 +1000,12 @@ y no repudio</y:EdgeLabel>
 </y:Path>
 <y:LineStyle color="#000000" type="dashed" width="1.0"/>
 <y:Arrows source="none" target="short"/>
-<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="-88.84968819257836" y="1.9999977111816634"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="-91.92956976037999" y="1.9999977111816634"/>
 <y:BendStyle smoothed="false"/>
 </y:PolyLineEdge>
 </data>
 </edge>
-<edge id="e14" source="n9" target="n31">
+<edge id="e14" source="n10" target="n31">
 <data key="d0"></data>
 <data key="d1"><![CDATA[UMLuses]]></data>
 <data key="d2">
@@ -977,7 +1018,7 @@ y no repudio</y:EdgeLabel>
 </y:PolyLineEdge>
 </data>
 </edge>
-<edge id="e15" source="n9" target="n28">
+<edge id="e15" source="n10" target="n28">
 <data key="d0"></data>
 <data key="d1"><![CDATA[UMLuses]]></data>
 <data key="d2">
@@ -993,7 +1034,7 @@ y no repudio</y:EdgeLabel>
 </y:PolyLineEdge>
 </data>
 </edge>
-<edge id="e16" source="n9" target="n32">
+<edge id="e16" source="n10" target="n32">
 <data key="d0"></data>
 <data key="d1"><![CDATA[UMLuses]]></data>
 <data key="d2">
@@ -1006,7 +1047,7 @@ y no repudio</y:EdgeLabel>
 </y:PolyLineEdge>
 </data>
 </edge>
-<edge id="e17" source="n9" target="n29">
+<edge id="e17" source="n10" target="n29">
 <data key="d0"></data>
 <data key="d1"><![CDATA[UMLuses]]></data>
 <data key="d2">
@@ -1087,7 +1128,23 @@ y no repudio</y:EdgeLabel>
 </y:PolyLineEdge>
 </data>
 </edge>
-<edge id="e23" source="n34" target="n16">
+<edge id="e23" source="n34" target="n17">
+<data key="d0"></data>
+<data key="d1"><![CDATA[UMLuses]]></data>
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="0.0" sy="0.0" tx="0.0" ty="13.916470715249716">
+<y:Point x="867.8498210633946" y="1059.5336200000002"/>
+<y:Point x="867.8498210633946" y="1127.0336200000002"/>
+</y:Path>
+<y:LineStyle color="#000000" type="dashed" width="1.0"/>
+<y:Arrows source="none" target="short"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="212.7998679277439" y="69.50005066406266"/>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e24" source="n36" target="n18">
 <data key="d0"></data>
 <data key="d1"><![CDATA[UMLuses]]></data>
 <data key="d2">
@@ -1095,25 +1152,12 @@ y no repudio</y:EdgeLabel>
 <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
 <y:LineStyle color="#000000" type="dashed" width="1.0"/>
 <y:Arrows source="none" target="short"/>
-<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="59.41232106339464" y="2.0000506640626554"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="30.420768541654752" y="2.0000506640626554"/>
 <y:BendStyle smoothed="false"/>
 </y:PolyLineEdge>
 </data>
 </edge>
-<edge id="e24" source="n36" target="n17">
-<data key="d0"></data>
-<data key="d1"><![CDATA[UMLuses]]></data>
-<data key="d2">
-<y:PolyLineEdge>
-<y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
-<y:LineStyle color="#000000" type="dashed" width="1.0"/>
-<y:Arrows source="none" target="short"/>
-<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="27.387738582140514" y="2.0000506640626554"/>
-<y:BendStyle smoothed="false"/>
-</y:PolyLineEdge>
-</data>
-</edge>
-<edge id="e25" source="n33" target="n14">
+<edge id="e25" source="n33" target="n15">
 <data key="d0"></data>
 <data key="d1"><![CDATA[UMLuses]]></data>
 <data key="d2">
@@ -1126,7 +1170,7 @@ y no repudio</y:EdgeLabel>
 </y:PolyLineEdge>
 </data>
 </edge>
-<edge id="e26" source="n14" target="n38">
+<edge id="e26" source="n15" target="n38">
 <data key="d0"></data>
 <data key="d1"><![CDATA[UMLuses]]></data>
 <data key="d2">
@@ -1155,17 +1199,17 @@ y no repudio</y:EdgeLabel>
 </y:PolyLineEdge>
 </data>
 </edge>
-<edge id="e28" source="n38" target="n16">
+<edge id="e28" source="n38" target="n17">
 <data key="d0"></data>
 <data key="d1"><![CDATA[UMLuses]]></data>
 <data key="d2">
 <y:PolyLineEdge>
 <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
-<y:Point x="974.8246421267893" y="1464.5336200000002"/>
+<y:Point x="1255.249914792093" y="1464.5336200000002"/>
 </y:Path>
 <y:LineStyle color="#000000" type="dashed" width="1.0"/>
 <y:Arrows source="none" target="short"/>
-<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="144.44964212678929" y="-188.03419959533676"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="213.9999573960465" y="2.0000506640626554"/>
 <y:BendStyle smoothed="false"/>
 </y:PolyLineEdge>
 </data>
@@ -1307,32 +1351,32 @@ y no repudio</y:EdgeLabel>
 <y:Path sx="71.5" sy="0.0" tx="0.0" ty="0.0">
 <y:Point x="832.375" y="826.8481114246761"/>
 <y:Point x="877.3743609406953" y="826.8481114246761"/>
-<y:Point x="877.3743609406953" y="891.9046109058772"/>
+<y:Point x="877.3743609406953" y="863.0183916306446"/>
 </y:Path>
 <y:LineStyle color="#000000" type="dashed" width="1.0"/>
 <y:Arrows source="none" target="short"/>
-<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="81.21544115055985" y="108.30652740978348"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="209.9671017887049" y="79.42030813455085"/>
 <y:BendStyle smoothed="false"/>
 </y:PolyLineEdge>
 </data>
 </edge>
-<edge id="e39" source="n41" target="n16">
+<edge id="e39" source="n41" target="n17">
 <data key="d0"></data>
 <data key="d1"><![CDATA[UMLuses]]></data>
 <data key="d2">
 <y:PolyLineEdge>
-<y:Path sx="47.35687923363514" sy="0.0" tx="19.625" ty="0.0">
+<y:Path sx="47.35687923363514" sy="0.0" tx="-19.598905885209888" ty="-14.391956302294375">
 <y:Point x="1105.9817077005598" y="785.5981114246761"/>
-<y:Point x="1105.9817077005598" y="1059.5336200000002"/>
+<y:Point x="1105.9817077005598" y="1098.725192982456"/>
 </y:Path>
 <y:LineStyle color="#000000" type="dashed" width="1.0"/>
 <y:Arrows source="standard" target="none"/>
-<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="61.61757195837231" y="134.96778221624436"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="61.61757195837231" y="154.5635687074723"/>
 <y:BendStyle smoothed="false"/>
 </y:PolyLineEdge>
 </data>
 </edge>
-<edge id="e40" source="n41" target="n13">
+<edge id="e40" source="n41" target="n14">
 <data key="d0"></data>
 <data key="d1"><![CDATA[UMLuses]]></data>
 <data key="d2">
@@ -1514,6 +1558,60 @@ y no repudio</y:EdgeLabel>
 <y:LineStyle color="#000000" type="line" width="1.0"/>
 <y:Arrows source="none" target="short"/>
 <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.962890625" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="94.029296875" x="1.9999899689158838" y="22.95579989812387">call asincronico</y:EdgeLabel>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e53" source="n65" target="n8">
+<data key="d0"></data>
+<data key="d1"><![CDATA[UMLuses]]></data>
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="0.0" sy="0.0" tx="0.0" ty="-44.383850448042665"/>
+<y:LineStyle color="#000000" type="dashed" width="1.0"/>
+<y:Arrows source="none" target="short"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="-29.640160510463375" y="1.999999649613585"/>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e54" source="n64" target="n8">
+<data key="d0"></data>
+<data key="d1"><![CDATA[UMLuses]]></data>
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="0.0" sy="0.0" tx="57.03222078272643" ty="51.13245360303159"/>
+<y:LineStyle color="#000000" type="dashed" width="1.0"/>
+<y:Arrows source="standard" target="short"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="-20.034113051010763" y="1.9999996845745613"/>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e55" source="n56" target="n66">
+<data key="d0"></data>
+<data key="d1"><![CDATA[UMLuses]]></data>
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+<y:Point x="-250.38925261743145" y="222.83161998391557"/>
+</y:Path>
+<y:LineStyle color="#000000" type="dashed" width="1.0"/>
+<y:Arrows source="none" target="short"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="70.52495790914065" y="2.0000007212202604"/>
+<y:BendStyle smoothed="false"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e56" source="n57" target="n66">
+<data key="d0"></data>
+<data key="d1"><![CDATA[UMLuses]]></data>
+<data key="d2">
+<y:PolyLineEdge>
+<y:Path sx="0.0" sy="0.0" tx="0.0" ty="5.567817922619554"/>
+<y:LineStyle color="#000000" type="dashed" width="1.0"/>
+<y:Arrows source="none" target="short"/>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="56.14995790914065" y="1.9999915659468002"/>
 <y:BendStyle smoothed="false"/>
 </y:PolyLineEdge>
 </data>
