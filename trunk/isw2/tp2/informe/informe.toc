@@ -2,19 +2,22 @@
 \contentsline {section}{\numberline {1}Plan de proyecto}{3}{section.1}
 \contentsline {subsection}{\numberline {1.1}Etapas e Iteraciones}{3}{subsection.1.1}
 \contentsline {subsubsection}{\numberline {1.1.1}Gantt}{3}{subsubsection.1.1.1}
-\contentsline {subsection}{\numberline {1.2}Work Breakdown Structure}{4}{subsection.1.2}
-\contentsline {section}{\numberline {2}Casos de Uso}{7}{section.2}
-\contentsline {section}{\numberline {3}Escenarios}{10}{section.3}
-\contentsline {subsection}{\numberline {3.1}Disponibilidad}{10}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Performance}{11}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Seguridad}{11}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Modificabilidad}{12}{subsection.3.4}
-\contentsline {subsection}{\numberline {3.5}Usabilidad}{12}{subsection.3.5}
-\contentsline {section}{\numberline {4}Presentaci\IeC {\'o}n de la arquitectura}{14}{section.4}
-\contentsline {subsection}{\numberline {4.1}Obtenci\IeC {\'o}n de los atributos de calidad}{16}{subsection.4.1}
-\contentsline {section}{\numberline {5}An\'alisis de Riesgos}{17}{section.5}
-\contentsline {subsection}{\numberline {5.1}Riesgos}{17}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Planes de contingencia y mitigaci\'on}{18}{subsection.5.2}
-\contentsline {section}{\numberline {6}Presentaci\IeC {\'o}n de la arquitectura}{20}{section.6}
-\contentsline {subsection}{\numberline {6.1}Obtenci\IeC {\'o}n de los atributos de calidad}{22}{subsection.6.1}
-\contentsline {section}{\numberline {7}Comparaci\'on y conclusiones}{22}{section.7}
+\contentsline {subsection}{\numberline {1.2}Work Breakdown Structure}{3}{subsection.1.2}
+\contentsline {section}{\numberline {2}Casos de Uso}{6}{section.2}
+\contentsline {section}{\numberline {3}Escenarios}{9}{section.3}
+\contentsline {subsection}{\numberline {3.1}Disponibilidad}{9}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Performance}{10}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Seguridad}{10}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Modificabilidad}{11}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Usabilidad}{11}{subsection.3.5}
+\contentsline {section}{\numberline {4}Presentaci\IeC {\'o}n de la arquitectura}{13}{section.4}
+\contentsline {subsection}{\numberline {4.1}Estilos y T\IeC {\'a}cticas}{15}{subsection.4.1}
+\contentsline {paragraph}{Seguridad}{15}{section*.2}
+\contentsline {paragraph}{Usabilidad}{15}{section*.3}
+\contentsline {paragraph}{Performance/Disponibilidad}{15}{section*.4}
+\contentsline {paragraph}{Disponibilidad}{15}{section*.5}
+\contentsline {paragraph}{Modificabilidad}{15}{section*.6}
+\contentsline {section}{\numberline {5}An\'alisis de Riesgos}{16}{section.5}
+\contentsline {subsection}{\numberline {5.1}Riesgos}{16}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Planes de contingencia y mitigaci\'on}{17}{subsection.5.2}
+\contentsline {section}{\numberline {6}Comparaci\'on y conclusiones}{19}{section.6}

@@ -1,7 +1,7 @@
 \section{Casos de Uso}
 
 A continuaci\'on se presentan los principales casos de uso del sistema.
-Se presentan las principales interacciones que hay desde el exterior(votantes, rectorado, partidos pol\'iticos) con el sistema.
+Se muestran las principales interacciones que hay desde el exterior (votantes, rectorado, partidos pol\'iticos) con el sistema.
 
 \begin{itemize}
 \item Un usuario quieren ingresar al sistema
@@ -18,7 +18,7 @@ Pos condición & El usuario se encuentra autenticado. \\
 \begin{tabular}{c p{4cm}|p{4cm}}
  & Curso normal & Curso alternativo \\
  1. & El votante indica su nombre de usuario y contraseña &  \\
- 2. & Si los datos son correctos el usuario recibe una confirmación de que su nombre de usuario y contraseña son correctos & Si los datos son incorrectos el usuario recibe un mensaje de error indicándo que la combinación de nombre de usuario y contraseña es incorrecta \\
+ 2. & Si los datos son correctos el usuario recibe una confirmación de que su nombre de usuario y contraseña son correctos & Si los datos son incorrectos el usuario recibe un mensaje de error indicando que la combinación de nombre de usuario y contraseña es incorrecta \\
  3. & Se muestra la interfaz de voto electrónico & Ir al fin del caso de uso \\
 4. & Fin del caso de uso& \\ 
 \end{tabular}
@@ -96,7 +96,7 @@ Actor & Votante \\
 \hline
 Pre condición & El usuario se encuentra autenticado \\
 \hline
-Pos condición & La interfaz se presenta en el usuario elegido \\
+Pos condición & La interfaz se presenta en el idioma elegido \\
 \hline
 \end{tabular}
 \medskip
@@ -104,7 +104,7 @@ Pos condición & La interfaz se presenta en el usuario elegido \\
  & Curso normal & Curso alternativo \\
  1. & El usuario selecciona la funcionalidad de modificar el idioma del sistema &   \\
  2. & El sistema despliega los diferentes idiomas disponibles &   \\
- 3. & El usuario elije entre uno de las opciones disponibles & \\
+ 3. & El usuario elije entre una de las opciones disponibles & \\
  4. & El sistema modifica la interfaz del usuario con el idioma elegido & \\
  5. & Fin de caso de uso & \\
 \end{tabular}
@@ -128,7 +128,7 @@ Pos condición & El usuario ingresa al sistema \\
  & Curso normal & Curso alternativo \\
  1. & Un usuario quiere ingresar al sistema &   \\
  2. & El sistema chequea que la plataforma este soportada &   \\
- 3. & Se procede con la autenticaci\'on del usuario & Se envia un mensaje al usuario que indica que la plaforma no esta soportada\\
+ 3. & Se procede con la autenticaci\'on del usuario & Se envia un mensaje al usuario que indica que la plaforma no est\'a soportada\\
  4. & Fin de caso de uso & \\
 \end{tabular}
 \end{center}
@@ -141,7 +141,7 @@ Actor & Usuario del rectorado \\
 \hline
 Pre condición & El usuario se encuentra autenticado\\
 \hline
-Pos condición & El rectorado sabe que votantes sufragaron \\
+Pos condición & El rectorado sabe qu\'e votantes sufragaron \\
 \hline
 \end{tabular}
 \medskip
@@ -149,11 +149,11 @@ Pos condición & El rectorado sabe que votantes sufragaron \\
  & Curso normal & Curso alternativo \\
  1. & El rectorado selecciona la funcionalidad de auditabilidad &   \\
  2. & El sistema despliega la lista de la facultades disponibles &   \\
- 3. & El recortorado elije la facultad que quiere auditar & Se envia un mensaje al usuario que indica que la plaforma no esta soportada\\
- 4. & El sistema le envia al rectorado los votantes que sufragaron de la facultad seleccionada \\
+ 3. & El rectorado elije la facultad que quiere auditar & \\
+ 4. & El sistema le env\'ia al rectorado los votantes que sufragaron de la facultad seleccionada \\
  5. & Fin de caso de uso & \\
 \end{tabular}
-\end{center}
+\end{center}  
 
 
 
