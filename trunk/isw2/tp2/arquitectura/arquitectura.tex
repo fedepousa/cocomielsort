@@ -57,24 +57,26 @@ Como se puede apreciar, en el caso de la conexión entre el browser y el portal,
 
 
 
-\subsection{Obtención de los atributos de calidad}
+\subsection{Estilos y Tácticas}
 
-
-Dada la necesidad de asegurar un nivel elevado de seguridad en todos los niveles, se utilizaron varias tácticas con dicho objetivo. En todas las comunicaciones se utiliza encripción, suma de verificación y un esquema de firmas para garantizar no repudio. La conexión de las interfaces gráficas para los votantes con el resto del sistema utilizan autenticación.
-
-
-Dado que los repositorios de usuarios que ya votaron y de cantidad de votos son críticos para lograr auditabilidad, los mismos se encuentran duplicados en diversas máquinas.
-
-Para mejorar la usabilidad se separó la interfaz gráfica del resto de los componentes, de manera que pueda evolucionar por separado, priorizando criterios de facilidad de uso y de aprendizaje.
-
-Para verificar que una persona cumple con las reglas establecidas para la votación es necesario consultar el padrón para disponer de la información de dicho votante. 
-
-
-
-
-%%disponibilidad => se pueden tener muchos portales ??
-%%disponibilidad => el padrón esta replicado en todos los vox-core para disminuir la carga
-%%seguridad
-%%modificabilidad => el hard to break es un componente que se puede cambiar facilmente
-
+Al crear la arquitectura, nos ayudamos fuertemente en las tácticas que nos provee la bibliografía para atacar los distintos atributos de calidad relevados. A su vez, analizandola, entendemos que no nos quedamos con un estilo puro, sino que tomamos varios aspectos de distintos estilos, particularmente obtuvimos cierta inspiración en \textit{Pipe and Filters, Call Returns y Client-Server}. \\ A continuación presentamos los aspectos relevados, organizados la taxonomía propuesta por la bibliografía para los atributos de calidad, y como impactaron en nuestra arquitectura.
  
+
+
+\paragraph{Seguridad}
+Dada la necesidad de asegurar un nivel elevado de seguridad en todos los niveles, se utilizaron varias tácticas con dicho objetivo. En todas las comunicaciones se utiliza encriptación, suma de verificación y un esquema de firmas certificadas para garantizar no repudio. La conexión de las interfaces gráficas para los votantes con el resto del sistema utilizan autenticación. En conjunto con esta estrategia se agrega un repositorio para llevar cuenta de los intentos de vulnerar la seguridad provista por los conectores, de esta manera logramos trazar la arquitectura con varias de las tácticas de seguridad sugeridas por la bibliografía.
+
+\paragraph{Usabilidad}
+Para mejorar la usabilidad se separó la interfaz gráfica del resto de los componentes, de manera que pueda mutar por separado, priorizando criterios de facilidad de uso y de aprendizaje, tal como suguiera la táctica \textit{Separece User Interface}. A su vez, la interfaz de usuario presenta la necesidad de confirmar el voto. Además se puede utilizar diferentes interfaces cambiando de componente browser. De esta manera es posible usar el sistema en diferentes plataformas tecnológicas (tablets, smartphones, etc) y desarrollar nuevas interfaces para usuarios con capacidades diferentes.
+
+\paragraph{Performance/Disponibilidad}
+El portal elige con que componente VOX-core se va a comunicar para distribuir la carga entrante y permitir una mejor respuesta del sistema, siguiendo la táctica \textit{Scheduling Policy}. Mediante \textit{Ping/Echo} logramos censar la disponibilidad de cada Vox-Core que se quiere conectar. En horas pico se puede activar un mayor número de componentes VOX-core para lidiar con el flujo de usuarios siguiendo la táctica de \textit{Increase Available Resources}. La misma estrategia se aplica entre el componente browser y el portal de VOX-facultad.
+Todos los repositorios admiten accesos concurrentes, \textit{Introduce Concurrency}
+
+\paragraph{Disponibilidad}
+Los repositorios que deberían ser accedidos por todos los componentes VOX-core se replican en cada componente VOX-facultad para disminuir el volumén de consultas, aprovechando la redundancia \textit{Redundancy}.
+
+\paragraph{Modificabilidad}
+Dentro del componente VOX-core la funcionalidad que genera el certificado de voto para el usuario esta aislada en un componente. De esta manera si se decide cambiar el sistema que genera los certificados, las modificaciones se acotaran a cambiar solo ese componente, bajando el impacto gracias al anticipo del posible cambio, \textit{Anticipate Expected Changes}. En el caso que el Rectorado decide cambiar las reglas para las elecciones, éste podría hacerlo configurandolas en tiempo de ejecución, inspirado en \textit{Configuration Files}.
+
+
