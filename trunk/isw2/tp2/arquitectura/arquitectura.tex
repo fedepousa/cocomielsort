@@ -38,7 +38,7 @@ El proceso que seguirá una vez recibido por los componentes fiscalizadores de l
 %%felipe-----------------
 En cada componente fiscalizador se recibe el conteo de votos de todas las facultades y se calculan los resultados totales. Luego mediante la interfaz por browser del fiscalizador es posible filtrar que porcentajes se muestran.
 
-El componente dedicado a las tareas administrativas del rectorado permite, mediante una comoda interfaz por browser, administrar las reglas de los comiicios y enviarlas en simultaneo a todas las facultades. La interfaz también da un marco para ingresar los candidatos que luego se propagaran a los repositorios de los componentes Vox-Facultad.
+El componente dedicado a las tareas administrativas del rectorado permite, mediante una comoda interfaz por browser, administrar las reglas de los comicios y enviarlas en simultaneo a todas las facultades. La interfaz también da un marco para ingresar los candidatos que luego se propagaran a los repositorios de los componentes Vox-Facultad. También da la opción de generar el acta del comicio 
 \\
 Desde el sistema de rectorado se genera, antes de iniciar los comicios, las contraseñas para todos los usuarios y se les envia al correo electrónico que tengan registrado en el padrón. Luego a cada facultad se le envia la información necesaria para registrar el loggueo de sus votantes.
 %%felipe-----------------
@@ -54,7 +54,7 @@ En el caso de la recepción de un mensaje, se realiza el proceso inverso, se pro
 Como se puede apreciar, en el caso de la conexión entre el browser y el portal, es necesario utilizar algún tipo de entidad certificante, ya que no se puede determinar identidad del servidor de otra manera. Esto genera un pequeño cambio en los componentes, ya que el componente de encripción deberá comunicarse con la entidad certificante para obtener la clave pública del portal.
 
 % TODO seguir explicando 
-\paragraph{Formato de los paquetes} Los paquetes que van de la interfaz de usuario al portal son del tipo usuario-voto
+\paragraph{Formato de los paquetes} Los paquetes que van de la interfaz de usuario al portal son del tipo usuario-voto. Si bien en este punto esta presente un riesgo de seguridad la encriptación protege el anonimato del votante. Cuando la interfaz se comunica con VOX-core empaqueta el mensaje del votante en un nuevo paquete con la información del portal. De esta manera el componente VOX-core tiene suficiente información para registrar el voto, registrar que el emisor del mismo ya voto y además devolverle un certificado.
 
 
 \subsection{Estilos y Tácticas}

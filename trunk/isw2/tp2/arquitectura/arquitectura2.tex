@@ -1,8 +1,0 @@
-El comunicador merece una discusión aparte por sus varias particularidades. Recordemos que el comunicador debe ofrecer comunicación encriptada, confiable y no repudiable. Dado que no repudiación se logra a partir de la utilización de firmas digitales, consideramos esa explicación secundaria y nos centraremos en explicar cómo se logra encriptación y confiabilidad.
-
-Dado que existe dos tipos de comunicación, una entre componentes del sistema de la facultad y otra entre el portal y el browser, habrá algunos cambios en cuestiones de implementación que mencionaremos más tarde.
-
-Esencialmente la tarea del comunicador, al recibir datos que tiene que enviar, encriptará los datos, generará un mensaje con la información necesaria para que el otro extremo pueda procesar el mensaje, mandarlo y esperar una respuesta del otro extremo confirmando la recepción.
-En el caso de la recepción de un mensaje, se realiza el proceso inverso, se procede a desempaquetar los datos, luego se los desencripta y se entrega dichos datos al componente encargado de procesarlos.
-
-Como se puede apreciar, en el caso de la conexión entre el browser y el portal, es necesario utilizar algún tipo de entidad certificante, ya que no se puede determinar identidad del servidor de otra manera. Esto genera un pequeño cambio en los componentes, ya que el componente de encripción deberá comunicarse con la entidad certificante para obtener la clave pública del portal.
