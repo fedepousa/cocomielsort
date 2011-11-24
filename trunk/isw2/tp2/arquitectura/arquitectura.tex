@@ -1,8 +1,8 @@
-
-
-Presentaremos la arquitectura explicando cómo se brindan las funcionalidades requeridas, mencionando diseños alternativos y algunos aspectos relevantes de la comunicación. Por último se comentará cómo se logra cada atributo de calidad a partir de las tácticas utilizadas y la estructura descripta. 
-
 \section{Presentación de la arquitectura}
+
+En esta sección presentaremos la arquitectura explicando cómo se brindan las funcionalidades requeridas, mencionando diseños alternativos y algunos aspectos relevantes de la comunicación. Por último se comentará cómo se logra cada atributo de calidad a partir de las tácticas utilizadas y la estructura descripta. 
+\\ \par
+
 
 El uso más habitual que se le dará al sistema será el de votar, por lo que comenzaremos explicando cómo se logra esta funcionalidad con la arquitectura propuesta, enfocándonos principalmente en el diagrama de componentes y conectores.
 
@@ -96,7 +96,7 @@ En el diagrama se realizó una abstracción para facilitar la comprensión del f
 	\label{fig:sistemaRectorado}
 \end{figure} 
 
-El comunicador merece una discusión aparte por sus varias particularidades, , ver figura \ref{fig:comunicador}. Recordemos que el comunicador debe ofrecer comunicación encriptada, confiable y no repudiable. Dado que no repudiación se logra a partir de la utilización de firmas digitales, consideramos esa explicación secundaria y nos centraremos en explicar cómo se logra encriptación y confiabilidad.
+El comunicador merece una discusión aparte por sus varias particularidades (ver figura \ref{fig:comunicador}). Recordemos que el comunicador debe ofrecer comunicación encriptada, confiable y no repudiable. Dado que no repudiación se logra a partir de la utilización de firmas digitales, consideramos esa explicación secundaria y nos centraremos en explicar cómo se logra encriptación y confiabilidad.
 
 Esencialmente la tarea del comunicador, al recibir datos que tiene que enviar, encriptará los datos, generará un mensaje con la información necesaria para que el otro extremo pueda procesar el mensaje, mandarlo y esperar una respuesta del otro extremo confirmando la recepción.
 En el caso de la recepción de un mensaje, se realiza el proceso inverso, se procede a desempaquetar los datos, luego se los desencripta y se entrega dichos datos al componente encargado de procesarlos.
@@ -121,13 +121,13 @@ Como se puede apreciar, en el caso de la conexión entre el browser y el portal,
 Al crear la arquitectura, nos ayudamos fuertemente en las tácticas que nos provee la bibliografía para atacar los distintos atributos de calidad relevados. A su vez, analizándola, entendemos que no nos quedamos con un estilo puro, sino que tomamos varios aspectos de distintos estilos, particularmente obtuvimos cierta inspiración en \textit{Pipe and Filters, Call Returns y Client-Server}. \\ A continuación presentamos los aspectos relevados, organizados en la taxonomía propuesta por la bibliografía para los atributos de calidad, y cómo impactaron en nuestra arquitectura.
  
 
-\paragraph{Seguridad}
+\paragraph{Seguridad:}
 Dada la necesidad de asegurar un nivel elevado de seguridad en todos los niveles, se utilizaron varias tácticas con dicho objetivo. En todas las comunicaciones se utiliza encriptación, suma de verificación y un esquema de firmas certificadas para garantizar no repudio. La conexión de las interfaces gráficas para los votantes con el resto del sistema utilizan autenticación. Además se incorpora un log de ataques para llevar cuenta de los intentos de vulnerar las comunicaciones del sistema. De esta manera logramos trazar la arquitectura con varias de las tácticas de seguridad sugeridas por la bibliografía.
 
-\paragraph{Usabilidad}
+\paragraph{Usabilidad:}
 Para mejorar la usabilidad se separó la interfaz gráfica del resto de los componentes, de manera que pueda mutar por separado, priorizando criterios de facilidad de uso y de aprendizaje, tal como suguiera la táctica \textit{Separece User Interface}. A su vez, la interfaz de usuario presenta la necesidad de confirmar el voto. Además se puede utilizar diferentes interfaces cambiando de componente browser. De esta manera es posible usar el sistema en diferentes plataformas tecnológicas (tablets, smartphones, etc) y desarrollar nuevas interfaces para usuarios con capacidades diferentes.
 
-\paragraph{Performance/Disponibilidad}
+\paragraph{Performance/Disponibilidad:}
 El portal,  ver figura \ref{fig:portal}, elige con qué componente VOX-core se va a comunicar para distribuir la carga entrante y permitir una mejor respuesta del sistema, siguiendo la táctica \textit{Scheduling Policy}. Mediante \textit{Ping/Echo} logramos censar la disponibilidad de cada Vox-Core que se quiere conectar. En horas pico se puede activar un mayor número de componentes VOX-core para lidiar con el flujo de usuarios siguiendo la táctica de \textit{Increase Available Resources}. La misma estrategia se aplica entre el componente browser y el portal de VOX-facultad.
 Todos los repositorios admiten accesos concurrentes, recurriendo a la táctica \textit{Introduce Concurrency}.
 \begin{figure}[H]
@@ -138,10 +138,10 @@ Todos los repositorios admiten accesos concurrentes, recurriendo a la táctica \
 	\label{fig:portal}
 \end{figure}
 
-\paragraph{Disponibilidad}
+\paragraph{Disponibilidad:}
 Los repositorios que deberían ser accedidos por todos los componentes VOX-core se replican en cada componente VOX-facultad para disminuir el volumén de consultas, aprovechando la redundancia, indicado bajo el nombre \textit{Redundancy}.
 
-\paragraph{Modificabilidad}
+\paragraph{Modificabilidad:}
 Dentro del componente VOX-core la funcionalidad que genera el certificado de voto para el usuario está aislada en un componente que define una interfaz para el componente externo. De esta manera si se decide cambiar el sistema que genera los certificados, las modificaciones se acotarán a cambiar sólo ese componente y su interfaz, bajando el impacto gracias al anticipo del posible cambio, siguiendo esta vez las directivas de \textit{Anticipate Expected Changes}. En el caso que el Rectorado decida cambiar las reglas para las elecciones, éste podría hacerlo configurandolas en tiempo de ejecución, inspirado en \textit{Configuration Files}.
 
 
