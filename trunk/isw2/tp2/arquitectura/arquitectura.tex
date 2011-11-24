@@ -112,6 +112,9 @@ Como se puede apreciar, en el caso de la conexión entre el browser y el portal,
 \paragraph{Formato de los paquetes} Los paquetes que van de la interfaz de usuario al portal son del tipo usuario-voto. Si bien en este punto está presente un riesgo de seguridad la encriptación protege el anonimato del votante. Cuando la interfaz se comunica con VOX-core empaqueta el mensaje del votante en un nuevo paquete con la información del portal. De esta manera el componente VOX-core tiene suficiente información para registrar el voto, registrar que el emisor del mismo ya votó y además devolverle un certificado.
 
 
+La forma en la que reciben los datos los fiscalizadores de cada VOX-Facultad es a través de un conector similar a Publish - Subscribe que utiliza el conector seguro ya descripto para brindar conexiones seguras.
+
+
 \subsection{Estilos y Tácticas}
 
 Al crear la arquitectura, nos ayudamos fuertemente en las tácticas que nos provee la bibliografía para atacar los distintos atributos de calidad relevados. A su vez, analizándola, entendemos que no nos quedamos con un estilo puro, sino que tomamos varios aspectos de distintos estilos, particularmente obtuvimos cierta inspiración en \textit{Pipe and Filters, Call Returns y Client-Server}. \\ A continuación presentamos los aspectos relevados, organizados en la taxonomía propuesta por la bibliografía para los atributos de calidad, y cómo impactaron en nuestra arquitectura.
