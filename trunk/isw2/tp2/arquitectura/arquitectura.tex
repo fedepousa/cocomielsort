@@ -43,8 +43,7 @@ El componente Vox de la Facultad resultó polémico debido a que gran parte de l
 Considerando la prioridad asignada a los atributos de calidad en el QAW realizado y siendo confiabilidad menos prioritario que usabilidad y que seguridad optamos por favorecer una estructura diferente, que aporta menos garantías de confiabilidad pero mejora sensiblemente los aspectos antes mencionados de usabilidad y seguridad.
 
 Se puede apreciar en el diagrama % TODO referenciar al diagrama
-que en la propuesta elegida se elimina la necesidad de mantener un repositorio de votos no procesados, como ocurría con la anterior opción. Sin embargo, para poder mantener la posibilidad de votar en todo momento, será necesario que alguna de las instancias del portal esté siendo ejecutado en la Facultad misma. Varias sutilezas con respecto a este tema serán discutadas más adelante, % mencionarlas en la parte de tácticas
-al momento de referirse a las tácticas y soluciones encontradas para los atributos de calidad.
+que en la propuesta elegida se elimina la necesidad de mantener un repositorio de votos no procesados, como ocurría con la anterior opción. Sin embargo, para poder mantener la posibilidad de votar en todo momento, será necesario que alguna de las instancias del portal esté siendo ejecutado en la Facultad misma. 
 
 
 La estructura propuesta permite que el conteo de votos se lleve a cabo en cada Facultad independientemente de las demás, pero esta descentralización, junto con la necesidad de fiscalizar los resultados realizando un recuento completo, conlleva un costo elevado en cuanto a la complejidad de la conexión entre las distintas facultades y los componentes correspondientes a la fiscalización realizada por cada agrupación política y por el rectorado.
@@ -65,7 +64,7 @@ Por último, y de haberse superado con éxito todos los chequeos impuestos por l
 \end{figure} 
  
 Para satisfacer las necesidades de fiscalización expresadas, tras procesarse el voto, el mismo es recibido por el publicador, 
-para luego ser enviado a través de un conector multicast seguro y con varias propiedades adicionales que serán oportunamente mencionadas. % TODO mencionarlas y explicar el publish subscribe en detalle
+para luego ser enviado a través de un conector multicast seguro y con varias propiedades adicionales. Si bien podría ser deseable utilizar un esquema similar al de publish and subscribe, es conveniente priorizar la seguridad y sólo permitir el envío de los paquetes a componentes agregados manualmente mediante archivos de configuración, para evitar la posibilidad de que se engañe al sistema y un atacante reciba la información.
 
 El proceso que seguirá una vez recibido por los componentes fiscalizadores de las agrupaciones políticas y rectorado consiste en registrar el voto para el candidato correspondiente. La frecuencia con que efectivamente se envían los votos deberá determinarse con mayor participación de los diferentes stakeholders, ya que el envío inmediato de los votos junto con la posibilidad de acceso en todo momento a la información de los votantes que ya emitieron su voto hace imposible la tarea de mantener el voto secreto. El funcionamiento de la cola de envíos implementada en el publicador queda por el momento indefinido, pero puede ser tan simple como enviar inmediatamente los votos encolados hasta un esquema más complejo, que contenga restricciones sobre la mínima cantidad de votos acumulados o la mínima cantidad de candidatos representados en los mismos, por ejemplo.
 
