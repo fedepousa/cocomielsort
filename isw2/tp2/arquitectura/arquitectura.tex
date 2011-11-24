@@ -6,6 +6,20 @@ Presentaremos la arquitectura explicando cómo se brindan las funcionalidades re
 
 El uso más habitual que se le dará al sistema será el de votar, por lo que comenzaremos explicando cómo se logra esta funcionalidad con la arquitectura propuesta, enfocándonos principalmente en el diagrama de componentes y conectores.
 
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.22]{../diagramas/tiposConector.png}
+		\caption{Conectores utilizados en la arquitectura}
+	\end{center} 
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.22]{../diagramas/vistaPrincipal.png}
+		\caption{Componentes y conectores involucrados en la votación}
+	\end{center} 
+\end{figure}
+
 Para votar, un usuario deberá conectarse por Internet al sitio designado por su Facultad a tal efecto. El browser que utiliza el usuario se comunicará con el componente Vox de la Facultad. El browser mostrará la opción de autenticarse frente al sistema mediante un nombre de usuario y contraseña, previamente generada por el sistema.
 
 Esta información será enviada por una conexión encriptada y confiable al componente Vox de la Facultad que validará dicha información y retornará al browser un certificado de autenticación que será utilizado subsecuentemente para garantizar que la comunicación cumpla con las características de seguridad deseadas.
@@ -17,8 +31,15 @@ Con esta breve introducción se aprecia que será responsabilidad del componente
 
 El componente Vox de la Facultad resultó polémico debido a que gran parte de la funcionalidad será brindada por el mismo y existen varios intereses que entran en conflicto al momento de elegir una arquitectura en particular. Una primera propuesta, como puede verse en el diagrama % TODO referenciar al diagrama
 , se apoya fuertemente en la premisa de que los subcomponentes de administración de votos (VOX-Core) y portal online se ejecutarían en servidores diferentes y que podrían existir problemas de conexión entre los mismos, para lo que sería necesario proveer algún mecanismo que permitiera ejercer el derecho a voto aún sin poder contar con las funcionalidades de administración de votos. Esta alternativa no terminó de detallarse porque resultaron evidentes varias complicaciones que ponían en riesgo la seguridad del sistema y algunos criterios de usabilidad. Concretamente los defectos que encontramos en esta opción se relacionan con la necesidad de guardar los votos asociados a sus votantes en un repositorio externo a la facultad hasta tanto se recupere la conectividad con la facultad y que durante ese tiempo de desconexión el usuario no contaría con un certificado de su voto y, en el mejor de los casos, recibiría un mensaje informándole de los problemas de conexión y dejándolo con gran incertidumbre respecto del efectivo cómputo del mismo.
-\\
-\\
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.26]{../diagramas/arquitecturaInsegura.png}
+		\caption{Componentes y conectores de la arquitectura que se descarto por insegura}
+	\end{center} 
+\end{figure}
+
 Considerando la prioridad asignada a los atributos de calidad en el QAW realizado y siendo confiabilidad menos prioritario que usabilidad y que seguridad optamos por favorecer una estructura diferente, que aporta menos garantías de confiabilidad pero mejora sensiblemente los aspectos antes mencionados de usabilidad y seguridad.
 
 Se puede apreciar en el diagrama % TODO referenciar al diagrama
@@ -31,6 +52,13 @@ Para apreciar el funcionamiento del componente Vox-Facultad, seguiremos los paso
 y verifica la validez del candidato accediendo al repositorio. % TODO agregar repositorio a los diagramas
 De haberse realizado todos los anteriores pasos con éxito, se registra un voto para el candidato correspondiente, se envía el voto al publicador y se genera, a partir del sistema externo HardToBreak, un certificado de la emisión del voto, que se retornado al comunicador. Es importante destacar que el voto en sí no contiene información del votante, pero podría contener algún tipo de hash o certificado, que mejore la auditabilidad del sistema. 
  
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.26]{../diagramas/voxcore.png}
+		\caption{Vista ampliada del componente VOX-core}
+	\end{center} 
+\end{figure} 
+ 
 Para satisfacer las necesidades de fiscalización expresadas, tras procesarse el voto, el mismo es introducido en una cola de envío, % TODO agregar cola al diagrama
 para luego ser enviado a través de un conector multicast seguro y con varias propiedades adicionales que serán oportunamente mencionadas.
 
@@ -38,12 +66,25 @@ El proceso que seguirá una vez recibido por los componentes fiscalizadores de l
 %%felipe-----------------
 En cada componente fiscalizador se recibe el conteo de votos de todas las facultades y se calculan los resultados totales. Luego mediante la interfaz por browser del fiscalizador es posible filtrar que porcentajes se muestran.
 
-El componente dedicado a las tareas administrativas del rectorado permite, mediante una comoda interfaz por browser, administrar las reglas de los comicios y enviarlas en simultaneo a todas las facultades. La interfaz también da un marco para ingresar los candidatos que luego se propagaran a los repositorios de los componentes Vox-Facultad. También da la opción de generar el acta del comicio 
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.26]{../diagramas/fiscalizador.png}
+		\caption{Vista ampliada del componente fiscalizador}
+	\end{center} 
+\end{figure} 
+
+El componente dedicado a las tareas administrativas del rectorado permite, mediante una comoda interfaz por browser, administrar las reglas de los comicios y enviarlas en simultaneo a todas las facultades. La interfaz también da un marco para ingresar los candidatos que luego se propagaran a los repositorios de los componentes Vox-Facultad. También da la opción de generar el acta de los comicio, comunicandose con su fiscalizador para obtener los resultados totales.
 \\
 Desde el sistema de rectorado se genera, antes de iniciar los comicios, las contraseñas para todos los usuarios y se les envia al correo electrónico que tengan registrado en el padrón. Luego a cada facultad se le envia la información necesaria para registrar el loggueo de sus votantes.
 %%felipe-----------------
-\\
-\\
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.26]{../diagramas/sistemaRectorado.png}
+		\caption{Vista ampliada del componente dedicado al rectorado}
+	\end{center} 
+\end{figure} 
+
 El comunicador merece una discusión aparte por sus varias particularidades. Recordemos que el comunicador debe ofrecer comunicación encriptada, confiable y no repudiable. Dado que no repudiación se logra a partir de la utilización de firmas digitales, consideramos esa explicación secundaria y nos centraremos en explicar cómo se logra encriptación y confiabilidad.
 
 Dado que existe dos tipos de comunicación, una entre componentes del sistema de la facultad y otra entre el portal y el browser, habrá algunos cambios en cuestiones de implementación que mencionaremos más tarde.
@@ -52,6 +93,13 @@ Esencialmente la tarea del comunicador, al recibir datos que tiene que enviar, e
 En el caso de la recepción de un mensaje, se realiza el proceso inverso, se procede a desempaquetar los datos, luego se los desencripta y se entrega dichos datos al componente encargado de procesarlos.
 
 Como se puede apreciar, en el caso de la conexión entre el browser y el portal, es necesario utilizar algún tipo de entidad certificante, ya que no se puede determinar identidad del servidor de otra manera. Esto genera un pequeño cambio en los componentes, ya que el componente de encripción deberá comunicarse con la entidad certificante para obtener la clave pública del portal.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.26]{../diagramas/conector.png}
+		\caption{Vista ampliada del componente dedicado al conector desarrollado}
+	\end{center} 
+\end{figure} 
 
 % TODO seguir explicando 
 \paragraph{Formato de los paquetes} Los paquetes que van de la interfaz de usuario al portal son del tipo usuario-voto. Si bien en este punto esta presente un riesgo de seguridad la encriptación protege el anonimato del votante. Cuando la interfaz se comunica con VOX-core empaqueta el mensaje del votante en un nuevo paquete con la información del portal. De esta manera el componente VOX-core tiene suficiente información para registrar el voto, registrar que el emisor del mismo ya voto y además devolverle un certificado.
@@ -72,6 +120,12 @@ Para mejorar la usabilidad se separó la interfaz gráfica del resto de los comp
 \paragraph{Performance/Disponibilidad}
 El portal elige con que componente VOX-core se va a comunicar para distribuir la carga entrante y permitir una mejor respuesta del sistema, siguiendo la táctica \textit{Scheduling Policy}. Mediante \textit{Ping/Echo} logramos censar la disponibilidad de cada Vox-Core que se quiere conectar. En horas pico se puede activar un mayor número de componentes VOX-core para lidiar con el flujo de usuarios siguiendo la táctica de \textit{Increase Available Resources}. La misma estrategia se aplica entre el componente browser y el portal de VOX-facultad.
 Todos los repositorios admiten accesos concurrentes, \textit{Introduce Concurrency}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.22]{../diagramas/portal.png}
+		\caption{Componente portal ampliado}
+	\end{center} 
+\end{figure}
 
 \paragraph{Disponibilidad}
 Los repositorios que deberían ser accedidos por todos los componentes VOX-core se replican en cada componente VOX-facultad para disminuir el volumén de consultas, aprovechando la redundancia \textit{Redundancy}.
