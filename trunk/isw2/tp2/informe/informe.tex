@@ -14,7 +14,7 @@
 \usepackage{listings}
 \usepackage{amssymb}
 \usepackage{amsmath}
-\usepackage{slashbox}
+%~ \usepackage{slashbox}
 \usepackage{url} 
 \usepackage[margin=2cm]{geometry}
 \usepackage[bookmarks=true]{hyperref}
@@ -36,21 +36,27 @@
 
 \newpage 
 
-\input{plan}
-
-\newpage
-
+%Hay que agregar casos de uso del TP1 muchos, tambien tiene muchas correciones 
 \input{../casos_de_uso/casos_de_uso}
 
 \newpage
 
+%Parte opcional en realidad, hay que agregar los gantt y tratar vincular cada modulo del wbs con casos de uso
+\input{plan}
+
+\newpage
+
+%Hay que hacer mas cortos los escenarios, mas directos
 \input{../escenarios/ESCENARIOS}
 
 \newpage
+
+
 \input{../arquitectura/arquitectura}
 
 \newpage
 
+%Dividir mitigacion y contingencia
 \input{../riesgos/riesgos}
 
 \newpage
