@@ -1,0 +1,290 @@
+\section{Casos de Uso}
+
+A continuaci\'on se presentan los principales casos de uso del sistema.
+Se muestran las principales interacciones que hay desde el exterior (votantes, rectorado, partidos pol\'iticos) con el sistema.
+
+
+\begin{itemize}
+\bigskip
+\item Generando contraseña
+\bigskip
+\begin{center}
+\begin{tabular}{ll}
+Actor & Alumno \\
+\hline
+Pre condición & Ninguna \\
+\hline
+Pos condición & El alumno posee usuario y contraseña para el sistema\\
+\hline
+\end{tabular}
+\medskip
+Detalle: Se dispondrá de una terminal en la sede que le corresponde a cada alumno para que pueda generar por primera vez su contraseña personal. Pudiendo chequear así la identidad de alumno.
+\end{center}
+
+\bigskip
+\item Generando contraseña
+\bigskip
+\begin{center}
+\begin{tabular}{ll}
+Actor & Graduado \\
+\hline
+Pre condición & Ninguna \\
+\hline
+Pos condición & El Graduado posee usuario y contraseña para el sistema\\
+\hline
+\end{tabular}
+\medskip
+Detalle: Idem caso anterior.
+\end{center}
+
+\bigskip
+\item Generando contraseña
+\bigskip
+\begin{center}
+\begin{tabular}{ll}
+Actor & Profesor \\
+\hline
+Pre condición & Ninguna \\
+\hline
+Pos condición & El Profesor posee usuario y contraseña para el sistema\\
+\hline
+\end{tabular}
+\medskip
+Detalle: Idem caso anterior.
+\end{center}
+
+%TODO ver que la generacion decontrasañas esta en la arquitectura.
+
+\bigskip
+\item Ingresando al sistema
+\bigskip
+\begin{center}
+\begin{tabular}{ll}
+Actor & Alumno \\
+\hline
+Pre condición & El alumno posee usuario y contraseña \\
+\hline
+Pos condición & El usuario se encuentra autenticado como alumno\\
+\hline
+\end{tabular}
+\medskip
+\begin{tabular}{c p{4cm}|p{4cm}}
+ & Curso normal & Curso alternativo \\
+ 1. & El votante indica su nombre de usuario y contraseña &  \\
+ 2. & El sistema valida los datos ingresados & \\
+ 3. & Si los datos son correctos el usuario recibe una confirmación de que su nombre de usuario y contraseña son correctos & Si los datos son incorrectos el usuario recibe un mensaje de error indicando que la combinación de nombre de usuario y contraseña es incorrecta \\
+ 4. & Se muestra la interfaz de voto electrónico para alumnos & Ir al fin del caso de uso \\
+ 5. & Fin del caso de uso& \\ 
+\end{tabular}
+\end{center}
+
+\bigskip
+\item Ingresando al sistema
+\bigskip
+\begin{center}
+\begin{tabular}{ll}
+Actor & Graduado \\
+\hline
+Pre condición & El graduado posee usuario y contraseña \\
+\hline
+Pos condición & El usuario se encuentra autenticado como graduado\\
+\hline
+\end{tabular}
+Detalle: El caso de uso es similar al del alumno, pero la verificación es diferente. Se chequea si el graduado esta en el padrón.
+\end{center}
+
+\bigskip
+\item Ingresando al sistema
+\bigskip
+\begin{center}
+\begin{tabular}{ll}
+Actor & Profesor \\
+\hline
+Pre condición & El profesor posee usuario y contraseña \\
+\hline
+Pos condición & El usuario se encuentra autenticado como Profesor\\
+\hline
+\end{tabular}
+Detalle: El caso de uso es similar a los dos anteriores.
+\end{center}
+
+
+\bigskip
+\item Emitiendo voto
+\bigskip
+\begin{center}
+\begin{tabular}{ll}
+Actor & Alumno \\
+\hline
+Pre condición & El alumno se encuentra autenticado \\
+\hline
+Pos condición & Se registra el voto del alumno\\
+\hline
+\end{tabular}
+\medskip
+\begin{tabular}{c p{4cm}|p{4cm}}
+ & Curso normal & Curso alternativo \\
+ 1. & Se muestra ante el usuario la lista de candidatos alumnos, con una opción para votar en blanco y otra para anular el voto &  \\
+ 2. & El alumno selecciona el candidato de su preferencia, o anular o votar en blanco & \\
+ 3. & Se pide confirmación al usuario mostrando claramente qué opción ha elegido & \\
+ 4. & El votante confirma su elección & Si el votanto no confirma la elección en 30 segundos se descarta la selección del usuario \\
+ 5. & Se muestra el certificado por pantalla & Fin de caso de uso \\
+ 6. & Fin de caso de uso & \\ 
+\end{tabular}
+\end{center}
+
+\bigskip
+\item Emitiendo voto
+\bigskip
+\begin{center}
+\begin{tabular}{ll}
+Actor & Graduado \\
+\hline
+Pre condición & El graduado se encuentra autenticado \\
+\hline
+Pos condición & Se registra el voto del graduado\\
+\hline
+\end{tabular}
+\medskip
+Detalle: Similar al caso de uso para el alumno, pero con los candidatos para el claustro correspondiente
+\end{center}
+
+\bigskip
+\item Emitiendo voto
+\bigskip
+\begin{center}
+\begin{tabular}{ll}
+Actor & Profesor \\
+\hline
+Pre condición & El profesor se encuentra autenticado \\
+\hline
+Pos condición & Se registra el voto del profesor\\
+\hline
+\end{tabular}
+\medskip
+Detalle: Se hace especial hincapie en que un profesor puede emitir un voto por dos candidatos
+\end{center}
+
+\bigskip
+\item Modificando el idioma en la interfaz de usuario
+\bigskip
+\item Cambio de idioma en la interfaz de usuario.
+\begin{center}
+\begin{tabular}{ll}
+Actor & Alumno, Graduado o Profesor \\
+\hline
+Pre condición & El usuario se encuentra autenticado \\
+\hline
+Pos condición & La interfaz se presenta en el idioma elegido \\
+\hline
+\end{tabular}
+\medskip
+\begin{tabular}{c p{4cm}|p{4cm}}
+ & Curso normal & Curso alternativo \\
+ 1. & El usuario selecciona la funcionalidad de modificar el idioma del sistema &   \\
+ 2. & El sistema despliega los diferentes idiomas disponibles &   \\
+ 3. & El usuario elije entre una de las opciones disponibles & Si luego de 30 segundos no se selecciona opción se cancela la operación\\
+ 4. & El sistema modifica la interfaz del usuario con el idioma elegido & Fin de caso de uso\\
+ 5. & Fin de caso de uso & \\
+\end{tabular}
+\end{center}
+
+
+
+%TODO: Emitir voto, candidatearse, cambiar el idioma. Rectorado: Agregar eleccion, modificar eleccion, cambiar reglamentos, auditar.
+
+
+
+\bigskip
+\item Agregando elección
+\begin{center}
+\begin{tabular}{ll}
+Actor & Rectorado \\
+\hline
+Pre condici\'on & Ninguna \\
+\hline
+Pos condici\'on & Se agega una nueva elección \\
+\hline
+\end{tabular}
+\medskip
+Detalle: En este caso de uso el rectorado agrega una nueva elección seteando el calendario para la misma.
+\end{center}
+
+
+\bigskip
+\item Modificando elección
+\begin{center}
+\begin{tabular}{ll}
+Actor & Rectorado \\
+\hline
+Pre condici\'on & Ninguna \\
+\hline
+Pos condici\'on & Se modifica una nueva elección \\
+\hline
+\end{tabular}
+\medskip
+Detalle: En este caso de uso el rectorado modifica el calendario de una elección vigente cambiando los periodos de dicha elección
+\end{center}
+
+
+
+\bigskip
+\item Reglamentando elecciones
+\begin{center}
+\begin{tabular}{ll}
+Actor & Rectorado \\
+\hline
+Pre condici\'on & Ninguna \\
+\hline
+Pos condici\'on & Se cambia el reglamento para las elecciones \\
+\hline
+\end{tabular}
+\medskip
+Detalle: En este caso de uso el rectorado modifica las restricciones que tienen las elecciones para la postulación de candidatos y para saber que personas estan habilitadas para votar
+\end{center}
+
+
+
+
+
+
+\bigskip
+\item Auditando votantes
+\begin{center}
+\begin{tabular}{ll}
+Actor & Rectorado \\
+\hline
+Pre condición & Ninguna\\
+\hline
+Pos condición & El Rectorado sabe qu\'e votantes sufragaron \\
+\hline
+\end{tabular}
+\medskip
+\begin{tabular}{c p{4cm}|p{4cm}}
+ & Curso normal & Curso alternativo \\
+ 1. & El rectorado selecciona la funcionalidad de auditabilidad &   \\
+ 2. & El sistema despliega la lista de la facultades disponibles &   \\
+ 3. & El rectorado elije la facultad que quiere auditar & \\
+ 4. & El sistema le env\'ia al rectorado los votantes que sufragaron de la facultad seleccionada \\
+ 5. & Fin de caso de uso & \\
+\end{tabular}
+\end{center}  
+
+\bigskip
+\item Auditando votantes
+\begin{center}
+\begin{tabular}{ll}
+Actor & Partido político \\
+\hline
+Pre condición & Ninguna\\
+\hline
+Pos condición & El Partido sabe qu\'e votantes sufragaron \\
+\hline
+\end{tabular}
+\medskip
+Detalle: Caso similar a la fiscalización por parte del rectorado
+\end{center} 
+
+
+
+\end{itemize}
