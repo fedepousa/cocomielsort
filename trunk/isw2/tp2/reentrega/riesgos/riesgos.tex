@@ -1,0 +1,151 @@
+\section{An\'alisis de Riesgos}
+
+En esta secci\'on se analizar\'an los riesgos pertinentes al proyecto.
+
+El objetivo de este an\'alisis es poder crear un plan de mitigaci\'on y contingencia para poder controlar los riesgos que puedan afectar al proceso del desarrollo del producto, de manera que se pueda minimizar el impacto que los posibles riesgos produzcan en caso de manifestarse.
+
+Los pasos m\'as importantes en este an\'alisis son:
+
+\begin{itemize}
+\item Identificar los riesgos que puedan manifestarse.
+\item Analizarlos individualmente.
+\item Documentarlos. En este paso se utilizar\'a la representaci\'on de Glutch para especificarlos y luego se utilizar\'a la Matriz de Magnitudes del SEI para analizar el nivel del riesgo en base a su probabilidad de ocurrencia y a su severidad.
+\item Generar un plan de mitigaci\'on y contingencia para cada uno de los riesgos identificados.
+\end{itemize}
+
+
+\subsection{Riesgos}
+
+
+A continuaci\'on se muestran los riesgos m\'as relevantes identificados por el grupo, especificados y analizados como se explicit\'o anteriormente.
+
+\begin{itemize}
+\item Dificultades para funcionar co-operativamente con los sistemas de los partidos pol\'iticos: Dada la heterogeneidad natural en los sistemas de los partidos pol\'iticos, y que no hay experencias previas de cooperativiadad con estos sistemas, es posible que se encuentren dificultades para garantizar la comunicabilidad a todos los fiscalizadores pertinentes. \begin{itemize}                                                                                                                                                                                                                                                                                                                                                                            									   \item Probabilidad: Probable.
+                                                                           \item Severidad: Cr\'itica.
+									   \item Nivel: Alto								\end{itemize}
+
+\bigskip
+
+\item Problemas con las tecnolog\'ias a utilizar: Dado los atributos de calidad relevados, se necesitar\'a trabajar sobre muy diversas plataformas, al desconocer varias de estas plataformas de \'ultima generaci\'on es posible que se retrasen los tiempos de producci\'on al necesitar invertir tiempo en investigaci\'on de los diferentes dispositivos soportados por el software. 
+\begin{itemize}
+\item Probabilidad: Muy probable.
+\item Severidad: Media.
+\item Nivel: Alto.
+\end{itemize}
+
+\bigskip
+
+\item Reducci\'on de recursos humanos en la Software Factory: Dado que los recursos humanos del grupo de desarrollo estan sujetos a posibles renuncias, despidos o licencias por enfermedad o motivos personales es posible que el plan de trabajo no se pueda adaptar a la realidad al tener distintas horas hombre de trabajo a las planificadas.
+\begin{itemize}
+\item Probabilidad: Poco probable.
+\item Severidad: Cr\'itica.
+\item Nivel: Medio.
+\end{itemize}
+
+\bigskip
+
+\item Cambios en los requerimientos: Dado que la cantidad de Stakeholders es alta, es posible que alg\'un Stakeholder cambie alg\'un requerimiento durante fases m\'as tard\'ias del proceso productivo.
+\begin{itemize}
+\item Probabilidad: Probable.
+\item Severidad: Cr\'itica.
+\item Nivel: Alto.
+\end{itemize}
+
+\bigskip
+
+\item Incompatibilidades entre los requerimientos no funcionales: Dado que la cantidad de Stakeholders es alta, y sobretodo es un grupo muy heterogeneo, esto genera que los atributos de calidad relevados tengan difentes procendencias y, luego, es posible que los atributos conflictuen entre s\'i de alguna forma no prevista durante el QAW.
+\begin{itemize}
+\item Probabilidad: Probable.
+\item Severidad: Media.
+\item Nivel: Medio.
+\end{itemize}
+
+\bigskip
+
+\item Dificultades con las capacidades de los recursos tecnol\'ogicos disponibles: Dado que no hay antecedentes de este tipo de sistemas en la UBA, no hay estimaci\'on de cuales van a ser las distribuciones de usuarios en los diferentes horarios. Luego, es posible que la tecnolog\'ia disponible no sea suficiente para soporta la carga total del sistema.
+\begin{itemize}
+\item Probabilidad: Probable.
+\item Severidad: Cr\'itica.
+\item Nivel: Alto.
+\end{itemize}
+
+\bigskip
+
+\item Robo de claves del sistema: Dado que el prop\'osito del sistema tiene fines pol\'iticos relevantes, es posible que existan intentos de obtener las claves que permiten auntenticarse a los votantes para poder manipular las votaciones.
+\begin{itemize}
+\item Probabilidad: Poco probable.
+\item Severidad: Cr\'itica.
+\item Nivel: Medio.
+\end{itemize}
+
+
+\bigskip
+
+\item Recorte de presupuesto: Dado que el presupuesto para el sistema todav\'ia no esta aprobado porque depende de todo el presupuesto de la UBA ya que lo paga directamente rectorado, es posible que se generen recortes al presupuesto que pongan en riesgos la disponibilidad de recursos humanos y tecnol\'ogicos para el proyecto.
+\begin{itemize}
+\item Probabilidad: Probable.
+\item Severidad: Cr\'itica.
+\item Nivel: Alto.
+\end{itemize}
+
+\end{itemize}
+
+\subsection{Planes de contingencia y mitigaci\'on}
+
+A continuaci\'on se presentar\'an las acciones a tener en cuenta en caso de que se presenten los riesgos anteriormente planteados.
+
+\begin{itemize}
+\item Dificultades para cooperar con los sistemas de los partidos pol\'iticos:
+\begin{itemize}
+\item Priorizar el relevamiento de las especificaciones de los sistemas a tener en cuenta.
+\item Mantener un contacto peri\'odico con los administradores de dichos sistemas.
+\item Generar reuniones con los administradores para poner en consenso el hecho de que los sistemas tengan una comunicaci\'on compatible.
+\end{itemize}
+
+\item Problemas con las tecnolog\'ias a utilizar:
+\begin{itemize}
+\item Relevar todas las diferentes plataformas que se quieren soportar en el sistema.
+\item Relevar las formaciones de los recursos humanos en cada una de las plataformas pertinentes.
+\item Generar un plan de capacitaci\'on en base a los relevamientos hechos anteriormente.
+\end{itemize}
+
+\item Reducci\'on de recursos humanos en la Software Factory:
+\begin{itemize}
+\item Relevar situaciones personales antes de comenzar con el desarrollo.
+\item Tener contacto de empresas de outsourcing competentes ante la reducci\'on.
+\end{itemize}
+
+\item Cambios en los requerimientos:
+\begin{itemize}
+\item Tener un moderador de QAW capacitado para que el mismo sea exitoso y queden bien claros los requerimientos.
+\item Generar reuniones peri\'odicas con los Stakeholders para revisar que se esten satisfaciendo sus necesidades conforme avanza el proyecto.
+\end{itemize}
+
+\item Incompatibilidades entre los requerimientos no funcionales:
+\begin{itemize}
+\item Permitir que los arquitectos y los an\'alistas formen parte del QAW para una detecci\'on temprana de incompatibilidades.
+\item Una vez identificada una incompatibilidad, ponerla en evidencia a los Stakeholders pertinentes para generar una votaci\'on de prioridades.
+\item Si la incompatibilidad se detecta en una etapa tard\'ia actuar en consecuencia a la votaci\'on de prioridades realizada en el QAW.
+\end{itemize}
+
+\item Dificultades con las capacidades de los recursos tecnol\'ogicos disponibles:
+\begin{itemize}
+\item Relevar datos estad\'isticos de sistemas con caracter\'isticas similares.
+\item Generar test de stress en base a los datos relevados y en base a datos \emph{pesimistas}, como podr\'ia ser todo el padr\'on de una facultad utilizando el sistema en la misma franja horario.
+\item En caso de no tener la capacidad suficiente o de que se presenten problemas en el momento de una votaci\'on, generar un plan de divisi\'on del padr\'on para sugerir horarios de utilizaci\'on del sistema.
+\end{itemize}
+
+\item Robo de claves del sistema:
+\begin{itemize}
+\item Mantener una cantidad m\'inima de recursos humanos abocados a la tarea de generaci\'on de claves.
+\item Tener un sistema de claves de emergencia en caso de que se detecte una filtraci\'on de informaci\'on para asignar rapidamente las nuevas formas de auntenticaci\'on.
+\end{itemize}
+
+\item Recorte de presupuesto:
+\begin{itemize}
+\item Incluir en el contrato una clausula expl\'icita sobre este punto, para saber de antemano con que recursos se trabaja.
+\item Tener una segunda opci\'on de desarrollo de bajo presupuesto en la que se prioricen los atributos y las funcionalidades esenciales.
+\end{itemize}
+
+
+\end{itemize}

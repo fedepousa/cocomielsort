@@ -1,0 +1,62 @@
+\subsection{Disponibilidad}
+
+\begin{enumerate}
+ 
+
+
+
+%Nicolas dijo:
+%"Es fundamental que se pueda votar siempre, y en todo momento."
+
+
+%Info del tp relacionada:
+
+%Es de esperar que haya problemas de conectividad, por lo que se espera que el sistema
+%pueda funcionar también en modalidad offline. Bajo esta modalidad, los votos serán
+%almacenados de manera temporal y segura en la sede correspondiente, para luego ser
+%transmitidos al momento de recuperar la conexión. De la misma manera, esta modalidad
+%deberá funcionar para la comunicación entre el rectorado y las facultades.
+
+\item \escenario{Se espera que el sistema
+pueda funcionar también en modalidad offline.}{Interno al sistema.}{Hay problemas de conectividad, se cay\'o la conexión entre el sistema y GUI-onlines}{Operación normal}{GUI-offline}{Las GUI-offline detectan que el sistema est\'a offline y habilitan la votación local en modalidad offline}{La GUI-offline detecta que el sistema perdi\'o conectividad y habilita votación offline en menos de 0.3 segundos}
+
+%\textbf{Javier:}
+%"Quiere tener comunicacio\'on constante con otras facultades y rectorado"
+%\
+%Info del tp relacionada:
+%\\
+%A fin de cumplir con el Estatuto Universitario, el Rectorado mantendrá la potestad de
+%vdefinir los requisitos que deben cumplir los electores, junto con el calendario de elecciones
+%y otras normas que sirvan para preservar cierta igualdad entre unidades académicas.
+%Asimismo, el Rectorado espera contar con información actualizada al instante de todos
+%los procesos simultáneos que se desarrollen.
+
+%\textbf{Aunque de lo que dice ac\'a alcanzar\'ia con que todas las facultades se comuniquen con el rectorado nomas, no me alcanza para pedir comunicaci\'on entre facultades}
+
+\medskip
+\item \escenario{El Rectorado espera contar con información actualizada al instante de todos
+los procesos simultáneos que se desarrollen.}
+{Conexi\'on con otra facultad/rectorado}
+{Error en la conexi\'on}
+{Normal}
+{Sistema}
+{Utilizar una conexi\'on alternativa}
+{El sistema estar\'a conectado nuevamente en menos de 15 segundos}
+
+%\textbf{Javier:}
+%"En caso de problemas de conexión, no puede perderse la posibilidad de
+%votar en una sede."
+%\textbf{Ya esta cubierto por un atributo anterior}
+
+
+
+\medskip
+%~ Se asemeja a otro de javier
+\item \escenario{Algunos no est\'an convencidos de utilizar el voto offline y afirman que rectorado debería garantizar conectividad}
+{Votante}
+{El usuario emite su voto exitosamente}
+{Normal}
+{Sistema}
+{El voto es registrado correctamente}
+{Se garantiza una disponibilidad de 99,99999\%}
+\end{enumerate}
