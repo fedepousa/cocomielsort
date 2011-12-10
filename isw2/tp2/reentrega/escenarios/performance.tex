@@ -1,0 +1,37 @@
+\subsection{Performance}
+\begin{enumerate} 
+
+%Nicolas: "Quiere que el recuento de los votos sea inmediato"
+
+\item \escenario{Al finalizar el acto electoral el recuento de votos deber\'a ser inmediato}{Rectorado}{Piden recuento de votos}{Normal}{Sistemas en rectorado y sistemas en cada facultad}{El sistema en rectorado le pide una copia de los votos a cada facultad y hace el recuento}{El env\'io de los votos de cada facultad se hace en menos de 1 segundo y el recuento de votos total se hace en 5 segundos}
+\medskip
+%\textbf{Javier:}
+%Le preocupa que la comunicación hacia los bunkers de las agrupaciones
+%haga muy lenta la conexión (performance/disponiblidad).
+%\\
+%Info del tp relacionada:
+%\\
+%Debe publicarse en internet una copia de todo el
+%código fuente, más la firma digital de la versión en uso, como así también debe ser
+%posible que cada agrupación fiscalice el funcionamiento correcto de la aplicación por
+%medio de la auditoría en tiempo real y ejecución paralela de copias del mismo software,
+%corriendo en los equipos propios de cada fuerza política.
+
+\item \escenario{La auditoría se realiza en tiempo real y ejecución paralela.}
+{Usuario} %Partido ?
+{Emite un voto}
+{Sobrecargado}
+{Sistema}
+{Se registra el voto y se env\'ia a los fiscalizadores}
+{En menos de 5 segundos los bunkers est\'an informados del voto}
+
+\medskip
+\item \escenario{Los resultados deben recibirse al mismo tiempo que se van generando para luego ser contrastastados con el escrutinio definitivo}
+{Votante}
+{El usuario emite su voto exitosamente.}
+{Normal}
+{Sistema}
+{El voto es registrado correctamente.}
+{En menos de 1 hora los resultados de votaci\'on son recibidos por todas las agrupaciones políticas.}
+
+\end{enumerate}

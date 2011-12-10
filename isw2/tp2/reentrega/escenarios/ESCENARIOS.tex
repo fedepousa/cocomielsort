@@ -1,0 +1,47 @@
+
+
+
+%comando para armar escenario toma 7 parametros, en orden
+%texto chamuyyo fuente estimulo entorno artefacto respuesta medicion
+\newcommand\escenario[7]{
+	\begin{itemize}
+		%texto chamuyo
+		\item \textit{#1}  
+		
+		\item \textbf{Fuente:} #2
+		\item \textbf{Estímulo:} #3
+		\item \textbf{Entorno:} #4
+		\item \textbf{Artefacto:} #5
+		\item \textbf{Respuesta:} #6
+		\item \textbf{Medición:} #7
+		
+		
+	\end{itemize}
+}
+
+
+
+%\begin{document}
+
+\section{Escenarios}
+
+Tras presenciar el QAW y releer su resumen, decidimos plasmar todos los escenarios separados por categor\'ias. A partir de esto pudimos tomamos decisiones arquitect\'onicas tratando de satisfacer los atributos de calidad relevados.
+
+% ejemplo de uso
+% \escenario{Si la comunicación entre una Terminal de Cobro móvil y el Sistema Central se pierde, o los tiempos de transmisión son prohibitivos, la Terminales de Cobro debe de seguir funcionando en modo offline, de forma transparente al usuario.}{Interno al sistema} {Las transacciones de cobro de pasaje en una terminal de cobro están tardando mas de 1 segundo.}{Operación normal.}{Terminal de Cobro.}{La terminal pasa a modo offline, utilizando la información local almacenada en las tarjetas y logueando  toda operación realizada para que este lista cuando la conexión se restablezca.} {No se requieren acciones adicionales por parte del usuario, y no se ve afectada la performance (<= 1 segundo por transacción).}
+
+\input{../escenarios/disponibilidad}
+\bigskip
+
+\input{../escenarios/performance}
+\bigskip
+
+\input{../escenarios/seguridad}
+\bigskip
+
+\input{../escenarios/modificabilidad}
+\bigskip
+
+\input{../escenarios/usabilidad}
+
+%\end{document}
