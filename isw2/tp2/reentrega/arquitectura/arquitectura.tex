@@ -1,0 +1,63 @@
+\section{Presentación de la arquitectura}
+
+En esta sección presentaremos la arquitectura explicando cómo se brindan las funcionalidades requeridas, mencionando diseños alternativos y algunos aspectos relevantes de la comunicación. Cuando resulte pertinente se comentará cómo se logra cada atributo de calidad a partir de las tácticas utilizadas y la estructura descripta. 
+
+
+El uso más habitual que se le dará al sistema será el de votar, por lo que comenzaremos explicando cómo se logra esta funcionalidad con la arquitectura propuesta, enfocándonos principalmente en el diagrama de componentes y conectores.
+
+
+% TODO agregar diagrama arquitectura completo
+El flujo de información durante una votación se describe a continuación. El usuario, a través del componente browser externo, ingresa en un sitio web designado por la Facultad con el fin de realizar la votación.  Este sitio web será exclusivo de la sede a la que un usuario pertenezca, con el objetivo de mejorar la disponibilidad. 
+
+El sitio web será generado por el componente sistema web de la sede correspondiente. Existen varios tipos de mensajes posibles entre browser usuario externo y sistema web que se explicarán en detalle más adelante y cada uno representa las diversas acciones que puede querer realizar el usuario. Concretamente lo único que puede hacer el usuario inicialmente será identificarse con su nombre de usuario y contraseña, tras lo cuál se activarán varias opciones adicionales.
+
+Al recibir un mensaje, se crea un thread nuevo de ejecución del sistema web, que se encargará de verificar los datos y generar una página con las opciones disponibles para el usuario. 
+% TODO preguntar si se puede asumir que el client server te genera un nuevo thread automaticamente
+% o si hay que mostrarlo en el diagrama de alguna manera
+El mensaje contiene el nombre de usuario y hash de la contraseña, que serán contrastados con la información del usuario almacenados en el repositorio de usuarios y sus datos. En este último repositorio también existe información que permite identificar a la persona física en otros sistemas de la Facultad, como puede ser el número de legajo o libreta universitaria. 
+De ser correctos los datos suministrados, se abre una sesión que caducará tras transcurrir una determinada cantidad de minutos que aún no se ha decidido.
+% TODO escribirlo mejor, explicar que quiere decir en nuestro sistema que se abre una sesión.
+% TODO esto hay que mostrarlo cuando se amplie el diagrama de sistema web o borrarlo.
+El sistema web procederá a construir el código HTML que muestra las opciones disponibles para el usuario. Para hacer esto último, obtendrá los datos del usuario disponibles en el repositorio de datos de la Facultad, que contiene para cada integrante, por ejemplo, información del claustro, cantidad de materias aprobadas para los estudiantes, antigüedad para los docentes y fecha de graduación para los graduados. Toda esta información está almacenada en una serie de sistemas ya existentes, por lo que el componente \emph{Repositorio de datos de la facultad} actuará como interfáz en este sentido.
+A continuación el sistema web pedirá información al administrador de elecciones abiertas\footnote{Ver \ref{admin_elecciones} para una explicación detallada del administrador de elecciones abiertas.} para determinar si existen opciones disponibles para el usuario, como podrían ser la posibilidad de postularse como candidato o emitir su voto.
+
+
+En caso de existir estas opciones, se hace una verificación adicional con el fin de mostrar sólo opciones que el usuario pueda efectivamente ejercer.  
+Por ejemplo, se busca que si un usuario no cuenta con los requisitos necesarios para poder postularse o emitir su voto, dichas opciones no se muestren en la interfaz web, con la finalidad de mejorar la usabilidad del sistema. 
+Esta verificación es llevada a cabo mediante una llamada al \emph{Sistema de restricciones}.
+
+Una vez identificadas todas las opciones disponibles se procede a generar el código HTML que permitirá mostrar la interfaz en un browser genérico. 
+Decidimos separar la generación del código HTML, y en última instancia la interfaz gráfica, siguiendo el estilo sugerido en la bibliografía. 
+Este estilo permite experimentar con la interfaz independientemente del desarrollo del resto del sistema. 
+Por otra parte la utilización de HTML garantiza que será posible interactuar con el sistema utilizando diversas plataformas, mejorando así la usabilidad.
+
+
+Una vez generado el código, éste es enviado como respuesta al mensaje original de log in del usuario. 
+
+La página generada mostraría, por ejemplo, las opciones de postularse para una elección en particular y votar en otra elección. Al seleccionar la opción de postularse, se enviaría un mensaje de tipo {\bf postulación} al sistema web. 
+
+El mensaje será procesado por el sistema web utilizando la información de sesión para proceder. En primer lugar el sistema web obtendrá del sistema de restricciones aquellas que se encuentran vigentes.
+
+
+
+El intercambio de mensajes que se dará entre el componente browser usuario externo y el sistema web constará de mensajes de varios tipos, por lo que detallamos los campos que contendrá el mismo:
+
+Cada mensaje contiene un header y datos. El header tiene los campos tipo, tamaño de los datos, origen, destino y dependiendo del tipo puede contener campos adicionales. 
+
+\subsection{Explicación de los componentes}
+
+Existen varios componentes que por su constante y muy relevante interacción con otros componentes es conveniente explicar en mayor detalle.
+
+\subsubsection{Administrador de elecciones abiertas}
+
+\label{admin_elecciones}
+
+El administrador de elecciones abiertas maneja información sobre las fechas de inicio y fin de cada una de las etapas de las elecciones y también mantendrá el registro de las postulaciones. 
+El administrador de elecciones abiertas, dada una elección, determina en qué estado se encuentra, siendo {\bf planificada}, {\bf etapa de postulación}, {\bf etapa intermedia},  {\bf etapa de sufragio} y {\bf finalizada} los cinco estados posibles. También permite enumerar todas las elecciones en etapa de postulación y en etapa de sufragio para un claustro dado. En todos los casos, las elecciones serán identificadas mediante un código, que será el utilizado en las comunicaciones entre componentes que deban referirse a elecciones.
+El administrador de elecciones permitirá también, dada una elección y un claustro, obtener los candidatos que se han postulado en la misma.
+Cabe destacar que una misma elección podría estar involucrar a más de un claustro, pero las fechas en todos ellos deberán coincidir.
+
+\subsubsection{Sistema de restricciones}
+
+El sistema de restricciones, dada una elección y un identificador de usuario, es capaz de decidir si dicho usuario puede postularse para esa elección y si puede votar en la misma. Concretamente existen dos mensajes distintos que pueden ser enviados a este componente, uno para verificar que un usuario puede postularse y otro para verificar que el mismo puede votar, siempre especificando una elección.
+El sistema de restricciones verificará que la elección en cuestión esté en la etapa que corresponda mediante una llamada al administrador de elecciones abiertas.
