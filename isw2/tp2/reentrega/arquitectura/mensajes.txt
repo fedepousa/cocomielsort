@@ -34,3 +34,5 @@ datos segun tipo de mensajes
 		código de la página
 	clave pública
 		clave pública
+
+
