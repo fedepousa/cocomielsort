@@ -40,7 +40,13 @@ El mensaje será procesado por el sistema web utilizando la información de sesi
 El \emph{Sistema de restricciones} determinará si el usuario puede postularse para la elección indicada y en dicho caso se solicitará al \emph{Administrador de elecciones abiertas} que registre al candidato. 
 
 
-En caso de que el usuario decida votar, el componente browser enviaría un mensaje de {\bf solicitud de clave} al sistema web, indicando la elección deseada. La respuesta al mismo incluirá una clave pública, que será utilizada para encriptar el voto. Para lograr el anonimato en los votos, una vez que el usuario elija los candidatos a los que desea votar y confirme su selección, la lista de candidatos concatenada a un número generado al azar será encriptada utilizando la clave pública obtenida del sistema web. Esos datos encriptados constituirán el voto en las subsecuentes explicaciones. 
+En caso de que el usuario decida votar, el componente browser enviaría un mensaje de {\bf solicitud de clave} al sistema web, indicando la elección deseada. 
+La respuesta al mismo incluirá una clave pública, que será utilizada para encriptar el voto. 
+Para lograr el anonimato en los votos, una vez que el usuario elija los candidatos a los que desea votar y confirme su selección, la lista de candidatos concatenada a un número generado al azar será encriptada utilizando la clave pública obtenida del sistema web. 
+Esos datos encriptados constituirán el voto en las subsecuentes explicaciones. 
+El voto será enviado al \emph{Sistema web} de la Facultad en un mensaje de voto. 
+A partir de la recepción del mensaje se solicitará al \emph{Sistema de restricciones} que confirme que el usuario puede efectuar votar en dicha elección y que la elección esté en etapa de sufragio y luego, de manera atómica, se verificará que el usuario no haya votado previamente y se registrará que el mismo votó en el \emph{Repositorio de quiénes votaron}. 
+Tras esto se envía el voto en sí al \emph{Almacenamiento de votos encriptados}.
 
 
 
