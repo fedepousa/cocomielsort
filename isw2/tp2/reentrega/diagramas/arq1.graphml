@@ -180,7 +180,7 @@ ya votaron</y:NodeLabel>
     <node id="n14">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="404.18862552402607" width="785.068923076923" x="-168.5797807130075" y="824.7755733333333"/>
+          <y:Geometry height="224.17515567946657" width="483.21706815464324" x="-168.5797807130075" y="824.7755733333333"/>
           <y:Fill color="#FFFF99" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="free" modelPosition="anywhere" textColor="#000000" visible="true" width="4.0" x="206.52297435897435" y="137.2048727620131"/>
@@ -192,7 +192,7 @@ ya votaron</y:NodeLabel>
     <node id="n15">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="118.75" width="127.5" x="-101.75" y="1018.5"/>
+          <y:Geometry height="118.75" width="127.5" x="-101.75" y="870.318180310881"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="59.875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="89.306640625" x="19.0966796875" y="29.4375">daemon 
@@ -406,7 +406,7 @@ de usuarios</y:NodeLabel>
           <y:Path sx="0.0" sy="0.0" tx="11.278125000000045" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="47.365234375" x="2.0" y="-150.359375">publish</y:EdgeLabel>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="47.365234375" x="2.0" y="-76.26846111409077">publish</y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>

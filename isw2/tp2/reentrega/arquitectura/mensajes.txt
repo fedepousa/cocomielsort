@@ -1,0 +1,39 @@
+browser usuario externo a sistema web
+header generico
+	origen, destino, numero de secuencia
+tipos de mensaje
+	log in
+	cambio idioma
+	postularse
+	log out
+	votar
+	pedido de clave pública
+	ack
+datos segun tipo de mensajes
+	log in
+		nombre de usuario
+		hash de contraseña
+	cambio idioma
+		nuevo idioma seleccionado
+	postularse
+		eleccion
+	log out
+	votar
+		eleccion
+		voto (lista de candidatos concatenada a un 
+			numero aleatorio, todo encriptado)
+	ack 
+		ultimo numero de secuencia contiguo (todos los anteriores 
+			numeros de secuencia fueron recibidos correctamente)
+	
+	
+sistema web a software usuario
+tipos de mensaje
+	html
+	
+datos segun tipo de mensajes
+	html
+		código de la página
+	clave pública
+		clave pública
+	
