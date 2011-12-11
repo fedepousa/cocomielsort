@@ -11,28 +11,36 @@ El flujo de información durante una votación se describe a continuación. El u
 
 El sitio web será generado por el componente sistema web de la sede correspondiente. Existen varios tipos de mensajes posibles entre browser usuario externo y sistema web que se explicarán en detalle más adelante y cada uno representa las diversas acciones que puede querer realizar el usuario. Concretamente lo único que puede hacer el usuario inicialmente será identificarse con su nombre de usuario y contraseña, tras lo cuál se activarán varias opciones adicionales.
 
-Al recibir un mensaje, se crea un thread nuevo de ejecución del sistema web, que se encargará de verificar los datos y generar la siguiente página con las opciones disponibles para el usuario. 
+Al recibir un mensaje, se crea un thread nuevo de ejecución del sistema web, que se encargará de verificar los datos y generar una página con las opciones disponibles para el usuario. 
 % TODO preguntar si se puede asumir que el client server te genera un nuevo thread automaticamente
 % o si hay que mostrarlo en el diagrama de alguna manera
 El mensaje contiene el nombre de usuario y hash de la contraseña, que serán contrastados con la información del usuario almacenados en el repositorio de usuarios y sus datos. En este último repositorio también existe información que permite identificar a la persona física en otros sistemas de la Facultad, como puede ser el número de legajo o libreta universitaria. 
 De ser correctos los datos suministrados, se abre una sesión que caducará tras transcurrir una determinada cantidad de minutos que aún no se ha decidido.
 % TODO escribirlo mejor, explicar que quiere decir en nuestro sistema que se abre una sesión.
 % TODO esto hay que mostrarlo cuando se amplie el diagrama de sistema web o borrarlo.
-El sistema web procederá a construir el código HTML que muestra las opciones disponibles para el usuario. Para hacer esto último, obtendrá los datos del usuario disponibles en el repositorio de datos de la Facultad, que contiene para cada integrante, por ejemplo, información del claustro, cantidad de materias aprobadas para los estudiantes, antigüedad para los docentes y fecha de graduación para los graduados. Toda esta información está almacenada en una serie de sistemas ya existentes, por lo que el componente ``Repositorio de datos de la facultad'' actuará como interfáz en este sentido.
+El sistema web procederá a construir el código HTML que muestra las opciones disponibles para el usuario. Para hacer esto último, obtendrá los datos del usuario disponibles en el repositorio de datos de la Facultad, que contiene para cada integrante, por ejemplo, información del claustro, cantidad de materias aprobadas para los estudiantes, antigüedad para los docentes y fecha de graduación para los graduados. Toda esta información está almacenada en una serie de sistemas ya existentes, por lo que el componente \emph{Repositorio de datos de la facultad} actuará como interfáz en este sentido.
 A continuación el sistema web pedirá información al administrador de elecciones abiertas\footnote{Ver \ref{admin_elecciones} para una explicación detallada del administrador de elecciones abiertas.} para determinar si existen opciones disponibles para el usuario, como podrían ser la posibilidad de postularse como candidato o emitir su voto.
 
 
-En caso de existir estas opciones, se hace una verificación adicional con el fin de mostrar sólo opciones que el usuario pueda efectivamente ejercer. 
+En caso de existir estas opciones, se hace una verificación adicional con el fin de mostrar sólo opciones que el usuario pueda efectivamente ejercer.  
 Por ejemplo, se busca que si un usuario no cuenta con los requisitos necesarios para poder postularse o emitir su voto, dichas opciones no se muestren en la interfaz web, con la finalidad de mejorar la usabilidad del sistema. 
+Esta verificación es llevada a cabo mediante una llamada al \emph{Sistema de restricciones}.
 
-Una vez identificadas todas las opciones disponibles se procede a generar el código HTML que permitirá mostrar la interfaz en un browser genérico. Decidimos separar la generación del código HTML, y en última instancia la interfaz gráfica, siguiendo el estilo sugerido en la bibliografía. Este estilo permite experimentar con la interfaz independientemente del desarrollo del resto del sistema. Por otra parte la utilización de HTML garantiza que será posible interactuar con el sistema utilizando diversas plataformas, mejorando así la usabilidad.
+Una vez identificadas todas las opciones disponibles se procede a generar el código HTML que permitirá mostrar la interfaz en un browser genérico. 
+Decidimos separar la generación del código HTML, y en última instancia la interfaz gráfica, siguiendo el estilo sugerido en la bibliografía. 
+Este estilo permite experimentar con la interfaz independientemente del desarrollo del resto del sistema. 
+Por otra parte la utilización de HTML garantiza que será posible interactuar con el sistema utilizando diversas plataformas, mejorando así la usabilidad.
 
 
 Una vez generado el código, éste es enviado como respuesta al mensaje original de log in del usuario. 
 
 La página generada mostraría, por ejemplo, las opciones de postularse para una elección en particular y votar en otra elección. Al seleccionar la opción de postularse, se enviaría un mensaje de tipo {\bf postulación} al sistema web. 
 
-El mensaje será procesado por el sistema web utilizando la información de sesión para proceder. En primer lugar el sistema web obtendrá del sistema de restricciones aquellas que se encuentran vigentes.
+El mensaje será procesado por el sistema web utilizando la información de sesión para proceder. 
+El \emph{Sistema de restricciones} determinará si el usuario puede postularse para la elección indicada y en dicho caso se solicitará al \emph{Administrador de elecciones abiertas} que registre al candidato. 
+
+
+En caso de que el usuario decida votar, el componente browser enviaría un mensaje de {\bf solicitud de clave} al sistema web, indicando la elección deseada. La respuesta al mismo incluirá una clave pública, que será utilizada para encriptar el voto. Para lograr el anonimato en los votos, una vez que el usuario elija los candidatos a los que desea votar y confirme su selección, la lista de candidatos concatenada a un número generado al azar será encriptada utilizando la clave pública obtenida del sistema web. Esos datos encriptados constituirán el voto en las subsecuentes explicaciones. 
 
 
 
@@ -50,8 +58,12 @@ Existen varios componentes que por su constante y muy relevante interacción con
 
 El administrador de elecciones abiertas maneja información sobre las fechas de inicio y fin de cada una de las etapas de las elecciones y también mantendrá el registro de las postulaciones. 
 El administrador de elecciones abiertas, dada una elección, determina en qué estado se encuentra, siendo {\bf planificada}, {\bf etapa de postulación}, {\bf etapa intermedia},  {\bf etapa de sufragio} y {\bf finalizada} los cinco estados posibles. También permite enumerar todas las elecciones en etapa de postulación y en etapa de sufragio para un claustro dado. En todos los casos, las elecciones serán identificadas mediante un código, que será el utilizado en las comunicaciones entre componentes que deban referirse a elecciones.
-El administrador de elecciones permitirá también, dada una elección y un claustro, obtener los candidatos que se han postulado en la misma.
-Cabe destacar que una misma elección podría estar involucrar a más de un claustro, pero las fechas en todos ellos deberán coincidir.
+El administrador de elecciones permitirá también, dada una elección y un claustro, obtener los candidatos que se han postulado en la misma, y para dar esta funcionalidad también permitirá, dado un nombre de usuario, una elección, e información del candidato en formato XML, registrarlo como candidato, asignándole un código que se utilizará para hacer referencia al mismo.
+% TODO ver lo de formato XML
+% Lo del formato XML es un chamuyo galáctico que se me ocurrió (doc), si no hay consenso de que sea una buena idea
+% habría que borrar eso.
+Dado el código correspondiente a un candidato, una elección y un claustro permite obtener información del mismo en formato XML, permitiendo extender a futuro los datos que se almacenan. 
+Cabe destacar que una misma elección podría involucrar a más de un claustro, pero las fechas en todos ellos deberán coincidir, así como también los reglamentos que las rigen.
 
 \subsubsection{Sistema de restricciones}
 
