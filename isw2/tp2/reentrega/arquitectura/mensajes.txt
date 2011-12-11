@@ -8,7 +8,6 @@ tipos de mensaje
 	log out
 	votar
 	pedido de clave pública
-	ack
 datos segun tipo de mensajes
 	log in
 		nombre de usuario
@@ -18,22 +17,20 @@ datos segun tipo de mensajes
 	postularse
 		eleccion
 	log out
+		-
 	votar
 		eleccion
 		voto (lista de candidatos concatenada a un 
 			numero aleatorio, todo encriptado)
-	ack 
-		ultimo numero de secuencia contiguo (todos los anteriores 
-			numeros de secuencia fueron recibidos correctamente)
-	
-	
+	pedido de clave pública
+		eleccion
+		
 sistema web a software usuario
-tipos de mensaje
+tipos de mensajes
 	html
-	
+	clave pública
 datos segun tipo de mensajes
 	html
 		código de la página
 	clave pública
 		clave pública
-	

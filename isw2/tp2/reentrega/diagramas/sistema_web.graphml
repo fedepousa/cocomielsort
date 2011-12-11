@@ -17,7 +17,7 @@
     <node id="n0">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="404.18862552402607" width="800.06410318055" x="50.17985907973855" y="203.62274895194787"/>
+          <y:Geometry height="404.18862552402607" width="697.06410318055" x="50.17985907973855" y="203.62274895194787"/>
           <y:Fill color="#FFFF99" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="free" modelPosition="anywhere" textColor="#000000" visible="true" width="4.0" x="206.52297435897435" y="137.2048727620131"/>
@@ -29,7 +29,7 @@
     <node id="n1">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="53.0" width="96.0" x="269.0" y="263.0"/>
+          <y:Geometry height="53.0" width="96.0" x="269.0" y="243.2170617139609"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="34.265625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="86.4052734375" x="4.79736328125" y="9.3671875">multiplexor 
@@ -41,16 +41,270 @@ de mensajes</y:NodeLabel>
     <node id="n2">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="30.0" x="492.0" y="103.0"/>
+          <y:Geometry height="59.0" width="133.0" x="147.0" y="438.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="12.27099609375" x="8.864501953125" y="5.43359375">3</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="126.5732421875" x="3.21337890625" y="19.93359375">Módulo de idiomas</y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
     </node>
+    <node id="n3">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="47.612998962402344" width="239.0459487179487" x="586.6080840024706" y="100.5"/>
+          <y:Fill color="#FFFF99" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="4.0" x="117.52297435897435" y="21.806499481201172"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="150.783203125" x="44.13137279647435" y="14.822124481201172">browser usuario externo</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n4">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="47.612998962402344" width="147.0" x="473.5" y="245.91056223275973"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="34.265625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="99.21484375" x="23.892578125" y="6.673686981201172">Verificador de 
+identificación</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n5">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="56.0" width="105.0" x="777.2439622602885" y="241.7170617139609"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="45.90625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="78.583984375" x="13.2080078125" y="5.046875">repositorios 
+usuarios y 
+sus datos</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n6">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="108.0" width="193.0" x="450.5" y="331.5235611951621"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="34.265625" modelName="free" modelPosition="anywhere" textColor="#000000" visible="true" width="100.13525390625" x="6.432373046875" y="5.8671875">Administrador 
+de sesiones</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n7">
+      <data key="d6">
+        <y:SVGNode>
+          <y:Geometry height="27.612998962402344" width="21.25" x="575.875" y="354.0967502593994"/>
+          <y:Fill color="#CCCCFF" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="98.06640625" x="-38.408203125" y="31.612998962402344">datos de sesión</y:NodeLabel>
+          <y:SVGNodeProperties usingVisualBounds="true"/>
+          <y:SVGModel svgBoundsPolicy="0">
+            <y:SVGContent refid="1"/>
+          </y:SVGModel>
+        </y:SVGNode>
+      </data>
+    </node>
+    <node id="n8">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="63.221120000000155" width="180.0" x="777.2439622602885" y="363.99443813405105"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="45.90625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="149.599609375" x="15.2001953125" y="8.657435000000078">Repositorio de datos 
+de la facultad (alumnos,
+ graduados, profesores)</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <edge id="e0" source="n3" target="n1">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="317.0" y="124.30649948120117"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="shead" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="219.666015625" x="-229.79102488424815" y="-19.968753814697266">seguro (encriptado) cliente servidor</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e1" source="n1" target="n4">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e2" source="n4" target="n5">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="84.3671875" x="36.18838738014426" y="1.9999901807577771">transaccional</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e3" source="n4" target="n6">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="65.599609375" x="2.0" y="10.015626624849574">call return</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e4" source="n4" target="n8">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="65.599609375" x="116.16625123531924" y="26.910019455757947">call return</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
   </graph>
   <data key="d0">
-    <y:Resources/>
+    <y:Resources>
+      <y:Resource id="1">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;!-- Generator: Adobe Illustrator 15.0.2, SVG Export Plug-In  --&gt;
+&lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	&lt;!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/"&gt;
+]&gt;
+&lt;svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="40px" height="48px" viewBox="0 0 40 48" enable-background="new 0 0 40 48" xml:space="preserve"&gt;
+&lt;defs&gt;
+&lt;/defs&gt;
+&lt;linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="370.2002" y1="655.0938" x2="409.4502" y2="655.0938" gradientTransform="matrix(1 0 0 1 -370.2002 -614.5742)"&gt;
+	&lt;stop  offset="0" style="stop-color:#4D4D4D"/&gt;
+	&lt;stop  offset="0.0558" style="stop-color:#5F5F5F"/&gt;
+	&lt;stop  offset="0.2103" style="stop-color:#8D8D8D"/&gt;
+	&lt;stop  offset="0.3479" style="stop-color:#AEAEAE"/&gt;
+	&lt;stop  offset="0.4623" style="stop-color:#C2C2C2"/&gt;
+	&lt;stop  offset="0.5394" style="stop-color:#C9C9C9"/&gt;
+	&lt;stop  offset="0.6247" style="stop-color:#C5C5C5"/&gt;
+	&lt;stop  offset="0.7072" style="stop-color:#BABABA"/&gt;
+	&lt;stop  offset="0.7885" style="stop-color:#A6A6A6"/&gt;
+	&lt;stop  offset="0.869" style="stop-color:#8B8B8B"/&gt;
+	&lt;stop  offset="0.9484" style="stop-color:#686868"/&gt;
+	&lt;stop  offset="1" style="stop-color:#4D4D4D"/&gt;
+&lt;/linearGradient&gt;
+&lt;path fill="url(#SVGID_1_)" d="M19.625,37.613C8.787,37.613,0,35.738,0,33.425v10c0,2.313,8.787,4.188,19.625,4.188
+	c10.839,0,19.625-1.875,19.625-4.188v-10C39.25,35.738,30.464,37.613,19.625,37.613z"/&gt;
+&lt;linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="370.2002" y1="649.0938" x2="409.4502" y2="649.0938" gradientTransform="matrix(1 0 0 1 -370.2002 -614.5742)"&gt;
+	&lt;stop  offset="0" style="stop-color:#B3B3B3"/&gt;
+	&lt;stop  offset="0.0171" style="stop-color:#B6B6B6"/&gt;
+	&lt;stop  offset="0.235" style="stop-color:#D7D7D7"/&gt;
+	&lt;stop  offset="0.4168" style="stop-color:#EBEBEB"/&gt;
+	&lt;stop  offset="0.5394" style="stop-color:#F2F2F2"/&gt;
+	&lt;stop  offset="0.6579" style="stop-color:#EEEEEE"/&gt;
+	&lt;stop  offset="0.7724" style="stop-color:#E3E3E3"/&gt;
+	&lt;stop  offset="0.8853" style="stop-color:#CFCFCF"/&gt;
+	&lt;stop  offset="0.9965" style="stop-color:#B4B4B4"/&gt;
+	&lt;stop  offset="1" style="stop-color:#B3B3B3"/&gt;
+&lt;/linearGradient&gt;
+&lt;path fill="url(#SVGID_2_)" d="M19.625,37.613c10.839,0,19.625-1.875,19.625-4.188l-1.229-2c0,2.168-8.235,3.927-18.396,3.927
+	c-9.481,0-17.396-1.959-18.396-3.927l-1.229,2C0,35.738,8.787,37.613,19.625,37.613z"/&gt;
+&lt;linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="371.4297" y1="646" x2="408.2217" y2="646" gradientTransform="matrix(1 0 0 1 -370.2002 -614.5742)"&gt;
+	&lt;stop  offset="0" style="stop-color:#C9C9C9"/&gt;
+	&lt;stop  offset="1" style="stop-color:#808080"/&gt;
+&lt;/linearGradient&gt;
+&lt;ellipse fill="url(#SVGID_3_)" cx="19.625" cy="31.425" rx="18.396" ry="3.926"/&gt;
+&lt;linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="370.2002" y1="641.0938" x2="409.4502" y2="641.0938" gradientTransform="matrix(1 0 0 1 -370.2002 -614.5742)"&gt;
+	&lt;stop  offset="0" style="stop-color:#4D4D4D"/&gt;
+	&lt;stop  offset="0.0558" style="stop-color:#5F5F5F"/&gt;
+	&lt;stop  offset="0.2103" style="stop-color:#8D8D8D"/&gt;
+	&lt;stop  offset="0.3479" style="stop-color:#AEAEAE"/&gt;
+	&lt;stop  offset="0.4623" style="stop-color:#C2C2C2"/&gt;
+	&lt;stop  offset="0.5394" style="stop-color:#C9C9C9"/&gt;
+	&lt;stop  offset="0.6247" style="stop-color:#C5C5C5"/&gt;
+	&lt;stop  offset="0.7072" style="stop-color:#BABABA"/&gt;
+	&lt;stop  offset="0.7885" style="stop-color:#A6A6A6"/&gt;
+	&lt;stop  offset="0.869" style="stop-color:#8B8B8B"/&gt;
+	&lt;stop  offset="0.9484" style="stop-color:#686868"/&gt;
+	&lt;stop  offset="1" style="stop-color:#4D4D4D"/&gt;
+&lt;/linearGradient&gt;
+&lt;path fill="url(#SVGID_4_)" d="M19.625,23.613C8.787,23.613,0,21.738,0,19.425v10c0,2.313,8.787,4.188,19.625,4.188
+	c10.839,0,19.625-1.875,19.625-4.188v-10C39.25,21.738,30.464,23.613,19.625,23.613z"/&gt;
+&lt;linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="370.2002" y1="635.0938" x2="409.4502" y2="635.0938" gradientTransform="matrix(1 0 0 1 -370.2002 -614.5742)"&gt;
+	&lt;stop  offset="0" style="stop-color:#B3B3B3"/&gt;
+	&lt;stop  offset="0.0171" style="stop-color:#B6B6B6"/&gt;
+	&lt;stop  offset="0.235" style="stop-color:#D7D7D7"/&gt;
+	&lt;stop  offset="0.4168" style="stop-color:#EBEBEB"/&gt;
+	&lt;stop  offset="0.5394" style="stop-color:#F2F2F2"/&gt;
+	&lt;stop  offset="0.6579" style="stop-color:#EEEEEE"/&gt;
+	&lt;stop  offset="0.7724" style="stop-color:#E3E3E3"/&gt;
+	&lt;stop  offset="0.8853" style="stop-color:#CFCFCF"/&gt;
+	&lt;stop  offset="0.9965" style="stop-color:#B4B4B4"/&gt;
+	&lt;stop  offset="1" style="stop-color:#B3B3B3"/&gt;
+&lt;/linearGradient&gt;
+&lt;path fill="url(#SVGID_5_)" d="M19.625,23.613c10.839,0,19.625-1.875,19.625-4.188l-1.229-2c0,2.168-8.235,3.926-18.396,3.926
+	c-9.481,0-17.396-1.959-18.396-3.926l-1.229,2C0,21.738,8.787,23.613,19.625,23.613z"/&gt;
+&lt;linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="371.4297" y1="632" x2="408.2217" y2="632" gradientTransform="matrix(1 0 0 1 -370.2002 -614.5742)"&gt;
+	&lt;stop  offset="0" style="stop-color:#C9C9C9"/&gt;
+	&lt;stop  offset="1" style="stop-color:#808080"/&gt;
+&lt;/linearGradient&gt;
+&lt;ellipse fill="url(#SVGID_6_)" cx="19.625" cy="17.426" rx="18.396" ry="3.926"/&gt;
+&lt;linearGradient id="SVGID_7_" gradientUnits="userSpaceOnUse" x1="370.2002" y1="627.5938" x2="409.4502" y2="627.5938" gradientTransform="matrix(1 0 0 1 -370.2002 -614.5742)"&gt;
+	&lt;stop  offset="0" style="stop-color:#4D4D4D"/&gt;
+	&lt;stop  offset="0.0558" style="stop-color:#5F5F5F"/&gt;
+	&lt;stop  offset="0.2103" style="stop-color:#8D8D8D"/&gt;
+	&lt;stop  offset="0.3479" style="stop-color:#AEAEAE"/&gt;
+	&lt;stop  offset="0.4623" style="stop-color:#C2C2C2"/&gt;
+	&lt;stop  offset="0.5394" style="stop-color:#C9C9C9"/&gt;
+	&lt;stop  offset="0.6247" style="stop-color:#C5C5C5"/&gt;
+	&lt;stop  offset="0.7072" style="stop-color:#BABABA"/&gt;
+	&lt;stop  offset="0.7885" style="stop-color:#A6A6A6"/&gt;
+	&lt;stop  offset="0.869" style="stop-color:#8B8B8B"/&gt;
+	&lt;stop  offset="0.9484" style="stop-color:#686868"/&gt;
+	&lt;stop  offset="1" style="stop-color:#4D4D4D"/&gt;
+&lt;/linearGradient&gt;
+&lt;path fill="url(#SVGID_7_)" d="M19.625,10.113C8.787,10.113,0,8.238,0,5.925v10c0,2.313,8.787,4.188,19.625,4.188
+	c10.839,0,19.625-1.875,19.625-4.188v-10C39.25,8.238,30.464,10.113,19.625,10.113z"/&gt;
+&lt;linearGradient id="SVGID_8_" gradientUnits="userSpaceOnUse" x1="370.2002" y1="621.5938" x2="409.4502" y2="621.5938" gradientTransform="matrix(1 0 0 1 -370.2002 -614.5742)"&gt;
+	&lt;stop  offset="0" style="stop-color:#B3B3B3"/&gt;
+	&lt;stop  offset="0.0171" style="stop-color:#B6B6B6"/&gt;
+	&lt;stop  offset="0.235" style="stop-color:#D7D7D7"/&gt;
+	&lt;stop  offset="0.4168" style="stop-color:#EBEBEB"/&gt;
+	&lt;stop  offset="0.5394" style="stop-color:#F2F2F2"/&gt;
+	&lt;stop  offset="0.6579" style="stop-color:#EEEEEE"/&gt;
+	&lt;stop  offset="0.7724" style="stop-color:#E3E3E3"/&gt;
+	&lt;stop  offset="0.8853" style="stop-color:#CFCFCF"/&gt;
+	&lt;stop  offset="0.9965" style="stop-color:#B4B4B4"/&gt;
+	&lt;stop  offset="1" style="stop-color:#B3B3B3"/&gt;
+&lt;/linearGradient&gt;
+&lt;path fill="url(#SVGID_8_)" d="M19.625,10.113c10.839,0,19.625-1.875,19.625-4.188l-1.229-2c0,2.168-8.235,3.926-18.396,3.926
+	c-9.481,0-17.396-1.959-18.396-3.926L0,5.925C0,8.238,8.787,10.113,19.625,10.113z"/&gt;
+&lt;linearGradient id="SVGID_9_" gradientUnits="userSpaceOnUse" x1="371.4297" y1="618.5" x2="408.2217" y2="618.5" gradientTransform="matrix(1 0 0 1 -370.2002 -614.5742)"&gt;
+	&lt;stop  offset="0" style="stop-color:#C9C9C9"/&gt;
+	&lt;stop  offset="1" style="stop-color:#808080"/&gt;
+&lt;/linearGradient&gt;
+&lt;ellipse fill="url(#SVGID_9_)" cx="19.625" cy="3.926" rx="18.396" ry="3.926"/&gt;
+&lt;path opacity="0.24" fill="#FFFFFF" enable-background="new    " d="M31.291,46.792c0,0-4.313,0.578-7.249,0.694
+	C20.917,47.613,15,47.613,15,47.613l-2.443-10.279l-0.119-2.283l-1.231-1.842L9.789,23.024l-0.082-0.119L9.3,20.715l-1.45-1.44
+	L5.329,8.793c0,0,5.296,0.882,7.234,1.07s8.375,0.25,8.375,0.25l3,9.875l-0.25,1.313l1.063,2.168l2.312,9.644l-0.375,1.875
+	l1.627,2.193L31.291,46.792z"/&gt;
+&lt;/svg&gt;
+</y:Resource>
+    </y:Resources>
   </data>
 </graphml>
