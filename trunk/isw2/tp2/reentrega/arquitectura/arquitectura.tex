@@ -10,10 +10,11 @@ Para mejorar la seguridad del sistema se eligió utilizar combinaciones de nombr
 % TODO agregar diagrama arquitectura completo
 El flujo de información durante una votación se describe a continuación. El usuario, a través del componente browser externo, ingresa en un sitio web designado por la Facultad con el fin de realizar la votación.  Este sitio web será exclusivo de la sede a la que un usuario pertenezca, con el objetivo de mejorar la disponibilidad. 
 
-El sitio web será generado por el componente sistema web de la sede correspondiente. Existen varios tipos de mensajes posibles entre browser usuario externo y sistema web que se explicarán en detalle más adelante 
+El sitio web será generado por el componente sistema web de la sede correspondiente. Existen varios tipos de mensajes posibles entre \emph{browser usuario externo} y \emph{sistema web} que se explicarán en detalle más adelante 
 % TODO referenciar esa seccion
 y cada uno está asociado a las diversas acciones que puede querer realizar el usuario. Concretamente, lo único que puede hacer el usuario inicialmente es identificarse con su nombre de usuario y contraseña, tras lo cuál se activarán varias opciones adicionales.
 
+Cada recepción de un mensaje genera un nuevo thread de ejecución de algunos de los componentes del sistema web.
 Al recibir un mensaje de log in, se crea un thread nuevo de ejecución del sistema web, que se encargará de verificar los datos y generar una página con las opciones disponibles para el usuario. 
 % TODO preguntar si se puede asumir que el client server te genera un nuevo thread automaticamente
 % o si hay que mostrarlo en el diagrama de alguna manera

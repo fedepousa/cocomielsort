@@ -5,19 +5,23 @@ En esta sección presentaremos la arquitectura explicando cómo se brindan las f
 
 El uso más habitual que se le dará al sistema será el de votar, por lo que comenzaremos explicando cómo se logra esta funcionalidad con la arquitectura propuesta, enfocándonos principalmente en el diagrama de componentes y conectores.
 
+Para mejorar la seguridad del sistema se eligió utilizar combinaciones de nombre de usuario y contraseña para identicar a los usuarios. Cada usuario tendrá asociado una cuenta, que contendrá además de la información de identificación la preferencia de lenguaje. La creación de cuentas para los usuarios se deberá realizar en una oficina de la sede a la que pertenezca el alumno, donde existirá una terminal segura ejecutando el componente \emph{Administrador de usuarios}. Este componente permitirá crear nuevas cuentas y modificar cuentas existentes. Al momento de creación de la cuenta se solicitará al usuario que ingrese una contraseña. Existían otras alternativas para resolver el problema de administración de cuentas de usuarios que aumentaban la complejidad de la arquitectura y ofrecían menos garantías de seguridad, como generar las contraseñas automáticamente y enviarlas por correo electrónico, o que la creación de cuentas se realice remotamente. En el primer caso la seguridad depende en gran medida del software que cada usuario utilice para ver su correo electrónico, mientras que la segunda opción no ofrece, de la manera que la pensamos, ningún tipo de garantía sobre la identidad de la persona que genera la cuenta.
 
 % TODO agregar diagrama arquitectura completo
 El flujo de información durante una votación se describe a continuación. El usuario, a través del componente browser externo, ingresa en un sitio web designado por la Facultad con el fin de realizar la votación.  Este sitio web será exclusivo de la sede a la que un usuario pertenezca, con el objetivo de mejorar la disponibilidad. 
 
-El sitio web será generado por el componente sistema web de la sede correspondiente. Existen varios tipos de mensajes posibles entre browser usuario externo y sistema web que se explicarán en detalle más adelante y cada uno representa las diversas acciones que puede querer realizar el usuario. Concretamente lo único que puede hacer el usuario inicialmente será identificarse con su nombre de usuario y contraseña, tras lo cuál se activarán varias opciones adicionales.
+El sitio web será generado por el componente sistema web de la sede correspondiente. Existen varios tipos de mensajes posibles entre \emph{browser usuario externo} y \emph{sistema web} que se explicarán en detalle más adelante 
+% TODO referenciar esa seccion
+y cada uno está asociado a las diversas acciones que puede querer realizar el usuario. Concretamente, lo único que puede hacer el usuario inicialmente es identificarse con su nombre de usuario y contraseña, tras lo cuál se activarán varias opciones adicionales.
 
-Al recibir un mensaje, se crea un thread nuevo de ejecución del sistema web, que se encargará de verificar los datos y generar una página con las opciones disponibles para el usuario. 
+Al recibir un mensaje de log in, se crea un thread nuevo de ejecución del sistema web, que se encargará de verificar los datos y generar una página con las opciones disponibles para el usuario. 
 % TODO preguntar si se puede asumir que el client server te genera un nuevo thread automaticamente
 % o si hay que mostrarlo en el diagrama de alguna manera
-El mensaje contiene el nombre de usuario y hash de la contraseña, que serán contrastados con la información del usuario almacenados en el repositorio de usuarios y sus datos. En este último repositorio también existe información que permite identificar a la persona física en otros sistemas de la Facultad, como puede ser el número de legajo o libreta universitaria. 
+El mensaje contiene el nombre de usuario y hash de la contraseña, que serán contrastados con la información del usuario almacenados en el \emph{repositorio de usuarios y sus datos}. En este último repositorio también existe información que permite identificar a la persona física en otros sistemas de la Facultad, como puede ser el número de legajo o libreta universitaria y también la preferencia de idioma del usuario. 
 De ser correctos los datos suministrados, se abre una sesión que caducará tras transcurrir una determinada cantidad de minutos que aún no se ha decidido.
 % TODO escribirlo mejor, explicar que quiere decir en nuestro sistema que se abre una sesión.
 % TODO esto hay que mostrarlo cuando se amplie el diagrama de sistema web o borrarlo.
+La información que se guarda asociada a una sesión incluye el nombre de usuario, el identificador del usuario en el \emph{Repositorio de datos de la Facultad} y el idioma.
 El sistema web procederá a construir el código HTML que muestra las opciones disponibles para el usuario. Para hacer esto último, obtendrá los datos del usuario disponibles en el repositorio de datos de la Facultad, que contiene para cada integrante, por ejemplo, información del claustro, cantidad de materias aprobadas para los estudiantes, antigüedad para los docentes y fecha de graduación para los graduados. Toda esta información está almacenada en una serie de sistemas ya existentes, por lo que el componente \emph{Repositorio de datos de la facultad} actuará como interfáz en este sentido.
 A continuación el sistema web pedirá información al administrador de elecciones abiertas\footnote{Ver \ref{admin_elecciones} para una explicación detallada del administrador de elecciones abiertas.} para determinar si existen opciones disponibles para el usuario, como podrían ser la posibilidad de postularse como candidato o emitir su voto.
 
@@ -40,7 +44,16 @@ El mensaje será procesado por el sistema web utilizando la información de sesi
 El \emph{Sistema de restricciones} determinará si el usuario puede postularse para la elección indicada y en dicho caso se solicitará al \emph{Administrador de elecciones abiertas} que registre al candidato. 
 
 
-En caso de que el usuario decida votar, el componente browser enviaría un mensaje de {\bf solicitud de clave} al sistema web, indicando la elección deseada. La respuesta al mismo incluirá una clave pública, que será utilizada para encriptar el voto. Para lograr el anonimato en los votos, una vez que el usuario elija los candidatos a los que desea votar y confirme su selección, la lista de candidatos concatenada a un número generado al azar será encriptada utilizando la clave pública obtenida del sistema web. Esos datos encriptados constituirán el voto en las subsecuentes explicaciones. 
+En caso de que el usuario decida votar, el componente browser enviaría un mensaje de {\bf solicitud de clave} al sistema web, indicando la elección deseada. 
+La respuesta al mismo incluirá una clave pública, que será utilizada para encriptar el voto. 
+Para lograr el anonimato en los votos, una vez que el usuario elija los candidatos a los que desea votar y confirme su selección, la lista de candidatos concatenada a un número generado al azar será encriptada utilizando la clave pública obtenida del sistema web. 
+Esos datos encriptados constituirán el voto en las subsecuentes explicaciones. 
+El voto será enviado al \emph{Sistema web} de la Facultad en un mensaje de voto. 
+A partir de la recepción del mensaje se solicitará al \emph{Sistema de restricciones} que confirme que el usuario puede efectuar votar en dicha elección y que la elección esté en etapa de sufragio y luego, de manera atómica, se verificará que el usuario no haya votado previamente y se registrará que el mismo votó en el \emph{Repositorio de quiénes votaron}. 
+Tras esto se envía el voto en sí al \emph{Almacenamiento de votos encriptados}.
+
+El sistema HardToBreak será utilizado para obtener una clave pública en cada elección y mantener secreta la clave privada, que sólo será divulgada al momento de cierre de la elección, y será utilizada para desencriptar los votos almacenados. 
+Este esquema de encripción de los votos permite fiscalizar la votación con componentes idénticos tanto en los fiscalizadores como en cada Facultad.
 
 
 
