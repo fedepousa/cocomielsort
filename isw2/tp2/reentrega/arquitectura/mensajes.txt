@@ -1,6 +1,12 @@
+
+
 browser usuario externo a sistema web
-header generico
-	origen, destino, numero de secuencia
+Todos los mensajes desde browser usuario externo a sistema web tendrán los datos, incluído el checksum, encriptados con una clave simétrica, excepto el mensaje de log in. La clave simétrica será parte de la respuesta al mensaje de log in.  
+header generico:
+	tipo de mensaje
+	(en todos menos en log in) numero de sesion
+datos genéricos:
+	checksum
 tipos de mensaje
 	log in
 	cambio idioma
@@ -17,7 +23,7 @@ datos segun tipo de mensajes
 	postularse
 		eleccion
 	log out
-		-
+		nombre de usuario
 	votar
 		eleccion
 		voto (lista de candidatos concatenada a un 
@@ -27,6 +33,7 @@ datos segun tipo de mensajes
 		
 sistema web a software usuario
 tipos de mensajes
+	inicio de sesion
 	html
 	clave pública
 datos segun tipo de mensajes
@@ -34,5 +41,8 @@ datos segun tipo de mensajes
 		código de la página
 	clave pública
 		clave pública
-
+	sesion
+		html
+		numero de sesion
+		clave simetrica
 
