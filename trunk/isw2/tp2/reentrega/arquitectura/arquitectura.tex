@@ -50,7 +50,7 @@ La respuesta al mismo incluirá una clave pública, que será utilizada para enc
 Para lograr el anonimato en los votos, una vez que el usuario elija los candidatos a los que desea votar y confirme su selección, la lista de candidatos concatenada a un número generado al azar será encriptada utilizando la clave pública obtenida del sistema web. 
 Esos datos encriptados constituirán el voto en las subsecuentes explicaciones. 
 El voto será enviado al \emph{Sistema web} de la Facultad en un mensaje de voto. 
-A partir de la recepción del mensaje se solicitará al \emph{Sistema de restricciones} que confirme que el usuario puede efectuar votar en dicha elección y que la elección esté en etapa de sufragio y luego, de manera atómica, se verificará que el usuario no haya votado previamente y se registrará que el mismo votó en el \emph{Repositorio de quiénes votaron}. 
+A partir de la recepción del mensaje se solicitará al \emph{Sistema de restricciones} que confirme que el usuario puede votar en dicha elección y que la elección esté en etapa de sufragio y luego, de manera atómica, se verificará que el usuario no haya votado previamente y se registrará que el mismo votó en el \emph{Repositorio de quiénes votaron}. 
 Tras esto se envía el voto en sí al \emph{Almacenamiento de votos encriptados}.
 
 El sistema HardToBreak será utilizado para obtener una clave pública en cada elección y mantener secreta la clave privada, que sólo será divulgada al momento de cierre de la elección, y será utilizada para desencriptar los votos almacenados. 
