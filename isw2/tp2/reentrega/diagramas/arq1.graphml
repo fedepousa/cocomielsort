@@ -27,7 +27,17 @@
       </data>
     </node>
     <node id="n1">
-      <data key="d5"/>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="72.0" width="266.0" x="544.301956676871" y="469.8754205181347"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="4.0" x="131.0" y="34.0"/>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n2">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="273.08479861409893" width="262.16894859756843" x="42.334681112314854" y="208.68561941277258"/>
@@ -39,7 +49,7 @@ de elecciones</y:NodeLabel>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n2">
+    <node id="n3">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="62.0" width="202.0" x="403.5067158698542" y="291.62917365388626"/>
@@ -50,7 +60,7 @@ de elecciones</y:NodeLabel>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n3">
+    <node id="n4">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="47.612998962402344" width="239.0459487179487" x="864.1080840024706" y="66.0"/>
@@ -62,19 +72,19 @@ de elecciones</y:NodeLabel>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n4">
+    <node id="n5">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="47.612998962402344" width="149.0" x="103.30806544083862" y="95.19837551357159"/>
           <y:Fill color="#FFFF99" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="4.0" x="72.5" y="21.806499481201172"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="75.4140625" x="36.79296875" y="14.822124481201172">Hard2Break</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="82.451171875" x="33.2744140625" y="14.822124481201172">HardToBreak</y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n5">
+    <node id="n6">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="62.0" width="239.0459487179487" x="241.53364632237867" y="498.6879386528499"/>
@@ -85,7 +95,7 @@ de elecciones</y:NodeLabel>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n6">
+    <node id="n7">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="72.0" width="266.0" x="533.8344801000935" y="480.0"/>
@@ -96,7 +106,7 @@ de elecciones</y:NodeLabel>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n7">
+    <node id="n8">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="81.0" width="149.0" x="741.906103286385" y="701.9321297406004"/>
@@ -107,7 +117,7 @@ de elecciones</y:NodeLabel>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n8">
+    <node id="n9">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="30.0" x="640.0" y="666.9321297406004"/>
@@ -118,7 +128,7 @@ de elecciones</y:NodeLabel>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n9">
+    <node id="n10">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="62.0" width="202.0" x="394.8344801000935" y="303.06787025939957"/>
@@ -129,7 +139,7 @@ de elecciones</y:NodeLabel>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n10">
+    <node id="n11">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="56.221120000000155" width="222.0" x="53.47702564102565" y="252.02236992583767"/>
@@ -140,20 +150,20 @@ de elecciones</y:NodeLabel>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n11">
+    <node id="n12">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="63.221120000000155" width="180.0" x="53.47702564102565" y="497.46681865284967"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="45.90625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="149.599609375" x="15.2001953125" y="8.657435000000078">Repositorio de datos 
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="45.90625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="149.599609375" x="15.2001953125" y="8.657435000000135">Repositorio de datos 
 de la facultad (alumnos,
  graduados, profesores)</y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n12">
+    <node id="n13">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="56.0" width="105.0" x="699.3080654408386" y="187.0"/>
@@ -166,7 +176,7 @@ sus datos</y:NodeLabel>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n13">
+    <node id="n14">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="47.612998962402344" width="168.0" x="89.0" y="347.93699044463665"/>
@@ -177,7 +187,7 @@ sus datos</y:NodeLabel>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n14">
+    <node id="n15">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="56.221120000000155" width="89.0" x="128.5" y="411.24569865284946"/>
@@ -190,7 +200,7 @@ ya votaron</y:NodeLabel>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n15">
+    <node id="n16">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="224.17515567946657" width="483.21706815464324" x="-168.5797807130075" y="824.7755733333333"/>
@@ -202,7 +212,7 @@ ya votaron</y:NodeLabel>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n16">
+    <node id="n17">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="118.75" width="127.5" x="-101.75" y="870.318180310881"/>
@@ -216,7 +226,7 @@ cada hora</y:NodeLabel>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n17">
+    <node id="n18">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="118.75" width="183.3062500000001" x="-140.9312500000001" y="617.0"/>
@@ -227,7 +237,7 @@ cada hora</y:NodeLabel>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n18">
+    <node id="n19">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="73.43725158134743" width="105.0" x="686.668960200187" y="273.0"/>
@@ -239,7 +249,7 @@ de usuarios</y:NodeLabel>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n19">
+    <node id="n20">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="81.0" width="251.02660406885764" x="53.47702564102565" y="696.9321297406004"/>
@@ -251,7 +261,7 @@ de usuarios</y:NodeLabel>
         </y:ShapeNode>
       </data>
     </node>
-    <edge id="e0" source="n3" target="n9">
+    <edge id="e0" source="n4" target="n10">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="10.0" ty="2.0">
@@ -264,7 +274,7 @@ de usuarios</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e1" source="n9" target="n6">
+    <edge id="e1" source="n10" target="n7">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="18.0" sy="16.0" tx="0.0" ty="0.0">
@@ -277,7 +287,7 @@ de usuarios</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e2" source="n6" target="n8">
+    <edge id="e2" source="n7" target="n9">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-11.834480100093515" sy="-0.09546165884194124" tx="0.0" ty="0.0">
@@ -289,7 +299,7 @@ de usuarios</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e3" source="n8" target="n7">
+    <edge id="e3" source="n9" target="n8">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="-10.720657276995325" ty="-1.3644458595363176"/>
@@ -299,7 +309,7 @@ de usuarios</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e4" source="n8" target="n5">
+    <edge id="e4" source="n9" target="n6">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -311,7 +321,7 @@ de usuarios</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e5" source="n9" target="n10">
+    <edge id="e5" source="n10" target="n11">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -322,7 +332,7 @@ de usuarios</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e6" source="n9" target="n11">
+    <edge id="e6" source="n10" target="n12">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-34.288966785793264" sy="18.614064656247933" tx="-66.65403272041931" ty="-27.610560000000078">
@@ -336,7 +346,7 @@ de usuarios</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e7" source="n9" target="n4">
+    <edge id="e7" source="n10" target="n5">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-63.214908918135734" sy="20.0" tx="0.0" ty="0.0">
@@ -350,7 +360,7 @@ de usuarios</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e8" source="n9" target="n12">
+    <edge id="e8" source="n10" target="n13">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="95.3195526203258" sy="-27.168319999999767" tx="0.0" ty="0.0">
@@ -363,7 +373,7 @@ de usuarios</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e9" source="n9" target="n0">
+    <edge id="e9" source="n10" target="n0">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-63.214908918135734" sy="-29.615026640406086" tx="0.0" ty="0.0"/>
@@ -373,7 +383,7 @@ de usuarios</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e10" source="n9" target="n13">
+    <edge id="e10" source="n10" target="n14">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-37.752320475680335" sy="7.193500518798828" tx="0.0" ty="0.0"/>
@@ -384,7 +394,7 @@ de usuarios</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e11" source="n9" target="n0">
+    <edge id="e11" source="n10" target="n0">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="36.0" sy="0.0" tx="109.41953030242732" ty="-145.45587262327106"/>
@@ -394,7 +404,7 @@ de usuarios</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e12" source="n9" target="n0">
+    <edge id="e12" source="n10" target="n0">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="42.165519899906485" sy="0.0" tx="116.21919679282033" ty="62.40623366429185"/>
@@ -404,7 +414,7 @@ de usuarios</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e13" source="n9" target="n14">
+    <edge id="e13" source="n10" target="n15">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="37.938360075070136" sy="15.93212974060043" tx="0.0" ty="0.0">
@@ -417,7 +427,7 @@ de usuarios</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e14" source="n16" target="n17">
+    <edge id="e14" source="n17" target="n18">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="11.278125000000045" ty="0.0"/>
@@ -428,7 +438,7 @@ de usuarios</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e15" source="n17" target="n13">
+    <edge id="e15" source="n18" target="n14">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -441,7 +451,7 @@ de usuarios</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e16" source="n2" target="n9">
+    <edge id="e16" source="n3" target="n10">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -451,7 +461,7 @@ de usuarios</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e17" source="n13" target="n11">
+    <edge id="e17" source="n14" target="n12">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-52.14349569886218" sy="15.463599671709517" tx="-76.12384878093238" ty="-27.457463540393633"/>
@@ -462,7 +472,7 @@ de usuarios</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e18" source="n13" target="n10">
+    <edge id="e18" source="n14" target="n11">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-64.3027791408021" sy="-0.22338735751316108" tx="-55.77980478182775" ty="0.47889326424859746"/>
@@ -473,7 +483,7 @@ de usuarios</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e19" source="n18" target="n12">
+    <edge id="e19" source="n19" target="n13">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-19.636967661326935" sy="-2.4526295212436935" tx="-32.27607290197852" ty="-4.326597305699494"/>
@@ -484,7 +494,7 @@ de usuarios</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e20" source="n11" target="n19">
+    <edge id="e20" source="n12" target="n20">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="-35.51330203442882" ty="-4.745696400626002"/>

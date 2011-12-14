@@ -3,26 +3,29 @@
 En esta sección presentaremos la arquitectura explicando cómo se brindan las funcionalidades requeridas, mencionando diseños alternativos y algunos aspectos relevantes de la comunicación. Cuando resulte pertinente se comentará cómo se logra cada atributo de calidad a partir de las tácticas utilizadas y la estructura descripta. 
 
 
+La sección \ref{explicacion} contiene explicaciones de varios de los componentes más relevantes y puede resultar útil utilizarla como referencia para ampliar la comprensión de la presente sección.
+
+
 El uso más habitual que se le dará al sistema será el de votar, por lo que comenzaremos explicando cómo se logra esta funcionalidad con la arquitectura propuesta, enfocándonos principalmente en el diagrama de componentes y conectores.
+
 
 Para mejorar la seguridad del sistema se eligió utilizar combinaciones de nombre de usuario y contraseña para identicar a los usuarios. Cada usuario tendrá asociado una cuenta, que contendrá además de la información de identificación la preferencia de lenguaje. La creación de cuentas para los usuarios se deberá realizar en una oficina de la sede a la que pertenezca el alumno, donde existirá una terminal segura ejecutando el componente \emph{Administrador de usuarios}. Este componente permitirá crear nuevas cuentas y modificar cuentas existentes. Al momento de creación de la cuenta se solicitará al usuario que ingrese una contraseña. Existían otras alternativas para resolver el problema de administración de cuentas de usuarios que aumentaban la complejidad de la arquitectura y ofrecían menos garantías de seguridad, como generar las contraseñas automáticamente y enviarlas por correo electrónico, o que la creación de cuentas se realice remotamente. En el primer caso la seguridad depende en gran medida del software que cada usuario utilice para ver su correo electrónico, mientras que la segunda opción no ofrece, de la manera que la pensamos, ningún tipo de garantía sobre la identidad de la persona que genera la cuenta.
 
 % TODO agregar diagrama arquitectura completo
 El flujo de información durante una votación se describe a continuación. El usuario, a través del componente browser externo, ingresa en un sitio web designado por la Facultad con el fin de realizar la votación.  Este sitio web será exclusivo de la sede a la que un usuario pertenezca, con el objetivo de mejorar la disponibilidad. 
 
-El sitio web será generado por el componente sistema web de la sede correspondiente. Existen varios tipos de mensajes posibles entre \emph{browser usuario externo} y \emph{sistema web} que se explicarán en detalle más adelante 
-% TODO referenciar esa seccion
-y cada uno está asociado a las diversas acciones que puede querer realizar el usuario. Concretamente, lo único que puede hacer el usuario inicialmente es identificarse con su nombre de usuario y contraseña, tras lo cuál se activarán varias opciones adicionales.
+El sitio web será generado por el componente sistema web de la sede correspondiente. Existen varios tipos de mensajes posibles entre \emph{browser usuario externo} y \emph{sistema web} que se explicarán en detalle en la sección \ref{mensajes}. 
 
-Cada recepción de un mensaje genera un nuevo thread de ejecución de algunos de los componentes del sistema web.
-Al recibir un mensaje de log in, se crea un thread nuevo de ejecución del sistema web, que se encargará de verificar los datos y generar una página con las opciones disponibles para el usuario. 
-% TODO preguntar si se puede asumir que el client server te genera un nuevo thread automaticamente
-% o si hay que mostrarlo en el diagrama de alguna manera
-El mensaje contiene el nombre de usuario y hash de la contraseña, que serán contrastados con la información del usuario almacenados en el \emph{repositorio de usuarios y sus datos}. En este último repositorio también existe información que permite identificar a la persona física en otros sistemas de la Facultad, como puede ser el número de legajo o libreta universitaria y también la preferencia de idioma del usuario. 
+Cada mensaje está asociado a las diversas acciones que puede querer realizar el usuario. Concretamente, lo único que puede hacer el usuario inicialmente es identificarse con su nombre de usuario y contraseña, tras lo cual se activarán varias opciones adicionales.
+
+
+Cada recepción de un mensaje genera un nuevo thread de ejecución de algunos de los componentes del sistema web. Los únicos componentes dentro del \emph{sistema web} que procesan serialmente algunos de los pedidos son el  \emph{Administrador de sesiones} y el \emph{Administrador de claves públicas}, ya que ciertos pedidos concurrentes podrían causar conflictos.
+Al recibir un mensaje de log in, se verifican los datos y se genera una página con las opciones disponibles para el usuario. 
+El mensaje de log in contiene el nombre de usuario y hash de la contraseña, que serán contrastados con la información del usuario almacenados en el \emph{repositorio de usuarios y sus datos}. En este último repositorio también existe información que permite identificar a la persona física en otros sistemas de la Facultad, como puede ser el número de legajo o libreta universitaria y también la preferencia de idioma del usuario. 
 De ser correctos los datos suministrados, se abre una sesión que caducará tras transcurrir una determinada cantidad de minutos que aún no se ha decidido.
 % TODO escribirlo mejor, explicar que quiere decir en nuestro sistema que se abre una sesión.
 % TODO esto hay que mostrarlo cuando se amplie el diagrama de sistema web o borrarlo.
-La información que se guarda asociada a una sesión incluye el nombre de usuario, el identificador del usuario en el \emph{Repositorio de datos de la Facultad} y el idioma.
+La información que se guarda asociada a una sesión incluye el nombre de usuario, el identificador del usuario en el \emph{Repositorio de datos de la Facultad} y el idioma, así como también una clave simétrica, que será utilizada para confirmar la autenticidad de cada mensaje recibido.
 El sistema web procederá a construir el código HTML que muestra las opciones disponibles para el usuario. Para hacer esto último, obtendrá los datos del usuario disponibles en el repositorio de datos de la Facultad, que contiene para cada integrante, por ejemplo, información del claustro, cantidad de materias aprobadas para los estudiantes, antigüedad para los docentes y fecha de graduación para los graduados. Toda esta información está almacenada en una serie de sistemas ya existentes, por lo que el componente \emph{Repositorio de datos de la facultad} actuará como interfáz en este sentido.
 A continuación el sistema web pedirá información al administrador de elecciones abiertas\footnote{Ver \ref{admin_elecciones} para una explicación detallada del administrador de elecciones abiertas.} para determinar si existen opciones disponibles para el usuario, como podrían ser la posibilidad de postularse como candidato o emitir su voto.
 
@@ -63,8 +66,14 @@ El intercambio de mensajes que se dará entre el componente browser usuario exte
 Cada mensaje contiene un header y datos. El header tiene los campos tipo, tamaño de los datos, origen, destino y dependiendo del tipo puede contener campos adicionales. 
 
 \subsection{Explicación de los componentes}
-
+\label{explicaciones}
 Existen varios componentes que por su constante y muy relevante interacción con otros componentes es conveniente explicar en mayor detalle.
+
+\subsubsection{Repositorio de usuarios y sus datos}
+
+
+Este repositorio contiene nombres de usuario e información adicional asociada a cada nombre de usuario. A cada nombre de usuario se asocia el hash correspondiente a la contraseña, el claustro al que pertenece, el identificador de la persona dentro de la Facultad (L. U. o Legajo según corresponda) y la preferencia de idioma. 
+
 
 \subsubsection{Administrador de elecciones abiertas}
 
@@ -83,3 +92,134 @@ Cabe destacar que una misma elección podría involucrar a más de un claustro, 
 
 El sistema de restricciones, dada una elección y un identificador de usuario, es capaz de decidir si dicho usuario puede postularse para esa elección y si puede votar en la misma. Concretamente existen dos mensajes distintos que pueden ser enviados a este componente, uno para verificar que un usuario puede postularse y otro para verificar que el mismo puede votar, siempre especificando una elección.
 El sistema de restricciones verificará que la elección en cuestión esté en la etapa que corresponda mediante una llamada al administrador de elecciones abiertas.
+
+\subsubsection{HardToBreak}
+
+Estamos suponiendo que el sistema externo \emph{HardToBreak} provee un servicio que permite liberar una clave pública y mantener en secreto una clave privada hasta la finalización de los comicios.
+Utilizamos este servicio para encriptar los votos con la clave pública obtenida y distribuir los votos al final de las elecciones para ser fiscalizados públicamente desencriptándolos con la clave privada. De esta manera, garantizamos que ni siquiera alguien con acceso al sistema pueda obtener información de los votos mientras se desarrolla la votación y permitimos que la fiscalización se haga con software idéntico al utilizado para el conteo oficial de votos.
+
+
+\subsection{Explicación de los mensajes entre \emph{browser usuario externo} y \emph{Sistema Web}}
+\label{mensajes}
+\subsubsection{\emph{Browser usuario externo} a \emph{Sistema web}}
+Header genérico:
+\begin{itemize}
+ \item tipo de mensajes
+ \item (en todos menos en log in) número de sesión
+\end{itemize}
+
+Datos genéricos:
+\begin{itemize}
+ \item checksum
+\end{itemize}
+
+Tipos de mensaje:
+\begin{itemize}
+ \item log in 
+ \item cambio idioma
+ \item postularse
+ \item log out
+ \item votar
+ \item pedido de clave pública
+\end{itemize}
+
+Datos según tipo de mensaje:
+\begin{itemize}
+ \item log in
+
+
+  \begin{itemize}
+    \item nombre de usuario
+    \item hash de contraseña
+  \end{itemize}
+  \item cambio idioma
+  
+
+  \begin{itemize}
+    \item nuevo idioma seleccionado
+  \end{itemize}
+  \item postulación
+  
+  \begin{itemize}
+    \item elección
+  \end{itemize}
+  \item log out
+  
+  \begin{itemize}
+    \item nombre de usuario
+  \end{itemize}
+  \item pedido de clave pública
+  
+  \begin{itemize}
+    \item elección
+  \end{itemize}
+  \item votar
+  
+  \begin{itemize}
+    \item elección
+    \item voto (lista de candidatos concatenada a un 
+			numero aleatorio, todo encriptado usando la clave pública recibida)
+  \end{itemize}
+\end{itemize}
+
+
+
+Todos los mensajes desde browser usuario externo a sistema web tendrán los datos, incluído el checksum, encriptados con una clave simétrica, excepto el mensaje de log in. La clave simétrica será parte de la respuesta al mensaje de log in. De esta forma se evita que un atacante genere mensaje en nombre de otro usuario.
+
+\subsubsection{\emph{Browser usuario externo} a \emph{Sistema web}}
+
+
+Tipos de mensajes:
+\begin{itemize}
+ \item inicio de sesión
+ \item HTML
+ \item clave pública
+\end{itemize}
+
+
+Datos según tipo de mensajes:
+\begin{itemize}
+ \item inicio de sesión
+ \begin{itemize}
+  \item HTML
+  \item número de sesión
+  \item clave simétrica
+ \end{itemize}
+ \item HTML
+  \begin{itemize}
+   \item código de la página
+  \end{itemize}
+
+ \item Clave pública
+  \begin{itemize}
+   \item Clave pública
+  \end{itemize}
+\end{itemize}
+
+
+\subsection{Conector seguro cliente servidor}
+
+Debido a que se decidió priorizar la Seguridad como atributo de calidad, explicaremos en mayor detalle en qué consiste el conector seguro y de qué forma se garantiza la no repudiación y privacidad.
+
+El conector está basado en un conector de cliente servidor sin modificaciones que resulta beneficioso en términos de performance y cuenta con dos componentes, uno correspondiente al extremo del servidor y otro al del cliente. 
+Estos componentes, si bien difieren en detalles, cumplen la misma funcionalidad, que consiste en encriptar los mensajes que se desean enviar por el conector, y desencriptar aquellos que se reciben.
+
+
+Del lado del cliente es fácil encriptar los datos gracias a una entidad certificante que proveerá la clave pública de cada sitio web correspondiente a una sede de una Facultad. Los datos encriptados con esta clave pública sólo podrán desencriptarse con la clave privada, de la cual sólo dispone la sede de la Facultad.
+
+
+Del lado del servidor no es tan simple encriptar los datos, ya que no resulta práctico habilitar un certificado para cada cliente. La clave privada del servidor será utilizada como firma, pero el contenido del mensaje sería accesible a cualquiera.
+Es por esto que junto con el mensaje enviado por el cliente se recibe una clave simétrica generada aleatoriamente por el cliente y que será utilizada para encriptar la respuesta del servidor. Como la clave es enviada encriptada, sólo el servidor y el cliente la conocen.
+
+
+Los mensajes puede ser enviados de manera independiente, ya que no se abre, en esta capa del protocolo de comunicación, una sesión, por lo que se podría generar una nueva thread de ejecución para cada mensaje. 
+
+El conector se utilizará habitualmente para enviar mensajes desde un cliente a un servidor. El recibirse una llamada con tal propósito, el encriptador solicitará la clave pública del servidor de la sede a la entidad certificante y generará una clave simétrica. Con la clave pública encriptará el mensaje concatenado a la clave simétrica generada y a un checksum de la totalidad de los datos. El mensaje encriptado junto con la clave simétrica serán enviados al comunicador, que actuará como interfaz con el conector cliente servidor, y se bloqueará a la espera de una respuesta. Al recibir una respuesta, la misma será enviada al desencriptador, junto con la clave simétrica. El desencriptador desencriptará el mensaje con la clave simétrica y nuevamente utilizará la clave pública para verificar la autenticidad del mensaje, que además contará con un checksum. De esta manera puede retornar la respuesta recibida desde el servidor.
+
+
+En caso de ocurrir algún fallo, que por alguna razón no se reciba una respuesta por parte del servidor o que los checksums no fueran correctos, se levantará una excepción que permita manejar la falla, proveyendo de esta manera mayor extensibilidad y tolerancia a fallas.
+
+
+
+
+
