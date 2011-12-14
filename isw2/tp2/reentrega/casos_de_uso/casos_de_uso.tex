@@ -18,6 +18,7 @@ Pos condición & El alumno posee usuario y contraseña para el sistema\\
 \hline
 \end{tabular}
 \medskip
+\\
 Detalle: Se dispondrá de una terminal en la sede que le corresponde a cada alumno para que pueda generar por primera vez su contraseña personal. Pudiendo chequear así la identidad de alumno.
 \end{center}
 
@@ -34,6 +35,7 @@ Pos condición & El Graduado posee usuario y contraseña para el sistema\\
 \hline
 \end{tabular}
 \medskip
+\\
 Detalle: Idem caso anterior.
 \end{center}
 
@@ -50,6 +52,7 @@ Pos condición & El Profesor posee usuario y contraseña para el sistema\\
 \hline
 \end{tabular}
 \medskip
+\\
 Detalle: Idem caso anterior.
 \end{center}
 
@@ -90,6 +93,7 @@ Pre condición & El graduado posee usuario y contraseña \\
 Pos condición & El usuario se encuentra autenticado como graduado\\
 \hline
 \end{tabular}
+\\
 Detalle: El caso de uso es similar al del alumno, pero la verificación es diferente. Se chequea si el graduado esta en el padrón.
 \end{center}
 
@@ -105,7 +109,64 @@ Pre condición & El profesor posee usuario y contraseña \\
 Pos condición & El usuario se encuentra autenticado como Profesor\\
 \hline
 \end{tabular}
+\\
 Detalle: El caso de uso es similar a los dos anteriores.
+\end{center}
+
+\bigskip
+\item Postulandose para las elecciones
+\bigskip
+\begin{center}
+\begin{tabular}{ll}
+Actor & Alumno \\
+\hline
+Pre condición & El alumno se encuentra logueado \\
+\hline
+Pos condición & El usuario se postulado para el claustro de alumnos\\
+\hline
+\end{tabular}
+\medskip
+\begin{tabular}{c p{4cm}|p{4cm}}
+ & Curso normal & Curso alternativo \\
+ 1. & El alumno se postula para su claustro &  \\
+ 2. & El sistema valida que se cumplan las restricciones para la elección abierta & \\
+ 3. & Si se cumplen las restricciones se recibe una confirmación de postulación & Si los datos son incorrectos el usuario recibe un mensaje de error\\
+ 4. & Fin del caso de uso & Fin del caso de uso \\
+\end{tabular}
+\end{center}
+
+\bigskip
+\item Postulandose para las elecciones
+\bigskip
+\begin{center}
+\begin{tabular}{ll}
+Actor & Graduado \\
+\hline
+Pre condición & El graduado se encuentra logueado \\
+\hline
+Pos condición & El usuario se postulado para el claustro de graduado\\
+\hline
+\end{tabular}
+\medskip
+\\
+Detalle: Caso similar al de alumno, pero con las restricciones pertinentes.
+\end{center}
+
+\bigskip
+\item Postulandose para las elecciones
+\bigskip
+\begin{center}
+\begin{tabular}{ll}
+Actor & Profesor \\
+\hline
+Pre condición & El profesor se encuentra logueado \\
+\hline
+Pos condición & El usuario se postulado para el claustro de profesor\\
+\hline
+\end{tabular}
+\medskip
+\\
+Detalle: Caso similar al de alumno, pero con las restricciones pertinentes.
 \end{center}
 
 
@@ -146,6 +207,7 @@ Pos condición & Se registra el voto del graduado\\
 \hline
 \end{tabular}
 \medskip
+\\
 Detalle: Similar al caso de uso para el alumno, pero con los candidatos para el claustro correspondiente
 \end{center}
 
@@ -162,6 +224,7 @@ Pos condición & Se registra el voto del profesor\\
 \hline
 \end{tabular}
 \medskip
+\\
 Detalle: Se hace especial hincapie en que un profesor puede emitir un voto por dos candidatos
 \end{center}
 
@@ -191,8 +254,6 @@ Pos condición & La interfaz se presenta en el idioma elegido \\
 
 
 
-%TODO: Emitir voto, candidatearse, cambiar el idioma. Rectorado: Agregar eleccion, modificar eleccion, cambiar reglamentos, auditar.
-
 
 
 \bigskip
@@ -207,6 +268,7 @@ Pos condici\'on & Se agega una nueva elección \\
 \hline
 \end{tabular}
 \medskip
+\\
 Detalle: En este caso de uso el rectorado agrega una nueva elección seteando el calendario para la misma.
 \end{center}
 
@@ -223,9 +285,9 @@ Pos condici\'on & Se modifica una nueva elección \\
 \hline
 \end{tabular}
 \medskip
+\\
 Detalle: En este caso de uso el rectorado modifica el calendario de una elección vigente cambiando los periodos de dicha elección
 \end{center}
-
 
 
 \bigskip
@@ -240,6 +302,7 @@ Pos condici\'on & Se cambia el reglamento para las elecciones \\
 \hline
 \end{tabular}
 \medskip
+\\
 Detalle: En este caso de uso el rectorado modifica las restricciones que tienen las elecciones para la postulación de candidatos y para saber que personas estan habilitadas para votar
 \end{center}
 
@@ -282,9 +345,30 @@ Pos condición & El Partido sabe qu\'e votantes sufragaron \\
 \hline
 \end{tabular}
 \medskip
+\\
 Detalle: Caso similar a la fiscalización por parte del rectorado
 \end{center} 
 
-
+\bigskip
+\item Viendo resultados
+\begin{center}
+\begin{tabular}{ll}
+Actor & Rectorado \\
+\hline
+Pre condición & Ninguna\\
+\hline
+Pos condición & El Rectorado visualiza los resultados de una elección \\
+\hline
+\end{tabular}
+\medskip
+\begin{tabular}{c p{4cm}|p{4cm}}
+ & Curso normal & Curso alternativo \\
+ 1. & El rectorado selecciona la funcionalidad de visualización de resultados &   \\
+ 2. & El sistema despliega la lista de elecciones disponibles &   \\
+ 3. & El rectorado elije la elección a visualizar & \\
+ 4. & El sistema le env\'ia al rectorado los resultados de la elección elegida\\
+ 5. & Fin de caso de uso & \\
+\end{tabular}
+\end{center}  
 
 \end{itemize}
