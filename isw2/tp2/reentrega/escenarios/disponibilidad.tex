@@ -17,8 +17,6 @@
 %transmitidos al momento de recuperar la conexión. De la misma manera, esta modalidad
 %deberá funcionar para la comunicación entre el rectorado y las facultades.
 
-\item \escenario{Se espera que el sistema
-pueda funcionar también en modalidad offline.}{Interno al sistema.}{Hay problemas de conectividad, se cay\'o la conexión entre el sistema y GUI-onlines}{Operación normal}{GUI-offline}{Las GUI-offline detectan que el sistema est\'a offline y habilitan la votación local en modalidad offline}{La GUI-offline detecta que el sistema perdi\'o conectividad y habilita votación offline en menos de 0.3 segundos}
 
 %\textbf{Javier:}
 %"Quiere tener comunicacio\'on constante con otras facultades y rectorado"
@@ -40,7 +38,7 @@ los procesos simultáneos que se desarrollen.}
 {Error en la conexi\'on}
 {Normal}
 {Sistema}
-{Utilizar una conexi\'on alternativa}
+{Utilizar una conexi\'on alternativa dedicada}
 {El sistema estar\'a conectado nuevamente en menos de 15 segundos}
 
 %\textbf{Javier:}
@@ -59,4 +57,15 @@ los procesos simultáneos que se desarrollen.}
 {Sistema}
 {El voto es registrado correctamente}
 {Se garantiza una disponibilidad de 99,99999\%}
+
+\medskip
+\item   \escenario{Desea que se instalen terminales en todas las sedes para que pueda votar todos los alumnos sin conexión a internet.}
+{Un votante}
+{Un votante sin conexión a internet se acerca a la facultad a emitir su voto en una terminal}
+{Normal}
+{Terminal de votaci\'on}
+{La terminal registra el voto}
+{El 100\% de los votantes pueden votar en las terminales de la facultad}
+
+
 \end{enumerate}
