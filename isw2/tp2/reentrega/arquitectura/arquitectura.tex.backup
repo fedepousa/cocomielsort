@@ -20,21 +20,26 @@ Cada mensaje está asociado a las diversas acciones que puede querer realizar el
 
 
 Cada recepción de un mensaje genera un nuevo thread de ejecución de algunos de los componentes del sistema web. Los únicos componentes dentro del \emph{sistema web} que procesan serialmente algunos de los pedidos son el  \emph{Administrador de sesiones} y el \emph{Administrador de claves públicas}, ya que ciertos pedidos concurrentes podrían causar conflictos.
-Al recibir un mensaje de log in, se verifican los datos y se genera una página con las opciones disponibles para el usuario. 
-El mensaje de log in contiene el nombre de usuario y hash de la contraseña, que serán contrastados con la información del usuario almacenados en el \emph{repositorio de usuarios y sus datos}. En este último repositorio también existe información que permite identificar a la persona física en otros sistemas de la Facultad, como puede ser el número de legajo o libreta universitaria y también la preferencia de idioma del usuario. 
-De ser correctos los datos suministrados, se abre una sesión que caducará tras transcurrir una determinada cantidad de minutos que aún no se ha decidido.
+Al recibir un mensaje de log in, éste será manejado inicialmente por el \emph{Multiplexor de mensajes}, que lo procesará solicitando al \emph{Coordinador de log in} confirmación de la identidad y una respuesta en formato HTML para responder al usuario. El \emph{Coordinador de log in} se encarga de coordinar la verificación de los datos y la generación de una página con las opciones disponibles para el usuario. 
+El mensaje de log in contiene el nombre de usuario y hash de la contraseña, que serán contrastados por \emph{Verificador de identificación} con la información del usuario almacenados en el \emph{repositorio de usuarios y sus datos}. En este último repositorio también existe información que permite identificar a la persona física en otros sistemas de la Facultad, como puede ser el número de legajo o libreta universitaria y también la preferencia de idioma del usuario. 
+De ser correctos los datos suministrados, el \emph{Verificador de identificación} abrirá una sesión en el \emph{Administrador de sesiones} que caducará tras transcurrir una determinada cantidad de minutos que aún no se ha decidido.
 % TODO escribirlo mejor, explicar que quiere decir en nuestro sistema que se abre una sesión.
 % TODO esto hay que mostrarlo cuando se amplie el diagrama de sistema web o borrarlo.
 La información que se guarda asociada a una sesión incluye el nombre de usuario, el identificador del usuario en el \emph{Repositorio de datos de la Facultad} y el idioma, así como también una clave simétrica, que será utilizada para confirmar la autenticidad de cada mensaje recibido.
-El sistema web procederá a construir el código HTML que muestra las opciones disponibles para el usuario. Para hacer esto último, obtendrá los datos del usuario disponibles en el repositorio de datos de la Facultad, que contiene para cada integrante, por ejemplo, información del claustro, cantidad de materias aprobadas para los estudiantes, antigüedad para los docentes y fecha de graduación para los graduados. Toda esta información está almacenada en una serie de sistemas ya existentes, por lo que el componente \emph{Repositorio de datos de la facultad} actuará como interfáz en este sentido.
-A continuación el sistema web pedirá información al administrador de elecciones abiertas\footnote{Ver \ref{admin_elecciones} para una explicación detallada del administrador de elecciones abiertas.} para determinar si existen opciones disponibles para el usuario, como podrían ser la posibilidad de postularse como candidato o emitir su voto.
+Tras confirmarse la identidad, el \emph{Coordinador de log in} llama al \emph{Generador de HTML intermedio} especificando el claustro, opciones disponibles e idioma. Dicho generador creará código intermedio que contiene variables que serán posteriormente reemplazadas por el \emph{Módulo de idiomas} convirtiendo dicho código en HTML válido. 
+El \emph{Coordinador de log in} pedirá información al \emph{administrador de elecciones abiertas\footnote{Ver \ref{admin_elecciones} para una explicación detallada del administrador de elecciones abiertas.}} para determinar si existen opciones disponibles para el usuario, como podrían ser la posibilidad de postularse como candidato o emitir su voto.
+
+% obtendrá los datos del usuario disponibles en el repositorio de datos de la Facultad, que contiene para cada integrante, por ejemplo, información del claustro,
+%  cantidad de materias aprobadas para los estudiantes, antigüedad para los docentes y fecha de graduación para los graduados. Toda esta información está almacenada en una serie de sistemas ya existentes, por lo que el componente \emph{Repositorio de datos de la facultad} actuará como interfáz en este sentido.
+% A continuación el sistema web pedirá información al administrador de elecciones abiertas\footnote{Ver \ref{admin_elecciones} para una explicación detallada del administrador de elecciones abiertas.} para determinar si existen opciones disponibles para el usuario, como podrían ser la posibilidad de postularse como candidato o emitir su voto.
 
 
 En caso de existir estas opciones, se hace una verificación adicional con el fin de mostrar sólo opciones que el usuario pueda efectivamente ejercer.  
 Por ejemplo, se busca que si un usuario no cuenta con los requisitos necesarios para poder postularse o emitir su voto, dichas opciones no se muestren en la interfaz web, con la finalidad de mejorar la usabilidad del sistema. 
 Esta verificación es llevada a cabo mediante una llamada al \emph{Sistema de restricciones}.
 
-Una vez identificadas todas las opciones disponibles se procede a generar el código HTML que permitirá mostrar la interfaz en un browser genérico. 
+
+Una ventaja de utilizar código HTML es que permitirá mostrar la interfaz en un browser genérico. 
 Decidimos separar la generación del código HTML, y en última instancia la interfaz gráfica, siguiendo el estilo sugerido en la bibliografía. 
 Este estilo permite experimentar con la interfaz independientemente del desarrollo del resto del sistema. 
 Por otra parte la utilización de HTML garantiza que será posible interactuar con el sistema utilizando diversas plataformas, mejorando así la usabilidad.
@@ -65,9 +70,17 @@ El intercambio de mensajes que se dará entre el componente browser usuario exte
 
 Cada mensaje contiene un header y datos. El header tiene los campos tipo, tamaño de los datos, origen, destino y dependiendo del tipo puede contener campos adicionales. 
 
+
+
+
 \subsection{Explicación de los componentes}
 \label{explicaciones}
 Existen varios componentes que por su constante y muy relevante interacción con otros componentes es conveniente explicar en mayor detalle.
+
+
+\subsubsection{Repositorio de datos de la Facultad}
+Para cada integrante de la Facultad exiten registros del claustro y dependiendo del caso, cantidad de materias aprobadas para los estudiantes, antigüedad para los docentes y fecha de graduación para los graduados. Toda esta información está almacenada en una serie de sistemas ya existentes, por lo que el componente \emph{Repositorio de datos de la facultad} actuará como interfáz en este sentido.
+
 
 \subsubsection{Repositorio de usuarios y sus datos}
 
@@ -142,6 +155,7 @@ Datos según tipo de mensaje:
   
   \begin{itemize}
     \item elección
+    \item información adicional de un candidato en formato XML
   \end{itemize}
   \item log out
   
@@ -208,13 +222,16 @@ Estos componentes, si bien difieren en detalles, cumplen la misma funcionalidad,
 Del lado del cliente es fácil encriptar los datos gracias a una entidad certificante que proveerá la clave pública de cada sitio web correspondiente a una sede de una Facultad. Los datos encriptados con esta clave pública sólo podrán desencriptarse con la clave privada, de la cual sólo dispone la sede de la Facultad.
 
 
-Del lado del servidor no es tan simple encriptar los datos, ya que no resulta práctico habilitar un certificado para cada cliente. 
+Del lado del servidor no es tan simple encriptar los datos, ya que no resulta práctico habilitar un certificado para cada cliente. La clave privada del servidor será utilizada como firma, pero el contenido del mensaje sería accesible a cualquiera.
 Es por esto que junto con el mensaje enviado por el cliente se recibe una clave simétrica generada aleatoriamente por el cliente y que será utilizada para encriptar la respuesta del servidor. Como la clave es enviada encriptada, sólo el servidor y el cliente la conocen.
 
 
 Los mensajes puede ser enviados de manera independiente, ya que no se abre, en esta capa del protocolo de comunicación, una sesión, por lo que se podría generar una nueva thread de ejecución para cada mensaje. 
 
-El conector se utilizará habitualmente para enviar mensajes desde un cliente a un servidor. El recibirse una llamada con tal propósito, el encriptador solicitará la clave pública del servidor de la sede a la entidad certificante y generará una clave simétrica. Con la clave pública encriptará el mensaje concatenado a la clave simétrica generada y a un checksum de la totalidad de los datos. El mensaje encriptado junto con la clave simétrica serán enviados al comunicador, que actuará como interfaz con el conector cliente servidor, y se bloqueará a la espera de una respuesta. Al recibir una respuesta, la misma será enviada al desencriptador, junto con la clave simétrica. 
+El conector se utilizará habitualmente para enviar mensajes desde un cliente a un servidor. El recibirse una llamada con tal propósito, el encriptador solicitará la clave pública del servidor de la sede a la entidad certificante y generará una clave simétrica. Con la clave pública encriptará el mensaje concatenado a la clave simétrica generada y a un checksum de la totalidad de los datos. El mensaje encriptado junto con la clave simétrica serán enviados al comunicador, que actuará como interfaz con el conector cliente servidor, y se bloqueará a la espera de una respuesta. Al recibir una respuesta, la misma será enviada al desencriptador, junto con la clave simétrica. El desencriptador desencriptará el mensaje con la clave simétrica y nuevamente utilizará la clave pública para verificar la autenticidad del mensaje, que además contará con un checksum. De esta manera puede retornar la respuesta recibida desde el servidor.
+
+
+En caso de ocurrir algún fallo, que por alguna razón no se reciba una respuesta por parte del servidor o que los checksums no fueran correctos, se levantará una excepción que permita manejar la falla, proveyendo de esta manera mayor extensibilidad y tolerancia a fallas.
 
 
 
