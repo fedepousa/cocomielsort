@@ -181,7 +181,7 @@ intermedio
           <y:Geometry height="40.62274895194787" width="78.5" x="259.75" y="499.29918552402614"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.9375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="73.076171875" x="2.7119140625" y="4.342624475973935">Verificador 
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.9375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="77.798828125" x="0.3505859375" y="4.342624475973935">Coordinador
 de Log in</y:NodeLabel>
           <y:Shape type="rectangle3d"/>
         </y:ShapeNode>

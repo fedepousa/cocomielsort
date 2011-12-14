@@ -42,14 +42,14 @@ Decidimos separar la generación del código HTML, y en última instancia la int
 Este estilo permite experimentar con la interfaz independientemente del desarrollo del resto del sistema. 
 Por otra parte la utilización de HTML garantiza que será posible interactuar con el sistema utilizando diversas plataformas, mejorando así la usabilidad.
 
-3855 siglo nuevo 19
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Una vez generado el código, éste es enviado como respuesta al mensaje original de log in del usuario. 
 
 La página generada mostraría, por ejemplo, las opciones de postularse para una elección en particular y votar en otra elección. Al seleccionar la opción de postularse, se enviaría un mensaje de tipo {\bf postulación} al sistema web. 
 
 El mensaje será recibido por el \emph{Multiplexor de mensajes} que, utilizando el número de sesión recibido, obtendrá del \emph{Administrador de sesiones} la clave simétrica necesaria para desencriptar la parte de datos del mensaje recibido y verificará la integridad del mismo con el checksum.
-El \emph{Multiplexor de mensajes} comunicará al \emph{Receptor de Postulación}
+El \emph{Multiplexor de mensajes} comunicará al \emph{Receptor de Postulación}.
 El \emph{Sistema de restricciones} determinará si el usuario puede postularse para la elección indicada y en dicho caso se solicitará al \emph{Administrador de elecciones abiertas} que registre al candidato. 
 
 
