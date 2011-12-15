@@ -2,12 +2,12 @@
 
 \subsection{Etapas e Iteraciones}
 
-El desarrollo del proyecto se elaborar\'a en cuatro etapas: Incepción ,Elaboración, Construcción y Transferencia. La etapa de incepción contar\'a con 2 iteraciones; el elaboración con 3; la construcción con 4 y la transición con 2. Durante la etapa de incepción se terminar\'an de consolidar los requerimientos funcionales y atributos de calidad de manera que queden definidos los drivers de la arquitectura. En la etapa de elaboración se elaborar\'a la especificación y modelos necesarios para comprender el funcionamiento del sistema. Durante la etapa de construcción se implementan los modulos especificados y en la etapa de transferencia se procede a realizar el \textit{deployment} de las distintas piezas del sistema.  
+El desarrollo del proyecto se elaborar\'a en cuatro etapas: Incepción, Elaboración, Construcción y Transferencia. Durante la etapa de incepción se terminar\'an de consolidar los requerimientos funcionales y atributos de calidad de manera que queden definidos los drivers de la arquitectura. En la etapa de elaboración se elaborar\'a la especificación y modelos necesarios para comprender el funcionamiento del sistema. Durante la etapa de construcción se implementan los m\'odulos especificados y en la etapa de transferencia se procede a realizar el \textit{deployment} de las distintas piezas del sistema.  
 \\ \par
 
-La primera iteración de la etapa de elaboración consistira en realizar la interfaz de los usuarios, ya que permitira tener documentado en una etapa temprana todos los requisitos que se deberan cumplir para que el usuario pueda registrar los votos. Otra ventaja de tomar esta tarea en una etapa preliminar es la capacidad de poder usar la interfaz para mostrar al cliente como esta funcionando el sistema (hay algo concreto a mostrar y se le va agregando funcionalidades), además de que permite un mayor grado de confiablidad para el testing de usabilidad. 
+La primera iteración de la etapa de elaboración consistira en realizar la interfaz de los usuarios, ya que permitira tener documentado en una etapa temprana todos los requisitos que se deberan cumplir para que el usuario pueda registrar los votos. Otra ventaja de tomar esta tarea en una etapa preliminar es la capacidad de poder usar la interfaz para mostrar al cliente como esta funcionando el sistema (es decir, hay algo concreto a mostrar a medida que se van agregando funcionalidades), además de que permite un mayor grado de confiablidad para el testing de usabilidad. 
 \\ \par
-El iteración esta dividida en varias etapas. Lo dividimos en varios modulos que consideramos que agrupan todas las funcionalidades que debera tener la interfaz, estas son el modulo de autenticación, el modulo de envio de votos, el modulo de formulario de votaci\'on y una ultima fase que testea la integraci\'on de los modulos y corrige los errores correspondientes.
+Cada iteración esta dividida en varias etapas. Lo dividimos en varios m\'odulos que consideramos que agrupan todas las funcionalidades que deber\'a tener la interfaz, estas son: el m\'odulo de autenticación, el m\'odulo de envio de votos, el m\'odulo de formulario de votaci\'on y una \'ultima fase que testea la integraci\'on de los m\'odulos y corrige los errores correspondientes.
 
 % La primera iteración comprenderá principalmente tareas de gestión y capacitación de los desarrolladores. Se tomó esta decisión porque identificamos varios intereses en conflicto y consideramos que es necesario establecer una prioridad entre ellos tan tempranamente como sea posible. Para hacer esto correctamente será necesario en primer lugar capacitar al equipo de desarrollo y de comunicación con los stakeholders en temas de seguridad. Priorizamos este tema en particular por haber sido considerado un atributo de calidad prioritario en el QAW y por la falta de capacitación del equipo en el mismo. 
 %Una vez realizada la capacitación será necesario identificar arquitecturas alternativas priorizando de manera diferente los distintos intereses en conflicto.
@@ -19,12 +19,11 @@ El iteración esta dividida en varias etapas. Lo dividimos en varios modulos que
 \subsubsection{Gantt}
 
 %% El primer Gantt tiene que tener todos los casos de uso, el segundo muestra todas las etapas de una iteracion, incluyendo disenio, impmentacion, testing
-Algunas aclaraciones generales. Para elaborar los diagramas contamos con un equipo de cuatro personas, un lider de proyecto, un desañodor de arquitecturas de software, un programador, y un tester. Una limitaci\'on del programa que utilizamos para realizar los diagramas es que dos tareas pueden ser asignadas a una misma persona sin chequear que la persona pueda satisfacer las dos tareas, por lo que creamos algunas dependencias ficticias para mostrar que la tareas no pueden ser realizadas al mismo tiempos. A consecuencia de esto tambien hay tareas que pueden estar solapadas y no se ven (especialmente en la vista general).
-
+Algunas aclaraciones generales. Para elaborar los diagramas contamos con un equipo de cuatro personas, un l\'ider de proyecto, un diseñador de arquitecturas de software, un programador, y un tester. Una limitaci\'on del programa que utilizamos para realizar los diagramas es que dos tareas pueden ser asignadas a una misma persona sin chequear que la persona pueda satisfacer las dos tareas, por lo que creamos algunas dependencias ficticias para mostrar que la tareas no pueden ser realizadas al mismo tiempo. A consecuencia de esto tambi\'en hay tareas que pueden estar solapadas y no se ven (especialmente en la vista general).
 
 \par
 
-En el primer diagrama mostramos cómo planeamos el proyecto a nivel general viendo así las distintas etapas y teniendo un tiempo estimado para las entregas. Agregamos tambi\'en tareas realacionadas con la administración del proyecto. El tiempo estimado para
+En el primer diagrama mostramos cómo planeamos el proyecto a nivel general viendo así las distintas etapas y teniendo un tiempo estimado para las entregas. Agregamos tambi\'en tareas realacionadas con la administración del proyecto tal como licitaci\'on de los servicios que utilizara el sistema, capacitación del equipo de desarrollo. El tiempo estimado para
 finalizar el desarrollo son 128 dias (aproximadamente 26 semanas).	
 
 \par
@@ -33,7 +32,7 @@ finalizar el desarrollo son 128 dias (aproximadamente 26 semanas).
 \end{figure}
 
 \par
-En un segundo diagrama hicimos un zoom sobre las primera iteración de la primera etapa de elaboración, que tal como habiamos dicho corresponde a la interfaz del usuario. Dividimos la interfaz de usuario en los modulos dichos anteriormente. A cada uno de los modulos les asignamos tareas para realizarla, cada modulo contendran tareas similares, una tarea de an\'alisis funcional, un diseño, implementaci\'on , testing y correcci\'on de errores.
+En un segundo diagrama hicimos un zoom sobre las primera iteración de la primera etapa de elaboración, que tal como habiamos dicho corresponde a la interfaz del usuario. Dividimos la interfaz de usuario en los m\'odulos dichos anteriormente. A cada uno de los m\'odulos les asignamos tareas para realizarla, cada uno contendra tareas similares, una tarea de an\'alisis funcional, una tarea de diseño, un tarea de implementaci\'on , una tarea de testing y una tarea de correcci\'on de errores.
 
 \par
 \begin{figure}[H]
@@ -44,14 +43,14 @@ En un segundo diagrama hicimos un zoom sobre las primera iteración de la primer
 
 \renewcommand{\labelitemi}{$\tiny \blacksquare$}
 
-Algunos puntos a destacar del diagrama:
-\begin{itemize}
- \item Podemos ver que en esta iteración el equipo de desarrollo realizará dos tareas. Durante la primera semana, la capacitación que consiste en instruir al equipo en diversos temas relacionados con seguridad ya que queremos minimizar problemas de este tipo. Durante la segunda semana pueden comenzar tareas de desarrollo con los modulos relacionados a comunicación, ya que se encuentra aislado al resto del sistema y tienen partes que no requieren de una arquitectura definida.
- \item El equipo de diseñadores se encarga inicialmente de realizar una arquitectura preliminar, para empezar a analizar alguno de los riesgos y problemas que nuestra arquitectura deberá solucionar. Permite que se empiezen a analizar algunos de los problemas que se trataran con los stakeholders, y se ver\'an qu\'e elementos externos serán requeridos.
- \item Luego habr\'a una etapa de an\'alisis de mercado para estar informados de las distintas tecnologías foraneas con las que nuestro proyecto podr\'a contar. Un punto clave para el proyecto por ejemplo es hacer un an\'alisis de servidores y proveedores de internet, ya que debemos mantener una alta disponibilidad.
- \item Por último el equipo de diseñadores se encargará de reunirse con los stakeholders para terminar de definir la arquitectura. Para esto fue necesario tener una arquitectura preliminar, y haber investigado las tecnologías disponibles para consensuar aquellas a utilizar. 
-\end{itemize}
-\renewcommand{\labelitemi}{}
+%Algunos puntos a destacar del diagrama:
+%\begin{itemize}
+% \item Podemos ver que en esta iteración el equipo de desarrollo realizará dos tareas. Durante la primera semana, la capacitación que consiste en instruir al equipo en diversos temas relacionados con seguridad ya que queremos minimizar problemas de este tipo. Durante la segunda semana pueden comenzar tareas de desarrollo con los m\'odulos relacionados a comunicación, ya que se encuentra aislado al resto del sistema y tienen partes que no requieren de una arquitectura definida.
+% \item El equipo de diseñadores se encarga inicialmente de realizar una arquitectura preliminar, para empezar a analizar alguno de los riesgos y problemas que nuestra arquitectura deberá solucionar. Permite que se empiezen a analizar algunos de los problemas que se trataran con los stakeholders, y se ver\'an qu\'e elementos externos serán requeridos.
+% \item Luego habr\'a una etapa de an\'alisis de mercado para estar informados de las distintas tecnologías foraneas con las que nuestro proyecto podr\'a contar. Un punto clave para el proyecto por ejemplo es hacer un an\'alisis de servidores y proveedores de internet, ya que debemos mantener una alta disponibilidad.
+% \item Por último el equipo de diseñadores se encargará de reunirse con los stakeholders para terminar de definir la arquitectura. Para esto fue necesario tener una arquitectura preliminar, y haber investigado las tecnologías disponibles para consensuar aquellas a utilizar. 
+%\end{itemize}
+%\renewcommand{\labelitemi}{}
 
 
 \subsection{Work Breakdown Structure} 
@@ -83,41 +82,42 @@ Sistema Rectorado incluye los productos que el rectorado estaba interesado en te
 \begin{itemize}
  \item {\bf Sistema Facultad}
 \begin{itemize}
- \item \emph{Modulo de servicios Web} 
+ \item \emph{M\'odulo de servicios Web} 
 \begin{itemize}
  \item Se encarga de la comunicación con las distintas interfaces web.
 \end{itemize}
- \item \emph{Modulo de procesamiento de votos} 
+ \item \emph{M\'odulo de procesamiento de votos} 
 \begin{itemize}
  \item Se encarga de procesar los votos que recibe y procesarlos según las reglas enviadas por el decanato.
 \end{itemize}
- \item \emph{Modulo de registro de votos} 
+ \item \emph{M\'odulo de registro de votos} 
 \begin{itemize}
  \item Se encarga registrar los votos junto con las personas que votaron.
 \end{itemize}
- \item \emph{Modulo de publicador de votos} 
+ \item \emph{M\'odulo de publicador de votos} 
 \begin{itemize}
  \item Se encarga de enviar a todos los fiscalizadores los votos que esta procesando.
 \end{itemize}
 \end{itemize}
  \item {\bf Interfaz de Usuario}
 \begin{itemize}
- \item \emph{Modulo de autenticación}
+ \item \emph{M\'odulo de autenticación}
 \begin{itemize}
  \item Se encarga de validar que el usuario es miembro del departamento
- \item {\bf Caso de uso:} Un usuario quiere ingresar al sistema
+ \item {\bf Caso de uso:} Generando contrase\~na
+ \item {\bf Caso de uso:} Ingresando al sistema
 \end{itemize}
- \item \emph{Modulo de formularios de votos}
+ \item \emph{M\'odulo de formularios de votos}
 \begin{itemize}
  \item Se encarga de mostrar al usuario la lista de candidatos y darle opión de elegir
- \item {\bf Caso de uso:} Un usuario quiere emitir un voto
+ \item {\bf Caso de uso:} Emitiendo un voto
 \end{itemize}
- \item \emph{Modulo de envio de votos}
+ \item \emph{M\'odulo de envio de votos}
 \begin{itemize}
  \item Se encarga de enviar el voto al sistema de la facultad
- \item {\bf Caso de uso:} Un usuario quiere emitir un voto
+ \item {\bf Caso de uso:} Emitiendo un voto
 \end{itemize}
- \item \emph{Modulo de idiomas}
+ \item \emph{M\'odulo de idiomas}
 \begin{itemize}
  \item Se encarga de adminisitrar los idiomas soportados en la interfaz de usuario
  \item {\bf Caso de uso:} Cambio de idioma en la interfaz de usuario
@@ -125,16 +125,16 @@ Sistema Rectorado incluye los productos que el rectorado estaba interesado en te
 \end{itemize}
  \item {\bf Comunicación}
 \begin{itemize}
- \item \emph{Modulo de encriptación/desencriptación}
+ \item \emph{M\'odulo de encriptación/desencriptación}
 \begin{itemize}
  \item Se encarga de encriptar y desencriptar la información enviada y recibida
  \item {\bf Caso de uso:} Conexión desde diversas plataformas
 \end{itemize}
- \item \emph{Modulo de no repudiación}
+ \item \emph{M\'odulo de no repudiación}
 \begin{itemize}
  \item Se encarga de verificar que las entidades que pretenden ser miembros del departamento realmente lo sean
 \end{itemize}
- \item \emph{Modulo de confiabilidad de conexión}
+ \item \emph{M\'odulo de confiabilidad de conexión}
 \begin{itemize}
  \item Se encarga de controlar los canales que deben ser confiables
 \end{itemize}
@@ -156,15 +156,15 @@ Sistema Rectorado incluye los productos que el rectorado estaba interesado en te
 \end{itemize}
  \item {\bf Fiscalizadores}
 \begin{itemize}
- \item \emph{Modulo de recibo de votos}
+ \item \emph{M\'odulo de recibo de votos}
 \begin{itemize}
  \item Se encarga de recibir los votos del sistema de la facultad
 \end{itemize}
- \item \emph{Modulo de subscripción a facultades}
+ \item \emph{M\'odulo de subscripción a facultades}
 \begin{itemize}
  \item Se encarga de administrar las subscripciones a las distintas facultades
 \end{itemize}
- \item \emph{Modulo de recuento de votos}
+ \item \emph{M\'odulo de recuento de votos}
 \begin{itemize}
  \item Se encarga de procesar los votos que recibe haciendo un recuento de votos
  \item {\bf Caso de uso:} Fiscalización parcial de los resultados
@@ -172,17 +172,17 @@ Sistema Rectorado incluye los productos que el rectorado estaba interesado en te
 \end{itemize}
  \item {\bf Sistema Rectorado}
 \begin{itemize}
- \item \emph{Modulo de confección de reglas}
+ \item \emph{M\'odulo de confección de reglas}
 \begin{itemize}
  \item Se encarga de definir reglas para procesar los votos
- \item {\bf Caso de uso:} El rectorado quiere enviar nuevos reglamentos a las facultades
+ \item {\bf Caso de uso:} Reglamentando elecciones
 \end{itemize}
- \item \emph{Modulo control de votantes}
+ \item \emph{M\'odulo control de votantes}
 \begin{itemize}
  \item Se encarga de consultar a los sistemas de las facultades quienes votaron
- \item {\bf Caso de uso:} Auditibilidad de votantes
+ \item {\bf Caso de uso:} Auditando votantes
 \end{itemize}
- \item \emph{Modulo de administración de candidatos}
+ \item \emph{M\'odulo de administración de candidatos}
 \begin{itemize}
  \item Se encarga de administrar a los candidatos de las distintas facultades
 \end{itemize}
@@ -191,7 +191,7 @@ Sistema Rectorado incluye los productos que el rectorado estaba interesado en te
 \end{itemize}
 
 
-Para la facilitación de lectura omitimos escribir el nivel más bajo del WBS para poder ver descripciones de cada modulo. Cada uno de los modulos pueden ser divididos en diferentes procesos
+Para la facilitación de lectura omitimos escribir el nivel más bajo del WBS para poder ver descripciones de cada m\'odulo. Cada uno de los m\'odulos pueden ser divididos en diferentes procesos
 los cuales serán asignados dependiendo del producto.
 \begin{itemize}
  \item Analisis funcional
