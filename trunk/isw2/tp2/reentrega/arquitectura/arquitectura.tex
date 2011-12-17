@@ -73,6 +73,21 @@ Este esquema de encripción de los votos permite fiscalizar la votación con com
 %Cada mensaje contiene un header y datos. El header tiene los campos tipo, tamaño de los datos, origen, destino y dependiendo del tipo puede contener campos adicionales. 
 
 
+% TODO ver lo de transaccional recontra seguro
+Desde el punto de vista del usuario votante o postulante ya fueron explicadas gran parte de las funcionalidades. Pasaremos a explicar las funcionalidades relevantes desde el punto de vista del rectorado o agrupaciones políticas. 
+Todas las funcionalidades del rectorado se proveerán en una terminal segura con su acceso físico restringido a personal autorizado. El componente que actúa como punto de acceso al sistema será la \emph{Interfaz gráfica}. 
+La \emph{Interfaz gráfica} mostrará las opciones disponibles, que serán en todo momento ver y modificar las elecciones programadas y sus reglamentos, ver resultados y actas de elecciones finalizadas y ver quiénes votaron para una elección abierta.
+
+
+Al seleccionar la funcionalidad de administrar elecciones en proceso la \emph{Interfaz gráfica} se comunicará con el \emph{Administrador de elecciones} para poder mostrar las elecciones aún no finalizadas. Al seleccionar una de las mismas se mostrarán las fechas de inicio y fin de cada una de las etapas de dicha elección, con la posibilidad de editar fechas aún no alcanzadas. Adicionalmente se podrá ver el reglamento vigente para tal elección, que podrá ser modificado y obtener un listado de aquellos que ya votaron, sólo cuando la elección estuviera en etapa de sufragio. Se utilizará para expresar los reglamentos un lenguaje de propósito espéfico con el poder expresivo para representar restricciones que mencionen antig\"uedad docente, fecha de graduación, y el resto de los datos disponibles en los registros de las facultades. El \emph{Administrador de elecciones} proveerá la información de las elecciones y recibirá los cambios realizados a las mismas mediante llamadas y estará encargado de validar las modificaciones, ya que no se debe permitir que se ingresen fechas en el pasado o restricciones ilegales donde no se cumpla la sintaxis del lenguaje utilizado. Cuando estuviera habilitada la opción de obtener los votantes que ya realizaron su voto, la lista correspondiente sería obtenida del componente \emph{Administrador de datos oficiales de quiénes votaron}  
+
+
+El \emph{Administrador de elecciones} distribuirá los cambios a todas las facultades mediante un conector publish and subscribe, ya que exitirán distintos tipos de mensaje, de acuerdo a si el mensaje debe generar un cambio de reglamento o una actualización en las fechas de una elección y de acuerdo a las facultades que afecte. El esquema de mensajes será similar al que generamos para la comunicación entre el browser y el \emph{Sistema web} para implementar las funcionalidades provistar a los votantes y potenciales candidatos, donde existe un tipo de mensaje para cada una de las acciones posibles desde el punto de vista del usuario.
+Esta comunicación debe ser segura, por lo que todos los mensajes contarán con un checksum que será firmado por el Rectorado, para garantizar la autenticidad de los mensajes. Es parte de la funcionalidad esperada del conector verificar la autenticidad y descartar los mensajes sospechosos, registrando información de los mismos para recabar información de posible ataques. 
+
+
+
+
 
 
 \subsection{Explicación de los componentes}
