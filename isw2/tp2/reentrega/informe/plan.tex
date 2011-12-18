@@ -5,9 +5,9 @@
 El desarrollo del proyecto se elaborar\'a en cuatro etapas: Incepción, Elaboración, Construcción y Transferencia. Durante la etapa de incepción se terminar\'an de consolidar los requerimientos funcionales y atributos de calidad de manera que queden definidos los drivers de la arquitectura. En la etapa de elaboración se elaborar\'a la especificación y modelos necesarios para comprender el funcionamiento del sistema. Durante la etapa de construcción se implementan los m\'odulos especificados y en la etapa de transferencia se procede a realizar el \textit{deployment} de las distintas piezas del sistema.  
 \\ \par
 
-La primera iteración de la etapa de elaboración consistira en realizar la interfaz de los usuarios, ya que permitira tener documentado en una etapa temprana todos los requisitos que se deber\'an cumplir para que el usuario pueda registrar los votos. Otra ventaja de tomar esta tarea en una etapa preliminar es la capacidad de poder usar la interfaz para mostrar al cliente como esta funcionando el sistema (es decir, hay algo concreto a mostrar a medida que se van agregando funcionalidades), además de que permite un mayor grado de confiablidad para el testing de usabilidad. 
+La primera iteración de la etapa de elaboración consistirá en realizar la interfaz de los usuarios, ya que permitirá tener documentado en una etapa temprana todos los requisitos que se deber\'an cumplir para que el usuario pueda registrar los votos. Otra ventaja de tomar esta tarea en una etapa preliminar es la capacidad de poder usar la interfaz para mostrar al cliente como está funcionando el sistema (es decir, hay algo concreto a mostrar a medida que se van agregando funcionalidades), además de que permite un mayor grado de confiablidad para el testing de usabilidad. 
 \\ \par
-Cada iteración esta dividida en varias etapas. Lo dividimos en varios m\'odulos que consideramos que agrupan todas las funcionalidades que deber\'a tener la interfaz, estas son: el m\'odulo de autenticación, el m\'odulo de envio de votos, el m\'odulo de formulario de votaci\'on y una \'ultima fase que testea la integraci\'on de los m\'odulos y corrige los errores correspondientes.
+Cada iteración está dividida en varias etapas. Lo dividimos en varios m\'odulos que consideramos que agrupan todas las funcionalidades que deber\'a tener la interfaz, estas son: el m\'odulo de autenticación, el m\'odulo de envio de votos, el m\'odulo de formulario de votaci\'on y una \'ultima fase que testea la integraci\'on de los m\'odulos y corrige los errores correspondientes.
 
 % La primera iteración comprenderá principalmente tareas de gestión y capacitación de los desarrolladores. Se tomó esta decisión porque identificamos varios intereses en conflicto y consideramos que es necesario establecer una prioridad entre ellos tan tempranamente como sea posible. Para hacer esto correctamente será necesario en primer lugar capacitar al equipo de desarrollo y de comunicación con los stakeholders en temas de seguridad. Priorizamos este tema en particular por haber sido considerado un atributo de calidad prioritario en el QAW y por la falta de capacitación del equipo en el mismo. 
 %Una vez realizada la capacitación será necesario identificar arquitecturas alternativas priorizando de manera diferente los distintos intereses en conflicto.
@@ -19,12 +19,11 @@ Cada iteración esta dividida en varias etapas. Lo dividimos en varios m\'odulos
 \subsubsection{Gantt}
 
 %% El primer Gantt tiene que tener todos los casos de uso, el segundo muestra todas las etapas de una iteracion, incluyendo disenio, impmentacion, testing
-Algunas aclaraciones generales. Para elaborar los diagramas contamos con un equipo de cuatro personas, un l\'ider de proyecto, un diseñador de arquitecturas de software, un programador, y un tester. Una limitaci\'on del programa que utilizamos para realizar los diagramas es que dos tareas pueden ser asignadas a una misma persona sin chequear que la persona pueda satisfacer las dos tareas, por lo que creamos algunas dependencias ficticias para mostrar que la tareas no pueden ser realizadas al mismo tiempo. A consecuencia de esto tambi\'en hay tareas que pueden estar solapadas y no se ven (especialmente en la vista general).
+Algunas aclaraciones generales: para elaborar los diagramas contamos con un equipo de cuatro personas, un l\'ider de proyecto, un diseñador de arquitecturas de software, un programador, y un tester. Una limitaci\'on del programa que utilizamos para realizar los diagramas es que dos tareas pueden ser asignadas a una misma persona sin chequear que la persona pueda satisfacer las dos tareas, por lo que creamos algunas dependencias ficticias para mostrar que la tareas no pueden ser realizadas al mismo tiempo. Otra consecuencia de esto es que tambi\'en hay tareas que pueden estar solapadas y no se ven (especialmente en la vista general).
 
 \par
 
-En el primer diagrama mostramos cómo planeamos el proyecto a nivel general viendo así las distintas etapas y teniendo un tiempo estimado para las entregas. Agregamos tambi\'en tareas realacionadas con la administración del proyecto tal como licitaci\'on de los servicios que utilizara el sistema, capacitación del equipo de desarrollo. El tiempo estimado para
-finalizar el desarrollo son 128 dias (aproximadamente 26 semanas).	
+En el primer diagrama mostramos cómo planeamos el proyecto a nivel general viendo así las distintas etapas y teniendo un tiempo estimado para las entregas. Agregamos tambi\'en tareas relacionadas con la administración del proyecto tal como la licitaci\'on de los servicios que utilizará el sistema y la capacitación del equipo de desarrollo. El tiempo estimado para finalizar el desarrollo son 128 dias (aproximadamente 26 semanas).	
 
 \par
 \begin{figure}[H]
@@ -32,7 +31,7 @@ finalizar el desarrollo son 128 dias (aproximadamente 26 semanas).
 \end{figure}
 
 \par
-En un segundo diagrama hicimos un zoom sobre las primera iteración de la primera etapa de elaboración, que tal como habiamos dicho corresponde a la interfaz del usuario. Dividimos la interfaz de usuario en los m\'odulos dichos anteriormente. A cada uno de los m\'odulos les asignamos tareas para realizarla, cada uno contendra tareas similares, una tarea de an\'alisis funcional, una tarea de diseño, un tarea de implementaci\'on , una tarea de testing y una tarea de correcci\'on de errores.
+En un segundo diagrama hicimos un zoom sobre la primera iteración de la primera etapa de elaboración, que tal como habíamos dicho corresponde a la interfaz del usuario. Dividimos la interfaz de usuario en los m\'odulos dichos anteriormente. A cada uno de los m\'odulos les asignamos tareas a realizarce, cada uno contendrá tareas similares: una tarea de an\'alisis funcional, una tarea de diseño, una tarea de implementaci\'on, una tarea de testing y una tarea de correcci\'on de errores.
 
 \par
 \begin{figure}[H]
@@ -64,18 +63,23 @@ Los seis elementos del primer nivel serán: Interfaz, Sistema Facultad, Comunica
 \\ \par
 Interfaz comprende los productos y procesos relacionados con el relevamiento de requerimientos, casos de uso, codificación y prueba de la interfaz. Este producto seguramente podrá ser construído independientemente de los demás.
 \\ \par
+%TODO cambiar este parrafo que aplicaba para la primer entrega pero no ahora
 Sistema Facultad incluye productos y procesos orientados a la construcción del sistema autónomo de cada Facultad, que se encargará de recibir y fiscalizar la totalidad de los votos correspondientes a la misma. Los requerimientos funcionales y atributos de calidad prioritarios definitivos para este producto dependerán de varias tareas de gestión a realizarse en las primeras iteraciones, con el fin de consensuar soluciones de compromiso a los diversos intereses, que actualmente se encuentran en conflicto. Como ser la posibilidad de contar con resultados parciales y un registro de votantes en tiempo real, en contraposición con la idea de garantizar el voto secreto.
 \\ \par
-Comunicación está conformado por productos y procesos proveedores de comunicación entre los distintos sistemas de cada Facultad. Este poducto, tal como Sistema Facultad, depende de la definición de varios aspectos de los atributos de calidad y requerimientos funcionales, por lo que dependerá de los procesos de Actividades de gestión.
+%TODO lo mismo que antes
+Comunicación está conformado por productos y procesos proveedores de comunicación entre los distintos sistemas de cada Facultad. Este producto, tal como Sistema Facultad, depende de la definición de varios aspectos de los atributos de calidad y requerimientos funcionales, por lo que dependerá de los procesos de Actividades de gestión.
 \\ \par
+%TODO lo mismo que antes
 Actividades de gestión reúne diversos procesos que pueden ser separados en unos pocos ejes. En primer lugar está la capacitación de los stakeholders, explicando por qué los intereses expresados entran en conflicto y cuáles alternativas arquitectónicas permiten priorizar uno u otro y en qué medida.
 En segundo lugar habrán gran cantidad de procesos destinados a la validación intermedia del avance de la construcción del sistema, que consistirá en reuniones pequeñas con los principales interesados y algunas reuniones más grandes donde se muestren funcionalidades de interes general.
 También habrán actividades de planificación en general, que comprenderá, por ejemplo, la confección de los diagramas de Gantt de cada iteración.
 Por último será necesario capacitar al equipo en temas de seguridad, para lograr que sea tenida en cuenta en todos los niveles de desarrollo y elicitación de requerimientos. Esta capacitación será una de las primeras actividades a realizarse.
 \\ \par
+%TODO fiscalizador se refiere a los componentes que constituyen la agrupacion politica
 Fiscalizador es el producto que tendran los diversos partidos politicos. Nuestro sistema deberá armar estos sub sistemas que permitiran que los partidos políticos se comuniquen con las facultades que deseen y además se realize el recuento de votos en forma local de manera que se logre una elección más transparente. 
 \\ \par
-Sistema Rectorado incluye los productos que el rectorado estaba interesado en tener para realizar diversas tareas de gestión. Una de esas tareas era tener concimiento de los usarios que ya votaron en la elección. Además el rectorado solicitó que el sistema permita cambiar su funcionalidad para realizar plebiscitos, por lo que agregamos la funcionalidad de definir las reglas de las elecciones permitiendo que sea facilmente modificable.
+%TODO explicar las otras funcionalidades
+Sistema Rectorado incluye los productos que el rectorado estaba interesado en tener para realizar diversas tareas de gestión. Una de esas tareas era tener conocimiento de los usarios que ya votaron en la elección. Además el rectorado solicitó que el sistema permita cambiar su funcionalidad para realizar plebiscitos, por lo que agregamos la funcionalidad de definir las reglas de las elecciones permitiendo que sea facilmente modificables.
 
 \begin{itemize}
  \item {\bf \emph{WBS Vox}}
@@ -191,7 +195,7 @@ Sistema Rectorado incluye los productos que el rectorado estaba interesado en te
 \end{itemize}
 
 
-Para la facilitación de lectura omitimos escribir el nivel más bajo del WBS para poder ver descripciones de cada m\'odulo. Cada uno de los m\'odulos pueden ser divididos en diferentes procesos
+Para la facilitación de la lectura omitimos escribir el nivel más bajo del WBS para poder ver descripciones de cada m\'odulo. Cada uno de los m\'odulos pueden ser divididos en diferentes procesos,
 los cuales serán asignados dependiendo del producto.
 \begin{itemize}
  \item Analisis funcional
