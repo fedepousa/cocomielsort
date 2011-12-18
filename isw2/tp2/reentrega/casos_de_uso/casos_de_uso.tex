@@ -3,6 +3,8 @@
 A continuaci\'on se presentan los principales casos de uso del sistema.
 Se muestran las principales interacciones que hay desde el exterior (votantes, rectorado, partidos pol\'iticos) con el sistema.
 
+Notese que existe una herencia de actores para los casos de uso. Los actores Alumno, Graduado y Profesor heredan del actor Usuario externo.
+
 
 \begin{itemize}
 \bigskip
@@ -10,125 +12,58 @@ Se muestran las principales interacciones que hay desde el exterior (votantes, r
 \bigskip
 \begin{center}
 \begin{tabular}{ll}
-Actor & Alumno \\
+Actor & Usuario externo \\
 \hline
 Pre condición & Ninguna \\
 \hline
-Pos condición & El alumno posee usuario y contraseña para el sistema\\
+Pos condición & El usuario externo posee usuario y contraseña para el sistema\\
 \hline
 \end{tabular}
 \medskip
 \\
-Detalle: Se dispondrá de una terminal en la sede que le corresponde a cada alumno para que pueda generar por primera vez su contraseña personal. Pudiendo chequear así la identidad de alumno.
+Detalle: Se dispondrá de una terminal en la sede que le corresponde a cada usuario externo para que pueda generar por primera vez su contraseña personal. Pudiendo chequear así la identidad del usuario externo.
 \end{center}
-
-\bigskip
-\item Generando contraseña
-\bigskip
-\begin{center}
-\begin{tabular}{ll}
-Actor & Graduado \\
-\hline
-Pre condición & Ninguna \\
-\hline
-Pos condición & El Graduado posee usuario y contraseña para el sistema\\
-\hline
-\end{tabular}
-\medskip
-\\
-Detalle: Idem caso anterior.
-\end{center}
-
-\bigskip
-\item Generando contraseña
-\bigskip
-\begin{center}
-\begin{tabular}{ll}
-Actor & Profesor \\
-\hline
-Pre condición & Ninguna \\
-\hline
-Pos condición & El Profesor posee usuario y contraseña para el sistema\\
-\hline
-\end{tabular}
-\medskip
-\\
-Detalle: Idem caso anterior.
-\end{center}
-
-%TODO ver que la generacion decontrasañas esta en la arquitectura.
 
 \bigskip
 \item Ingresando al sistema
 \bigskip
 \begin{center}
 \begin{tabular}{ll}
-Actor & Alumno \\
+Actor & Usuario externo\\
 \hline
-Pre condición & El alumno posee usuario y contraseña \\
+Pre condición & El usuario externo posee usuario y contraseña \\
 \hline
-Pos condición & El usuario se encuentra autenticado como alumno\\
+Pos condición & El usuario externo se encuentra autenticado\\
 \hline
 \end{tabular}
 \medskip
 \begin{tabular}{c p{4cm}|p{4cm}}
  & Curso normal & Curso alternativo \\
- 1. & El votante indica su nombre de usuario y contraseña &  \\
+ 1. & El usuario externo indica su nombre de usuario y contraseña &  \\
  2. & El sistema valida los datos ingresados & \\
- 3. & Si los datos son correctos el usuario recibe una confirmación de que su nombre de usuario y contraseña son correctos & Si los datos son incorrectos el usuario recibe un mensaje de error indicando que la combinación de nombre de usuario y contraseña es incorrecta \\
- 4. & Se muestra la interfaz de voto electrónico para alumnos & Ir al fin del caso de uso \\
+ 3. & Si los datos son correctos el usuario externo recibe una confirmación de que su nombre de usuario y contraseña son correctos & Si los datos son incorrectos el usuario externo recibe un mensaje de error indicando que la combinación de nombre de usuario y contraseña es incorrecta \\
+ 4. & Se muestra la interfaz de voto electrónico para el usuario & Fin del caso de uso \\
  5. & Fin del caso de uso& \\ 
 \end{tabular}
 \end{center}
 
-\bigskip
-\item Ingresando al sistema
-\bigskip
-\begin{center}
-\begin{tabular}{ll}
-Actor & Graduado \\
-\hline
-Pre condición & El graduado posee usuario y contraseña \\
-\hline
-Pos condición & El usuario se encuentra autenticado como graduado\\
-\hline
-\end{tabular}
-\\
-Detalle: El caso de uso es similar al del alumno, pero la verificación es diferente. Se chequea si el graduado esta en el padrón.
-\end{center}
-
-\bigskip
-\item Ingresando al sistema
-\bigskip
-\begin{center}
-\begin{tabular}{ll}
-Actor & Profesor \\
-\hline
-Pre condición & El profesor posee usuario y contraseña \\
-\hline
-Pos condición & El usuario se encuentra autenticado como Profesor\\
-\hline
-\end{tabular}
-\\
-Detalle: El caso de uso es similar a los dos anteriores.
-\end{center}
 
 \bigskip
 \item Postulandose para las elecciones
 \bigskip
 \begin{center}
 \begin{tabular}{ll}
-Actor & Alumno \\
+Actor & Usuario externo \\
 \hline
-Pre condición & El alumno se encuentra logueado \\
+Pre condición & El usuario externo se encuentra logueado \\
 \hline
-Pos condición & El usuario se postulado para el claustro de alumnos\\
+Pos condición & El usuario externo se postula para el claustro correspondiente\\
 \hline
 \end{tabular}
 \medskip
 \begin{tabular}{c p{4cm}|p{4cm}}
  & Curso normal & Curso alternativo \\
- 1. & El alumno se postula para su claustro &  \\
+ 1. & El usuario externo se postula para su claustro &  \\
  2. & El sistema valida que se cumplan las restricciones para la elección abierta & \\
  3. & Si se cumplen las restricciones se recibe una confirmación de postulación & Si los datos son incorrectos el usuario recibe un mensaje de error\\
  4. & Fin del caso de uso & Fin del caso de uso \\
@@ -136,120 +71,64 @@ Pos condición & El usuario se postulado para el claustro de alumnos\\
 \end{center}
 
 \bigskip
-\item Postulandose para las elecciones
+\item Visualizando cantidatos
 \bigskip
 \begin{center}
 \begin{tabular}{ll}
-Actor & Graduado \\
+Actor & Usuario externo\\
 \hline
-Pre condición & El graduado se encuentra logueado \\
+Pre condición & El usuario externo se encuentra auntenticado\\
 \hline
-Pos condición & El usuario se postulado para el claustro de graduado\\
-\hline
-\end{tabular}
-\medskip
-\\
-Detalle: Caso similar al de alumno, pero con las restricciones pertinentes.
-\end{center}
-
-\bigskip
-\item Postulandose para las elecciones
-\bigskip
-\begin{center}
-\begin{tabular}{ll}
-Actor & Profesor \\
-\hline
-Pre condición & El profesor se encuentra logueado \\
-\hline
-Pos condición & El usuario se postulado para el claustro de profesor\\
+Pos condición & El usuario externo visualiza los candidatos\\
 \hline
 \end{tabular}
-\medskip
 \\
-Detalle: Caso similar al de alumno, pero con las restricciones pertinentes.
+\medskip
+Detalle: Los usuarios externos pueden visualizar a todos los candidatos que se pueden votar en su claustro.
 \end{center}
-
 
 \bigskip
 \item Emitiendo voto
 \bigskip
 \begin{center}
 \begin{tabular}{ll}
-Actor & Alumno \\
+Actor & Usuario externo \\
 \hline
-Pre condición & El alumno se encuentra autenticado \\
+Pre condición & El usuario externo se encuentra visualizando los candidatos y no voto\\
 \hline
-Pos condición & Se registra el voto del alumno\\
+Pos condición & Se registra el voto del usuario externo\\
 \hline
 \end{tabular}
 \medskip
 \begin{tabular}{c p{4cm}|p{4cm}}
  & Curso normal & Curso alternativo \\
- 1. & Se muestra ante el usuario la lista de candidatos alumnos, con una opción para votar en blanco y otra para anular el voto &  \\
- 2. & El alumno selecciona el candidato de su preferencia, o anular o votar en blanco & \\
+ 1. & Se muestra ante el usuario la lista de candidatos de su claustro, con una opción para votar en blanco. &  \\
+ 2. & El usuario selecciona el candidato de su preferencia o votar en blanco & \\
  3. & Se pide confirmación al usuario mostrando claramente qué opción ha elegido & \\
- 4. & El votante confirma su elección & Si el votanto no confirma la elección en 30 segundos se descarta la selección del usuario \\
+ 4. & El votante confirma su elección & Si el votante no confirma la elección en 30 segundos se descarta la selección del usuario \\
  5. & Se muestra el certificado por pantalla & Fin de caso de uso \\
  6. & Fin de caso de uso & \\ 
 \end{tabular}
 \end{center}
 
-\bigskip
-\item Emitiendo voto
-\bigskip
-\begin{center}
-\begin{tabular}{ll}
-Actor & Graduado \\
-\hline
-Pre condición & El graduado se encuentra autenticado \\
-\hline
-Pos condición & Se registra el voto del graduado\\
-\hline
-\end{tabular}
-\medskip
-\\
-Detalle: Similar al caso de uso para el alumno, pero con los candidatos para el claustro correspondiente
-\end{center}
 
-\bigskip
-\item Emitiendo voto
-\bigskip
-\begin{center}
-\begin{tabular}{ll}
-Actor & Profesor \\
-\hline
-Pre condición & El profesor se encuentra autenticado \\
-\hline
-Pos condición & Se registra el voto del profesor\\
-\hline
-\end{tabular}
-\medskip
-\\
-Detalle: Se hace especial hincapie en que un profesor puede emitir un voto por dos candidatos
-\end{center}
+
 
 \bigskip
 \item Modificando el idioma en la interfaz de usuario
 \bigskip
-\item Cambio de idioma en la interfaz de usuario.
 \begin{center}
 \begin{tabular}{ll}
-Actor & Alumno, Graduado o Profesor \\
+Actor & Usuario externo \\
 \hline
-Pre condición & El usuario se encuentra autenticado \\
+Pre condición & El usuario externo se encuentra autenticado \\
 \hline
-Pos condición & La interfaz se presenta en el idioma elegido \\
+Pos condición & La interfaz se presenta en el idioma elegido y se guarda la preferencia\\
 \hline
 \end{tabular}
 \medskip
-\begin{tabular}{c p{4cm}|p{4cm}}
- & Curso normal & Curso alternativo \\
- 1. & El usuario selecciona la funcionalidad de modificar el idioma del sistema &   \\
- 2. & El sistema despliega los diferentes idiomas disponibles &   \\
- 3. & El usuario elije entre una de las opciones disponibles & Si luego de 30 segundos no se selecciona opción se cancela la operación\\
- 4. & El sistema modifica la interfaz del usuario con el idioma elegido & Fin de caso de uso\\
- 5. & Fin de caso de uso & \\
-\end{tabular}
+        \\
+Detalle: El usuario externo tiene la posibilidad de elegir el idioma en el que quiere que la interfaz se presente mediante una elección en un botón desplegable.
 \end{center}
 
 
@@ -264,12 +143,12 @@ Actor & Rectorado \\
 \hline
 Pre condici\'on & Ninguna \\
 \hline
-Pos condici\'on & Se agega una nueva elección \\
+Pos condici\'on & Se agrega una nueva elección \\
 \hline
 \end{tabular}
 \medskip
 \\
-Detalle: En este caso de uso el rectorado agrega una nueva elección seteando el calendario para la misma.
+Detalle: En este caso de uso el rectorado agrega una nueva elección seteando el calendario, las restricciones, el claustro y la facultad para la misma.
 \end{center}
 
 
@@ -281,12 +160,12 @@ Actor & Rectorado \\
 \hline
 Pre condici\'on & Ninguna \\
 \hline
-Pos condici\'on & Se modifica una nueva elección \\
+Pos condici\'on & Se modifica una elección aún no finalizada\\
 \hline
 \end{tabular}
 \medskip
 \\
-Detalle: En este caso de uso el rectorado modifica el calendario de una elección vigente cambiando los periodos de dicha elección
+Detalle: En este caso de uso el rectorado modifica el calendario de una elección vigente cambiando los períodos, realizando los chequeos necesarios para mantener la validez de la elección.
 \end{center}
 
 
@@ -303,13 +182,8 @@ Pos condici\'on & Se cambia el reglamento para las elecciones \\
 \end{tabular}
 \medskip
 \\
-Detalle: En este caso de uso el rectorado modifica las restricciones que tienen las elecciones para la postulación de candidatos y para saber que personas estan habilitadas para votar
+Detalle: En este caso de uso el rectorado modifica las restricciones que tienen las elecciones para la postulación de candidatos, para saber qué personas están habilitadas para votar y para indicar cuántos votos por integrante de cada claustro son aceptados.
 \end{center}
-
-
-
-
-
 
 \bigskip
 \item Auditando votantes
@@ -323,14 +197,8 @@ Pos condición & El Rectorado sabe qu\'e votantes sufragaron \\
 \hline
 \end{tabular}
 \medskip
-\begin{tabular}{c p{4cm}|p{4cm}}
- & Curso normal & Curso alternativo \\
- 1. & El rectorado selecciona la funcionalidad de auditabilidad &   \\
- 2. & El sistema despliega la lista de la facultades disponibles &   \\
- 3. & El rectorado elije la facultad que quiere auditar & \\
- 4. & El sistema le env\'ia al rectorado los votantes que sufragaron de la facultad seleccionada \\
- 5. & Fin de caso de uso & \\
-\end{tabular}
+\\
+Detalle: En este caso de uso se puede ver cómo el Rectorado puede visualizar los votantes que ya sufragaron en una elección dada.
 \end{center}  
 
 \bigskip
@@ -346,7 +214,7 @@ Pos condición & El Partido sabe qu\'e votantes sufragaron \\
 \end{tabular}
 \medskip
 \\
-Detalle: Caso similar a la fiscalización por parte del rectorado
+Detalle: Caso similar a la auditación por parte del rectorado.
 \end{center} 
 
 \bigskip
@@ -361,14 +229,92 @@ Pos condición & El Rectorado visualiza los resultados de una elección \\
 \hline
 \end{tabular}
 \medskip
-\begin{tabular}{c p{4cm}|p{4cm}}
- & Curso normal & Curso alternativo \\
- 1. & El rectorado selecciona la funcionalidad de visualización de resultados &   \\
- 2. & El sistema despliega la lista de elecciones disponibles &   \\
- 3. & El rectorado elije la elección a visualizar & \\
- 4. & El sistema le env\'ia al rectorado los resultados de la elección elegida\\
- 5. & Fin de caso de uso & \\
+\\
+Detalle: En este caso de uso se puede ver cómo el Rectorado puede visualizar los resultados de una elección finalizada.
+\end{center} 
+
+\bigskip
+\item Viendo resultados
+\begin{center}
+\begin{tabular}{ll}
+Actor & Partido político \\
+\hline
+Pre condición & Ninguna\\
+\hline
+Pos condición & El Rectorado visualiza los resultados de una elección \\
+\hline
 \end{tabular}
-\end{center}  
+\medskip
+\\
+Detalle: En este caso de uso se puede ver cómo el Rectorado puede visualizar los resultados de una elección finalizada.
+\end{center} 
+
+\bigskip
+\item Fiscalizando votaci\'on
+\begin{center}
+\begin{tabular}{ll}
+Actor & Partido Político \\
+\hline
+Pre condición & El usuario del partido se encuentra visualizando los resultados de la elección\\
+\hline
+Pos condición & El Partido Político fiscaliza la elección elegida\\
+\hline
+\end{tabular}
+\medskip
+\\
+Detalle: Un partido político tiene la potestad de fiscalizar cualquier elección finalizada por demanda.
+\end{center}
+
+
+\bigskip
+\item Aceptando acta
+\begin{center}
+\begin{tabular}{ll}
+Actor & Rectorado \\
+\hline
+Pre condición & Se cerró una elección, se generaron los resultados y se están visualizando\\
+\hline
+Pos condición & Se genera el acta\\
+\hline
+\end{tabular}
+\medskip
+\\
+Detalle: Cuando se cierra una elección, se generan los resultados que son enviados a Rectorado. Luego un representate tiene que validar los resultados obtenidos para que se genere el acta pertinente.
+\end{center}
+
+\bigskip
+\item Resolviendo conflictos
+\begin{center}
+\begin{tabular}{ll}
+Actor & Rectorado \\
+\hline
+Pre condición & Se cerró una elección, se generaron los resultados y se están visualizando\\
+\hline
+Pos condición & Se genera un acta con los resultados y una enmienda manual\\
+\hline
+\end{tabular}
+\medskip
+        \\
+Detalle: Cuando se cierra una elección, se generan los resultados que son enviados a Rectorado. Si estos resultados son conflictivos un representante del Rectorado tiene que agregar una enmienda manualmente que aparecerá junto con los resultados automáticos.
+\end{center}
+
+\bigskip
+\item Visualizando fechas
+\begin{center}
+\begin{tabular}{ll}
+Actor & Rectorado/Partido Político \\
+\hline
+Pre condición & Hay una elección abierta\\
+\hline
+Pos condición & El Rectorado/Partido Político visualiza las fechas de la elección elegida\\
+\hline
+\end{tabular}
+\\
+\medskip
+Detalle: Tanto el Rectorado como los partidos políticos estan habilitados para visualizar las fechas de las elecciones abiertas.
+\end{center}
+
+
+ 
 
 \end{itemize}
