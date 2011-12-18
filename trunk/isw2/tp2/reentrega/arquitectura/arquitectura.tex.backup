@@ -149,10 +149,35 @@ El administrador de elecciones permitirá también, dada una elección y un clau
 Dado el código correspondiente a un candidato, una elección y un claustro permite obtener información del mismo en formato XML, permitiendo extender a futuro los datos que se almacenan. 
 Cabe destacar que una misma elección podría involucrar a más de un claustro, pero las fechas en todos ellos deberán coincidir, así como también los reglamentos que las rigen.
 
+
+Las funcionalidades antes mencionadas comprenden la interacción posible con el componente, pero el mismo se encarga además de realizar varias tareas de administración de las elecciones. El componente verifica constantemente los cambios de estado en las elecciones y coordinando al resto de los componentes para que el cambio se vea reflejado en la interacción permitida a los usuarios. En el caso de inicio y fin de varias de las etapas no es necesario hacer nada más que actualizar dicho estado, pero al finalizar la etapa de sufragio el componente obtendrá de \emph{HardToBreak} la clave privada correspondiente a la elección finalizada y de \emph{Sistema de restricciones} el reglamento fijado para los votos en dicha elección. Con estos datos notificará a cada uno de los \emph{almacenamientos de votos encriptados} que dicha etapa ha finalizado, enviando en dicha notificación la clave pública y el reglamento, para que cada uno de estos repositorios distribuya los votos a las agrupaciones interesadas y al \emph{repositorio de votos antiguos} de la Facultad, junto con la información necesaria para procesarlos.
+
+
+\subsubsection{Almacenamiento de votos encriptados}
+Este componente consiste en un repositorio que almacena los votos de eventualmente varias elecciones. En otras secciones la representación de los votos está explicada en mayor detalle, pero es suficiente mencionar que los votos almacenados en este repositorio están encriptados de manera tal que hasta la finalización de la elección, momento en el cual se libera una clave privada, no será posible obtener información de los votos.
+Existirá un componente de este tipo en cada sede de cada Facultad, y almacenará únicamente los votos de aquellos usuarios registrados en la sede correspondiente. Este componente está pensado para ser ejecutado utilizando redundancia por hardware, garantizando de esta manera que no se pierdan los votos aún en caso de falla graves. 
+
+
+
+\subsubsection{Repositorio de votos antiguos}
+Este componente guardará una copia de la totalidad de los votos de una elección correspondiente a una Facultad. Este componente deberá ser ejecutado en hardware con redundancia, ya que es importante mantener estos datos para futuras fiscalizaciones. Los datos almacenados estarán firmados para garantizar la autenticidad de los mismos ya que se quiere evitar posibles fraudes. 
+
+
+
+
+
 \subsubsection{Sistema de restricciones}
+
 
 El sistema de restricciones, dada una elección y un identificador de usuario, es capaz de decidir si dicho usuario puede postularse para esa elección y si puede votar en la misma. Concretamente existen dos mensajes distintos que pueden ser enviados a este componente, uno para verificar que un usuario puede postularse y otro para verificar que el mismo puede votar, siempre especificando una elección.
 El sistema de restricciones verificará que la elección en cuestión esté en la etapa que corresponda mediante una llamada al administrador de elecciones abiertas.
+
+
+\subsubsection{Fiscalizador}
+Este componente se encargará de contabilizar los votos recibidos para una elección en particular. Los votos estarán clasificados por claustro y para procesar cada elección necesitará su identificador, el reglamento de la misma, la clave privada y los votos encriptados. El resultado que generará consistirá en la cantidad de votos que recibió cada candidato, que será enviado a un repositorio configurable. En el caso de las facultades el \emph{Administrador de resultados} recibirá, almacenará y reenviará los resultados al \emph{Administrador de resultados} del rectorado.
+
+
+
 
 \subsubsection{HardToBreak}
 
