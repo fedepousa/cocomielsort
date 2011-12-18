@@ -88,7 +88,10 @@ Todas las funcionalidades del rectorado se proveerán en una terminal segura con
 La \emph{Interfaz gráfica} mostrará las opciones disponibles, que serán en todo momento ver y modificar las fechas y los reglamentos de las elecciones programadas y en proceso, así como también ver quiénes ya votaron en las mismas, y administrar elecciones finalizadas, que comprende también la resolución manual de eventuales conflictos.
 
 
-Al seleccionar la funcionalidad de administrar elecciones programadas y en proceso la \emph{Interfaz gráfica} se comunicará con el \emph{Administrador de elecciones} para poder mostrar las elecciones aún no finalizadas. Al seleccionar una de las mismas se mostrarán las fechas de inicio y fin de cada una de las etapas de dicha elección, con la posibilidad de editar fechas aún no alcanzadas. Adicionalmente se podrá ver el reglamento vigente para tal elección, que podrá ser modificado y obtener un listado de aquellos que ya votaron, sólo cuando la elección estuviera en etapa de sufragio. Se utilizará para expresar los reglamentos un lenguaje de propósito específico con el poder expresivo para representar restricciones que mencionen antig\"uedad docente, fecha de graduación, y el resto de los datos disponibles en los registros de las facultades. El \emph{Administrador de elecciones} proveerá la información de las elecciones y recibirá los cambios realizados a las mismas mediante llamadas y estará encargado de validar las modificaciones, ya que no se debe permitir que se ingresen fechas en el pasado o restricciones ilegales donde no se cumpla la sintaxis del lenguaje utilizado. Cuando estuviera habilitada la opción de obtener los votantes que ya realizaron su voto, la lista correspondiente sería obtenida del componente \emph{Administrador de datos oficiales de quiénes votaron}, que recibe periódicamente información actualizada de cada una de las facultades. Una opción adicional que se encontrará presente en todas las etapas de las elecciones excepto cuando estuvieran finalizadas es la de agregar candidatos. Esta funcionalidad permitirá generar todo tipo de consultas, ya que se puede asignar a dicha consulta un reglamento que no permita la postulación por parte de usuarios del sistema. 
+Al seleccionar la funcionalidad de administrar elecciones programadas y en proceso la \emph{Interfaz gráfica} se comunicará con el \emph{Administrador de elecciones} para poder mostrar las elecciones aún no finalizadas. Al seleccionar una de las mismas se mostrarán las fechas de inicio y fin de cada una de las etapas de dicha elección, con la posibilidad de editar fechas aún no alcanzadas. Adicionalmente se podrá ver el reglamento vigente para tal elección, que podrá ser modificado y obtener un listado de aquellos que ya votaron, sólo cuando la elección estuviera en etapa de sufragio. Se utilizará para expresar los reglamentos un lenguaje de propósito específico con el poder expresivo para representar restricciones que mencionen antig\"uedad docente, fecha de graduación, y el resto de los datos disponibles en los registros de las facultades. Un reglamento también deberá establecer cuántos votos estarán permitidos para integrantes de cada claustro.
+
+
+El \emph{Administrador de elecciones} proveerá la información de las elecciones y recibirá los cambios realizados a las mismas mediante llamadas y estará encargado de validar las modificaciones, ya que no se debe permitir que se ingresen fechas en el pasado o restricciones ilegales donde no se cumpla la sintaxis del lenguaje utilizado. Cuando estuviera habilitada la opción de obtener los votantes que ya realizaron su voto, la lista correspondiente sería obtenida del componente \emph{Administrador de datos oficiales de quiénes votaron}, que recibe periódicamente información actualizada de cada una de las facultades. Una opción adicional que se encontrará presente en todas las etapas de las elecciones excepto cuando estuvieran finalizadas es la de agregar candidatos. Esta funcionalidad permitirá generar todo tipo de consultas, ya que se puede asignar a dicha consulta un reglamento que no permita la postulación por parte de usuarios del sistema. 
 % TODO ver si tiene sentido poder agregar candidatos en todo momento.
 
 El \emph{Administrador de elecciones} distribuirá los cambios a todas las facultades mediante un conector publish and subscribe, ya que exitirán distintos tipos de mensaje, de acuerdo a si el mensaje debe generar un cambio de reglamento o una actualización en las fechas de una elección y de acuerdo a las facultades que afecte. El esquema de mensajes será similar al que generamos para la comunicación entre el browser y el \emph{Sistema web} para implementar las funcionalidades provistar a los votantes y potenciales candidatos, donde existe un tipo de mensaje para cada una de las acciones posibles desde el punto de vista del usuario.
@@ -104,7 +107,7 @@ El conector que comunica la \emph{Interfaz gráfica} del \emph{Rectorado} con el
 
 
 
-Las funcionalidades disponibles para las agrupaciones política tienen intersección con aquellas provistas para el rectorado, ya que es posible visualizar resultados de elecciones y datos de elecciones pero las mismas son implementadas de manera ligeramente diferente y existen posibilidades adicionales relacionadas con la fiscalización. La \emph{Interfaz gráfica} agrupará las funcionalidades en dos grupos definidos como visualización de información de elecciones no finalizadas y administración de elecciones finalizadas.
+Las funcionalidades disponibles para las agrupaciones políticas tienen intersección con aquellas provistas para el rectorado, ya que es posible visualizar resultados de elecciones y datos de elecciones pero las mismas son implementadas de manera ligeramente diferente y existen posibilidades adicionales relacionadas con la fiscalización. La \emph{Interfaz gráfica} agrupará las funcionalidades en dos grupos definidos como visualización de información de elecciones no finalizadas y administración de elecciones finalizadas.
 
 
 La primera opción permitirá ver las fechas y reglamentos vigentes para las elecciones de una determinada Facultad, esto se realizará mediante una llamada al \emph{Adaptador de pedidos}, que mediante un conector cliente servidor solicitará los datos necesarios al \emph{Servidor de información de elecciones no finalizadas}, administrado por el rectorado.  Dicho servidor podrá responder a varios mensajes, con un esquema similar al detallado para la comunicación entre \emph{browser usuario externo} y \emph{sistema web}, donde hay una correspondencia entre los mensajes y las acciones posibles. En este caso todas las acciones consistirán en pedidos de información, que abarcarán el pedido de una lista de identificadores de elecciones abiertas restringido a una Facultad o a todas, el pedido de información detallada para una elección en particular y el pedido de información de quiénes votaron para una elección en etapa de sufragio.
@@ -121,6 +124,8 @@ Es pertinente mencionar que el \emph{Coordinador de fiscalizaciones} admitirá d
 La posibilidad de ordenar la fiscalización de elecciones pasadas permite una tolerancia a fallas en la comunicación entre las facultades y las agrupaciones políticas, ya que de no recibirse los votos encriptados al momento de finalizarse la elección es posible solicitarlos posteriormente sin mayores inconvenientes.
 
 
+
+Existen algunas funcionalidades que no son reflejadas en una interacción con el usuario ya que se llevan a cabo automáticamente. La transición de etapas en las elecciones así como la obtención de los resultados son un ejemplo de esto.
 
 
 
@@ -152,10 +157,35 @@ El administrador de elecciones permitirá también, dada una elección y un clau
 Dado el código correspondiente a un candidato, una elección y un claustro permite obtener información del mismo en formato XML, permitiendo extender a futuro los datos que se almacenan. 
 Cabe destacar que una misma elección podría involucrar a más de un claustro, pero las fechas en todos ellos deberán coincidir, así como también los reglamentos que las rigen.
 
+
+Las funcionalidades antes mencionadas comprenden la interacción posible con el componente, pero el mismo se encarga además de realizar varias tareas de administración de las elecciones. El componente verifica constantemente los cambios de estado en las elecciones y coordinando al resto de los componentes para que el cambio se vea reflejado en la interacción permitida a los usuarios. En el caso de inicio y fin de varias de las etapas no es necesario hacer nada más que actualizar dicho estado, pero al finalizar la etapa de sufragio el componente obtendrá de \emph{HardToBreak} la clave privada correspondiente a la elección finalizada y de \emph{Sistema de restricciones} el reglamento fijado para los votos en dicha elección. Con estos datos notificará a cada uno de los \emph{almacenamientos de votos encriptados} que dicha etapa ha finalizado, enviando en dicha notificación la clave pública y el reglamento, para que cada uno de estos repositorios distribuya los votos a las agrupaciones interesadas y al \emph{repositorio de votos antiguos} de la Facultad, junto con la información necesaria para procesarlos.
+
+
+\subsubsection{Almacenamiento de votos encriptados}
+Este componente consiste en un repositorio que almacena los votos de eventualmente varias elecciones. En otras secciones la representación de los votos está explicada en mayor detalle, pero es suficiente mencionar que los votos almacenados en este repositorio están encriptados de manera tal que hasta la finalización de la elección, momento en el cual se libera una clave privada, no será posible obtener información de los votos.
+Existirá un componente de este tipo en cada sede de cada Facultad, y almacenará únicamente los votos de aquellos usuarios registrados en la sede correspondiente. Este componente está pensado para ser ejecutado utilizando redundancia por hardware, garantizando de esta manera que no se pierdan los votos aún en caso de falla graves. 
+
+
+
+\subsubsection{Repositorio de votos antiguos}
+Este componente guardará una copia de la totalidad de los votos de una elección correspondiente a una Facultad. Este componente deberá ser ejecutado en hardware con redundancia, ya que es importante mantener estos datos para futuras fiscalizaciones. Los datos almacenados estarán firmados para garantizar la autenticidad de los mismos ya que se quiere evitar posibles fraudes. 
+
+
+
+
+
 \subsubsection{Sistema de restricciones}
+
 
 El sistema de restricciones, dada una elección y un identificador de usuario, es capaz de decidir si dicho usuario puede postularse para esa elección y si puede votar en la misma. Concretamente existen dos mensajes distintos que pueden ser enviados a este componente, uno para verificar que un usuario puede postularse y otro para verificar que el mismo puede votar, siempre especificando una elección.
 El sistema de restricciones verificará que la elección en cuestión esté en la etapa que corresponda mediante una llamada al administrador de elecciones abiertas.
+
+
+\subsubsection{Fiscalizador}
+Este componente se encargará de contabilizar los votos recibidos para una elección en particular. Los votos estarán clasificados por claustro y para procesar cada elección necesitará su identificador, el reglamento de la misma, la clave privada y los votos encriptados. El resultado que generará consistirá en la cantidad de votos que recibió cada candidato, que será enviado a un repositorio configurable. En el caso de las facultades el \emph{Administrador de resultados} recibirá, almacenará y reenviará los resultados al \emph{Administrador de resultados} del rectorado. Las agrupaciones políticas cuentan con un \emph{Administrador de fiscalizaciones} en su lugar, que sólo almacenará los resultados producidos por el fiscalizador de la agrupación.
+
+
+
 
 \subsubsection{HardToBreak}
 

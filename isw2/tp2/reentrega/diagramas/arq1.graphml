@@ -277,7 +277,7 @@ ya votaron</y:NodeLabel>
           <y:Geometry height="73.43725158134743" width="105.0" x="705.9634679722078" y="297.2379870359079"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="34.25" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="100.13525390625" x="2.432373046875" y="19.593625790673684">Administrador 
+          <y:NodeLabel alignment="center" autoSizePolicy="content" borderDistance="0.0" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="34.265625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="100.13525390625" x="2.432373046875" y="19.585813290673684">Administrador 
 de usuarios</y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
@@ -350,7 +350,7 @@ votaron</y:NodeLabel>
           <y:Geometry height="30.0" width="30.0" x="470.98191775296266" y="548.9230582977582"/>
           <y:Fill color="#CCCCFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="126.8125" x="-48.40625" y="34.0">Repositorio de actas</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="157.328125" x="-63.6640625" y="34.0">Repositorio de resultados</y:NodeLabel>
           <y:SVGNodeProperties usingVisualBounds="true"/>
           <y:SVGModel svgBoundsPolicy="0">
             <y:SVGContent refid="1"/>
@@ -399,7 +399,6 @@ de actas</y:NodeLabel>
       </data>
     </node>
     <node id="n32">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="56.221120000000155" width="105.0" x="245.36339083232247" y="1113.8746471316158"/>
@@ -413,7 +412,6 @@ oficiales</y:NodeLabel>
       </data>
     </node>
     <node id="n33">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="47.612998962402344" width="105.0" x="714.5392659151685" y="1028.8417591709845"/>
@@ -425,7 +423,6 @@ oficiales</y:NodeLabel>
       </data>
     </node>
     <node id="n34">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="47.612998962402344" width="89.0" x="687.303766642072" y="923.4782530801538"/>
@@ -478,10 +475,10 @@ de resultados</y:NodeLabel>
     <node id="n38">
       <data key="d6">
         <y:SVGNode>
-          <y:Geometry height="30.0" width="30.0" x="170.69873550123182" y="973.8841957326522"/>
+          <y:Geometry height="30.0" width="30.0" x="158.43514171884843" y="984.3958475461236"/>
           <y:Fill color="#CCCCFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="126.8125" x="-48.40625" y="34.0">Repositorio de actas</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="157.328125" x="-63.6640625" y="34.0">Repositorio de resultados</y:NodeLabel>
           <y:SVGNodeProperties usingVisualBounds="true"/>
           <y:SVGModel svgBoundsPolicy="0">
             <y:SVGContent refid="1"/>
@@ -504,13 +501,12 @@ finalizadas</y:NodeLabel>
       </data>
     </node>
     <node id="n40">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="81.0" width="112.32323316062161" x="756.5458346853488" y="822.3404442596935"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="45.90625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="103.919921875" x="4.201655642810692" y="17.546875">Administrador 
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="45.90625" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="103.919921875" x="4.201655642810806" y="17.546875">Administrador 
 de suscripciones
 a Facultades</y:NodeLabel>
           <y:Shape type="rectangle"/>
@@ -518,7 +514,6 @@ a Facultades</y:NodeLabel>
       </data>
     </node>
     <node id="n41">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="81.0" width="127.5" x="778.1337338959579" y="510.9132256531632"/>
@@ -531,20 +526,18 @@ votos antiguos</y:NodeLabel>
       </data>
     </node>
     <node id="n42">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="83.2634327040115" width="112.32323316062161" x="606.2439922188786" y="612.8343485182944"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.9375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="92.37109375" x="9.976069705310692" y="25.662966352005697">Servidor de 
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.9375" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="92.37109375" x="9.976069705310806" y="25.66296635200581">Servidor de 
 votos antiguos</y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
     </node>
     <node id="n43">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="83.2634327040115" width="127.5" x="896.4608084239009" y="905.6530362093491"/>
@@ -796,17 +789,7 @@ de fiscalizaciones</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e22" source="n13" target="n41">
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="-28.169191709844654" ty="0.0"/>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e23" source="n26" target="n4">
+    <edge id="e22" source="n26" target="n4">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -817,7 +800,7 @@ de fiscalizaciones</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e24" source="n19" target="n29">
+    <edge id="e23" source="n19" target="n29">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -828,7 +811,7 @@ de fiscalizaciones</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e25" source="n14" target="n6">
+    <edge id="e24" source="n14" target="n6">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -838,7 +821,7 @@ de fiscalizaciones</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e26" source="n14" target="n7">
+    <edge id="e25" source="n14" target="n7">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -849,7 +832,7 @@ de fiscalizaciones</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e27" source="n4" target="n37">
+    <edge id="e26" source="n4" target="n37">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -860,7 +843,7 @@ de fiscalizaciones</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e28" source="n29" target="n27">
+    <edge id="e27" source="n29" target="n27">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -871,8 +854,7 @@ de fiscalizaciones</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e29" source="n24" target="n32">
-      <data key="d9"/>
+    <edge id="e28" source="n24" target="n32">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -883,8 +865,7 @@ de fiscalizaciones</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e30" source="n32" target="n30">
-      <data key="d9"/>
+    <edge id="e29" source="n32" target="n30">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -895,8 +876,7 @@ de fiscalizaciones</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e31" source="n24" target="n25">
-      <data key="d9"/>
+    <edge id="e30" source="n24" target="n25">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -907,8 +887,7 @@ de fiscalizaciones</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e32" source="n24" target="n27">
-      <data key="d9"/>
+    <edge id="e31" source="n24" target="n27">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -919,8 +898,7 @@ de fiscalizaciones</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e33" source="n33" target="n34">
-      <data key="d9"/>
+    <edge id="e32" source="n33" target="n34">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -931,8 +909,7 @@ de fiscalizaciones</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e34" source="n34" target="n32">
-      <data key="d9"/>
+    <edge id="e33" source="n34" target="n32">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -943,8 +920,7 @@ de fiscalizaciones</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e35" source="n34" target="n39">
-      <data key="d9"/>
+    <edge id="e34" source="n34" target="n39">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -955,8 +931,7 @@ de fiscalizaciones</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e36" source="n12" target="n35">
-      <data key="d9"/>
+    <edge id="e35" source="n12" target="n35">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -967,8 +942,7 @@ de fiscalizaciones</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e37" source="n34" target="n35">
-      <data key="d9"/>
+    <edge id="e36" source="n34" target="n35">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -979,8 +953,7 @@ de fiscalizaciones</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e38" source="n32" target="n37">
-      <data key="d9"/>
+    <edge id="e37" source="n32" target="n37">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -991,8 +964,7 @@ de fiscalizaciones</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e39" source="n21" target="n15">
-      <data key="d9"/>
+    <edge id="e38" source="n21" target="n15">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -1005,8 +977,7 @@ de fiscalizaciones</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e40" source="n39" target="n27">
-      <data key="d9"/>
+    <edge id="e39" source="n39" target="n27">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -1017,8 +988,7 @@ de fiscalizaciones</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e41" source="n39" target="n25">
-      <data key="d9"/>
+    <edge id="e40" source="n39" target="n25">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -1029,8 +999,7 @@ de fiscalizaciones</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e42" source="n40" target="n43">
-      <data key="d9"/>
+    <edge id="e41" source="n40" target="n43">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -1041,8 +1010,7 @@ de fiscalizaciones</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e43" source="n34" target="n40">
-      <data key="d9"/>
+    <edge id="e42" source="n34" target="n40">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -1053,8 +1021,7 @@ de fiscalizaciones</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e44" source="n41" target="n26">
-      <data key="d9"/>
+    <edge id="e43" source="n41" target="n26">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -1065,8 +1032,7 @@ de fiscalizaciones</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e45" source="n43" target="n12">
-      <data key="d9"/>
+    <edge id="e44" source="n43" target="n12">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -1077,8 +1043,7 @@ de fiscalizaciones</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e46" source="n43" target="n42">
-      <data key="d9"/>
+    <edge id="e45" source="n43" target="n42">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -1089,8 +1054,7 @@ de fiscalizaciones</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e47" source="n34" target="n43">
-      <data key="d9"/>
+    <edge id="e46" source="n34" target="n43">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -1101,8 +1065,7 @@ de fiscalizaciones</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e48" source="n42" target="n41">
-      <data key="d9"/>
+    <edge id="e47" source="n42" target="n41">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -1113,8 +1076,7 @@ de fiscalizaciones</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e49" source="n36" target="n35">
-      <data key="d9"/>
+    <edge id="e48" source="n36" target="n35">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -1124,14 +1086,35 @@ de fiscalizaciones</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e50" source="n43" target="n32">
-      <data key="d9"/>
+    <edge id="e49" source="n43" target="n32">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
           <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="97.052734375" x="-240.48495778129404" y="71.27968867326535">cliente servidor</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e50" source="n11" target="n41">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="84.3671875" x="42.14982000481109" y="10.134625201615506">transaccional</y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e51" source="n15" target="n18">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="65.599609375" x="4.682301414679927" y="10.86236542937786">call return</y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
