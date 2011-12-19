@@ -1,4 +1,8 @@
 \section{Presentación de la arquitectura}
+
+En esta sección presentaremos la arquitectura explicando cómo se brindan las funcionalidades requeridas, mencionando diseños alternativos y algunos aspectos relevantes de la comunicación. Cuando resulte pertinente se comentará cómo se logra cada atributo de calidad a partir de las tácticas utilizadas y la estructura descripta. 
+
+
 %TODO ver si sirve algo de esto....
 Las partes del sistema ser\'an alojadas en diversos lugares f\'isicos. Los usuarios del sistema (votantes y aspirantes a candidatos) podr\'an utilizar al componente \emph{browser usuario externo} desde sus disposivos moviles y computadoras personales. Tambi\'en tendr\'an disponibles terminales en cada sede que estar\'an disponibles en todo momento para utilizar al sistema. Dichas terminales estar\'an conectadas al \emph{Sistema Web} de la sede de manera directa, por lo que ser\'a posible votar y candidatearse cuando la sede se encuentre sin conexi\'on a internet.
 
@@ -8,8 +12,6 @@ Los dem\'as componentes de la facultad ser\'an alojadas en la sede donde se encu
 Dentro del rectorado se alojar\'an el servidor de resultados oficiales, administrador de elecciones, administrador de resultados, administrador de datos oficiales de quienes votaron, administrador de actas y una interfaz gr\'afica por la cual se podr\'a configurar los calendarios de elecciones y los reglamentos de las elecciones por medio del \emph{Administrador de elecciones}.
 
 El sistema HardToBreak estamos considerando que es algo externo al sistema y ser\'a alojado por terceros. Tambi\'en consideramos externo el sistema de registros de la facultad.
-
-En esta sección presentaremos la arquitectura explicando cómo se brindan las funcionalidades requeridas, mencionando diseños alternativos y algunos aspectos relevantes de la comunicación. Cuando resulte pertinente se comentará cómo se logra cada atributo de calidad a partir de las tácticas utilizadas y la estructura descripta. 
 
 
 La sección \ref{explicaciones} contiene explicaciones de varios de los componentes más relevantes y puede resultar útil utilizarla como referencia para ampliar la comprensión de la presente sección.
@@ -21,6 +23,40 @@ El uso más habitual que se le dará al sistema será el de votar, por lo que co
 Para mejorar la seguridad del sistema se eligió utilizar combinaciones de nombre de usuario y contraseña para identificar a los usuarios. Cada usuario tendrá asociado una cuenta, que contendrá además de la información de identificación la preferencia de lenguaje. La creación de cuentas para los usuarios se deberá realizar en una oficina de la sede a la que pertenezca el alumno, donde existirá una terminal segura ejecutando el componente \emph{Administrador de usuarios}\tactica{, apelando, en este caso, a la táctica de seguridad \textit{Limit access} y a \textit{Authenticate User}.} Este componente permitirá crear nuevas cuentas y modificar cuentas existentes. Al momento de creación de la cuenta se solicitará al usuario que ingrese una contraseña. Existían otras alternativas para resolver el problema de administración de cuentas de usuarios que aumentaban la complejidad de la arquitectura y ofrecían menos garantías de seguridad, como generar las contraseñas automáticamente y enviarlas por correo electrónico, o que la creación de cuentas se realice remotamente. En el primer caso la seguridad depende en gran medida del software que cada usuario utilice para ver su correo electrónico, mientras que la segunda opción no ofrece, de la manera que la pensamos, ningún tipo de garantía sobre la identidad de la persona que genera la cuenta.
 
 % TODO agregar diagrama arquitectura completo
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{../informe/imagenes/arq1.png}
+	\end{center} 
+	\caption{Conectores utilizados en la arquitectura}
+	\label{fig:tiposConector}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=1]{../informe/imagenes/tipos_conectores.png}
+	\end{center} 
+	\caption{Componentes y conectores}	
+	\label{fig:vistaPrincipal}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{../informe/imagenes/comunicador.png}
+	\end{center} 
+	\caption{Componentes y conectores del conector cliente servidor seguro}	
+	\label{fig:Conector}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{../informe/imagenes/sistema_web.png}
+	\end{center} 
+	\caption{Componentes y conectores ampliado para el Sistema Web}	
+	\label{fig:sistemaWeb}
+\end{figure}
+
+
 El flujo de información durante una votación se describe a continuación. El usuario, a través del componente browser externo, ingresa en un sitio web designado por la Facultad con el fin de realizar la votación.  Este sitio web será exclusivo de la sede a la que un usuario pertenezca, con el objetivo de mejorar la disponibilidad. Para la comunicación entre el browser y la sede de la Facultad utilizaremos una modificación de un conector cliente servidor. La utilización de este conector como parte del estilo arquitectónico del mismo nombre permite mejorar la performance del sistema en general.
 
 El sitio web será generado por el componente sistema web de la sede correspondiente. Existen varios tipos de mensajes posibles entre \emph{browser usuario externo} y \emph{sistema web} que se explicarán en detalle en la sección \ref{mensajes}. 
