@@ -23,11 +23,13 @@ Algunas aclaraciones generales: para elaborar los diagramas contamos con un equi
 
 \par
 
-En el primer diagrama mostramos cómo planeamos el proyecto a nivel general viendo así las distintas etapas y teniendo un tiempo estimado para las entregas. Agregamos tambi\'en tareas relacionadas con la administración del proyecto tal como la licitaci\'on de los servicios que utilizará el sistema y la capacitación del equipo de desarrollo. El tiempo estimado para finalizar el desarrollo son 128 dias (aproximadamente 26 semanas).	
+En el primer diagrama mostramos cómo planeamos el proyecto a nivel general viendo así las distintas etapas y teniendo un tiempo estimado para las entregas. Agregamos tambi\'en tareas relacionadas con la administración del proyecto tal como la licitaci\'on de los servicios que utilizará el sistema y la capacitación del equipo de desarrollo. En el diagrama se muestra colapsadas las tareas realacionadas con la Interfaz del Usuario puesto que lo mostraremos en detalle más adelante. Si bien en el diagrama los productos parecen que depeden entre si, esto se debe al trabajo de este equipo, podrían existir módulos realizandose en paralelo. El orden en el que se realizan los productos es el que creemos que logra mejor como mostrar los avances del producto. El tiempo estimado para finalizar el desarrollo son 132 dias (aproximadamente 26 semanas).	
 
 \par
 \begin{figure}[H]
-\includegraphics[scale=0.5]{./imagenes/gantintegral.png}
+\begin{center}
+\includegraphics[scale=0.6]{./imagenes/gantintegral.png}
+\end{center}
 \end{figure}
 
 \par
@@ -36,7 +38,7 @@ En un segundo diagrama hicimos un zoom sobre la primera iteración de la primera
 \par
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.5]{./imagenes/gantiteracion.png}
+\includegraphics[scale=0.6]{./imagenes/gantiteracion.png}
 \end{center}
 \end{figure}
 
@@ -64,10 +66,10 @@ Los seis elementos del primer nivel serán: Interfaz, Sistema Facultad, Comunica
 Interfaz comprende los productos y procesos relacionados con el relevamiento de requerimientos, casos de uso, codificación y prueba de la interfaz. Este producto seguramente podrá ser construído independientemente de los demás.
 \\ \par
 %TODO cambiar este parrafo que aplicaba para la primer entrega pero no ahora
-Sistema Facultad incluye productos y procesos orientados a la construcción del sistema autónomo de cada Facultad, que se encargará de recibir y fiscalizar la totalidad de los votos correspondientes a la misma. Los requerimientos funcionales y atributos de calidad prioritarios definitivos para este producto dependerán de varias tareas de gestión a realizarse en las primeras iteraciones, con el fin de consensuar soluciones de compromiso a los diversos intereses, que actualmente se encuentran en conflicto. Como ser la posibilidad de contar con resultados parciales y un registro de votantes en tiempo real, en contraposición con la idea de garantizar el voto secreto.
+Sistema Facultad incluye productos y procesos orientados a la construcción del sistema autónomo de cada Facultad, que se encargará de recibir y fiscalizar la totalidad de los votos correspondientes a la misma, además de distribuir información a los partidos políticos y el rectorado. Los requerimientos funcionales y atributos de calidad prioritarios definitivos para este producto dependerán de varias tareas de gestión a realizarse en las primeras iteraciones, con el fin de consensuar soluciones de compromiso a los diversos intereses, que actualmente se encuentran en conflicto, como ser la posibilidad de contar con resultados parciales y un registro de votantes en tiempo real, en contraposición con la idea de garantizar el voto secreto.
 \\ \par
 %TODO lo mismo que antes
-Comunicación está conformado por productos y procesos proveedores de comunicación entre los distintos sistemas de cada Facultad. Este producto, tal como Sistema Facultad, depende de la definición de varios aspectos de los atributos de calidad y requerimientos funcionales, por lo que dependerá de los procesos de Actividades de gestión.
+Comunicación está conformado por productos y procesos proveedores de comunicación entre los distintos sistemas de cada Facultad. Este producto, tal como Sistema Facultad, depende de la definición de varios aspectos de los atributos de calidad y requerimientos funcionales, por lo que dependerá de los procesos de actividades de gestión.
 \\ \par
 %TODO lo mismo que antes
 Actividades de gestión reúne diversos procesos que pueden ser separados en unos pocos ejes. En primer lugar está la capacitación de los stakeholders, explicando por qué los intereses expresados entran en conflicto y cuáles alternativas arquitectónicas permiten priorizar uno u otro y en qué medida.
@@ -78,8 +80,7 @@ Por último será necesario capacitar al equipo en temas de seguridad, para logr
 %TODO fiscalizador se refiere a los componentes que constituyen la agrupacion politica
 Fiscalizador es el producto que tendran los diversos partidos politicos. Nuestro sistema deberá armar estos sub sistemas que permitiran que los partidos políticos se comuniquen con las facultades que deseen y además se realize el recuento de votos en forma local de manera que se logre una elección más transparente. 
 \\ \par
-%TODO explicar las otras funcionalidades
-Sistema Rectorado incluye los productos que el rectorado estaba interesado en tener para realizar diversas tareas de gestión. Una de esas tareas era tener conocimiento de los usarios que ya votaron en la elección. Además el rectorado solicitó que el sistema permita cambiar su funcionalidad para realizar plebiscitos, por lo que agregamos la funcionalidad de definir las reglas de las elecciones permitiendo que sea facilmente modificables.
+Sistema Rectorado incluye los productos que el rectorado estaba interesado en tener para realizar diversas tareas de gestión. Una de esas tareas era tener conocimiento de los usarios que ya votaron en la elección. Además el rectorado solicitó que el sistema permita cambiar su funcionalidad para realizar plebiscitos, por lo que agregamos la funcionalidad de definir las reglas de las elecciones permitiendo que sea facilmente modificables. También tiene la posiblidad de resolver los conflictos para los resultados de una elección y aceptar un acta que fue generada por el sistema. Por último puede administrar elecciones, decidir su fecha de inicio y fecha de fin.
 
 \begin{itemize}
  \item {\bf \emph{WBS Vox}}
@@ -92,15 +93,20 @@ Sistema Rectorado incluye los productos que el rectorado estaba interesado en te
 \end{itemize}
  \item \emph{M\'odulo de procesamiento de votos} 
 \begin{itemize}
- \item Se encarga de procesar los votos que recibe y procesarlos según las reglas enviadas por el decanato.
+ \item Se encarga de recibir los votos y procesarlos según las reglas enviadas por el decanato.
 \end{itemize}
- \item \emph{M\'odulo de registro de votos} 
+ \item \emph{M\'odulo de almacenamiento de votos} 
 \begin{itemize}
- \item Se encarga registrar los votos junto con las personas que votaron.
+ \item Se encarga registrar los votos junto con las personas que votaron, publicarlos y archivar.
 \end{itemize}
- \item \emph{M\'odulo de publicador de votos} 
+ \item \emph{M\'odulo de publicador de resultados} 
 \begin{itemize}
- \item Se encarga de enviar a todos los fiscalizadores los votos que esta procesando.
+ \item Se encarga de enviar al rectorado la información de una elección.
+\end{itemize}
+ \item \emph{M\'odulo de idiomas}
+\begin{itemize}
+ \item Se encarga de adminisitrar los idiomas soportados en la interfaz de usuario
+ \item {\bf Caso de uso:} Cambio de idioma en la interfaz de usuario
 \end{itemize}
 \end{itemize}
  \item {\bf Interfaz de Usuario}
@@ -111,20 +117,15 @@ Sistema Rectorado incluye los productos que el rectorado estaba interesado en te
  \item {\bf Caso de uso:} Generando contrase\~na
  \item {\bf Caso de uso:} Ingresando al sistema
 \end{itemize}
- \item \emph{M\'odulo de formularios de votos}
-\begin{itemize}
- \item Se encarga de mostrar al usuario la lista de candidatos y darle opión de elegir
- \item {\bf Caso de uso:} Emitiendo un voto
-\end{itemize}
  \item \emph{M\'odulo de envio de votos}
 \begin{itemize}
  \item Se encarga de enviar el voto al sistema de la facultad
  \item {\bf Caso de uso:} Emitiendo un voto
 \end{itemize}
- \item \emph{M\'odulo de idiomas}
+ \item \emph{M\'odulo de postulación}
 \begin{itemize}
- \item Se encarga de adminisitrar los idiomas soportados en la interfaz de usuario
- \item {\bf Caso de uso:} Cambio de idioma en la interfaz de usuario
+ \item Se encarga de postularse para una elección
+ \item {\bf Caso de uso:} Postulandose para las elecciones
 \end{itemize}
 \end{itemize}
  \item {\bf Comunicación}
@@ -160,18 +161,19 @@ Sistema Rectorado incluye los productos que el rectorado estaba interesado en te
 \end{itemize}
  \item {\bf Fiscalizadores}
 \begin{itemize}
- \item \emph{M\'odulo de recibo de votos}
+ \item \emph{M\'odulo de recepción de votos}
 \begin{itemize}
- \item Se encarga de recibir los votos del sistema de la facultad
+ \item Se encarga de subscripción y recepción de los votos del sistema de la facultad
 \end{itemize}
- \item \emph{M\'odulo de subscripción a facultades}
+ \item \emph{M\'odulo visualizador de resultados}
 \begin{itemize}
- \item Se encarga de administrar las subscripciones a las distintas facultades
+ \item Se encarga, para una elección, mostrar los canidatos que votaron y los resultados en caso de ser posible
+ \item {\bf Caso de uso:} Viendo resultados
 \end{itemize}
  \item \emph{M\'odulo de recuento de votos}
 \begin{itemize}
  \item Se encarga de procesar los votos que recibe haciendo un recuento de votos
- \item {\bf Caso de uso:} Fiscalización parcial de los resultados
+ \item {\bf Caso de uso:} Fiscalizando votaci\'on
 \end{itemize}
 \end{itemize}
  \item {\bf Sistema Rectorado}
@@ -189,6 +191,18 @@ Sistema Rectorado incluye los productos que el rectorado estaba interesado en te
  \item \emph{M\'odulo de administración de candidatos}
 \begin{itemize}
  \item Se encarga de administrar a los candidatos de las distintas facultades
+\end{itemize}
+ \item \emph{M\'odulo de administración de elecciones}
+\begin{itemize}
+ \item Se encarga de administrar el comienzo y la finalización de las elecciones
+ \item {\bf Caso de uso:} Agregando elección
+ \item {\bf Caso de uso:} Modificando elección
+\end{itemize}
+ \item \emph{M\'odulo de administración de actas}
+\begin{itemize}
+ \item Se encarga de arreglar conflictos y aceptar actas
+ \item {\bf Caso de uso:} Resolviendo conflictos
+ \item {\bf Caso de uso:} Aceptando acta
 \end{itemize}
 \end{itemize}
 \end{itemize}
