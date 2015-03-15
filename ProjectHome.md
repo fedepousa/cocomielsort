@@ -1,0 +1,1 @@
+Automatizar no estaria nada mal
